@@ -21,4 +21,22 @@
 - `docs/research/scam-patterns.md`: 14 warning signs. The official portals were unreachable, so it relies on secondary sources.
 - The compliance review found 10 must-fix issues, mainly that schema v1 can't separate a rate floor or ceiling from an offered rate, or a minimum fee from a fixed fee. It also found that the scam keywords flag licensed lenders. Waiting on your decision about a schema v2 before Phase 2.
 
-**Next:** your decisions at the Phase 1 checkpoint, then Phase 2 (cost engine).
+## Phase 1b: Schema v2 and data clean-up (2026-11-02)
+**Status:** done, waiting for your review.
+
+- Schema v2: rate kinds (offered / "từ" floor / ceiling / benchmark), stated vs inferred, fee min/max/tiers/rules, insurance premium methods, conflicts, completeness flags, status, lender of record. All objects are strict, so no commercial fields are possible.
+- The validator also checks:
+  - the legal name against the SBV list, and the lender of record;
+  - the 100M finance-company cap (it must be recorded as a conflict);
+  - rate plausibility and fee shape;
+  - worked examples, both their arithmetic and whether they fall inside the offered range;
+  - future dates, using Vietnam's calendar day;
+  - old source documents, which are capped at "low" confidence.
+- There are 44 unit tests.
+- `docs/research/data-entry-rules.md`: the rules for anyone entering data.
+- All 10 lender files were migrated and reviewed. Validation gives 0 errors and 5 expected warnings.
+- **6 products can be costed and ranked:** VPBank online cash loan, Shinhan cash loan, Home Credit cash loan, and FE Credit's cash, motorbike and phone loans. The other 29 are shown as "chưa đủ dữ liệu", with a reason.
+- regulations.md: unverified claims are softened, and sections are added on the Law on Data, the Consumer Protection Law and MoIT website rules.
+- The compliance re-check marks most items fixed. 3 decisions are open (N1, N2, N11 in compliance-review-phase1.md).
+
+**Next:** your decisions on N1, N2 and N11, then Phase 2 (cost engine).

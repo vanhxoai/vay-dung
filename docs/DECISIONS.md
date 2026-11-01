@@ -18,3 +18,8 @@ Each entry records what we chose and why. "Agreed" means you approved it; "Defau
 | 11 | 2026-11-01 | E2E tests run their own dev server on port 3100, at a 390×844 "Pixel 7" viewport | Port 3000 was already used by another app on this machine, and the tests silently hit it | Default |
 | 12 | 2026-11-01 | `git config core.autocrlf true` for this repo | Avoids Windows line-ending noise in diffs | Default |
 | 13 | 2026-11-01 | Vitest picks up `src/**/*.test.ts` and `scripts/**/*.test.ts`. Playwright tests live in `tests/e2e/` | Unit tests sit next to the code they test | Default |
+| 14 | 2026-11-01 | DTI threshold: no SBV rule exists. 40% stays, labeled "hướng dẫn của Vay Đúng" (Vay Đúng guideline), never as a legal rule | regulations.md §5 | Agreed (Phase 1 checkpoint) |
+| 15 | 2026-11-02 | Schema v2 before Phase 2 (compliance review M1–M8) | Schema v1 couldn't separate floors and ceilings from offered rates, or minimum fees from fixed fees | Agreed |
+| 16 | 2026-11-02 | When official sources conflict, store the conservative value (higher cost, stricter condition, lower max amount) and record the conflict | Borrower first; never show the cheaper of two official figures | Default (data-entry-rules.md §6) |
+| 17 | 2026-11-02 | `promotional` stays null unless the source says the rate is a promotion | "Never assume". Agents had set it from the 0% figure alone | Default |
+| 18 | 2026-11-02 | Products without an offered rate range are excluded from ranking and shown as "chưa đủ dữ liệu để so sánh" with a reason | Ranking on floors or ceilings would mislead | Default |
