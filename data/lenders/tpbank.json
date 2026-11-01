@@ -1,0 +1,468 @@
+{
+  "slug": "tpbank",
+  "name": "TPBank",
+  "legalName": "Ngân hàng TMCP Tiên Phong",
+  "licenseCategory": "bank",
+  "licensedInstitutionId": "tpbank",
+  "website": "https://tpb.vn",
+  "products": [
+    {
+      "id": "vay-thau-chi-tin-chap-theo-luong",
+      "name": "Vay thấu chi tín chấp theo lương (TPBank)",
+      "productType": "overdraft",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "No minimum stated."
+      },
+      "amountMaxVnd": {
+        "value": 500000000,
+        "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-thau-chi-tin-chap",
+        "retrievedAt": "2026-11-01",
+        "confidence": "low",
+        "note": "Product page body: \"hạn mức tới 500 triệu đồng mà không cần tài sản bảo đảm\". CONTRADICTION on the same site: the page title and the listing page https://tpb.vn/khach-hang-ca-nhan/vay-tin-chap both say up to 100 triệu. Not resolved; low confidence."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated."
+      },
+      "termMaxMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated. Overdraft is a revolving limit that must be settled at the limit's maturity date (FAQ); the duration is not published."
+      },
+      "rate": {
+        "minPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No lending rate for this product is published on the tpb.vn pages that could be read. Rate depends on the customer profile; hotline 1900 58 58 85."
+        },
+        "maxPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published."
+        },
+        "basis": "unknown",
+        "period": "unknown",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Account management fee, new unsecured overdraft limit",
+          "nameVi": "Phí quản lý TKTT khi cấp mới hạn mức thấu chi không có TSBĐ",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": 1,
+            "sourceUrl": "https://tpb.vn/wps/wcm/connect/415edada-2372-402c-958e-85835bb21e56/Phu_luc_02_%2808_2026%29_PRM.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "1.0% of the overdraft limit value, minimum 200,000 VND, maximum 2,000,000 VND (KMP636). A footnote says it is charged only if the customer has signed the credit contract. Source is Phụ lục 02 - Biểu phí vay và phạt (PDF dated 08/2026, linked from the product page). The PDF's font encoding is garbled in text extraction; figures were read from the extracted text and the table layout is partly scrambled, so the row-to-fee mapping is medium confidence. Timing of collection is not stated."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Min/max amounts are in the percentage note; no single fixed fee."
+          }
+        },
+        {
+          "name": "Account management fee, re-granted unsecured overdraft limit",
+          "nameVi": "Phí quản lý TKTT khi tái cấp hạn mức thấu chi không có TSBĐ",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": 0.5,
+            "sourceUrl": "https://tpb.vn/wps/wcm/connect/415edada-2372-402c-958e-85835bb21e56/Phu_luc_02_%2808_2026%29_PRM.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "0.5% of the overdraft limit value, minimum 100,000 VND, maximum 2,000,000 VND (KMP637). Source is Phụ lục 02 - Biểu phí vay và phạt (PDF dated 08/2026, linked from the product page). The PDF's font encoding is garbled in text extraction; figures were read from the extracted text and the table layout is partly scrambled, so the row-to-fee mapping is medium confidence. Timing of collection is not stated."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Min/max amounts are in the percentage note; no single fixed fee."
+          }
+        },
+        {
+          "name": "Early repayment fee, overdraft",
+          "nameVi": "Phí trả nợ trước hạn (thấu chi)",
+          "timing": "unknown",
+          "mandatory": false,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://tpb.vn/wps/wcm/connect/415edada-2372-402c-958e-85835bb21e56/Phu_luc_02_%2808_2026%29_PRM.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "The schedule states the overdraft-limit lending method has free early repayment (\"Miễn phí trả nợ trước hạn\"). Source is Phụ lục 02 - Biểu phí vay và phạt (PDF dated 08/2026, linked from the product page). The PDF's font encoding is garbled in text extraction; figures were read from the extracted text and the table layout is partly scrambled, so the row-to-fee mapping is medium confidence. Timing of collection is not stated."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable."
+          }
+        }
+      ],
+      "insurance": [],
+      "eligibility": {
+        "minAge": {
+          "value": 22,
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-thau-chi-tin-chap",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "\"Khách hàng từ đủ 22 tuổi\" (FAQ)."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": 10000000,
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-thau-chi-tin-chap",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Average monthly income of 10 triệu or more over the last 3 months (FAQ). Wording does not say gross or net."
+        },
+        "documents": {
+          "value": [
+            "Đề nghị vay vốn theo mẫu TPBank",
+            "Hồ sơ nhân thân",
+            "Hồ sơ chứng minh công việc và thu nhập hoặc chứng từ tương đương",
+            "Hồ sơ chứng minh địa chỉ thường trú và/hoặc tạm trú"
+          ],
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-thau-chi-tin-chap",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Per the FAQ."
+        },
+        "notes": "Employer must be one of: local-level-or-above administrative agency; public education or health unit; TPBank corporate customer or partner; individual with a salary account at TPBank; companies on TPBank's policy list. Minimum 3 months at the current employer (FAQ)."
+      },
+      "latePenalty": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "No late-payment penalty published for the overdraft on readable pages. Interest is calculated daily on the overdrawn balance and collected automatically on the 25th of each month from the overdraft account (FAQ); principal can be repaid at any time."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-thau-chi-tin-chap",
+      "retrievedAt": "2026-11-01",
+      "confidence": "low",
+      "notes": "No interest rate or insurance info published for this product. The FAQ says interest accrues daily on the overdrawn amount for actual days, but the rate and its quoted period are not published, so basis and period are left unknown. Online availability not stated (listing links to https://tpb.vn/dang-ky-vay-khcn?iloans=1; the FAQ lists a paper-style document set)."
+    },
+    {
+      "id": "vay-tieu-dung-tin-chap-theo-luong",
+      "name": "Vay tiêu dùng tín chấp theo lương (TPBank)",
+      "productType": "cash_loan",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "No minimum stated."
+      },
+      "amountMaxVnd": {
+        "value": 1000000000,
+        "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-tieu-dung-tra-gop",
+        "retrievedAt": "2026-11-01",
+        "confidence": "low",
+        "note": "Product page: \"Hạn mức hấp dẫn tới 1 tỷ đồng\". CONTRADICTION: the listing page https://tpb.vn/khach-hang-ca-nhan/vay-tin-chap says \"Vay tối đa tới 300 triệu trong 60 tháng\". Not resolved; low confidence."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated."
+      },
+      "termMaxMonths": {
+        "value": 60,
+        "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-tieu-dung-tra-gop",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "\"Thời hạn vay lên đến 60 tháng\" on the product page; the listing page also says 60 tháng."
+      },
+      "rate": {
+        "minPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No lending rate for this product is published on the tpb.vn pages that could be read. Rate depends on the customer profile; hotline 1900 58 58 85."
+        },
+        "maxPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published."
+        },
+        "basis": "unknown",
+        "period": "unknown",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Early repayment fee, unsecured loan (TPBank fee schedule 08/2026)",
+          "nameVi": "Phí trả nợ trước hạn (sản phẩm cho vay không có TSBĐ)",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": 3,
+            "sourceUrl": "https://tpb.vn/wps/wcm/connect/415edada-2372-402c-958e-85835bb21e56/Phu_luc_02_%2808_2026%29_PRM.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "3.0% of the prepaid amount for prepayment within the first 3 years from disbursement; 1.5% from year 4 onward (KMP609 / KMP633). Source is Phụ lục 02 - Biểu phí vay và phạt (PDF dated 08/2026, linked from the product page). The PDF's font encoding is garbled in text extraction; figures were read from the extracted text and the table layout is partly scrambled, so the row-to-fee mapping is medium confidence. Timing of collection is not stated. Applicability to this exact product is inferred from the schedule being linked from this product page."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No fixed amount found for this fee line."
+          }
+        }
+      ],
+      "insurance": [],
+      "eligibility": {
+        "minAge": {
+          "value": 22,
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-tieu-dung-tra-gop",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "\"Khách hàng từ đủ 22 tuổi\" (FAQ)."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": 10000000,
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-tieu-dung-tra-gop",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Average monthly salary income of 10 triệu or more over the last 3 months (FAQ)."
+        },
+        "documents": {
+          "value": [
+            "Đề nghị vay vốn theo mẫu TPBank",
+            "Hồ sơ nhân thân",
+            "Hồ sơ chứng minh công việc và thu nhập (sao kê tài khoản trả lương / phiếu lương / chứng từ tương đương)",
+            "Hồ sơ chứng minh địa chỉ thường trú và/hoặc tạm trú"
+          ],
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-tieu-dung-tra-gop",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Per the FAQ."
+        },
+        "notes": "Employer must be one of: local-level-or-above administrative agency; public education or health unit; TPBank corporate customer or partner; individual with a salary account at TPBank; companies on TPBank's policy list. This is a salary-linked product for specific employer groups, so many young private-sector workers will not qualify. The listing page also shows a card with term up to 18 months and no product name; it was not matched to any product."
+      },
+      "latePenalty": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "No late-payment penalty published on the readable product pages."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-vay-tieu-dung-tra-gop",
+      "retrievedAt": "2026-11-01",
+      "confidence": "low",
+      "notes": "No interest rate or insurance published. Amount limit contradiction: 1 tỷ vs 300 triệu."
+    },
+    {
+      "id": "cho-vay-tien-mat-tin-chap-tpfico",
+      "name": "Cho vay tiền mặt tín chấp TPFico (TPBank)",
+      "productType": "cash_loan",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "No minimum stated."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://tpb.vn/khach-hang-ca-nhan/vay-tin-chap",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "\"Khoản vay tiền mặt lên tới 100 triệu đồng\" on the TPBank unsecured-loan listing page. The card is not labelled; it was matched to the TPFico cash loan by order and the \"giải ngân nhanh trong 48h\" line. The TPFico product page itself gives no amount."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://tpb.vn/khach-hang-ca-nhan/vay-tin-chap",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "\"Kỳ hạn vay tối đa đến 36 tháng\"; same card-matching caveat as the amount."
+      },
+      "rate": {
+        "minPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "The TPFico page says \"lãi suất cực kỳ ưu đãi\" but gives no figure."
+        },
+        "maxPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published."
+        },
+        "basis": "unknown",
+        "period": "unknown",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Application / appraisal fee",
+          "nameVi": "Phí thu thập hồ sơ, phí thẩm định",
+          "timing": "paid_upfront",
+          "mandatory": false,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Quý Khách không phải trả bất kì chi phí nào khi nộp hồ sơ vay tại TPFico.\""
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "Same FAQ answer."
+          }
+        },
+        {
+          "name": "Early settlement fee, TPFico salary-loan product (2022 notice)",
+          "nameVi": "Phí tất toán sớm (Sản phẩm vay theo lương, TPFico)",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": 7,
+            "sourceUrl": "https://tpb.vn/tin-tuc/tin-tpbank/thong-bao-cap-nhat-bieu-phi-tat-toan-khoan-vay-truoc-han-tai-tpfico",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Notice dated 26/01/2022 for loans originated from 27/01/2022: 7% in instalments 1-12, 5% in instalments 13-24, 3% from instalment 25, on the outstanding principal when the request is made. It covers \"Sản phẩm vay theo lương\" (product 01); whether it covers the current cash loan is unknown. Four years old and may be superseded. CONTRADICTS the 08/2026 TPBank schedule (3% / 1.5%)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable."
+          }
+        }
+      ],
+      "insurance": [
+        {
+          "name": "Loan insurance (Phí bảo hiểm khoản vay)",
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "The FAQ gives the premium formula but does not say whether buying it is mandatory or optional."
+          },
+          "timing": "unknown",
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Premium = insured amount x (2.5%/year / 12) x months insured; insured amount = 140% of the loan if term <= 24 months, 110% if term > 24 months. So it is not one percent of principal (7.0% of principal for 24 months, about 5.73% for 25 months, per the published examples). Source: https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico"
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Depends on amount and term. Published examples: 10,000,000 VND over 24 months gives 700,000 VND; over 25 months gives 572,917 VND. Whether it is deducted from the payout or added to the loan is not stated."
+          }
+        }
+      ],
+      "eligibility": {
+        "minAge": {
+          "value": 21,
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "\"Độ tuổi: Từ 21 – 55 tuổi tính đến hết thời điểm khoản vay được phê duyệt\" (TPFico FAQ)."
+        },
+        "maxAge": {
+          "value": 55,
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Same FAQ."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": 3000000,
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "\"Khách hàng có mức thu nhập lương từ 3 triệu/tháng\" (TPFico FAQ)."
+        },
+        "documents": {
+          "value": [
+            "CMND/CCCD",
+            "Giấy phép lái xe"
+          ],
+          "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Product page intro: \"chỉ cần CMND/CCCD và Giấy phép lái xe\" to register; further proofs may be requested but this is not stated."
+        },
+        "notes": "Vietnamese citizen living and working in Vietnam, full civil capacity, feasible loan purpose, no bad debt at TPFico or other credit institutions. TPFico hotline 1900 63 66 33."
+      },
+      "latePenalty": {
+        "value": "Phạt và bồi thường 100.000 - 250.000 VND, thu khi Bên Vay không cung cấp giấy cam kết thanh toán trong 5-9 ngày (tùy sản phẩm) kể từ khi quá hạn; có thể phải bồi thường thêm thiệt hại phát sinh.",
+        "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "Paraphrase of the TPFico FAQ. Separately, a TPBank unsecured cash-loan T&C PDF (https://tpb.vn/wps/wcm/connect/e398ad3b-c635-45fd-95a4-444dcc3613ea/BM02.+TC_%C4%90I%E1%BB%80U+KI%E1%BB%86N+%C4%90I%E1%BB%80U+KHO%E1%BA%A2N+CHO+VAY+TI%E1%BB%80N+M%E1%BA%B6T_L10.pdf, document date not shown) says interest on overdue principal is at most 150% of the in-term rate and interest on late interest is at most 10%/year. Not confirmed to apply to TPFico loans."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
+      "retrievedAt": "2026-11-01",
+      "confidence": "low",
+      "notes": "TPFico is presented on tpb.vn (\"TPBank Digital\") as a TPBank consumer-finance unit; its legal status relative to TPBank's licence was not verified here. No rate figure published. The insurance example (10,000,000 VND, 24 months, premium 700,000 VND) is a premium example only, not a loan cost example, so representativeExamples is empty."
+    }
+  ],
+  "researchNotes": "LICENSE: matches id 'tpbank' in data/licensed-institutions.json (NHTM Cổ phần, SBV list https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n). The list's licenseNumber reads 'Giấy phép số 23/GP-NHNN ngày 25/5/2026', which looks like a recent amendment number; not verified here.\nRATES: No product-level lending rate (cash loan, salary loan, overdraft) is published on any tpb.vn page that could be read; pages say rates depend on the customer profile. NOT used as product rates: (a) TPBank base lending rate for individuals (Lãi suất cơ sở KHCN, %/năm): 1 month 9.65, 3 months 11.00, 6 months 11.10, 12 months 11.20, shown on https://tpb.vn/cong-cu-tinh-toan/lai-suat (linked PDF 'Bieu LSCS danh cho KHCN_15.10.2026'). It is a benchmark, not what a borrower pays. (b) Third-party or old figures that disagree with each other: 1.6%/tháng and 70 triệu/36 tháng (VPBank comparison blog), 8.7-8.9%/năm and 300 triệu (Techcombank blog), 0.6%/tháng (tapchicongthuong.vn, undated), 1.6%/tháng and 10.8%/năm in tpb.vn 'cẩm nang' articles about 3-4 years old. Left out as unreliable.\nCONTRADICTIONS: overdraft limit 500 triệu (product body) vs 100 triệu (page title, listing page); salary loan limit 1 tỷ (product page) vs 300 triệu (listing page); early repayment fee 3% / 1.5% (TPBank schedule 08/2026, unsecured) vs 7% / 5% / 3% (TPFico notice 2022). Each is recorded with its source.\nFEE SCHEDULE: 'Phụ lục 02 - Biểu phí vay và phạt' (08/2026) was read with pdftotext; encoding is garbled but numbers are legible. Phụ lục 04 'Biểu phí dịch vụ tín dụng' and the general loan T&Cs exist on tpb.vn but were not parsed.\nNOT COVERED: credit-card installment (cards listed at https://tpb.vn/khach-hang-ca-nhan/the-tin-dung, no installment terms read), Kredivo loan, 'Vay mua hàng trả góp', ShopeePay loan, Momo Pay-later limit T&C (2021 PDF unreadable). Mortgages, car and business loans skipped by instruction.\nINSURANCE: only the TPFico loan insurance formula was found (2.5%/year on 140% or 110% of the loan). Whether it is optional or mandatory, and how it is collected, is unknown.\nMISC: tpb.vn footers say copyright 2024 while content is current (fee schedule 08/2026, deposit rate table effective 19/10/2026). Page title and body text can differ (overdraft).",
+  "retrievedAt": "2026-11-01"
+}
