@@ -10,7 +10,10 @@ import { validateLenderFile, validateLicensedList, type Issue } from "../src/lib
 const root = process.cwd();
 const listPath = join("data", "licensed-institutions.json");
 const lendersDir = join("data", "lenders");
-const today = new Date();
+// Data dates are Vietnam calendar dates (UTC+7, no DST). Use Vietnam's "today" at noon UTC
+// so a figure retrieved this morning in Hanoi isn't "in the future" by UTC.
+const vietnamDate = new Date(Date.now() + 7 * 60 * 60 * 1000).toISOString().slice(0, 10);
+const today = new Date(`${vietnamDate}T12:00:00Z`);
 
 function readJson(path: string): unknown {
   return JSON.parse(readFileSync(join(root, path), "utf8"));
