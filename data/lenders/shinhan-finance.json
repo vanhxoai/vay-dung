@@ -9,7 +9,7 @@
   "products": [
     {
       "id": "personal-unsecured-loan",
-      "nameVi": "Vay tín chấp cá nhân (Personal unsecured loan)",
+      "nameVi": "Vay tín chấp cá nhân",
       "productType": "cash_loan",
       "status": "active",
       "validUntil": null,
@@ -24,25 +24,25 @@
         "note": "Only the on-page calculator minimum; no stated product minimum."
       },
       "amountMaxVnd": {
-        "value": 500000000,
+        "value": 300000000,
         "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-        "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Hạn mức vay đến 500 triệu; also max 13x monthly income. Calculator caps at 300,000,000 and a news page says up to 300 million: inconsistent."
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Stored the LOWER figure. Product page (re-read 2026-11-02): \"Khoản vay lên đến 13 lần thu nhập hàng tháng và tối đa 500 triệu đồng\". The on-page calculator caps at 300,000,000 and a news page says up to 300 million. Also above the 100M per-customer finance-company cap (Circular 43/2016 art. 3(1)); see conflicts."
       },
       "termMinMonths": {
         "value": 12,
         "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "medium",
-        "note": "Stated 12 to 60 months, but calculator slider starts at 6 months."
+        "note": "Page: \"Thời hạn vay từ tối thiểu 12 tháng đến tối đa 60 tháng\". Calculator slider starts at 6 months; stored the stricter 12."
       },
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "medium",
-        "note": "Stated 60 months; calculator slider ends at 36; an older guide said 48."
+        "note": "Page states max 60 months; calculator slider ends at 36 and an older guide said 48. Kept 60 because the page's own worked example uses 48 months, which 36 would contradict; see conflicts."
       },
       "rates": [
         {
@@ -51,36 +51,37 @@
           "minPercent": {
             "value": 18,
             "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-            "retrievedAt": "2026-11-01",
+            "retrievedAt": "2026-11-02",
             "confidence": "high",
-            "note": "Lãi suất tối thiểu từ 18%/năm đến tối đa 49%/năm tính trên dư nợ giảm dần (phụ thuộc kết quả thẩm định)"
+            "note": "Re-read 2026-11-02: \"Lãi suất tối thiểu từ 18%/năm đến tối đa 49%/năm tính trên dư nợ giảm dần (phụ thuộc kết quả thẩm định).\""
           },
           "maxPercent": {
             "value": 49,
             "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-            "retrievedAt": "2026-11-01",
-            "confidence": "high",
-            "note": "same sentence; an older guide said max 35%/year"
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "Same sentence as the minimum. An older guide said max 35%/year; kept the higher 49 (conservative); see conflicts."
           },
           "basis": {
             "value": "reducing",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Source wording: \"tính trên dư nợ giảm dần\" (re-read 2026-11-02)."
           },
           "period": {
             "value": "yearly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Source wording: \"18%/năm đến tối đa 49%/năm\" (re-read 2026-11-02)."
           },
           "promotional": false
         }
       ],
       "amortization": {
-        "value": "unknown",
-        "provenance": "none",
-        "sourceUrl": null
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+        "note": "The page only says interest is on the declining balance and does not name a repayment method. Inferred from the worked example: a fixed 8,812,500 VND per month matches annuity maths (8,812,480)."
       },
       "fees": [],
       "feesCompleteness": "unknown",
@@ -90,24 +91,24 @@
         "minAge": {
           "value": 21,
           "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-          "retrievedAt": "2026-11-01",
+          "retrievedAt": "2026-11-02",
           "confidence": "high",
-          "note": "Age from 21"
+          "note": "\"Độ tuổi: Từ 21 tuổi đến độ tuổi nghỉ hưu theo quy định Pháp luật\""
         },
         "maxAge": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Up to statutory retirement age (salaried) or 65 (self-employed); not a single number."
+          "note": "Up to statutory retirement age (salaried) or 65 (self-employed); not a single number. See otherConditions."
         },
         "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": 4000000,
           "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-          "retrievedAt": "2026-11-01",
+          "retrievedAt": "2026-11-02",
           "confidence": "high",
-          "note": "Minimum income 4 million VND/month"
+          "note": "\"Thu nhập tối thiểu 4 triệu đồng/ tháng.\""
         },
         "incomeBasis": "unknown",
         "documents": {
@@ -130,10 +131,15 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Tuổi từ 21 đến tuổi nghỉ hưu theo quy định (thu nhập từ lương), hoặc đến 65 tuổi (thu nhập tự doanh)",
+            "Khoản vay tối đa 13 lần thu nhập hàng tháng",
+            "Công dân Việt Nam"
+          ],
+          "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Page does not say whether the age limit is checked at application or at the end of the loan."
         },
         "notes": "Vietnamese citizen."
       },
@@ -143,7 +149,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Page FAQ on late payment not retrievable; cash-loan tariff not found. Do not reuse installment tariff figures."
+          "note": "Not found for the cash loan: FAQ not retrievable and no cash-loan tariff found. Do not reuse installment tariff figures."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -168,26 +174,107 @@
           "monthlyPaymentVnd": 8812500,
           "totalRepaidVnd": null,
           "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-          "retrievedAt": "2026-11-01",
+          "retrievedAt": "2026-11-02",
           "confidence": "high",
-          "note": "Page example: 300M VND, 48 months, 18%/year reducing balance, estimated monthly principal+interest 8,812,500. Page says figures are reference only. Fees/insurance not included.",
-          "amortization": "unknown",
+          "note": "Page example (re-read 2026-11-02): \"khoản vay tín chấp 300 triệu đồng, kỳ hạn vay 48 tháng, lãi suất 18%/năm trên dư nợ giảm dần\", monthly principal+interest 8,812,500 VND. Checked: annuity formula gives about 8,812,480, so the page figure is consistent. Instalment type is our inference (not named on page). Page says figures are reference only. Fees/insurance not included.",
+          "amortization": "annuity",
           "statedAnnualRatePercent": null,
           "statedAnnualRateKind": null,
           "includesInsurance": null,
-          "internallyConsistent": null
+          "internallyConsistent": true
         }
       ],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "500,000,000 VND",
+              "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+              "note": "Product page: tối đa 500 triệu đồng (and up to 13x monthly income)."
+            },
+            {
+              "value": "300,000,000 VND",
+              "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+              "note": "On-page loan calculator cap."
+            },
+            {
+              "value": "300,000,000 VND",
+              "sourceUrl": null,
+              "note": "A news page said up to 300 million (URL not recorded)."
+            },
+            {
+              "value": "100,000,000 VND per customer per finance company",
+              "sourceUrl": null,
+              "note": "Circular 43/2016/TT-NHNN art. 3(1); see docs/research/regulations.md. The 500M and 300M figures both appear to exceed it."
+            }
+          ],
+          "resolution": "Stored 300,000,000 (the lower lender figure), confidence medium. Lawyer to confirm; app does not show amounts above 100M as achievable."
+        },
+        {
+          "field": "termMinMonths",
+          "values": [
+            {
+              "value": "12 months",
+              "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+              "note": "Product page text."
+            },
+            {
+              "value": "6 months",
+              "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+              "note": "Calculator slider starts at 6."
+            }
+          ],
+          "resolution": "Stored 12 (stricter), confidence medium."
+        },
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "60 months",
+              "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+              "note": "Product page text."
+            },
+            {
+              "value": "36 months",
+              "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+              "note": "Calculator slider ends at 36."
+            },
+            {
+              "value": "48 months",
+              "sourceUrl": null,
+              "note": "Older guide."
+            }
+          ],
+          "resolution": "Stored 60 as stated on the product page (its own 48-month example would be impossible at 36), confidence medium. Not decided; re-check with the lender."
+        },
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "49%/year",
+              "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
+              "note": "Product page."
+            },
+            {
+              "value": "35%/year",
+              "sourceUrl": null,
+              "note": "Older guide."
+            }
+          ],
+          "resolution": "Stored 49 (higher cost), confidence medium."
+        }
+      ],
       "sourceUrl": "https://shinhanfinance.com.vn/product/vay-tin-chap",
-      "retrievedAt": "2026-11-01",
+      "retrievedAt": "2026-11-02",
       "confidence": "medium",
       "excludeFromRanking": false,
-      "notes": "Fees and insurance for the cash loan are UNKNOWN: FAQ answers on service fees and early settlement could not be retrieved and no cash-loan tariff was found. Empty fees/insurance arrays mean unknown, not zero. Do not infer from the installment tariff."
+      "notes": "Fees and insurance for the cash loan are UNKNOWN: FAQ answers on service fees and early settlement could not be retrieved and no cash-loan tariff was found. Empty fees/insurance arrays mean unknown, not zero. Do not infer from the installment tariff. Cost comparisons for this product exclude fees and insurance.",
+      "nameEn": "Personal unsecured loan"
     },
     {
       "id": "consumer-installment-loan",
-      "nameVi": "Vay mua hàng tiêu dùng trả góp (Consumer installment loan)",
+      "nameVi": "Vay mua hàng tiêu dùng trả góp",
       "productType": "installment",
       "status": "active",
       "validUntil": null,
@@ -225,32 +312,66 @@
       "rates": [
         {
           "kind": "offered_range",
-          "segment": null,
+          "segment": "tùy chương trình của đối tác bán hàng",
           "minPercent": {
             "value": 0,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "high",
-            "note": "Tariff V4.3: lowest rate 0% (promotional programs)"
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "Tariff V4.3: lowest rate 0% (promotional programmes). Tariff SALES FINANCE V4.3, scanned image read visually."
           },
           "maxPercent": {
             "value": 59,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "high",
-            "note": "Tariff V4.3: highest rate 59%, on reducing principal, %/year; 365-day year"
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "Tariff V4.3: highest rate 59%, on reducing principal, %/year; 365-day year. The actual rate depends on the retailer programme, so 59% is not a typical rate. Tariff SALES FINANCE V4.3, scanned image read visually."
           },
           "basis": {
             "value": "reducing",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Tariff wording: on reducing principal (dư nợ giảm dần)."
           },
           "period": {
             "value": "yearly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Tariff wording: %/năm, 365-day year."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "advertised_floor",
+          "segment": "chương trình khuyến mại lãi suất 0% của đối tác",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "0% only in some partner promotional programmes. Tariff SALES FINANCE V4.3, scanned image read visually."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable: floor only."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "note": "Same tariff: rates are on reducing principal."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "note": "Same tariff: %/year."
           },
           "promotional": null
         }
@@ -262,37 +383,38 @@
       },
       "fees": [
         {
-          "nameVi": "Phí tất toán trước hạn: đến kỳ thanh toán thứ 13",
-          "nameEn": "Early repayment fee, from disbursement to instalment 13",
+          "nameVi": "Phí tất toán trước hạn",
+          "nameEn": "Early repayment fee (by instalment number)",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Charged when the borrower prepays (partial or full); how it is paid is not specified."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceDocumentDate": "2025-03-03",
+            "note": "Only incurred if the borrower chooses to prepay."
           },
-          "base": "unknown",
+          "base": "prepaid_amount",
           "rule": "percent_only",
           "percent": {
-            "value": 6,
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Tariff SALES FINANCE V4.3 (effective 03/03/2025), read visually from a scanned image. Stated as % of the prepaid amount (số tiền trả nợ trước hạn); applies to partial and full early settlement."
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Percent depends on the instalment number: see tiers."
           },
           "fixedVnd": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not applicable / not stated"
+            "note": "Not applicable"
           },
           "minVnd": {
             "value": null,
@@ -307,203 +429,78 @@
             "confidence": null
           },
           "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "payee": "unknown"
-        },
-        {
-          "nameVi": "Phí tất toán trước hạn: kỳ 13 đến kỳ 19",
-          "nameEn": "Early repayment fee, instalments 13 to 19",
-          "trigger": "prepayment",
-          "timing": {
-            "value": "on_event",
-            "provenance": "inferred",
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "mandatory": {
-            "value": false,
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "base": "unknown",
-          "rule": "percent_only",
-          "percent": {
-            "value": 4,
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Tariff SALES FINANCE V4.3 (effective 03/03/2025), read visually from a scanned image. Stated as % of the prepaid amount (số tiền trả nợ trước hạn); applies to partial and full early settlement."
-          },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Not applicable / not stated"
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "maxVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "payee": "unknown"
-        },
-        {
-          "nameVi": "Phí tất toán trước hạn: kỳ 19 đến kỳ 25",
-          "nameEn": "Early repayment fee, instalments 19 to 25",
-          "trigger": "prepayment",
-          "timing": {
-            "value": "on_event",
-            "provenance": "inferred",
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "mandatory": {
-            "value": false,
+            "value": [
+              {
+                "from": 0,
+                "to": 14,
+                "unit": "instalment",
+                "percent": 6,
+                "note": "Tariff: \"đến kỳ thanh toán thứ 13\"; read as up to and including instalment 13."
+              },
+              {
+                "from": 14,
+                "to": 20,
+                "unit": "instalment",
+                "percent": 4,
+                "note": "Tariff: \"kỳ 13 đến kỳ 19\"; read as instalments 14 to 19."
+              },
+              {
+                "from": 20,
+                "to": 26,
+                "unit": "instalment",
+                "percent": 3,
+                "note": "Tariff: \"kỳ 19 đến kỳ 25\"; read as instalments 20 to 25."
+              },
+              {
+                "from": 26,
+                "to": null,
+                "unit": "instalment",
+                "percent": 2,
+                "note": "Tariff: \"từ kỳ 25 trở đi\"; read as after instalment 25."
+              }
+            ],
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "base": "unknown",
-          "rule": "percent_only",
-          "percent": {
-            "value": 3,
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Tariff SALES FINANCE V4.3 (effective 03/03/2025), read visually from a scanned image. Stated as % of the prepaid amount (số tiền trả nợ trước hạn); applies to partial and full early settlement."
-          },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Not applicable / not stated"
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "maxVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "payee": "unknown"
-        },
-        {
-          "nameVi": "Phí tất toán trước hạn: từ kỳ 25 trở đi",
-          "nameEn": "Early repayment fee, after instalment 25",
-          "trigger": "prepayment",
-          "timing": {
-            "value": "on_event",
-            "provenance": "inferred",
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "mandatory": {
-            "value": false,
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "base": "unknown",
-          "rule": "percent_only",
-          "percent": {
-            "value": 2,
-            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Tariff SALES FINANCE V4.3 (effective 03/03/2025), read visually from a scanned image. Stated as % of the prepaid amount (số tiền trả nợ trước hạn); applies to partial and full early settlement."
-          },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Not applicable / not stated"
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "maxVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "sourceDocumentDate": "2025-03-03",
+            "note": "Tariff V4.3 states the bands as 13 / 13-19 / 19-25 / from 25, so they overlap at 13, 19 and 25. Stored the conservative reading (the boundary instalment gets the HIGHER fee) with from inclusive and to exclusive. Percent is of the prepaid amount (số tiền trả nợ trước hạn). Read visually from a scanned image."
           },
           "payee": "unknown"
         },
         {
           "nameVi": "Phát hành Thư xác nhận khoản vay",
           "nameEn": "Loan confirmation letter",
-          "trigger": "other",
+          "trigger": "on_request",
           "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "note": "Charged when the borrower asks for it."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service, not needed to get the loan."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not applicable / not stated"
+            "note": "Not applicable"
           },
           "fixedVnd": {
             "value": 110000,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "On-request service fee, per letter. Tariff SALES FINANCE V4.3, scanned image."
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service fee, per letter. Tariff SALES FINANCE V4.3, scanned image read visually."
           },
           "minVnd": {
             "value": null,
@@ -528,34 +525,37 @@
         {
           "nameVi": "Cung cấp Bảng chi tiết giao dịch thanh toán",
           "nameEn": "Payment transaction detail statement",
-          "trigger": "per_transaction",
+          "trigger": "on_request",
           "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "note": "Charged when the borrower asks for it."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service, not needed to get the loan."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not applicable / not stated"
+            "note": "Not applicable"
           },
           "fixedVnd": {
             "value": 55000,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "On-request service fee, per time. Tariff SALES FINANCE V4.3, scanned image."
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service fee, per time. Tariff SALES FINANCE V4.3, scanned image read visually."
           },
           "minVnd": {
             "value": null,
@@ -580,34 +580,37 @@
         {
           "nameVi": "Cung cấp bản sao Giấy chứng nhận bảo hiểm",
           "nameEn": "Copy of insurance certificate",
-          "trigger": "other",
+          "trigger": "on_request",
           "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "note": "Charged when the borrower asks for it."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service, not needed to get the loan."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not applicable / not stated"
+            "note": "Not applicable"
           },
           "fixedVnd": {
             "value": 110000,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "On-request service fee, per copy. Tariff SALES FINANCE V4.3, scanned image."
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service fee, per copy. Tariff SALES FINANCE V4.3, scanned image read visually."
           },
           "minVnd": {
             "value": null,
@@ -632,34 +635,37 @@
         {
           "nameVi": "Cung cấp bản sao Hợp đồng cho vay",
           "nameEn": "Copy of loan contract",
-          "trigger": "other",
+          "trigger": "on_request",
           "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "note": "Charged when the borrower asks for it."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service, not needed to get the loan."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not applicable / not stated"
+            "note": "Not applicable"
           },
           "fixedVnd": {
             "value": 110000,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "On-request service fee, per copy. Tariff SALES FINANCE V4.3, scanned image."
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service fee, per copy. Tariff SALES FINANCE V4.3, scanned image read visually."
           },
           "minVnd": {
             "value": null,
@@ -684,34 +690,37 @@
         {
           "nameVi": "Giao nhận tài liệu qua đường bưu điện",
           "nameEn": "Document delivery by post",
-          "trigger": "other",
+          "trigger": "on_request",
           "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+            "note": "Charged when the borrower asks for it."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service, not needed to get the loan."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not applicable / not stated"
+            "note": "Not applicable"
           },
           "fixedVnd": {
             "value": 55000,
             "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "On-request service fee, per time. Tariff SALES FINANCE V4.3, scanned image."
+            "confidence": "low",
+            "sourceDocumentDate": "2025-03-03",
+            "note": "On-request service fee, per time. Tariff SALES FINANCE V4.3, scanned image read visually."
           },
           "minVnd": {
             "value": null,
@@ -786,45 +795,100 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Phải mua hàng tại cửa hàng hoặc sàn thương mại điện tử đối tác của Shinhan Finance",
+            "Khoản vay từ 20 triệu đồng cần chứng minh thu nhập; từ 40 triệu đồng cần chứng minh nơi cư trú hiện tại"
+          ],
+          "sourceUrl": "https://shinhanfinance.com.vn/vi/vay-mua-hang-tieu-dung-tra-gop",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Salaried borrowers; self-employed give business proof instead of income proof."
         },
         "notes": "Must buy at a partner store or e-commerce site. Page says no income proof needed yet requires it from 20M: contradiction on the page."
       },
       "latePenalty": {
         "textVi": {
-          "value": "Overdue principal: 150% of the in-term interest rate (lãi suất cho vay trong hạn). Overdue interest: 10%/year. No separate fixed late fee seen.",
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn của khoản vay; tiền lãi quá hạn bị tính lãi 10%/năm. Biểu phí không ghi phí phạt trả chậm cố định riêng.",
           "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
           "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Tariff V4.3 section III, scanned image."
+          "confidence": "low",
+          "sourceDocumentDate": "2025-03-03",
+          "note": "Tariff V4.3 section III, scanned image: overdue principal 150% of in-term rate (lãi suất cho vay trong hạn); overdue interest 10%/year."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "low",
+          "sourceDocumentDate": "2025-03-03",
+          "note": "150% of the in-term rate."
         },
         "overdueInterestRatePercentYear": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 10,
+          "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "low",
+          "sourceDocumentDate": "2025-03-03",
+          "note": "10%/year on overdue interest."
         }
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "fees[0].tiers",
+          "values": [
+            {
+              "value": "6% to instalment 13; 4% for 13-19; 3% for 19-25; 2% from 25",
+              "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+              "note": "Band edges 13, 19 and 25 appear in two bands each."
+            }
+          ],
+          "resolution": "Stored non-overlapping bands where the boundary instalment takes the higher fee (conservative); confidence low. Confirm with the lender."
+        },
+        {
+          "field": "eligibility.documents",
+          "values": [
+            {
+              "value": "No income proof needed (small loans)",
+              "sourceUrl": "https://shinhanfinance.com.vn/vi/vay-mua-hang-tieu-dung-tra-gop",
+              "note": "Page headline claim."
+            },
+            {
+              "value": "Proof of income required for loans of 20M and above",
+              "sourceUrl": "https://shinhanfinance.com.vn/vi/vay-mua-hang-tieu-dung-tra-gop",
+              "note": "Page document list."
+            }
+          ],
+          "resolution": "Stored the stricter condition (income proof from 20M); confidence medium."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "Tariff V4.3 effective 03/03/2025",
+              "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+              "note": "Effective date printed in the tariff."
+            },
+            {
+              "value": "File name dated 03.06.2025 (uploaded 2025-06-05)",
+              "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
+              "note": "The 03/03 vs 03.06 difference may be a typo in the file name or a later re-issue."
+            }
+          ],
+          "resolution": "Used the printed effective date 2025-03-03 as sourceDocumentDate. Either way the document is over 12 months old, so figures are at most low."
+        }
+      ],
       "sourceUrl": "https://shinhanfinance.com.vn/vi/vay-mua-hang-tieu-dung-tra-gop",
       "retrievedAt": "2026-11-01",
-      "confidence": "medium",
-      "excludeFromRanking": false,
-      "notes": "Rate 0%-59%/year reducing balance covers all retailer programs; the actual rate depends on the program, so 59% is not a typical rate. No insurance mentioned on page or tariff. Page states no fees beyond the tariff. Point-of-sale, no online application found."
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "notes": "Rate 0%-59%/year reducing balance covers all retailer programmes; the actual rate depends on the programme, so 59% is not a typical rate. No insurance is mentioned on the page or in the tariff, but the tariff has a fee for a copy of the insurance certificate, which suggests insurance exists for some loans: insurance is UNKNOWN, not none. Page says no fees beyond the tariff. Point-of-sale, no online application found.",
+      "nameEn": "Consumer installment loan",
+      "excludeReason": "The rate (0-59%/year) depends on the retailer programme and cannot be pinned to a borrower; the tariff is over 12 months old and insurance is unknown."
     },
     {
       "id": "motorbike-installment-loan",
-      "nameVi": "Vay mua xe máy trả góp (Motorbike installment loan)",
+      "nameVi": "Vay mua xe máy trả góp",
       "productType": "installment",
       "status": "active",
       "validUntil": null,
@@ -913,10 +977,12 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Phải mua xe qua cửa hàng đối tác của Shinhan Finance"
+          ],
+          "sourceUrl": "https://shinhanfinance.com.vn/vi/vay-mua-xe-may-tra-gop",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium"
         },
         "notes": "Must buy through partner store."
       },
@@ -946,8 +1012,10 @@
       "sourceUrl": "https://shinhanfinance.com.vn/vi/vay-mua-xe-may-tra-gop",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Little data on the page; low priority for the MVP."
+      "excludeFromRanking": true,
+      "notes": "Little data on the page; low priority for the MVP.",
+      "nameEn": "Motorbike installment loan",
+      "excludeReason": "No rate or term on the product page, so a cost cannot be computed."
     },
     {
       "id": "credit-card-the-first",
@@ -1021,26 +1089,27 @@
         "value": "revolving",
         "provenance": "inferred",
         "sourceUrl": "https://shinhanfinance.com.vn/vi/product/card/the-tin-dung",
-        "note": "Set by the v1→v2 migration; confirm against the source."
+        "note": "A credit card has no fixed schedule; the page does not name a repayment method."
       },
       "fees": [
         {
           "nameVi": "Phí rút tiền mặt",
           "nameEn": "ATM cash withdrawal fee",
-          "trigger": "other",
+          "trigger": "per_transaction",
           "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://shinhanfinance.com.vn/vi/product/card/the-tin-dung",
+            "note": "Charged when cash is withdrawn."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://shinhanfinance.com.vn/vi/product/card/the-tin-dung",
             "retrievedAt": "2026-11-01",
             "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Only incurred if the cardholder withdraws cash."
           },
-          "base": "unknown",
+          "base": "transaction_amount",
           "rule": "percent_only",
           "percent": {
             "value": 2,
@@ -1089,11 +1158,11 @@
           "note": "Women 21-55, men 21-58"
         },
         "maxAge": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Differs by sex: women 55, men 58."
+          "value": 55,
+          "sourceUrl": "https://shinhanfinance.com.vn/vi/product/card/the-tin-dung",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Stricter of two limits: the page says women 55, men 58. Stored 55 so no one is told they qualify wrongly; the sex-specific rule is in otherConditions."
         },
         "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
@@ -1126,10 +1195,14 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Nữ giới: từ 21 đến 55 tuổi; nam giới: từ 21 đến 58 tuổi",
+            "Có thu nhập từ lương",
+            "Sống tại khu vực Shinhan Finance hỗ trợ (TP.HCM, Hà Nội, Đà Nẵng và một số khu vực khác)"
+          ],
+          "sourceUrl": "https://shinhanfinance.com.vn/vi/product/card/the-tin-dung",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium"
         },
         "notes": "HCMC, Hanoi, Da Nang and other supported areas; salaried."
       },
@@ -1159,10 +1232,12 @@
       "sourceUrl": "https://shinhanfinance.com.vn/vi/product/card/the-tin-dung",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Lower priority. Annual fee, late fee and revolving rate unknown."
+      "excludeFromRanking": true,
+      "notes": "Lower priority. Annual fee, late fee and revolving rate unknown.",
+      "nameEn": "The First credit card",
+      "excludeReason": "Credit limit, revolving rate and most fees are unknown, so no fair comparison with loans is possible."
     }
   ],
-  "researchNotes": "LICENSING: matched in data/licensed-institutions.json (id shinhan-finance, finance_company, licence 16/GP-NHNN dated 12/8/2022). GAPS: no cash-loan (tín chấp) tariff found; only Sales Finance tariffs (V4.3 2025 used here; V4.2 2023 at /assets/branding/Sales-Finance-v4.2-09.2023.pdf) and a 2020 Auto Loan tariff. Cash-loan fees, insurance, early repayment, late penalty and documents unknown. The tariff and basic loan terms (MS02) PDFs are scanned images; V4.3 was read visually, MS02 was not read. CONTRADICTIONS: cash loan max 500M on product page vs 300M on calculator and news; term 12-60 vs calculator 6-36 vs older guide 48; max rate 49%/year vs 35% in an older guide; installment page says no income proof but requires it from 20M. SURPRISING: V4.3 adds a 3% early-repayment tier absent from V4.2 (6/4/2%); early repayment on installment loans costs up to 6% of the prepaid amount; overdue principal rate is 150% of the in-term rate. No insurance found anywhere.",
-  "retrievedAt": "2026-11-01"
+  "researchNotes": "LICENSING: matched in data/licensed-institutions.json (id shinhan-finance, finance_company, licence 16/GP-NHNN dated 12/8/2022). GAPS: no cash-loan (tín chấp) tariff found; only Sales Finance tariffs (V4.3 2025 used here; V4.2 2023 at /assets/branding/Sales-Finance-v4.2-09.2023.pdf) and a 2020 Auto Loan tariff. Cash-loan fees, insurance, early repayment, late penalty and documents unknown. The tariff and basic loan terms (MS02) PDFs are scanned images; V4.3 was read visually, MS02 was not read. The tariff is dated 03/03/2025 (over 12 months old), so its figures are at most low confidence. CONTRADICTIONS (also in conflicts[]): cash loan max 500M on product page vs 300M on calculator and news (stored 300M), and both exceed the 100M per-customer finance-company cap in Circular 43/2016 art. 3(1) (lawyer to confirm); term 12-60 vs calculator 6-36 vs older guide 48; max rate 49%/year vs 35% in an older guide (stored 49); installment page says no income proof but requires it from 20M; installment early-repayment bands overlap at instalments 13, 19 and 25; tariff effective date 03/03/2025 vs file name 03.06.2025. SURPRISING: V4.3 adds a 3% early-repayment tier absent from V4.2 (6/4/2%); early repayment on installment loans costs up to 6% of the prepaid amount; overdue principal rate is 150% of the in-term rate; the tariff lists a fee for a copy of an insurance certificate although no insurance product is described anywhere. Installment, motorbike and credit-card products are excluded from ranking (see excludeReason). Cash-loan figures re-read on 2026-11-02; others 2026-11-01.",
+  "retrievedAt": "2026-11-02"
 }
