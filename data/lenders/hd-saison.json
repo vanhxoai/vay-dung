@@ -1,15 +1,20 @@
 {
+  "schemaVersion": 2,
   "slug": "hd-saison",
   "name": "HD SAISON",
-  "legalName": "Cong ty Tai chinh trach nhiem huu han HD SAISON",
+  "legalName": "Công ty Tài chính TNHH HD Saison",
   "licenseCategory": "finance_company",
   "licensedInstitutionId": "hd-saison",
   "website": "https://www.hdsaison.com.vn",
   "products": [
     {
       "id": "cash-loan",
-      "name": "Vay tien mat (cash loan)",
+      "nameVi": "Vay tien mat (cash loan)",
       "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "hd-saison",
+      "brandOrChannel": null,
       "online": null,
       "amountMinVnd": {
         "value": null,
@@ -39,32 +44,65 @@
         "confidence": "medium",
         "note": "Same FAQ statement, not cash-specific."
       },
-      "rate": {
-        "minPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
-        },
-        "maxPercent": {
-          "value": 4.99,
-          "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Framework ceiling, not a quoted product rate: direct cash disbursement ceiling 4.99%/month, 59.90%/year reducing (flat ceiling 2.94%/month, 35.33%/year). Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
-        },
-        "basis": "reducing",
-        "period": "monthly",
-        "promotional": null
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
+          },
+          "maxPercent": {
+            "value": 4.99,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Framework ceiling, not a quoted product rate: direct cash disbursement ceiling 4.99%/month, 59.90%/year reducing (flat ceiling 2.94%/month, 35.33%/year). Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
       },
       "fees": [
         {
-          "name": "Early repayment fee (full prepayment)",
           "nameVi": "Phi tra no truoc han",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Early repayment fee (full prepayment)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
@@ -77,14 +115,46 @@
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
             "note": "Minimum floor for cash and vehicle loans (T&C section 10), not a fixed fee."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Payment schedule change fee",
           "nameVi": "Phat thay doi ke hoach thanh toan",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Payment schedule change fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "percent_only",
+          "percent": {
             "value": 4,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
@@ -97,14 +167,46 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "Percent-based; no fixed amount."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Money transfer fee (blank field in contract form)",
           "nameVi": "Phi chuyen tien",
-          "timing": "unknown",
-          "mandatory": null,
-          "percentOfPrincipal": {
+          "nameEn": "Money transfer fee (blank field in contract form)",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "v1 had no source for this."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -117,14 +219,46 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "Not published."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Collection-point / bank payment fee",
           "nameVi": "Phi thu ho qua ngan hang/buu dien",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Collection-point / bank payment fee",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -137,12 +271,32 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "No amount published on the FAQ page."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         }
       ],
+      "feesCompleteness": "partial",
       "insurance": [
         {
-          "name": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
@@ -150,23 +304,49 @@
             "confidence": "high",
             "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
           },
-          "timing": "added_to_loan",
-          "percentOfPrincipal": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+          "collection": {
+            "value": "added_to_loan",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
           },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium amount not published on the pages read."
-          }
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium amount not published on the pages read."
+            }
+          },
+          "beneficiary": null
         }
       ],
+      "insuranceCompleteness": "partial",
       "eligibility": {
         "minAge": {
           "value": 18,
@@ -182,6 +362,7 @@
           "confidence": "high",
           "note": "Same sources (72 for travel installment). An older page snippet showed 19-60; treated as outdated."
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": null,
           "sourceUrl": null,
@@ -189,6 +370,7 @@
           "confidence": null,
           "note": "No minimum income published on any page read."
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
             "CCCD gan chip (or CMND copy plus driving licence / ho khau / marriage certificate / original vehicle registration)",
@@ -201,25 +383,63 @@
           "confidence": "medium",
           "note": "Procedure page does not split documents by product; residence/income items apply to 'some packages'."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Cash page says only a personal consumption need is required. Cash loan document set: credit application, loan T&C, insurance request form (An Tam Tai Chinh), e-service terms."
       },
       "latePenalty": {
-        "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
-        "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+        "textVi": {
+          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
+      "excludeFromRanking": false,
       "notes": "No standard rate, term options or fee table is published on the cash page; the rate is only the ceiling table. Flat ceiling for direct cash: 2.94%/month (35.33%/year). Contract form allows financing the insurance premium within the loan. No app-specific cash loan page found."
     },
     {
       "id": "motorbike-installment",
-      "name": "Tra gop xe may (motorbike installment)",
+      "nameVi": "Tra gop xe may (motorbike installment)",
       "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "hd-saison",
+      "brandOrChannel": null,
       "online": null,
       "amountMinVnd": {
         "value": null,
@@ -249,32 +469,65 @@
         "confidence": "low",
         "note": "Same."
       },
-      "rate": {
-        "minPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
-        },
-        "maxPercent": {
-          "value": 4.92,
-          "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Framework ceiling, not a quoted product rate: vehicles ceiling 4.92%/month, 59.00%/year reducing (flat ceiling 2.90%/month, 34.75%/year). Product page also advertises 0% on a featured package with no conditions. Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
-        },
-        "basis": "reducing",
-        "period": "monthly",
-        "promotional": null
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
+          },
+          "maxPercent": {
+            "value": 4.92,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Framework ceiling, not a quoted product rate: vehicles ceiling 4.92%/month, 59.00%/year reducing (flat ceiling 2.90%/month, 34.75%/year). Product page also advertises 0% on a featured package with no conditions. Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
       },
       "fees": [
         {
-          "name": "Early repayment fee (full prepayment)",
           "nameVi": "Phi tra no truoc han",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Early repayment fee (full prepayment)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
@@ -287,14 +540,46 @@
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
             "note": "Minimum floor for vehicle loans (T&C section 10)."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Payment schedule change fee",
           "nameVi": "Phat thay doi ke hoach thanh toan",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Payment schedule change fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "percent_only",
+          "percent": {
             "value": 4,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
@@ -307,14 +592,46 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "Percent-based; no fixed amount."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Collection-point / bank payment fee",
           "nameVi": "Phi thu ho qua ngan hang/buu dien",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Collection-point / bank payment fee",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -327,12 +644,32 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "No amount published on the FAQ page."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         }
       ],
+      "feesCompleteness": "partial",
       "insurance": [
         {
-          "name": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
@@ -340,23 +677,49 @@
             "confidence": "high",
             "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
           },
-          "timing": "added_to_loan",
-          "percentOfPrincipal": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+          "collection": {
+            "value": "added_to_loan",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
           },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium amount not published on the pages read."
-          }
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium amount not published on the pages read."
+            }
+          },
+          "beneficiary": null
         }
       ],
+      "insuranceCompleteness": "partial",
       "eligibility": {
         "minAge": {
           "value": 18,
@@ -372,6 +735,7 @@
           "confidence": "high",
           "note": "Same sources (72 for travel installment). An older page snippet showed 19-60; treated as outdated."
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": null,
           "sourceUrl": null,
@@ -379,6 +743,7 @@
           "confidence": null,
           "note": "No minimum income published on any page read."
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
             "CCCD gan chip (or CMND copy plus driving licence / ho khau / marriage certificate / original vehicle registration)",
@@ -391,25 +756,63 @@
           "confidence": "medium",
           "note": "Procedure page does not split documents by product; residence/income items apply to 'some packages'."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Down payment 'from 0 dong' (page). Vehicle loans need a mortgage contract and the original registration."
       },
       "latePenalty": {
-        "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
-        "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+        "textVi": {
+          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
+      "excludeFromRanking": false,
       "notes": "Secured by the financed vehicle (mortgage contract in document set). 0% promotion conditions not stated."
     },
     {
       "id": "electronics-installment",
-      "name": "Tra gop dien may (electronics/appliances installment)",
+      "nameVi": "Tra gop dien may (electronics/appliances installment)",
       "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "hd-saison",
+      "brandOrChannel": null,
       "online": null,
       "amountMinVnd": {
         "value": null,
@@ -439,32 +842,65 @@
         "confidence": "low",
         "note": "Same."
       },
-      "rate": {
-        "minPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
-        },
-        "maxPercent": {
-          "value": 4.79,
-          "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Framework ceiling, not a quoted product rate: household goods ceiling 4.79%/month, 57.50%/year reducing (flat ceiling 2.82%/month, 33.80%/year). Product page advertises 0% on a featured package with no conditions. Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
-        },
-        "basis": "reducing",
-        "period": "monthly",
-        "promotional": null
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
+          },
+          "maxPercent": {
+            "value": 4.79,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Framework ceiling, not a quoted product rate: household goods ceiling 4.79%/month, 57.50%/year reducing (flat ceiling 2.82%/month, 33.80%/year). Product page advertises 0% on a featured package with no conditions. Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
       },
       "fees": [
         {
-          "name": "Early repayment fee (full prepayment)",
           "nameVi": "Phi tra no truoc han",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Early repayment fee (full prepayment)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
@@ -477,14 +913,46 @@
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
             "note": "Minimum floor for goods loans (1,500,000 VND for certain service loans), T&C section 10."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Payment schedule change fee",
           "nameVi": "Phat thay doi ke hoach thanh toan",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Payment schedule change fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "percent_only",
+          "percent": {
             "value": 4,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
@@ -497,14 +965,46 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "Percent-based; no fixed amount."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Collection-point / bank payment fee",
           "nameVi": "Phi thu ho qua ngan hang/buu dien",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Collection-point / bank payment fee",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -517,12 +1017,32 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "No amount published on the FAQ page."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         }
       ],
+      "feesCompleteness": "partial",
       "insurance": [
         {
-          "name": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
@@ -530,23 +1050,49 @@
             "confidence": "high",
             "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
           },
-          "timing": "added_to_loan",
-          "percentOfPrincipal": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+          "collection": {
+            "value": "added_to_loan",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
           },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium amount not published on the pages read."
-          }
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium amount not published on the pages read."
+            }
+          },
+          "beneficiary": null
         }
       ],
+      "insuranceCompleteness": "partial",
       "eligibility": {
         "minAge": {
           "value": 18,
@@ -562,6 +1108,7 @@
           "confidence": "high",
           "note": "Same sources (72 for travel installment). An older page snippet showed 19-60; treated as outdated."
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": null,
           "sourceUrl": null,
@@ -569,6 +1116,7 @@
           "confidence": null,
           "note": "No minimum income published on any page read."
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
             "CCCD gan chip (or CMND copy plus driving licence / ho khau / marriage certificate / original vehicle registration)",
@@ -581,25 +1129,63 @@
           "confidence": "medium",
           "note": "Procedure page does not split documents by product; residence/income items apply to 'some packages'."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Down payment 'from 0 dong' (page). A guarantee agreement (Thoa thuan bao lanh) is listed for this product."
       },
       "latePenalty": {
-        "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 240,000 VND for goods). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
-        "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "From 2025 loan T&C; minimum penalty for goods is 240,000 VND."
+        "textVi": {
+          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 240,000 VND for goods). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "From 2025 loan T&C; minimum penalty for goods is 240,000 VND."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
+      "excludeFromRanking": false,
       "notes": "T&C selling price definition excludes registration, mandatory insurance and admin costs."
     },
     {
       "id": "union-worker-loan",
-      "name": "Vay doan vien - cong nhan (union member / worker loan)",
+      "nameVi": "Vay doan vien - cong nhan (union member / worker loan)",
       "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "hd-saison",
+      "brandOrChannel": null,
       "online": null,
       "amountMinVnd": {
         "value": 12000000,
@@ -629,32 +1215,33 @@
         "confidence": "medium",
         "note": "Same."
       },
-      "rate": {
-        "minPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Rate not stated on the product page."
-        },
-        "maxPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Rate not stated; page only links to the framework page."
-        },
-        "basis": "unknown",
-        "period": "unknown",
-        "promotional": null
+      "rates": [],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
       },
       "fees": [
         {
-          "name": "Early repayment fee (full prepayment)",
           "nameVi": "Phi tra no truoc han",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Early repayment fee (full prepayment)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
@@ -667,12 +1254,32 @@
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
             "note": "General loan T&C minimum for cash loans; product page does not restate it."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         }
       ],
+      "feesCompleteness": "partial",
       "insurance": [
         {
-          "name": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
@@ -680,23 +1287,49 @@
             "confidence": "high",
             "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
           },
-          "timing": "added_to_loan",
-          "percentOfPrincipal": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+          "collection": {
+            "value": "added_to_loan",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
+            "note": "Set by the v1→v2 migration; confirm against the source."
           },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium amount not published on the pages read."
-          }
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium amount not published on the pages read."
+            }
+          },
+          "beneficiary": null
         }
       ],
+      "insuranceCompleteness": "partial",
       "eligibility": {
         "minAge": {
           "value": 18,
@@ -712,6 +1345,7 @@
           "confidence": "medium",
           "note": "Same."
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": null,
           "sourceUrl": null,
@@ -719,6 +1353,7 @@
           "confidence": null,
           "note": "Not published."
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
             "Union members on the 'Cho Tet Cong doan 2024' list: CCCD only",
@@ -729,25 +1364,63 @@
           "confidence": "medium",
           "note": "Campaign-specific, may be expired."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Each approved loan includes a credit card with 5,000,000 VND limit, up to 45 days interest-free. A monthly payment hint 'from 1.316k' appears with garbled asterisks."
       },
       "latePenalty": {
-        "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
-        "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+        "textVi": {
+          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
+      "excludeFromRanking": false,
       "notes": "Campaign-style product; currency of the offer not confirmed. No rate or example published, so the monthly payment hint was not turned into an example."
     },
     {
       "id": "credit-card-visa",
-      "name": "The tin dung quoc te HD SAISON VISA (credit card)",
+      "nameVi": "The tin dung quoc te HD SAISON VISA (credit card)",
       "productType": "credit_card",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "hd-saison",
+      "brandOrChannel": null,
       "online": null,
       "amountMinVnd": {
         "value": null,
@@ -777,27 +1450,17 @@
         "confidence": null,
         "note": "Not applicable / not published."
       },
-      "rate": {
-        "minPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Card interest rate is in a separate fee schedule PDF, not read."
-        },
-        "maxPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Same."
-        },
-        "basis": "unknown",
-        "period": "unknown",
-        "promotional": null
+      "rates": [],
+      "amortization": {
+        "value": "revolving",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.hdsaison.com.vn/vn/gioi-thieu-the-tin-dung-hd-saison.html",
+        "note": "Set by the v1→v2 migration; confirm against the source."
       },
       "fees": [],
+      "feesCompleteness": "unknown",
       "insurance": [],
+      "insuranceCompleteness": "unknown",
       "eligibility": {
         "minAge": {
           "value": 18,
@@ -813,6 +1476,7 @@
           "confidence": null,
           "note": "Not stated."
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": null,
           "sourceUrl": null,
@@ -820,6 +1484,7 @@
           "confidence": null,
           "note": "Not stated."
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": null,
           "sourceUrl": null,
@@ -827,19 +1492,53 @@
           "confidence": null,
           "note": "Not read."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Interest-free up to 45 days on purchases; installments at 0%; cash withdrawal capped at 50% of limit; free issuance."
       },
       "latePenalty": {
-        "value": null,
-        "sourceUrl": null,
-        "retrievedAt": null,
-        "confidence": null,
-        "note": "Not on the card page. A card fee schedule PDF (applied from 09/06/2023) exists at https://www.hdsaison.com.vn/vnt_upload/File/06_2023/20230607_Bieu_phi_lai_suat_the_tin_dung_ap_dung_09062023.pdf but was not read directly; a search summary reported 2.8% of balance (min 90,000 VND), unverified."
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not on the card page. A card fee schedule PDF (applied from 09/06/2023) exists at https://www.hdsaison.com.vn/vnt_upload/File/06_2023/20230607_Bieu_phi_lai_suat_the_tin_dung_ap_dung_09062023.pdf but was not read directly; a search summary reported 2.8% of balance (min 90,000 VND), unverified."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/gioi-thieu-the-tin-dung-hd-saison.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
+      "excludeFromRanking": false,
       "notes": "Lower priority; fee schedule PDF not read, so figures left null."
     }
   ],

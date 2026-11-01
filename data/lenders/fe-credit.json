@@ -1,16 +1,21 @@
 {
+  "schemaVersion": 2,
   "slug": "fe-credit",
   "name": "FE Credit",
-  "legalName": "Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh Vượng SMBC (VPB SMBC FC)",
+  "legalName": "Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh Vượng SMBC",
   "licenseCategory": "finance_company",
   "licensedInstitutionId": "fe-credit",
   "website": "https://www.fecredit.com.vn",
   "products": [
     {
-      "online": true,
       "id": "tien-mat-linh-hoat",
-      "name": "Tiền mặt linh hoạt (cash loan, FE ONLINE app)",
+      "nameVi": "Tiền mặt linh hoạt (cash loan, FE ONLINE app)",
       "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "fe-credit",
+      "brandOrChannel": null,
+      "online": true,
       "amountMinVnd": {
         "value": 3000000,
         "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
@@ -39,32 +44,63 @@
         "confidence": "low",
         "note": "CONFLICT: FAQ says 6-36 months; calculator slider shows 3-60 months. FAQ value used."
       },
-      "rate": {
-        "minPercent": {
-          "value": 1.41,
-          "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "'Lãi suất dao động từ 1.41% đến 3.86%/tháng'; may change by period."
-        },
-        "maxPercent": {
-          "value": 3.86,
-          "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Same sentence."
-        },
-        "basis": "unknown",
-        "period": "monthly",
-        "promotional": null
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": 1.41,
+            "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "'Lãi suất dao động từ 1.41% đến 3.86%/tháng'; may change by period."
+          },
+          "maxPercent": {
+            "value": 3.86,
+            "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Same sentence."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
       },
       "fees": [
         {
-          "name": "Application fee",
           "nameVi": "Phí làm hồ sơ",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Application fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": 0,
             "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
             "retrievedAt": "2026-11-01",
@@ -77,14 +113,47 @@
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
             "note": "Same statement: application is free."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Early repayment fee",
           "nameVi": "Phí tất toán trước hạn",
-          "timing": "unknown",
-          "mandatory": null,
-          "percentOfPrincipal": {
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "v1 had no source for this."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -97,14 +166,47 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "Not published as an amount on the product page or T&C; the T&C (effective 14/08/2026) says an early-repayment fee exists (clause 6.2.4: charged on remaining principal) but the rate is not stated. Customers are told to call the hotline."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Late payment fee",
           "nameVi": "Phí phạt chậm trả",
-          "timing": "unknown",
-          "mandatory": null,
-          "percentOfPrincipal": {
+          "nameEn": "Late payment fee",
+          "trigger": "late_payment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "v1 had no source for this."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -117,12 +219,32 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "No amount published on the product page."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         }
       ],
+      "feesCompleteness": "partial",
       "insurance": [
         {
-          "name": "Credit health insurance (Bao hiem tin dung suc khoe)",
+          "nameVi": "Credit health insurance (Bao hiem tin dung suc khoe)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
@@ -130,23 +252,48 @@
             "confidence": "medium",
             "note": "Page says the customer agrees to 'Bảo hiểm tín dụng' during registration (optional). Insurer cannot be chosen by the borrower."
           },
-          "timing": "unknown",
-          "percentOfPrincipal": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium is computed as a ratio x disbursed amount; ratio not published. Page says premium paid at disbursement; T&C clauses 1.4 and 2.4 say a loan can finance the premium (FE pays insurer directly, interest accrues on it), so whether it is deducted or added to the loan is unclear."
+          "collection": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
           },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium amount not published."
-          }
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium is computed as a ratio x disbursed amount; ratio not published. Page says premium paid at disbursement; T&C clauses 1.4 and 2.4 say a loan can finance the premium (FE pays insurer directly, interest accrues on it), so whether it is deducted or added to the loan is unclear."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium amount not published."
+            }
+          },
+          "beneficiary": null
         }
       ],
+      "insuranceCompleteness": "partial",
       "eligibility": {
         "minAge": {
           "value": 20,
@@ -161,6 +308,7 @@
           "retrievedAt": "2026-11-01",
           "confidence": "medium"
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": 3000000,
           "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
@@ -168,6 +316,7 @@
           "confidence": "medium",
           "note": "'3 triệu đồng/tháng'."
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
             "CCCD/Thẻ Căn cước chính chủ còn hiệu lực"
@@ -177,14 +326,46 @@
           "confidence": "medium",
           "note": "Extra documents may be needed for higher limits; not specified."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Vietnamese citizen. Debt group 3+ customers described as very hard to approve."
       },
       "latePenalty": {
-        "value": "Late payment fees apply but the amount is not published. T&C 4.3 (effective 14/08/2026): overdue interest on principal at the agreed rate; late-interest on overdue interest at the agreed rate but not above 10%/year; interest on overdue principal not above 150% of the in-term rate; clause 9.3.2: 8% penalty on the value of the breached obligation for non-payment breaches.",
-        "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Combines product-page statement and T&C PDF. Fee amount for 'phí phạt chậm trả' unknown."
+        "textVi": {
+          "value": "Late payment fees apply but the amount is not published. T&C 4.3 (effective 14/08/2026): overdue interest on principal at the agreed rate; late-interest on overdue interest at the agreed rate but not above 10%/year; interest on overdue principal not above 150% of the in-term rate; clause 9.3.2: 8% penalty on the value of the breached obligation for non-payment breaches.",
+          "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Combines product-page statement and T&C PDF. Fee amount for 'phí phạt chậm trả' unknown."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [
         {
@@ -195,23 +376,33 @@
           "ratePeriod": "monthly",
           "monthlyPaymentVnd": 974000,
           "totalRepaidVnd": 11692000,
-          "statedApr": 16.92,
           "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "Page example: 10M, 12 months, 1.41%/month ('16.92%/năm'), 974,000/month, total 11,692,000. 16.92 = 1.41 x 12 is a nominal figure, NOT an effective APR. Figures are consistent with flat interest on original principal (10M/12 + 1.41% x 10M = 974,333), but the page does not say so, and T&C 4.2/4.5 say interest accrues daily on actual outstanding principal and a converted rate is for reference only. Basis left unknown."
+          "note": "Page example: 10M, 12 months, 1.41%/month ('16.92%/năm'), 974,000/month, total 11,692,000. 16.92 = 1.41 x 12 is a nominal figure, NOT an effective APR. Figures are consistent with flat interest on original principal (10M/12 + 1.41% x 10M = 974,333), but the page does not say so, and T&C 4.2/4.5 say interest accrues daily on actual outstanding principal and a converted rate is for reference only. Basis left unknown.",
+          "amortization": "unknown",
+          "statedAnnualRatePercent": 16.92,
+          "statedAnnualRateKind": "unknown",
+          "includesInsurance": null,
+          "internallyConsistent": null
         }
       ],
+      "conflicts": [],
       "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
       "retrievedAt": "2026-11-01",
       "confidence": "medium",
+      "excludeFromRanking": false,
       "notes": "Calculator shows a monthly payment of '19.000.000 VND' next to '6.129 VND/ngày' (inconsistent; likely page bug, ignored). The $NAP app name could not be verified on any official page; FE ONLINE / FE ONLINE 2.0 is the app named on official pages."
     },
     {
-      "online": false,
       "id": "vay-mua-xe-may",
-      "name": "Vay mua xe máy (motorbike installment)",
+      "nameVi": "Vay mua xe máy (motorbike installment)",
       "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "fe-credit",
+      "brandOrChannel": null,
+      "online": false,
       "amountMinVnd": {
         "value": 3000000,
         "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
@@ -239,32 +430,65 @@
         "retrievedAt": "2026-11-01",
         "confidence": "high"
       },
-      "rate": {
-        "minPercent": {
-          "value": 0,
-          "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "'0% - 5.7%/tháng' depending on item value and credit profile; the 0% end is likely promotional."
-        },
-        "maxPercent": {
-          "value": 5.7,
-          "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Same sentence."
-        },
-        "basis": "flat",
-        "period": "monthly",
-        "promotional": null
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "'0% - 5.7%/tháng' depending on item value and credit profile; the 0% end is likely promotional."
+          },
+          "maxPercent": {
+            "value": 5.7,
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Same sentence."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "flat",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+        "note": "Set by the v1→v2 migration; confirm against the source."
       },
       "fees": [
         {
-          "name": "Application fee",
           "nameVi": "Phí làm hồ sơ",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Application fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": 0,
             "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
             "retrievedAt": "2026-11-01",
@@ -277,14 +501,47 @@
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
             "note": "Same statement: application is free."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Early repayment fee",
           "nameVi": "Phí tất toán trước hạn",
-          "timing": "unknown",
-          "mandatory": null,
-          "percentOfPrincipal": {
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "v1 had no source for this."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -297,14 +554,47 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "Not published as an amount on the product page or T&C; the T&C (effective 14/08/2026) says an early-repayment fee exists (clause 6.2.4: charged on remaining principal) but the rate is not stated. Customers are told to call the hotline."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Late payment fee",
           "nameVi": "Phí phạt chậm trả",
-          "timing": "unknown",
-          "mandatory": null,
-          "percentOfPrincipal": {
+          "nameEn": "Late payment fee",
+          "trigger": "late_payment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "v1 had no source for this."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -317,12 +607,32 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "No amount published on the product page."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         }
       ],
+      "feesCompleteness": "partial",
       "insurance": [
         {
-          "name": "Credit health insurance (Bao hiem tin dung suc khoe)",
+          "nameVi": "Credit health insurance (Bao hiem tin dung suc khoe)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
@@ -330,23 +640,48 @@
             "confidence": "medium",
             "note": "Page says the customer agrees to 'Bảo hiểm tín dụng' during registration (optional). Insurer cannot be chosen by the borrower."
           },
-          "timing": "unknown",
-          "percentOfPrincipal": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium is computed as a ratio x disbursed amount; ratio not published. Page says premium paid at disbursement; T&C clauses 1.4 and 2.4 say a loan can finance the premium (FE pays insurer directly, interest accrues on it), so whether it is deducted or added to the loan is unclear."
+          "collection": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
           },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium amount not published."
-          }
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium is computed as a ratio x disbursed amount; ratio not published. Page says premium paid at disbursement; T&C clauses 1.4 and 2.4 say a loan can finance the premium (FE pays insurer directly, interest accrues on it), so whether it is deducted or added to the loan is unclear."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium amount not published."
+            }
+          },
+          "beneficiary": null
         }
       ],
+      "insuranceCompleteness": "partial",
       "eligibility": {
         "minAge": {
           "value": 20,
@@ -360,12 +695,14 @@
           "retrievedAt": "2026-11-01",
           "confidence": "medium"
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": 3000000,
           "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
           "retrievedAt": "2026-11-01",
           "confidence": "medium"
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
             "CMND/CCCD/CC; other documents may be required depending on product"
@@ -375,26 +712,64 @@
           "confidence": "low",
           "note": "Document wording ambiguous."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Vietnamese citizen. Online registration said to be not ready; apply at partner stores."
       },
       "latePenalty": {
-        "value": "Late payment fees apply but the amount is not published. T&C 4.3 (effective 14/08/2026): overdue interest on principal at the agreed rate; late-interest on overdue interest at the agreed rate but not above 10%/year; interest on overdue principal not above 150% of the in-term rate; clause 9.3.2: 8% penalty on the value of the breached obligation for non-payment breaches.",
-        "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Combines product-page statement and T&C PDF. Fee amount for 'phí phạt chậm trả' unknown."
+        "textVi": {
+          "value": "Late payment fees apply but the amount is not published. T&C 4.3 (effective 14/08/2026): overdue interest on principal at the agreed rate; late-interest on overdue interest at the agreed rate but not above 10%/year; interest on overdue principal not above 150% of the in-term rate; clause 9.3.2: 8% penalty on the value of the breached obligation for non-payment breaches.",
+          "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Combines product-page statement and T&C PDF. Fee amount for 'phí phạt chậm trả' unknown."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
       "retrievedAt": "2026-11-01",
       "confidence": "medium",
+      "excludeFromRanking": false,
       "notes": "Basis flat taken from page wording: interest is calculated on dư nợ ban đầu and fixed for the term. Conflicts with generic T&C (4.2/4.5: daily interest on actual outstanding principal, converted rate for reference only). Verify against a real contract schedule."
     },
     {
-      "online": false,
       "id": "vay-mua-dien-thoai-dien-may",
-      "name": "Vay mua điện thoại - điện máy (phone/electronics installment)",
+      "nameVi": "Vay mua điện thoại - điện máy (phone/electronics installment)",
       "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "fe-credit",
+      "brandOrChannel": null,
+      "online": false,
       "amountMinVnd": {
         "value": 1000000,
         "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
@@ -422,32 +797,65 @@
         "retrievedAt": "2026-11-01",
         "confidence": "high"
       },
-      "rate": {
-        "minPercent": {
-          "value": 0,
-          "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "FAQ: 0% - 2.69% một tháng. CONFLICT: calculator footnote says 1.41%-3.86%/tháng."
-        },
-        "maxPercent": {
-          "value": 2.69,
-          "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "FAQ 2.69% conflicts with calculator footnote 3.86% (which matches the cash-loan page)."
-        },
-        "basis": "flat",
-        "period": "monthly",
-        "promotional": null
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "FAQ: 0% - 2.69% một tháng. CONFLICT: calculator footnote says 1.41%-3.86%/tháng."
+          },
+          "maxPercent": {
+            "value": 2.69,
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "FAQ 2.69% conflicts with calculator footnote 3.86% (which matches the cash-loan page)."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "flat",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+        "note": "Set by the v1→v2 migration; confirm against the source."
       },
       "fees": [
         {
-          "name": "Application fee",
           "nameVi": "Phí làm hồ sơ",
-          "timing": "unknown",
-          "mandatory": false,
-          "percentOfPrincipal": {
+          "nameEn": "Application fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": 0,
             "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
             "retrievedAt": "2026-11-01",
@@ -460,14 +868,47 @@
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
             "note": "Same statement: application is free."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Early repayment fee",
           "nameVi": "Phí tất toán trước hạn",
-          "timing": "unknown",
-          "mandatory": null,
-          "percentOfPrincipal": {
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "v1 had no source for this."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -480,14 +921,47 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "Not published as an amount on the product page or T&C; the T&C (effective 14/08/2026) says an early-repayment fee exists (clause 6.2.4: charged on remaining principal) but the rate is not stated. Customers are told to call the hotline."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         },
         {
-          "name": "Late payment fee",
           "nameVi": "Phí phạt chậm trả",
-          "timing": "unknown",
-          "mandatory": null,
-          "percentOfPrincipal": {
+          "nameEn": "Late payment fee",
+          "trigger": "late_payment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
+            "note": "Set by the v1→v2 migration; confirm against the source."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "v1 had no source for this."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
@@ -500,12 +974,32 @@
             "retrievedAt": null,
             "confidence": null,
             "note": "No amount published on the product page."
-          }
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
         }
       ],
+      "feesCompleteness": "partial",
       "insurance": [
         {
-          "name": "Credit health insurance (Bao hiem tin dung suc khoe)",
+          "nameVi": "Credit health insurance (Bao hiem tin dung suc khoe)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
@@ -513,23 +1007,48 @@
             "confidence": "medium",
             "note": "Page says the customer agrees to 'Bảo hiểm tín dụng' during registration (optional). Insurer cannot be chosen by the borrower."
           },
-          "timing": "unknown",
-          "percentOfPrincipal": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium is computed as a ratio x disbursed amount; ratio not published. Page says premium paid at disbursement; T&C clauses 1.4 and 2.4 say a loan can finance the premium (FE pays insurer directly, interest accrues on it), so whether it is deducted or added to the loan is unclear."
+          "collection": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
           },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Premium amount not published."
-          }
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium is computed as a ratio x disbursed amount; ratio not published. Page says premium paid at disbursement; T&C clauses 1.4 and 2.4 say a loan can finance the premium (FE pays insurer directly, interest accrues on it), so whether it is deducted or added to the loan is unclear."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium amount not published."
+            }
+          },
+          "beneficiary": null
         }
       ],
+      "insuranceCompleteness": "partial",
       "eligibility": {
         "minAge": {
           "value": 19,
@@ -543,12 +1062,14 @@
           "retrievedAt": "2026-11-01",
           "confidence": "medium"
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": 3000000,
           "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
           "retrievedAt": "2026-11-01",
           "confidence": "medium"
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
             "CCCD/Thẻ Căn cước chính chủ còn hiệu lực"
@@ -558,26 +1079,64 @@
           "confidence": "medium",
           "note": "An older FAQ block lists CMND/household registration/driver's license instead."
         },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
         "notes": "Vietnamese citizen with full civil capacity. Online registration not ready; apply at partner stores."
       },
       "latePenalty": {
-        "value": "Late payment fees apply but the amount is not published. T&C 4.3 (effective 14/08/2026): overdue interest on principal at the agreed rate; late-interest on overdue interest at the agreed rate but not above 10%/year; interest on overdue principal not above 150% of the in-term rate; clause 9.3.2: 8% penalty on the value of the breached obligation for non-payment breaches.",
-        "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Combines product-page statement and T&C PDF. Fee amount for 'phí phạt chậm trả' unknown."
+        "textVi": {
+          "value": "Late payment fees apply but the amount is not published. T&C 4.3 (effective 14/08/2026): overdue interest on principal at the agreed rate; late-interest on overdue interest at the agreed rate but not above 10%/year; interest on overdue principal not above 150% of the in-term rate; clause 9.3.2: 8% penalty on the value of the breached obligation for non-payment breaches.",
+          "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Combines product-page statement and T&C PDF. Fee amount for 'phí phạt chậm trả' unknown."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
+      "excludeFromRanking": false,
       "notes": "Flat basis from wording 'dư nợ ban đầu và cố định'; same T&C caveat as motorbike loan. Rate range conflicts within the page."
     },
     {
-      "online": false,
       "id": "the-tin-dung",
-      "name": "Thẻ tín dụng (JCB Plus, Mastercard Góp Dễ, MasterCard Plus)",
+      "nameVi": "Thẻ tín dụng (JCB Plus, Mastercard Góp Dễ, MasterCard Plus)",
       "productType": "credit_card",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "fe-credit",
+      "brandOrChannel": null,
+      "online": false,
       "amountMinVnd": {
         "value": null,
         "sourceUrl": null,
@@ -606,27 +1165,17 @@
         "confidence": null,
         "note": "Not applicable / not published."
       },
-      "rate": {
-        "minPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Only promotional installment 'từ 0%' and Mastercard Góp Dễ '0% trọn đời' shown; no standard card interest rate read."
-        },
-        "maxPercent": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Not published on the list page; see per-card biểu phí pages."
-        },
-        "basis": "unknown",
-        "period": "unknown",
-        "promotional": null
+      "rates": [],
+      "amortization": {
+        "value": "revolving",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.fecredit.com.vn/the-tin-dung/",
+        "note": "Set by the v1→v2 migration; confirm against the source."
       },
       "fees": [],
+      "feesCompleteness": "unknown",
       "insurance": [],
+      "insuranceCompleteness": "unknown",
       "eligibility": {
         "minAge": {
           "value": null,
@@ -642,6 +1191,7 @@
           "confidence": null,
           "note": "Not on list page."
         },
+        "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": null,
           "sourceUrl": null,
@@ -649,28 +1199,63 @@
           "confidence": null,
           "note": "Not on list page."
         },
+        "incomeBasis": "unknown",
         "documents": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
           "note": "Only the CCCD number is requested in the interest form."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
         }
       },
       "latePenalty": {
-        "value": null,
-        "sourceUrl": null,
-        "retrievedAt": null,
-        "confidence": null,
-        "note": "Not stated on the list page."
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the list page."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
       },
       "representativeExamples": [],
+      "conflicts": [],
       "sourceUrl": "https://www.fecredit.com.vn/the-tin-dung/",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
+      "excludeFromRanking": false,
       "notes": "Low priority, not researched in depth. Per-card fee schedules exist at /the-tin-dung/jcb-plus/?chi-tiet=bieu-phi, /the-tin-dung/mastercard-gop-de/?chi-tiet=bieu-phi, /the-tin-dung/mastercard-plus/?chi-tiet=bieu-phi (not read). Online registration not ready."
     }
   ],
-  "retrievedAt": "2026-11-01",
-  "researchNotes": "1) data/licensed-institutions.json did NOT exist in the repo when this was written, so licensing was NOT checked against it; legal name comes from the lender's own T&C PDF. Must be verified against the SBV list. 2) No loan fee schedule (biểu phí) or rate table is published for cash/installment loans; only credit cards have per-card biểu phí pages (not read). Early-repayment and late fees have no published amounts. 3) Rate basis: motorbike/phone FAQs say interest is on dư nợ ban đầu (flat), but T&C 4.2/4.5 (effective 14/08/2026) say interest accrues daily on actual outstanding principal (365-day year) and the converted rate is for reference only. The cash-loan page never states basis; its worked example matches flat arithmetic. Unverified. 4) Cash loan term conflict (6-36 FAQ vs 3-60 calculator); phone loan rate conflict (0-2.69 vs 1.41-3.86). 5) Calculator shows 19.000.000 VND monthly (page bug). 6) Insurance is stated optional but premium ratio unpublished and timing (deducted vs financed) unclear. 7) Other products not captured: FE Paylater (Mua trước trả sau, 0% up to 45 days, age 20-60, income 3M; fee PDF not read), B@W. 8) $NAP app not found on official pages. 9) Only first 100,000 of about 280,000 characters of each product page were read. Third-party articles gave different rates (e.g. 2.17-2.83%/month) and were not used."
+  "researchNotes": "1) data/licensed-institutions.json did NOT exist in the repo when this was written, so licensing was NOT checked against it; legal name comes from the lender's own T&C PDF. Must be verified against the SBV list. 2) No loan fee schedule (biểu phí) or rate table is published for cash/installment loans; only credit cards have per-card biểu phí pages (not read). Early-repayment and late fees have no published amounts. 3) Rate basis: motorbike/phone FAQs say interest is on dư nợ ban đầu (flat), but T&C 4.2/4.5 (effective 14/08/2026) say interest accrues daily on actual outstanding principal (365-day year) and the converted rate is for reference only. The cash-loan page never states basis; its worked example matches flat arithmetic. Unverified. 4) Cash loan term conflict (6-36 FAQ vs 3-60 calculator); phone loan rate conflict (0-2.69 vs 1.41-3.86). 5) Calculator shows 19.000.000 VND monthly (page bug). 6) Insurance is stated optional but premium ratio unpublished and timing (deducted vs financed) unclear. 7) Other products not captured: FE Paylater (Mua trước trả sau, 0% up to 45 days, age 20-60, income 3M; fee PDF not read), B@W. 8) $NAP app not found on official pages. 9) Only first 100,000 of about 280,000 characters of each product page were read. Third-party articles gave different rates (e.g. 2.17-2.83%/month) and were not used.",
+  "retrievedAt": "2026-11-01"
 }

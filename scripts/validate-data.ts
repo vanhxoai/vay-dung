@@ -22,7 +22,7 @@ let list;
 if (!existsSync(join(root, listPath))) {
   issues.push({ level: "error", file: listPath, message: "file is missing" });
 } else {
-  const r = validateLicensedList(listPath, readJson(listPath));
+  const r = validateLicensedList(listPath, readJson(listPath), today);
   list = r.list;
   issues.push(...r.issues);
 }
