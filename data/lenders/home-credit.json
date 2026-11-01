@@ -9,7 +9,7 @@
   "products": [
     {
       "id": "cash-loan",
-      "nameVi": "Vay tiền mặt (Home Credit cash loan)",
+      "nameVi": "Vay tiền online nhanh",
       "productType": "cash_loan",
       "status": "active",
       "validUntil": null,
@@ -19,65 +19,134 @@
       "amountMinVnd": {
         "value": 3000000,
         "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "high",
         "note": "Page: \"Hạn mức vay nhanh: 3 triệu - 250 triệu đồng\""
       },
       "amountMaxVnd": {
         "value": 250000000,
         "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-        "retrievedAt": "2026-11-01",
-        "confidence": "high"
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: \"Hạn mức vay nhanh: 3 triệu - 250 triệu đồng\". Conflicts with the 100M cap for finance companies (see conflicts). Confidence lowered from high because of that conflict."
       },
       "termMinMonths": {
         "value": 3,
         "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "high",
         "note": "Page: \"Kỳ hạn trả góp: 3 - 57 tháng\""
       },
       "termMaxMonths": {
         "value": 57,
         "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "high"
       },
       "rates": [
         {
           "kind": "offered_range",
-          "segment": null,
+          "segment": "Khách hàng mới",
           "minPercent": {
             "value": 45,
             "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "high",
-            "note": "Official rate-disclosure sheet effective 21/07/2026, row \"Khách hàng mới\" (new customers): 45% minimum, 55% maximum, column \"LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/ NĂM\". Existing customers: 16,22% to 49,50%/year (not used: target is new borrowers). Specific rate depends on the customer meeting Home Credit conditions. CONTRADICTS the product page, which says \"từ 0,75%/tháng (tính theo dư nợ giảm dần)\" = 9%/year."
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-07-21",
+            "note": "Rate-disclosure sheet effective 21/07/2026 (a single scanned image inside the PDF, read visually, hence medium). Column \"LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/ NĂM\". Specific rate depends on the customer meeting Home Credit conditions. Row \"Khách hàng mới\" (new customers): 45% minimum."
           },
           "maxPercent": {
             "value": 55,
             "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "high"
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-07-21",
+            "note": "Row \"Khách hàng mới\": 55% maximum."
           },
           "basis": {
             "value": "reducing",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Column heading \"LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/ NĂM\" (reducing balance)"
           },
           "period": {
             "value": "yearly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Column heading \"…/ NĂM\" (per year)"
           },
           "promotional": false
+        },
+        {
+          "kind": "offered_range",
+          "segment": "Khách hàng hiện hữu",
+          "minPercent": {
+            "value": 16.22,
+            "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-07-21",
+            "note": "Rate-disclosure sheet effective 21/07/2026 (a single scanned image inside the PDF, read visually, hence medium). Column \"LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/ NĂM\". Specific rate depends on the customer meeting Home Credit conditions. Row for existing customers (khách hàng hiện hữu): 16,22% minimum."
+          },
+          "maxPercent": {
+            "value": 49.5,
+            "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-07-21",
+            "note": "Existing customers: 49,50% maximum."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
+            "note": "Column heading \"LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/ NĂM\" (reducing balance)"
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
+            "note": "Column heading \"…/ NĂM\" (per year)"
+          },
+          "promotional": false
+        },
+        {
+          "kind": "advertised_floor",
+          "segment": null,
+          "minPercent": {
+            "value": 0.75,
+            "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Page: \"Lãi thấp, từ 0,75% /tháng (tính theo dư nợ giảm dần)\" = 9%/year. The page calls its example an illustration at the best rate. About one-fifth of the official new-customer minimum (45%/year); see conflicts. Not used for the borrower's cost."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum on the product page"
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+            "note": "Page: \"tính theo dư nợ giảm dần\""
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+            "note": "Page: \"/tháng\""
+          },
+          "promotional": null
         }
       ],
       "amortization": {
-        "value": "unknown",
-        "provenance": "none",
-        "sourceUrl": null
+        "value": "equal_principal",
+        "provenance": "inferred",
+        "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+        "note": "Inferred from the page's worked example: principal is 1,667,000 VND every month (20,000,000 / 12) and interest falls each month (150,000 first month, 12,500 last). The page does not name the repayment method."
       },
       "fees": [
         {
@@ -94,9 +163,9 @@
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Page says \"Miễn phí hồ sơ\", so no fee is charged; whether any fee is mandatory is not stated."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
@@ -108,9 +177,9 @@
           "fixedVnd": {
             "value": 0,
             "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-            "retrievedAt": "2026-11-01",
+            "retrievedAt": "2026-11-02",
             "confidence": "medium",
-            "note": "Page says \"Miễn phí hồ sơ\""
+            "note": "Page: \"Miễn phí hồ sơ\" (free application). Marketing page, not the fee schedule, so medium."
           },
           "minVnd": {
             "value": null,
@@ -146,9 +215,9 @@
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Not stated whether it is mandatory."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
@@ -162,7 +231,8 @@
             "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "Rate sheet 'CÁC LOẠI PHÍ' has one merged cell listing 'Phí chuyển tiền' and 'Phí trả nợ trước thời hạn' with '11.000 đ' and 'Theo quy định của hợp đồng tín dụng'. Mapping 11,000 to the transfer fee is our reading of the layout. When it is charged (deducted or added) is not stated."
+            "sourceDocumentDate": "2026-07-21",
+            "note": "Rate sheet 'CÁC LOẠI PHÍ' has one merged cell next to both 'Phí chuyển tiền' and 'Phí trả nợ trước thời hạn' with '11.000 đ' and 'Theo quy định của hợp đồng tín dụng'. Mapping 11,000 to the transfer fee is our reading of the layout; it could belong to another row. When it is charged (deducted or added) is not stated."
           },
           "minVnd": {
             "value": null,
@@ -191,24 +261,24 @@
           "timing": {
             "value": "on_event",
             "provenance": "inferred",
-            "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceUrl": "https://www.homecredit.vn/upload/HOP_DONG_TIN_DUNG_SAN_PHAM_CHO_VAY_TIEN_MAT_TRU_BIG_TICKET_VA_UY_THAC_8090e71305.pdf",
+            "note": "An early-repayment fee is charged only when the borrower repays early (contract template section 1.11: charged on outstanding principal at the time of repayment)."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Only arises if the borrower repays early; contract may require lender consent."
           },
-          "base": "unknown",
+          "base": "outstanding_principal",
           "rule": "other",
           "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Contract template section 1.11: \"Phí trả nợ trước hạn: …% dư nợ gốc tại thời điểm trả nợ\", % left blank per customer; rate sheet says \"Theo quy định của hợp đồng tín dụng\". Product page says loans of 3-10 million VND are free of early settlement fee; larger loans not stated. Contract may instead say early repayment is not applicable, requires lender consent and a minimum number of instalments paid."
+            "note": "Contract template section 1.11: \"Phí trả nợ trước hạn: …% dư nợ gốc tại thời điểm trả nợ\", % left blank per customer; rate sheet says \"Theo quy định của hợp đồng tín dụng\". Product page says loans of 3-10 million VND are free of early settlement fee (\"miễn phí tất toán sớm\"); larger loans not stated. Contract may instead require lender consent and a minimum number of instalments paid."
           },
           "fixedVnd": {
             "value": null,
@@ -241,19 +311,20 @@
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Gói An tâm Tài chính (optional loan-linked insurance)",
+          "nameVi": "Gói An tâm Tài chính",
+          "nameEn": "Financial Peace-of-mind package (optional loan-linked insurance)",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://homecredit.vn/faq/bao-hiem",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "FAQ: \"Khách hàng có thể lựa chọn đăng ký tham gia Gói An tâm Tài chính khi đăng ký các sản phẩm vay\" (optional). Whether it is mandatory for any specific loan is not stated."
+            "note": "FAQ: \"Khách hàng có thể lựa chọn đăng ký tham gia Gói An tâm Tài chính khi đăng ký các sản phẩm vay\" (optional). Whether it is pre-selected at signing or mandatory for any specific loan is not stated."
           },
           "collection": {
             "value": "added_to_loan",
             "provenance": "inferred",
-            "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceUrl": "https://www.homecredit.vn/upload/HOP_DONG_TIN_DUNG_SAN_PHAM_CHO_VAY_TIEN_MAT_TRU_BIG_TICKET_VA_UY_THAC_8090e71305.pdf",
+            "note": "Inferred from the cash-loan contract structure (premium can be financed inside the loan principal and paid directly to the insurer) and from the rate sheet's separate loan to pay insurance premiums. Not stated for this package."
           },
           "premium": {
             "method": {
@@ -296,14 +367,14 @@
         "minAge": {
           "value": 20,
           "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-          "retrievedAt": "2026-11-01",
+          "retrievedAt": "2026-11-02",
           "confidence": "high",
-          "note": "Page: 20 to 60 years old"
+          "note": "Page: \"Là công dân Việt Nam từ 20 - 60 tuổi\""
         },
         "maxAge": {
           "value": 60,
           "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-          "retrievedAt": "2026-11-01",
+          "retrievedAt": "2026-11-02",
           "confidence": "high"
         },
         "maxAgeAtLoanEnd": null,
@@ -312,12 +383,12 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Page says no proof of income is required for standard loans; for loans over 100 million VND income documents improve approval chances. No minimum income stated."
+          "note": "Page says no payslip is needed for standard loans (\"không cần bảng lương\"); for loans over 100 million VND income documents improve approval chances. No minimum income stated."
         },
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "CCCD/Căn cước còn hiệu lực (old CMND not accepted)",
+            "CCCD/Căn cước còn hiệu lực (CMND cũ không được chấp nhận)",
             "Số điện thoại",
             "Tài khoản ngân hàng chính chủ"
           ],
@@ -326,44 +397,55 @@
           "confidence": "high"
         },
         "existingCustomerRequired": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": false,
+          "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-07-21",
+          "note": "The rate sheet has a separate row for new customers, so new customers can borrow. Inferred from the sheet, not stated as a condition."
         },
         "employerRestriction": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
+          "confidence": null,
+          "note": "No employer restriction found"
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Là công dân Việt Nam",
+            "Không thuộc nhóm nợ 3 trở lên",
+            "Khoản vay trên 100 triệu đồng nên bổ sung giấy tờ chứng minh thu nhập để dễ được duyệt",
+            "Hệ thống có thể yêu cầu bổ sung thông tin thu nhập tùy hồ sơ và gói vay"
+          ],
+          "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Debt-group condition carried over from v1 research; income wording re-checked 2026-11-02."
         },
-        "notes": "Vietnamese citizen; must not be in debt group 3 or worse. Rate sheet footnote (**) says one cash loan product is only available at some service points."
+        "notes": "Rate sheet footnote (**) says one cash loan product is only available at some service points."
       },
       "latePenalty": {
         "textVi": {
-          "value": "Overdue principal accrues interest at 150% of the normal in-term rate (contract template section 1.9); overdue interest accrues at a rate fixed per contract (blank in template). No fixed late fee amount published; FAQ mentions 'phí phạt trả chậm (nếu có)'.",
+          "value": "Nếu quá hạn, phần gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn (hợp đồng mẫu, Điều 1.9). Lãi tính trên phần lãi quá hạn theo mức ghi trong từng hợp đồng (mẫu để trống nên chưa biết). Chưa công bố số tiền phí phạt trả chậm cố định; phần hỏi đáp có nhắc 'phí phạt trả chậm (nếu có)'.",
           "sourceUrl": "https://www.homecredit.vn/upload/HOP_DONG_TIN_DUNG_SAN_PHAM_CHO_VAY_TIEN_MAT_TRU_BIG_TICKET_VA_UY_THAC_8090e71305.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
           "note": "Contract template Ver05.2026, Điều 1.9 and Điều 9. Scanned PDF read visually; pages 4, 6-8 not read."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://www.homecredit.vn/upload/HOP_DONG_TIN_DUNG_SAN_PHAM_CHO_VAY_TIEN_MAT_TRU_BIG_TICKET_VA_UY_THAC_8090e71305.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Contract template section 1.9: overdue principal accrues interest at 150% of the in-term rate."
         },
         "overdueInterestRatePercentYear": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
+          "confidence": null,
+          "note": "Overdue-interest rate is blank in the contract template (fixed per customer contract)."
         }
       },
       "representativeExamples": [
@@ -373,29 +455,63 @@
           "ratePercent": 0.75,
           "rateBasis": "reducing",
           "ratePeriod": "monthly",
+          "amortization": "equal_principal",
           "monthlyPaymentVnd": 1817000,
           "totalRepaidVnd": 20975000,
-          "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "Page example (illustrative, amounts 'about'): first instalment ~1,817,000 VND (principal 1,667,000 + interest 150,000), last ~1,679,000; total interest ~975,000. monthlyPaymentVnd is the FIRST month only; instalments fall each month. 0.75%/month conflicts with the official 45-55%/year new-customer disclosure, so treat as marketing example only.",
-          "amortization": "unknown",
           "statedAnnualRatePercent": null,
           "statedAnnualRateKind": null,
           "includesInsurance": null,
-          "internallyConsistent": null
+          "internallyConsistent": true,
+          "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+          "retrievedAt": "2026-11-02",
+          "confidence": "low",
+          "note": "Page example (illustrative, 'khoảng' amounts, shown at the best rate): first instalment ~1,817,000 VND (principal 1,667,000 + interest 150,000), last ~1,679,000, total interest ~975,000. monthlyPaymentVnd is the FIRST instalment only; instalments fall each month. Arithmetic checks out: interest = 20,000,000 x 0.75% x 13 / 2 = 975,000, total 20,975,000. The 0.75%/month rate is about one-fifth of the official new-customer rate (45-55%/year), so treat as a marketing example, not a fixture."
         }
       ],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "rates[2].minPercent",
+          "values": [
+            {
+              "value": "0,75%/tháng (dư nợ giảm dần), about 9%/năm",
+              "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+              "note": "Product page headline \"từ 0,75%/tháng\""
+            },
+            {
+              "value": "45%-55%/năm (khách hàng mới), 16,22%-49,50%/năm (khách hàng hiện hữu)",
+              "sourceUrl": "https://www.homecredit.vn/upload/THONG_TIN_LAI_SUAT_CUA_SAN_PHAM_CHO_VAY_TIEN_MAT_e1f9608a61.pdf",
+              "note": "Official rate-disclosure sheet effective 21/07/2026"
+            }
+          ],
+          "resolution": "The 0.75%/month headline is about one-fifth of the official new-customer minimum (45%/year). Stored only as advertised_floor and never used for cost; the cost uses the offered_range rows from the rate sheet."
+        },
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "250.000.000 VND",
+              "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
+              "note": "Product page: 3 triệu - 250 triệu đồng"
+            },
+            {
+              "value": "100.000.000 VND",
+              "sourceUrl": null,
+              "note": "Cap for finance-company consumer loans, Circular 43/2016/TT-NHNN art. 3(1) (see docs/research/regulations.md). Wording of the Circular not re-verified here."
+            }
+          ],
+          "resolution": "Lawyer to confirm; app does not show amounts above 100M as achievable. Page figure stored as published, confidence medium."
+        }
+      ],
       "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
       "retrievedAt": "2026-11-01",
       "confidence": "medium",
       "excludeFromRanking": false,
-      "notes": "Rate figures come from two Home Credit sources that disagree by a factor of ~5 (see researchNotes). The rate sheet also lists a loan to finance insurance premiums at 16.22%-55%/year reducing. Daily interest = actual principal balance x annual rate / 365."
+      "notes": "Cash-loan rates come from the official rate sheet (scanned image). The product page headline rate (0.75%/month) disagrees by a factor of ~5 with the new-customer rate and is stored only as an advertised floor. The rate sheet also lists a loan to finance insurance premiums at 16.22%-55%/year reducing. Daily interest = actual principal balance x annual rate / 365. Late fee amounts and early-repayment % are not published.",
+      "nameEn": "Home Credit cash loan"
     },
     {
       "id": "installment-electronics",
-      "nameVi": "Trả góp điện máy / thiết bị điện tử",
+      "nameVi": "Vay trả góp thiết bị điện tử",
       "productType": "installment",
       "status": "active",
       "validUntil": null,
@@ -437,7 +553,7 @@
             "sourceUrl": "https://homecredit.vn/vay-tra-gop-thiet-bi-dien-tu",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "Page: \"Lãi suất hấp dẫn từ 0%\"; 0% applies only to selected electronics products. Basis and period not stated."
+            "note": "Page: \"Lãi suất hấp dẫn từ 0%\"; 0% applies only to selected electronics products (promotional). Basis and period not stated."
           },
           "maxPercent": {
             "value": null,
@@ -467,20 +583,20 @@
       "fees": [
         {
           "nameVi": "Phí chuyển đổi, phí tất toán sớm",
-          "nameEn": "Conversion fee / early settlement fee",
-          "trigger": "prepayment",
+          "nameEn": "Conversion fee / early settlement fee (two fees on one page line)",
+          "trigger": "other",
           "timing": {
             "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://homecredit.vn/vay-tra-gop-thiet-bi-dien-tu",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Conversion and early-settlement fees are charged only when those events happen."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Not stated"
           },
           "base": "unknown",
           "rule": "other",
@@ -565,12 +681,16 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Là công dân Việt Nam",
+            "Trả trước từ 0 đồng"
+          ],
+          "sourceUrl": "https://homecredit.vn/vay-tra-gop-thiet-bi-dien-tu",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "From product page."
         },
-        "notes": "Vietnamese citizen. Down payment from 0 VND."
+        "notes": "Page says no proof of income required."
       },
       "latePenalty": {
         "textVi": {
@@ -598,12 +718,14 @@
       "sourceUrl": "https://homecredit.vn/vay-tra-gop-thiet-bi-dien-tu",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Page loan calculator shows 'Not engough data to display Calculator'. Insurance for this product not stated. Real cost cannot be computed from published data."
+      "excludeFromRanking": true,
+      "notes": "Page loan calculator shows 'Not engough data to display Calculator'. Insurance for this product not stated. Real cost cannot be computed from published data.",
+      "nameEn": "Electronics installment loan",
+      "excludeReason": "Only a promotional 0% floor is published (no maximum, no basis, no fees); the page calculator shows no data, so a fair cost comparison is not possible."
     },
     {
       "id": "installment-motorbike",
-      "nameVi": "Trả góp xe máy",
+      "nameVi": "Mua xe máy trả góp",
       "productType": "installment",
       "status": "active",
       "validUntil": null,
@@ -641,11 +763,40 @@
           "kind": "advertised_floor",
           "segment": null,
           "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://homecredit.vn/mua-xe-may-tra-gop",
+            "retrievedAt": "2026-11-01",
+            "confidence": "low",
+            "note": "Product page: \"lãi suất ưu đãi chỉ từ 0%\" (promotional). No basis or period stated. Preferred over the homepage tile; conflicts with it (see conflicts), so confidence low."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum published"
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "promotional": true
+        },
+        {
+          "kind": "advertised_floor",
+          "segment": null,
+          "minPercent": {
             "value": 0.55,
             "sourceUrl": "https://homecredit.vn",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Homepage tile: \"Lãi suất phẳng từ 0,55%/tháng\" (flat, monthly). The product page instead says \"lãi suất ưu đãi chỉ từ 0%\" with no basis. Two sources differ; homepage figure used because it states basis."
+            "confidence": "low",
+            "note": "Homepage tile (marketing): \"Lãi suất phẳng từ 0,55%/tháng\". Differs from the product page (\"từ 0%\"). Marketing tile, not a fee schedule."
           },
           "maxPercent": {
             "value": null,
@@ -656,24 +807,24 @@
           },
           "basis": {
             "value": "flat",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://homecredit.vn",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Tile wording \"lãi suất phẳng\" (flat)"
           },
           "period": {
             "value": "monthly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://homecredit.vn",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Tile wording \"/tháng\""
           },
           "promotional": null
         }
       ],
       "amortization": {
-        "value": "flat",
-        "provenance": "inferred",
-        "sourceUrl": "https://homecredit.vn",
-        "note": "Set by the v1→v2 migration; confirm against the source."
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null,
+        "note": "The product page does not state the repayment method; the homepage tile says flat rate but is marketing and conflicts with the page."
       },
       "fees": [],
       "feesCompleteness": "unknown",
@@ -722,10 +873,15 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Là công dân Việt Nam",
+            "Xe phải mua tại đại lý đối tác",
+            "Trả chậm có thể ảnh hưởng việc nhận bản chính giấy đăng ký xe"
+          ],
+          "sourceUrl": "https://homecredit.vn/mua-xe-may-tra-gop",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "From product page."
         },
         "notes": "Vietnamese citizen; bike must be bought at partner dealers. Late payment can cost the chance to receive the original registration."
       },
@@ -751,12 +907,31 @@
         }
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "từ 0% (no basis)",
+              "sourceUrl": "https://homecredit.vn/mua-xe-may-tra-gop",
+              "note": "Product page"
+            },
+            {
+              "value": "từ 0,55%/tháng, flat",
+              "sourceUrl": "https://homecredit.vn",
+              "note": "Homepage tile (marketing)"
+            }
+          ],
+          "resolution": "Product page preferred as the more detailed source; the 0% promotional floor is stored as rates[0] and the homepage figure kept as rates[1] (advertised_floor). Both are marketing floors, not offered ranges, and neither is used for cost; confidence low."
+        }
+      ],
       "sourceUrl": "https://homecredit.vn/mua-xe-may-tra-gop",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Fee and insurance FAQ answers (early settlement, optional motorbike insurance) were not in the fetched text. The insurance FAQ lists optional motorbike insurance premiums of 319,000 / 379,000 / 629,000 VND per year by bike value (not confirmed as linked to this loan)."
+      "excludeFromRanking": true,
+      "notes": "Fee and insurance FAQ answers (early settlement, optional motorbike insurance) were not in the fetched text. The insurance FAQ lists optional motorbike insurance premiums of 319,000 / 379,000 / 629,000 VND per year by bike value (not confirmed as linked to this loan). Homepage tile is marketing.",
+      "nameEn": "Motorbike installment loan",
+      "excludeReason": "Only marketing 'from' floors that disagree between pages; no offered range, no fees, no confirmed basis."
     },
     {
       "id": "credit-card",
@@ -800,7 +975,7 @@
         "value": "revolving",
         "provenance": "inferred",
         "sourceUrl": "https://homecredit.vn/the-tin-dung-online",
-        "note": "Set by the v1→v2 migration; confirm against the source."
+        "note": "Credit cards are revolving by nature; inferred, not stated on the page."
       },
       "fees": [],
       "feesCompleteness": "unknown",
@@ -882,10 +1057,12 @@
       "sourceUrl": "https://homecredit.vn/the-tin-dung-online",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Lower priority; only homepage claims seen (100% online, 10% cashback, 0% installment conversion). Fees and rates were adjusted from 02/06/2026 (notice dated 24/04/2026, https://homecredit.vn/tin-tuc/thong-bao-dieu-chinh-bieu-phi-dich-vu-va-lai-suat-the-tin-dung-tu-thang-6-2026) but the figures are in an image or PDF not read."
+      "excludeFromRanking": true,
+      "notes": "Lower priority; only homepage claims seen (100% online, 10% cashback, 0% installment conversion). Fees and rates were adjusted from 02/06/2026 (notice dated 24/04/2026, https://homecredit.vn/tin-tuc/thong-bao-dieu-chinh-bieu-phi-dich-vu-va-lai-suat-the-tin-dung-tu-thang-6-2026) but the figures are in an image or PDF not read.",
+      "nameEn": "Home Credit credit card",
+      "excludeReason": "No rate, fee or limit figures read; only homepage marketing claims."
     }
   ],
-  "researchNotes": "LICENSING: not checked against data/licensed-institutions.json (file did not exist when research started; verify with npm run validate-data). licensedInstitutionId 'home-credit' set as instructed. Legal name on the company's own contract and footer: Công ty Tài chính TNHH Một thành viên Home Credit Việt Nam, MST 0307672788, Ho Chi Minh City.\nOWNERSHIP/RENAME: no rename found; site footer and the Ver05.2026 contract use the same name. Secondary news (search snippets, dates unreliable, low confidence): Home Credit Group agreed to sell 100% of the Vietnam unit to SCB/SCBX of Thailand for over EUR 800 million, and the Group later confirmed (reported as March 2026) the deal could not be completed. Not verified at an official source.\nMAJOR CONTRADICTION (cash loan rate): the product page advertises 'từ 0,75%/tháng (dư nợ giảm dần)' = 9%/year. The company's rate-disclosure sheet effective 21/07/2026 says new customers pay 45%-55%/year reducing balance (existing customers 16.22%-49.50%). The 0.75% headline is far below the official new-customer minimum; the official sheet is used and 0.75% kept only as a low-confidence example. The cost engine should not use 0.75%/month for a first-time borrower.\nREDUCING vs FLAT: cash loan is reducing balance (sheet and page agree). Motorbike homepage says flat 0.55%/month. Electronics and motorbike product pages state no basis.\nCONTRACT TEMPLATE (cash loan, Ver05.2026, effective 22/05/2026; scanned images read visually, pages 1-3 and 5 of 8 only): rate, early-repayment % and overdue-interest % are blank per customer; overdue principal interest = 150% of in-term rate; early repayment needs lender consent, a minimum number of paid instalments, 1 day notice, and the early-repayment fee as % of outstanding principal; insurance premium can be financed inside the loan principal and paid directly to the insurer; borrower pays third-party transfer or cash-withdrawal fees; cash loan contract cannot be cancelled after disbursement. Pages 4, 6-8 not read, so any late fee or collection fee there is unknown.\nINSURANCE: optional Gói An tâm Tài chính is offered at loan registration (FAQ); the rate sheet lists a separate loan 'cho vay để thanh toán phí bảo hiểm' at 16.22%-55%/year reducing, so premiums can be financed. Whether any loan makes insurance mandatory, the premium for the package, and deducted-vs-added treatment are not stated publicly (hotline 1900 633 633). Insurance timing 'added_to_loan' is inferred from the contract structure, not stated for a specific product.\nGAPS: late fee amounts, early repayment %, collection-point fees (FAQ lists collection points, no fee stated), minimum income, motorbike and electronics rate basis, credit card figures, Home PayLater (homepaylater.vn, BNPL, 1-12 months, 0% promo for 1-3 months), Big Ticket and entrusted-loan contracts not collected. Online flag left null: the homepage says cash loans are online, but its application process lists visiting a branch.\nCONFIDENCE: electronics, motorbike and card products are low (marketing pages, no basis, no fees).",
-  "retrievedAt": "2026-11-01"
+  "researchNotes": "LICENSING: Home Credit is on data/licensed-institutions.json (licence 90/GP-NHNN). Legal name on the company's own contract and footer: Công ty Tài chính TNHH Một thành viên Home Credit Việt Nam, MST 0307672788, Ho Chi Minh City.\nOWNERSHIP: no rename found; site footer and the Ver05.2026 contract use the same name. Secondary news only (low confidence, dates unreliable): Home Credit Group agreed to sell 100% of the Vietnam unit to SCB/SCBX of Thailand for over EUR 800 million, and the deal was reportedly cancelled (around March 2026). Not verified at an official source; it does not affect the licence.\nMAJOR CONTRADICTION (cash loan rate): the product page advertises 'từ 0,75%/tháng (dư nợ giảm dần)' = 9%/year. The company's rate-disclosure sheet effective 21/07/2026 says new customers pay 45%-55%/year reducing balance (existing customers 16,22%-49,50%). The headline is about one-fifth of the official new-customer minimum. The sheet is used for offered_range; 0.75% is stored only as advertised_floor and as a low-confidence example. The rate sheet is a scanned image (read visually 2026-11-01); it could not be machine-read on 2026-11-02.\nAMOUNT: the cash-loan page advertises up to 250M VND, above the 100M finance-company cap (Circular 43/2016 art. 3(1)); recorded as a conflict for a lawyer.\nREDUCING vs FLAT: cash loan is reducing balance (sheet and page agree), repaid in equal principal per the page example. Motorbike homepage tile says flat 0.55%/month but the product page says only 'từ 0%'; electronics page states no basis.\nCONTRACT TEMPLATE (cash loan, Ver05.2026, effective 22/05/2026; scanned images read visually, pages 1-3 and 5 of 8 only): rate, early-repayment % and overdue-interest % are blank per customer; overdue principal interest = 150% of in-term rate; early repayment needs lender consent, a minimum number of paid instalments, 1 day notice, and the early-repayment fee as % of outstanding principal; insurance premium can be financed inside the loan principal and paid directly to the insurer; borrower pays third-party transfer or cash-withdrawal fees; cash loan contract cannot be cancelled after disbursement. Pages 4, 6-8 not read, so any late fee or collection fee there is unknown.\nINSURANCE: optional Gói An tâm Tài chính is offered at loan registration (FAQ); the rate sheet lists a separate loan 'cho vay để thanh toán phí bảo hiểm' at 16,22%-55%/year reducing, so premiums can be financed. Whether any loan makes insurance mandatory, the premium, and deducted-vs-added treatment are not stated publicly (hotline 1900 633 633); 'added_to_loan' is inferred from the contract structure.\nTRANSFER FEE: 11,000 VND mapped to 'Phí chuyển tiền' from a merged cell shared with the early-repayment row; layout ambiguity, medium confidence.\nGAPS: late fee amounts, overdue-interest rate, early repayment %, collection-point fees (FAQ lists collection points, no fee stated), minimum income, motorbike and electronics rate basis, credit card figures, Home PayLater (homepaylater.vn, BNPL, 1-12 months, 0% promo for 1-3 months), Big Ticket and entrusted-loan contracts not collected. Online flag left null: the homepage says cash loans are online, but its application process lists visiting a branch.\nRANKING: only the cash loan is ranked; electronics, motorbike and card products are excluded (marketing pages, no offered range, no fees).",
+  "retrievedAt": "2026-11-02"
 }
