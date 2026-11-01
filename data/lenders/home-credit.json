@@ -414,20 +414,20 @@
         "otherConditions": {
           "value": [
             "Là công dân Việt Nam",
-            "Không thuộc nhóm nợ 3 trở lên",
+            "Không đang có nợ xấu (nợ nhóm 3 trở lên theo phân loại của ngân hàng)",
             "Khoản vay trên 100 triệu đồng nên bổ sung giấy tờ chứng minh thu nhập để dễ được duyệt",
             "Hệ thống có thể yêu cầu bổ sung thông tin thu nhập tùy hồ sơ và gói vay"
           ],
           "sourceUrl": "https://homecredit.vn/vay-tien-online-nhanh",
           "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Debt-group condition carried over from v1 research; income wording re-checked 2026-11-02."
+          "confidence": "low",
+          "note": "Debt-group condition carried over from v1 research; income wording re-checked 2026-11-02. The bad-debt condition was carried over from v1 research and not re-confirmed on 2026-11-02."
         },
         "notes": "Rate sheet footnote (**) says one cash loan product is only available at some service points."
       },
       "latePenalty": {
         "textVi": {
-          "value": "Nếu quá hạn, phần gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn (hợp đồng mẫu, Điều 1.9). Lãi tính trên phần lãi quá hạn theo mức ghi trong từng hợp đồng (mẫu để trống nên chưa biết). Chưa công bố số tiền phí phạt trả chậm cố định; phần hỏi đáp có nhắc 'phí phạt trả chậm (nếu có)'.",
+          "value": "Nếu quá hạn, phần gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn. Lãi tính trên phần lãi quá hạn theo mức ghi trong từng hợp đồng (mẫu để trống nên chưa biết). Chưa công bố số tiền phí phạt trả chậm cố định; phần hỏi đáp có nhắc 'phí phạt trả chậm (nếu có)'.",
           "sourceUrl": "https://www.homecredit.vn/upload/HOP_DONG_TIN_DUNG_SAN_PHAM_CHO_VAY_TIEN_MAT_TRU_BIG_TICKET_VA_UY_THAC_8090e71305.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",

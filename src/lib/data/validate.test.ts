@@ -279,7 +279,7 @@ describe("validateLenderFile: status, examples, ranking", () => {
     const ex = {
       principalVnd: 20_000_000,
       termMonths: 12,
-      ratePercent: 12.9,
+      ratePercent: 25, // inside the fixture's 20–40% range, so only the arithmetic is tested
       rateBasis: "reducing",
       ratePeriod: "yearly",
       amortization: "annuity",
@@ -298,7 +298,43 @@ describe("validateLenderFile: status, examples, ranking", () => {
   });
 });
 
+describe("validateLenderFile: example rates", () => {
+  const ex = (ratePercent: number, ratePeriod: string) => ({
+    principalVnd: 20_000_000,
+    termMonths: 12,
+    ratePercent,
+    rateBasis: "reducing",
+    ratePeriod,
+    amortization: "equal_principal",
+    monthlyPaymentVnd: null,
+    totalRepaidVnd: null,
+    statedAnnualRatePercent: null,
+    statedAnnualRateKind: null,
+    includesInsurance: null,
+    internallyConsistent: true,
+    sourceUrl: SRC,
+    retrievedAt: "2026-11-01",
+    confidence: "low",
+  });
+
+  it("warns when an example sits outside the offered range (Home Credit 0.75%/month vs 45–55%/year)", () => {
+    const r = withProduct({ rates: [rate({ minPercent: known(45), maxPercent: known(55) })], representativeExamples: [ex(0.75, "monthly")] });
+    expect(warnings(r)[0]).toMatch(/outside every offered range/);
+  });
+
+  it("accepts an example inside the range, comparing monthly × 12 with yearly", () => {
+    const r = withProduct({ representativeExamples: [ex(2.5, "monthly")] }); // 30%/yr within 20–40
+    expect(r.issues).toEqual([]);
+  });
+});
+
 describe("validateLenderFile: dates", () => {
+  it("rejects medium/high confidence on a source document older than a year", () => {
+    const old = { ...known(10_000_000), sourceDocumentDate: "2025-03-19" };
+    expect(errors(withProduct({ amountMinVnd: old }))[0]).toMatch(/source document dated 2025-03-19/);
+    expect(withProduct({ amountMinVnd: { ...old, confidence: "low" } }).issues).toEqual([]);
+  });
+
   it("rejects data older than 90 days, using the oldest figure", () => {
     // 2026-07-01 → 2026-11-01 is 123 days
     expect(errors(withProduct({ amountMinVnd: known(10_000_000, "2026-07-01") }))[0]).toMatch(/123 days old/);

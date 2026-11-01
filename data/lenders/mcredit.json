@@ -20,29 +20,29 @@
         "value": 10000000,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Page data: 'Hạn mức cho vay từ 10 triệu đến 100 triệu đồng'."
+        "confidence": "medium",
+        "note": "Page data: 'Hạn mức cho vay từ 10 triệu đến 100 triệu đồng'. Page undated; sibling products' calculator data was last modified 2025-03-19."
       },
       "amountMaxVnd": {
         "value": 100000000,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Same."
+        "confidence": "medium",
+        "note": "Same. Page undated; sibling products' calculator data was last modified 2025-03-19."
       },
       "termMinMonths": {
         "value": 6,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "'Kỳ hạn vay từ 6 tháng đến 36 tháng'."
+        "confidence": "medium",
+        "note": "'Kỳ hạn vay từ 6 tháng đến 36 tháng'. Page undated; sibling products' calculator data was last modified 2025-03-19."
       },
       "termMaxMonths": {
         "value": 36,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Same."
+        "confidence": "medium",
+        "note": "Same. Page undated; sibling products' calculator data was last modified 2025-03-19."
       },
       "rates": [
         {
@@ -301,7 +301,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt 8% số tiền liên quan đến điều khoản bạn vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -324,13 +324,31 @@
         "textEn": "Overdue principal accrues interest at 150% of the in-term annual rate, per day late; late interest itself accrues 10%/year; 8% penalty for breaching non-payment terms."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "latePenalty.textVi",
+          "values": [
+            {
+              "value": "Phạt vi phạm hợp đồng 8% (không phải lãi trả chậm)",
+              "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+              "note": "General loan terms"
+            },
+            {
+              "value": "Phạt vi phạm hợp đồng theo luật dân sự (ví dụ Bộ luật Dân sự 2015 Điều 418) và quy định về điều khoản không công bằng (Luật Bảo vệ quyền lợi người tiêu dùng 2023)",
+              "sourceUrl": null,
+              "note": "See docs/research/regulations.md §6.5 and the lawyer questions."
+            }
+          ],
+          "resolution": "Recorded as published. Whether an 8% contract penalty is enforceable against consumers is a lawyer question; it is not a late-payment interest rule (Circular 39 art. 13(4)). Never present it as unlawful."
+        }
+      ],
       "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
       "retrievedAt": "2026-11-01",
       "confidence": "medium",
-      "excludeFromRanking": false,
+      "excludeFromRanking": true,
       "notes": "Real rate is set per customer; no range, income or age threshold published. Product data embedded in the page was last modified 2025-03-19. Fees and late rules come from the general unsecured-loan terms effective 06/01/2026. Amortization (annuity vs other) not stated.",
-      "nameEn": "Lump-sum cash loan"
+      "nameEn": "Lump-sum cash loan",
+      "excludeReason": "Chưa có lãi suất chào bán (chỉ có mức 'từ X%' hoặc không công bố)"
     },
     {
       "id": "mcredit-vay-han-muc-tien-mat",
@@ -629,7 +647,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt 8% số tiền liên quan đến điều khoản bạn vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -652,7 +670,24 @@
         "textEn": "Overdue principal accrues interest at 150% of the in-term annual rate, per day late; late interest itself accrues 10%/year; 8% penalty for breaching non-payment terms."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "latePenalty.textVi",
+          "values": [
+            {
+              "value": "Phạt vi phạm hợp đồng 8% (không phải lãi trả chậm)",
+              "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+              "note": "General loan terms"
+            },
+            {
+              "value": "Phạt vi phạm hợp đồng theo luật dân sự (ví dụ Bộ luật Dân sự 2015 Điều 418) và quy định về điều khoản không công bằng (Luật Bảo vệ quyền lợi người tiêu dùng 2023)",
+              "sourceUrl": null,
+              "note": "See docs/research/regulations.md §6.5 and the lawyer questions."
+            }
+          ],
+          "resolution": "Recorded as published. Whether an 8% contract penalty is enforceable against consumers is a lawyer question; it is not a late-payment interest rule (Circular 39 art. 13(4)). Never present it as unlawful."
+        }
+      ],
       "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
@@ -682,8 +717,9 @@
         "value": 100000000,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Same; headline also says 'Hạn mức tới 100 triệu'."
+        "confidence": "low",
+        "note": "Same; headline also says 'Hạn mức tới 100 triệu'.",
+        "sourceDocumentDate": "2025-03-19"
       },
       "termMinMonths": {
         "value": 3,
@@ -955,7 +991,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt 8% số tiền liên quan đến điều khoản bạn vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -994,14 +1030,31 @@
             }
           ],
           "resolution": "Stored 48 (lower maximum, stricter for the borrower) with low confidence."
+        },
+        {
+          "field": "latePenalty.textVi",
+          "values": [
+            {
+              "value": "Phạt vi phạm hợp đồng 8% (không phải lãi trả chậm)",
+              "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+              "note": "General loan terms"
+            },
+            {
+              "value": "Phạt vi phạm hợp đồng theo luật dân sự (ví dụ Bộ luật Dân sự 2015 Điều 418) và quy định về điều khoản không công bằng (Luật Bảo vệ quyền lợi người tiêu dùng 2023)",
+              "sourceUrl": null,
+              "note": "See docs/research/regulations.md §6.5 and the lawyer questions."
+            }
+          ],
+          "resolution": "Recorded as published. Whether an 8% contract penalty is enforceable against consumers is a lawyer question; it is not a late-payment interest rule (Circular 39 art. 13(4)). Never present it as unlawful."
         }
       ],
       "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
+      "excludeFromRanking": true,
       "notes": "Goods installment loan via merchants. 0% conditions, merchant partners and any subsidy or dealer fees are not published. Fees/late rules are from the general unsecured-loan terms; not verified that they apply identically to this product.",
-      "nameEn": "Installment loan for goods via merchants"
+      "nameEn": "Installment loan for goods via merchants",
+      "excludeReason": "Chưa có lãi suất chào bán (chỉ có mức 'từ X%' hoặc không công bố)"
     },
     {
       "id": "mcredit-vay-nhanh-app",
@@ -1265,7 +1318,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt 8% số tiền liên quan đến điều khoản bạn vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -1320,14 +1373,31 @@
             }
           ],
           "resolution": "Stored 36 (lower maximum) with low confidence."
+        },
+        {
+          "field": "latePenalty.textVi",
+          "values": [
+            {
+              "value": "Phạt vi phạm hợp đồng 8% (không phải lãi trả chậm)",
+              "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+              "note": "General loan terms"
+            },
+            {
+              "value": "Phạt vi phạm hợp đồng theo luật dân sự (ví dụ Bộ luật Dân sự 2015 Điều 418) và quy định về điều khoản không công bằng (Luật Bảo vệ quyền lợi người tiêu dùng 2023)",
+              "sourceUrl": null,
+              "note": "See docs/research/regulations.md §6.5 and the lawyer questions."
+            }
+          ],
+          "resolution": "Recorded as published. Whether an 8% contract penalty is enforceable against consumers is a lawyer question; it is not a late-payment interest rule (Circular 39 art. 13(4)). Never present it as unlawful."
         }
       ],
       "sourceUrl": "https://mcredit.com.vn/vi/ung-dung-mcredit",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
+      "excludeFromRanking": true,
       "notes": "'Nhận ngay 15 triệu trong 5 phút' is marketing, not a product limit. Interest rate not published on the app page. Fees and late rules are from the general terms; not verified to apply identically to this product.",
-      "nameEn": "App-based quick loan"
+      "nameEn": "App-based quick loan",
+      "excludeReason": "Chưa có lãi suất chào bán (chỉ có mức 'từ X%' hoặc không công bố)"
     },
     {
       "id": "mcredit-the-tin-dung",

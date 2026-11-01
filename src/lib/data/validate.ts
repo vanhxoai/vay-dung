@@ -43,6 +43,30 @@ function collectDates(node: unknown, out: string[] = []): string[] {
   return out;
 }
 
+/** A source document older than this caps confidence at "low" (data-entry rules §2). */
+export const OLD_DOCUMENT_DAYS = 365;
+
+/** Finds sourced values whose document is old but whose confidence is above "low". */
+function checkDocumentAge(node: unknown, today: Date, err: (m: string) => void, path = ""): void {
+  if (Array.isArray(node)) node.forEach((n, i) => checkDocumentAge(n, today, err, `${path}[${i}]`));
+  else if (node && typeof node === "object") {
+    const o = node as Record<string, unknown>;
+    if (typeof o.sourceDocumentDate === "string" && (o.confidence === "high" || o.confidence === "medium")) {
+      const age = ageInDays(o.sourceDocumentDate, today);
+      if (age > OLD_DOCUMENT_DAYS)
+        err(`${path}: source document dated ${o.sourceDocumentDate} is ${age} days old but confidence is "${o.confidence}"; use "low"`);
+    }
+    for (const [k, v] of Object.entries(o)) checkDocumentAge(v, today, err, path ? `${path}.${k}` : k);
+  }
+}
+
+/** Monthly or yearly nominal rate → yearly nominal, for range comparisons only. */
+function yearlyNominal(rate: number, period: string): number | null {
+  if (period === "yearly") return rate;
+  if (period === "monthly") return rate * 12;
+  return null;
+}
+
 /** Checks the oldest and newest `retrievedAt` in a tree against today. */
 function checkDates(node: unknown, fallback: string, today: Date, err: (m: string) => void, warn: (m: string) => void) {
   const dates = collectDates(node);
@@ -158,6 +182,17 @@ function checkProduct(
       warn(`${where}: term ${ex.termMonths} is outside the product's term range`);
     if ((aMin !== null && ex.principalVnd < aMin) || (aMax !== null && ex.principalVnd > aMax))
       warn(`${where}: amount is outside the product's amount range`);
+    // An example far outside the offered range (e.g. at an advertised floor) must not be shown as typical.
+    const exYearly = ex.ratePercent === null ? null : yearlyNominal(ex.ratePercent, ex.ratePeriod);
+    const offered = p.rates.filter((r) => r.kind === "offered_range" && r.basis.value === ex.rateBasis);
+    if (exYearly !== null && offered.length > 0) {
+      const inside = offered.some((r) => {
+        const lo = r.minPercent.value === null ? null : yearlyNominal(r.minPercent.value, r.period.value);
+        const hi = r.maxPercent.value === null ? null : yearlyNominal(r.maxPercent.value, r.period.value);
+        return (lo === null || exYearly >= lo - 1e-9) && (hi === null || exYearly <= hi + 1e-9);
+      });
+      if (!inside) warn(`${where}: rate ${ex.ratePercent}% (${ex.ratePeriod}) is outside every offered range; don't present it as typical`);
+    }
     if (ex.monthlyPaymentVnd !== null && ex.totalRepaidVnd !== null && ex.amortization === "annuity" && ex.internallyConsistent !== false) {
       const implied = ex.monthlyPaymentVnd * ex.termMonths;
       if (Math.abs(implied - ex.totalRepaidVnd) > ex.termMonths * 1000)
@@ -224,5 +259,6 @@ export function validateLenderFile(
   }
 
   checkDates(lender, lender.retrievedAt, today, err, warn);
+  checkDocumentAge(lender, today, err);
   return { lender, issues };
 }

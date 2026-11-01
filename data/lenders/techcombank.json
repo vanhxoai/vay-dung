@@ -243,8 +243,8 @@
         "incomeBasis": "net",
         "documents": {
           "value": [
-            "CCCD (citizen ID card); page says 'chỉ cần cccd'",
-            "Income proof per bank rules (per vay-tien-mat blog)"
+            "CCCD",
+            "Giấy tờ chứng minh thu nhập theo quy định của ngân hàng"
           ],
           "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
           "retrievedAt": "2026-11-01",

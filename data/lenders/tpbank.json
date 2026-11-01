@@ -822,7 +822,7 @@
         "otherConditions": {
           "value": [
             "Công dân Việt Nam, sống và làm việc tại Việt Nam",
-            "Có năng lực hành vi dân sự đầy đủ",
+            "Đủ năng lực hành vi dân sự (người trưởng thành, tự chịu trách nhiệm pháp lý)",
             "Mục đích vay khả thi",
             "Không có nợ xấu tại TPFico hoặc tổ chức tín dụng khác"
           ],
@@ -835,7 +835,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Phạt và bồi thường từ 100.000 đến 250.000 đồng. Khoản này bị thu nếu bạn không cung cấp giấy cam kết thanh toán trong 5-9 ngày (tùy sản phẩm) kể từ khi quá hạn. Bạn có thể phải bồi thường thêm thiệt hại phát sinh.",
+          "value": "Lãi quá hạn: chưa rõ. Phạt và bồi thường từ 100.000 đến 250.000 đồng. Khoản này bị thu nếu bạn không cung cấp giấy cam kết thanh toán trong 5-9 ngày (tùy sản phẩm) kể từ khi quá hạn. Bạn có thể phải bồi thường thêm thiệt hại phát sinh.",
           "sourceUrl": "https://tpb.vn/cn-vay-tin-chap-cho-vay-tien-mat-tin-chap-fico",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",

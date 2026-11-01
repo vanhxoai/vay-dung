@@ -137,8 +137,9 @@
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
+            "confidence": "low",
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số.",
+            "sourceDocumentDate": "2025-01-06"
           },
           "fixedVnd": {
             "value": null,
@@ -151,8 +152,9 @@
             "value": 1500000,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Mức tối thiểu 1.500.000 VND cho vay tiền mặt và phương tiện (Điều khoản và điều kiện mục 10)."
+            "confidence": "low",
+            "note": "Mức tối thiểu 1.500.000 VND cho vay tiền mặt và phương tiện (Điều khoản và điều kiện mục 10).",
+            "sourceDocumentDate": "2025-01-06"
           },
           "maxVnd": {
             "value": null,
@@ -191,8 +193,9 @@
             "value": 4,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025)."
+            "confidence": "low",
+            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025).",
+            "sourceDocumentDate": "2025-01-06"
           },
           "fixedVnd": {
             "value": null,
@@ -334,7 +337,7 @@
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
-            "confidence": "high",
+            "confidence": "medium",
             "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
@@ -440,7 +443,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hằng tháng của khoản vay (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy). Nợ quá hạn có thể bị báo cáo lên Trung tâm Thông tin tín dụng (CIC) của Ngân hàng Nhà nước, làm xấu lịch sử tín dụng của bạn.",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -504,14 +507,30 @@
             }
           ],
           "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        },
+        {
+          "field": "insurance[0].mandatory",
+          "values": [
+            {
+              "value": "không bắt buộc",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
+              "note": "FAQ Q2 and insurance page."
+            },
+            {
+              "value": "insurance request form included in every product's loan dossier",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html"
+            }
+          ],
+          "resolution": "Stored 'not mandatory' as stated, confidence medium. Tell users plainly that optional insurance is not required to get the loan. Lawyer question on bundling (Law 32/2024 art. 15(5))."
         }
       ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
+      "excludeFromRanking": true,
       "notes": "Trang vay tiền mặt không công bố lãi suất chuẩn, kỳ hạn hay biểu phí; chỉ có bảng trần lãi suất (khung lãi suất, không ngày hiệu lực). Trần theo dư nợ ban đầu cho giải ngân trực tiếp: 2,94%/tháng. Mẫu hợp đồng cho phép gộp phí bảo hiểm vào khoản vay. Không tìm thấy trang riêng cho khoản vay tiền mặt trên ứng dụng. Không có khoảng lãi suất chào bán nên sản phẩm hiển thị \"chưa đủ dữ liệu\".",
-      "nameEn": "Cash loan"
+      "nameEn": "Cash loan",
+      "excludeReason": "Chưa có lãi suất chào bán (chỉ có khung lãi suất trần)"
     },
     {
       "id": "motorbike-installment",
@@ -643,8 +662,9 @@
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
+            "confidence": "low",
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số.",
+            "sourceDocumentDate": "2025-01-06"
           },
           "fixedVnd": {
             "value": null,
@@ -657,8 +677,9 @@
             "value": 1500000,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Mức tối thiểu 1.500.000 VND cho vay phương tiện (Điều khoản và điều kiện mục 10)."
+            "confidence": "low",
+            "note": "Mức tối thiểu 1.500.000 VND cho vay phương tiện (Điều khoản và điều kiện mục 10).",
+            "sourceDocumentDate": "2025-01-06"
           },
           "maxVnd": {
             "value": null,
@@ -697,8 +718,9 @@
             "value": 4,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025)."
+            "confidence": "low",
+            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025).",
+            "sourceDocumentDate": "2025-01-06"
           },
           "fixedVnd": {
             "value": null,
@@ -788,7 +810,7 @@
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
-            "confidence": "high",
+            "confidence": "medium",
             "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
@@ -894,7 +916,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hằng tháng của khoản vay (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy). Nợ quá hạn có thể bị báo cáo lên Trung tâm Thông tin tín dụng (CIC) của Ngân hàng Nhà nước, làm xấu lịch sử tín dụng của bạn.",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -937,14 +959,30 @@
             }
           ],
           "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        },
+        {
+          "field": "insurance[0].mandatory",
+          "values": [
+            {
+              "value": "không bắt buộc",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
+              "note": "FAQ Q2 and insurance page."
+            },
+            {
+              "value": "insurance request form included in every product's loan dossier",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html"
+            }
+          ],
+          "resolution": "Stored 'not mandatory' as stated, confidence medium. Tell users plainly that optional insurance is not required to get the loan. Lawyer question on bundling (Law 32/2024 art. 15(5))."
         }
       ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
+      "excludeFromRanking": true,
       "notes": "Có tài sản bảo đảm là xe được tài trợ (hợp đồng thế chấp trong bộ hồ sơ). Điều kiện của gói 0% không được nêu. Không có khoảng lãi suất chào bán nên hiển thị \"chưa đủ dữ liệu\".",
-      "nameEn": "Motorbike installment"
+      "nameEn": "Motorbike installment",
+      "excludeReason": "Chưa có lãi suất chào bán (chỉ có khung lãi suất trần)"
     },
     {
       "id": "electronics-installment",
@@ -1076,8 +1114,9 @@
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
+            "confidence": "low",
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số.",
+            "sourceDocumentDate": "2025-01-06"
           },
           "fixedVnd": {
             "value": null,
@@ -1090,8 +1129,9 @@
             "value": 240000,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Mức tối thiểu 240.000 VND cho vay hàng hóa (một số khoản vay dịch vụ: 1.500.000 VND), Điều khoản và điều kiện mục 10."
+            "confidence": "low",
+            "note": "Mức tối thiểu 240.000 VND cho vay hàng hóa (một số khoản vay dịch vụ: 1.500.000 VND), Điều khoản và điều kiện mục 10.",
+            "sourceDocumentDate": "2025-01-06"
           },
           "maxVnd": {
             "value": null,
@@ -1130,8 +1170,9 @@
             "value": 4,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025)."
+            "confidence": "low",
+            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025).",
+            "sourceDocumentDate": "2025-01-06"
           },
           "fixedVnd": {
             "value": null,
@@ -1221,7 +1262,7 @@
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
-            "confidence": "high",
+            "confidence": "medium",
             "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
@@ -1327,7 +1368,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 240.000 VND với hàng hóa). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hằng tháng của khoản vay (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 240.000 VND với hàng hóa). Nợ quá hạn có thể bị báo cáo lên Trung tâm Thông tin tín dụng (CIC) của Ngân hàng Nhà nước, làm xấu lịch sử tín dụng của bạn.",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -1370,14 +1411,30 @@
             }
           ],
           "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        },
+        {
+          "field": "insurance[0].mandatory",
+          "values": [
+            {
+              "value": "không bắt buộc",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
+              "note": "FAQ Q2 and insurance page."
+            },
+            {
+              "value": "insurance request form included in every product's loan dossier",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html"
+            }
+          ],
+          "resolution": "Stored 'not mandatory' as stated, confidence medium. Tell users plainly that optional insurance is not required to get the loan. Lawyer question on bundling (Law 32/2024 art. 15(5))."
         }
       ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
+      "excludeFromRanking": true,
       "notes": "Định nghĩa giá bán trong Điều khoản và điều kiện không gồm phí đăng ký, bảo hiểm bắt buộc và chi phí hành chính. Không có khoảng lãi suất chào bán nên hiển thị \"chưa đủ dữ liệu\".",
-      "nameEn": "Electronics and appliances installment"
+      "nameEn": "Electronics and appliances installment",
+      "excludeReason": "Chưa có lãi suất chào bán (chỉ có khung lãi suất trần)"
     },
     {
       "id": "union-worker-loan",
@@ -1446,8 +1503,9 @@
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
+            "confidence": "low",
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số.",
+            "sourceDocumentDate": "2025-01-06"
           },
           "fixedVnd": {
             "value": null,
@@ -1460,8 +1518,9 @@
             "value": 1500000,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Mức tối thiểu cho vay tiền mặt theo Điều khoản và điều kiện chung; trang sản phẩm không nhắc lại."
+            "confidence": "low",
+            "note": "Mức tối thiểu cho vay tiền mặt theo Điều khoản và điều kiện chung; trang sản phẩm không nhắc lại.",
+            "sourceDocumentDate": "2025-01-06"
           },
           "maxVnd": {
             "value": null,
@@ -1486,7 +1545,7 @@
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
-            "confidence": "high",
+            "confidence": "medium",
             "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
@@ -1593,7 +1652,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hằng tháng của khoản vay (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt). Nợ quá hạn có thể bị báo cáo lên Trung tâm Thông tin tín dụng (CIC) của Ngân hàng Nhà nước, làm xấu lịch sử tín dụng của bạn.",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
@@ -1636,6 +1695,21 @@
             }
           ],
           "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        },
+        {
+          "field": "insurance[0].mandatory",
+          "values": [
+            {
+              "value": "không bắt buộc",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
+              "note": "FAQ Q2 and insurance page."
+            },
+            {
+              "value": "insurance request form included in every product's loan dossier",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html"
+            }
+          ],
+          "resolution": "Stored 'not mandatory' as stated, confidence medium. Tell users plainly that optional insurance is not required to get the loan. Lawyer question on bundling (Law 32/2024 art. 15(5))."
         }
       ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",

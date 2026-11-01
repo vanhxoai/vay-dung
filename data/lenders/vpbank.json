@@ -277,10 +277,10 @@
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "Identity: CMND/CCCD/Hộ chiếu",
-            "Residence: Hộ khẩu/Bằng lái xe",
-            "Job: HĐLĐ/Quyết định biên chế/Xác nhận nhân sự",
-            "Income: Sao kê lương/Xác nhận lương/Bảng lương"
+            "Giấy tờ tùy thân: CMND/CCCD/Hộ chiếu",
+            "Giấy tờ nơi ở: Hộ khẩu/Bằng lái xe",
+            "Giấy tờ công việc: Hợp đồng lao động/Quyết định biên chế/Xác nhận nhân sự",
+            "Giấy tờ thu nhập: Sao kê lương/Xác nhận lương/Bảng lương"
           ],
           "sourceUrl": "https://vayonline.vpbank.com.vn/",
           "retrievedAt": "2026-11-01",
@@ -311,7 +311,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Nợ gốc quá hạn: lãi bằng 150% lãi suất trong hạn tại thời điểm chuyển quá hạn. Lãi chậm trả: lãi bằng 150% lãi suất trong hạn nhưng tối đa 10%/năm trên số lãi chậm trả. Ngoài ra còn ảnh hưởng lịch sử tín dụng.",
+          "value": "Nợ gốc trả chậm bị tính lãi bằng 150% lãi suất trong hạn. Tiền lãi trả chậm bị tính thêm lãi, tối đa 10%/năm. Trả chậm cũng làm xấu lịch sử tín dụng của bạn.",
           "sourceUrl": "https://vayonline.vpbank.com.vn/",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",

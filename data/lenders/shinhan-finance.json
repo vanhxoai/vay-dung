@@ -772,10 +772,10 @@
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "CCCD / ID card",
-            "Household registration or driver's licence",
-            "Proof of income (loans 20M and above)",
-            "Proof of current residence (loans 40M and above)"
+            "CCCD",
+            "Sổ hộ khẩu hoặc giấy phép lái xe",
+            "Giấy tờ chứng minh thu nhập (khoản vay từ 20 triệu đồng)",
+            "Giấy tờ chứng minh nơi ở hiện tại (khoản vay từ 40 triệu đồng)"
           ],
           "sourceUrl": "https://shinhanfinance.com.vn/vi/vay-mua-hang-tieu-dung-tra-gop",
           "retrievedAt": "2026-11-01",
@@ -1176,7 +1176,7 @@
         "documents": {
           "value": [
             "CCCD còn hiệu lực",
-            "Proof of income (labour contract or salary statement)"
+            "Giấy tờ chứng minh thu nhập (hợp đồng lao động hoặc sao kê lương)"
           ],
           "sourceUrl": "https://shinhanfinance.com.vn/vi/product/card/the-tin-dung",
           "retrievedAt": "2026-11-01",

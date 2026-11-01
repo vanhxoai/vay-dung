@@ -52,15 +52,15 @@
             "value": 1.41,
             "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
             "retrievedAt": "2026-11-02",
-            "confidence": "medium",
+            "confidence": "low",
             "note": "Page: 'mức lãi suất ưu đãi tối đa dao động từ 1.41% đến 3.86%/tháng, tùy vào hồ sơ'; may change by period. Read as the range offered depending on profile. No 0% promotion on this product."
           },
           "maxPercent": {
             "value": 3.86,
             "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
             "retrievedAt": "2026-11-02",
-            "confidence": "medium",
-            "note": "Same sentence."
+            "confidence": "low",
+            "note": "Same sentence. Trang gọi đây là lãi suất 'ưu đãi'; lãi suất tiêu chuẩn có thể cao hơn 3,86%/tháng."
           },
           "basis": {
             "value": "flat",
@@ -407,7 +407,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Nếu trễ hạn, bạn phải trả lãi trên nợ gốc quá hạn, tối đa 150% lãi suất trong hạn. Tiền lãi chậm trả bị tính thêm lãi, tối đa 10%/năm. Ngoài ra có thể bị phạt 8% giá trị nghĩa vụ bị vi phạm nếu vi phạm hợp đồng không phải do trả nợ chậm. Có phí phạt chậm trả nhưng FE Credit không công bố mức phí.",
+          "value": "Nếu trễ hạn, bạn phải trả lãi trên nợ gốc quá hạn, tối đa 150% lãi suất trong hạn. Tiền lãi chậm trả bị tính thêm lãi, tối đa 10%/năm. Ngoài ra có thể bị phạt 8% số tiền liên quan đến điều khoản bạn vi phạm, nếu bạn vi phạm hợp đồng ở điểm khác ngoài việc trả chậm. Có phí phạt chậm trả nhưng FE Credit không công bố mức phí.",
           "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
           "retrievedAt": "2026-11-02",
           "confidence": "medium",
@@ -511,6 +511,37 @@
             }
           ],
           "resolution": "Collection method left unknown. Deducted at payout and financed in the loan have different costs, and the sources do not say which applies to which borrower."
+        },
+        {
+          "field": "latePenalty.textVi",
+          "values": [
+            {
+              "value": "Phạt vi phạm hợp đồng 8% (không phải lãi trả chậm)",
+              "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
+              "note": "T&C 9.3.2"
+            },
+            {
+              "value": "Phạt vi phạm hợp đồng theo luật dân sự (ví dụ Bộ luật Dân sự 2015 Điều 418) và quy định về điều khoản không công bằng (Luật Bảo vệ quyền lợi người tiêu dùng 2023)",
+              "sourceUrl": null,
+              "note": "See docs/research/regulations.md §6.5 and the lawyer questions."
+            }
+          ],
+          "resolution": "Recorded as published. Whether an 8% contract penalty is enforceable against consumers is a lawyer question; it is not a late-payment interest rule (Circular 39 art. 13(4)). Never present it as unlawful."
+        },
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "ưu đãi tối đa 3.86%/tháng",
+              "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
+              "note": "Preferential rate range on the product page."
+            },
+            {
+              "value": "standard (non-preferential) rate: not published",
+              "sourceUrl": null
+            }
+          ],
+          "resolution": "Stored 3.86 as the highest published figure; the true maximum may be higher. Confidence low."
         }
       ],
       "sourceUrl": "https://www.fecredit.com.vn/tien-mat-linh-hoat/",
@@ -886,7 +917,7 @@
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "CMND/CCCD/CC; other documents may be required depending on product"
+            "CMND/CCCD (có thể cần thêm giấy tờ khác tùy sản phẩm)"
           ],
           "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
           "retrievedAt": "2026-11-01",
@@ -917,7 +948,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Nếu trễ hạn, bạn phải trả lãi trên nợ gốc quá hạn, tối đa 150% lãi suất trong hạn. Tiền lãi chậm trả bị tính thêm lãi, tối đa 10%/năm. Ngoài ra có thể bị phạt 8% giá trị nghĩa vụ bị vi phạm nếu vi phạm hợp đồng không phải do trả nợ chậm. Có phí phạt chậm trả nhưng FE Credit không công bố mức phí.",
+          "value": "Nếu trễ hạn, bạn phải trả lãi trên nợ gốc quá hạn, tối đa 150% lãi suất trong hạn. Tiền lãi chậm trả bị tính thêm lãi, tối đa 10%/năm. Ngoài ra có thể bị phạt 8% số tiền liên quan đến điều khoản bạn vi phạm, nếu bạn vi phạm hợp đồng ở điểm khác ngoài việc trả chậm. Có phí phạt chậm trả nhưng FE Credit không công bố mức phí.",
           "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
           "retrievedAt": "2026-11-02",
           "confidence": "medium",
@@ -1003,6 +1034,22 @@
             }
           ],
           "resolution": "Collection method left unknown. Deducted at payout and financed in the loan have different costs, and the sources do not say which applies to which borrower."
+        },
+        {
+          "field": "latePenalty.textVi",
+          "values": [
+            {
+              "value": "Phạt vi phạm hợp đồng 8% (không phải lãi trả chậm)",
+              "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
+              "note": "T&C 9.3.2"
+            },
+            {
+              "value": "Phạt vi phạm hợp đồng theo luật dân sự (ví dụ Bộ luật Dân sự 2015 Điều 418) và quy định về điều khoản không công bằng (Luật Bảo vệ quyền lợi người tiêu dùng 2023)",
+              "sourceUrl": null,
+              "note": "See docs/research/regulations.md §6.5 and the lawyer questions."
+            }
+          ],
+          "resolution": "Recorded as published. Whether an 8% contract penalty is enforceable against consumers is a lawyer question; it is not a late-payment interest rule (Circular 39 art. 13(4)). Never present it as unlawful."
         }
       ],
       "sourceUrl": "https://www.fecredit.com.vn/vay-mua-xe-may/",
@@ -1400,7 +1447,7 @@
         },
         "otherConditions": {
           "value": [
-            "Công dân Việt Nam có năng lực hành vi dân sự đầy đủ"
+            "Công dân Việt Nam, đủ năng lực hành vi dân sự (người trưởng thành, tự chịu trách nhiệm pháp lý)"
           ],
           "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
           "retrievedAt": "2026-11-01",
@@ -1410,7 +1457,7 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Nếu trễ hạn, bạn phải trả lãi trên nợ gốc quá hạn, tối đa 150% lãi suất trong hạn. Tiền lãi chậm trả bị tính thêm lãi, tối đa 10%/năm. Ngoài ra có thể bị phạt 8% giá trị nghĩa vụ bị vi phạm nếu vi phạm hợp đồng không phải do trả nợ chậm. Có phí phạt chậm trả nhưng FE Credit không công bố mức phí.",
+          "value": "Nếu trễ hạn, bạn phải trả lãi trên nợ gốc quá hạn, tối đa 150% lãi suất trong hạn. Tiền lãi chậm trả bị tính thêm lãi, tối đa 10%/năm. Ngoài ra có thể bị phạt 8% số tiền liên quan đến điều khoản bạn vi phạm, nếu bạn vi phạm hợp đồng ở điểm khác ngoài việc trả chậm. Có phí phạt chậm trả nhưng FE Credit không công bố mức phí.",
           "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
           "retrievedAt": "2026-11-02",
           "confidence": "medium",
@@ -1512,6 +1559,22 @@
             }
           ],
           "resolution": "Collection method left unknown. Deducted at payout and financed in the loan have different costs, and the sources do not say which applies to which borrower."
+        },
+        {
+          "field": "latePenalty.textVi",
+          "values": [
+            {
+              "value": "Phạt vi phạm hợp đồng 8% (không phải lãi trả chậm)",
+              "sourceUrl": "https://www-cdn.fecredit.com.vn/media/xg5g5dpx/ban-dieu-khoan-va-dieu-kien-cho-vay-public-website.pdf",
+              "note": "T&C 9.3.2"
+            },
+            {
+              "value": "Phạt vi phạm hợp đồng theo luật dân sự (ví dụ Bộ luật Dân sự 2015 Điều 418) và quy định về điều khoản không công bằng (Luật Bảo vệ quyền lợi người tiêu dùng 2023)",
+              "sourceUrl": null,
+              "note": "See docs/research/regulations.md §6.5 and the lawyer questions."
+            }
+          ],
+          "resolution": "Recorded as published. Whether an 8% contract penalty is enforceable against consumers is a lawyer question; it is not a late-payment interest rule (Circular 39 art. 13(4)). Never present it as unlawful."
         }
       ],
       "sourceUrl": "https://www.fecredit.com.vn/vay-mua-dien-thoai-dien-may/",
