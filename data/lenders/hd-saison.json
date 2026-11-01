@@ -9,7 +9,7 @@
   "products": [
     {
       "id": "cash-loan",
-      "nameVi": "Vay tien mat (cash loan)",
+      "nameVi": "Vay tiền mặt",
       "productType": "cash_loan",
       "status": "active",
       "validUntil": null,
@@ -27,52 +27,83 @@
         "value": 101000000,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
         "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Cash page: up to 101 million VND. CONTRADICTION: FAQ Q18 says up to 130 million for consumer and cash products."
+        "confidence": "low",
+        "note": "Trang vay tiền mặt: tối đa 101 triệu đồng. Xung đột: FAQ Q18 nói tối đa 130 triệu cho sản phẩm tiêu dùng và tiền mặt. Cả hai đều vượt trần 100 triệu của công ty tài chính (Thông tư 43/2016 điều 3 khoản 1). Lưu giá trị thấp hơn."
       },
       "termMinMonths": {
         "value": 9,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
         "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "FAQ Q19: 9 to 60 months depending on the installment product; not cash-specific. Cash page shows no term values."
+        "confidence": "low",
+        "note": "FAQ Q19: 9 đến 60 tháng tùy sản phẩm trả góp; không riêng cho vay tiền mặt. Trang vay tiền mặt không có kỳ hạn."
       },
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
         "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Same FAQ statement, not cash-specific."
+        "confidence": "low",
+        "note": "Cùng câu FAQ, không riêng cho vay tiền mặt."
       },
       "rates": [
         {
-          "kind": "offered_range",
+          "kind": "regulatory_ceiling",
           "segment": null,
           "minPercent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
+            "note": "Khung lãi suất liệt kê 0% là mức thấp nhất cho mọi sản phẩm (khuyến mại); không có mức tối thiểu tiêu chuẩn được công bố."
           },
           "maxPercent": {
             "value": 4.99,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Framework ceiling, not a quoted product rate: direct cash disbursement ceiling 4.99%/month, 59.90%/year reducing (flat ceiling 2.94%/month, 35.33%/year). Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Trần của khung lãi suất (giải ngân trực tiếp cho khách hàng), không phải lãi suất chào cho sản phẩm: 4.99%/tháng = 59.9%/năm, theo dư nợ giảm dần. Trang khung lãi suất không có ngày hiệu lực (chân trang ghi 2020), nên chỉ tin cậy thấp. Lãi suất thực tế của khách chưa rõ."
           },
           "basis": {
             "value": "reducing",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Cột \"Theo dư nợ giảm dần\"; trang ghi \"Lãi tiền vay được tính trên cơ sở dư nợ giảm dần\"."
           },
           "period": {
             "value": "monthly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Cột \"Tháng\" của bảng khung lãi suất (cột \"Năm\" ghi 59.9%/năm)."
+          },
+          "promotional": null
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": null,
+          "minPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Khung lãi suất liệt kê 0% là mức thấp nhất cho mọi sản phẩm (khuyến mại); không có mức tối thiểu tiêu chuẩn được công bố."
+          },
+          "maxPercent": {
+            "value": 2.94,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Trần của khung lãi suất (giải ngân trực tiếp cho khách hàng), không phải lãi suất chào cho sản phẩm: 2.94%/tháng = 35.33%/năm, theo dư nợ ban đầu (flat). Trang khung lãi suất không có ngày hiệu lực (chân trang ghi 2020), nên chỉ tin cậy thấp. Lãi suất thực tế của khách chưa rõ."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Cột \"Theo dư nợ ban đầu\" (tính trên dư nợ ban đầu)."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Cột \"Tháng\" của bảng khung lãi suất (cột \"Năm\" ghi 35.33%/năm)."
           },
           "promotional": null
         }
@@ -84,89 +115,91 @@
       },
       "fees": [
         {
-          "nameVi": "Phi tra no truoc han",
+          "nameVi": "Phí trả nợ trước hạn",
           "nameEn": "Early repayment fee (full prepayment)",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Mục 9.3 Điều khoản và điều kiện: phí tính khi khách yêu cầu tất toán trước hạn, từ ngày HD SAISON chấp nhận yêu cầu."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "confidence": "medium",
+            "note": "Chỉ phát sinh khi khách chọn tất toán trước hạn toàn bộ; FAQ: trả trước một phần không mất phí."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "greater_of_percent_and_remaining_interest",
           "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "6% of remaining unpaid principal from the date HD SAISON accepts the request. T&C (applied from 06/01/2025) section 9.3 says the fee is the HIGHER of this and the total interest of all remaining instalments, but never below the minimum. FAQ: partial prepayment has no fee; full prepayment does."
-          },
-          "fixedVnd": {
-            "value": 1500000,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Minimum floor for cash and vehicle loans (T&C section 10), not a fixed fee."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "maxVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "payee": "unknown"
-        },
-        {
-          "nameVi": "Phat thay doi ke hoach thanh toan",
-          "nameEn": "Payment schedule change fee",
-          "trigger": "other",
-          "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
-          },
-          "mandatory": {
-            "value": false,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "base": "unknown",
-          "rule": "percent_only",
-          "percent": {
-            "value": 4,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "4% of remaining unpaid principal when the borrower asks to change the payment schedule (T&C 2025)."
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
           },
           "fixedVnd": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Percent-based; no fixed amount."
+            "note": "Không phải phí cố định; xem minVnd."
+          },
+          "minVnd": {
+            "value": 1500000,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Mức tối thiểu 1.500.000 VND cho vay tiền mặt và phương tiện (Điều khoản và điều kiện mục 10)."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thay đổi kế hoạch thanh toán",
+          "nameEn": "Payment schedule change fee",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "note": "Phí phát sinh khi khách yêu cầu thay đổi kế hoạch thanh toán."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Chỉ phát sinh khi khách yêu cầu thay đổi lịch trả nợ."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 4,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Phí theo phần trăm; không có số tiền cố định."
           },
           "minVnd": {
             "value": null,
@@ -186,10 +219,10 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         },
         {
-          "nameVi": "Phi chuyen tien",
+          "nameVi": "Phí chuyển tiền",
           "nameEn": "Money transfer fee (blank field in contract form)",
           "trigger": "per_transaction",
           "timing": {
@@ -241,7 +274,7 @@
           "payee": "unknown"
         },
         {
-          "nameVi": "Phi thu ho qua ngan hang/buu dien",
+          "nameVi": "Phí thu hộ qua ngân hàng/bưu điện",
           "nameEn": "Collection-point / bank payment fee",
           "trigger": "per_transaction",
           "timing": {
@@ -250,11 +283,11 @@
             "sourceUrl": null
           },
           "mandatory": {
-            "value": false,
-            "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "FAQ Q11 chỉ nói phí thay đổi theo điểm thu hộ khách chọn; không rõ khách có bắt buộc trả hay không."
           },
           "base": "unknown",
           "rule": "other",
@@ -290,25 +323,25 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "third_party"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bảo hiểm An Tâm Tài Chính",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
             "confidence": "high",
-            "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
+            "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
             "value": "added_to_loan",
             "provenance": "inferred",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Suy ra từ mẫu hợp đồng có dòng riêng cho số tiền vay để mua bảo hiểm (có thể gộp vào khoản vay); chưa có trang nào nói trực tiếp."
           },
           "premium": {
             "method": {
@@ -321,7 +354,7 @@
               "sourceUrl": null,
               "retrievedAt": null,
               "confidence": null,
-              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+              "note": "Mức phí bảo hiểm không có trên trang sản phẩm; nằm trong quy tắc bảo hiểm của công ty bảo hiểm hoặc phiếu yêu cầu bảo hiểm, chưa lấy được."
             },
             "ratePercentMax": {
               "value": null,
@@ -343,7 +376,9 @@
               "note": "Premium amount not published on the pages read."
             }
           },
-          "beneficiary": null
+          "beneficiary": null,
+          "nameEn": "Loan protection insurance (death, disability, missing)",
+          "covers": "Tử vong, thương tật, mất tích"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -373,10 +408,10 @@
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "CCCD gan chip (or CMND copy plus driving licence / ho khau / marriage certificate / original vehicle registration)",
-            "Proof of residence: one of electricity, water, landline, internet, cable TV or postpaid mobile bill in customer's name (some packages)",
-            "Salaried income proof: labour contract plus payslip of 1 of last 3 months, or bank statement, or salary/position confirmation (some packages)",
-            "Self-employed: business licence plus tax receipt or bank statements of last 3 months"
+            "CCCD gắn chip (hoặc bản sao CMND kèm giấy phép lái xe / hộ khẩu / giấy đăng ký kết hôn / bản chính cà vẹt xe)",
+            "Giấy tờ nơi cư trú: một trong các hóa đơn điện, nước, điện thoại cố định, internet, truyền hình cáp hoặc điện thoại trả sau đứng tên khách (một số gói)",
+            "Thu nhập làm công ăn lương: hợp đồng lao động kèm phiếu lương của 1 trong 3 tháng gần nhất, hoặc sao kê ngân hàng, hoặc giấy xác nhận lương/chức vụ (một số gói)",
+            "Kinh doanh tự do: giấy phép kinh doanh kèm biên lai thuế hoặc sao kê ngân hàng 3 tháng gần nhất"
           ],
           "sourceUrl": "https://www.hdsaison.com.vn/thu-tuc-vay.html",
           "retrievedAt": "2026-11-01",
@@ -401,40 +436,86 @@
           "retrievedAt": null,
           "confidence": null
         },
-        "notes": "Cash page says only a personal consumption need is required. Cash loan document set: credit application, loan T&C, insurance request form (An Tam Tai Chinh), e-service terms."
+        "notes": "Trang vay tiền mặt chỉ nói cần có nhu cầu tiêu dùng cá nhân. Bộ hồ sơ vay tiền mặt gồm: đơn vay, điều khoản vay, phiếu yêu cầu bảo hiểm (An Tâm Tài Chính), điều khoản dịch vụ điện tử."
       },
       "latePenalty": {
         "textVi": {
-          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+          "note": "Từ Điều khoản và điều kiện 2025 (bản trích văn bản PDF bị lỗi dấu, nhưng con số rõ). Không tìm thấy phí trả chậm cố định riêng cho khoản vay."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "low",
+          "note": "150% lãi suất trong hạn tính trên kỳ trả nợ chưa thanh toán. Có xung đột với Thông tư 39 (xem conflicts); hạ độ tin cậy."
         },
         "overdueInterestRatePercentYear": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
-        }
+          "confidence": null,
+          "note": "Văn bản không nêu riêng lãi trên lãi quá hạn: 150% áp lên cả kỳ trả nợ (gồm lãi)."
+        },
+        "textEn": "Late interest 150% of the monthly effective rate on the unpaid instalment; early-recovery penalty 6% of remaining principal after breach."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "101.000.000 VND",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
+              "note": "Trang vay tiền mặt"
+            },
+            {
+              "value": "130.000.000 VND",
+              "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
+              "note": "FAQ Q18, sản phẩm tiêu dùng và tiền mặt"
+            },
+            {
+              "value": "Tối đa 100.000.000 VND cho khoản vay tiêu dùng của công ty tài chính",
+              "sourceUrl": null,
+              "note": "Thông tư 43/2016/TT-NHNN điều 3 khoản 1; xem docs/research/regulations.md"
+            }
+          ],
+          "resolution": "Lưu giá trị chính thức thấp hơn (101 triệu). Lawyer to confirm; app does not show amounts above 100M as achievable."
+        },
+        {
+          "field": "latePenalty.overduePrincipalRateMultiplier",
+          "values": [
+            {
+              "value": "150% lãi suất hiệu lực hằng tháng trên kỳ trả nợ chưa thanh toán (kỳ gồm cả gốc và lãi)",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+              "note": "Điều khoản và điều kiện áp dụng từ 06/01/2025"
+            },
+            {
+              "value": "Lãi chậm trả trên lãi quá hạn tối đa 10%/năm (Thông tư 39/2016/TT-NHNN, điều 13 khoản 4)",
+              "sourceUrl": null,
+              "note": "Xem docs/research/regulations.md"
+            },
+            {
+              "value": "Phạt thu hồi nợ trước hạn: 6% dư nợ gốc còn lại, tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf"
+            }
+          ],
+          "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        }
+      ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/vay-tien-mat.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
       "excludeFromRanking": false,
-      "notes": "No standard rate, term options or fee table is published on the cash page; the rate is only the ceiling table. Flat ceiling for direct cash: 2.94%/month (35.33%/year). Contract form allows financing the insurance premium within the loan. No app-specific cash loan page found."
+      "notes": "Trang vay tiền mặt không công bố lãi suất chuẩn, kỳ hạn hay biểu phí; chỉ có bảng trần lãi suất (khung lãi suất, không ngày hiệu lực). Trần theo dư nợ ban đầu cho giải ngân trực tiếp: 2,94%/tháng. Mẫu hợp đồng cho phép gộp phí bảo hiểm vào khoản vay. Không tìm thấy trang riêng cho khoản vay tiền mặt trên ứng dụng. Không có khoảng lãi suất chào bán nên sản phẩm hiển thị \"chưa đủ dữ liệu\".",
+      "nameEn": "Cash loan"
     },
     {
       "id": "motorbike-installment",
-      "nameVi": "Tra gop xe may (motorbike installment)",
+      "nameVi": "Trả góp xe máy",
       "productType": "installment",
       "status": "active",
       "validUntil": null,
@@ -453,7 +534,7 @@
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "Not published for motorbikes. FAQ: cars/light trucks up to 500 million, other consumer products up to 130 million."
+        "note": "Không công bố riêng cho xe máy. FAQ: ô tô/xe tải nhẹ tối đa 500 triệu, sản phẩm tiêu dùng khác tối đa 130 triệu."
       },
       "termMinMonths": {
         "value": 9,
@@ -471,33 +552,64 @@
       },
       "rates": [
         {
-          "kind": "offered_range",
+          "kind": "regulatory_ceiling",
           "segment": null,
           "minPercent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
+            "note": "Khung lãi suất liệt kê 0% là mức thấp nhất cho mọi sản phẩm (khuyến mại); không có mức tối thiểu tiêu chuẩn được công bố."
           },
           "maxPercent": {
             "value": 4.92,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Framework ceiling, not a quoted product rate: vehicles ceiling 4.92%/month, 59.00%/year reducing (flat ceiling 2.90%/month, 34.75%/year). Product page also advertises 0% on a featured package with no conditions. Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Trần của khung lãi suất (phương tiện đi lại), không phải lãi suất chào cho sản phẩm: 4.92%/tháng = 59%/năm, theo dư nợ giảm dần. Trang khung lãi suất không có ngày hiệu lực (chân trang ghi 2020), nên chỉ tin cậy thấp. Lãi suất thực tế của khách chưa rõ. Trang sản phẩm còn quảng cáo 0% cho một gói nổi bật nhưng không nêu điều kiện."
           },
           "basis": {
             "value": "reducing",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Cột \"Theo dư nợ giảm dần\"; trang ghi \"Lãi tiền vay được tính trên cơ sở dư nợ giảm dần\"."
           },
           "period": {
             "value": "monthly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Cột \"Tháng\" của bảng khung lãi suất (cột \"Năm\" ghi 59%/năm)."
+          },
+          "promotional": null
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": null,
+          "minPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Khung lãi suất liệt kê 0% là mức thấp nhất cho mọi sản phẩm (khuyến mại); không có mức tối thiểu tiêu chuẩn được công bố."
+          },
+          "maxPercent": {
+            "value": 2.9,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Trần của khung lãi suất (phương tiện đi lại), không phải lãi suất chào cho sản phẩm: 2.9%/tháng = 34.75%/năm, theo dư nợ ban đầu (flat). Trang khung lãi suất không có ngày hiệu lực (chân trang ghi 2020), nên chỉ tin cậy thấp. Lãi suất thực tế của khách chưa rõ. Trang sản phẩm còn quảng cáo 0% cho một gói nổi bật nhưng không nêu điều kiện."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Cột \"Theo dư nợ ban đầu\" (tính trên dư nợ ban đầu)."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Cột \"Tháng\" của bảng khung lãi suất (cột \"Năm\" ghi 34.75%/năm)."
           },
           "promotional": null
         }
@@ -509,89 +621,91 @@
       },
       "fees": [
         {
-          "nameVi": "Phi tra no truoc han",
+          "nameVi": "Phí trả nợ trước hạn",
           "nameEn": "Early repayment fee (full prepayment)",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Mục 9.3 Điều khoản và điều kiện: phí tính khi khách yêu cầu tất toán trước hạn, từ ngày HD SAISON chấp nhận yêu cầu."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "confidence": "medium",
+            "note": "Chỉ phát sinh khi khách chọn tất toán trước hạn toàn bộ; FAQ: trả trước một phần không mất phí."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "greater_of_percent_and_remaining_interest",
           "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "6% of remaining unpaid principal from the date HD SAISON accepts the request. T&C (applied from 06/01/2025) section 9.3 says the fee is the HIGHER of this and the total interest of all remaining instalments, but never below the minimum. FAQ: partial prepayment has no fee; full prepayment does."
-          },
-          "fixedVnd": {
-            "value": 1500000,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Minimum floor for vehicle loans (T&C section 10)."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "maxVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "payee": "unknown"
-        },
-        {
-          "nameVi": "Phat thay doi ke hoach thanh toan",
-          "nameEn": "Payment schedule change fee",
-          "trigger": "other",
-          "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
-          },
-          "mandatory": {
-            "value": false,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "base": "unknown",
-          "rule": "percent_only",
-          "percent": {
-            "value": 4,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "4% of remaining unpaid principal when the borrower asks to change the payment schedule (T&C 2025)."
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
           },
           "fixedVnd": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Percent-based; no fixed amount."
+            "note": "Không phải phí cố định; xem minVnd."
+          },
+          "minVnd": {
+            "value": 1500000,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Mức tối thiểu 1.500.000 VND cho vay phương tiện (Điều khoản và điều kiện mục 10)."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thay đổi kế hoạch thanh toán",
+          "nameEn": "Payment schedule change fee",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "note": "Phí phát sinh khi khách yêu cầu thay đổi kế hoạch thanh toán."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Chỉ phát sinh khi khách yêu cầu thay đổi lịch trả nợ."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 4,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Phí theo phần trăm; không có số tiền cố định."
           },
           "minVnd": {
             "value": null,
@@ -611,10 +725,10 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         },
         {
-          "nameVi": "Phi thu ho qua ngan hang/buu dien",
+          "nameVi": "Phí thu hộ qua ngân hàng/bưu điện",
           "nameEn": "Collection-point / bank payment fee",
           "trigger": "per_transaction",
           "timing": {
@@ -623,11 +737,11 @@
             "sourceUrl": null
           },
           "mandatory": {
-            "value": false,
-            "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "FAQ Q11 chỉ nói phí thay đổi theo điểm thu hộ khách chọn; không rõ khách có bắt buộc trả hay không."
           },
           "base": "unknown",
           "rule": "other",
@@ -663,25 +777,25 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "third_party"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bảo hiểm An Tâm Tài Chính",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
             "confidence": "high",
-            "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
+            "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
             "value": "added_to_loan",
             "provenance": "inferred",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Suy ra từ mẫu hợp đồng có dòng riêng cho số tiền vay để mua bảo hiểm (có thể gộp vào khoản vay); chưa có trang nào nói trực tiếp."
           },
           "premium": {
             "method": {
@@ -694,7 +808,7 @@
               "sourceUrl": null,
               "retrievedAt": null,
               "confidence": null,
-              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+              "note": "Mức phí bảo hiểm không có trên trang sản phẩm; nằm trong quy tắc bảo hiểm của công ty bảo hiểm hoặc phiếu yêu cầu bảo hiểm, chưa lấy được."
             },
             "ratePercentMax": {
               "value": null,
@@ -716,7 +830,9 @@
               "note": "Premium amount not published on the pages read."
             }
           },
-          "beneficiary": null
+          "beneficiary": null,
+          "nameEn": "Loan protection insurance (death, disability, missing)",
+          "covers": "Tử vong, thương tật, mất tích"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -746,10 +862,10 @@
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "CCCD gan chip (or CMND copy plus driving licence / ho khau / marriage certificate / original vehicle registration)",
-            "Proof of residence: one of electricity, water, landline, internet, cable TV or postpaid mobile bill in customer's name (some packages)",
-            "Salaried income proof: labour contract plus payslip of 1 of last 3 months, or bank statement, or salary/position confirmation (some packages)",
-            "Self-employed: business licence plus tax receipt or bank statements of last 3 months"
+            "CCCD gắn chip (hoặc bản sao CMND kèm giấy phép lái xe / hộ khẩu / giấy đăng ký kết hôn / bản chính cà vẹt xe)",
+            "Giấy tờ nơi cư trú: một trong các hóa đơn điện, nước, điện thoại cố định, internet, truyền hình cáp hoặc điện thoại trả sau đứng tên khách (một số gói)",
+            "Thu nhập làm công ăn lương: hợp đồng lao động kèm phiếu lương của 1 trong 3 tháng gần nhất, hoặc sao kê ngân hàng, hoặc giấy xác nhận lương/chức vụ (một số gói)",
+            "Kinh doanh tự do: giấy phép kinh doanh kèm biên lai thuế hoặc sao kê ngân hàng 3 tháng gần nhất"
           ],
           "sourceUrl": "https://www.hdsaison.com.vn/thu-tuc-vay.html",
           "retrievedAt": "2026-11-01",
@@ -778,36 +894,61 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+          "note": "Từ Điều khoản và điều kiện 2025 (bản trích văn bản PDF bị lỗi dấu, nhưng con số rõ). Không tìm thấy phí trả chậm cố định riêng cho khoản vay."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "low",
+          "note": "150% lãi suất trong hạn tính trên kỳ trả nợ chưa thanh toán. Có xung đột với Thông tư 39 (xem conflicts); hạ độ tin cậy."
         },
         "overdueInterestRatePercentYear": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
-        }
+          "confidence": null,
+          "note": "Văn bản không nêu riêng lãi trên lãi quá hạn: 150% áp lên cả kỳ trả nợ (gồm lãi)."
+        },
+        "textEn": "Late interest 150% of the monthly effective rate on the unpaid instalment; early-recovery penalty 6% of remaining principal after breach."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "latePenalty.overduePrincipalRateMultiplier",
+          "values": [
+            {
+              "value": "150% lãi suất hiệu lực hằng tháng trên kỳ trả nợ chưa thanh toán (kỳ gồm cả gốc và lãi)",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+              "note": "Điều khoản và điều kiện áp dụng từ 06/01/2025"
+            },
+            {
+              "value": "Lãi chậm trả trên lãi quá hạn tối đa 10%/năm (Thông tư 39/2016/TT-NHNN, điều 13 khoản 4)",
+              "sourceUrl": null,
+              "note": "Xem docs/research/regulations.md"
+            },
+            {
+              "value": "Phạt thu hồi nợ trước hạn: 6% dư nợ gốc còn lại, tối thiểu 1.500.000 VND với vay tiền mặt và phương tiện; 240.000 VND với hàng hóa/điện máy",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf"
+            }
+          ],
+          "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        }
+      ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/cho-vay-mua-xe-may-tra-gop.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
       "excludeFromRanking": false,
-      "notes": "Secured by the financed vehicle (mortgage contract in document set). 0% promotion conditions not stated."
+      "notes": "Có tài sản bảo đảm là xe được tài trợ (hợp đồng thế chấp trong bộ hồ sơ). Điều kiện của gói 0% không được nêu. Không có khoảng lãi suất chào bán nên hiển thị \"chưa đủ dữ liệu\".",
+      "nameEn": "Motorbike installment"
     },
     {
       "id": "electronics-installment",
-      "nameVi": "Tra gop dien may (electronics/appliances installment)",
+      "nameVi": "Trả góp điện máy",
       "productType": "installment",
       "status": "active",
       "validUntil": null,
@@ -844,33 +985,64 @@
       },
       "rates": [
         {
-          "kind": "offered_range",
+          "kind": "regulatory_ceiling",
           "segment": null,
           "minPercent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "No standard minimum rate published; framework lists 0 as a floor for promotions only."
+            "note": "Khung lãi suất liệt kê 0% là mức thấp nhất cho mọi sản phẩm (khuyến mại); không có mức tối thiểu tiêu chuẩn được công bố."
           },
           "maxPercent": {
             "value": 4.79,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Framework ceiling, not a quoted product rate: household goods ceiling 4.79%/month, 57.50%/year reducing (flat ceiling 2.82%/month, 33.80%/year). Product page advertises 0% on a featured package with no conditions. Rate framework page: interest is on reducing balance ('du no giam dan'), formula sum(balance x days x annual rate)/365. It also lists flat-basis ceilings. These are caps, so the actual customer rate is unknown. Page lists 0 as the lowest rate for every product (promotions)."
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Trần của khung lãi suất (đồ dùng, trang thiết bị gia đình và hàng hóa, dịch vụ khác), không phải lãi suất chào cho sản phẩm: 4.79%/tháng = 57.5%/năm, theo dư nợ giảm dần. Trang khung lãi suất không có ngày hiệu lực (chân trang ghi 2020), nên chỉ tin cậy thấp. Lãi suất thực tế của khách chưa rõ. Trang sản phẩm còn quảng cáo 0% cho một gói nổi bật nhưng không nêu điều kiện."
           },
           "basis": {
             "value": "reducing",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Cột \"Theo dư nợ giảm dần\"; trang ghi \"Lãi tiền vay được tính trên cơ sở dư nợ giảm dần\"."
           },
           "period": {
             "value": "monthly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Cột \"Tháng\" của bảng khung lãi suất (cột \"Năm\" ghi 57.5%/năm)."
+          },
+          "promotional": null
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": null,
+          "minPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Khung lãi suất liệt kê 0% là mức thấp nhất cho mọi sản phẩm (khuyến mại); không có mức tối thiểu tiêu chuẩn được công bố."
+          },
+          "maxPercent": {
+            "value": 2.82,
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Trần của khung lãi suất (đồ dùng, trang thiết bị gia đình và hàng hóa, dịch vụ khác), không phải lãi suất chào cho sản phẩm: 2.82%/tháng = 33.8%/năm, theo dư nợ ban đầu (flat). Trang khung lãi suất không có ngày hiệu lực (chân trang ghi 2020), nên chỉ tin cậy thấp. Lãi suất thực tế của khách chưa rõ. Trang sản phẩm còn quảng cáo 0% cho một gói nổi bật nhưng không nêu điều kiện."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Cột \"Theo dư nợ ban đầu\" (tính trên dư nợ ban đầu)."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+            "note": "Cột \"Tháng\" của bảng khung lãi suất (cột \"Năm\" ghi 33.8%/năm)."
           },
           "promotional": null
         }
@@ -882,89 +1054,91 @@
       },
       "fees": [
         {
-          "nameVi": "Phi tra no truoc han",
+          "nameVi": "Phí trả nợ trước hạn",
           "nameEn": "Early repayment fee (full prepayment)",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Mục 9.3 Điều khoản và điều kiện: phí tính khi khách yêu cầu tất toán trước hạn, từ ngày HD SAISON chấp nhận yêu cầu."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "confidence": "medium",
+            "note": "Chỉ phát sinh khi khách chọn tất toán trước hạn toàn bộ; FAQ: trả trước một phần không mất phí."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "greater_of_percent_and_remaining_interest",
           "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "6% of remaining unpaid principal from the date HD SAISON accepts the request. T&C (applied from 06/01/2025) section 9.3 says the fee is the HIGHER of this and the total interest of all remaining instalments, but never below the minimum. FAQ: partial prepayment has no fee; full prepayment does."
-          },
-          "fixedVnd": {
-            "value": 240000,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Minimum floor for goods loans (1,500,000 VND for certain service loans), T&C section 10."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "maxVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "payee": "unknown"
-        },
-        {
-          "nameVi": "Phat thay doi ke hoach thanh toan",
-          "nameEn": "Payment schedule change fee",
-          "trigger": "other",
-          "timing": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null
-          },
-          "mandatory": {
-            "value": false,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "base": "unknown",
-          "rule": "percent_only",
-          "percent": {
-            "value": 4,
-            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "4% of remaining unpaid principal when the borrower asks to change the payment schedule (T&C 2025)."
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
           },
           "fixedVnd": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Percent-based; no fixed amount."
+            "note": "Không phải phí cố định; xem minVnd."
+          },
+          "minVnd": {
+            "value": 240000,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Mức tối thiểu 240.000 VND cho vay hàng hóa (một số khoản vay dịch vụ: 1.500.000 VND), Điều khoản và điều kiện mục 10."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thay đổi kế hoạch thanh toán",
+          "nameEn": "Payment schedule change fee",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "note": "Phí phát sinh khi khách yêu cầu thay đổi kế hoạch thanh toán."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Chỉ phát sinh khi khách yêu cầu thay đổi lịch trả nợ."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 4,
+            "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "4% dư nợ gốc còn lại khi khách yêu cầu thay đổi kế hoạch thanh toán (Điều khoản và điều kiện 2025)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Phí theo phần trăm; không có số tiền cố định."
           },
           "minVnd": {
             "value": null,
@@ -984,10 +1158,10 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         },
         {
-          "nameVi": "Phi thu ho qua ngan hang/buu dien",
+          "nameVi": "Phí thu hộ qua ngân hàng/bưu điện",
           "nameEn": "Collection-point / bank payment fee",
           "trigger": "per_transaction",
           "timing": {
@@ -996,11 +1170,11 @@
             "sourceUrl": null
           },
           "mandatory": {
-            "value": false,
-            "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "FAQ Q11 chỉ nói phí thay đổi theo điểm thu hộ khách chọn; không rõ khách có bắt buộc trả hay không."
           },
           "base": "unknown",
           "rule": "other",
@@ -1036,25 +1210,25 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "third_party"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bảo hiểm An Tâm Tài Chính",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
             "confidence": "high",
-            "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
+            "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
             "value": "added_to_loan",
             "provenance": "inferred",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Suy ra từ mẫu hợp đồng có dòng riêng cho số tiền vay để mua bảo hiểm (có thể gộp vào khoản vay); chưa có trang nào nói trực tiếp."
           },
           "premium": {
             "method": {
@@ -1067,7 +1241,7 @@
               "sourceUrl": null,
               "retrievedAt": null,
               "confidence": null,
-              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+              "note": "Mức phí bảo hiểm không có trên trang sản phẩm; nằm trong quy tắc bảo hiểm của công ty bảo hiểm hoặc phiếu yêu cầu bảo hiểm, chưa lấy được."
             },
             "ratePercentMax": {
               "value": null,
@@ -1089,7 +1263,9 @@
               "note": "Premium amount not published on the pages read."
             }
           },
-          "beneficiary": null
+          "beneficiary": null,
+          "nameEn": "Loan protection insurance (death, disability, missing)",
+          "covers": "Tử vong, thương tật, mất tích"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -1119,10 +1295,10 @@
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "CCCD gan chip (or CMND copy plus driving licence / ho khau / marriage certificate / original vehicle registration)",
-            "Proof of residence: one of electricity, water, landline, internet, cable TV or postpaid mobile bill in customer's name (some packages)",
-            "Salaried income proof: labour contract plus payslip of 1 of last 3 months, or bank statement, or salary/position confirmation (some packages)",
-            "Self-employed: business licence plus tax receipt or bank statements of last 3 months"
+            "CCCD gắn chip (hoặc bản sao CMND kèm giấy phép lái xe / hộ khẩu / giấy đăng ký kết hôn / bản chính cà vẹt xe)",
+            "Giấy tờ nơi cư trú: một trong các hóa đơn điện, nước, điện thoại cố định, internet, truyền hình cáp hoặc điện thoại trả sau đứng tên khách (một số gói)",
+            "Thu nhập làm công ăn lương: hợp đồng lao động kèm phiếu lương của 1 trong 3 tháng gần nhất, hoặc sao kê ngân hàng, hoặc giấy xác nhận lương/chức vụ (một số gói)",
+            "Kinh doanh tự do: giấy phép kinh doanh kèm biên lai thuế hoặc sao kê ngân hàng 3 tháng gần nhất"
           ],
           "sourceUrl": "https://www.hdsaison.com.vn/thu-tuc-vay.html",
           "retrievedAt": "2026-11-01",
@@ -1147,73 +1323,98 @@
           "retrievedAt": null,
           "confidence": null
         },
-        "notes": "Down payment 'from 0 dong' (page). A guarantee agreement (Thoa thuan bao lanh) is listed for this product."
+        "notes": "Trả trước \"từ 0 đồng\" (theo trang). Sản phẩm có thỏa thuận bảo lãnh."
       },
       "latePenalty": {
         "textVi": {
-          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 240,000 VND for goods). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 240.000 VND với hàng hóa). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "From 2025 loan T&C; minimum penalty for goods is 240,000 VND."
+          "note": "Từ Điều khoản và điều kiện 2025 (bản trích văn bản PDF bị lỗi dấu, nhưng con số rõ). Không tìm thấy phí trả chậm cố định riêng cho khoản vay."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "low",
+          "note": "150% lãi suất trong hạn tính trên kỳ trả nợ chưa thanh toán. Có xung đột với Thông tư 39 (xem conflicts); hạ độ tin cậy."
         },
         "overdueInterestRatePercentYear": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
-        }
+          "confidence": null,
+          "note": "Văn bản không nêu riêng lãi trên lãi quá hạn: 150% áp lên cả kỳ trả nợ (gồm lãi)."
+        },
+        "textEn": "Late interest 150% of the monthly effective rate on the unpaid instalment; early-recovery penalty 6% of remaining principal after breach."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "latePenalty.overduePrincipalRateMultiplier",
+          "values": [
+            {
+              "value": "150% lãi suất hiệu lực hằng tháng trên kỳ trả nợ chưa thanh toán (kỳ gồm cả gốc và lãi)",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+              "note": "Điều khoản và điều kiện áp dụng từ 06/01/2025"
+            },
+            {
+              "value": "Lãi chậm trả trên lãi quá hạn tối đa 10%/năm (Thông tư 39/2016/TT-NHNN, điều 13 khoản 4)",
+              "sourceUrl": null,
+              "note": "Xem docs/research/regulations.md"
+            },
+            {
+              "value": "Phạt thu hồi nợ trước hạn: 6% dư nợ gốc còn lại, tối thiểu 240.000 VND với hàng hóa",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf"
+            }
+          ],
+          "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        }
+      ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/san-pham-dien-may.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
       "excludeFromRanking": false,
-      "notes": "T&C selling price definition excludes registration, mandatory insurance and admin costs."
+      "notes": "Định nghĩa giá bán trong Điều khoản và điều kiện không gồm phí đăng ký, bảo hiểm bắt buộc và chi phí hành chính. Không có khoảng lãi suất chào bán nên hiển thị \"chưa đủ dữ liệu\".",
+      "nameEn": "Electronics and appliances installment"
     },
     {
       "id": "union-worker-loan",
-      "nameVi": "Vay doan vien - cong nhan (union member / worker loan)",
+      "nameVi": "Vay đoàn viên - công nhân",
       "productType": "cash_loan",
-      "status": "active",
-      "validUntil": null,
+      "status": "expired",
+      "validUntil": "2025-12-31",
       "lenderOfRecord": "hd-saison",
       "brandOrChannel": null,
       "online": null,
       "amountMinVnd": {
         "value": 12000000,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Page: 12,000,000 - 31,000,000 dong; page references a 2024 union Tet campaign, may be time-limited."
+        "retrievedAt": "2026-11-02",
+        "confidence": "low",
+        "note": "Trang: 12.000.000 - 31.000.000 đồng; chiến dịch, trang nói áp dụng \"xuyên suốt năm 2025\" nên coi là đã hết hạn."
       },
       "amountMaxVnd": {
         "value": 31000000,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Same."
+        "retrievedAt": "2026-11-02",
+        "confidence": "low",
+        "note": "Trang: 12.000.000 - 31.000.000 đồng; chiến dịch, trang nói áp dụng \"xuyên suốt năm 2025\" nên coi là đã hết hạn."
       },
       "termMinMonths": {
         "value": 24,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Page: 24 - 36 months."
+        "retrievedAt": "2026-11-02",
+        "confidence": "low",
+        "note": "Trang: 24 - 36 tháng; chiến dịch, trang nói áp dụng \"xuyên suốt năm 2025\" nên coi là đã hết hạn."
       },
       "termMaxMonths": {
         "value": 36,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
-        "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Same."
+        "retrievedAt": "2026-11-02",
+        "confidence": "low",
+        "note": "Trang: 24 - 36 tháng; chiến dịch, trang nói áp dụng \"xuyên suốt năm 2025\" nên coi là đã hết hạn."
       },
       "rates": [],
       "amortization": {
@@ -1223,43 +1424,44 @@
       },
       "fees": [
         {
-          "nameVi": "Phi tra no truoc han",
+          "nameVi": "Phí trả nợ trước hạn",
           "nameEn": "Early repayment fee (full prepayment)",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Mục 9.3 Điều khoản và điều kiện: phí tính khi khách yêu cầu tất toán trước hạn, từ ngày HD SAISON chấp nhận yêu cầu."
           },
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "confidence": "medium",
+            "note": "Chỉ phát sinh khi khách chọn tất toán trước hạn toàn bộ; FAQ: trả trước một phần không mất phí."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "greater_of_percent_and_remaining_interest",
           "percent": {
             "value": 6,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "6% of remaining unpaid principal from the date HD SAISON accepts the request. T&C (applied from 06/01/2025) section 9.3 says the fee is the HIGHER of this and the total interest of all remaining instalments, but never below the minimum. FAQ: partial prepayment has no fee; full prepayment does."
+            "note": "6% dư nợ gốc còn lại, kể từ ngày HD SAISON chấp nhận yêu cầu. Phí là mức CAO HƠN giữa 6% dư nợ gốc còn lại và tổng tiền lãi của các kỳ còn lại, và không thấp hơn mức tối thiểu (Điều khoản và điều kiện áp dụng từ 06/01/2025, mục 9.3). Phần \"tổng lãi các kỳ còn lại\" không có con số cố định nên không lưu thành số."
           },
           "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Không phải phí cố định; xem minVnd."
+          },
+          "minVnd": {
             "value": 1500000,
             "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "General loan T&C minimum for cash loans; product page does not restate it."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "note": "Mức tối thiểu cho vay tiền mặt theo Điều khoản và điều kiện chung; trang sản phẩm không nhắc lại."
           },
           "maxVnd": {
             "value": null,
@@ -1273,25 +1475,25 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Bao hiem An tam tai chinh (loan protection: death, disability, missing)",
+          "nameVi": "Bảo hiểm An Tâm Tài Chính",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://www.hdsaison.com.vn/vn/hoi-dap.html",
             "retrievedAt": "2026-11-01",
             "confidence": "high",
-            "note": "FAQ Q2: loan insurance is not mandatory; insurance page says customers are not required to buy insurance."
+            "note": "FAQ Q2: bảo hiểm khoản vay không bắt buộc; trang bảo hiểm cũng nói khách không bắt buộc mua. Lưu ý: bảo hiểm này có trong bộ hồ sơ của mọi sản phẩm."
           },
           "collection": {
             "value": "added_to_loan",
             "provenance": "inferred",
             "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Suy ra từ mẫu hợp đồng có dòng riêng cho số tiền vay để mua bảo hiểm (có thể gộp vào khoản vay); chưa có trang nào nói trực tiếp."
           },
           "premium": {
             "method": {
@@ -1304,7 +1506,7 @@
               "sourceUrl": null,
               "retrievedAt": null,
               "confidence": null,
-              "note": "Premium rate not on product pages; it is in insurer rule PDFs or the insurance request form. Not retrieved. Timing 'added_to_loan' is inferred from the contract form having a separate line for the amount borrowed to buy insurance (medium confidence)."
+              "note": "Mức phí bảo hiểm không có trên trang sản phẩm; nằm trong quy tắc bảo hiểm của công ty bảo hiểm hoặc phiếu yêu cầu bảo hiểm, chưa lấy được."
             },
             "ratePercentMax": {
               "value": null,
@@ -1326,7 +1528,9 @@
               "note": "Premium amount not published on the pages read."
             }
           },
-          "beneficiary": null
+          "beneficiary": null,
+          "nameEn": "Loan protection insurance (death, disability, missing)",
+          "covers": "Tử vong, thương tật, mất tích"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -1335,14 +1539,14 @@
           "value": 18,
           "sourceUrl": "https://www.hdsaison.com.vn/thu-tuc-vay.html",
           "retrievedAt": "2026-11-01",
-          "confidence": "medium",
+          "confidence": "low",
           "note": "General procedure page, not specific to this package."
         },
         "maxAge": {
           "value": 70,
           "sourceUrl": "https://www.hdsaison.com.vn/thu-tuc-vay.html",
           "retrievedAt": "2026-11-01",
-          "confidence": "medium",
+          "confidence": "low",
           "note": "Same."
         },
         "maxAgeAtLoanEnd": null,
@@ -1356,13 +1560,13 @@
         "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "Union members on the 'Cho Tet Cong doan 2024' list: CCCD only",
-            "Other members/workers: CCCD, BHYT, and one of driving licence / vehicle registration / labour contract"
+            "Đoàn viên thuộc danh sách \"Chợ Tết Công đoàn 2024\": chỉ cần CCCD",
+            "Đoàn viên/công nhân khác: CCCD, thẻ BHYT, và một trong các giấy tờ: giấy phép lái xe / đăng ký xe / hợp đồng lao động"
           ],
           "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
-          "retrievedAt": "2026-11-01",
-          "confidence": "medium",
-          "note": "Campaign-specific, may be expired."
+          "retrievedAt": "2026-11-02",
+          "confidence": "low",
+          "note": "Theo chiến dịch; có thể đã hết hạn."
         },
         "existingCustomerRequired": {
           "value": null,
@@ -1377,45 +1581,74 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Là đoàn viên công đoàn hoặc công nhân (theo trang chiến dịch)"
+          ],
+          "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
+          "retrievedAt": "2026-11-02",
+          "confidence": "low",
+          "note": "Chiến dịch, có thể đã hết hạn."
         },
-        "notes": "Each approved loan includes a credit card with 5,000,000 VND limit, up to 45 days interest-free. A monthly payment hint 'from 1.316k' appears with garbled asterisks."
+        "notes": "Mỗi khoản vay được duyệt kèm thẻ tín dụng hạn mức 5.000.000 VND, miễn lãi tối đa 45 ngày. Gợi ý trả hàng tháng \"từ 1.316k\" bị lỗi hiển thị nên không dùng làm ví dụ."
       },
       "latePenalty": {
         "textVi": {
-          "value": "Overdue instalment: late interest at 150% of the monthly effective rate (or promotional rate where applicable) on the unpaid instalment, due by the next monthly due date. If HD SAISON demands early recovery after a breach: penalty 6% of remaining principal (minimum 1,500,000 VND for cash and vehicle; 240,000 VND for goods/electronics). FAQ Q16: late payers bear interest and penalty fees, and overdue debt is reported to CIC.",
+          "value": "Trả chậm một kỳ: bị tính lãi quá hạn bằng 150% lãi suất hiệu lực hằng tháng (hoặc lãi suất khuyến mại nếu có) trên kỳ trả nợ chưa thanh toán, đến kỳ thanh toán tháng sau. Nếu HD SAISON yêu cầu thu hồi nợ trước hạn do khách vi phạm: phạt 6% dư nợ gốc còn lại (tối thiểu 1.500.000 VND với vay tiền mặt). Nợ quá hạn có thể bị báo cáo lên CIC (FAQ Q16).",
           "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "From 2025 loan T&C (PDF text extraction had broken diacritics, numbers legible). No separate fixed late-payment fee for loans found."
+          "note": "Từ Điều khoản và điều kiện 2025 (bản trích văn bản PDF bị lỗi dấu, nhưng con số rõ). Không tìm thấy phí trả chậm cố định riêng cho khoản vay."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "low",
+          "note": "150% lãi suất trong hạn tính trên kỳ trả nợ chưa thanh toán. Có xung đột với Thông tư 39 (xem conflicts); hạ độ tin cậy."
         },
         "overdueInterestRatePercentYear": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
-        }
+          "confidence": null,
+          "note": "Văn bản không nêu riêng lãi trên lãi quá hạn: 150% áp lên cả kỳ trả nợ (gồm lãi)."
+        },
+        "textEn": "Late interest 150% of the monthly effective rate on the unpaid instalment; early-recovery penalty 6% of remaining principal after breach."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "latePenalty.overduePrincipalRateMultiplier",
+          "values": [
+            {
+              "value": "150% lãi suất hiệu lực hằng tháng trên kỳ trả nợ chưa thanh toán (kỳ gồm cả gốc và lãi)",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
+              "note": "Điều khoản và điều kiện áp dụng từ 06/01/2025"
+            },
+            {
+              "value": "Lãi chậm trả trên lãi quá hạn tối đa 10%/năm (Thông tư 39/2016/TT-NHNN, điều 13 khoản 4)",
+              "sourceUrl": null,
+              "note": "Xem docs/research/regulations.md"
+            },
+            {
+              "value": "Phạt thu hồi nợ trước hạn: 6% dư nợ gốc còn lại, tối thiểu 1.500.000 VND với vay tiền mặt",
+              "sourceUrl": "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf"
+            }
+          ],
+          "resolution": "Cách tính lãi quá hạn trên cả kỳ trả nợ (gồm lãi) có vẻ khác với Thông tư 39 điều 13 khoản 4. Lưu hệ số 1,5 theo điều khoản của HD SAISON; luật sư cần xác nhận. Ứng dụng nên hiển thị đúng như điều khoản công bố."
+        }
+      ],
       "sourceUrl": "https://www.hdsaison.com.vn/vn/doan-vien-cong-nhan.html",
-      "retrievedAt": "2026-11-01",
+      "retrievedAt": "2026-11-02",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Campaign-style product; currency of the offer not confirmed. No rate or example published, so the monthly payment hint was not turned into an example."
+      "excludeFromRanking": true,
+      "notes": "Chiến dịch dành cho đoàn viên. Trang (kiểm tra 2026-11-02) nhắc \"Chợ Tết Công đoàn 2024\" và nói giải pháp ổn định \"xuyên suốt năm 2025\"; không có ngày kết thúc rõ ràng nên validUntil 2025-12-31 là suy ra từ câu này. Không có lãi suất hay ví dụ.",
+      "nameEn": "Union member and worker loan (campaign)",
+      "excludeReason": "Chiến dịch dành cho đoàn viên (Chợ Tết Công đoàn 2024), trang chỉ nói ổn định \"xuyên suốt năm 2025\"; đã hết hạn, không có lãi suất hay phí riêng."
     },
     {
       "id": "credit-card-visa",
-      "nameVi": "The tin dung quoc te HD SAISON VISA (credit card)",
+      "nameVi": "Thẻ tín dụng quốc tế HD SAISON VISA",
       "productType": "credit_card",
       "status": "active",
       "validUntil": null,
@@ -1455,7 +1688,7 @@
         "value": "revolving",
         "provenance": "inferred",
         "sourceUrl": "https://www.hdsaison.com.vn/vn/gioi-thieu-the-tin-dung-hd-saison.html",
-        "note": "Set by the v1→v2 migration; confirm against the source."
+        "note": "Suy ra từ loại sản phẩm (thẻ tín dụng, miễn lãi tối đa 45 ngày); trang không nêu cách trả nợ."
       },
       "fees": [],
       "feesCompleteness": "unknown",
@@ -1510,7 +1743,7 @@
           "retrievedAt": null,
           "confidence": null
         },
-        "notes": "Interest-free up to 45 days on purchases; installments at 0%; cash withdrawal capped at 50% of limit; free issuance."
+        "notes": "Miễn lãi tối đa 45 ngày khi mua sắm; trả góp 0%; rút tiền mặt tối đa 50% hạn mức; miễn phí phát hành."
       },
       "latePenalty": {
         "textVi": {
@@ -1518,7 +1751,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not on the card page. A card fee schedule PDF (applied from 09/06/2023) exists at https://www.hdsaison.com.vn/vnt_upload/File/06_2023/20230607_Bieu_phi_lai_suat_the_tin_dung_ap_dung_09062023.pdf but was not read directly; a search summary reported 2.8% of balance (min 90,000 VND), unverified."
+          "note": "Không có trên trang thẻ. Có biểu phí thẻ (áp dụng từ 09/06/2023) tại https://www.hdsaison.com.vn/vnt_upload/File/06_2023/20230607_Bieu_phi_lai_suat_the_tin_dung_ap_dung_09062023.pdf nhưng chưa đọc trực tiếp; một bản tóm tắt tìm kiếm nêu 2,8% số dư (tối thiểu 90.000 VND), chưa xác minh."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -1538,10 +1771,12 @@
       "sourceUrl": "https://www.hdsaison.com.vn/vn/gioi-thieu-the-tin-dung-hd-saison.html",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Lower priority; fee schedule PDF not read, so figures left null."
+      "excludeFromRanking": true,
+      "notes": "Ưu tiên thấp; chưa đọc biểu phí PDF nên các con số để trống.",
+      "nameEn": "HD SAISON VISA credit card",
+      "excludeReason": "Chưa đọc biểu phí và lãi suất thẻ; không đủ dữ liệu để so sánh."
     }
   ],
-  "researchNotes": "LICENSE CHECK: id hd-saison is present in data/licensed-institutions.json (finance company, license 67/GP-NHNN dated 2/8/2017, from the SBV finance-company list). The licensed list did not exist when research started; checked afterwards. Rates: the only official rate page is a ceiling table (khung lai suat) with no effective date (footer 2020); no actual customer rates, no worked examples, and no standalone loan fee schedule (biểu phí) found, only a card fee schedule PDF (not read). Loan T&C PDF (applied from 06/01/2025) used for early repayment fee (6% or remaining interest if higher; min 1.5M VND cash/vehicle, 240k VND goods), late interest (150% of monthly effective rate), 4% schedule-change fee; its text extraction had broken diacritics but numbers were clear. Contradictions: cash max 101M (cash page) vs 130M (FAQ); age 18-70 (procedure page, FAQ) vs 19-60 on an older page seen in search snippets; framework page says reducing balance yet lists both flat and reducing ceilings. Insurance An Tam Tai Chinh is optional per FAQ though listed in every product document set; contract form allows financing the premium; premiums not found. hdsaison.com.vn without www has a certificate error; www works. 0% promotions advertised without conditions. Secondary-source promo rates (e.g. from 1.99%/month loyalty cash loan 2023-24, 1.5%/month union) were not recorded.",
-  "retrievedAt": "2026-11-01"
+  "researchNotes": "LICENSE CHECK: hd-saison is on data/licensed-institutions.json (finance company, licence 67/GP-NHNN dated 2/8/2017, SBV finance-company list); legalName matches. RATES: the only official rate page is the rate framework (khung lai suat) with no effective date (footer 2020). Its figures (reducing 4.99 / 4.92 / 4.79 %/month; flat 2.94 / 2.90 / 2.82 %/month) are published CEILINGS, stored as regulatory_ceiling with low confidence. No product has an offered range, no worked example, and no standalone loan fee schedule (bieu phi) was found; a card fee schedule PDF exists but was not read. Loan T&C PDF (applied from 06/01/2025) used for: early repayment fee (higher of 6% of remaining principal and total remaining interest; minimum 1.5M VND cash/vehicle, 240k VND goods), 4% schedule-change fee, late interest 150% of the monthly effective rate on the unpaid instalment plus a 6% early-recovery penalty (same minimums). The 150% on an instalment that includes interest appears to differ from Circular 39 art. 13(4) (conflict recorded). CONFLICTS: cash max 101M (cash page) vs 130M (FAQ Q18), both above the 100M finance-company cap in Circular 43/2016 art. 3(1) (lower value stored; lawyer to confirm). Age 18-70 (procedure page, FAQ) vs 19-60 on an older page seen only in search snippets (not confirmed officially; treated as outdated). Cash term 9-60 months comes from a generic installment FAQ, not cash-specific (low). Union worker loan is a Tet 2024 union campaign; page says stable 'throughout 2025', so marked expired with validUntil 2025-12-31 (inferred). Insurance An Tam Tai Chinh is optional per FAQ Q2 though listed in every product document set; the contract form allows financing the premium (inferred); premium rates not found. hdsaison.com.vn without www has a certificate error; www works. 0% promotions are advertised without conditions. Secondary-source promo rates (e.g. from 1.99%/month loyalty cash loan 2023-24, 1.5%/month union) were not recorded.",
+  "retrievedAt": "2026-11-02"
 }
