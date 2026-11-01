@@ -48,3 +48,6 @@ next-env.d.ts
 # python
 __pycache__/
 .venv/
+
+# Playwright MCP browser logs
+/.playwright-mcp/

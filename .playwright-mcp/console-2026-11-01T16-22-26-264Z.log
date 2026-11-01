@@ -1,6 +1,0 @@
-[    3505ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://c.go-mpulse.net/api/config.json?key=3HHLN-94ATQ-U7Z7H-NGHTD-SUS5J&d=www.mbbank.com.vn&t=5978500&v=1.720.0&sl=0&si=26a8329e-53a6-4ed6-ae2d-4a549ceeeac3-tnu05e&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=1415213:0
-[    3797ms] [WARNING] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}. @ https://www.mbbank.com.vn/_next/static/chunks/radix-vendor-9b27fc2882584ba1.js:4
-[    3802ms] [WARNING] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}. @ https://www.mbbank.com.vn/_next/static/chunks/radix-vendor-9b27fc2882584ba1.js:4
-[    5159ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 565422826203429. @ https://connect.facebook.net/en_US/fbevents.js:205
-[   10565ms] [LOG] 235501443527683422 get chkid @ https://static.amcdn.vn/core/persist.js:175
-[   11109ms] [WARNING] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}. @ https://www.mbbank.com.vn/_next/static/chunks/radix-vendor-9b27fc2882584ba1.js:4
