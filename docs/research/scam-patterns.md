@@ -156,7 +156,7 @@ Implementation notes:
 - **SBV**: no consumer scam-report channel was found. Do not list an SBV hotline until one is confirmed on sbv.gov.vn.
 
 ### How to check a lender is licensed
-- Use the SBV published lists of credit institutions and finance companies (project file `data/licensed-institutions.json` will hold the list and source; this file does not exist yet as of today, so the check cannot yet be run).
+- Use the SBV published lists of credit institutions and finance companies (project file `data/licensed-institutions.json` holds the list and sources: SBV lists as of 2026-09-30, 47 banks and 16 finance companies; check the file's retrieval date and re-verify at sbv.gov.vn).
 - The only list-like page found is a 2022 VNBA article citing SBV (S15), naming 16 licensed finance companies as of end-2022 (12 names visible). It is out of date and not an official page; use it only as a lead and confirm at sbv.gov.vn.
 - Also check: company tax code, address, legal representative (S1), and that the app is on the official App Store / Google Play listing and the email uses a company domain (S11).
 - Being licensed does not make every site using the brand genuine. Check the website domain and phone number separately.
