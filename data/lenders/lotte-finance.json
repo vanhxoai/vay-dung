@@ -1,0 +1,870 @@
+{
+  "slug": "lotte-finance",
+  "name": "Lotte Finance",
+  "legalName": "Công ty Tài chính TNHH MTV Lotte Việt Nam",
+  "licenseCategory": "finance_company",
+  "licensedInstitutionId": "lotte-finance",
+  "website": "https://lottefinance.vn",
+  "products": [
+    {
+      "id": "lotte-salaried-cash-loan",
+      "name": "Cho vay dành cho Khách hàng có nguồn thu nhập từ lương",
+      "productType": "cash_loan",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Only a maximum is published on the product page."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"Tối đa. 100 triệu VND\""
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"từ 6 đến 36 tháng\""
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high"
+      },
+      "rate": {
+        "minPercent": {
+          "value": 0.94,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "\"Lãi suất chỉ từ 0.94 %/tháng (tính theo dư nợ ban đầu)\""
+        },
+        "maxPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Page only says \"chỉ từ\" (from). Segment-level yearly ceilings are on the rate framework, whose basis is not stated; see product notes."
+        },
+        "basis": "flat",
+        "period": "monthly",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Loan application / processing fee",
+          "nameVi": "Phí xử lý hồ sơ",
+          "timing": "unknown",
+          "mandatory": false,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Không thu phí xử lý hồ sơ\"; process steps also say no fee to register the loan."
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high"
+          }
+        },
+        {
+          "name": "Early repayment fee",
+          "nameVi": "Phí trả nợ trước hạn",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/images/resources/file/Biểu%20phí%20trả%20nợ%20trước%20hạn.png",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Early-repayment schedule row 1 \"Khách hàng có nguồn thu nhập từ lương\": Miễn phí, for contracts signed from 12/08/2025. Matched to this page by segment name, not product code."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Free, so no fixed amount."
+          }
+        },
+        {
+          "name": "Cash service fee / third-party payment provider fees",
+          "nameVi": "Phí dịch vụ tiền mặt / phí đơn vị thanh toán thứ ba",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Terms say borrower bears cash service fees and third-party fees where applicable (Điều 6.3) but publish no amount."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "insurance": [
+        {
+          "name": "Loan protection insurance (death / total permanent disability)",
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://lottefinance.vn/web/convenience/deptCancelSuspens",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Bảo hiểm là sản phẩm không bắt buộc\"; loan terms Điều 20: not a condition to borrow. Lotte Finance is the sole beneficiary."
+          },
+          "timing": "unknown",
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Premium depends on sum insured and insurer rules; no rate published."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "eligibility": {
+        "minAge": {
+          "value": 23,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "maxAge": {
+          "value": 60,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Tuổi vay 23-60; tại thời điểm tất toán không quá 60 tuổi."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": 4000000,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "documents": {
+          "value": [
+            "CCCD",
+            "Chứng từ công việc, thu nhập",
+            "Chứng từ khác theo quy định của Công ty từng thời kỳ"
+          ],
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "notes": "Per the process page, registration is by hotline or web form, staff then guide document preparation, and the contract is signed at a location. Whether a fully in-app application exists was not verified, so online is null."
+      },
+      "latePenalty": {
+        "value": "Quá hạn gốc: lãi suất bằng 150% lãi suất cho vay trong hạn (theo năm), tính từ ngày nợ gốc quá hạn. Lãi chậm trả lãi: 10%/năm. Khoản khác chậm trả: lãi suất cao nhất pháp luật quy định. Phạt vi phạm hợp đồng 8% dư nợ gốc còn lại nếu không báo đổi địa chỉ/liên lạc trong 05 ngày làm việc; 8% giá trị nghĩa vụ vi phạm nếu cung cấp thông tin sai hoặc vi phạm khác. Tính lãi theo năm 365 ngày.",
+        "sourceUrl": "https://lottefinance.vn/web/service/customer/termAndCond/loanTnC",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "General loan terms (Điều kiện giao dịch chung, Điều 5, 15); the product-specific contract (Điều Kiện Riêng) was not published, so the in-term rate that the 150% multiplies is product-specific."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
+      "retrievedAt": "2026-11-01",
+      "confidence": "medium",
+      "notes": "Rate quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\", i.e. interest on the original balance, which we record as flat/monthly; the page does not use the word \"phẳng\". The published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) quotes %/năm and does not say flat or reducing, so do not equate it with this monthly figure. Rate framework row 4 (salaried): 8%-66%/year min-max, basis unstated. Extra eligibility: official labour contract, at least 3 months in official employment at state agencies (as worded on page), salary paid through a bank account. The calculator on the loan list page offers terms 6-60 months, but the product page says 6-36; we use the product page."
+    },
+    {
+      "id": "lotte-credit-history-cash-loan",
+      "name": "Cho vay dành cho Khách hàng có lịch sử vay tại các TCTD",
+      "productType": "cash_loan",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Only a maximum is published on the product page."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"Tối đa. 100 triệu VND\""
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"từ 6 đến 36 tháng\""
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high"
+      },
+      "rate": {
+        "minPercent": {
+          "value": 1.98,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "\"Lãi suất tháng chỉ từ 1.98% (tính theo dư nợ ban đầu)\""
+        },
+        "maxPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Page only says \"chỉ từ\" (from). Segment-level yearly ceilings are on the rate framework, whose basis is not stated; see product notes."
+        },
+        "basis": "flat",
+        "period": "monthly",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Loan application / processing fee",
+          "nameVi": "Phí xử lý hồ sơ",
+          "timing": "unknown",
+          "mandatory": false,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Không thu phí xử lý hồ sơ\"; process steps also say no fee to register the loan."
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high"
+          }
+        },
+        {
+          "name": "Early repayment fee",
+          "nameVi": "Phí trả nợ trước hạn",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/images/resources/file/Biểu%20phí%20trả%20nợ%20trước%20hạn.png",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "Early-repayment schedule row 3 \"KH có khoản vay tại Tổ chức tín dụng khác\": Miễn phí, for contracts signed from 12/08/2025. Matched by segment name."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Free, so no fixed amount."
+          }
+        },
+        {
+          "name": "Cash service fee / third-party payment provider fees",
+          "nameVi": "Phí dịch vụ tiền mặt / phí đơn vị thanh toán thứ ba",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Terms say borrower bears cash service fees and third-party fees where applicable (Điều 6.3) but publish no amount."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "insurance": [
+        {
+          "name": "Loan protection insurance (death / total permanent disability)",
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://lottefinance.vn/web/convenience/deptCancelSuspens",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Bảo hiểm là sản phẩm không bắt buộc\"; loan terms Điều 20: not a condition to borrow. Lotte Finance is the sole beneficiary."
+          },
+          "timing": "unknown",
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Premium depends on sum insured and insurer rules; no rate published."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "eligibility": {
+        "minAge": {
+          "value": 23,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "maxAge": {
+          "value": 60,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Tuổi vay 23-60."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No minimum income stated on the product page."
+        },
+        "documents": {
+          "value": [
+            "CCCD",
+            "Chứng từ khoản vay cũ",
+            "Chứng từ khác theo quy định của Công ty từng thời kỳ"
+          ],
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "notes": "Per the process page, registration is by hotline or web form, staff then guide document preparation, and the contract is signed at a location. Whether a fully in-app application exists was not verified, so online is null."
+      },
+      "latePenalty": {
+        "value": "Quá hạn gốc: lãi suất bằng 150% lãi suất cho vay trong hạn (theo năm), tính từ ngày nợ gốc quá hạn. Lãi chậm trả lãi: 10%/năm. Khoản khác chậm trả: lãi suất cao nhất pháp luật quy định. Phạt vi phạm hợp đồng 8% dư nợ gốc còn lại nếu không báo đổi địa chỉ/liên lạc trong 05 ngày làm việc; 8% giá trị nghĩa vụ vi phạm nếu cung cấp thông tin sai hoặc vi phạm khác. Tính lãi theo năm 365 ngày.",
+        "sourceUrl": "https://lottefinance.vn/web/service/customer/termAndCond/loanTnC",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "General loan terms (Điều kiện giao dịch chung, Điều 5, 15); the product-specific contract (Điều Kiện Riêng) was not published, so the in-term rate that the 150% multiplies is product-specific."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
+      "retrievedAt": "2026-11-01",
+      "confidence": "medium",
+      "notes": "Rate quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\", i.e. interest on the original balance, which we record as flat/monthly; the page does not use the word \"phẳng\". The published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) quotes %/năm and does not say flat or reducing, so do not equate it with this monthly figure. Rate framework row 5 (credit history at other credit institutions): 20%-59%/year, basis unstated. Condition: customer has had or has a loan at a credit institution."
+    },
+    {
+      "id": "lotte-life-insurance-cash-loan",
+      "name": "Cho vay dành cho Khách hàng có hợp đồng bảo hiểm nhân thọ",
+      "productType": "cash_loan",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Only a maximum is published on the product page."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"Tối đa. 100 triệu VND\""
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"từ 6 đến 36 tháng\""
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high"
+      },
+      "rate": {
+        "minPercent": {
+          "value": 2.03,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "\"Lãi suất tháng chỉ từ 2.03%/tháng (tính theo dư nợ ban đầu)\""
+        },
+        "maxPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Page only says \"chỉ từ\" (from). Segment-level yearly ceilings are on the rate framework, whose basis is not stated; see product notes."
+        },
+        "basis": "flat",
+        "period": "monthly",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Loan application / processing fee",
+          "nameVi": "Phí xử lý hồ sơ",
+          "timing": "unknown",
+          "mandatory": false,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Không thu phí xử lý hồ sơ\"; process steps also say no fee to register the loan."
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high"
+          }
+        },
+        {
+          "name": "Early repayment fee",
+          "nameVi": "Phí trả nợ trước hạn",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Schedule lists 0% only for salaried, state-employee and other-lender-history products (by product code, contracts signed from 12/08/2025); other consumer loans pay 6% of early-repaid principal, min 1,600,000 VND. The page does not say which row this product falls in, so not assigned."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Possible minimum 1,600,000 VND if the 6% row applies; not confirmed for this product."
+          }
+        },
+        {
+          "name": "Cash service fee / third-party payment provider fees",
+          "nameVi": "Phí dịch vụ tiền mặt / phí đơn vị thanh toán thứ ba",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Terms say borrower bears cash service fees and third-party fees where applicable (Điều 6.3) but publish no amount."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "insurance": [
+        {
+          "name": "Loan protection insurance (death / total permanent disability)",
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://lottefinance.vn/web/convenience/deptCancelSuspens",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Bảo hiểm là sản phẩm không bắt buộc\"; loan terms Điều 20: not a condition to borrow. Lotte Finance is the sole beneficiary."
+          },
+          "timing": "unknown",
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Premium depends on sum insured and insurer rules; no rate published."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "eligibility": {
+        "minAge": {
+          "value": 20,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "maxAge": {
+          "value": 60,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Tuổi vay 20-60."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": 3000000,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "documents": {
+          "value": [
+            "CCCD",
+            "Chứng từ Bảo hiểm nhân thọ",
+            "Chứng từ khác theo quy định của Công ty từng thời kỳ"
+          ],
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "notes": "Per the process page, registration is by hotline or web form, staff then guide document preparation, and the contract is signed at a location. Whether a fully in-app application exists was not verified, so online is null."
+      },
+      "latePenalty": {
+        "value": "Quá hạn gốc: lãi suất bằng 150% lãi suất cho vay trong hạn (theo năm), tính từ ngày nợ gốc quá hạn. Lãi chậm trả lãi: 10%/năm. Khoản khác chậm trả: lãi suất cao nhất pháp luật quy định. Phạt vi phạm hợp đồng 8% dư nợ gốc còn lại nếu không báo đổi địa chỉ/liên lạc trong 05 ngày làm việc; 8% giá trị nghĩa vụ vi phạm nếu cung cấp thông tin sai hoặc vi phạm khác. Tính lãi theo năm 365 ngày.",
+        "sourceUrl": "https://lottefinance.vn/web/service/customer/termAndCond/loanTnC",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "General loan terms (Điều kiện giao dịch chung, Điều 5, 15); the product-specific contract (Điều Kiện Riêng) was not published, so the in-term rate that the 150% multiplies is product-specific."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
+      "retrievedAt": "2026-11-01",
+      "confidence": "medium",
+      "notes": "Rate quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\", i.e. interest on the original balance, which we record as flat/monthly; the page does not use the word \"phẳng\". The published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) quotes %/năm and does not say flat or reducing, so do not equate it with this monthly figure. Rate framework row 3 (life insurance contract): 20%-55%/year, basis unstated. Condition: customer or spouse is the policyholder, minimum premium 5 million VND/year, policy open at least 6 months and in force. Not a typical salaried-worker product."
+    },
+    {
+      "id": "lotte-women-cash-loan",
+      "name": "Cho vay dành cho Khách hàng là Phụ nữ",
+      "productType": "cash_loan",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Only a maximum is published on the product page."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"Tối đa. 100 triệu VND\""
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high",
+        "note": "\"từ 6 đến 36 tháng\""
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+        "retrievedAt": "2026-11-01",
+        "confidence": "high"
+      },
+      "rate": {
+        "minPercent": {
+          "value": 1.04,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "\"Lãi suất tháng chỉ từ 1.04% (tính theo dư nợ ban đầu)\""
+        },
+        "maxPercent": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Page only says \"chỉ từ\" (from). Segment-level yearly ceilings are on the rate framework, whose basis is not stated; see product notes."
+        },
+        "basis": "flat",
+        "period": "monthly",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Loan application / processing fee",
+          "nameVi": "Phí xử lý hồ sơ",
+          "timing": "unknown",
+          "mandatory": false,
+          "percentOfPrincipal": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Không thu phí xử lý hồ sơ\"; process steps also say no fee to register the loan."
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high"
+          }
+        },
+        {
+          "name": "Early repayment fee",
+          "nameVi": "Phí trả nợ trước hạn",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Schedule lists 0% only for salaried, state-employee and other-lender-history products (by product code, contracts signed from 12/08/2025); other consumer loans pay 6% of early-repaid principal, min 1,600,000 VND. The page does not say which row this product falls in, so not assigned."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Possible minimum 1,600,000 VND if the 6% row applies; not confirmed for this product."
+          }
+        },
+        {
+          "name": "Cash service fee / third-party payment provider fees",
+          "nameVi": "Phí dịch vụ tiền mặt / phí đơn vị thanh toán thứ ba",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Terms say borrower bears cash service fees and third-party fees where applicable (Điều 6.3) but publish no amount."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "insurance": [
+        {
+          "name": "Loan protection insurance (death / total permanent disability)",
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://lottefinance.vn/web/convenience/deptCancelSuspens",
+            "retrievedAt": "2026-11-01",
+            "confidence": "high",
+            "note": "\"Bảo hiểm là sản phẩm không bắt buộc\"; loan terms Điều 20: not a condition to borrow. Lotte Finance is the sole beneficiary."
+          },
+          "timing": "unknown",
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Premium depends on sum insured and insurer rules; no rate published."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No amount published."
+          }
+        }
+      ],
+      "eligibility": {
+        "minAge": {
+          "value": 20,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "maxAge": {
+          "value": 60,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high",
+          "note": "Tuổi vay 20-60."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": 3000000,
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "documents": {
+          "value": [
+            "Ảnh chụp mặt trước thẻ tín dụng và sao kê thẻ tháng gần nhất, hoặc ảnh chụp đăng ký xe máy",
+            "Hoặc chứng từ bảo hiểm nhân thọ",
+            "Hoặc chứng từ công việc thu nhập"
+          ],
+          "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+          "retrievedAt": "2026-11-01",
+          "confidence": "high"
+        },
+        "notes": "Per the process page, registration is by hotline or web form, staff then guide document preparation, and the contract is signed at a location. Whether a fully in-app application exists was not verified, so online is null."
+      },
+      "latePenalty": {
+        "value": "Quá hạn gốc: lãi suất bằng 150% lãi suất cho vay trong hạn (theo năm), tính từ ngày nợ gốc quá hạn. Lãi chậm trả lãi: 10%/năm. Khoản khác chậm trả: lãi suất cao nhất pháp luật quy định. Phạt vi phạm hợp đồng 8% dư nợ gốc còn lại nếu không báo đổi địa chỉ/liên lạc trong 05 ngày làm việc; 8% giá trị nghĩa vụ vi phạm nếu cung cấp thông tin sai hoặc vi phạm khác. Tính lãi theo năm 365 ngày.",
+        "sourceUrl": "https://lottefinance.vn/web/service/customer/termAndCond/loanTnC",
+        "retrievedAt": "2026-11-01",
+        "confidence": "medium",
+        "note": "General loan terms (Điều kiện giao dịch chung, Điều 5, 15); the product-specific contract (Điều Kiện Riêng) was not published, so the in-term rate that the 150% multiplies is product-specific."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
+      "retrievedAt": "2026-11-01",
+      "confidence": "medium",
+      "notes": "Rate quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\", i.e. interest on the original balance, which we record as flat/monthly; the page does not use the word \"phẳng\". The published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) quotes %/năm and does not say flat or reducing, so do not equate it with this monthly figure. Rate framework row 6 (women): 20%-66%/year, basis unstated. Condition: primary holder of a bank credit card issued 6+ months, OR customer/spouse owns a motorbike registered in own name aged 8 years or less (photo only, registration not kept), OR has life insurance or is a state employee."
+    },
+    {
+      "id": "lotte-paylater",
+      "name": "PayLater (mua trước trả sau)",
+      "productType": "bnpl",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Limit assigned per customer; no amount published."
+      },
+      "amountMaxVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Limit assigned per customer; no amount published."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not published on the intro page; terms are in a PDF that could not be read."
+      },
+      "termMaxMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Same."
+      },
+      "rate": {
+        "minPercent": {
+          "value": 0,
+          "sourceUrl": "https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Rate framework row B3 \"Cho vay tiêu dùng mua ngay trả sau (Paylater)\": 0%-24%/year (min-max). Framework does not state flat or reducing."
+        },
+        "maxPercent": {
+          "value": 24,
+          "sourceUrl": "https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Ceiling of the framework, not a typical rate."
+        },
+        "basis": "unknown",
+        "period": "yearly",
+        "promotional": null
+      },
+      "fees": [
+        {
+          "name": "Annual fee and SMS fee",
+          "nameVi": "Phí thường niên và phí SMS",
+          "timing": "unknown",
+          "mandatory": null,
+          "percentOfPrincipal": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Stated as a zero fixed fee, not a percentage."
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://lottefinance.vn/web/bnpl/bnplIntro",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "note": "\"Paylater không có thu phí thường niên và phí SMS\""
+          }
+        }
+      ],
+      "insurance": [],
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the intro page."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the intro page."
+        },
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "documents": {
+          "value": [
+            "CCCD/CMND"
+          ],
+          "sourceUrl": "https://lottefinance.vn/web/bnpl/bnplIntro",
+          "retrievedAt": "2026-11-01",
+          "confidence": "low",
+          "note": "Page says an ID card alone is enough to register; formal criteria not listed."
+        },
+        "notes": "Registration valid up to 3 years. Detailed terms are in a PDF (260915 TnC BNPL) that could not be read."
+      },
+      "latePenalty": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "BNPL terms PDF could not be read."
+      },
+      "representativeExamples": [],
+      "sourceUrl": "https://lottefinance.vn/web/bnpl/bnplIntro",
+      "retrievedAt": "2026-11-01",
+      "confidence": "low",
+      "notes": "Lower priority. Included so the app can show the product exists; its cost cannot be computed from published data."
+    }
+  ],
+  "researchNotes": "LICENSING: data/licensed-institutions.json did not exist when this was researched, so licensedInstitutionId \"lotte-finance\" could not be checked against it. The SBV finance-company page returned HTTP 403 to WebFetch and was not worked around, so the SBV listing is NOT verified by this research. SOURCES: lottefinance.vn home and loan pages (static HTML), rate framework image \"Khung lãi suất sản phẩm cho vay tiêu dùng\" (effective 01/03/2026), early-repayment fee image (under Decision 26M135701/203 of 29/05/2026), general loan terms (https://lottefinance.vn/web/service/customer/termAndCond/loanTnC), borrower insurance page (https://lottefinance.vn/web/convenience/deptCancelSuspens). GAPS: (1) No minimum loan amount for any product. (2) No published representative example (monthly payment, total repaid, APR); the loan list page has a simulator, but the product list comes from an API (/api/loan/getLoanMainList) that was not called. (3) Product-specific contract terms (Điều Kiện Riêng) with the actual in-term rate, fees and early-repayment rule are not published; the general terms defer to them. (4) The rate framework gives %/year ranges per segment (salaried 8-66%, other-lender history 20-59%, life insurance 20-55%, women 20-66%) without flat/reducing basis, so the true ceiling per product is unknown (maxPercent left null). (5) Insurance premium and how it is collected not published. (6) Cash service fee amount not published. (7) Installment loans for goods appear only as rate framework section B (paid to merchants: 0-20% car, 0-30% medical, 0-66% other, 0-15% for union-introduced employees); no consumer-facing product page, so no product entry. (8) Credit cards (personal, Installment Card, L.Card) have fee/rate PDFs that could not be read with available tools; not captured. (9) Only four loan products are on the home page; the full list endpoint was not read, so other consumer products may exist (framework also lists state employee, retiree, business income, ride-hailing driver and good-Lotte-history segments). (10) App-based cash loan not verified; process described is consultation then contract signing at a location. POSSIBLE CONTRADICTIONS: product pages say terms 6-36 months while the list-page calculator offers 6-60 months. The framework minimum for salaried (8%/year) and the product page (0.94%/month on initial balance, about 11.3%/year nominal) quote different things and cannot be reconciled from published data. SURPRISING: early repayment is free for salaried, state-employee and other-lender-history products on contracts from 12/08/2025, but costs 6% of early-repaid principal (minimum 1,600,000 VND) for other consumer loans, which is large on small loans. Overdue principal accrues at 150% of the in-term annual rate, and 8% contract-violation penalties exist for not reporting address/contact changes within 5 working days. A 66%/year ceiling is published for several segments.",
+  "retrievedAt": "2026-11-01"
+}
