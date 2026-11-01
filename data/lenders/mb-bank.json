@@ -14,98 +14,112 @@
       "status": "active",
       "validUntil": null,
       "lenderOfRecord": "mb-bank",
-      "brandOrChannel": null,
+      "brandOrChannel": "App MBBank",
       "online": true,
       "amountMinVnd": {
         "value": 10000000,
         "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "high",
         "note": "Tab 'Hạn mức & Biểu phí': 'Từ 10.000.000 đồng đến 1.500.000.000 đồng'. Product page dateModified 2026-10-29."
       },
       "amountMaxVnd": {
         "value": 1500000000,
         "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "high",
         "note": "Same range as above. Ceiling only; the actual limit depends on income and credit assessment."
       },
       "termMinMonths": {
         "value": 12,
         "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "high",
         "note": "Tab 'Hạn mức & Biểu phí': 'Thời gian cho vay: 12 - 60 tháng'."
       },
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
-        "retrievedAt": "2026-11-01",
+        "retrievedAt": "2026-11-02",
         "confidence": "high",
         "note": "Same range as above."
       },
-      "rates": [],
+      "rates": [
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất cho vay cá nhân bình quân của MB (KHÔNG phải lãi suất của sản phẩm này)",
+          "minPercent": {
+            "value": 8.94,
+            "sourceUrl": "https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-29",
+            "note": "MB rate disclosure page: average personal lending rate 8.94%/năm as at 29/10/2026. Read in the 'Lãi suất tham chiếu cho vay (KHCN)' document on 2026-11-01; not re-read on 2026-11-02 (the document opens only in a preview pop-up). Background only, not this product's rate."
+          },
+          "maxPercent": {
+            "value": 8.94,
+            "sourceUrl": "https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-29",
+            "note": "MB rate disclosure page: average personal lending rate 8.94%/năm as at 29/10/2026. Read in the 'Lãi suất tham chiếu cho vay (KHCN)' document on 2026-11-01; not re-read on 2026-11-02 (the document opens only in a preview pop-up). Background only, not this product's rate."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Basis not stated in the material read."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung",
+            "note": "Stated as %/năm."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất tham chiếu cho vay KHCN của MB, theo kỳ hạn và kỳ điều chỉnh (KHÔNG phải lãi suất của sản phẩm này)",
+          "minPercent": {
+            "value": 8.5,
+            "sourceUrl": "https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-29",
+            "note": "MB reference lending rates for individuals 8.5-9.5%/năm by term and review frequency, as at 29/10/2026. Read 2026-11-01; not re-read on 2026-11-02. Background only, not this product's rate."
+          },
+          "maxPercent": {
+            "value": 9.5,
+            "sourceUrl": "https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung",
+            "retrievedAt": "2026-11-01",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-29",
+            "note": "MB reference lending rates for individuals 8.5-9.5%/năm by term and review frequency, as at 29/10/2026. Read 2026-11-01; not re-read on 2026-11-02. Background only, not this product's rate."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Basis not stated in the material read."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung",
+            "note": "Stated as %/năm."
+          },
+          "promotional": false
+        }
+      ],
       "amortization": {
         "value": "unknown",
         "provenance": "none",
-        "sourceUrl": null
+        "sourceUrl": null,
+        "note": "Product page (Hạn mức & Biểu phí): 'Gốc: trả đều hàng tháng/3 tháng/6 tháng. Lãi: trả hàng tháng theo dư nợ thực tế'. The customer chooses how often principal is paid, so there is no single schedule; stays unknown rather than assumed equal_principal or annuity."
       },
-      "fees": [
-        {
-          "nameVi": "Biểu phí cho vay",
-          "nameEn": "Loan fees (application / disbursement / early repayment)",
-          "trigger": "prepayment",
-          "timing": {
-            "value": "on_event",
-            "provenance": "inferred",
-            "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
-            "note": "Set by the v1→v2 migration; confirm against the source."
-          },
-          "mandatory": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "v1 had no source for this."
-          },
-          "base": "unknown",
-          "rule": "other",
-          "percent": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Product page says only 'Biểu phí: Theo quy định'. The KHCN fee schedule (published 26/06/2026) is a PDF on https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung that returns HTTP 403 to non-browser clients; not read. Application, disbursement and early-repayment fees for this product are unknown."
-          },
-          "fixedVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Same as above: unknown."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "maxVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
-          },
-          "payee": "unknown"
-        }
-      ],
-      "feesCompleteness": "partial",
+      "fees": [],
+      "feesCompleteness": "unknown",
       "insurance": [],
       "insuranceCompleteness": "unknown",
       "eligibility": {
@@ -127,9 +141,9 @@
         "minMonthlyIncomeVnd": {
           "value": 5000000,
           "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
-          "retrievedAt": "2026-11-01",
-          "confidence": "high",
-          "note": "Tab 'Thủ tục & điều kiện vay': 'Thu nhập bình quân 03 tháng gần nhất của Khách hàng không thấp hơn 5.000.000 đồng/tháng'. Also needs at least 6 months of work counted from the first salary payment."
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Tab 'Thủ tục & điều kiện vay': 'Thu nhập bình quân 03 tháng gần nhất của Khách hàng không thấp hơn 5.000.000 đồng/tháng'. Also needs at least 6 months of work counted from the first salary payment. Confidence medium because the generic MB blog and an older search snippet differ on income (see conflicts). Income basis (gross/net) not stated."
         },
         "incomeBasis": "unknown",
         "documents": {
@@ -144,10 +158,11 @@
           "note": "From MB's generic blog on salary loans (published 27/11/2025), which lists documents in general terms; the product page itself lists no documents. Application is online in the app."
         },
         "existingCustomerRequired": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": true,
+          "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Tab 'Thủ tục & điều kiện vay': customer 'đã mở Tài khoản thanh toán tại MB và đã được định danh và ký trực tiếp Đề nghị kiêm hợp đồng sử dụng dịch vụ TKTT, thẻ, MB điện tử'. An MB payment account is required, so in effect an existing MB customer."
         },
         "employerRestriction": {
           "value": null,
@@ -156,10 +171,20 @@
           "confidence": null
         },
         "otherConditions": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": [
+            "Cá nhân người Việt Nam là người cư trú",
+            "Đã có tài khoản thanh toán tại MB, đã được định danh và ký trực tiếp đề nghị kiêm hợp đồng sử dụng dịch vụ",
+            "Có thời gian công tác ít nhất 06 tháng tính từ kỳ trả lương đầu tiên",
+            "Thu nhập bình quân 03 tháng gần nhất không thấp hơn 5.000.000 đồng/tháng",
+            "Không chậm trả gốc, lãi tại MB trong 12 tháng gần nhất",
+            "Không có nợ nhóm 2 tại MB và/hoặc các tổ chức tín dụng khác trong 12 tháng gần nhất",
+            "Không có nợ xấu trong 36 tháng gần nhất",
+            "Đáp ứng điều kiện của pháp luật và của MB về nguồn trả nợ và khả năng tài chính để trả nợ"
+          ],
+          "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Tab 'Thủ tục & điều kiện vay', read 2026-11-02. Paraphrased."
         },
         "notes": "Product page conditions: resident Vietnamese individual; has an MB payment account, identified, with signed service-use agreement; no late principal/interest payment at MB, no group-2 debt at MB or other credit institutions in the last 12 months and no bad debt in the last 36 months; at least 6 months of employment from the first salary period; average income over the last 3 months at least 5,000,000 VND/month; meets MB's repayment-source rules. Applies to ordinary customers plus special groups (military, Viettel / Tan Cang Sai Gon staff)."
       },
@@ -169,7 +194,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not stated on the product page. Would be in the loan contract or the fee schedule PDF (not read)."
+          "note": "Not stated on the product page. Would be in the loan contract or the fee schedule PDF. Fee schedule tried once more in the browser on 2026-11-02: it opens only in a preview pop-up that could not be read, so still unknown."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -185,14 +210,75 @@
         }
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "eligibility.minAge",
+          "values": [
+            {
+              "value": "20 tuổi",
+              "sourceUrl": "https://www.mbbank.com.vn/chi-tiet/tin-mb/vay-bang-bang-luong/6861",
+              "note": "MB generic blog on salary loans (27/11/2025): age 20-60; does not tie it to this product."
+            },
+            {
+              "value": "22 tuổi",
+              "sourceUrl": null,
+              "note": "Search-result snippet of an older MB page; not verified at the page."
+            },
+            {
+              "value": "Không nêu tuổi",
+              "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
+              "note": "Product page gives no age limit."
+            }
+          ],
+          "resolution": "Stored as unknown (null). The product page states no age and the other figures disagree and are generic or unverified."
+        },
+        {
+          "field": "eligibility.maxAge",
+          "values": [
+            {
+              "value": "60 tuổi",
+              "sourceUrl": "https://www.mbbank.com.vn/chi-tiet/tin-mb/vay-bang-bang-luong/6861",
+              "note": "Generic blog, not tied to this product."
+            },
+            {
+              "value": "Không nêu tuổi",
+              "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
+              "note": "Product page gives no age limit."
+            }
+          ],
+          "resolution": "Stored as unknown (null). Not stated for this product."
+        },
+        {
+          "field": "eligibility.minMonthlyIncomeVnd",
+          "values": [
+            {
+              "value": "5.000.000 đồng/tháng",
+              "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
+              "note": "Product page: average of last 3 months not below 5,000,000."
+            },
+            {
+              "value": "5.000.000 đồng/tháng",
+              "sourceUrl": "https://www.mbbank.com.vn/chi-tiet/tin-mb/vay-bang-bang-luong/6861",
+              "note": "Generic blog: income from 5 million."
+            },
+            {
+              "value": "3-5 triệu đồng/tháng",
+              "sourceUrl": null,
+              "note": "Search snippet of an older MB page; unverified."
+            }
+          ],
+          "resolution": "Stored 5,000,000 (the stricter figure, matches the product page). Confidence capped at medium because of the older snippet."
+        }
+      ],
       "sourceUrl": "https://www.mbbank.com.vn/ca-nhan/khach-hang-ca-nhan/vay-von/tieu-dung/vay-tieu-dung-khong-tai-san-dam-bao-tren-app-mbbank",
-      "retrievedAt": "2026-11-01",
+      "retrievedAt": "2026-11-02",
       "confidence": "medium",
-      "excludeFromRanking": false,
-      "notes": "Principal repayment: equal instalments monthly, every 3 months or every 6 months (customer chooses); interest paid monthly on actual outstanding balance (suggests reducing balance but the page does not say so, so basis stays unknown). Loan method: per disbursement ('theo món'). The page has a calculator with a 'Dư nợ giảm dần / Dư nợ cố định' switch; its default output is not a published bank example and is not used. Insurance: the page does not mention any, so the empty list does not prove none exists. 'Vay nhanh - Vay theo lương' in the app appears to be a path within this same product family; no separate terms are published, so it is not listed separately."
+      "excludeFromRanking": true,
+      "notes": "Principal repayment: equal instalments monthly, every 3 months or every 6 months (customer chooses); interest paid monthly on actual outstanding balance (suggests reducing balance but the page does not say so, so basis stays unknown). Loan method: per disbursement ('theo món'). The page has a calculator with a 'Dư nợ giảm dần / Dư nợ cố định' switch; its default output is not a published bank example and is not used. Insurance: the page does not mention any, so the empty list does not prove none exists. 'Vay nhanh - Vay theo lương' in the app appears to be a path within this same product family; no separate terms are published, so it is not listed separately. Fees: the page says only 'Biểu phí: Theo quy định'. The earlier placeholder fee entry (trigger prepayment, timing on_event) had no source and was removed, so the fee list is empty and feesCompleteness is unknown.",
+      "nameEn": "Unsecured consumer loan on the MBBank app",
+      "excludeReason": "Ngân hàng không công bố lãi suất cho sản phẩm này"
     }
   ],
-  "researchNotes": "Licensing: 'mb-bank' exists in data/licensed-institutions.json (Ngân hàng TMCP Quân Đội, NHTM Cổ phần, category bank). Gaps: (1) No interest-rate number is published for unsecured consumer loans; only 'theo quy định của MB từng thời kỳ'. The rate disclosure page https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung lists reference rates 8.5-9.5%/year (by term and review frequency) and average personal lending rate 8.94%/year as at 29/10/2026; these are benchmarks, not a product rate. (2) Fee schedules (KHCN services 26/06/2026; cards 22/08/2026; credit-card interest 26/06/2026) are PDFs on webcdn.mbbank.com.vn that return HTTP 403 to non-browser clients; not downloaded, so loan fees, early-repayment fee and late-payment penalty are unknown. (3) No public terms and conditions page for the loan was found. (4) Insurance is not mentioned on official pages. (5) Overdraft (thấu chi): the old overdraft URL now redirects to 'MB Pri Plus' (Priority/Private customers with mortgaged property, up to 5 billion VND, free early repayment), which is secured and outside the MVP target; no mass-market unsecured overdraft page was found. (6) Credit-card installment and credit-card cash loan not researched (lower priority). Contradictions: the MB blog (27/11/2025) says age 20-60 and income from 5 million; a search snippet of an older MB page said 3-5 million and age 22+; the official product page says 5 million and gives no age. A snippet of an MB student-loan article quoted 6.6%/year or 4.8%/year; not verified at the page, not included. Third-party aggregator figures (1.16%/month, 5 million - 1.5 billion, 3-60 months) were not used. Surprising: the product page shows limit and term but no rate, so a user cannot see the cost before applying; the 12-month minimum term and 10 million minimum make it a poor fit for small short loans.",
-  "retrievedAt": "2026-11-01"
+  "researchNotes": "Licensing: 'mb-bank' exists in data/licensed-institutions.json (Ngân hàng TMCP Quân Đội, NHTM Cổ phần, category bank). Gaps: (1) No interest-rate number is published for unsecured consumer loans; only 'theo quy định của MB từng thời kỳ'. The rate disclosure page https://www.mbbank.com.vn/ho-tro/bieu-lai-suat?tab=lai-suat-cap-tin-dung lists reference rates 8.5-9.5%/year (by term and review frequency) and average personal lending rate 8.94%/year as at 29/10/2026; these are stored as benchmark rates, not a product rate (basis unknown). (2) Fee schedules (KHCN services 26/06/2026; KHCN on App MBBank 26/06/2026; cards 22/08/2026; credit-card interest 26/06/2026) are PDFs on webcdn.mbbank.com.vn that return HTTP 403 to non-browser clients. On 2026-11-02 the page loaded in a browser but each document opens only in a preview pop-up that could not be read; not worked around. Loan fees, early-repayment fee and late-payment penalty are unknown. (3) No public terms and conditions page for the loan was found. (4) Insurance is not mentioned on official pages; insuranceCompleteness is unknown. (5) Overdraft (thấu chi): the old overdraft URL now redirects to 'MB Pri Plus' (Priority/Private customers with mortgaged property, up to 5 billion VND, free early repayment), which is secured and outside the MVP target; no mass-market unsecured overdraft page was found. (6) Credit-card installment and credit-card cash loan not researched (lower priority). Contradictions: the MB blog (27/11/2025) says age 20-60 and income from 5 million; a search snippet of an older MB page said 3-5 million and age 22+; the official product page says 5 million and gives no age (recorded in conflicts). A snippet of an MB student-loan article quoted 6.6%/year or 4.8%/year; not verified at the page, not included. Third-party aggregator figures (1.16%/month, 5 million - 1.5 billion, 3-60 months) were not used. Surprising: the product page shows limit and term but no rate, so a user cannot see the cost before applying; the 12-month minimum term and 10 million minimum make it a poor fit for small short loans.",
+  "retrievedAt": "2026-11-02"
 }
