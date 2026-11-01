@@ -9,7 +9,7 @@
   "products": [
     {
       "id": "mcredit-vay-mon-tien-mat",
-      "nameVi": "Vay món tiền mặt (lump-sum cash loan)",
+      "nameVi": "Vay tiền mặt",
       "productType": "cash_loan",
       "status": "active",
       "validUntil": null,
@@ -53,7 +53,7 @@
             "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "Page text: 'Lãi suất chỉ từ 14.05%/năm'. Floor only. Basis/period: the 06/01/2026 terms define the lending rate as %/year, accrued daily on actual days over 365, on remaining principal of each period, i.e. reducing balance, quoted yearly. The PDF formula text is garbled, so basis is inferred from that clause; the product page itself only says %/nam. The page calculator uses an unexplained default of 25 (%/yr); not recorded as a rate."
+            "note": "Page text: 'Lãi suất chỉ từ 14.05%/năm'. Advertised floor only, not the borrower's rate. The page calculator uses an unexplained default of 25 (%/yr); not recorded as a rate."
           },
           "maxPercent": {
             "value": null,
@@ -65,16 +65,16 @@
           "basis": {
             "value": "reducing",
             "provenance": "inferred",
-            "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+            "note": "Inferred: the 06/01/2026 terms (Dieu 2 Muc I) define the lending rate as accruing daily on actual days over 365 on the remaining principal of each period, i.e. reducing balance. The PDF formula text is garbled, so this is read from the clause, not stated on the product page."
           },
           "period": {
             "value": "yearly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Page wording '%/nam' (per year)."
           },
-          "promotional": null
+          "promotional": false
         }
       ],
       "amortization": {
@@ -89,19 +89,19 @@
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Terms Dieu 2 Muc II: fee is payable when the customer settles early."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Only incurred if the borrower chooses to settle early; not a condition of getting the loan, but the terms do not label it so. Left unknown."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
           "percent": {
             "value": 5,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
@@ -110,17 +110,18 @@
             "note": "Terms (effective 06/01/2026), Dieu 2 Muc II: early repayment fee = 5% x outstanding in-term principal at the early-repayment processing date, minimum 1,650,000 VND, or another fee set by Mcredit per period. Percent applies to OUTSTANDING principal at payoff, not original principal. Payable at settlement; full early settlement allowed after at least 4 instalments paid (or other period set by Mcredit). PDF text had broken Vietnamese diacritics; numbers read cleanly."
           },
           "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a flat fee; see minVnd."
+          },
+          "minVnd": {
             "value": 1650000,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "This is the MINIMUM early settlement fee (applies if 5% of outstanding principal is lower). Same clause."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "note": "Minimum fee 1,650,000 VND (Terms Dieu 2 Muc II). Moved from fixedVnd."
           },
           "maxVnd": {
             "value": null,
@@ -134,26 +135,26 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         },
         {
           "nameVi": "Phí dịch vụ thu hộ",
           "nameEn": "Payment collection service fee",
           "trigger": "per_transaction",
           "timing": {
-            "value": "monthly",
+            "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Charged per repayment transaction made through a collection partner; the terms say it is not part of the monthly loan payment. Whether it is added to the instalment is not stated."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Depends on the payment channel chosen by the borrower; not stated as required."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
@@ -187,13 +188,13 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "third_party"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Loan-attached insurance (voluntary), premium financed by Mcredit",
+          "nameVi": "Bảo hiểm đi kèm khoản vay (tự nguyện), phí bảo hiểm được Mcredit cho vay thêm",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
@@ -203,9 +204,9 @@
           },
           "collection": {
             "value": "added_to_loan",
-            "provenance": "inferred",
-            "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "provenance": "stated",
+            "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+            "note": "Terms Dieu 3 Muc I: the loan principal includes the amount borrowed to pay the premium, which Mcredit pays to the insurer."
           },
           "premium": {
             "method": {
@@ -240,7 +241,8 @@
               "note": "Premium amount not published."
             }
           },
-          "beneficiary": null
+          "beneficiary": "Mcredit (đến mức dư nợ)",
+          "nameEn": "Loan-attached insurance (voluntary), premium financed into the loan"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -299,24 +301,27 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Late interest = overdue principal x 150% x the in-term annual loan rate / 365 x days late, PLUS interest on late interest = late interest x 10% / 365 x days. Separately, a breach penalty of 8% of the breached obligation applies for breaching other contract terms (not payment obligations).",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest formula) and Dieu 4.5 Muc I (8% breach penalty)."
+          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest = overdue principal x 150% x in-term rate / 365 x days; interest on late interest = late interest x 10% / 365 x days) and Dieu 4.5 Muc I (8% breach penalty)."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "150% of the in-term rate. Dieu 2.4 Muc I."
         },
         "overdueInterestRatePercentYear": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
-        }
+          "value": 10,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Late interest x 10% / 365 x days = 10%/year. Dieu 2.4 Muc I."
+        },
+        "textEn": "Overdue principal accrues interest at 150% of the in-term annual rate, per day late; late interest itself accrues 10%/year; 8% penalty for breaching non-payment terms."
       },
       "representativeExamples": [],
       "conflicts": [],
@@ -324,13 +329,14 @@
       "retrievedAt": "2026-11-01",
       "confidence": "medium",
       "excludeFromRanking": false,
-      "notes": "Real rate is set per customer; no range, income or age threshold published. Product data embedded in the page was last modified 2025-03-19. Fees and late rules come from the general unsecured-loan terms effective 06/01/2026."
+      "notes": "Real rate is set per customer; no range, income or age threshold published. Product data embedded in the page was last modified 2025-03-19. Fees and late rules come from the general unsecured-loan terms effective 06/01/2026. Amortization (annuity vs other) not stated.",
+      "nameEn": "Lump-sum cash loan"
     },
     {
       "id": "mcredit-vay-han-muc-tien-mat",
-      "nameVi": "Vay hạn mức tiền mặt (limit-based cash loan)",
+      "nameVi": "Vay hạn mức tiền mặt",
       "productType": "cash_loan",
-      "status": "active",
+      "status": "unverified",
       "validUntil": null,
       "lenderOfRecord": "mcredit",
       "brandOrChannel": null,
@@ -339,29 +345,33 @@
         "value": 3000000,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Embedded data: 'Hạn mức cho vay từ 3 triệu đến 100 triệu đồng'."
+        "confidence": "low",
+        "note": "Embedded data: 'Hạn mức cho vay từ 3 triệu đến 100 triệu đồng'.",
+        "sourceDocumentDate": "2025-03-19"
       },
       "amountMaxVnd": {
         "value": 100000000,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Same."
+        "confidence": "low",
+        "note": "Same.",
+        "sourceDocumentDate": "2025-03-19"
       },
       "termMinMonths": {
         "value": 36,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Embedded data has min = max = 36 months (facility period). Per-drawdown terms not published."
+        "confidence": "low",
+        "note": "Embedded data has min = max = 36 months (facility period). Per-drawdown terms not published.",
+        "sourceDocumentDate": "2025-03-19"
       },
       "termMaxMonths": {
         "value": 36,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "Same."
+        "confidence": "low",
+        "note": "Same.",
+        "sourceDocumentDate": "2025-03-19"
       },
       "rates": [
         {
@@ -371,8 +381,9 @@
             "value": 14.05,
             "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
-            "note": "Embedded description: 'Lãi suất cho vay chỉ từ 14.05%/năm'. Floor only. Basis/period: the 06/01/2026 terms define the lending rate as %/year, accrued daily on actual days over 365, on remaining principal of each period, i.e. reducing balance, quoted yearly. The PDF formula text is garbled, so basis is inferred from that clause; the product page itself only says %/nam."
+            "confidence": "low",
+            "note": "Embedded description: 'Lãi suất cho vay chỉ từ 14.05%/năm'. Advertised floor only; calculator data dated 2025-03-19.",
+            "sourceDocumentDate": "2025-03-19"
           },
           "maxPercent": {
             "value": null,
@@ -384,16 +395,16 @@
           "basis": {
             "value": "reducing",
             "provenance": "inferred",
-            "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+            "note": "Inferred: the 06/01/2026 terms (Dieu 2 Muc I) define the lending rate as accruing daily on actual days over 365 on the remaining principal of each period, i.e. reducing balance. The PDF formula text is garbled, so this is read from the clause, not stated on the product page."
           },
           "period": {
             "value": "yearly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Page wording '%/nam' (per year)."
           },
-          "promotional": null
+          "promotional": false
         }
       ],
       "amortization": {
@@ -408,19 +419,19 @@
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Terms Dieu 2 Muc II: fee is payable when the customer settles early."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Only incurred if the borrower chooses to settle early; not a condition of getting the loan, but the terms do not label it so. Left unknown."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
           "percent": {
             "value": 5,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
@@ -429,17 +440,18 @@
             "note": "Terms (effective 06/01/2026), Dieu 2 Muc II: early repayment fee = 5% x outstanding in-term principal at the early-repayment processing date, minimum 1,650,000 VND, or another fee set by Mcredit per period. Percent applies to OUTSTANDING principal at payoff, not original principal. Payable at settlement; full early settlement allowed after at least 4 instalments paid (or other period set by Mcredit). PDF text had broken Vietnamese diacritics; numbers read cleanly."
           },
           "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a flat fee; see minVnd."
+          },
+          "minVnd": {
             "value": 1650000,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "This is the MINIMUM early settlement fee (applies if 5% of outstanding principal is lower). Same clause."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "note": "Minimum fee 1,650,000 VND (Terms Dieu 2 Muc II). Moved from fixedVnd."
           },
           "maxVnd": {
             "value": null,
@@ -453,26 +465,26 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         },
         {
           "nameVi": "Phí dịch vụ thu hộ",
           "nameEn": "Payment collection service fee",
           "trigger": "per_transaction",
           "timing": {
-            "value": "monthly",
+            "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Charged per repayment transaction made through a collection partner; the terms say it is not part of the monthly loan payment. Whether it is added to the instalment is not stated."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Depends on the payment channel chosen by the borrower; not stated as required."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
@@ -506,13 +518,13 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "third_party"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Loan-attached insurance (voluntary), premium financed by Mcredit",
+          "nameVi": "Bảo hiểm đi kèm khoản vay (tự nguyện), phí bảo hiểm được Mcredit cho vay thêm",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
@@ -522,9 +534,9 @@
           },
           "collection": {
             "value": "added_to_loan",
-            "provenance": "inferred",
-            "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "provenance": "stated",
+            "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+            "note": "Terms Dieu 3 Muc I: the loan principal includes the amount borrowed to pay the premium, which Mcredit pays to the insurer."
           },
           "premium": {
             "method": {
@@ -559,7 +571,8 @@
               "note": "Premium amount not published."
             }
           },
-          "beneficiary": null
+          "beneficiary": "Mcredit (đến mức dư nợ)",
+          "nameEn": "Loan-attached insurance (voluntary), premium financed into the loan"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -616,36 +629,41 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Late interest = overdue principal x 150% x the in-term annual loan rate / 365 x days late, PLUS interest on late interest = late interest x 10% / 365 x days. Separately, a breach penalty of 8% of the breached obligation applies for breaching other contract terms (not payment obligations).",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest formula) and Dieu 4.5 Muc I (8% breach penalty)."
+          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest = overdue principal x 150% x in-term rate / 365 x days; interest on late interest = late interest x 10% / 365 x days) and Dieu 4.5 Muc I (8% breach penalty)."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "150% of the in-term rate. Dieu 2.4 Muc I."
         },
         "overdueInterestRatePercentYear": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
-        }
+          "value": 10,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Late interest x 10% / 365 x days = 10%/year. Dieu 2.4 Muc I."
+        },
+        "textEn": "Overdue principal accrues interest at 150% of the in-term annual rate, per day late; late interest itself accrues 10%/year; 8% penalty for breaching non-payment terms."
       },
       "representativeExamples": [],
       "conflicts": [],
       "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
       "retrievedAt": "2026-11-01",
-      "confidence": "medium",
-      "excludeFromRanking": false,
-      "notes": "Revolving-style limit product that appears only in the page's embedded calculator data, not in visible page text."
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "notes": "Revolving-style limit product that appears only in the page's embedded calculator data (last modified 2025-03-19), not in visible page text. Fees and late rules are from the general terms and not verified to apply to this product.",
+      "nameEn": "Limit-based cash loan",
+      "excludeReason": "Appears only in embedded calculator data (last modified 2025-03-19, over 12 months old), not in visible page text; existence and terms unverified."
     },
     {
       "id": "mcredit-vay-tra-gop",
-      "nameVi": "Vay trả góp (installment loan)",
+      "nameVi": "Vay trả góp",
       "productType": "installment",
       "status": "active",
       "validUntil": null,
@@ -656,8 +674,9 @@
         "value": 2000000,
         "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Embedded data: 'Hạn mức cho vay từ 2 triệu đến 100 triệu đồng'."
+        "confidence": "low",
+        "note": "Embedded data: 'Hạn mức cho vay từ 2 triệu đến 100 triệu đồng'.",
+        "sourceDocumentDate": "2025-03-19"
       },
       "amountMaxVnd": {
         "value": 100000000,
@@ -674,11 +693,12 @@
         "note": "Embedded data min = 3; text says 'Kỳ hạn vay từ 3 tháng'."
       },
       "termMaxMonths": {
-        "value": null,
-        "sourceUrl": null,
-        "retrievedAt": null,
-        "confidence": null,
-        "note": "Contradiction on the same page: embedded calculator data says max 48 months, page headline says 'Kỳ hạn tới 72 tháng'. Left null rather than choose."
+        "value": 48,
+        "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
+        "retrievedAt": "2026-11-01",
+        "confidence": "low",
+        "sourceDocumentDate": "2025-03-19",
+        "note": "Conflict: embedded calculator data says max 48 months, page headline says 72. Stored the lower (conservative) value."
       },
       "rates": [
         {
@@ -689,7 +709,7 @@
             "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "Page: 'Kỳ hạn vay từ 3 tháng với lãi suất chỉ từ 0%/năm'. A floor, likely a promotional or partner-subsidised tier; conditions not stated. Basis/period: the 06/01/2026 terms define the lending rate as %/year, accrued daily on actual days over 365, on remaining principal of each period, i.e. reducing balance, quoted yearly. The PDF formula text is garbled, so basis is inferred from that clause; the product page itself only says %/nam."
+            "note": "Page: 'Kỳ hạn vay từ 3 tháng với lãi suất chỉ từ 0%/năm'. Advertised floor, likely promotional or partner-subsidised; conditions not stated."
           },
           "maxPercent": {
             "value": null,
@@ -701,14 +721,14 @@
           "basis": {
             "value": "reducing",
             "provenance": "inferred",
-            "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+            "note": "Inferred: the 06/01/2026 terms (Dieu 2 Muc I) define the lending rate as accruing daily on actual days over 365 on the remaining principal of each period, i.e. reducing balance. The PDF formula text is garbled, so this is read from the clause, not stated on the product page."
           },
           "period": {
             "value": "yearly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Page wording '%/nam' (per year)."
           },
           "promotional": null
         }
@@ -725,19 +745,19 @@
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Terms Dieu 2 Muc II: fee is payable when the customer settles early."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Only incurred if the borrower chooses to settle early; not a condition of getting the loan, but the terms do not label it so. Left unknown."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
           "percent": {
             "value": 5,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
@@ -746,17 +766,18 @@
             "note": "Terms (effective 06/01/2026), Dieu 2 Muc II: early repayment fee = 5% x outstanding in-term principal at the early-repayment processing date, minimum 1,650,000 VND, or another fee set by Mcredit per period. Percent applies to OUTSTANDING principal at payoff, not original principal. Payable at settlement; full early settlement allowed after at least 4 instalments paid (or other period set by Mcredit). PDF text had broken Vietnamese diacritics; numbers read cleanly."
           },
           "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a flat fee; see minVnd."
+          },
+          "minVnd": {
             "value": 1650000,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "This is the MINIMUM early settlement fee (applies if 5% of outstanding principal is lower). Same clause."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "note": "Minimum fee 1,650,000 VND (Terms Dieu 2 Muc II). Moved from fixedVnd."
           },
           "maxVnd": {
             "value": null,
@@ -770,26 +791,26 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         },
         {
           "nameVi": "Phí dịch vụ thu hộ",
           "nameEn": "Payment collection service fee",
           "trigger": "per_transaction",
           "timing": {
-            "value": "monthly",
+            "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Charged per repayment transaction made through a collection partner; the terms say it is not part of the monthly loan payment. Whether it is added to the instalment is not stated."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Depends on the payment channel chosen by the borrower; not stated as required."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
@@ -823,13 +844,13 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "third_party"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Loan-attached insurance (voluntary), premium financed by Mcredit",
+          "nameVi": "Bảo hiểm đi kèm khoản vay (tự nguyện), phí bảo hiểm được Mcredit cho vay thêm",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
@@ -839,9 +860,9 @@
           },
           "collection": {
             "value": "added_to_loan",
-            "provenance": "inferred",
-            "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "provenance": "stated",
+            "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+            "note": "Terms Dieu 3 Muc I: the loan principal includes the amount borrowed to pay the premium, which Mcredit pays to the insurer."
           },
           "premium": {
             "method": {
@@ -876,7 +897,8 @@
               "note": "Premium amount not published."
             }
           },
-          "beneficiary": null
+          "beneficiary": "Mcredit (đến mức dư nợ)",
+          "nameEn": "Loan-attached insurance (voluntary), premium financed into the loan"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -933,41 +955,62 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Late interest = overdue principal x 150% x the in-term annual loan rate / 365 x days late, PLUS interest on late interest = late interest x 10% / 365 x days. Separately, a breach penalty of 8% of the breached obligation applies for breaching other contract terms (not payment obligations).",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest formula) and Dieu 4.5 Muc I (8% breach penalty)."
+          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest = overdue principal x 150% x in-term rate / 365 x days; interest on late interest = late interest x 10% / 365 x days) and Dieu 4.5 Muc I (8% breach penalty)."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "150% of the in-term rate. Dieu 2.4 Muc I."
         },
         "overdueInterestRatePercentYear": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
-        }
+          "value": 10,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Late interest x 10% / 365 x days = 10%/year. Dieu 2.4 Muc I."
+        },
+        "textEn": "Overdue principal accrues interest at 150% of the in-term annual rate, per day late; late interest itself accrues 10%/year; 8% penalty for breaching non-payment terms."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "48 months",
+              "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
+              "note": "Embedded calculator data (last modified 2025-03-19)"
+            },
+            {
+              "value": "72 months",
+              "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
+              "note": "Page headline 'Kỳ hạn tới 72 tháng'"
+            }
+          ],
+          "resolution": "Stored 48 (lower maximum, stricter for the borrower) with low confidence."
+        }
+      ],
       "sourceUrl": "https://mcredit.com.vn/vi/vay-tra-gop",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
       "excludeFromRanking": false,
-      "notes": "Goods installment loan via merchants. 0% conditions, merchant partners and any subsidy or dealer fees are not published. Fees/late rules are from the general unsecured-loan terms; not verified that they apply identically to this product."
+      "notes": "Goods installment loan via merchants. 0% conditions, merchant partners and any subsidy or dealer fees are not published. Fees/late rules are from the general unsecured-loan terms; not verified that they apply identically to this product.",
+      "nameEn": "Installment loan for goods via merchants"
     },
     {
       "id": "mcredit-vay-nhanh-app",
-      "nameVi": "Vay nhanh qua App Mcredit (app-based loan)",
+      "nameVi": "Vay nhanh qua ứng dụng Mcredit",
       "productType": "cash_loan",
       "status": "active",
       "validUntil": null,
       "lenderOfRecord": "mcredit",
-      "brandOrChannel": null,
+      "brandOrChannel": "Ứng dụng Mcredit",
       "online": true,
       "amountMinVnd": {
         "value": null,
@@ -981,7 +1024,7 @@
         "sourceUrl": "https://mcredit.com.vn/vi/ung-dung-mcredit",
         "retrievedAt": "2026-11-01",
         "confidence": "medium",
-        "note": "Image alt text: 'Hạn mức vay tới 100 triệu'."
+        "note": "Image alt text: 'Hạn mức vay tới 100 triệu'. Alt text, not body text."
       },
       "termMinMonths": {
         "value": null,
@@ -991,11 +1034,11 @@
         "note": "Not stated."
       },
       "termMaxMonths": {
-        "value": 72,
-        "sourceUrl": "https://mcredit.com.vn/vi/ung-dung-mcredit",
+        "value": 36,
+        "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
         "retrievedAt": "2026-11-01",
-        "confidence": "medium",
-        "note": "'Thời hạn vay tới 72 tháng'. Conflicts with the 36-month max on the cash-loan page; the app headline may market installment terms."
+        "confidence": "low",
+        "note": "Conflict: app page says up to 72 months; the cash-loan page says 36. Stored the lower value; the app headline may market installment terms."
       },
       "rates": [],
       "amortization": {
@@ -1010,38 +1053,39 @@
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Terms Dieu 2 Muc II: fee is payable when the customer settles early."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Only incurred if the borrower chooses to settle early; not a condition of getting the loan, but the terms do not label it so. Left unknown."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
           "percent": {
             "value": 5,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
             "retrievedAt": "2026-11-01",
-            "confidence": "medium",
+            "confidence": "low",
             "note": "Terms (effective 06/01/2026), Dieu 2 Muc II: early repayment fee = 5% x outstanding in-term principal at the early-repayment processing date, minimum 1,650,000 VND, or another fee set by Mcredit per period. Percent applies to OUTSTANDING principal at payoff, not original principal. Payable at settlement; full early settlement allowed after at least 4 instalments paid (or other period set by Mcredit). PDF text had broken Vietnamese diacritics; numbers read cleanly."
           },
           "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a flat fee; see minVnd."
+          },
+          "minVnd": {
             "value": 1650000,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "This is the MINIMUM early settlement fee (applies if 5% of outstanding principal is lower). Same clause."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "note": "Minimum fee 1,650,000 VND (Terms Dieu 2 Muc II). Moved from fixedVnd."
           },
           "maxVnd": {
             "value": null,
@@ -1055,26 +1099,26 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "lender"
         },
         {
           "nameVi": "Phí dịch vụ thu hộ",
           "nameEn": "Payment collection service fee",
           "trigger": "per_transaction",
           "timing": {
-            "value": "monthly",
+            "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Charged per repayment transaction made through a collection partner; the terms say it is not part of the monthly loan payment. Whether it is added to the instalment is not stated."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Depends on the payment channel chosen by the borrower; not stated as required."
           },
-          "base": "unknown",
+          "base": "not_applicable",
           "rule": "fixed_only",
           "percent": {
             "value": null,
@@ -1108,13 +1152,13 @@
             "retrievedAt": null,
             "confidence": null
           },
-          "payee": "unknown"
+          "payee": "third_party"
         }
       ],
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Loan-attached insurance (voluntary), premium financed by Mcredit",
+          "nameVi": "Bảo hiểm đi kèm khoản vay (tự nguyện), phí bảo hiểm được Mcredit cho vay thêm",
           "mandatory": {
             "value": false,
             "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
@@ -1124,9 +1168,9 @@
           },
           "collection": {
             "value": "added_to_loan",
-            "provenance": "inferred",
-            "sourceUrl": "https://mcredit.com.vn/vi/ung-dung-mcredit",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "provenance": "stated",
+            "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+            "note": "Terms Dieu 3 Muc I: the loan principal includes the amount borrowed to pay the premium, which Mcredit pays to the insurer."
           },
           "premium": {
             "method": {
@@ -1161,7 +1205,8 @@
               "note": "Premium amount not published."
             }
           },
-          "beneficiary": null
+          "beneficiary": "Mcredit (đến mức dư nợ)",
+          "nameEn": "Loan-attached insurance (voluntary), premium financed into the loan"
         }
       ],
       "insuranceCompleteness": "partial",
@@ -1220,36 +1265,73 @@
       },
       "latePenalty": {
         "textVi": {
-          "value": "Late interest = overdue principal x 150% x the in-term annual loan rate / 365 x days late, PLUS interest on late interest = late interest x 10% / 365 x days. Separately, a breach penalty of 8% of the breached obligation applies for breaching other contract terms (not payment obligations).",
+          "value": "Khi trả chậm, lãi quá hạn tính trên nợ gốc quá hạn bằng 150% lãi suất trong hạn (theo năm), tính theo số ngày chậm. Ngoài ra, tiền lãi chậm trả còn bị tính thêm lãi 10%/năm. Nếu vi phạm các điều khoản khác của hợp đồng (không phải nghĩa vụ thanh toán), bị phạt vi phạm 8% giá trị nghĩa vụ vi phạm.",
           "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest formula) and Dieu 4.5 Muc I (8% breach penalty)."
+          "note": "Terms effective 06/01/2026: Dieu 2.4 Muc I (late interest = overdue principal x 150% x in-term rate / 365 x days; interest on late interest = late interest x 10% / 365 x days) and Dieu 4.5 Muc I (8% breach penalty)."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "150% of the in-term rate. Dieu 2.4 Muc I."
         },
         "overdueInterestRatePercentYear": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
-        }
+          "value": 10,
+          "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Late interest x 10% / 365 x days = 10%/year. Dieu 2.4 Muc I."
+        },
+        "textEn": "Overdue principal accrues interest at 150% of the in-term annual rate, per day late; late interest itself accrues 10%/year; 8% penalty for breaching non-payment terms."
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "fees[0].percent",
+          "values": [
+            {
+              "value": "0 VND early repayment fee",
+              "sourceUrl": "https://mcredit.com.vn/vi/ung-dung-mcredit",
+              "note": "App page image alt text 'Phí trả nợ trước hạn 0 đồng'"
+            },
+            {
+              "value": "5% of outstanding principal, minimum 1,650,000 VND",
+              "sourceUrl": "https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf",
+              "note": "Terms effective 06/01/2026, Dieu 2 Muc II"
+            }
+          ],
+          "resolution": "Stored the contract fee (higher cost). The 0 VND claim may be a promotion or outdated."
+        },
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "72 months",
+              "sourceUrl": "https://mcredit.com.vn/vi/ung-dung-mcredit",
+              "note": "'Thời hạn vay tới 72 tháng'"
+            },
+            {
+              "value": "36 months",
+              "sourceUrl": "https://mcredit.com.vn/vi/vay-tien-mat",
+              "note": "Cash-loan page"
+            }
+          ],
+          "resolution": "Stored 36 (lower maximum) with low confidence."
+        }
+      ],
       "sourceUrl": "https://mcredit.com.vn/vi/ung-dung-mcredit",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
       "excludeFromRanking": false,
-      "notes": "App page image alt text says 'Phí trả nợ trước hạn 0 đồng' (0 VND early repayment fee), which CONTRADICTS the 5% / minimum 1,650,000 VND early settlement fee in the 06/01/2026 terms. The contract fee is recorded and the conflict flagged; the 0 VND claim may be a promotion for this product or outdated. 'Nhận ngay 15 triệu trong 5 phút' is marketing, not a product limit."
+      "notes": "'Nhận ngay 15 triệu trong 5 phút' is marketing, not a product limit. Interest rate not published on the app page. Fees and late rules are from the general terms; not verified to apply identically to this product.",
+      "nameEn": "App-based quick loan"
     },
     {
       "id": "mcredit-the-tin-dung",
-      "nameVi": "Thẻ tín dụng Mcredit (JCB, Napas, Green Card, Mcredit-MB)",
+      "nameVi": "Thẻ tín dụng Mcredit",
       "productType": "credit_card",
       "status": "active",
       "validUntil": null,
@@ -1286,10 +1368,9 @@
       },
       "rates": [],
       "amortization": {
-        "value": "revolving",
-        "provenance": "inferred",
-        "sourceUrl": "https://mcredit.com.vn/vi/the-tin-dung",
-        "note": "Set by the v1→v2 migration; confirm against the source."
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
       },
       "fees": [],
       "feesCompleteness": "unknown",
@@ -1372,10 +1453,12 @@
       "sourceUrl": "https://mcredit.com.vn/vi/the-tin-dung",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Lower priority; not researched. The page links fee/rate documents: Biểu phí thẻ tín dụng nội địa Mcredit-Napas; Biểu phí và Lãi suất của Thẻ tín dụng liên kết Mcredit - MB; Biểu phí và lãi suất thẻ Mcredit - Green Card; Bảng quy đổi lãi suất Napas."
+      "excludeFromRanking": true,
+      "notes": "Lower priority; not researched. The page links fee/rate documents: Biểu phí thẻ tín dụng nội địa Mcredit-Napas; Biểu phí và Lãi suất của Thẻ tín dụng liên kết Mcredit - MB; Biểu phí và lãi suất thẻ Mcredit - Green Card; Bảng quy đổi lãi suất Napas.",
+      "nameEn": "Mcredit credit cards (JCB, Napas, Green Card, Mcredit-MB)",
+      "excludeReason": "Not researched: fee and rate documents were not read."
     }
   ],
-  "researchNotes": "1) data/licensed-institutions.json did not exist when this was written, so the licence check could not be done. Mcredit's footer names it 'Công ty Tài chính tín dụng tiêu dùng TNHH MB Shinsei'; id 'mcredit' must be added to that list with an SBV source. 2) No standalone biểu phí or lãi suất table for cash/installment loans is published. Key sources: the product pages (embedded calculator JSON, last modified 2025-03-19) and the 'Bản Điều khoản Điều kiện cho vay Khách hàng cá nhân không có tài sản bảo đảm' effective 06/01/2026: https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf (text extracted with pdftotext; diacritics partly lost but numbers and formulas readable). 3) Rates: only 'từ 14.05%/năm' (cash) and 'từ 0%/năm' (installment); no maximum or typical rate. The contract formula implies reducing balance, daily accrual over 365 days. The calculator default of 25 is unexplained and not recorded. 4) Contradictions: early repayment 0 VND (app page alt text) vs 5% of outstanding principal, minimum 1,650,000 VND (terms); installment max term 48 (calculator) vs 72 months (headline); cash loan max 36 vs app 72 months. 5) Insurance is voluntary and financed into the loan per the terms; premiums unknown. 6) Age and minimum income not published. 7) No worked example published, so representativeExamples is empty. 8) A 2021 press item (thitruongtaichinhtiente.vn) says Mcredit charged no service fee on installment/cash loans; old and secondary, not used. 9) Mcredit has warned about impersonators collecting advance fees.",
+  "researchNotes": "1) Licence: Mcredit is on data/licensed-institutions.json as 'Công ty Tài chính tín dụng tiêu dùng TNHH MB Shinsei' (licence 32/GP-NHNN); legalName matches the list. 2) No standalone biểu phí or lãi suất table for cash/installment loans is published. Key sources: the product pages (embedded calculator JSON, last modified 2025-03-19) and the 'Bản Điều khoản Điều kiện cho vay Khách hàng cá nhân không có tài sản bảo đảm' effective 06/01/2026: https://mcredit.com.vn/content/134127651471669734/ban-dieu-khoan-dieu-kien-cho-vay-khach-hang-ca-nhan_mcredit_2025.pdf (diacritics partly lost but numbers and formulas readable). 3) Rates: only 'từ 14.05%/năm' (cash) and 'từ 0%/năm' (installment), both advertised floors; no maximum or typical rate. Period (yearly) is stated; reducing balance is INFERRED from the garbled contract clause (daily accrual on remaining principal, actual/365). 4) Contradictions (see conflicts[]): early repayment 0 VND (app page alt text) vs 5% of outstanding principal, minimum 1,650,000 VND (terms), contract fee stored; installment max term 48 (calculator) vs 72 months (headline), 48 stored; app max term 72 vs cash page 36, 36 stored. 5) Limit-based cash loan seen only in embedded data: status unverified, excluded from ranking. 6) Insurance is voluntary and financed into the loan per the terms; premiums unknown. 7) Age and minimum income not published. 8) No worked example published. 9) A 2021 press item (thitruongtaichinhtiente.vn) says Mcredit charged no service fee on installment/cash loans; old and secondary, not used. 10) Mcredit has warned about impersonators collecting advance fees. 11) Values were reviewed against the notes from the 2026-11-01 reading; sources were not re-fetched on 2026-11-02.",
   "retrievedAt": "2026-11-01"
 }
