@@ -9,7 +9,7 @@
   "products": [
     {
       "id": "vpbank-vay-tin-chap-online",
-      "nameVi": "Vay tín chấp tiêu dùng online (vayonline)",
+      "nameVi": "Vay tín chấp tiêu dùng online",
       "productType": "cash_loan",
       "status": "active",
       "validUntil": null,
@@ -28,21 +28,21 @@
         "sourceUrl": "https://vayonline.vpbank.com.vn/",
         "retrievedAt": "2026-11-01",
         "confidence": "medium",
-        "note": "Page: 'Lên đến 200 triệu'. Contradicts VPBank blog (thường 10-500 triệu, 10-12 lần lương) and other VPBank blogs (300 triệu, 1,5 tỷ); possibly different packages."
+        "note": "Page: 'Lên đến 200 triệu'. Lower than VPBank blogs (up to 500 triệu; 300 triệu; 1,5 tỷ), so 200 triệu is the conservative value; possibly different packages. See conflicts."
       },
       "termMinMonths": {
         "value": 12,
         "sourceUrl": "https://vayonline.vpbank.com.vn/",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Page: 'Tối thiểu 12 tháng'."
+        "confidence": "medium",
+        "note": "Page: 'Tối thiểu 12 tháng'. Page footnote says rate and term vary by package and VPBank staff set the real offer, so medium."
       },
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://vayonline.vpbank.com.vn/",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Page: 'Tối đa 60 tháng'."
+        "confidence": "medium",
+        "note": "Page: 'Tối đa 60 tháng'. Page footnote says rate and term vary by package and VPBank staff set the real offer, so medium."
       },
       "rates": [
         {
@@ -53,7 +53,7 @@
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "Page: 'Lãi suất vay tối thiểu từ 1,2%/tháng tương đương 14.4%/năm'. Banner: 'Chỉ từ 1.2%/tháng'. Stored as the bank's own yearly equivalent. Footnote: rate and term vary by package."
+            "note": "Page: 'Lãi suất vay tối thiểu từ 1,2%/tháng tương đương 14.4%/năm'. 14.4 is the bank's own yearly equivalent of 1.2%/tháng (1.2 x 12, nominal). Banner: 'Chỉ từ 1.2%/tháng'. Footnote: rate and term vary by package. A VPBank blog says 'từ 18%/năm' (see conflicts)."
           },
           "maxPercent": {
             "value": 59,
@@ -64,63 +64,65 @@
           },
           "basis": {
             "value": "reducing",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Page FAQ: 'theo thời gian dư nợ giảm dần' (declining balance)."
           },
           "period": {
             "value": "yearly",
-            "provenance": "inferred",
+            "provenance": "stated",
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Page states 'tối đa 59%/năm' and '14.4%/năm'."
           },
           "promotional": null
         }
       ],
       "amortization": {
-        "value": "unknown",
-        "provenance": "none",
-        "sourceUrl": null
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://vayonline.vpbank.com.vn/",
+        "note": "Page states interest on declining balance but not the repayment schedule. Inferred equal monthly instalments from the worked example (one fixed 9,359,500/month). Not stated."
       },
       "fees": [
         {
-          "nameVi": "Phí phạt trả nợ trước hạn (thời gian vay thực tế đến 12 tháng)",
-          "nameEn": "Early repayment fee, actual loan time up to 12 months",
+          "nameVi": "Phí trả nợ trước hạn (thời gian vay thực tế đến 12 tháng)",
+          "nameEn": "Early repayment fee, actual loan time 12 months or less",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Charged only when the borrower repays early; how it is paid is not stated, treated as on the event."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Only arises if the borrower repays early; whether it can be avoided is not stated."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "prepaid_amount",
+          "rule": "percent_with_min_max",
           "percent": {
             "value": 4,
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "'4% nhân số tiền trả nợ trước hạn, tối thiểu 1.000.000 đồng'. Applies to full or partial early repayment; a year = 365 days. The percent applies to the prepaid amount, not the original principal. Another VPBank page (uudaicanhan.vpbank.com.vn, unreachable for us) reportedly lists different tiers; unverified."
+            "note": "Page: '4% nhân số tiền trả nợ trước hạn, tối thiểu 1.000.000 đồng' when actual loan time is 12 months or less. Applies to full or partial early repayment; a year = 365 days. Percent applies to the prepaid amount. Another VPBank domain (uudaicanhan.vpbank.com.vn, unreachable for us) reportedly lists different tiers, unverified (see conflicts)."
           },
           "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a flat fee; the amount is a percent with a minimum (see minVnd)."
+          },
+          "minVnd": {
             "value": 1000000,
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "Minimum fee 1.000.000 đồng."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "note": "Page: 'tối thiểu 1.000.000 đồng'."
           },
           "maxVnd": {
             "value": null,
@@ -137,43 +139,44 @@
           "payee": "unknown"
         },
         {
-          "nameVi": "Phí phạt trả nợ trước hạn (thời gian vay thực tế trên 12 tháng)",
+          "nameVi": "Phí trả nợ trước hạn (thời gian vay thực tế trên 12 tháng)",
           "nameEn": "Early repayment fee, actual loan time over 12 months",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
             "provenance": "inferred",
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
-            "note": "Set by the v1→v2 migration; confirm against the source."
+            "note": "Charged only when the borrower repays early; how it is paid is not stated, treated as on the event."
           },
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Only arises if the borrower repays early; whether it can be avoided is not stated."
           },
-          "base": "unknown",
-          "rule": "other",
+          "base": "prepaid_amount",
+          "rule": "percent_with_min_max",
           "percent": {
             "value": 3,
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "'3% nhân số tiền trả nợ trước hạn, tối thiểu 600.000 đồng'. Percent applies to the prepaid amount."
+            "note": "Page: '3% nhân số tiền trả nợ trước hạn, tối thiểu 600.000 đồng' when actual loan time is over 12 months. Percent applies to the prepaid amount."
           },
           "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a flat fee; the amount is a percent with a minimum (see minVnd)."
+          },
+          "minVnd": {
             "value": 600000,
             "sourceUrl": "https://vayonline.vpbank.com.vn/",
             "retrievedAt": "2026-11-01",
             "confidence": "medium",
-            "note": "Minimum fee 600.000 đồng."
-          },
-          "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "note": "Page: 'tối thiểu 600.000 đồng'."
           },
           "maxVnd": {
             "value": null,
@@ -193,37 +196,40 @@
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Credit life insurance (loan protection)",
+          "nameVi": "Bảo hiểm khoản vay (tử vong, thương tật toàn bộ vĩnh viễn)",
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Page lists it under 'Các loại phí có thể phát sinh' and its example includes it, but does not say whether it is compulsory or optional."
+            "note": "Page lists it under 'Các loại phí có thể phát sinh' and the bank's own worked example includes it, but the page does not say whether it is compulsory or optional. Left unknown, not assumed."
           },
           "collection": {
             "value": "unknown",
             "provenance": "none",
-            "sourceUrl": null
+            "sourceUrl": null,
+            "note": "Page: VPBank sums the premium over the whole term and collects it all at disbursement ('thu toàn bộ số tiền này tại thời điểm giải ngân'). It does not say whether it is deducted from the payout or added to the loan, and the two change the cost, so left unknown rather than inferred."
           },
           "premium": {
             "method": {
-              "value": "unknown",
-              "provenance": "none",
-              "sourceUrl": null
+              "value": "annual_rate_on_declining_balance",
+              "provenance": "stated",
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "note": "Page: premium 1,3 - 1,8%/năm on declining balance, summed over the term."
             },
             "ratePercentMin": {
-              "value": null,
-              "sourceUrl": null,
-              "retrievedAt": null,
-              "confidence": null,
-              "note": "Premium is 1,3 - 1,8%/năm on declining balance (not a % of principal), so it cannot be stored here. Page: VPBank sums the premium over the whole term and collects it all at disbursement ('thu toàn bộ số tiền này tại thời điểm giải ngân'). Whether it is deducted from the payout or added to the loan is not stated. Covers death or permanent total disability. The page example uses 1,6%."
+              "value": 1.3,
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "retrievedAt": "2026-11-01",
+              "confidence": "medium",
+              "note": "Page: 'từ 1,3%/năm'. Rate varies; the page example uses 1,6%."
             },
             "ratePercentMax": {
-              "value": null,
-              "sourceUrl": null,
-              "retrievedAt": null,
-              "confidence": null
+              "value": 1.8,
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "retrievedAt": "2026-11-01",
+              "confidence": "medium",
+              "note": "Page: 'đến 1,8%/năm'."
             },
             "insuredMultiplierTiers": {
               "value": null,
@@ -239,7 +245,9 @@
               "note": "Not a fixed amount."
             }
           },
-          "beneficiary": null
+          "beneficiary": null,
+          "nameEn": "Credit life insurance (loan protection)",
+          "covers": "Death or permanent total disability (per page)."
         }
       ],
       "insuranceCompleteness": "partial",
@@ -249,14 +257,14 @@
           "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
           "retrievedAt": "2026-11-01",
           "confidence": "low",
-          "note": "VPBank blog (15/01/2025): citizens aged 23 to 60. Not on the vayonline page. Another VPBank blog snippet gives 18-65 (contradiction)."
+          "note": "VPBank blog (15/01/2025): citizens aged 23 to 60. Not on the vayonline page. Another VPBank blog gives 18-65; the stricter value (23) is stored. See conflicts."
         },
         "maxAge": {
           "value": 60,
           "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
           "retrievedAt": "2026-11-01",
           "confidence": "low",
-          "note": "Same blog."
+          "note": "Same blog (60). The other blog gives 65; the stricter value is stored. See conflicts."
         },
         "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
@@ -264,7 +272,7 @@
           "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
           "retrievedAt": "2026-11-01",
           "confidence": "low",
-          "note": "VPBank blog: 'Thu nhập tối thiểu 5 triệu/tháng'. The vayonline banner says no income proof is needed ('Không cần ... chứng minh thu nhập') but its FAQ lists income documents: internal contradiction."
+          "note": "VPBank blog: 'Thu nhập tối thiểu 5 triệu/tháng'. The vayonline banner says no income proof is needed ('Không cần ... chứng minh thu nhập') but its FAQ lists income documents: internal contradiction. The blog is from 2025 and is general information, so low."
         },
         "incomeBasis": "unknown",
         "documents": {
@@ -283,7 +291,8 @@
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
+          "confidence": null,
+          "note": "Not stated on the vayonline page."
         },
         "employerRestriction": {
           "value": null,
@@ -295,29 +304,32 @@
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
+          "confidence": null,
+          "note": "No other conditions retrieved from the vayonline page. VPBank staff call back to assess."
         },
-        "notes": "Age and income come from marketing blogs, not product terms."
+        "notes": "Age and income come from marketing blogs, not product terms. The page is a lead-capture form: VPBank staff set the real offer."
       },
       "latePenalty": {
         "textVi": {
-          "value": "Overdue principal: interest at 150% of the in-term rate at the time it became overdue. Late interest: 150% of the in-term rate but at most 10%/năm on the late-interest balance. Also affects credit history.",
+          "value": "Nợ gốc quá hạn: lãi bằng 150% lãi suất trong hạn tại thời điểm chuyển quá hạn. Lãi chậm trả: lãi bằng 150% lãi suất trong hạn nhưng tối đa 10%/năm trên số lãi chậm trả. Ngoài ra còn ảnh hưởng lịch sử tín dụng.",
           "sourceUrl": "https://vayonline.vpbank.com.vn/",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "From the vayonline FAQ."
+          "note": "Translated from the vayonline FAQ (overdue principal 150% of the in-term rate; late interest 150% of the in-term rate, capped at 10%/year)."
         },
         "overduePrincipalRateMultiplier": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 1.5,
+          "sourceUrl": "https://vayonline.vpbank.com.vn/",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "FAQ: 150% of the in-term rate on overdue principal."
         },
         "overdueInterestRatePercentYear": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": 10,
+          "sourceUrl": "https://vayonline.vpbank.com.vn/",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "FAQ: late interest 150% of the in-term rate, at most 10%/năm. Stored as the cap."
         }
       },
       "representativeExamples": [
@@ -332,24 +344,122 @@
           "sourceUrl": "https://vayonline.vpbank.com.vn/",
           "retrievedAt": "2026-11-01",
           "confidence": "medium",
-          "note": "Page: 'khoản vay tiêu dùng VPBank 100.000.000, kỳ hạn vay 12 tháng, lãi suất 20% trên dư nợ giảm dần và 1.6% phí bảo hiểm ... thanh toán hàng tháng là 9,359,500'. The rate period is not stated in the sentence (likely yearly, not assumed). Our check: a plain annuity at 20%/yr gives about 9.26M/month, so the difference presumably comes from insurance, but the page does not explain how. Total repaid is not published.",
-          "amortization": "unknown",
+          "note": "Page: 'khoản vay tiêu dùng VPBank 100.000.000, kỳ hạn vay 12 tháng, lãi suất 20% trên dư nợ giảm dần và 1.6% phí bảo hiểm ... thanh toán hàng tháng là 9,359,500'. Rate period not stated in the sentence (not assumed). Annuity is our inference. Our check: a plain annuity at 20%/yr gives about 9.26M/month, so the gap presumably comes from insurance, but the page does not explain how; consistency left unknown. Total repaid is not published. Source document date unknown (footer 2022).",
+          "amortization": "annuity",
           "statedAnnualRatePercent": null,
           "statedAnnualRateKind": null,
-          "includesInsurance": null,
+          "includesInsurance": true,
           "internallyConsistent": null
         }
       ],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "200,000,000",
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "note": "Official product page: 'Lên đến 200 triệu'."
+            },
+            {
+              "value": "300,000,000 / 500,000,000 / 1,500,000,000",
+              "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
+              "note": "VPBank blogs (general information, not product terms); possibly other packages."
+            }
+          ],
+          "resolution": "Stored the lowest figure (200 triệu), from the product page. Confidence medium."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "14.4%/năm (1,2%/tháng)",
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "note": "Product page."
+            },
+            {
+              "value": "từ 18%/năm",
+              "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
+              "note": "VPBank blog; another blog gives 18-35%/năm reducing."
+            }
+          ],
+          "resolution": "Stored the product page figure per the product page; the blogs are general information and also differ from each other. This is the lowest end of the range, not the user's rate. Confidence medium."
+        },
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "59%/năm",
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "note": "Product page FAQ."
+            },
+            {
+              "value": "35%/năm",
+              "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
+              "note": "Another VPBank blog (18-35%/năm)."
+            }
+          ],
+          "resolution": "Stored the higher (more costly) figure, 59%/năm. Confidence medium."
+        },
+        {
+          "field": "fees[0].percent",
+          "values": [
+            {
+              "value": "4% (min 1.000.000), 3% (min 600.000)",
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "note": "vayonline page."
+            },
+            {
+              "value": "tiers from 1% down to free, unverified",
+              "sourceUrl": null,
+              "note": "Reported on another VPBank domain (uudaicanhan.vpbank.com.vn) that we could not open."
+            }
+          ],
+          "resolution": "Kept the official vayonline figures (the higher cost). The other domain was not read; unverified."
+        },
+        {
+          "field": "eligibility.minAge",
+          "values": [
+            {
+              "value": "23-60",
+              "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
+              "note": "VPBank blog 15/01/2025."
+            },
+            {
+              "value": "18-65",
+              "sourceUrl": null,
+              "note": "Another VPBank blog snippet."
+            }
+          ],
+          "resolution": "Stored the stricter range (23 and 60). Confidence low."
+        },
+        {
+          "field": "eligibility.minMonthlyIncomeVnd",
+          "values": [
+            {
+              "value": "5,000,000/tháng",
+              "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-theo-luong",
+              "note": "Blog."
+            },
+            {
+              "value": "no income proof needed",
+              "sourceUrl": "https://vayonline.vpbank.com.vn/",
+              "note": "Banner; yet the FAQ lists income documents."
+            }
+          ],
+          "resolution": "Stored the stricter blog condition (5 triệu). Confidence low."
+        }
+      ],
       "sourceUrl": "https://vayonline.vpbank.com.vn/",
       "retrievedAt": "2026-11-01",
       "confidence": "medium",
       "excludeFromRanking": false,
-      "notes": "Page footer shows 2022 copyright; no 'updated' date. The page is a lead-capture form (staff call back), so the real offer is set by staff."
+      "notes": "Page footer shows 2022 copyright; no 'updated' date, so sourceDocumentDate is unknown and the data may be older than it looks. The page is a lead-capture form (staff call back): VPBank staff set the real offer, so the ranges are indicative.",
+      "nameEn": "VPBank unsecured online consumer loan (vayonline)"
     },
     {
       "id": "vpbank-thau-chi-tin-chap-luong",
-      "nameVi": "Thấu chi tín chấp online (khách hàng nhận lương qua VPBank)",
+      "nameVi": "Thấu chi tín chấp online dành cho khách hàng nhận lương qua VPBank",
       "productType": "overdraft",
       "status": "active",
       "validUntil": null,
@@ -367,8 +477,8 @@
         "value": 100000000,
         "sourceUrl": "https://www.vpbank.com.vn/ca-nhan/vay/kh-tra-luong",
         "retrievedAt": "2026-11-01",
-        "confidence": "high",
-        "note": "Page: 'Hạn mức thấu chi lên đến 100 triệu đồng'. A 2024 VPBank NEO article claims up to 1 tỷ for overdraft accounts generally; likely a different product."
+        "confidence": "medium",
+        "note": "Page: 'Hạn mức thấu chi lên đến 100 triệu đồng'. A 2024 VPBank NEO article claims up to 1 tỷ for overdraft accounts generally; likely a different product. Lower figure stored; see conflicts."
       },
       "termMinMonths": {
         "value": null,
@@ -389,7 +499,7 @@
         "value": "revolving",
         "provenance": "inferred",
         "sourceUrl": "https://www.vpbank.com.vn/ca-nhan/vay/kh-tra-luong",
-        "note": "Set by the v1→v2 migration; confirm against the source."
+        "note": "Page does not state a repayment schedule. Revolving is inferred from the product being an overdraft limit (thấu chi) with a 12-month term."
       },
       "fees": [],
       "feesCompleteness": "unknown",
@@ -427,10 +537,11 @@
           "note": "Not retrieved."
         },
         "existingCustomerRequired": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": true,
+          "sourceUrl": "https://www.vpbank.com.vn/ca-nhan/vay/kh-tra-luong",
+          "retrievedAt": "2026-11-01",
+          "confidence": "medium",
+          "note": "Page: customers must receive salary through a VPBank account."
         },
         "employerRestriction": {
           "value": null,
@@ -442,7 +553,8 @@
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
-          "confidence": null
+          "confidence": null,
+          "note": "Other conditions not retrieved (the eligibility tab did not render in text)."
         },
         "notes": "Page: customers must receive salary through a VPBank account. Registration and disbursement online within 5 minutes. Empty fees/insurance lists mean unknown, not free."
       },
@@ -452,7 +564,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not retrieved."
+          "note": "Not retrieved; the rate/fee tabs did not render in text."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -468,14 +580,33 @@
         }
       },
       "representativeExamples": [],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "100,000,000",
+              "sourceUrl": "https://www.vpbank.com.vn/ca-nhan/vay/kh-tra-luong",
+              "note": "Official product page."
+            },
+            {
+              "value": "up to 1,000,000,000",
+              "sourceUrl": null,
+              "note": "2024 VPBank NEO article, probably a different overdraft product."
+            }
+          ],
+          "resolution": "Stored the lower figure (100 triệu). Confidence medium."
+        }
+      ],
       "sourceUrl": "https://www.vpbank.com.vn/ca-nhan/vay/kh-tra-luong",
       "retrievedAt": "2026-11-01",
       "confidence": "low",
-      "excludeFromRanking": false,
-      "notes": "Only limit, term and the salary-account requirement are confirmed. Rate, fee and eligibility tabs did not render in text."
+      "excludeFromRanking": true,
+      "notes": "Only limit, term and the salary-account requirement are confirmed. Rate, fee and eligibility tabs did not render in text.",
+      "nameEn": "VPBank unsecured overdraft for salary-account customers",
+      "excludeReason": "Interest rate, fees and insurance are unknown, so the cost cannot be compared fairly."
     }
   ],
-  "researchNotes": "1) data/licensed-institutions.json did not exist when this was written, so the licence check could not be done; 'vpbank' must be added there. 2) Contradictions: max amount 200 triệu (vayonline) vs up to 500 triệu (blog 15/01/2025) vs 300 triệu / 1,5 tỷ (other blogs). Rate: vayonline 14.4%-59%/năm reducing; blog 'từ 18%/năm'; another blog '18-35%/năm' reducing. Early repayment fee: vayonline 4%/3% (min 1.000.000/600.000) vs reported tiers 1%..free on another VPBank domain we could not open. 3) Gaps: no consumer-loan biểu phí PDF found (only SME and card-installment ones); no application or disbursement fee stated anywhere (absence is not proof of zero); no official công khai lãi suất cho vay page located; online loan terms and conditions not read (general credit conditions PDF exists at vpbank.com.vn/-/media/vpbank-latest/tai-lieu-bieu-mau/bieu-mau/khcn/dieu-kien-giao-dich-chung-ve-cap-tin-dung-danh-cho-khach-hang-ca-nhan-tai-vpbank-07112022.pdf, not read). 4) Credit-card installment not recorded as a product: search summaries of VPBank pages mention 0% programs with 2-3% conversion fee, installments from 1-1,5%/tháng, 3-36 months, min 3 triệu, early repayment 3%/2% (2022 PDF); some pages are old; the AIA 0% promo expired 30/06/2026. Not verified at source. 5) Surprising: banner says no income proof but FAQ asks for payslips; insurance premium is collected in full at disbursement; lead-capture flow only.",
+  "researchNotes": "1) Licence check: vpbank is on data/licensed-institutions.json (id 'vpbank'). 2) Contradictions are recorded in each product's conflicts[]: max amount 200 triệu (vayonline) vs up to 500 triệu / 300 triệu / 1,5 tỷ (blogs). Rate: vayonline 14.4%-59%/năm reducing vs blog 'từ 18%/năm' and another blog '18-35%/năm'. Early repayment fee: vayonline 4%/3% (min 1.000.000/600.000) vs reported tiers 1%..free on another VPBank domain we could not open. Age 23-60 vs 18-65. 3) Gaps: no consumer-loan biểu phí PDF found (only SME and card-installment ones); no application or disbursement fee stated anywhere (absence is not proof of zero); no official công khai lãi suất cho vay page located; online loan terms and conditions not read (general credit conditions PDF exists at vpbank.com.vn/-/media/vpbank-latest/tai-lieu-bieu-mau/bieu-mau/khcn/dieu-kien-giao-dich-chung-ve-cap-tin-dung-danh-cho-khach-hang-ca-nhan-tai-vpbank-07112022.pdf, not read). The vayonline page is JavaScript-rendered; a WebFetch on 2026-11-02 returned only the title, so figures are from the 2026-11-01 read. 4) Credit-card installment not recorded as a product: search summaries of VPBank pages mention 0% programs with 2-3% conversion fee, installments from 1-1,5%/tháng, 3-36 months, min 3 triệu, early repayment 3%/2% (2022 PDF); some pages are old; the AIA 0% promo expired 30/06/2026. Not verified at source. 5) Surprising: banner says no income proof but FAQ asks for payslips; insurance premium is collected in full at disbursement (deducted vs financed not stated); lead-capture flow only, staff set the real offer; page footer is from 2022.",
   "retrievedAt": "2026-11-01"
 }
