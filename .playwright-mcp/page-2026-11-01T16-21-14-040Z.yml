@@ -1,0 +1,1325 @@
+- generic [active] [ref=f3e1]:
+  - navigation "Liên kết nhanh":
+    - link "Skip to Main Content" [ref=f3e2] [cursor=pointer]:
+      - /url: "#main-content"
+  - generic [ref=f3e5]:
+    - banner [ref=f3e6]:
+      - generic [ref=f3e14]:
+        - link [ref=f3e15] [cursor=pointer]:
+          - /url: ""
+          - img "Lỗi" [ref=f3e17]
+        - generic [ref=f3e18]:
+          - paragraph [ref=f3e19]: Cổng Thông Tin Điện Tử
+          - paragraph [ref=f3e20]: Ngân Hàng Nhà Nước Việt Nam
+          - generic [ref=f3e21]:
+            - generic [ref=f3e22]: Chủ nhật, 1/11/2026
+            - generic [ref=f3e24]: "|"
+            - button "English" [ref=f3e26] [cursor=pointer]
+    - generic [ref=f3e27]:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - button [ref=f3e28] [cursor=pointer]
+                        - generic [ref=f3e33]:
+                          - generic [ref=f3e34]:
+                            - link "Trang chủ" [ref=f3e35] [cursor=pointer]:
+                              - /url: /
+                            - button "×" [ref=f3e37] [cursor=pointer]
+                          - list [ref=f3e39]:
+                            - listitem [ref=f3e40]:
+                              - link "Tin tức - Sự kiện" [ref=f3e41] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/tin-tuc-su-kien
+                            - listitem [ref=f3e42]:
+                              - link "Thông cáo báo chí ▶" [ref=f3e43] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/thong-cao-bao-chi
+                                - generic [ref=f3e44]:
+                                  - generic [ref=f3e45]: Thông cáo báo chí
+                                  - button "▶" [ref=f3e46]
+                              - list:
+                                - listitem [ref=f3e47]:
+                                  - link "Thông tin về hoạt động ngân hàng trong tuần" [ref=f3e48] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/th%C3%B4ng-tin-v%E1%BB%81-ho%E1%BA%A1t-%C4%91%E1%BB%99ng-ng%C3%A2n-h%C3%A0ng-trong-tu%E1%BA%A7n
+                                - listitem [ref=f3e49]:
+                                  - link "Thông cáo báo chí khác" [ref=f3e50] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/th%C3%B4ng-c%C3%A1o-b%C3%A1o-ch%C3%AD-kh%C3%A1c
+                            - listitem [ref=f3e51]:
+                              - link "Tỷ giá trung tâm" [ref=f3e52] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tỷ-giá
+                            - listitem [ref=f3e53]:
+                              - link "Tỷ giá tham khảo tại giữa đồng Việt Nam và các loại ngoại tệ tại Cục Quản lý ngoại hối" [ref=f3e54] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tỷ-giá
+                            - listitem [ref=f3e55]:
+                              - link "Tỷ giá tính chéo của Đồng Việt Nam với một số ngoại tệ để xác định giá tính thuế" [ref=f3e56] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tỷ-giá
+                            - listitem [ref=f3e57]:
+                              - link "Lãi suất NHNN quy định" [ref=f3e58] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/rm/ls/bls
+                            - listitem [ref=f3e59]:
+                              - link "Lãi suất thị trường liên ngân hàng" [ref=f3e60] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/rm/ls/lsttlnh
+                            - listitem [ref=f3e61]:
+                              - link "Dữ liệu thống kê ▶" [ref=f3e62] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/du-lieu-thong-ke
+                                - generic [ref=f3e63]:
+                                  - generic [ref=f3e64]: Dữ liệu thống kê
+                                  - button "▶" [ref=f3e65]
+                              - list:
+                                - listitem [ref=f3e66]:
+                                  - link "Cán cân thanh toán quốc tế" [ref=f3e67] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/cán-cân-thanh-toán-quốc-tế
+                                - listitem [ref=f3e68]:
+                                  - link "Tổng phương tiện thanh toán ▶" [ref=f3e69] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/tổng-phương-tiện-thanh-toán-và-tiền-gửi-của-khách-hàng-tại-tctd
+                                    - generic [ref=f3e70]:
+                                      - generic [ref=f3e71]: Tổng phương tiện thanh toán
+                                      - button "▶" [ref=f3e72]
+                                  - list:
+                                    - listitem [ref=f3e73]:
+                                      - link "Tổng phương tiện thanh toán và Tiền gửi của khách hàng tại TCTD" [ref=f3e74] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/tổng-phương-tiện-thanh-toán-và-tiền-gửi-của-khách-hàng-tại-tctd
+                                    - listitem [ref=f3e75]:
+                                      - link "Tiền mặt lưu thông trên tổng phương tiện thanh toán" [ref=f3e76] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/tiền-mặt-lưu-thông-trên-tổng-phương-tiện-thanh-toán
+                                - listitem [ref=f3e77]:
+                                  - link "Hoạt động thanh toán ▶" [ref=f3e78] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn
+                                    - generic [ref=f3e79]:
+                                      - generic [ref=f3e80]: Hoạt động thanh toán
+                                      - button "▶" [ref=f3e81]
+                                  - list:
+                                    - listitem [ref=f3e82]:
+                                      - link "Giao dịch của hệ thống thanh toán quốc gia" [ref=f3e83] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/giao-dịch-của-hệ-thông-thanh-toán-quốc-gia
+                                    - listitem [ref=f3e84]:
+                                      - link "Giao dịch thanh toán nội địa theo các PTTT" [ref=f3e85] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdttndtcpttt
+                                    - listitem [ref=f3e86]:
+                                      - link "Giao dịch qua ATM/POS/EFTPOS/EDC" [ref=f3e87] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdqatmpos
+                                    - listitem [ref=f3e88]:
+                                      - link "Số lượng thẻ ngân hàng" [ref=f3e89] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/sltnh
+                                    - listitem [ref=f3e90]:
+                                      - link "Tài khoản tiền gửi thanh toán của cá nhân" [ref=f3e91] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/tttgttccn
+                                    - listitem [ref=f3e92]:
+                                      - link "Các tổ chức CUDVTT không phải là TCTD" [ref=f3e93] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/ctccudvtt
+                                - listitem [ref=f3e94]:
+                                  - link "Dư nợ tín dụng đối với nền kinh tế" [ref=f3e95] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/dntddvnkt
+                                - listitem [ref=f3e96]:
+                                  - link "Hoạt động của hệ thống các TCTD ▶" [ref=f3e97] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn
+                                    - generic [ref=f3e98]:
+                                      - generic [ref=f3e99]: Hoạt động của hệ thống các TCTD
+                                      - button "▶" [ref=f3e100]
+                                  - list:
+                                    - listitem [ref=f3e101]:
+                                      - link "Thống kê một số chi tiêu cơ bản" [ref=f3e102] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tkmsctcb
+                                    - listitem [ref=f3e103]:
+                                      - link "Tỷ lệ dư nợ cho vay so với tổng tiền gửi" [ref=f3e104] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlctdsvnhdv
+                                    - listitem [ref=f3e105]:
+                                      - link "Tỷ lệ nợ xấu trong tổng dư nợ tín dụng" [ref=f3e106] [cursor=pointer]:
+                                        - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlnxttdntd
+                                - listitem [ref=f3e107]:
+                                  - link "Điều tra thống kê ▶" [ref=f3e108] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn
+                                    - generic [ref=f3e109]:
+                                      - generic [ref=f3e110]: Điều tra thống kê
+                                      - button "▶" [ref=f3e111]
+                                  - list:
+                                    - listitem [ref=f3e112]:
+                                      - link "Hướng dẫn" [ref=f3e113] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/vi/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn
+                                    - listitem [ref=f3e114]:
+                                      - link "Phiếu điều tra" [ref=f3e115] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/vi/phi%E1%BA%BFu-%C4%91i%E1%BB%81u-tra
+                                    - listitem [ref=f3e116]:
+                                      - link "Điều tra trực tuyến" [ref=f3e117] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/vi/%C4%91i%E1%BB%81u-tra-tr%E1%BB%B1c-tuy%E1%BA%BFn
+                                    - listitem [ref=f3e118]:
+                                      - link "Kết quả điều tra" [ref=f3e119] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/vi/k%E1%BA%BFt-qu%E1%BA%A3-%C4%91i%E1%BB%81u-tra
+                                - listitem [ref=f3e120]:
+                                  - link "Các văn bản liên quan đến quy định báo cáo thống kê" [ref=f3e121] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/cac-van-ban-lien-quan-den-quy-dinh-bao-cao-thong-ke
+                            - listitem [ref=f3e122]:
+                              - link "CPI" [ref=f3e123] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/cpi
+                            - listitem [ref=f3e124]:
+                              - link "Văn bản quy phạm pháp luật" [ref=f3e125] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/v%C4%83n-b%E1%BA%A3n-quy-ph%E1%BA%A1m-ph%C3%A1p-lu%E1%BA%ADt
+                            - listitem [ref=f3e126]:
+                              - link "Chính sách tiền tệ ▶" [ref=f3e127] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/ch%C3%ADnh-s%C3%A1ch-ti%E1%BB%81n-t%E1%BB%87
+                                - generic [ref=f3e128]:
+                                  - generic [ref=f3e129]: Chính sách tiền tệ
+                                  - button "▶" [ref=f3e130]
+                              - list:
+                                - listitem [ref=f3e131]:
+                                  - link "Định hướng điều hành CSTT và hoạt động ngân hàng trong năm" [ref=f3e132] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/%C4%91%E1%BB%8Bnh-h%C6%B0%E1%BB%9Bng-%C4%91i%E1%BB%81u-h%C3%A0nh-cstt-v%C3%A0-ho%E1%BA%A1t-%C4%91%E1%BB%99ng-ng%C3%A2n-h%C3%A0ng-trong-n%C4%83m
+                                - listitem [ref=f3e133]:
+                                  - link "Thẩm quyền quyết định CSTT quốc gia và các công cụ thực hiện" [ref=f3e134] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/th%E1%BA%A9m-quy%E1%BB%81n-quy%E1%BA%BFt-%C4%91%E1%BB%8Bnh-cstt-qu%E1%BB%91c-gia-v%C3%A0-c%C3%A1c-c%C3%B4ng-c%E1%BB%A5-th%E1%BB%B1c-hi%E1%BB%87n
+                            - listitem [ref=f3e135]:
+                              - link "Thanh toán & ngân quỹ ▶" [ref=f3e136] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/thanh-toan-ngan-quy
+                                - generic [ref=f3e137]:
+                                  - generic [ref=f3e138]: Thanh toán & ngân quỹ
+                                  - button "▶" [ref=f3e139]
+                              - list:
+                                - listitem [ref=f3e140]:
+                                  - link "Nhiệm vụ của NHNN trong hoạt động thanh toán" [ref=f3e141] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/nhiem-vu-cua-nhnn-trong-hoat-dong-thanh-toan
+                                - listitem [ref=f3e142]:
+                                  - link "Các hệ thống thanh toán trong nền kinh tế ▶" [ref=f3e143] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/cac-he-thong-thanh-toan-trong-nen-kinh-te
+                                    - generic [ref=f3e144]:
+                                      - generic [ref=f3e145]: Các hệ thống thanh toán trong nền kinh tế
+                                      - button "▶" [ref=f3e146]
+                                  - list:
+                                    - listitem [ref=f3e147]:
+                                      - link "Hệ thống thanh toán điện tử liên ngân hàng" [ref=f3e148] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/vi/he-thong-thanh-toan-dien-tu-lien-ngan-hang
+                                    - listitem [ref=f3e149]:
+                                      - link "Các hệ thống thanh toán khác" [ref=f3e150] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/vi/cac-he-thong-thanh-toan-khac
+                                - listitem [ref=f3e151]:
+                                  - link "Giám sát hệ thống thanh toán ▶" [ref=f3e152] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/giam-sat-he-thong-thanh-toan
+                                    - generic [ref=f3e153]:
+                                      - generic [ref=f3e154]: Giám sát hệ thống thanh toán
+                                      - button "▶" [ref=f3e155]
+                                  - list:
+                                    - listitem [ref=f3e156]:
+                                      - link "Thanh toán không dùng tiền mặt" [ref=f3e157] [cursor=pointer]:
+                                        - /url: https://sbv.gov.vn/vi/thanh-toan-khong-dung-tien-mat
+                                - listitem [ref=f3e158]:
+                                  - link "Hệ thống mã tổ chức phát hành thẻ" [ref=f3e159] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/he-thong-ma-to-chuc-phat-hanh-the
+                                - listitem [ref=f3e160]:
+                                  - link "Biểu phí dịch vụ thanh toán qua NHNN" [ref=f3e161] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/bieu-phi-dich-vu-thanh-toan-qua-nhnn
+                                - listitem [ref=f3e162]:
+                                  - link "Hoạt động ngân quỹ" [ref=f3e163] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/hoat-dong-ngan-quy
+                                - listitem [ref=f3e164]:
+                                  - link "Danh mục các giao dịch bắt buộc phải thanh toán qua ngân hàng" [ref=f3e165] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/danh-m%E1%BB%A5c-c%C3%A1c-giao-d%E1%BB%8Bch-b%E1%BA%AFt-bu%E1%BB%99c-ph%E1%BA%A3i-thanh-to%C3%A1n-qua-ng%C3%A2n-h%C3%A0ng
+                            - listitem [ref=f3e166]:
+                              - link "Phát hành tiền ▶" [ref=f3e167] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/phat-hanh-tien
+                                - generic [ref=f3e168]:
+                                  - generic [ref=f3e169]: Phát hành tiền
+                                  - button "▶" [ref=f3e170]
+                              - list:
+                                - listitem [ref=f3e171]:
+                                  - link "Đồng tiền Việt Nam" [ref=f3e172] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/dong-tien-viet-nam
+                                - listitem [ref=f3e173]:
+                                  - link "Tiền thật, tiền giả" [ref=f3e174] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/tien-that-tien-gia
+                                - listitem [ref=f3e175]:
+                                  - link "Những hành vi bị nghiệm cấm và một số quy định về xử phạt liên quan đến phòng, chống tiền giả và bảo vệ tiền Việt Nam" [ref=f3e176] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/nhung-hanh-vi-bi-nghiem-cam-va-mot-so-quy-dinh-ve-xu-phat-lien-quan-den-phong-chong-tien-gia-va-bao-ve-tien-viet-nam
+                            - listitem [ref=f3e177]:
+                              - link "Quản lý hoạt động ngoại hối và hoạt động kinh doanh vàng" [ref=f3e178] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/quan-ly-hoat-dong-ngoai-hoi-va-hoat-dong-kinh-doanh-vang
+                            - listitem [ref=f3e179]:
+                              - link "Cải cách hành chính ▶" [ref=f3e180] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/cai-cach-hanh-chinh
+                                - generic [ref=f3e181]:
+                                  - generic [ref=f3e182]: Cải cách hành chính
+                                  - button "▶" [ref=f3e183]
+                              - list:
+                                - listitem [ref=f3e184]:
+                                  - link "Tin tức CCHC" [ref=f3e185] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/tin-tuc-cchc
+                                - listitem [ref=f3e186]:
+                                  - link "Bản tin CCHC nội bộ" [ref=f3e187] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/ban-tin-cchc-noi-bo
+                                - listitem [ref=f3e188]:
+                                  - link "Văn bản cải cách hành chính" [ref=f3e189] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/van-ban-cai-cach-hanh-chinh
+                                - listitem [ref=f3e190]:
+                                  - link "Phiếu lấy ý kiến giải quyết TTHC" [ref=f3e191] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/phieu-lay-y-kien-giai-quyet-thu-tuc-hanh-chinh
+                                - listitem [ref=f3e192]:
+                                  - link "Bộ câu hỏi về thủ tục hành chính NHNN" [ref=f3e193] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/bo-cau-hoi-ve-thu-tuc-hanh-chinh-nhnn
+                                - listitem [ref=f3e194]:
+                                  - link "Danh mục điều kiện kinh doanh" [ref=f3e195] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/danh-muc-dieu-kien-kinh-doanh
+                                - listitem [ref=f3e196]:
+                                  - link "Danh mục báo cáo định kỳ" [ref=f3e197] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/danh-muc-bao-cao-dinh-ky
+                                - listitem [ref=f3e198]:
+                                  - link "HTQLCL theo tiêu chuẩn ISO" [ref=f3e199] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/htqlcl-theo-tieu-chuan-iso
+                                - listitem [ref=f3e200]:
+                                  - link "Đào tạo ISO" [ref=f3e201] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/dao-tao-iso
+                            - listitem [ref=f3e202]:
+                              - link "Diễn đàn NHNN ▶" [ref=f3e203] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/di%E1%BB%85n-%C4%91%C3%A0n-nhnn
+                                - generic [ref=f3e204]:
+                                  - generic [ref=f3e205]: Diễn đàn NHNN
+                                  - button "▶" [ref=f3e206]
+                              - list:
+                                - listitem [ref=f3e207]:
+                                  - link "Hỏi đáp" [ref=f3e208] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/h%E1%BB%8Fi-%C4%91%C3%A1p
+                                - listitem [ref=f3e209]:
+                                  - link "Lấy ý kiến dự thảo VBQPPL" [ref=f3e210] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/l%E1%BA%A5y-%C3%BD-ki%E1%BA%BFn-d%E1%BB%B1-th%E1%BA%A3o-vbqppl1
+                            - listitem [ref=f3e211]:
+                              - link "Giới thiệu NHNN ▶" [ref=f3e212] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/gi%E1%BB%9Bi-thi%E1%BB%87u-nhnn1
+                                - generic [ref=f3e213]:
+                                  - generic [ref=f3e214]: Giới thiệu NHNN
+                                  - button "▶" [ref=f3e215]
+                              - list:
+                                - listitem [ref=f3e216]:
+                                  - link "Sơ lược quá trình thành lập và phát triển" [ref=f3e217] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/s%C6%A1-l%C6%B0%E1%BB%A3c-qu%C3%A1-tr%C3%ACnh-th%C3%A0nh-l%E1%BA%ADp-v%C3%A0-ph%C3%A1t-tri%E1%BB%83n
+                                - listitem [ref=f3e218]:
+                                  - link "Chức năng nhiệm vụ" [ref=f3e219] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/ch%E1%BB%A9c-n%C4%83ng-nhi%E1%BB%87m-v%E1%BB%A5
+                                - listitem [ref=f3e220]:
+                                  - link "Ban lãnh đạo đương nhiệm" [ref=f3e221] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/ban-l%C3%A3nh-%C4%91%E1%BA%A1o-%C4%91%C6%B0%C6%A1ng-nhi%E1%BB%87m
+                                - listitem [ref=f3e222]:
+                                  - link "Lãnh đạo NHNN qua các thời kỳ" [ref=f3e223] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/l%C3%A3nh-%C4%91%E1%BA%A1o-nhnn-qua-c%C3%A1c-th%E1%BB%9Di-k%E1%BB%B3
+                          - list [ref=f3e225]:
+                            - listitem [ref=f3e226]:
+                              - link "Thông tin về hoạt động ngân hàng trong tuần" [ref=f3e227] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/th%C3%B4ng-tin-v%E1%BB%81-ho%E1%BA%A1t-%C4%91%E1%BB%99ng-ng%C3%A2n-h%C3%A0ng-trong-tu%E1%BA%A7n
+                            - listitem [ref=f3e228]:
+                              - link "Thông cáo báo chí khác" [ref=f3e229] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/th%C3%B4ng-c%C3%A1o-b%C3%A1o-ch%C3%AD-kh%C3%A1c
+                          - list [ref=f3e231]:
+                            - listitem [ref=f3e232]:
+                              - link "Tổng phương tiện thanh toán và Tiền gửi của khách hàng tại TCTD" [ref=f3e233] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tổng-phương-tiện-thanh-toán-và-tiền-gửi-của-khách-hàng-tại-tctd
+                            - listitem [ref=f3e234]:
+                              - link "Tiền mặt lưu thông trên tổng phương tiện thanh toán" [ref=f3e235] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tiền-mặt-lưu-thông-trên-tổng-phương-tiện-thanh-toán
+                          - list [ref=f3e237]:
+                            - listitem [ref=f3e238]:
+                              - link "Giao dịch của hệ thống thanh toán quốc gia" [ref=f3e239] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/giao-dịch-của-hệ-thông-thanh-toán-quốc-gia
+                            - listitem [ref=f3e240]:
+                              - link "Giao dịch thanh toán nội địa theo các PTTT" [ref=f3e241] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdttndtcpttt
+                            - listitem [ref=f3e242]:
+                              - link "Giao dịch qua ATM/POS/EFTPOS/EDC" [ref=f3e243] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdqatmpos
+                            - listitem [ref=f3e244]:
+                              - link "Số lượng thẻ ngân hàng" [ref=f3e245] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/sltnh
+                            - listitem [ref=f3e246]:
+                              - link "Tài khoản tiền gửi thanh toán của cá nhân" [ref=f3e247] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/tttgttccn
+                            - listitem [ref=f3e248]:
+                              - link "Các tổ chức CUDVTT không phải là TCTD" [ref=f3e249] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/ctccudvtt
+                          - list [ref=f3e251]:
+                            - listitem [ref=f3e252]:
+                              - link "Thống kê một số chi tiêu cơ bản" [ref=f3e253] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tkmsctcb
+                            - listitem [ref=f3e254]:
+                              - link "Tỷ lệ dư nợ cho vay so với tổng tiền gửi" [ref=f3e255] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlctdsvnhdv
+                            - listitem [ref=f3e256]:
+                              - link "Tỷ lệ nợ xấu trong tổng dư nợ tín dụng" [ref=f3e257] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlnxttdntd
+                          - list [ref=f3e259]:
+                            - listitem [ref=f3e260]:
+                              - link "Hướng dẫn" [ref=f3e261] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn
+                            - listitem [ref=f3e262]:
+                              - link "Phiếu điều tra" [ref=f3e263] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/phi%E1%BA%BFu-%C4%91i%E1%BB%81u-tra
+                            - listitem [ref=f3e264]:
+                              - link "Điều tra trực tuyến" [ref=f3e265] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/%C4%91i%E1%BB%81u-tra-tr%E1%BB%B1c-tuy%E1%BA%BFn
+                            - listitem [ref=f3e266]:
+                              - link "Kết quả điều tra" [ref=f3e267] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/k%E1%BA%BFt-qu%E1%BA%A3-%C4%91i%E1%BB%81u-tra
+                          - list [ref=f3e269]:
+                            - listitem [ref=f3e270]:
+                              - link "Cán cân thanh toán quốc tế" [ref=f3e271] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/cán-cân-thanh-toán-quốc-tế
+                            - listitem [ref=f3e272]:
+                              - link "Tổng phương tiện thanh toán ▶" [ref=f3e273] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tổng-phương-tiện-thanh-toán-và-tiền-gửi-của-khách-hàng-tại-tctd
+                                - generic [ref=f3e274]:
+                                  - generic [ref=f3e275]: Tổng phương tiện thanh toán
+                                  - button "▶" [ref=f3e276]
+                              - list [ref=f3e277]:
+                                - listitem [ref=f3e278]:
+                                  - link "Tổng phương tiện thanh toán và Tiền gửi của khách hàng tại TCTD" [ref=f3e279] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/tổng-phương-tiện-thanh-toán-và-tiền-gửi-của-khách-hàng-tại-tctd
+                                - listitem [ref=f3e280]:
+                                  - link "Tiền mặt lưu thông trên tổng phương tiện thanh toán" [ref=f3e281] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/tiền-mặt-lưu-thông-trên-tổng-phương-tiện-thanh-toán
+                            - listitem [ref=f3e282]:
+                              - link "Hoạt động thanh toán ▶" [ref=f3e283] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn
+                                - generic [ref=f3e284]:
+                                  - generic [ref=f3e285]: Hoạt động thanh toán
+                                  - button "▶" [ref=f3e286]
+                              - list [ref=f3e287]:
+                                - listitem [ref=f3e288]:
+                                  - link "Giao dịch của hệ thống thanh toán quốc gia" [ref=f3e289] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/giao-dịch-của-hệ-thông-thanh-toán-quốc-gia
+                                - listitem [ref=f3e290]:
+                                  - link "Giao dịch thanh toán nội địa theo các PTTT" [ref=f3e291] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdttndtcpttt
+                                - listitem [ref=f3e292]:
+                                  - link "Giao dịch qua ATM/POS/EFTPOS/EDC" [ref=f3e293] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdqatmpos
+                                - listitem [ref=f3e294]:
+                                  - link "Số lượng thẻ ngân hàng" [ref=f3e295] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/sltnh
+                                - listitem [ref=f3e296]:
+                                  - link "Tài khoản tiền gửi thanh toán của cá nhân" [ref=f3e297] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/tttgttccn
+                                - listitem [ref=f3e298]:
+                                  - link "Các tổ chức CUDVTT không phải là TCTD" [ref=f3e299] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/ctccudvtt
+                            - listitem [ref=f3e300]:
+                              - link "Dư nợ tín dụng đối với nền kinh tế" [ref=f3e301] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/dntddvnkt
+                            - listitem [ref=f3e302]:
+                              - link "Hoạt động của hệ thống các TCTD ▶" [ref=f3e303] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn
+                                - generic [ref=f3e304]:
+                                  - generic [ref=f3e305]: Hoạt động của hệ thống các TCTD
+                                  - button "▶" [ref=f3e306]
+                              - list [ref=f3e307]:
+                                - listitem [ref=f3e308]:
+                                  - link "Thống kê một số chi tiêu cơ bản" [ref=f3e309] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tkmsctcb
+                                - listitem [ref=f3e310]:
+                                  - link "Tỷ lệ dư nợ cho vay so với tổng tiền gửi" [ref=f3e311] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlctdsvnhdv
+                                - listitem [ref=f3e312]:
+                                  - link "Tỷ lệ nợ xấu trong tổng dư nợ tín dụng" [ref=f3e313] [cursor=pointer]:
+                                    - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlnxttdntd
+                            - listitem [ref=f3e314]:
+                              - link "Điều tra thống kê ▶" [ref=f3e315] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn
+                                - generic [ref=f3e316]:
+                                  - generic [ref=f3e317]: Điều tra thống kê
+                                  - button "▶" [ref=f3e318]
+                              - list [ref=f3e319]:
+                                - listitem [ref=f3e320]:
+                                  - link "Hướng dẫn" [ref=f3e321] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn
+                                - listitem [ref=f3e322]:
+                                  - link "Phiếu điều tra" [ref=f3e323] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/phi%E1%BA%BFu-%C4%91i%E1%BB%81u-tra
+                                - listitem [ref=f3e324]:
+                                  - link "Điều tra trực tuyến" [ref=f3e325] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/%C4%91i%E1%BB%81u-tra-tr%E1%BB%B1c-tuy%E1%BA%BFn
+                                - listitem [ref=f3e326]:
+                                  - link "Kết quả điều tra" [ref=f3e327] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/k%E1%BA%BFt-qu%E1%BA%A3-%C4%91i%E1%BB%81u-tra
+                            - listitem [ref=f3e328]:
+                              - link "Các văn bản liên quan đến quy định báo cáo thống kê" [ref=f3e329] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/cac-van-ban-lien-quan-den-quy-dinh-bao-cao-thong-ke
+                          - list [ref=f3e331]:
+                            - listitem [ref=f3e332]:
+                              - link "Tổng phương tiện thanh toán và Tiền gửi của khách hàng tại TCTD" [ref=f3e333] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tổng-phương-tiện-thanh-toán-và-tiền-gửi-của-khách-hàng-tại-tctd
+                            - listitem [ref=f3e334]:
+                              - link "Tiền mặt lưu thông trên tổng phương tiện thanh toán" [ref=f3e335] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/tiền-mặt-lưu-thông-trên-tổng-phương-tiện-thanh-toán
+                          - list [ref=f3e337]:
+                            - listitem [ref=f3e338]:
+                              - link "Giao dịch của hệ thống thanh toán quốc gia" [ref=f3e339] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/giao-dịch-của-hệ-thông-thanh-toán-quốc-gia
+                            - listitem [ref=f3e340]:
+                              - link "Giao dịch thanh toán nội địa theo các PTTT" [ref=f3e341] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdttndtcpttt
+                            - listitem [ref=f3e342]:
+                              - link "Giao dịch qua ATM/POS/EFTPOS/EDC" [ref=f3e343] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/gdqatmpos
+                            - listitem [ref=f3e344]:
+                              - link "Số lượng thẻ ngân hàng" [ref=f3e345] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/sltnh
+                            - listitem [ref=f3e346]:
+                              - link "Tài khoản tiền gửi thanh toán của cá nhân" [ref=f3e347] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/tttgttccn
+                            - listitem [ref=f3e348]:
+                              - link "Các tổ chức CUDVTT không phải là TCTD" [ref=f3e349] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdtt/ctccudvtt
+                          - list [ref=f3e351]:
+                            - listitem [ref=f3e352]:
+                              - link "Thống kê một số chi tiêu cơ bản" [ref=f3e353] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tkmsctcb
+                            - listitem [ref=f3e354]:
+                              - link "Tỷ lệ dư nợ cho vay so với tổng tiền gửi" [ref=f3e355] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlctdsvnhdv
+                            - listitem [ref=f3e356]:
+                              - link "Tỷ lệ nợ xấu trong tổng dư nợ tín dụng" [ref=f3e357] [cursor=pointer]:
+                                - /url: https://dttktt.sbv.gov.vn/webcenter/portal/vi/menu/trangchu/tk/hdchtctctd/tlnxttdntd
+                          - list [ref=f3e359]:
+                            - listitem [ref=f3e360]:
+                              - link "Hướng dẫn" [ref=f3e361] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn
+                            - listitem [ref=f3e362]:
+                              - link "Phiếu điều tra" [ref=f3e363] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/phi%E1%BA%BFu-%C4%91i%E1%BB%81u-tra
+                            - listitem [ref=f3e364]:
+                              - link "Điều tra trực tuyến" [ref=f3e365] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/%C4%91i%E1%BB%81u-tra-tr%E1%BB%B1c-tuy%E1%BA%BFn
+                            - listitem [ref=f3e366]:
+                              - link "Kết quả điều tra" [ref=f3e367] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/k%E1%BA%BFt-qu%E1%BA%A3-%C4%91i%E1%BB%81u-tra
+                          - list [ref=f3e369]:
+                            - listitem [ref=f3e370]:
+                              - link "Định hướng điều hành CSTT và hoạt động ngân hàng trong năm" [ref=f3e371] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/%C4%91%E1%BB%8Bnh-h%C6%B0%E1%BB%9Bng-%C4%91i%E1%BB%81u-h%C3%A0nh-cstt-v%C3%A0-ho%E1%BA%A1t-%C4%91%E1%BB%99ng-ng%C3%A2n-h%C3%A0ng-trong-n%C4%83m
+                            - listitem [ref=f3e372]:
+                              - link "Thẩm quyền quyết định CSTT quốc gia và các công cụ thực hiện" [ref=f3e373] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/th%E1%BA%A9m-quy%E1%BB%81n-quy%E1%BA%BFt-%C4%91%E1%BB%8Bnh-cstt-qu%E1%BB%91c-gia-v%C3%A0-c%C3%A1c-c%C3%B4ng-c%E1%BB%A5-th%E1%BB%B1c-hi%E1%BB%87n
+                          - list [ref=f3e375]:
+                            - listitem [ref=f3e376]:
+                              - link "Hệ thống thanh toán điện tử liên ngân hàng" [ref=f3e377] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/he-thong-thanh-toan-dien-tu-lien-ngan-hang
+                            - listitem [ref=f3e378]:
+                              - link "Các hệ thống thanh toán khác" [ref=f3e379] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/cac-he-thong-thanh-toan-khac
+                          - list [ref=f3e381]:
+                            - listitem [ref=f3e382]:
+                              - link "Thanh toán không dùng tiền mặt" [ref=f3e383] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/thanh-toan-khong-dung-tien-mat
+                          - list [ref=f3e385]:
+                            - listitem [ref=f3e386]:
+                              - link "Nhiệm vụ của NHNN trong hoạt động thanh toán" [ref=f3e387] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/nhiem-vu-cua-nhnn-trong-hoat-dong-thanh-toan
+                            - listitem [ref=f3e388]:
+                              - link "Các hệ thống thanh toán trong nền kinh tế ▶" [ref=f3e389] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/cac-he-thong-thanh-toan-trong-nen-kinh-te
+                                - generic [ref=f3e390]:
+                                  - generic [ref=f3e391]: Các hệ thống thanh toán trong nền kinh tế
+                                  - button "▶" [ref=f3e392]
+                              - list [ref=f3e393]:
+                                - listitem [ref=f3e394]:
+                                  - link "Hệ thống thanh toán điện tử liên ngân hàng" [ref=f3e395] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/he-thong-thanh-toan-dien-tu-lien-ngan-hang
+                                - listitem [ref=f3e396]:
+                                  - link "Các hệ thống thanh toán khác" [ref=f3e397] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/cac-he-thong-thanh-toan-khac
+                            - listitem [ref=f3e398]:
+                              - link "Giám sát hệ thống thanh toán ▶" [ref=f3e399] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/giam-sat-he-thong-thanh-toan
+                                - generic [ref=f3e400]:
+                                  - generic [ref=f3e401]: Giám sát hệ thống thanh toán
+                                  - button "▶" [ref=f3e402]
+                              - list [ref=f3e403]:
+                                - listitem [ref=f3e404]:
+                                  - link "Thanh toán không dùng tiền mặt" [ref=f3e405] [cursor=pointer]:
+                                    - /url: https://sbv.gov.vn/vi/thanh-toan-khong-dung-tien-mat
+                            - listitem [ref=f3e406]:
+                              - link "Hệ thống mã tổ chức phát hành thẻ" [ref=f3e407] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/he-thong-ma-to-chuc-phat-hanh-the
+                            - listitem [ref=f3e408]:
+                              - link "Biểu phí dịch vụ thanh toán qua NHNN" [ref=f3e409] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/bieu-phi-dich-vu-thanh-toan-qua-nhnn
+                            - listitem [ref=f3e410]:
+                              - link "Hoạt động ngân quỹ" [ref=f3e411] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/hoat-dong-ngan-quy
+                            - listitem [ref=f3e412]:
+                              - link "Danh mục các giao dịch bắt buộc phải thanh toán qua ngân hàng" [ref=f3e413] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/danh-m%E1%BB%A5c-c%C3%A1c-giao-d%E1%BB%8Bch-b%E1%BA%AFt-bu%E1%BB%99c-ph%E1%BA%A3i-thanh-to%C3%A1n-qua-ng%C3%A2n-h%C3%A0ng
+                          - list [ref=f3e415]:
+                            - listitem [ref=f3e416]:
+                              - link "Hệ thống thanh toán điện tử liên ngân hàng" [ref=f3e417] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/he-thong-thanh-toan-dien-tu-lien-ngan-hang
+                            - listitem [ref=f3e418]:
+                              - link "Các hệ thống thanh toán khác" [ref=f3e419] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/cac-he-thong-thanh-toan-khac
+                          - list [ref=f3e421]:
+                            - listitem [ref=f3e422]:
+                              - link "Thanh toán không dùng tiền mặt" [ref=f3e423] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/thanh-toan-khong-dung-tien-mat
+                          - list [ref=f3e425]:
+                            - listitem [ref=f3e426]:
+                              - link "Đồng tiền Việt Nam" [ref=f3e427] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/dong-tien-viet-nam
+                            - listitem [ref=f3e428]:
+                              - link "Tiền thật, tiền giả" [ref=f3e429] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/tien-that-tien-gia
+                            - listitem [ref=f3e430]:
+                              - link "Những hành vi bị nghiệm cấm và một số quy định về xử phạt liên quan đến phòng, chống tiền giả và bảo vệ tiền Việt Nam" [ref=f3e431] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/nhung-hanh-vi-bi-nghiem-cam-va-mot-so-quy-dinh-ve-xu-phat-lien-quan-den-phong-chong-tien-gia-va-bao-ve-tien-viet-nam
+                          - list [ref=f3e433]:
+                            - listitem [ref=f3e434]:
+                              - link "Tin tức CCHC" [ref=f3e435] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/tin-tuc-cchc
+                            - listitem [ref=f3e436]:
+                              - link "Bản tin CCHC nội bộ" [ref=f3e437] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/ban-tin-cchc-noi-bo
+                            - listitem [ref=f3e438]:
+                              - link "Văn bản cải cách hành chính" [ref=f3e439] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/van-ban-cai-cach-hanh-chinh
+                            - listitem [ref=f3e440]:
+                              - link "Phiếu lấy ý kiến giải quyết TTHC" [ref=f3e441] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/phieu-lay-y-kien-giai-quyet-thu-tuc-hanh-chinh
+                            - listitem [ref=f3e442]:
+                              - link "Bộ câu hỏi về thủ tục hành chính NHNN" [ref=f3e443] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/bo-cau-hoi-ve-thu-tuc-hanh-chinh-nhnn
+                            - listitem [ref=f3e444]:
+                              - link "Danh mục điều kiện kinh doanh" [ref=f3e445] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/danh-muc-dieu-kien-kinh-doanh
+                            - listitem [ref=f3e446]:
+                              - link "Danh mục báo cáo định kỳ" [ref=f3e447] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/danh-muc-bao-cao-dinh-ky
+                            - listitem [ref=f3e448]:
+                              - link "HTQLCL theo tiêu chuẩn ISO" [ref=f3e449] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/htqlcl-theo-tieu-chuan-iso
+                            - listitem [ref=f3e450]:
+                              - link "Đào tạo ISO" [ref=f3e451] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/dao-tao-iso
+                          - list [ref=f3e453]:
+                            - listitem [ref=f3e454]:
+                              - link "Hỏi đáp" [ref=f3e455] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/h%E1%BB%8Fi-%C4%91%C3%A1p
+                            - listitem [ref=f3e456]:
+                              - link "Lấy ý kiến dự thảo VBQPPL" [ref=f3e457] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/l%E1%BA%A5y-%C3%BD-ki%E1%BA%BFn-d%E1%BB%B1-th%E1%BA%A3o-vbqppl1
+                          - list [ref=f3e459]:
+                            - listitem [ref=f3e460]:
+                              - link "Sơ lược quá trình thành lập và phát triển" [ref=f3e461] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/s%C6%A1-l%C6%B0%E1%BB%A3c-qu%C3%A1-tr%C3%ACnh-th%C3%A0nh-l%E1%BA%ADp-v%C3%A0-ph%C3%A1t-tri%E1%BB%83n
+                            - listitem [ref=f3e462]:
+                              - link "Chức năng nhiệm vụ" [ref=f3e463] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/ch%E1%BB%A9c-n%C4%83ng-nhi%E1%BB%87m-v%E1%BB%A5
+                            - listitem [ref=f3e464]:
+                              - link "Ban lãnh đạo đương nhiệm" [ref=f3e465] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/ban-l%C3%A3nh-%C4%91%E1%BA%A1o-%C4%91%C6%B0%C6%A1ng-nhi%E1%BB%87m
+                            - listitem [ref=f3e466]:
+                              - link "Lãnh đạo NHNN qua các thời kỳ" [ref=f3e467] [cursor=pointer]:
+                                - /url: https://sbv.gov.vn/vi/l%C3%A3nh-%C4%91%E1%BA%A1o-nhnn-qua-c%C3%A1c-th%E1%BB%9Di-k%E1%BB%B3
+    - main [ref=f3e468]:
+      - generic [ref=f3e472]:
+        - article [ref=f3e474]:
+          - navigation "Đường dẫn liên kết (breadcrumb)" [ref=f3e482]:
+            - list [ref=f3e483]:
+              - listitem [ref=f3e484]:
+                - link "Ngân hàng Nhà nước Việt Nam" [ref=f3e485] [cursor=pointer]:
+                  - /url: /vi/web/sbv_portal
+              - listitem [ref=f3e487]:
+                - link "Hệ thống các TCTD" [ref=f3e488] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/h%E1%BB%87-th%E1%BB%91ng-c%C3%A1c-tctd
+              - listitem [ref=f3e490]:
+                - generic [ref=f3e491]: TCTD phi ngân hàng
+              - listitem [ref=f3e493]:
+                - generic [ref=f3e494]: Công ty tài chính
+          - generic [ref=f3e505]:
+            - generic [ref=f3e506]:
+              - heading "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 30/09/2026)" [level=1] [ref=f3e507]
+              - generic [ref=f3e510]:
+                - generic [ref=f3e511] [cursor=pointer]: 
+                - generic [ref=f3e513]:
+                  - generic [ref=f3e514]: 0:00
+                  - generic [ref=f3e515]: /
+                  - generic [ref=f3e516]: 0:00
+                - generic [ref=f3e517] [cursor=pointer]
+                - generic [ref=f3e518]: Giọng Nam
+              - table [ref=f3e521]:
+                - rowgroup [ref=f3e522]:
+                  - row [ref=f3e523]:
+                    - cell "TT" [ref=f3e524]:
+                      - paragraph [ref=f3e525]:
+                        - generic [ref=f3e526]: TT
+                    - cell "TÊN TCTD" [ref=f3e529]:
+                      - paragraph [ref=f3e530]:
+                        - generic [ref=f3e531]: TÊN TCTD
+                    - cell "ĐỊA CHỈ" [ref=f3e534]:
+                      - paragraph [ref=f3e535]:
+                        - generic [ref=f3e536]: ĐỊA CHỈ
+                    - cell [ref=f3e539]:
+                      - paragraph [ref=f3e540]:
+                        - generic [ref=f3e541]: SỐ GIẤY PHÉP NGÀY CẤP
+                    - cell "VỐN ĐIỀU LỆ (Tỷ đồng)" [ref=f3e545]:
+                      - paragraph [ref=f3e546]:
+                        - generic [ref=f3e547]: VỐN ĐIỀU LỆ (Tỷ đồng)
+                    - cell "TRANG THÔNG TIN ĐIỆN TỬ" [ref=f3e550]:
+                      - paragraph [ref=f3e551]:
+                        - generic [ref=f3e552]: TRANG THÔNG TIN ĐIỆN TỬ
+                    - cell "SỐ ĐIỆN THOẠI CHĂM SÓC KHÁCH HÀNG" [ref=f3e555]:
+                      - paragraph [ref=f3e556]:
+                        - generic [ref=f3e557]: SỐ ĐIỆN THOẠI CHĂM SÓC KHÁCH HÀNG
+                - rowgroup [ref=f3e560]:
+                  - row [ref=f3e561]:
+                    - cell "1" [ref=f3e562]:
+                      - paragraph [ref=f3e563]:
+                        - generic [ref=f3e564]: "1"
+                    - cell "Công ty Tài chính tín dụng tiêu dùng TNHH MTV AEON" [ref=f3e566]:
+                      - paragraph [ref=f3e567]:
+                        - generic [ref=f3e568]: Công ty Tài chính tín dụng tiêu dùng TNHH MTV AEON
+                    - cell "Tầng 1, 2 Số 3 Đặng Thái Thân, phường Cửa Nam, Hà Nội." [ref=f3e570]:
+                      - paragraph [ref=f3e571]:
+                        - generic [ref=f3e572]: Tầng 1, 2 Số 3 Đặng Thái Thân, phường Cửa Nam, Hà Nội.
+                    - cell "- Giấy phép số 03/GP-NHNN ngày 10/10/1998 và được NHNN cấp đổi Giấy phép số 96/GP-NHNN ngày 28/9/2018. - Quyết định số 2882/QĐ-QLGS6 ngày 24/10/2025 (Đổi tên); - Quyết định số 07/QĐ-QLGS6 ngày 04/2/2026 (Tăng vốn). - Quyết định số 492/QĐ.KV1-QLGS2 ngày 15/6/2026 (thay đổi trụ sở chính); - Quyết định số 39/QĐ-QLGS6 ngày 11/6/2026 (tăng vốn)." [ref=f3e574]:
+                      - paragraph [ref=f3e575]:
+                        - generic [ref=f3e576]: "- Giấy phép số 03/GP-NHNN ngày 10/10/1998 và được NHNN cấp đổi Giấy phép số 96/GP-NHNN ngày 28/9/2018. - Quyết định số 2882/QĐ-QLGS6 ngày 24/10/2025 (Đổi tên); - Quyết định số 07/QĐ-QLGS6 ngày 04/2/2026 (Tăng vốn)."
+                      - paragraph [ref=f3e579]:
+                        - generic [ref=f3e580]: "- Quyết định số 492/QĐ.KV1-QLGS2 ngày 15/6/2026 (thay đổi trụ sở chính);"
+                      - paragraph [ref=f3e582]:
+                        - generic [ref=f3e583]: "- Quyết định số 39/QĐ-QLGS6 ngày 11/6/2026 (tăng vốn)."
+                    - cell "2.550" [ref=f3e585]:
+                      - paragraph [ref=f3e586]:
+                        - generic [ref=f3e587]: "2.550"
+                    - cell [ref=f3e589]:
+                      - paragraph [ref=f3e590]:
+                        - link "Aeonfinance.vn" [ref=f3e593] [cursor=pointer]:
+                          - /url: http://Aeonfinance.vn
+                    - cell [ref=f3e594]:
+                      - paragraph [ref=f3e595]:
+                        - generic [ref=f3e596]: "024 7101 2222 - Hotline: 1900 2323 56"
+                  - row [ref=f3e599]:
+                    - cell "2" [ref=f3e600]:
+                      - paragraph [ref=f3e601]:
+                        - generic [ref=f3e602]: "2"
+                    - cell "Công ty Tài chính trách nhiệm hữu hạn một thành viên TNEX (TNEX Finance) ( tài chính cộng đồng cũ)" [ref=f3e604]:
+                      - paragraph [ref=f3e605]:
+                        - generic [ref=f3e606]: Công ty Tài chính trách nhiệm hữu hạn một thành viên TNEX (TNEX Finance) ( tài chính cộng đồng cũ)
+                    - cell "Tầng 20, Tòa nhà số 54A Nguyễn Chí Thanh, Phường Láng, thành phố Hà Nội" [ref=f3e608]:
+                      - paragraph [ref=f3e609]:
+                        - generic [ref=f3e610]: Tầng 20, Tòa nhà số 54A Nguyễn Chí Thanh, Phường Láng, thành phố Hà Nội
+                    - cell [ref=f3e612]:
+                      - paragraph [ref=f3e613]:
+                        - generic [ref=f3e614]: "- Giấy phép số 20/GP-NHNN ngày 26/4/2021 - Quyết định số 2001/QĐ-NHNN ngày 26/10/2023 (bổ sung nội dung hoạt động) - Quyết định số 3757/QĐ-QLGS6 ngày 24/12/2025 (tăng vốn điều lệ) - Quyết định số 2/QĐ-QLGS6 ngày 20/01/2026 (thay đổi TSC); - Quyết định số 18/QĐ-QLGS6 ngày 19/03/2026 (bổ sung nội dung hoạt động);"
+                    - cell "1.500" [ref=f3e617]:
+                      - paragraph [ref=f3e618]:
+                        - generic [ref=f3e619]: "1.500"
+                    - cell [ref=f3e621]:
+                      - paragraph [ref=f3e622]:
+                        - link "tnex.com.vn" [ref=f3e625] [cursor=pointer]:
+                          - /url: http://tnex.com.vn
+                    - cell [ref=f3e626]:
+                      - paragraph [ref=f3e627]:
+                        - generic [ref=f3e628]: "02473044222 Hotline: 1900 6954"
+                  - row [ref=f3e631]:
+                    - cell "3" [ref=f3e632]:
+                      - paragraph [ref=f3e633]:
+                        - generic [ref=f3e634]: "3"
+                    - cell "Công ty Tài chính tổng hợp cổ phần Điện Lực (EVF GENERAL FINANCE JOINT STOCK COMPANY)" [ref=f3e636]:
+                      - paragraph [ref=f3e637]:
+                        - generic [ref=f3e638]: Công ty Tài chính tổng hợp cổ phần Điện Lực (EVF GENERAL FINANCE JOINT STOCK COMPANY)
+                    - cell "Tầng 6 và 7, Tòa nhà Thaisquare Caliria - số 11A Cát Linh, Phường Ô Chợ Dừa, Thành phố Hà Nội" [ref=f3e640]:
+                      - paragraph [ref=f3e641]:
+                        - generic [ref=f3e642]: Tầng 6 và 7, Tòa nhà Thaisquare Caliria - số 11A Cát Linh, Phường Ô Chợ Dừa, Thành phố Hà Nội
+                    - cell "- Giấy phép số 187/GP-NHNN ngày 07/7/2008 - Quyết định số 122/QĐ-NHNN ngày 20/1/2025 (tăng vốn) - Quyết định số 2475/QĐ-QLGS6 ngày 22/9/2025 (bổ sung nội dung hoạt động) - Quyết định số 72/QĐ-QLGS6 ngày 30/6/2026 (bổ sung nội dung hoạt động)" [ref=f3e644]:
+                      - paragraph [ref=f3e645]:
+                        - generic [ref=f3e646]: "- Giấy phép số 187/GP-NHNN ngày 07/7/2008 - Quyết định số 122/QĐ-NHNN ngày 20/1/2025 (tăng vốn) - Quyết định số 2475/QĐ-QLGS6 ngày 22/9/2025 (bổ sung nội dung hoạt động)"
+                      - paragraph [ref=f3e649]:
+                        - generic [ref=f3e650]: "- Quyết định số 72/QĐ-QLGS6 ngày 30/6/2026 (bổ sung nội dung hoạt động)"
+                    - cell "7.605,60" [ref=f3e652]:
+                      - paragraph [ref=f3e653]:
+                        - generic [ref=f3e654]: 7.605,60
+                    - cell [ref=f3e656]:
+                      - paragraph [ref=f3e657]:
+                        - link "www.evnfc.vn" [ref=f3e660] [cursor=pointer]:
+                          - /url: http://www.evnfc.vn/
+                    - cell "2422229999" [ref=f3e661]:
+                      - paragraph [ref=f3e662]:
+                        - generic [ref=f3e663]: "2422229999"
+                  - row [ref=f3e665]:
+                    - cell "4" [ref=f3e666]:
+                      - paragraph [ref=f3e667]:
+                        - generic [ref=f3e668]: "4"
+                    - cell "Công ty Tài chính cổ phần Handico (Handico Finance Joint Stock Company)" [ref=f3e670]:
+                      - paragraph [ref=f3e671]:
+                        - generic [ref=f3e672]: Công ty Tài chính cổ phần Handico (Handico Finance Joint Stock Company)
+                    - cell "Tầng 6 tòa nhà 155 Đội cấn, phường Ba Đình, TP. Hà nội." [ref=f3e674]:
+                      - paragraph [ref=f3e675]:
+                        - generic [ref=f3e676]: Tầng 6 tòa nhà 155 Đội cấn, phường Ba Đình, TP. Hà nội.
+                    - cell [ref=f3e678]:
+                      - paragraph [ref=f3e679]:
+                        - generic [ref=f3e680]: "- Giấy phép số 157/GP-NHNN ngày 6/6/2008 - Quyết định số 1502/QĐ-NHNN ngày 21/9/2021 (sửa đổi, bổ sung Giấy phép thành lập và hoạt động) - QĐ số 1422/Cục II.6 ngày 6/9/2024 (sửa đổi, bổ sung nội dung tại GPHĐ)."
+                    - cell "550" [ref=f3e683]:
+                      - paragraph [ref=f3e684]:
+                        - generic [ref=f3e685]: "550"
+                    - cell "Không có" [ref=f3e687]:
+                      - paragraph [ref=f3e688]:
+                        - generic [ref=f3e689]: Không có
+                    - cell "2435624055" [ref=f3e691]:
+                      - paragraph [ref=f3e692]:
+                        - generic [ref=f3e693]: "2435624055"
+                  - row [ref=f3e695]:
+                    - cell "5" [ref=f3e696]:
+                      - paragraph [ref=f3e697]:
+                        - generic [ref=f3e698]: "5"
+                    - cell "Công ty tài chính tổng hợp TNHH MTV Lotte Việt Nam (Lotte General Finance Vietnam Co., Ltd)" [ref=f3e700]:
+                      - paragraph [ref=f3e701]:
+                        - generic [ref=f3e702]: Công ty tài chính tổng hợp TNHH MTV Lotte Việt Nam (Lotte General Finance Vietnam Co., Ltd)
+                    - cell "tầng 12A, toà tháp Tây, toà nhà Lotte Center, số 54 Liễu Giai, Phường Giảng Võ, thành phố Hà Nội" [ref=f3e704]:
+                      - paragraph [ref=f3e705]:
+                        - generic [ref=f3e706]: tầng 12A, toà tháp Tây, toà nhà Lotte Center, số 54 Liễu Giai, Phường Giảng Võ, thành phố Hà Nội
+                    - cell "- Giấy phép số 102/GP-NHNN ngày 19/11/2019 (cấp đổi) - Quyết định số 1195/QĐ-NHNN ngày 05/6/2025 (tăng vốn) - Quyết định số 1968/QĐ-NHNN ngày 28/8/2026 về việc chuyển đổi loại hình từ công ty tài chính chuyên ngành thành công ty tài chính tổng hợp - Quyết định số 119/QĐ-QLGS6 ngày 28/8/2026 về việc sửa đổi tên và bổ sung nội dung hoạt động vào Giấy phép thành lập và hoạt động" [ref=f3e708]:
+                      - paragraph [ref=f3e709]:
+                        - generic [ref=f3e710]: "- Giấy phép số 102/GP-NHNN ngày 19/11/2019 (cấp đổi) - Quyết định số 1195/QĐ-NHNN ngày 05/6/2025 (tăng vốn)"
+                      - paragraph [ref=f3e713]:
+                        - generic [ref=f3e714]: "- Quyết định số 1968/QĐ-NHNN ngày 28/8/2026 về việc chuyển đổi loại hình từ công ty tài chính chuyên ngành thành công ty tài chính tổng hợp"
+                      - paragraph [ref=f3e716]:
+                        - generic [ref=f3e717]: "- Quyết định số 119/QĐ-QLGS6 ngày 28/8/2026 về việc sửa đổi tên và bổ sung nội dung hoạt động vào Giấy phép thành lập và hoạt động"
+                    - cell "4.912.788" [ref=f3e719]:
+                      - paragraph [ref=f3e720]:
+                        - generic [ref=f3e721]: 4.912.788
+                    - cell [ref=f3e723]:
+                      - paragraph [ref=f3e724]:
+                        - link "lottefinance.vn" [ref=f3e727] [cursor=pointer]:
+                          - /url: http://lottefinance.vn
+                    - cell "2433337007" [ref=f3e728]:
+                      - paragraph [ref=f3e729]:
+                        - generic [ref=f3e730]: "2433337007"
+                  - row [ref=f3e732]:
+                    - cell "6" [ref=f3e733]:
+                      - paragraph [ref=f3e734]:
+                        - generic [ref=f3e735]: "6"
+                    - cell "Công ty Tài chính TNHH MTV Mirae Asset (Việt Nam) (Mirae Asset Finance Company (Vietnam) Limited)" [ref=f3e737]:
+                      - paragraph [ref=f3e738]:
+                        - generic [ref=f3e739]: Công ty Tài chính TNHH MTV Mirae Asset (Việt Nam) (Mirae Asset Finance Company (Vietnam) Limited)
+                    - cell "Lầu 5, 91 Pasteur, phường Sài Gòn, Tp. Hồ Chí Minh" [ref=f3e741]:
+                      - paragraph [ref=f3e742]:
+                        - generic [ref=f3e743]: Lầu 5, 91 Pasteur, phường Sài Gòn, Tp. Hồ Chí Minh
+                    - cell [ref=f3e745]:
+                      - paragraph [ref=f3e746]:
+                        - generic [ref=f3e747]: "- Giấy phép số 73/GP-NHNN ngày 12/11/2021 (cấp đổi) - Quyết định số 1910/QĐ-NHNN ngày 9/10/2023 (tăng vốn)"
+                    - cell "2.000,00" [ref=f3e750]:
+                      - paragraph [ref=f3e751]:
+                        - generic [ref=f3e752]: 2.000,00
+                    - cell [ref=f3e754]:
+                      - paragraph [ref=f3e755]:
+                        - link "mafc.com.vn" [ref=f3e758] [cursor=pointer]:
+                          - /url: http://mafc.com.vn
+                    - cell "2873007777" [ref=f3e759]:
+                      - paragraph [ref=f3e760]:
+                        - generic [ref=f3e761]: "2873007777"
+                  - row [ref=f3e763]:
+                    - cell "7" [ref=f3e764]:
+                      - paragraph [ref=f3e765]:
+                        - generic [ref=f3e766]: "7"
+                    - cell "Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh Vượng SMBC (VPBank SMBC Finance Company Limited)" [ref=f3e768]:
+                      - paragraph [ref=f3e769]:
+                        - generic [ref=f3e770]: Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh Vượng SMBC (VPBank SMBC Finance Company Limited)
+                    - cell "Tầng 2 Tòa nhà REE Tower, số 9 Đoàn Văn Bơ, phường Xóm Chiếu, TP. Hồ Chí Minh" [ref=f3e772]:
+                      - paragraph [ref=f3e773]:
+                        - generic [ref=f3e774]: Tầng 2 Tòa nhà REE Tower, số 9 Đoàn Văn Bơ, phường Xóm Chiếu, TP. Hồ Chí Minh
+                    - cell [ref=f3e776]:
+                      - paragraph [ref=f3e777]:
+                        - generic [ref=f3e778]: "- Giấy phép số 65/GP-NHNN ngày 31/10/2017 (cấp đổi) - Quyết định số 684/QĐ-NHNN ngày 22/4/2021 (Tăng vốn) - Giấy phép số 69/GP-NHNN ngày 20/10/2021 (Chuyển đổi hình thức pháp lý) - QĐ số 2857/QĐ-QLGS6 ngày 24/10/2025 (thay đổi địa chỉ trụ sở chính)"
+                    - cell "10.928,00" [ref=f3e781]:
+                      - paragraph [ref=f3e782]:
+                        - generic [ref=f3e783]: 10.928,00
+                    - cell [ref=f3e785]:
+                      - paragraph [ref=f3e786]:
+                        - link "fecredit.com.vn" [ref=f3e789] [cursor=pointer]:
+                          - /url: http://fecredit.com.vn
+                    - cell [ref=f3e790]:
+                      - paragraph [ref=f3e791]:
+                        - generic [ref=f3e792]: "02839111555 hotline: 1900234588"
+                  - row [ref=f3e795]:
+                    - cell "8" [ref=f3e796]:
+                      - paragraph [ref=f3e797]:
+                        - generic [ref=f3e798]: "8"
+                    - cell "Công ty Tài chính TNHH HD Saison (HD SAISON Finance Co.,Ltd)" [ref=f3e800]:
+                      - paragraph [ref=f3e801]:
+                        - generic [ref=f3e802]: Công ty Tài chính TNHH HD Saison (HD SAISON Finance Co.,Ltd)
+                    - cell "Tầng 8, 9, 10 Toà nhà 24c đường Phan Đăng Lưu, phường Gia Định, TP. Hồ Chí Minh" [ref=f3e804]:
+                      - paragraph [ref=f3e805]:
+                        - generic [ref=f3e806]: Tầng 8, 9, 10 Toà nhà 24c đường Phan Đăng Lưu, phường Gia Định, TP. Hồ Chí Minh
+                    - cell [ref=f3e808]:
+                      - paragraph [ref=f3e809]:
+                        - generic [ref=f3e810]: "- Giấy phép số 67/GP-NHNN ngày 2/8/2017 - Quyết định tăng vốn số 1014/QĐ-NHNN ngày 7/6/2022 - QĐ số 163 /QĐ-QLGS6 ngày 21/3/2025 (thay đổi địa chỉ trụ sở chính) - QĐ số 1691/QĐ-QLGS6 ngày 22/7/2025 (thay đổi địa chỉ trụ sở chính)"
+                    - cell "2.350,00" [ref=f3e813]:
+                      - paragraph [ref=f3e814]:
+                        - generic [ref=f3e815]: 2.350,00
+                    - cell [ref=f3e817]:
+                      - paragraph [ref=f3e818]:
+                        - link "hdsaison.com.vn" [ref=f3e821] [cursor=pointer]:
+                          - /url: http://hdsaison.com.vn
+                    - cell "1900558854" [ref=f3e822]:
+                      - paragraph [ref=f3e823]:
+                        - generic [ref=f3e824]: "1900558854"
+                  - row [ref=f3e826]:
+                    - cell "9" [ref=f3e827]:
+                      - paragraph [ref=f3e828]:
+                        - generic [ref=f3e829]: "9"
+                    - cell "Công ty Tài chính TNHH MTV Home Credit Việt Nam (Home Credit Vietnam Finance Company Limited)" [ref=f3e831]:
+                      - paragraph [ref=f3e832]:
+                        - generic [ref=f3e833]: Công ty Tài chính TNHH MTV Home Credit Việt Nam (Home Credit Vietnam Finance Company Limited)
+                    - cell "Tầng G, 8 và 10 Tòa nhà Phụ nữ số 20 Nguyễn Đăng Giai, Phường An Khánh, TP. Hồ Chí Minh" [ref=f3e835]:
+                      - paragraph [ref=f3e836]:
+                        - generic [ref=f3e837]: Tầng G, 8 và 10 Tòa nhà Phụ nữ số 20 Nguyễn Đăng Giai, Phường An Khánh, TP. Hồ Chí Minh
+                    - cell [ref=f3e839]:
+                      - paragraph [ref=f3e840]:
+                        - generic [ref=f3e841]: "- Giấy phép số 90/GP-NHNN ngày 23/9/2019 (cấp đổi); - Quyết định số 1717/QĐ-QLGS6 ngày 23/7/2025 (thay đổi địa chỉ trụ sở chính)."
+                    - cell "2.050,00" [ref=f3e844]:
+                      - paragraph [ref=f3e845]:
+                        - generic [ref=f3e846]: 2.050,00
+                    - cell [ref=f3e848]:
+                      - paragraph [ref=f3e849]:
+                        - link "homecredit.vn" [ref=f3e852] [cursor=pointer]:
+                          - /url: http://homecredit.vn
+                    - cell "2838999666" [ref=f3e853]:
+                      - paragraph [ref=f3e854]:
+                        - generic [ref=f3e855]: "2838999666"
+                  - row [ref=f3e857]:
+                    - cell "10" [ref=f3e858]:
+                      - paragraph [ref=f3e859]:
+                        - generic [ref=f3e860]: "10"
+                    - cell "Công ty Tài chính TNHH MTV Shinhan Việt Nam (Shinhan Vietnam Finance Company Limited )" [ref=f3e862]:
+                      - paragraph [ref=f3e863]:
+                        - generic [ref=f3e864]: Công ty Tài chính TNHH MTV Shinhan Việt Nam (Shinhan Vietnam Finance Company Limited )
+                    - cell "Tầng 19, Tháp B, Khu thương mại dịch vụ kết hợp nhà ở cao tầng tại lô đất 1-13 thuộc Khu chức năng số 1- Số 15, đường Trần Bạch Đằng, phường An Khánh, Thành phố Hồ Chí Minh, Việt Nam" [ref=f3e866]:
+                      - paragraph [ref=f3e867]:
+                        - generic [ref=f3e868]: Tầng 19, Tháp B, Khu thương mại dịch vụ kết hợp nhà ở cao tầng tại lô đất 1-13 thuộc Khu chức năng số 1- Số 15, đường Trần Bạch Đằng, phường An Khánh, Thành phố Hồ Chí Minh, Việt Nam
+                    - cell [ref=f3e870]:
+                      - paragraph [ref=f3e871]:
+                        - generic [ref=f3e872]: "- Giấy phép số 16/GP-NHNN ngày 12/8/2022; - QĐ số 991/QĐ-NHNN ngày 24/5/2024 (sửa đổi địa chỉ trụ sở chính); - QĐ số 740/QĐ-TTGSNH2 ngày 28/11/2024 (sửa đổi vốn điều lệ)."
+                    - cell "750" [ref=f3e875]:
+                      - paragraph [ref=f3e876]:
+                        - generic [ref=f3e877]: "750"
+                    - cell [ref=f3e879]:
+                      - paragraph [ref=f3e880]:
+                        - link "www.shinhanfinance.com.vn" [ref=f3e883] [cursor=pointer]:
+                          - /url: http://www.shinhanfinance.com.vn
+                    - cell [ref=f3e884]:
+                      - paragraph [ref=f3e885]:
+                        - generic [ref=f3e886]: "Hotline:1900 5454 49 SĐT: (84-28) 39 113 666 Fax: (84-28) 39 101 642"
+                  - row [ref=f3e889]:
+                    - cell "11" [ref=f3e890]:
+                      - paragraph [ref=f3e891]:
+                        - generic [ref=f3e892]: "11"
+                    - cell "Công ty Tài chính TNHH MTV Quốc tế Việt Nam JACCS (JACCS International Vietnam Finance Company Limited)" [ref=f3e894]:
+                      - paragraph [ref=f3e895]:
+                        - generic [ref=f3e896]: Công ty Tài chính TNHH MTV Quốc tế Việt Nam JACCS (JACCS International Vietnam Finance Company Limited)
+                    - cell "Lầu 15, Tòa nhà Centec, 72-74 Nguyễn Thị Minh Khai, phường Xuân Hoà, TP. Hồ Chí Minh." [ref=f3e898]:
+                      - paragraph [ref=f3e899]:
+                        - generic [ref=f3e900]: Lầu 15, Tòa nhà Centec, 72-74 Nguyễn Thị Minh Khai, phường Xuân Hoà, TP. Hồ Chí Minh.
+                    - cell [ref=f3e902]:
+                      - paragraph [ref=f3e903]:
+                        - generic [ref=f3e904]: "- Giấy phép số 90/GP-NHNN ngày 13/4/2010 - Giấy phép số 80/GP-NHNN ngày 25/7/2018 (cấp đổi)"
+                    - cell "900" [ref=f3e907]:
+                      - paragraph [ref=f3e908]:
+                        - generic [ref=f3e909]: "900"
+                    - cell [ref=f3e911]:
+                      - paragraph [ref=f3e912]:
+                        - link "jaccs.com.vn" [ref=f3e915] [cursor=pointer]:
+                          - /url: http://jaccs.com.vn
+                    - cell [ref=f3e916]:
+                      - paragraph [ref=f3e917]:
+                        - generic [ref=f3e918]: "02871086999 Hotline: 19006866"
+                  - row [ref=f3e921]:
+                    - cell "12" [ref=f3e922]:
+                      - paragraph [ref=f3e923]:
+                        - generic [ref=f3e924]: "12"
+                    - cell "Công ty Tài chính TNHH MTV Công nghiệp Tàu thuỷ (Vietnam Shipbuilding Finance Company Limited)" [ref=f3e926]:
+                      - paragraph [ref=f3e927]:
+                        - generic [ref=f3e928]: Công ty Tài chính TNHH MTV Công nghiệp Tàu thuỷ (Vietnam Shipbuilding Finance Company Limited)
+                    - cell "Số 120 Hàng Trống, phường Hoàn Kiếm, Hà Nội" [ref=f3e930]:
+                      - paragraph [ref=f3e931]:
+                        - generic [ref=f3e932]: Số 120 Hàng Trống, phường Hoàn Kiếm, Hà Nội
+                    - cell [ref=f3e934]:
+                      - paragraph [ref=f3e935]:
+                        - generic [ref=f3e936]: "- Thành lập theo Quyết định số 3456/1998/QĐ-BGTVT ngày 19/12/1998 của Bộ Giao thông vận tải (Bộ GTVT); - Hoạt động theo Giấy phép số 04/GP-NHNN ngày 16/3/2000 của NHNN VN"
+                    - cell "2.523" [ref=f3e939]:
+                      - paragraph [ref=f3e940]:
+                        - generic [ref=f3e941]: "2.523"
+                    - cell [ref=f3e943]:
+                      - paragraph [ref=f3e944]:
+                        - link "https://sbicfinance.vn/" [ref=f3e947] [cursor=pointer]:
+                          - /url: https://sbicfinance.vn/
+                    - 'cell "Điện thoại: (84-4) 38 288 439" [ref=f3e948]':
+                      - paragraph [ref=f3e949]:
+                        - generic [ref=f3e950]: "Điện thoại: (84-4) 38 288 439"
+                  - row [ref=f3e952]:
+                    - cell "13" [ref=f3e953]:
+                      - paragraph [ref=f3e954]:
+                        - generic [ref=f3e955]: "13"
+                    - cell "Công ty TNHH MTV Tài chính Toyota Việt Nam (Toyota Financial Services Vietnam Company Limited)" [ref=f3e957]:
+                      - paragraph [ref=f3e958]:
+                        - generic [ref=f3e959]: Công ty TNHH MTV Tài chính Toyota Việt Nam (Toyota Financial Services Vietnam Company Limited)
+                    - cell "Phòng 4-5, Tầng 12, Saigon centre Toà 2, số 67 Lê Lợi, Phường Sài Gòn, TP. Hồ Chí Minh" [ref=f3e961]:
+                      - paragraph [ref=f3e962]:
+                        - generic [ref=f3e963]: Phòng 4-5, Tầng 12, Saigon centre Toà 2, số 67 Lê Lợi, Phường Sài Gòn, TP. Hồ Chí Minh
+                    - cell [ref=f3e965]:
+                      - paragraph [ref=f3e966]:
+                        - generic [ref=f3e967]: "- Giấy phép số 208/GP-NHNN ngày 24/7/2008 - Quyết định số 1638/QĐ-NHNN ngày 5/7/2010 (tăng vốn điều lệ); - Quyết định số 1049/QĐ-NHNN ngày 16/5/2016 (bổ sung nội dung hoạt động); - Quyết định số 1624/QĐ-NHNN ngày 31/7/2017 (thay đổi địa điểm đặt trụ sở); - Quyết định số 2041/QĐ-NHNN ngày 18/10/2018 (thay đổi địa chỉ đặt trụ sở chính); - Quyết định số 1835/QĐ-NHNN ngày 9/9/2019 (tăng vốn điều lệ); - Quyết định số 1632/QĐ-NHNN ngày 29/8/2023 (sửa đổi Giấy phép thành lập và hoạt động)"
+                    - cell "1.200,00" [ref=f3e970]:
+                      - paragraph [ref=f3e971]:
+                        - generic [ref=f3e972]: 1.200,00
+                    - cell [ref=f3e974]:
+                      - paragraph [ref=f3e975]:
+                        - link "www.tfsvn.com.vn" [ref=f3e978] [cursor=pointer]:
+                          - /url: http://www.tfsvn.com.vn
+                    - cell "2873090998" [ref=f3e979]:
+                      - paragraph [ref=f3e980]:
+                        - generic [ref=f3e981]: "2873090998"
+                  - row [ref=f3e983]:
+                    - cell "14" [ref=f3e984]:
+                      - paragraph [ref=f3e985]:
+                        - generic [ref=f3e986]: "14"
+                    - cell "Công ty Tài chính Tín dụng tiêu dùng Trách nhiệm hữu hạn Một thành viên SFinance (SFinance Consumer Credit Finance Company Limited)" [ref=f3e988]:
+                      - paragraph [ref=f3e989]:
+                        - generic [ref=f3e990]: Công ty Tài chính Tín dụng tiêu dùng Trách nhiệm hữu hạn Một thành viên SFinance (SFinance Consumer Credit Finance Company Limited)
+                    - cell "Tòa nhà Gelex, số 52 Lê Đại Hành, phường Hai Bà Trưng, TP. Hà Nội" [ref=f3e992]:
+                      - paragraph [ref=f3e993]:
+                        - generic [ref=f3e994]: Tòa nhà Gelex, số 52 Lê Đại Hành, phường Hai Bà Trưng, TP. Hà Nội
+                    - cell "- Giấy phép số 77/GP-NHNN ngày 12/12/2016 (cấp đổi) - Giấy phép số 21/GP-NHNN ngày 25/04/2023 (cấp mới) - Giấy phép số 43/GP-NHNN ngày 10/7/2026 (giấy phép mới, sau chuyển đổi hình thức pháp lý)" [ref=f3e996]:
+                      - paragraph [ref=f3e997]:
+                        - generic [ref=f3e998]: "- Giấy phép số 77/GP-NHNN ngày 12/12/2016 (cấp đổi) - Giấy phép số 21/GP-NHNN ngày 25/04/2023 (cấp mới)"
+                      - paragraph [ref=f3e1001]:
+                        - generic [ref=f3e1002]: "- Giấy phép số 43/GP-NHNN ngày 10/7/2026 (giấy phép mới, sau chuyển đổi hình thức pháp lý)"
+                    - cell "1.000,00" [ref=f3e1004]:
+                      - paragraph [ref=f3e1005]:
+                        - generic [ref=f3e1006]: 1.000,00
+                    - cell [ref=f3e1008]:
+                      - paragraph [ref=f3e1009]:
+                        - link "shbfinance.com.vn" [ref=f3e1012] [cursor=pointer]:
+                          - /url: http://shbfinance.com.vn
+                    - cell [ref=f3e1013]:
+                      - paragraph [ref=f3e1014]:
+                        - generic [ref=f3e1015]: "02471098888 hotline: 19002198"
+                  - row [ref=f3e1018]:
+                    - cell "15" [ref=f3e1019]:
+                      - paragraph [ref=f3e1020]:
+                        - generic [ref=f3e1021]: "15"
+                    - 'cell "Công ty Tài chính tổng hợp cổ phần Tín Việt (VietCredit General Finance Joint Stock Company) (Tên cũ: Công ty tài chính cổ phần Xi Măng)" [ref=f3e1023]':
+                      - paragraph [ref=f3e1024]:
+                        - generic [ref=f3e1025]: "Công ty Tài chính tổng hợp cổ phần Tín Việt (VietCredit General Finance Joint Stock Company) (Tên cũ: Công ty tài chính cổ phần Xi Măng)"
+                    - cell "Tầng 9, Tòa nhà V.E.T, số 98 đường Hoàng Quốc Việt, phường Nghĩa Đô, thành phố Hà Nội." [ref=f3e1027]:
+                      - paragraph [ref=f3e1028]:
+                        - generic [ref=f3e1029]: Tầng 9, Tòa nhà V.E.T, số 98 đường Hoàng Quốc Việt, phường Nghĩa Đô, thành phố Hà Nội.
+                    - cell [ref=f3e1031]:
+                      - paragraph [ref=f3e1032]:
+                        - generic [ref=f3e1033]: "- Giấy phép số 59/GP-NHNN ngày 18/6/2018 (cấp đổi) - Giấy phép số 48/GP-NHNN ngày 06/11/2023 (cấp đổi) - QĐ số 649/QĐ-QLGS6 ngày 21/4/2025 (sửa đổi nội dung Giấy phép thành lập và hoạt động) - QĐ số 1308/QĐ-QLGS6 ngày 26/5/2025 (sửa đổi nội dung Giấy phép thành lập và hoạt động)"
+                    - cell "911,783" [ref=f3e1036]:
+                      - paragraph [ref=f3e1037]:
+                        - generic [ref=f3e1038]: 911,783
+                    - cell [ref=f3e1040]:
+                      - paragraph [ref=f3e1041]:
+                        - link "vietcredit.com.vn" [ref=f3e1044] [cursor=pointer]:
+                          - /url: http://vietcredit.com.vn
+                    - cell [ref=f3e1045]:
+                      - paragraph [ref=f3e1046]:
+                        - generic [ref=f3e1047]: 02862858185 Hotline 19006515
+                  - row [ref=f3e1050]:
+                    - cell "16" [ref=f3e1051]:
+                      - paragraph [ref=f3e1052]:
+                        - generic [ref=f3e1053]: "16"
+                    - 'cell "Công ty Tài chính tín dụng tiêu dùng TNHH MB Shinsei MB Shinsei Consumer Credit Finance Limited Liability Conpany. (tên cũ: Công ty tài chính TNHH MB)" [ref=f3e1055]':
+                      - paragraph [ref=f3e1056]:
+                        - generic [ref=f3e1057]: "Công ty Tài chính tín dụng tiêu dùng TNHH MB Shinsei MB Shinsei Consumer Credit Finance Limited Liability Conpany. (tên cũ: Công ty tài chính TNHH MB)"
+                    - cell "Tầng 9,10, 11, 12, Tòa nhà MB Bank, Số 21 Cát Linh, phường Ô Chợ Dừa, thành phố Hà Nội, Việt Nam." [ref=f3e1059]:
+                      - paragraph [ref=f3e1060]:
+                        - generic [ref=f3e1061]: Tầng 9,10, 11, 12, Tòa nhà MB Bank, Số 21 Cát Linh, phường Ô Chợ Dừa, thành phố Hà Nội, Việt Nam.
+                    - cell [ref=f3e1063]:
+                      - paragraph [ref=f3e1064]:
+                        - generic [ref=f3e1065]: "- Giấy phép số 32/GP-NHNN ngày 13/3/2020 (cấp đổi) - Quyết định số 1707/QĐ-NHNN ngày 01/11/2021 (sửa đổi bổ sung giấy phép thành lập và hoạt động) - Quyết định số 1239/QĐ-NHNN ngày 19/7/2022 (sửa đổi bổ sung giấy phép thành lập và hoạt động) - Quyết định số 592/QĐ-NHNN ngày 05/4/2023 (sửa đổi bổ sung giấy phép thành lập và hoạt động). - Quyết định số 88/QĐ-CụcII.6 ngày 21/1/2025 (sửa đổi bổ sung giấy phép thành lập và hoạt động) - Quyết định số 204/QĐ-QLGS6 ngày 25/2/2025 (bổ sung nội dung giấy phép thành lập và hoạt động) - Quyết định số 2056/QĐ-QLGS6 ngày 19/8/2025 (bổ sung nội dung giấy phép thành lập và hoạt động)"
+                    - cell "1.600,00" [ref=f3e1068]:
+                      - paragraph [ref=f3e1069]:
+                        - generic [ref=f3e1070]: 1.600,00
+                    - cell [ref=f3e1072]:
+                      - paragraph [ref=f3e1073]:
+                        - link "mcredit.com.vn" [ref=f3e1076] [cursor=pointer]:
+                          - /url: http://mcredit.com.vn
+                    - cell "2471086888" [ref=f3e1077]:
+                      - paragraph [ref=f3e1078]:
+                        - generic [ref=f3e1079]: "2471086888"
+            - list [ref=f3e1081]:
+              - listitem [ref=f3e1082]:
+                - link "aA" [ref=f3e1083] [cursor=pointer]:
+                  - /url: javascript:;
+              - listitem [ref=f3e1095]:
+                - link "Chia sẻ bài viết lên facebook" [ref=f3e1096] [cursor=pointer]:
+                  - /url: https://www.facebook.com/sharer.php?u=https://sbv.tinhvan.com/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/09/2026-1
+              - listitem [ref=f3e1099]:
+                - link "Chia sẻ bài viết lên twitter" [ref=f3e1100] [cursor=pointer]:
+                  - /url: https://twitter.com/intent/tweet?text=https://sbv.tinhvan.com/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/09/2026-1
+              - listitem [ref=f3e1103]:
+                - link "Chia sẻ bài viết lên linkedin" [ref=f3e1104] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/sharing/share-offsite/?url=http://sbv.tinhvan.com/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/09/2026-1
+              - listitem [ref=f3e1108]:
+                - button "Chia sẻ bài viết lên zalo" [ref=f3e1109] [cursor=pointer]
+              - listitem [ref=f3e1113]:
+                - button "Copy" [ref=f3e1114] [cursor=pointer]
+              - listitem [ref=f3e1119]
+              - listitem [ref=f3e1120]:
+                - button "In" [ref=f3e1121] [cursor=pointer]
+              - listitem [ref=f3e1126]:
+                - button [ref=f3e1127] [cursor=pointer]
+          - generic [ref=f3e1133]:
+            - img "Icon" [ref=f3e1135]
+            - generic [ref=f3e1136]: CÁC TIN KHÁC
+          - list [ref=f3e1145]:
+            - listitem [ref=f3e1146]:
+              - text: ■
+              - generic [ref=f3e1147]:
+                - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 30/09/2026)" [ref=f3e1148] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/09/2026-1?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+                - generic [ref=f3e1149]: 16/10/2026 | 10:11:00
+              - separator [ref=f3e1151]
+            - listitem [ref=f3e1152]:
+              - text: ■
+              - generic [ref=f3e1153]:
+                - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 30/06/2026)" [ref=f3e1154] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/06/2026-1?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+                - generic [ref=f3e1155]: 14/07/2026 | 03:13:00
+              - separator [ref=f3e1157]
+            - listitem [ref=f3e1158]:
+              - text: ■
+              - generic [ref=f3e1159]:
+                - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 31/3/2026)" [ref=f3e1160] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-31/3/2026-?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+                - generic [ref=f3e1161]: 10/04/2026 | 11:08:00
+              - separator [ref=f3e1163]
+            - listitem [ref=f3e1164]:
+              - text: ■
+              - generic [ref=f3e1165]:
+                - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 31/12/2025)" [ref=f3e1166] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-31/12/2025-1?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+                - generic [ref=f3e1167]: 27/01/2026 | 10:09:00
+              - separator [ref=f3e1169]
+            - listitem [ref=f3e1170]:
+              - text: ■
+              - generic [ref=f3e1171]:
+                - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 30/9/2025)" [ref=f3e1172] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/9/2025-2-1?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+                - generic [ref=f3e1173]: 07/11/2025 | 09:46:00
+              - separator [ref=f3e1175]
+            - listitem [ref=f3e1176]:
+              - text: ■
+              - generic [ref=f3e1177]:
+                - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 30/6/2025)" [ref=f3e1178] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/6/2025-?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+                - generic [ref=f3e1179]: 29/07/2025 | 03:59:00
+              - separator [ref=f3e1181]
+            - listitem [ref=f3e1182]:
+              - text: ■
+              - generic [ref=f3e1183]:
+                - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH (Đến 30/3/2025)" [ref=f3e1184] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh-%C4%91%E1%BA%BFn-30/3/2025-?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+                - generic [ref=f3e1185]: 16/06/2025 | 03:57:00
+              - separator [ref=f3e1187]
+            - listitem [ref=f3e1188]:
+              - text: ■
+              - link "DANH SÁCH CÁC CÔNG TY TÀI CHÍNH" [ref=f3e1190] [cursor=pointer]:
+                - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch%C2%A0c%C3%A1c-c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh?redirect=%2Fvi%2Fc%25C3%25B4ng-ty-t%25C3%25A0i-ch%25C3%25ADnh
+              - separator [ref=f3e1191]
+        - complementary [ref=f3e1193]:
+          - generic [ref=f3e1196]:
+            - generic [ref=f3e1197]:
+              - generic [ref=f3e1198]:
+                - link "Giới thiệu NHNN" [ref=f3e1199] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/gi%E1%BB%9Bi-thi%E1%BB%87u-nhnn1
+                - link "+" [ref=f3e1200] [cursor=pointer]:
+                  - /url: "#collapse-88996"
+              - text:    
+            - link "CPI" [ref=f3e1204] [cursor=pointer]:
+              - /url: https://sbv.gov.vn/vi/cpi
+            - link "Lãi suất" [ref=f3e1207] [cursor=pointer]:
+              - /url: https://sbv.gov.vn/lãi-suất1
+            - link "Dự trữ bắt buộc" [ref=f3e1210] [cursor=pointer]:
+              - /url: https://sbv.gov.vn/vi/d%E1%BB%B1-tr%E1%BB%AF-b%E1%BA%AFt-bu%E1%BB%99c
+            - generic [ref=f3e1211]:
+              - generic [ref=f3e1212]:
+                - link "Hoạt động thị trường tiền tệ" [ref=f3e1213] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/ho%E1%BA%A1t-%C4%91%E1%BB%99ng-th%E1%BB%8B-tr%C6%B0%E1%BB%9Dng-ti%E1%BB%81n-t%E1%BB%87
+                - link "+" [ref=f3e1214] [cursor=pointer]:
+                  - /url: "#collapse-132553"
+              - text:       
+            - generic [ref=f3e1216]:
+              - generic [ref=f3e1217]:
+                - link "Cải cách hành chính" [ref=f3e1218] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/cai-cach-hanh-chinh
+                - link "+" [ref=f3e1219] [cursor=pointer]:
+                  - /url: "#collapse-88990"
+              - text:         
+            - link "Dịch vụ công trực tuyến" [ref=f3e1223] [cursor=pointer]:
+              - /url: https://dttktt.sbv.gov.vn/application-frontend/faces/welcome.jspx
+            - generic [ref=f3e1224]:
+              - generic [ref=f3e1225]:
+                - link "Hoạt động khác" [ref=f3e1226] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/hoat-dong-khac
+                - link "+" [ref=f3e1227] [cursor=pointer]:
+                  - /url: "#collapse-132665"
+              - text:                                                                                 
+            - generic [ref=f3e1229]:
+              - generic [ref=f3e1230]:
+                - link "Cơ chế chính sách hỗ trợ doanh nghiệp" [ref=f3e1231] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/co-che-chinh-sach-ho-tro-doanh-nghiep
+                - link "+" [ref=f3e1232] [cursor=pointer]:
+                  - /url: "#collapse-601876"
+              - text:    
+            - generic [ref=f3e1234]:
+              - generic [ref=f3e1235]:
+                - link "NHNN với Quốc hội và cử tri" [ref=f3e1236] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/nhnn-voi-quoc-hoi-va-cu-tri
+                - link "+" [ref=f3e1237] [cursor=pointer]:
+                  - /url: "#collapse-627515"
+              - text:                 
+            - generic [ref=f3e1239]:
+              - generic [ref=f3e1240]:
+                - link "Công bố thông tin của Doanh nghiệp nhà nước thuộc ngành Ngân hàng" [ref=f3e1241] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/cong-bo-thong-tin-cua-doanh-nghiep-nha-nuoc-nganh-ngan-hang
+                - link "+" [ref=f3e1242] [cursor=pointer]:
+                  - /url: "#collapse-628347"
+              - text:                
+            - generic [ref=f3e1244]:
+              - generic [ref=f3e1245]:
+                - link "Hệ thống các TCTD" [ref=f3e1246] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/h%E1%BB%87-th%E1%BB%91ng-c%C3%A1c-tctd
+                - link "" [ref=f3e1247] [cursor=pointer]:
+                  - /url: "#collapse-628370"
+              - list [ref=f3e1250]:
+                - listitem [ref=f3e1251]:
+                  - term [ref=f3e1252]:
+                    - link " Ngân hàng " [ref=f3e1253] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng
+                      - text:  Ngân hàng
+                      - generic [ref=f3e1254]: 
+                  - definition [ref=f3e1255]:
+                    - list [ref=f3e1256]:
+                      - listitem [ref=f3e1257]:
+                        - term [ref=f3e1258]:
+                          - link " Ngân hàng thương mại " [ref=f3e1259] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-th%C6%B0%C6%A1ng-m%E1%BA%A1i
+                            - text:  Ngân hàng thương mại
+                            - generic [ref=f3e1260]: 
+                        - definition [ref=f3e1261]:
+                          - list [ref=f3e1262]:
+                            - listitem [ref=f3e1263]:
+                              - term [ref=f3e1264]:
+                                - link " NHTM Nhà nước" [ref=f3e1265] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/nhtm-nh%C3%A0-n%C6%B0%E1%BB%9Bc
+                            - listitem [ref=f3e1266]:
+                              - term [ref=f3e1267]:
+                                - link " NHTM Cổ phần" [ref=f3e1268] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n
+                            - listitem [ref=f3e1269]:
+                              - term [ref=f3e1270]:
+                                - link " Ngân hàng 100% vốn nước ngoài" [ref=f3e1271] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i
+                            - listitem [ref=f3e1272]:
+                              - term [ref=f3e1273]:
+                                - link " Ngân hàng liên doanh" [ref=f3e1274] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh
+                      - listitem [ref=f3e1275]:
+                        - term [ref=f3e1276]:
+                          - link " Ngân hàng Chính sách" [ref=f3e1277] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-ch%C3%ADnh-s%C3%A1ch-x%C3%A3-h%E1%BB%99i
+                      - listitem [ref=f3e1278]:
+                        - term [ref=f3e1279]:
+                          - link " Ngân hàng Hợp tác xã" [ref=f3e1280] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-h%E1%BB%A3p-t%C3%A1c-x%C3%A3
+                - listitem [ref=f3e1281]:
+                  - term [ref=f3e1282]:
+                    - link " TCTD phi ngân hàng " [ref=f3e1283] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/tctd-phi-ng%C3%A2n-h%C3%A0ng
+                      - text:  TCTD phi ngân hàng
+                      - generic [ref=f3e1284]: 
+                  - definition [ref=f3e1285]:
+                    - list [ref=f3e1286]:
+                      - listitem [ref=f3e1287]:
+                        - term [ref=f3e1288]:
+                          - link " Công ty tài chính" [ref=f3e1289] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh
+                      - listitem [ref=f3e1290]:
+                        - term [ref=f3e1291]:
+                          - link " Công ty cho thuê tài chính" [ref=f3e1292] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/c%C3%B4ng-ty-cho-thu%C3%AA-t%C3%A0i-ch%C3%ADnh
+                - listitem [ref=f3e1293]:
+                  - term [ref=f3e1294]:
+                    - link " Tổ chức tài chính vi mô" [ref=f3e1295] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/t%E1%BB%95-ch%E1%BB%A9c-t%C3%A0i-ch%C3%ADnh-vi-m%C3%B4
+                - listitem [ref=f3e1296]:
+                  - term [ref=f3e1297]:
+                    - link " Quỹ tín dụng nhân dân" [ref=f3e1298] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/qu%E1%BB%B9-t%C3%ADn-d%E1%BB%A5ng-nh%C3%A2n-d%C3%A2n
+                - listitem [ref=f3e1299]:
+                  - term [ref=f3e1300]:
+                    - link " Chi nhánh ngân hàng nước ngoài" [ref=f3e1301] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/chi-nh%C3%A1nh-ng%C3%A2n-h%C3%A0ng-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i
+                - listitem [ref=f3e1302]:
+                  - term [ref=f3e1303]:
+                    - link " Văn phòng đại diện" [ref=f3e1304] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/v%C4%83n-ph%C3%B2ng-%C4%91%E1%BA%A1i-di%E1%BB%87n
+            - generic [ref=f3e1305]:
+              - generic [ref=f3e1306]:
+                - link "Chương trình, chính sách tín dụng trọng điểm" [ref=f3e1307] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/chuong-trinh-chinh-sach-tin-dung-trong-diem
+                - link "+" [ref=f3e1308] [cursor=pointer]:
+                  - /url: "#collapse-634574"
+              - text:            
+            - generic [ref=f3e1310]:
+              - generic [ref=f3e1311]:
+                - link "Phổ biến kiến thức" [ref=f3e1312] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/pho-bien-kien-thuc
+                - link "+" [ref=f3e1313] [cursor=pointer]:
+                  - /url: "#collapse-634636"
+              - text:              
+            - generic [ref=f3e1315]:
+              - generic [ref=f3e1316]:
+                - link "Tiếp cận thông tin" [ref=f3e1317] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/ti%E1%BA%BFp-c%E1%BA%ADn-th%C3%B4ng-tin
+                - link "+" [ref=f3e1318] [cursor=pointer]:
+                  - /url: "#collapse-647042"
+              - text:     
+          - group "Thanh Tìm kiếm" [ref=f3e1328]:
+            - generic [ref=f3e1332]:
+              - textbox "Từ khóa tìm kiếm" [ref=f3e1333]
+              - button "Từ khóa tìm kiếm" [ref=f3e1335] [cursor=pointer]
+          - generic [ref=f3e1341]:
+            - link [ref=f3e1343] [cursor=pointer]:
+              - /url: /danh-bạ-liên-hệ
+              - img "Icon" [ref=f3e1345]
+              - heading "Danh bạ liên hệ" [level=3] [ref=f3e1346]
+            - link [ref=f3e1348] [cursor=pointer]:
+              - /url: https://dichvucong.gov.vn/p/phananhkiennghi/...
+              - img "Icon" [ref=f3e1350]
+              - heading "Phản ánh kiến nghị" [level=3] [ref=f3e1351]
+            - link [ref=f3e1353] [cursor=pointer]:
+              - /url: /đường-dây-nóng
+              - img "Icon" [ref=f3e1355]
+              - heading "Đường dây nóng" [level=3] [ref=f3e1356]
+    - contentinfo:
+      - contentinfo [ref=f3e1359]:
+        - generic [ref=f3e1360]:
+          - generic [ref=f3e1361]: © cổng thông tin điện tử ngân hàng nhà nước việt nam
+          - generic [ref=f3e1362]:
+            - generic [ref=f3e1363]: "Địa chỉ: 49 Lý Thái Tổ - Hoàn Kiếm - Hà Nội"
+            - generic [ref=f3e1364]: "Thường trực Ban biên tập: (84 - 243) 266.9435"
+            - generic [ref=f3e1365]:
+              - generic [ref=f3e1366]: "Email: thuongtrucweb@sbv.gov.vn"
+              - img "rss" [ref=f3e1367]
+          - generic [ref=f3e1368]:
+            - link [ref=f3e1370] [cursor=pointer]:
+              - /url: https://tinnhiemmang.vn/danh-ba-tin-nhiem/sbvgovvn-1626166872
+              - img "Chung nhan Tin Nhiem Mang" [ref=f3e1371]
+            - generic [ref=f3e1372]: "Số điện thoại tổng đài Ngân hàng Nhà nước: (84 - 243) 936.6306 Đầu mối tiếp nhận thông tin về sự cố an toàn thông tin: số điện thoại: (+84) 84.859.5983, email: antt@sbv.gov.vn"
+            - img "IPv6 Ready" [ref=f3e1375]
+  - link "EMC Đã kết nối EMC" [ref=f3e1379] [cursor=pointer]:
+    - /url: javascript:void(0)
+    - img "EMC" [ref=f3e1381]
+    - generic [ref=f3e1382]: Đã kết nối EMC
+  - iframe
+  - iframe

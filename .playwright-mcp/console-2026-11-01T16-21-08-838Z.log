@@ -1,0 +1,11 @@
+[    1160ms] [LOG] ResponsiveVoice r1.8.4 @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:24
+[    1162ms] [LOG] isHidden: false @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:331
+[    1162ms] [LOG] Prerender: false @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:332
+[    1167ms] [LOG] Zalo Social Plugin is loaded successfully @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[    1167ms] [LOG] socialPluginsShare:  [] @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[    1175ms] [LOG]  window._govaq undefined @ https://sbv.gov.vn/vi/c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh:2042
+[    2206ms] [LOG] Zalo Social Plugin is loaded successfully @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[    2207ms] [LOG] socialPluginsShare:  [li.zalo-share-button, li.zalo-share-button] @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[    2376ms] [LOG] RV: Voice support ready @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:134
+[    4830ms] [LOG] Configuring @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:393
+[   11861ms] [WARNING] Component with id "_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_ncdx_qqgp_postReplyBody0" is being registered twice. This can lead to unexpected behaviour in the "Liferay.component" and "Liferay.componentReady" APIs, as well as in the "*:registered" events. @ https://sbv.gov.vn/o/frontend-js-web/Liferay.js?&mac=YpKVw5X0kPIuFTH6Wq60N43a8VM=&browserId=chrome&languageId=vi_VN&minifierType=js:1

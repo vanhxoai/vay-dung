@@ -1,0 +1,10 @@
+[     707ms] [LOG] ResponsiveVoice r1.8.4 @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:24
+[     708ms] [LOG] isHidden: false @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:331
+[     708ms] [LOG] Prerender: false @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:332
+[     710ms] [LOG] Zalo Social Plugin is loaded successfully @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[     710ms] [LOG] socialPluginsShare:  [] @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[     714ms] [LOG]  window._govaq undefined @ https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i:2042
+[    1703ms] [LOG] RV: Voice support ready @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:134
+[    1714ms] [LOG] Zalo Social Plugin is loaded successfully @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[    1714ms] [LOG] socialPluginsShare:  [li.zalo-share-button, li.zalo-share-button] @ https://sbv.gov.vn/documents/d/sbv_portal/zalo-sdk:1
+[    2719ms] [LOG] Configuring @ https://sbv.gov.vn/documents/d/sbv_portal/responsivevoice:393

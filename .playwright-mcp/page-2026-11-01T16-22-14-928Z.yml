@@ -1,0 +1,409 @@
+- generic [active] [ref=f6e1]:
+  - navigation "Liên kết nhanh":
+    - link "Skip to Main Content" [ref=f6e2] [cursor=pointer]:
+      - /url: "#main-content"
+  - generic [ref=f6e5]:
+    - banner [ref=f6e6]:
+      - generic [ref=f6e14]:
+        - link [ref=f6e15] [cursor=pointer]:
+          - /url: ""
+          - img "Lỗi" [ref=f6e17]
+        - generic [ref=f6e18]:
+          - paragraph [ref=f6e19]: Cổng Thông Tin Điện Tử
+          - paragraph [ref=f6e20]: Ngân Hàng Nhà Nước Việt Nam
+          - generic [ref=f6e21]:
+            - generic [ref=f6e22]: Chủ nhật, 1/11/2026
+            - generic [ref=f6e24]: "|"
+            - button "English" [ref=f6e26] [cursor=pointer]
+    - menubar "Các trang" [ref=f6e41]:
+      - listitem [ref=f6e42]:
+        - link [ref=f6e43] [cursor=pointer]:
+          - /url: /
+      - menuitem "Tin tức - sự kiện" [ref=f6e45] [cursor=pointer]
+      - menuitem "Chính sách tiền tệ" [ref=f6e47] [cursor=pointer]
+      - menuitem "Thanh toán & ngân quỹ" [ref=f6e53] [cursor=pointer]
+      - menuitem "Phát hành tiền" [ref=f6e59] [cursor=pointer]
+      - menuitem [ref=f6e65] [cursor=pointer]:
+        - generic [ref=f6e66]: QUẢN LÝ NGOẠI HỐIVÀ KINH DOANH VÀNG
+      - menuitem "Dữ liệu thống kê" [ref=f6e67] [cursor=pointer]
+    - main [ref=f6e73]:
+      - generic [ref=f6e77]:
+        - article [ref=f6e79]:
+          - navigation "Đường dẫn liên kết (breadcrumb)" [ref=f6e87]:
+            - list [ref=f6e88]:
+              - listitem [ref=f6e89]:
+                - link "Ngân hàng Nhà nước Việt Nam" [ref=f6e90] [cursor=pointer]:
+                  - /url: /vi/web/sbv_portal
+              - listitem [ref=f6e92]:
+                - link "Hệ thống các TCTD" [ref=f6e93] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/h%E1%BB%87-th%E1%BB%91ng-c%C3%A1c-tctd
+              - listitem [ref=f6e95]:
+                - generic [ref=f6e96]: Ngân hàng
+              - listitem [ref=f6e98]:
+                - generic [ref=f6e99]: Ngân hàng thương mại
+              - listitem [ref=f6e101]:
+                - generic [ref=f6e102]: Ngân hàng liên doanh
+          - generic [ref=f6e113]:
+            - generic [ref=f6e114]:
+              - heading "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 30/9/2026)" [level=1] [ref=f6e115]
+              - generic [ref=f6e118]:
+                - generic [ref=f6e119] [cursor=pointer]: 
+                - generic [ref=f6e121]:
+                  - generic [ref=f6e122]: 0:00
+                  - generic [ref=f6e123]: /
+                  - generic [ref=f6e124]: 0:00
+                - generic [ref=f6e125] [cursor=pointer]
+                - generic [ref=f6e126]: Giọng Nam
+              - table [ref=f6e129]:
+                - rowgroup [ref=f6e130]:
+                  - row [ref=f6e131]:
+                    - columnheader "TT" [ref=f6e132]:
+                      - paragraph [ref=f6e133]:
+                        - generic [ref=f6e134]: TT
+                    - columnheader "TÊN NGÂN HÀNG" [ref=f6e138]:
+                      - paragraph [ref=f6e139]:
+                        - generic [ref=f6e142]:
+                          - generic [ref=f6e143]: TÊN
+                          - generic [ref=f6e144]: NGÂN HÀNG
+                    - columnheader "ĐỊA CHỈ" [ref=f6e145]:
+                      - paragraph [ref=f6e146]:
+                        - generic [ref=f6e147]: ĐỊA CHỈ
+                    - columnheader "SỐ GIẤY PHÉP, NGÀY CẤP" [ref=f6e151]:
+                      - paragraph [ref=f6e152]:
+                        - generic [ref=f6e153]: SỐ GIẤY PHÉP, NGÀY CẤP
+                    - columnheader "VỐN ĐIỀU LỆ" [ref=f6e157]:
+                      - paragraph [ref=f6e158]:
+                        - generic [ref=f6e159]: VỐN
+                      - paragraph [ref=f6e163]:
+                        - generic [ref=f6e164]: ĐIỀU LỆ
+                - rowgroup [ref=f6e168]:
+                  - row [ref=f6e169]:
+                    - cell "1" [ref=f6e170]:
+                      - paragraph [ref=f6e171]:
+                        - generic [ref=f6e172]: "1"
+                    - cell "Ngân hàng TNHH Indovina (Indovina Bank Limited – IVB)" [ref=f6e175]:
+                      - paragraph [ref=f6e176]:
+                        - generic [ref=f6e177]: Ngân hàng TNHH Indovina
+                      - paragraph [ref=f6e182]:
+                        - generic [ref=f6e183]: (Indovina Bank Limited – IVB)
+                    - cell "Số 97A Nguyễn Văn Trỗi, Phường Phú Nhuận, TP. Hồ Chí Minh" [ref=f6e188]:
+                      - paragraph [ref=f6e189]:
+                        - generic [ref=f6e190]: Số 97A Nguyễn Văn Trỗi, Phường Phú Nhuận, TP. Hồ Chí Minh
+                    - cell "* Giấy phép số 135/GP-NHGP ngày 21/11/1990 và số 08/NH-GP ngày 29/10/1992 * Giấy phép cấp đổi số 101/GP-NHNN ngày 11/11/2016 * Giấy phép cấp đổi số 07/GP-NHNN ngày 06/02/2026 * Quyết định số 76/QĐ-QLGS3 ngày 30/6/2026" [ref=f6e195]:
+                      - paragraph [ref=f6e196]:
+                        - generic [ref=f6e197]: "* Giấy phép số 135/GP-NHGP ngày 21/11/1990 và số"
+                      - paragraph [ref=f6e201]:
+                        - generic [ref=f6e202]: 08/NH-GP ngày 29/10/1992
+                      - paragraph [ref=f6e206]:
+                        - generic [ref=f6e207]: "* Giấy phép cấp đổi số 101/GP-NHNN ngày 11/11/2016"
+                      - paragraph [ref=f6e211]:
+                        - generic [ref=f6e212]: "* Giấy phép cấp đổi số 07/GP-NHNN ngày 06/02/2026"
+                      - paragraph [ref=f6e216]:
+                        - generic [ref=f6e217]: "* Quyết định số 76/QĐ-QLGS3 ngày 30/6/2026"
+                    - cell "3.377,5" [ref=f6e221]:
+                      - paragraph [ref=f6e222]:
+                        - generic [ref=f6e223]: 3.377,5
+                  - row [ref=f6e228]:
+                    - cell "2" [ref=f6e229]:
+                      - paragraph [ref=f6e230]:
+                        - generic [ref=f6e231]: "2"
+                    - cell "Ngân hàng liên doanh Việt – Nga (Vietnam-Russia Joint Venture Bank - VRB)" [ref=f6e234]:
+                      - paragraph [ref=f6e235]:
+                        - generic [ref=f6e236]: Ngân hàng liên doanh Việt – Nga
+                      - paragraph [ref=f6e241]:
+                        - generic [ref=f6e242]: (Vietnam-Russia Joint Venture Bank - VRB)
+                    - cell "Tòa nhà số 75, phố Trần Hưng Đạo, phường Cửa Nam, thành phố Hà Nội" [ref=f6e247]:
+                      - paragraph [ref=f6e248]:
+                        - generic [ref=f6e249]: Tòa nhà số 75, phố Trần Hưng Đạo, phường Cửa Nam, thành phố Hà Nội
+                    - cell "* Giấy phép số 11/GP-NHNN ngày 30/10/2006 * Giấy phép cấp đổi số 88/GP-NHNN ngày 18/9/2018 * Quyết định số 756/QĐ-TTGSNH1 ngày 12/12/2024 * Quyết định số 3387/QĐ-QLGS3 ngày 02/12/2025" [ref=f6e254]:
+                      - paragraph [ref=f6e255]:
+                        - generic [ref=f6e256]: "* Giấy phép số 11/GP-NHNN ngày 30/10/2006"
+                      - paragraph [ref=f6e260]:
+                        - generic [ref=f6e261]: "* Giấy phép cấp đổi số 88/GP-NHNN ngày 18/9/2018"
+                      - paragraph [ref=f6e265]:
+                        - generic [ref=f6e266]: "* Quyết định số 756/QĐ-TTGSNH1 ngày 12/12/2024"
+                      - paragraph [ref=f6e270]:
+                        - generic [ref=f6e271]: "* Quyết định số 3387/QĐ-QLGS3 ngày 02/12/2025"
+                    - cell "3.038,7" [ref=f6e275]:
+                      - paragraph [ref=f6e276]:
+                        - generic [ref=f6e277]: 3.038,7
+            - list [ref=f6e282]:
+              - listitem [ref=f6e283]:
+                - link "aA" [ref=f6e284] [cursor=pointer]:
+                  - /url: javascript:;
+              - listitem [ref=f6e296]:
+                - link "Chia sẻ bài viết lên facebook" [ref=f6e297] [cursor=pointer]:
+                  - /url: https://www.facebook.com/sharer.php?u=https://sbv.tinhvan.com/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/9/2026-2-1
+              - listitem [ref=f6e300]:
+                - link "Chia sẻ bài viết lên twitter" [ref=f6e301] [cursor=pointer]:
+                  - /url: https://twitter.com/intent/tweet?text=https://sbv.tinhvan.com/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/9/2026-2-1
+              - listitem [ref=f6e304]:
+                - link "Chia sẻ bài viết lên linkedin" [ref=f6e305] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/sharing/share-offsite/?url=http://sbv.tinhvan.com/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/9/2026-2-1
+              - listitem [ref=f6e309]:
+                - button "Chia sẻ bài viết lên zalo" [ref=f6e310] [cursor=pointer]
+              - listitem [ref=f6e314]:
+                - button "Copy" [ref=f6e315] [cursor=pointer]
+              - listitem [ref=f6e320]
+              - listitem [ref=f6e321]:
+                - button "In" [ref=f6e322] [cursor=pointer]
+              - listitem [ref=f6e327]:
+                - button [ref=f6e328] [cursor=pointer]
+          - generic [ref=f6e334]:
+            - img "Icon" [ref=f6e336]
+            - generic [ref=f6e337]: CÁC TIN KHÁC
+          - list [ref=f6e346]:
+            - listitem [ref=f6e347]:
+              - text: ■
+              - generic [ref=f6e348]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 30/9/2026)" [ref=f6e349] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/9/2026-2-1?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e350]: 16/10/2026 | 10:02:00
+              - separator [ref=f6e352]
+            - listitem [ref=f6e353]:
+              - text: ■
+              - generic [ref=f6e354]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 30/6/2026)" [ref=f6e355] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/6/2026-1?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e356]: 14/07/2026 | 03:06:00
+              - separator [ref=f6e358]
+            - listitem [ref=f6e359]:
+              - text: ■
+              - generic [ref=f6e360]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 31/3/2026)" [ref=f6e361] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-31/3/2026-?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e362]: 10/04/2026 | 10:49:00
+              - separator [ref=f6e364]
+            - listitem [ref=f6e365]:
+              - text: ■
+              - generic [ref=f6e366]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 31/12/2025)" [ref=f6e367] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-31/12/2025-1-1?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e368]: 27/01/2026 | 16:37:00
+              - separator [ref=f6e370]
+            - listitem [ref=f6e371]:
+              - text: ■
+              - generic [ref=f6e372]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 30/9/2025)" [ref=f6e373] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/9/2025-1?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e374]: 24/10/2025 | 03:59:00
+              - separator [ref=f6e376]
+            - listitem [ref=f6e377]:
+              - text: ■
+              - generic [ref=f6e378]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 30/6/2025)" [ref=f6e379] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/6/2025-1?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e380]: 29/07/2025 | 03:50:00
+              - separator [ref=f6e382]
+            - listitem [ref=f6e383]:
+              - text: ■
+              - generic [ref=f6e384]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH (Đến 30/3/2025)" [ref=f6e385] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch-c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh-%C4%91%E1%BA%BFn-30/3/2025-?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e386]: 16/06/2025 | 03:51:00
+              - separator [ref=f6e388]
+            - listitem [ref=f6e389]:
+              - text: ■
+              - generic [ref=f6e390]:
+                - link "DANH SÁCH CÁC NGÂN HÀNG LIÊN DOANH" [ref=f6e391] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/w/danh-s%C3%A1ch%C2%A0c%C3%A1c-ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh?redirect=%2Fvi%2Fng%25C3%25A2n-h%25C3%25A0ng-li%25C3%25AAn-doanh
+                - generic [ref=f6e392]: 25/10/2024 | 08:00:00
+              - separator [ref=f6e394]
+        - complementary [ref=f6e396]:
+          - generic [ref=f6e399]:
+            - generic [ref=f6e400]:
+              - generic [ref=f6e401]:
+                - link "Giới thiệu NHNN" [ref=f6e402] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/gi%E1%BB%9Bi-thi%E1%BB%87u-nhnn1
+                - link "+" [ref=f6e403] [cursor=pointer]:
+                  - /url: "#collapse-88996"
+              - text:    
+            - link "CPI" [ref=f6e407] [cursor=pointer]:
+              - /url: https://sbv.gov.vn/vi/cpi
+            - link "Lãi suất" [ref=f6e410] [cursor=pointer]:
+              - /url: https://sbv.gov.vn/lãi-suất1
+            - link "Dự trữ bắt buộc" [ref=f6e413] [cursor=pointer]:
+              - /url: https://sbv.gov.vn/vi/d%E1%BB%B1-tr%E1%BB%AF-b%E1%BA%AFt-bu%E1%BB%99c
+            - generic [ref=f6e414]:
+              - generic [ref=f6e415]:
+                - link "Hoạt động thị trường tiền tệ" [ref=f6e416] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/ho%E1%BA%A1t-%C4%91%E1%BB%99ng-th%E1%BB%8B-tr%C6%B0%E1%BB%9Dng-ti%E1%BB%81n-t%E1%BB%87
+                - link "+" [ref=f6e417] [cursor=pointer]:
+                  - /url: "#collapse-132553"
+              - text:       
+            - generic [ref=f6e419]:
+              - generic [ref=f6e420]:
+                - link "Cải cách hành chính" [ref=f6e421] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/cai-cach-hanh-chinh
+                - link "+" [ref=f6e422] [cursor=pointer]:
+                  - /url: "#collapse-88990"
+              - text:         
+            - link "Dịch vụ công trực tuyến" [ref=f6e426] [cursor=pointer]:
+              - /url: https://dttktt.sbv.gov.vn/application-frontend/faces/welcome.jspx
+            - generic [ref=f6e427]:
+              - generic [ref=f6e428]:
+                - link "Hoạt động khác" [ref=f6e429] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/hoat-dong-khac
+                - link "+" [ref=f6e430] [cursor=pointer]:
+                  - /url: "#collapse-132665"
+              - text:                                                                                 
+            - generic [ref=f6e432]:
+              - generic [ref=f6e433]:
+                - link "Cơ chế chính sách hỗ trợ doanh nghiệp" [ref=f6e434] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/co-che-chinh-sach-ho-tro-doanh-nghiep
+                - link "+" [ref=f6e435] [cursor=pointer]:
+                  - /url: "#collapse-601876"
+              - text:    
+            - generic [ref=f6e437]:
+              - generic [ref=f6e438]:
+                - link "NHNN với Quốc hội và cử tri" [ref=f6e439] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/nhnn-voi-quoc-hoi-va-cu-tri
+                - link "+" [ref=f6e440] [cursor=pointer]:
+                  - /url: "#collapse-627515"
+              - text:                 
+            - generic [ref=f6e442]:
+              - generic [ref=f6e443]:
+                - link "Công bố thông tin của Doanh nghiệp nhà nước thuộc ngành Ngân hàng" [ref=f6e444] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/cong-bo-thong-tin-cua-doanh-nghiep-nha-nuoc-nganh-ngan-hang
+                - link "+" [ref=f6e445] [cursor=pointer]:
+                  - /url: "#collapse-628347"
+              - text:                
+            - generic [ref=f6e447]:
+              - generic [ref=f6e448]:
+                - link "Hệ thống các TCTD" [ref=f6e449] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/h%E1%BB%87-th%E1%BB%91ng-c%C3%A1c-tctd
+                - link "" [ref=f6e450] [cursor=pointer]:
+                  - /url: "#collapse-628370"
+              - list [ref=f6e453]:
+                - listitem [ref=f6e454]:
+                  - term [ref=f6e455]:
+                    - link " Ngân hàng " [ref=f6e456] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng
+                      - text:  Ngân hàng
+                      - generic [ref=f6e457]: 
+                  - definition [ref=f6e458]:
+                    - list [ref=f6e459]:
+                      - listitem [ref=f6e460]:
+                        - term [ref=f6e461]:
+                          - link " Ngân hàng thương mại " [ref=f6e462] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-th%C6%B0%C6%A1ng-m%E1%BA%A1i
+                            - text:  Ngân hàng thương mại
+                            - generic [ref=f6e463]: 
+                        - definition [ref=f6e464]:
+                          - list [ref=f6e465]:
+                            - listitem [ref=f6e466]:
+                              - term [ref=f6e467]:
+                                - link " NHTM Nhà nước" [ref=f6e468] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/nhtm-nh%C3%A0-n%C6%B0%E1%BB%9Bc
+                            - listitem [ref=f6e469]:
+                              - term [ref=f6e470]:
+                                - link " NHTM Cổ phần" [ref=f6e471] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n
+                            - listitem [ref=f6e472]:
+                              - term [ref=f6e473]:
+                                - link " Ngân hàng 100% vốn nước ngoài" [ref=f6e474] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i
+                            - listitem [ref=f6e475]:
+                              - term [ref=f6e476]:
+                                - link " Ngân hàng liên doanh" [ref=f6e477] [cursor=pointer]:
+                                  - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh
+                      - listitem [ref=f6e478]:
+                        - term [ref=f6e479]:
+                          - link " Ngân hàng Chính sách" [ref=f6e480] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-ch%C3%ADnh-s%C3%A1ch-x%C3%A3-h%E1%BB%99i
+                      - listitem [ref=f6e481]:
+                        - term [ref=f6e482]:
+                          - link " Ngân hàng Hợp tác xã" [ref=f6e483] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-h%E1%BB%A3p-t%C3%A1c-x%C3%A3
+                - listitem [ref=f6e484]:
+                  - term [ref=f6e485]:
+                    - link " TCTD phi ngân hàng " [ref=f6e486] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/tctd-phi-ng%C3%A2n-h%C3%A0ng
+                      - text:  TCTD phi ngân hàng
+                      - generic [ref=f6e487]: 
+                  - definition [ref=f6e488]:
+                    - list [ref=f6e489]:
+                      - listitem [ref=f6e490]:
+                        - term [ref=f6e491]:
+                          - link " Công ty tài chính" [ref=f6e492] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh
+                      - listitem [ref=f6e493]:
+                        - term [ref=f6e494]:
+                          - link " Công ty cho thuê tài chính" [ref=f6e495] [cursor=pointer]:
+                            - /url: https://sbv.gov.vn/vi/c%C3%B4ng-ty-cho-thu%C3%AA-t%C3%A0i-ch%C3%ADnh
+                - listitem [ref=f6e496]:
+                  - term [ref=f6e497]:
+                    - link " Tổ chức tài chính vi mô" [ref=f6e498] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/t%E1%BB%95-ch%E1%BB%A9c-t%C3%A0i-ch%C3%ADnh-vi-m%C3%B4
+                - listitem [ref=f6e499]:
+                  - term [ref=f6e500]:
+                    - link " Quỹ tín dụng nhân dân" [ref=f6e501] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/qu%E1%BB%B9-t%C3%ADn-d%E1%BB%A5ng-nh%C3%A2n-d%C3%A2n
+                - listitem [ref=f6e502]:
+                  - term [ref=f6e503]:
+                    - link " Chi nhánh ngân hàng nước ngoài" [ref=f6e504] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/chi-nh%C3%A1nh-ng%C3%A2n-h%C3%A0ng-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i
+                - listitem [ref=f6e505]:
+                  - term [ref=f6e506]:
+                    - link " Văn phòng đại diện" [ref=f6e507] [cursor=pointer]:
+                      - /url: https://sbv.gov.vn/vi/v%C4%83n-ph%C3%B2ng-%C4%91%E1%BA%A1i-di%E1%BB%87n
+            - generic [ref=f6e508]:
+              - generic [ref=f6e509]:
+                - link "Chương trình, chính sách tín dụng trọng điểm" [ref=f6e510] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/chuong-trinh-chinh-sach-tin-dung-trong-diem
+                - link "+" [ref=f6e511] [cursor=pointer]:
+                  - /url: "#collapse-634574"
+              - text:            
+            - generic [ref=f6e513]:
+              - generic [ref=f6e514]:
+                - link "Phổ biến kiến thức" [ref=f6e515] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/pho-bien-kien-thuc
+                - link "+" [ref=f6e516] [cursor=pointer]:
+                  - /url: "#collapse-634636"
+              - text:              
+            - generic [ref=f6e518]:
+              - generic [ref=f6e519]:
+                - link "Tiếp cận thông tin" [ref=f6e520] [cursor=pointer]:
+                  - /url: https://sbv.gov.vn/vi/ti%E1%BA%BFp-c%E1%BA%ADn-th%C3%B4ng-tin
+                - link "+" [ref=f6e521] [cursor=pointer]:
+                  - /url: "#collapse-647042"
+              - text:     
+          - group "Thanh Tìm kiếm" [ref=f6e531]:
+            - generic [ref=f6e535]:
+              - textbox "Từ khóa tìm kiếm" [ref=f6e536]
+              - button "Từ khóa tìm kiếm" [ref=f6e538] [cursor=pointer]
+          - generic [ref=f6e544]:
+            - link [ref=f6e546] [cursor=pointer]:
+              - /url: /danh-bạ-liên-hệ
+              - img "Icon" [ref=f6e548]
+              - heading "Danh bạ liên hệ" [level=3] [ref=f6e549]
+            - link [ref=f6e551] [cursor=pointer]:
+              - /url: https://dichvucong.gov.vn/p/phananhkiennghi/...
+              - img "Icon" [ref=f6e553]
+              - heading "Phản ánh kiến nghị" [level=3] [ref=f6e554]
+            - link [ref=f6e556] [cursor=pointer]:
+              - /url: /đường-dây-nóng
+              - img "Icon" [ref=f6e558]
+              - heading "Đường dây nóng" [level=3] [ref=f6e559]
+    - contentinfo [ref=f6e560]:
+      - contentinfo [ref=f6e563]:
+        - generic [ref=f6e564]:
+          - generic [ref=f6e565]: © cổng thông tin điện tử ngân hàng nhà nước việt nam
+          - generic [ref=f6e566]:
+            - generic [ref=f6e567]: "Địa chỉ: 49 Lý Thái Tổ - Hoàn Kiếm - Hà Nội"
+            - generic [ref=f6e568]: "Thường trực Ban biên tập: (84 - 243) 266.9435"
+            - generic [ref=f6e569]:
+              - generic [ref=f6e570]: "Email: thuongtrucweb@sbv.gov.vn"
+              - img "rss" [ref=f6e571]
+          - generic [ref=f6e572]:
+            - link [ref=f6e574] [cursor=pointer]:
+              - /url: https://tinnhiemmang.vn/danh-ba-tin-nhiem/sbvgovvn-1626166872
+              - img "Chung nhan Tin Nhiem Mang" [ref=f6e575]
+            - generic [ref=f6e576]: "Số điện thoại tổng đài Ngân hàng Nhà nước: (84 - 243) 936.6306 Đầu mối tiếp nhận thông tin về sự cố an toàn thông tin: số điện thoại: (+84) 84.859.5983, email: antt@sbv.gov.vn"
+            - img "IPv6 Ready" [ref=f6e579]
+  - iframe
+  - iframe
+  - link "EMC Đã kết nối EMC" [ref=f6e583] [cursor=pointer]:
+    - /url: javascript:void(0)
+    - img "EMC" [ref=f6e585]
+    - generic [ref=f6e586]: Đã kết nối EMC
