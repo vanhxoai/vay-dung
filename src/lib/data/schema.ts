@@ -28,7 +28,8 @@ export function sourced<T extends z.ZodType>(valueSchema: T) {
       note: z.string().optional(),
     })
     .superRefine((v, ctx) => {
-      if (v.value === null) return;
+      // TS can't see `value` through the generic, so read it via a narrow cast.
+      if ((v as unknown as { value: unknown }).value === null) return;
       for (const key of ["sourceUrl", "retrievedAt", "confidence"] as const) {
         if (v[key] === null) {
           ctx.addIssue({

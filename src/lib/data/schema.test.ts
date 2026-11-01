@@ -4,6 +4,10 @@ import { z } from "zod";
 
 const SourcedVnd = sourced(z.number().int());
 
+// Compile-time check: callers see `value` with the right type.
+const _typed: number | null = ({} as z.infer<typeof SourcedVnd>).value;
+void _typed;
+
 describe("sourced()", () => {
   it("accepts an unknown value with no source", () => {
     const r = SourcedVnd.safeParse({
