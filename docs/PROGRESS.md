@@ -132,7 +132,7 @@ The deployment went straight to production, so there was no preview step (DECISI
 **Next:** the interviews.
 
 ## More banks: ACB, Sacombank, VIB, HDBank (2026-11-02)
-**Status:** in the code and committed, not live yet. Waiting for your review.
+**Status:** live since 2026-11-02, published with your approval. Checked on the live site: all four banks appear, nothing typed appears in requests, no cookies, noindex on the page checked, waitlist closed.
 
 - Now 14 lender files and 45 products. Earlier counts in this file were correct at the time.
 - None of the four banks can be ranked, because none publishes a usable rate range for a salary loan. They appear in the "not enough data" section, so the ranked list doesn't change.
@@ -140,4 +140,4 @@ The deployment went straight to production, so there was no preview step (DECISI
 - Daily rates can't reach the cost engine. Finance code in src/lib/finance is unchanged.
 - Still unresolved: Sacombank's two documents disagree on the card-loan rate, and HDBank's card-loan sheet is undated. Only the banks can settle these.
 
-**Next:** your decision on publishing this update.
+**Next:** the interviews. Ask interviewees which lenders they'd consider and for real offers they've received.
