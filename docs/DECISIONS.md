@@ -50,3 +50,6 @@ Each entry records what we chose and why. "Agreed" means you approved it; "Defau
 | 43 | 2026-11-02 | Operator shown as "Nguyen Van A", contact chjopchjop1210@gmail.com, as you entered | Law 91/2025 art. 9 requires naming who controls the data | Agreed; name confirmed by you on 2026-11-03 |
 | 44 | 2026-11-03 | Signups would be deleted once people are told, or after 12 months at most. Server code pinned to Singapore in vercel.json | Conservative defaults; the lawyer may change them | Default |
 | 45 | 2026-11-03 | Interview guide placeholders: keep notes 12 months, contact details 30 days, recordings 7 days | Suggested by the compliance review | Default, for you to confirm |
+| 46 | 2026-11-02 | Mobile speed measured with Playwright using Lighthouse's phone settings, not Lighthouse itself | Lighthouse can't start a browser on this machine; the ship-check allows "Lighthouse or similar" | Default; run real Lighthouse on the preview URL |
+| 47 | 2026-11-02 | `npm run build` runs `validate-data` first, so data over 90 days old stops a deployment. The live site stays up, and the app already stops ranking stale products | Never publish stale numbers | Default |
+| 48 | 2026-11-02 | The phone's Back button moves between questionnaire steps. Answers stay in the page's memory, not in the address | QA: Back looked like losing the answers | Default |

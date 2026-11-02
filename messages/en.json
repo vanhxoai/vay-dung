@@ -111,7 +111,7 @@
     "guidelineNote": "The {limit} level is a Vay Đúng guideline, not a State Bank of Vietnam rule.",
     "no_data": {
       "title": "We can't work out the monthly payment for this loan yet",
-      "tooYoung": "The products we can calculate all require a higher age than the one you entered, so we have no figures for you yet. See the details in the section on products that don't fit, below.",
+      "tooYoung": "The products for this need that we have enough data to calculate all require a higher age than the one you entered, so we can't work out what you'd pay yet. Each product's requirement is under \"Don't fit your answers\" below. For any other product, we don't know whether you'd qualify.",
       "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. The principal alone is about {principalOnly} a month, before interest and fees, so the real payment will be higher. If the monthly payment is above {headroom}, we don't recommend borrowing this amount. Ask for the exact monthly payment before you sign."
     }
   },
@@ -133,7 +133,7 @@
     "medical": "An emergency: check your health insurance and ask family first. If you still need to borrow, use only a lender on the State Bank of Vietnam's list, even in a hurry.",
     "debt": "Borrowing to pay debt: be careful, debts can snowball. First ask your current lender about more time or a new repayment schedule. Only take a new loan if its real cost is clearly lower than the old one.",
     "living": "Borrowing for everyday spending: the loan raises your monthly payments while your income stays the same. See whether you can cut spending or get a salary advance first.",
-    "other": "A cash loan is flexible but can be expensive. Borrow only what you need, and compare the total you'd pay before you choose.",
+    "other": "A cash loan is flexible but can be expensive. If you still borrow, borrow only what you need, and compare the total you'd pay before you choose.",
     "urgent": "In a hurry: people who need money fast are easier to scam. Be wary if anyone makes you transfer money first, especially to a personal account, before approving or paying out a loan. Don't rely on a contract sent by message, because contracts can be forged too. Call the lender's official hotline before transferring anything."
   },
   "Results": {

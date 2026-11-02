@@ -101,3 +101,13 @@
 - The consent text is long on a phone (about 9 lines), and that's for the lawyer to shorten.
 
 **Next:** Phase 6 (quality and launch).
+
+## Phase 6: Ship-check (2026-11-02)
+**Status:** checks done and problems fixed. Not deployed: waiting for your decision.
+
+- Automated accessibility scan added (WCAG 2 A/AA, light and dark): no violations. Not tested with a real screen reader.
+- Mobile speed: Lighthouse can't start a browser on this machine, so it was measured with Playwright using Lighthouse's phone settings, on a local server. First paint about 1 s, layout shift about 0, blocking time 280–390 ms (a little over the usual 200 ms goal), about 380 KB.
+- Reviews: finance-math-checker (no blocker; premium low end fixed), compliance-reviewer (2 wording/logic blockers fixed; see docs/research/compliance-review-phase6.md), qa-tester (no blockers; Back button, under-20 verdict and smaller items fixed).
+- Data age: nothing over 90 days. Oldest figure 2026-11-01. Warnings start 31/12/2026; products stop being ranked after 30/01/2027 unless refreshed.
+
+**Next:** your decision on how to launch, then deployment.

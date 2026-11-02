@@ -118,7 +118,7 @@ export function Results({
                 {t("Alternatives.smaller", { amount: m(rec.suggestedAmountVnd), term: need.termMonths, lender: best.offer.lenderName })}
               </li>
             ) : null}
-            {longerCouldHelp ? <li>{t("Alternatives.longer")}</li> : null}
+            {longerCouldHelp && !allTooYoung ? <li>{t("Alternatives.longer")}</li> : null}
             {need.existingDebtVnd > 0 ? <li>{t("Alternatives.payDebt")}</li> : null}
             <li>{t("Alternatives.save")}</li>
             <li>{rec.verdict === "no_income" ? t("Alternatives.familyNoIncome") : t("Alternatives.family")}</li>
