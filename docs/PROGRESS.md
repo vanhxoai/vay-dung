@@ -112,4 +112,21 @@
 
 - Launch path chosen: soft launch by direct link, analytics off, search listing off (DECISIONS #49, #50).
 
-**Next:** preview deployment, the preview check, then production after your approval.
+**Next:** the launch check below.
+
+## Launch check (2026-11-02)
+**Status:** live at https://vay-dung.vercel.app. Not shared with anyone yet. Keeping it live is waiting for your decision.
+
+The deployment went straight to production, so there was no preview step (DECISIONS #51). The planned checks ran on the live site instead:
+
+- **Privacy:** on a simulated phone, distinctive amounts, income, debt and a made-up lender name didn't appear in any of the requests sent. All requests went to the site itself, and all of those requests were page loads (GET). No cookies, no analytics requests, no console errors.
+- **Soft-launch settings:** noindex on all 6 pages checked; no email fields; the waitlist endpoint answers "closed" (503). The site has no robots.txt or sitemap.
+- **Features:** the questionnaire gives a verdict with source links. The lender check recognises FE Credit, reports a made-up name as not found, and shows the scam warning when a warning sign is ticked.
+- **Location:** server code runs in Singapore (sin1). Prebuilt pages were served from Hong Kong (hkg1) in this test. Both fit the notice's "outside Vietnam".
+- **Lighthouse (phone settings):** performance 93 / 94 / 90 for /, /vay, /kiem-tra. Accessibility and best practices 100. SEO 60, and the failing item is the intended noindex tag. Blocking time 260–410 ms, over the usual 200 ms goal. No layout shift.
+
+**Not tested:** a real phone, iOS Safari, a screen reader, real people.
+
+**First real visitor:** not yet. Record the date here when it happens, because the 60-day limit may start then.
+
+**Next:** your decision on keeping it live, then the interviews.
