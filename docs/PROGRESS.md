@@ -37,6 +37,6 @@
 - All 10 lender files were migrated and reviewed. Validation gives 0 errors and 5 expected warnings.
 - **6 products can be costed and ranked:** VPBank online cash loan, Shinhan cash loan, Home Credit cash loan, and FE Credit's cash, motorbike and phone loans. The other 29 are shown as "chưa đủ dữ liệu", with a reason.
 - regulations.md: unverified claims are softened, and sections are added on the Law on Data, the Consumer Protection Law and MoIT website rules.
-- The compliance re-check marks most items fixed. 3 decisions are open (N1, N2, N11 in compliance-review-phase1.md).
+- The compliance re-check marks most items fixed. Your decisions on N1, N2 and N11 and the DTI label are recorded as DECISIONS #14 and #19–21.
 
-**Next:** your decisions on N1, N2 and N11, then Phase 2 (cost engine).
+**Next:** Phase 2 (cost engine).

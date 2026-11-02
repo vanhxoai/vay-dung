@@ -56,7 +56,9 @@ When the source document shows its own date or effective date, set `sourceDocume
 
 ## 6. Conflicts between official sources
 - Record every disagreement in `conflicts[]`, giving the field path (e.g. `"amountMaxVnd"`, `"rates[0].maxPercent"`), each value with its source, and the `resolution`.
-- **The stored value is the conservative one** (higher cost or stricter condition for the borrower), or null if it can't be decided. Never store the cheaper figure.
+- **Source tiers decide first.** Tier 1: product page, fee schedule (biểu phí), rate disclosure, contract or T&C. Tier 2: the lender's own blog, news or "cẩm nang" pages, which call themselves general information. Tier 3: secondary sources. A lower-tier figure never overrides a higher-tier one. It is still recorded in `conflicts[]` for information.
+- **Within the same tier, the stored value is the conservative one** (higher cost or stricter condition for the borrower), or null if it can't be decided. Never store the cheaper figure.
+- **Flat quote vs contract rate.** Lenders often advertise a flat rate (lãi phẳng, "trên dư nợ ban đầu"), while the contract must state the equivalent annual rate on the reducing balance (Circular 39 art. 13(3)). These describe the same cost and are not a conflict. Store the advertised figure with basis `flat`, and let the engine compute the real cost.
 - A field that has a conflict is never `high` confidence.
 - **Finance-company cap (compliance M8):** if a finance-company product advertises more than 100,000,000 VND, add a conflict on `amountMaxVnd`. Cite the lender's page and Circular 43/2016 art. 3(1) (see docs/research/regulations.md). The resolution says "Lawyer to confirm; app does not show amounts above 100M as achievable".
 - Published penalties that look above the Circular 39 art. 13(4) limits are recorded as conflicts with neutral wording ("appears to differ from …"). Never accuse a lender of breaking the law.

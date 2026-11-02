@@ -462,7 +462,7 @@
               "note": "T&C 4.2 and 4.5, effective 14/08/2026"
             }
           ],
-          "resolution": "Stored flat (inferred), the costlier reading for a given quoted rate. Verify against a real contract schedule."
+          "resolution": "Resolved 2026-11-02: not a contradiction. Advertised/FAQ rates are FLAT quotes (interest on the original amount); the contract must state the equivalent annual rate on the reducing balance (Circular 39/2016 art. 13(3), see docs/research/regulations.md). Both describe the same cost. The engine treats the advertised figure as flat and computes the real cost (IRR) from it. Source: product owner's domain knowledge + regulation; DECISIONS.md #19."
         },
         {
           "field": "termMinMonths",
@@ -985,7 +985,7 @@
               "note": "T&C 4.2 and 4.5, effective 14/08/2026"
             }
           ],
-          "resolution": "Stored flat (stated by the FAQ), the costlier reading for a given quoted rate. Verify against a real contract schedule."
+          "resolution": "Resolved 2026-11-02: not a contradiction. Advertised/FAQ rates are FLAT quotes (interest on the original amount); the contract must state the equivalent annual rate on the reducing balance (Circular 39/2016 art. 13(3), see docs/research/regulations.md). Both describe the same cost. The engine treats the advertised figure as flat and computes the real cost (IRR) from it. Source: product owner's domain knowledge + regulation; DECISIONS.md #19."
         },
         {
           "field": "rates[0].minPercent",
@@ -1494,7 +1494,7 @@
               "note": "T&C 4.2 and 4.5, effective 14/08/2026"
             }
           ],
-          "resolution": "Stored flat (stated by the FAQ), the costlier reading for a given quoted rate. Verify against a real contract schedule."
+          "resolution": "Resolved 2026-11-02: not a contradiction. Advertised/FAQ rates are FLAT quotes (interest on the original amount); the contract must state the equivalent annual rate on the reducing balance (Circular 39/2016 art. 13(3), see docs/research/regulations.md). Both describe the same cost. The engine treats the advertised figure as flat and computes the real cost (IRR) from it. Source: product owner's domain knowledge + regulation; DECISIONS.md #19."
         },
         {
           "field": "rates[0].minPercent",

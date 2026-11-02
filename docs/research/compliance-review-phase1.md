@@ -49,8 +49,8 @@ A focused re-check found these new items.
 
 | # | Problem | Status |
 |---|---|---|
-| N1 | VPBank stores 14.4%/yr (product page) although a VPBank blog says "từ 18%/năm". It is the lowest floor among the rankable products. | ⏳ your decision: does a lender's blog count as a conflicting official source? |
-| N2 | The FE Credit "flat" reading (FAQ, or inferred) conflicts with the T&C (reducing). Flat at 3.86–5.7%/month gives ~100–185%/yr effective. | ⏳ your decision: how the engine handles a contested basis |
+| N1 | VPBank stores 14.4%/yr (product page) although a VPBank blog says "từ 18%/năm". It is the lowest floor among the rankable products. | 🔧 decided: product page outranks blog (DECISIONS #20; data-entry-rules §6) |
+| N2 | The FE Credit "flat" reading (FAQ, or inferred) conflicts with the T&C (reducing). Flat at 3.86–5.7%/month gives ~100–185%/yr effective. | 🔧 decided: not a conflict; ad = flat quote, contract = equivalent reducing rate (DECISIONS #19) |
 | N3 | FE cash-loan "maximum" is a preferential rate; the standard rate may be higher. | 🔧 confidence low, conflict recorded |
 | N4 | Old documents (HD Saison T&C 2025-01-06, Mcredit 2025-03-19 page data) rated above low. | 🔧 + validator rule |
 | N5 | Shinhan max term 60 (page) vs 36 (calculator). A longer term makes affordability look better. | ➡️ Phase 3: the affordability check uses the term the user picks |
@@ -59,7 +59,7 @@ A focused re-check found these new items.
 | N8 | Products without an offered rate were not explicitly excluded. | 🔧 excluded with a reason |
 | N9 | Jargon and English in user-facing Vietnamese text. | 🔧 |
 | N10 | Examples that could mislead (Home Credit 0.75%, Shinhan 300M). | 🔧 validator warns when an example is outside the offered range |
-| N11 | Low-confidence products (FE installment loans) are still rankable. | ⏳ your decision: may low-confidence products be ranked? |
+| N11 | Low-confidence products (FE installment loans) are still rankable. | 🔧 decided: ranked with a visible low-confidence badge (DECISIONS #21; build in Phase 3) |
 
 ## Questions for a Vietnamese lawyer
 1. Is the Circular 43 art. 3(1) 100M cap per customer per finance company fully in force? Can finance companies lend 250–500M unsecured under Circular 39? Was the 400M draft issued?
