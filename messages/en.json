@@ -1,29 +1,30 @@
 {
   "Metadata": {
     "title": "Vay Đúng — Choose the right loan, or decide not to borrow",
-    "description": "See the real cost of a loan from licensed lenders, and know when not to borrow."
+    "description": "Estimate the real cost of a loan from institutions on the State Bank of Vietnam's list, and know when not to borrow."
   },
   "Home": {
     "title": "Vay Đúng",
-    "tagline": "Vay Đúng shows the real cost of a loan, helps you check a lender, and tells you when not to borrow.",
+    "tagline": "Vay Đúng helps you estimate the real cost of a loan, check a lender, and know when not to borrow.",
     "points": {
-      "cost": "Works out the real yearly cost, including mandatory fees with a known amount, so you can compare loans.",
-      "licensed": "Compares only products from institutions on the State Bank of Vietnam's list, with the source and the date checked.",
+      "cost": "Estimates the real yearly cost, including mandatory fees with a known amount, so you can compare loans.",
+      "licensed": "Compares only products from institutions on the lists the State Bank of Vietnam publishes, with the source and the date checked. Being on the list doesn't mean the State Bank recommends that product, or that the loan is right for you.",
       "honest": "Tells you plainly when an amount goes over the guideline for what you can repay, and suggests other options.",
-      "independent": "Takes no money from lenders, doesn't sell your information, and doesn't lend."
+      "independent": "Currently takes no money from lenders, doesn't sell your information, and doesn't lend."
     },
     "start": "Start (about 2 minutes)",
-    "privacy": "No login. Calculations run only on your device.",
+    "privacy": "No login. What you enter is calculated only on your device and isn't sent anywhere. We do count page views, without anything you enter. See Privacy at the bottom of the page.",
     "switchLanguage": "Tiếng Việt",
     "checkLender": "Check a lender or app",
     "headline": "Before you borrow, know what you'll really pay",
     "exampleTitle": "Why the advertised number isn't enough",
-    "exampleBody": "For example: borrowing {amount} over {term} months at a flat 1.5% a month. It sounds like 18% a year, but because interest is charged on the original amount for the whole term, you repay {total} in total. The real rate is about {apr} a year.",
-    "exampleNote": "This is an example of the calculation, not any lender's product.",
+    "exampleBody": "For example: borrowing {amount} over {term} months at a flat 1.5% a month. It sounds like 18% a year, but because interest is charged on the original amount for the whole term, you repay {total} in total. On a reducing-balance basis, that's equivalent to about {apr} a year.",
+    "exampleNote": "This is an example of the calculation, before fees and insurance, and not any lender's product.",
     "whatTitle": "What Vay Đúng does for you",
-    "waitlistTitle": "Get news as we add more products",
+    "waitlistTitle": "Hear when Vay Đúng officially launches",
     "waitlistBody": "Leave your email and we'll tell you when Vay Đúng officially launches.",
-    "waitlistClosed": "The news list isn't open yet. We'll open it once the personal data requirements are done. We aren't collecting emails right now."
+    "waitlistClosed": "We aren't collecting emails right now.",
+    "waitlistClosedTitle": "News list (not open yet)"
   },
   "Flow": {
     "stepOf": "Step {step} of {total}",
@@ -42,7 +43,7 @@
     },
     "finances": {
       "title": "Your finances",
-      "privacy": "This is only used for the calculation on your device. We don't send it anywhere or store it on a server. If you switch language, your answers are kept briefly in this browser so you don't have to retype them, then deleted.",
+      "privacy": "This is only used for the calculation on your device. We don't send it anywhere or store it on a server. If you switch language, your answers are kept briefly in this browser so you don't have to retype them, then deleted. When you tap to see results, we only count one completion, without any of your numbers.",
       "incomeLabel": "Your monthly income",
       "incomeHint": "What you actually receive. If you have no income right now, enter 0.",
       "debtLabel": "How much do you pay towards debts each month?",
@@ -360,17 +361,18 @@
   "Waitlist": {
     "emailLabel": "Your email",
     "emailError": "Please enter a valid email address.",
-    "consent": "I agree that {name} ({email}) may keep this email to tell me when Vay Đúng officially launches, and only for that. It's stored on servers outside Vietnam and deleted after {months} months at most. I can withdraw my consent at any time by emailing the address above.",
+    "consent": "I agree that {name} ({email}) may keep this email address and when I consented, to send me one email when Vay Đúng officially launches, and only for that. This is my own email. It's processed and stored outside Vietnam, at Vercel (United States) and Supabase (Singapore), and deleted once I've been told, within {months} months at most. I can withdraw my consent, ask to see, correct or delete this email, and use the other rights in the privacy notice, by emailing the address above.",
     "privacyLink": "See the privacy notice",
     "consentError": "Please tick the consent box to sign up. You can use Vay Đúng without signing up.",
-    "submit": "Sign up for news",
+    "submit": "Tell me when it launches",
     "sending": "Sending…",
     "done": "Thank you. We'll tell you when Vay Đúng officially launches.",
-    "failed": "That didn't go through. Please try again later."
+    "failed": "That didn't go through. Please try again later.",
+    "loading": "Loading…"
   },
   "Privacy": {
     "title": "Privacy",
-    "updated": "Updated 2 November 2026.",
+    "updated": "Updated 3 November 2026.",
     "who": {
       "title": "Who runs this site",
       "body": "Vay Đúng is run by {name}. Contact: {email}."
@@ -378,29 +380,34 @@
     "device": {
       "title": "What you enter in the questionnaire and lender check",
       "body": "Your income, debts, age, the amount you need, lender names and the signs you choose are processed only on your device. We don't send them anywhere or store them on a server, and there's no login.",
-      "language": "If you switch language midway through the questionnaire, your answers are kept in this browser for up to 2 minutes so you don't have to retype them, then deleted."
+      "language": "If you switch language midway through the questionnaire, your answers are kept briefly in this browser. After 2 minutes they're no longer used, and they're deleted when you open another Vay Đúng page or close the tab."
     },
     "analytics": {
       "title": "Visit statistics",
-      "body": "We use Vercel Web Analytics to see how many people view each page and complete each step of the questionnaire. It doesn't use cookies. It records the page viewed, the site you came from, your estimated city or country, and your device type, operating system and browser, as aggregate statistics. This data is processed outside Vietnam. It receives nothing you enter."
+      "body": "We use Vercel Web Analytics to see how many people view each page and get through each step of the questionnaire. For each view it records the time, the page address, the site you came from, your estimated location (to city level), and your device type, operating system and browser. It doesn't use third-party cookies. Vercel recognises a visit using a hash made from the incoming request, and discards it after 24 hours. We only look at totals, but opening the loan page or reaching the results step can show that someone is looking into a loan. It doesn't receive your amount, income, age or result. Vercel is a US company, and the data is processed outside Vietnam. On the free plan Vercel only guarantees keeping the figures for 1 month, and it may keep them longer."
     },
     "hosting": {
       "title": "Website hosting",
-      "body": "The site is hosted on Vercel, a service outside Vietnam. Like any web server, its servers may log IP addresses and technical request details to run and protect the service."
+      "body": "The site is hosted on Vercel, a US company, on servers outside Vietnam. When you open a page, Vercel's servers receive your IP address and technical request details, including the address of the page, to run and protect the service. What you enter in the questionnaire isn't part of these requests."
     },
     "waitlist": {
       "title": "News list",
       "off": "The news list isn't open yet, so we aren't collecting emails right now.",
-      "on": "If you sign up, we keep only your email, when you consented, the version of the consent text and the page's language, to tell you when Vay Đúng officially launches. We delete your email after {months} months at most, or sooner once we've told you.",
-      "processor": "Emails are stored at Supabase in its Singapore region, which is outside Vietnam."
+      "on": "If you sign up, we keep only your email, when you consented, the version of the consent text, the page's language and the signup page, to tell you when Vay Đúng officially launches. We delete your email once we've told you, within {months} months at most.",
+      "processor": "Emails pass through Vercel's servers in Singapore and are stored at Supabase in its Singapore region. All of this is outside Vietnam."
     },
     "rights": {
       "title": "Your rights",
-      "body": "You can ask to see, correct or delete your data, or withdraw your consent, by emailing {email}."
+      "body": "You have the right to know how your data is processed, to see, correct or delete it, to withdraw consent, to ask us to limit processing, to object to it, and to complain and claim compensation as the law provides. Send requests to {email}."
     },
     "never": {
       "title": "What we don't do",
-      "body": "We don't sell your data, don't pass your information to lenders, and don't take money for rankings."
-    }
+      "body": "We don't sell your data, don't pass your information to lenders, and currently take no money from lenders."
+    },
+    "email": {
+      "title": "When you email us",
+      "body": "If you email us, your message is stored at Google's Gmail (a US service) so we can reply."
+    },
+    "backHome": "← Back to home"
   }
 }

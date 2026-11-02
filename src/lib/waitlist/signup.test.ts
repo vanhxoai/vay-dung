@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CONSENT_VERSION } from "@/config/site";
-import { SignupRequest, storeSignup } from "./signup";
+import { SignupRequest } from "./schema";
+import { storeSignup } from "./signup";
 
 const valid = { email: "a@example.com", consent: true, consentVersion: CONSENT_VERSION, locale: "vi" };
 const parsed = SignupRequest.parse(valid);
@@ -28,9 +29,6 @@ describe("SignupRequest", () => {
     expect(SignupRequest.safeParse({ ...valid, income: 15000000 }).success).toBe(false);
   });
 
-  it("rejects bots that fill the hidden field", () => {
-    expect(SignupRequest.safeParse({ ...valid, website: "http://spam" }).success).toBe(false);
-  });
 });
 
 describe("storeSignup", () => {

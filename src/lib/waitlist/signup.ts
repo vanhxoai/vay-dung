@@ -1,21 +1,8 @@
 /**
- * Waitlist signups: validation, and storing the signup with its consent record
- * (Decree 356 art. 6: who, when, and what they agreed to).
- * Only an email is collected. It is never logged.
+ * Storing a waitlist signup with its consent record (Decree 356 art. 6: who, when, and
+ * what they agreed to). Server only. Only an email is collected. It is never logged.
  */
-import { z } from "zod";
-import { CONSENT_VERSION } from "@/config/site";
-
-export const SignupRequest = z.strictObject({
-  email: z.email().max(254),
-  /** Must be true: an unticked box isn't consent. */
-  consent: z.literal(true),
-  consentVersion: z.literal(CONSENT_VERSION),
-  locale: z.enum(["vi", "en"]),
-  /** Hidden field real users never fill in; bots do. */
-  website: z.string().max(0).optional(),
-});
-export type SignupRequest = z.infer<typeof SignupRequest>;
+import type { SignupRequest } from "./schema";
 
 export type StoreResult = "stored" | "not_configured" | "failed";
 

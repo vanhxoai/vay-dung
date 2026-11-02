@@ -20,13 +20,17 @@ Không phỏng vấn người thân, bạn thân, hay người làm trong ngành
 
 Đọc phần này cho người tham gia, và chỉ tiếp tục khi họ đồng ý:
 
-> "Cảm ơn bạn đã dành thời gian. Mình đang tìm hiểu cách mọi người chọn khoản vay, để làm một công cụ giúp người vay hiểu rõ chi phí. Mình không bán khoản vay nào và không làm việc cho bên cho vay nào.
+> "Cảm ơn bạn đã dành thời gian. Mình là [họ tên], liên hệ: [email]. Mình đang tìm hiểu cách mọi người chọn khoản vay, để làm một công cụ dành cho người vay. Mình không bán khoản vay nào và không làm việc cho bên cho vay nào.
 >
-> Không có câu trả lời đúng hay sai. Bạn có thể bỏ qua bất kỳ câu nào, hoặc dừng lại bất cứ lúc nào. Mình không cần tên công ty nơi bạn làm, số tài khoản hay giấy tờ gì. Bạn không cần cho mình biết chính xác thu nhập.
+> Mình sẽ hỏi về lần vay gần đây của bạn: mục đích, số tiền đại khái, cách bạn chọn, và việc trả nợ. Đây là thông tin tài chính riêng tư, và có thể được xem là dữ liệu nhạy cảm. Mình chỉ dùng để nghiên cứu và cải thiện công cụ, không bán và không đưa cho bên cho vay nào. Một vài câu nói có thể được trích lại nguyên văn, không kèm tên.
 >
-> Mình sẽ ghi chép lại, không kèm tên bạn. [Nếu ghi âm: Bạn có đồng ý để mình ghi âm không? Bản ghi chỉ mình nghe lại, và sẽ xóa sau khi ghi chép xong.] Bạn có đồng ý tham gia không?"
+> Không có câu trả lời đúng hay sai. Bạn có thể bỏ qua bất kỳ câu nào, hoặc dừng bất cứ lúc nào. Mình không cần tên công ty, số tài khoản, giấy tờ hay thu nhập chính xác. Xin đừng nêu tên người khác.
+>
+> Ghi chép không kèm tên bạn và được giữ tối đa [12 tháng]. Thông tin liên lạc của bạn được xóa sau [30 ngày]. Trong thời gian đó, bạn có thể nhắn cho mình để xem, sửa, xóa phần của bạn hoặc rút lại đồng ý. Sau đó mình không còn biết phần ghi chép nào là của bạn. [Nếu gọi video: Buổi này dùng [dịch vụ], một dịch vụ nước ngoài; mình không dùng tính năng ghi hình hay chép lời của dịch vụ đó.] [Nếu ghi âm: Bạn có đồng ý để mình ghi âm không? Bản ghi chỉ lưu trên máy của mình, chỉ mình nghe lại, và xóa trong vòng [7 ngày].] Bạn có đồng ý tham gia không?"
 
-Ghi lại: người này đã đồng ý (có/không), đồng ý ghi âm (có/không), ngày.
+Gửi trước nội dung này bằng tin nhắn và lưu câu trả lời "đồng ý", cùng phiên bản và ngày, chung với danh sách liên lạc. Nếu họ không đồng ý, không ghi chép gì.
+
+Không đăng lời kêu gọi công khai yêu cầu người khác tự nhận là đang chậm trả nợ.
 
 ## Lưu ý khi phỏng vấn
 
@@ -35,7 +39,9 @@ Ghi lại: người này đã đồng ý (có/không), đồng ý ghi âm (có/k
 - **Đừng nhắc đến Vay Đúng hay tính năng của nó** cho đến phần cuối.
 - **Hỏi tiếp:** "Sao bạn nghĩ vậy?", "Lúc đó cụ thể thế nào?", "Bạn nói thêm được không?". Sau đó im lặng một lúc.
 - **Ghi lại nguyên văn** những câu đáng chú ý.
-- **Nếu người đó đang gặp khó khăn:** đừng tư vấn tài chính. Nếu họ đang bị đe dọa đòi nợ, hoặc có vẻ đang gặp lừa đảo, hãy khuyên họ lưu bằng chứng và trình báo cơ quan công an gần nhất. Nếu họ quá căng thẳng, hãy dừng buổi nói chuyện.
+- **Nếu người đó đang gặp khó khăn:** đừng tư vấn tài chính. Hỏi xem họ muốn nghỉ, bỏ qua phần này hay dừng hẳn. Không cần phải làm hết buổi.
+- **Nếu họ bị đe dọa đòi nợ hoặc có vẻ đang gặp lừa đảo:** nói ngay, không đợi hết buổi: đừng chuyển thêm tiền cho bên đó, kể cả tiền "phí"; lưu bằng chứng; trình báo cơ quan công an gần nhất. Nếu nguy hiểm trước mắt, gọi 113.
+- **Nếu họ nói đến việc tự làm hại mình hoặc không muốn sống nữa:** dừng phỏng vấn. Hỏi họ có đang an toàn không và có ai ở cạnh không. Khuyên họ liên hệ ngay người thân tin cậy. Nếu nguy hiểm trước mắt, gọi 115 hoặc đến cơ sở y tế gần nhất. Có thể giới thiệu đường dây Ngày Mai: 096 306 1414 (thứ Tư đến Chủ nhật, 13:00–20:30; kiểm tra lại số và giờ trước khi bắt đầu phỏng vấn). Không ghi chi tiết này vào mẫu ghi chép.
 
 ## Câu hỏi
 
@@ -50,7 +56,7 @@ Ghi lại: người này đã đồng ý (có/không), đồng ý ghi âm (có/k
 
 ### 3. Cách chọn (10 phút)
 6. Làm sao bạn biết đến nơi đã cho bạn vay?
-7. Bạn đã xem xét những bên nào khác? Bạn so sánh họ thế nào? Nếu còn giữ, bạn có thể cho mình xem bạn đã xem ở đâu không?
+7. Bạn đã xem xét những bên nào khác? Bạn so sánh họ thế nào? Nếu còn giữ, bạn có thể cho mình xem bạn đã xem ở đâu không? (Chỉ trang web hoặc quảng cáo. Đừng mở hợp đồng, tài khoản hay tin nhắn riêng. Mình không chụp màn hình.)
 8. Điều gì khiến bạn chọn bên đó?
 9. Bạn đã hỏi ý kiến ai? Bạn tin ai nhất trong chuyện này, và vì sao?
 10. Lúc đó, bạn đã xem những con số nào?
@@ -58,41 +64,43 @@ Ghi lại: người này đã đồng ý (có/không), đồng ý ghi âm (có/k
 12. Có lúc nào bạn lo bên đó không đáng tin không? Bạn đã làm gì để kiểm tra?
 
 ### 4. Những chỗ khó hiểu (7 phút)
-13. Trong quá trình vay, chỗ nào làm bạn thấy khó hiểu nhất?
+13. Trong quá trình vay, có chỗ nào làm bạn thấy khó hiểu không? Nếu có, chỗ nào?
 14. Người tư vấn hoặc quảng cáo nói lãi suất là bao nhiêu? Theo bạn, con số đó có nghĩa là gì?
 15. Bạn có biết khoản vay của mình tính lãi thế nào không? Bạn thử giải thích theo cách của bạn được không?
-16. Có khoản phí hay bảo hiểm nào làm bạn bất ngờ không? Bạn biết đến nó khi nào? Có ai nói với bạn rằng phải mua bảo hiểm không?
+16. Ngoài tiền lãi, bạn còn phải trả khoản nào khác không? Bạn biết đến khoản đó khi nào và bằng cách nào? Người tư vấn đã nói gì về bảo hiểm, nếu có?
 17. Số tiền bạn thật sự nhận được có đúng như bạn nghĩ không?
 18. Trước khi ký, bạn đã đọc những gì trong hợp đồng? Bạn đọc đến đâu?
 
 ### 5. Sau khi vay (7 phút)
+Nói trước: "Phần tiếp theo khá riêng tư. Bạn có thể bỏ qua bất kỳ câu nào."
+
 19. Đến giờ, việc trả nợ thế nào? Khoản này chiếm bao nhiêu phần thu nhập của bạn, nói đại khái thôi?
 20. Có tháng nào bạn thấy khó trả không? Khi đó bạn đã làm gì?
-21. Nếu được làm lại, bạn sẽ làm gì khác đi?
-22. Có điều gì bạn ước ai đó đã nói với bạn trước khi vay không?
-23. Lúc đó, nếu có người bảo bạn rằng khoản này quá sức, bạn sẽ phản ứng thế nào? Bạn sẽ tin lời ai nói điều đó?
+21. Nhìn lại, có điều gì bạn muốn làm khác đi không? Nếu có thì là gì?
+22. Trước khi vay, có thông tin nào bạn muốn biết mà lúc đó chưa có không?
+23. Trước khi vay, có ai nói gì với bạn về việc khoản này có vừa sức không? Bạn đã phản ứng thế nào?
 
 ### 6. Đã từng bị từ chối hoặc gặp lừa đảo (nếu có, 3 phút)
 24. Bạn có từng bị từ chối chưa? Bạn có biết lý do không? Sau đó bạn đã làm gì?
-25. Bạn hoặc người quen có từng gặp ứng dụng hay người cho vay đáng ngờ không? Chuyện đó xảy ra thế nào? Làm sao bạn nhận ra?
+25. Bạn hoặc người quen có từng gặp ứng dụng hay người cho vay đáng ngờ không? Chuyện đó xảy ra thế nào? Làm sao bạn nhận ra? (Đừng nêu tên người quen.)
 
 ### 7. Thử công cụ (không bắt buộc, 5 phút, luôn để sau cùng)
-Chỉ thực hiện nếu họ đồng ý. Hãy dùng số giả định, không dùng số thật của họ.
+Chỉ thực hiện nếu họ đồng ý. Hãy dùng số giả định, không dùng số thật của họ. Nên dùng thiết bị của người phỏng vấn; nếu dùng điện thoại của họ, hãy nói: "Trang này có thống kê lượt truy cập, nên điện thoại của bạn sẽ được tính một lượt."
 
 26. "Bạn thử dùng trang này trên điện thoại, và vừa làm vừa nói ra suy nghĩ của mình." (Đừng hướng dẫn. Ghi lại chỗ họ dừng lại hoặc đọc lại. Bấm giờ từ đầu đến khi thấy kết quả.)
-27. "Bạn hiểu con số 'lãi suất thật' này là gì? Bạn có tin không? Vì sao?"
+27. "Con số này theo bạn có nghĩa là gì? Bạn tin nó đến mức nào, vì sao?"
 28. "Bạn nhìn vào đâu đầu tiên? Có gì thừa, có gì còn thiếu?"
 29. "Nếu trang này nói 'chúng tôi không khuyên bạn vay số tiền này', bạn sẽ làm gì?"
 
 ### Kết thúc
 30. Mình còn nên hỏi điều gì mà mình chưa hỏi?
-31. Bạn có biết ai vừa vay gần đây và có thể muốn trò chuyện không?
+31. Nếu bạn biết ai có thể muốn trò chuyện, bạn có thể gửi liên hệ của mình cho họ để họ tự nhắn. Xin đừng cho mình biết tên hay số điện thoại của họ.
 
 Cảm ơn họ. Nếu họ hỏi về lãi suất của mình, lúc này bạn có thể giải thích. Hãy nói rõ đây không phải lời khuyên tài chính.
 
 ## Sau mỗi buổi phỏng vấn
 
-Trong vòng một giờ, điền [mẫu ghi chép](note-template.md). Dùng mã (P01, P02…) thay cho tên. Giữ riêng, và không chia sẻ, danh sách nối mã với thông tin liên lạc, và xóa danh sách đó khi không cần nữa. Xóa bản ghi âm sau khi ghi chép xong.
+Trong vòng một giờ, điền [mẫu ghi chép](note-template.md). Dùng mã (P01, P02…) thay cho tên. Lưu ghi chép bên ngoài kho mã. Giữ riêng, và không chia sẻ, danh sách nối mã với thông tin liên lạc. Xóa danh sách đó sau [30 ngày]. Xóa bản ghi âm trong vòng [7 ngày], kể cả bản trong thùng rác.
 
 ## Sau 5 buổi, và sau khi xong tất cả
 

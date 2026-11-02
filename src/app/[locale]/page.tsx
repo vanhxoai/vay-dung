@@ -63,7 +63,7 @@ export default function HomePage() {
       </section>
 
       <section data-testid="waitlist" className="flex flex-col gap-3">
-        <h2 className="font-bold">{t("waitlistTitle")}</h2>
+        <h2 className="font-bold">{waitlistOn ? t("waitlistTitle") : t("waitlistClosedTitle")}</h2>
         {waitlistOn ? (
           <>
             <p>{t("waitlistBody")}</p>

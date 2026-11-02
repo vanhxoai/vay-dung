@@ -7,4 +7,6 @@ export const routing = defineRouting({
   localePrefix: "as-needed",
   // "/" is always Vietnamese, whatever the browser language. Users switch with the button.
   localeDetection: false,
+  // Nothing reads a language cookie, so don't set one.
+  localeCookie: false,
 });

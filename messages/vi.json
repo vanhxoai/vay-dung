@@ -1,29 +1,30 @@
 {
   "Metadata": {
     "title": "Vay Đúng — Chọn khoản vay đúng, hoặc quyết định không vay",
-    "description": "Xem chi phí thật của khoản vay từ các bên cho vay được cấp phép, và biết khi nào không nên vay."
+    "description": "Ước tính chi phí thật của khoản vay từ các bên có trong danh sách của Ngân hàng Nhà nước, và biết khi nào không nên vay."
   },
   "Home": {
     "title": "Vay Đúng",
-    "tagline": "Vay Đúng giúp bạn xem chi phí thật của khoản vay, kiểm tra bên cho vay, và biết khi nào không nên vay.",
+    "tagline": "Vay Đúng giúp bạn ước tính chi phí thật của khoản vay, kiểm tra bên cho vay, và biết khi nào không nên vay.",
     "points": {
-      "cost": "Tính chi phí thật mỗi năm, gồm cả các phí bắt buộc đã biết số tiền, để so sánh các khoản vay.",
-      "licensed": "Chỉ so sánh sản phẩm của bên có trong danh sách của Ngân hàng Nhà nước, và ghi rõ nguồn cùng ngày kiểm tra.",
+      "cost": "Ước tính chi phí thật mỗi năm, gồm cả các phí bắt buộc đã biết số tiền, để so sánh các khoản vay.",
+      "licensed": "Chỉ so sánh sản phẩm của các bên có trong danh sách do Ngân hàng Nhà nước công bố, và ghi rõ nguồn cùng ngày kiểm tra. Có trong danh sách không có nghĩa là Ngân hàng Nhà nước giới thiệu sản phẩm đó, hay khoản vay đó phù hợp với bạn.",
       "honest": "Nói thẳng khi số tiền vượt mức hướng dẫn về khả năng trả nợ, và gợi ý cách khác.",
-      "independent": "Không nhận tiền từ bên cho vay, không bán thông tin của bạn, và không cho vay."
+      "independent": "Hiện không nhận tiền từ bên cho vay, không bán thông tin của bạn, và không cho vay."
     },
     "start": "Bắt đầu (khoảng 2 phút)",
-    "privacy": "Không cần đăng nhập. Thông tin của bạn chỉ được tính trên máy của bạn.",
+    "privacy": "Không cần đăng nhập. Những gì bạn nhập chỉ được tính trên máy của bạn, không gửi đi. Chúng tôi có đếm lượt xem trang, không kèm những gì bạn nhập. Xem mục Quyền riêng tư ở cuối trang.",
     "switchLanguage": "English",
     "checkLender": "Kiểm tra một bên cho vay hoặc ứng dụng",
     "headline": "Trước khi vay, hãy biết bạn sẽ trả bao nhiêu thật",
     "exampleTitle": "Vì sao con số quảng cáo chưa đủ",
-    "exampleBody": "Ví dụ: vay {amount} trong {term} tháng với lãi phẳng 1,5%/tháng. Nghe như 18%/năm, nhưng vì lãi tính trên số tiền vay ban đầu suốt cả thời hạn, bạn trả tổng cộng {total}. Lãi suất thật khoảng {apr}/năm.",
-    "exampleNote": "Đây là ví dụ để minh họa cách tính, không phải sản phẩm của bên cho vay nào.",
+    "exampleBody": "Ví dụ: vay {amount} trong {term} tháng với lãi phẳng 1,5%/tháng. Nghe như 18%/năm, nhưng vì lãi tính trên số tiền vay ban đầu suốt cả thời hạn, bạn trả tổng cộng {total}. Tính theo dư nợ giảm dần, mức này tương đương khoảng {apr}/năm.",
+    "exampleNote": "Đây là ví dụ để minh họa cách tính, chưa gồm phí và bảo hiểm, và không phải sản phẩm của bên cho vay nào.",
     "whatTitle": "Vay Đúng làm gì cho bạn",
-    "waitlistTitle": "Nhận tin khi có thêm sản phẩm",
+    "waitlistTitle": "Nhận tin khi Vay Đúng ra mắt chính thức",
     "waitlistBody": "Để lại email, chúng tôi sẽ báo khi Vay Đúng ra mắt chính thức.",
-    "waitlistClosed": "Danh sách nhận tin chưa mở. Chúng tôi sẽ mở khi đã hoàn tất các yêu cầu về dữ liệu cá nhân. Hiện chúng tôi không thu thập email."
+    "waitlistClosed": "Hiện chúng tôi không thu thập email.",
+    "waitlistClosedTitle": "Danh sách nhận tin (chưa mở)"
   },
   "Flow": {
     "stepOf": "Bước {step}/{total}",
@@ -42,7 +43,7 @@
     },
     "finances": {
       "title": "Tình hình tài chính của bạn",
-      "privacy": "Thông tin này chỉ dùng để tính toán ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu trên máy chủ. Riêng khi bạn đổi ngôn ngữ, câu trả lời được giữ tạm trên trình duyệt này để không phải nhập lại, rồi được xóa.",
+      "privacy": "Thông tin này chỉ dùng để tính toán ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu trên máy chủ. Riêng khi bạn đổi ngôn ngữ, câu trả lời được giữ tạm trên trình duyệt này để không phải nhập lại, rồi được xóa. Khi bạn bấm xem kết quả, chúng tôi chỉ đếm một lượt hoàn thành, không kèm con số nào.",
       "incomeLabel": "Thu nhập mỗi tháng của bạn",
       "incomeHint": "Số tiền thực nhận. Nếu chưa có thu nhập, hãy nhập 0.",
       "debtLabel": "Mỗi tháng bạn đang trả nợ bao nhiêu?",
@@ -360,17 +361,18 @@
   "Waitlist": {
     "emailLabel": "Email của bạn",
     "emailError": "Hãy nhập một địa chỉ email hợp lệ.",
-    "consent": "Tôi đồng ý để {name} ({email}) lưu email này để báo cho tôi khi Vay Đúng ra mắt chính thức, và chỉ cho mục đích đó. Email được lưu ở máy chủ ngoài Việt Nam và xóa sau tối đa {months} tháng. Tôi có thể rút lại đồng ý bất cứ lúc nào bằng cách gửi email đến địa chỉ trên.",
+    "consent": "Tôi đồng ý để {name} ({email}) lưu địa chỉ email này và thời điểm tôi đồng ý, để gửi cho tôi một email duy nhất khi Vay Đúng ra mắt chính thức, và chỉ cho mục đích đó. Đây là email của tôi. Email được xử lý và lưu bên ngoài Việt Nam, tại Vercel (Hoa Kỳ) và Supabase (Singapore), và được xóa sau khi đã báo, muộn nhất sau {months} tháng. Tôi có thể rút lại đồng ý, yêu cầu xem, sửa, xóa email này, và thực hiện các quyền khác nêu trong chính sách quyền riêng tư, bằng cách gửi email đến địa chỉ trên.",
     "privacyLink": "Xem chính sách quyền riêng tư",
     "consentError": "Bạn cần đánh dấu ô đồng ý để đăng ký. Bạn không đăng ký cũng vẫn dùng được Vay Đúng.",
-    "submit": "Đăng ký nhận tin",
+    "submit": "Báo cho tôi khi ra mắt",
     "sending": "Đang gửi…",
     "done": "Cảm ơn bạn. Chúng tôi sẽ báo khi Vay Đúng ra mắt chính thức.",
-    "failed": "Chưa gửi được. Hãy thử lại sau."
+    "failed": "Chưa gửi được. Hãy thử lại sau.",
+    "loading": "Đang tải…"
   },
   "Privacy": {
     "title": "Quyền riêng tư",
-    "updated": "Cập nhật ngày 02/11/2026.",
+    "updated": "Cập nhật ngày 03/11/2026.",
     "who": {
       "title": "Ai vận hành trang này",
       "body": "Vay Đúng do {name} vận hành. Liên hệ: {email}."
@@ -378,29 +380,34 @@
     "device": {
       "title": "Những gì bạn nhập vào bảng câu hỏi và trang kiểm tra",
       "body": "Thu nhập, các khoản nợ, tuổi, số tiền cần vay, tên bên cho vay và các dấu hiệu bạn chọn chỉ được xử lý ngay trên máy của bạn. Chúng tôi không gửi chúng đi, không lưu trên máy chủ, và không có tài khoản đăng nhập.",
-      "language": "Riêng khi bạn đổi ngôn ngữ giữa chừng trong bảng câu hỏi, câu trả lời được giữ tạm trên trình duyệt này tối đa 2 phút để bạn không phải nhập lại, rồi được xóa."
+      "language": "Riêng khi bạn đổi ngôn ngữ giữa chừng trong bảng câu hỏi, câu trả lời được giữ tạm trên trình duyệt này. Sau 2 phút chúng không còn được dùng, và được xóa khi bạn mở lại một trang của Vay Đúng hoặc đóng thẻ."
     },
     "analytics": {
       "title": "Thống kê lượt truy cập",
-      "body": "Chúng tôi dùng Vercel Web Analytics để biết có bao nhiêu người xem mỗi trang và hoàn thành từng bước của bảng câu hỏi. Công cụ này không dùng cookie. Nó ghi nhận trang được xem, trang bạn đến từ đâu, thành phố hoặc quốc gia ước tính, loại thiết bị, hệ điều hành và trình duyệt, ở dạng thống kê tổng hợp. Dữ liệu được xử lý bên ngoài Việt Nam. Nó không nhận bất kỳ điều gì bạn nhập."
+      "body": "Chúng tôi dùng Vercel Web Analytics để biết có bao nhiêu người xem mỗi trang và đi hết từng bước của bảng câu hỏi. Với mỗi lượt xem, công cụ này ghi nhận thời điểm, địa chỉ trang, trang bạn đến từ đâu, vị trí ước tính (đến cấp thành phố), loại thiết bị, hệ điều hành và trình duyệt. Công cụ không dùng cookie của bên thứ ba. Vercel nhận biết lượt truy cập bằng một mã băm tạo từ yêu cầu gửi đến, và bỏ mã này sau 24 giờ. Chúng tôi chỉ xem số liệu tổng hợp, nhưng việc mở trang vay hoặc đi đến bước kết quả có thể cho thấy một người đang tìm hiểu về khoản vay. Công cụ không nhận số tiền, thu nhập, tuổi hay kết quả của bạn. Vercel là công ty Hoa Kỳ, và dữ liệu được xử lý bên ngoài Việt Nam. Vercel chỉ cam kết lưu số liệu ở gói miễn phí trong 1 tháng, và có thể lưu lâu hơn."
     },
     "hosting": {
       "title": "Lưu trữ trang web",
-      "body": "Trang web được đặt trên Vercel, một dịch vụ bên ngoài Việt Nam. Như mọi máy chủ web, máy chủ của họ có thể ghi lại địa chỉ IP và thông tin kỹ thuật của yêu cầu để vận hành và bảo vệ dịch vụ."
+      "body": "Trang web được đặt trên Vercel, công ty Hoa Kỳ, với máy chủ bên ngoài Việt Nam. Khi bạn mở một trang, máy chủ của Vercel nhận địa chỉ IP và thông tin kỹ thuật của yêu cầu, trong đó có địa chỉ trang bạn mở, để vận hành và bảo vệ dịch vụ. Những gì bạn nhập vào bảng câu hỏi không nằm trong các yêu cầu này."
     },
     "waitlist": {
       "title": "Danh sách nhận tin",
       "off": "Danh sách nhận tin chưa mở, nên hiện chúng tôi không thu thập email.",
-      "on": "Nếu bạn đăng ký, chúng tôi chỉ lưu email, thời điểm bạn đồng ý, phiên bản nội dung đồng ý, và ngôn ngữ của trang, để báo cho bạn khi Vay Đúng ra mắt chính thức. Chúng tôi xóa email sau tối đa {months} tháng, hoặc sớm hơn khi đã báo xong.",
-      "processor": "Email được lưu tại Supabase, ở khu vực Singapore, tức là bên ngoài Việt Nam."
+      "on": "Nếu bạn đăng ký, chúng tôi chỉ lưu email, thời điểm bạn đồng ý, phiên bản nội dung đồng ý, ngôn ngữ của trang, và trang đăng ký, để báo cho bạn khi Vay Đúng ra mắt chính thức. Chúng tôi xóa email sau khi đã báo, muộn nhất sau {months} tháng.",
+      "processor": "Email đi qua máy chủ của Vercel tại Singapore và được lưu tại Supabase ở khu vực Singapore. Tất cả đều ở bên ngoài Việt Nam."
     },
     "rights": {
       "title": "Quyền của bạn",
-      "body": "Bạn có thể yêu cầu xem, sửa hoặc xóa dữ liệu của mình, hoặc rút lại đồng ý, bằng cách gửi email đến {email}."
+      "body": "Bạn có quyền được biết về việc xử lý dữ liệu của mình, xem, sửa, xóa dữ liệu, rút lại đồng ý, yêu cầu hạn chế xử lý, phản đối việc xử lý, khiếu nại và yêu cầu bồi thường theo quy định của pháp luật. Hãy gửi yêu cầu đến {email}."
     },
     "never": {
       "title": "Những điều chúng tôi không làm",
-      "body": "Chúng tôi không bán dữ liệu của bạn, không gửi thông tin của bạn cho bên cho vay, và không nhận tiền để xếp hạng."
-    }
+      "body": "Chúng tôi không bán dữ liệu của bạn, không gửi thông tin của bạn cho bên cho vay, và hiện không nhận tiền từ bên cho vay."
+    },
+    "email": {
+      "title": "Khi bạn gửi email cho chúng tôi",
+      "body": "Nếu bạn gửi email cho chúng tôi, thư của bạn được lưu tại Gmail của Google (dịch vụ của Hoa Kỳ) để trả lời bạn."
+    },
+    "backHome": "← Về trang chủ"
   }
 }

@@ -25,6 +25,9 @@ export default function PrivacyPage() {
           {tHome("switchLanguage")}
         </LanguageLink>
       </header>
+      <Link href="/" className="inline-flex min-h-11 items-center self-start underline underline-offset-4">
+        {t("backHome")}
+      </Link>
       <h1 className="text-2xl font-bold">{t("title")}</h1>
       <p className="text-sm">{t("updated")}</p>
       <Section title={t("who.title")}>
@@ -49,6 +52,9 @@ export default function PrivacyPage() {
         ) : (
           <p>{t("waitlist.off")}</p>
         )}
+      </Section>
+      <Section title={t("email.title")}>
+        <p>{t("email.body")}</p>
       </Section>
       <Section title={t("rights.title")}>
         <p>{t("rights.body", { email: CONTROLLER.contactEmail })}</p>

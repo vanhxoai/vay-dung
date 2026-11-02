@@ -190,6 +190,7 @@ export function LoanFlow({
             <h1 ref={headingRef} tabIndex={-1} className="text-2xl font-bold outline-none">
               {t("Flow.need.title")}
             </h1>
+            <p className="mt-2 text-sm">{t("Home.privacy")}</p>
           </div>
           <ChoiceGroup
             label={t("Flow.need.purposeLabel")}

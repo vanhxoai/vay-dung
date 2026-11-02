@@ -43,7 +43,7 @@ test.describe("waitlist is off until a lawyer has answered", () => {
 
   test("the server refuses signups, even a valid one", async ({ request }) => {
     const res = await request.post("/api/waitlist", {
-      data: { email: "a@example.com", consent: true, consentVersion: "2026-11-02", locale: "vi" },
+      data: { email: "a@example.com", consent: true, consentVersion: "2026-11-03", locale: "vi" },
     });
     expect(res.status()).toBe(503);
   });

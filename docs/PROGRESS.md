@@ -84,4 +84,20 @@
 - A similar name is only a hint: a lawful business can have a similar name, and a scammer can use an exact one.
 - Dates on the English page use day/month/year.
 
-**Next:** Phase 5 (validation kit).
+## Phase 5: Validation kit (2026-11-03)
+**Status:** done, waiting for your review.
+
+- `docs/validation/interview-guide.md` and `note-template.md`: for 15–20 recent borrowers, in Vietnamese, with a consent script and steps for someone in distress.
+- Landing page at `/`, privacy notice at `/rieng-tu`, and a footer on every page.
+- Waitlist: form, consent, API and tests are ready, but it's **off** (`docs/validation/waitlist-setup.md`). No emails are collected.
+- Analytics: Vercel Web Analytics runs only when deployed on Vercel. Questionnaire steps are counted by fixed names only.
+- Reviews: compliance-reviewer and qa-tester, fixed. See docs/research/compliance-review-phase5.md.
+
+**Known limitations:**
+- The operator's name must be confirmed before going public.
+- With the waitlist off, there are no signup numbers.
+- Analytics can only be checked for real after deployment.
+- Page weight is about 385 KB, and the form takes about 7–8 s to become usable on slow 3G.
+- The consent text is long on a phone (about 9 lines), and that's for the lawyer to shorten.
+
+**Next:** Phase 6 (quality and launch).

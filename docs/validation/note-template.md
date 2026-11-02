@@ -1,6 +1,6 @@
 # Mẫu ghi chép phỏng vấn
 
-Sao chép cho mỗi buổi. Không ghi tên, số điện thoại, nơi làm việc cụ thể hay số tài khoản.
+Sao chép cho mỗi buổi và lưu bên ngoài kho mã, trên máy có mật khẩu; không dùng dịch vụ đám mây hay công cụ AI chép lời. Không ghi tên, số điện thoại, nơi làm việc cụ thể, số tài khoản hay tên người khác.
 
 **Mã người tham gia:** P__  **Ngày:** ____  **Thời lượng:** ____ phút  **Hình thức:** trực tiếp / video
 **Đã đồng ý tham gia:** có / không  **Đồng ý ghi âm:** có / không / không ghi âm
@@ -42,7 +42,7 @@ Sao chép cho mỗi buổi. Không ghi tên, số điện thoại, nơi làm vi�
 - Có tháng nào khó trả không, họ đã làm gì:
 - Điều họ hối tiếc, hoặc sẽ làm khác đi:
 - Điều họ ước gì được ai đó nói trước:
-- Phản ứng nếu có người nói "khoản này quá sức":
+- Có ai nói gì về việc khoản này có vừa sức không, và họ phản ứng thế nào:
 
 ## Từ chối và lừa đảo (nếu có)
 - Từng bị từ chối: có / không. Có biết lý do không:

@@ -12,7 +12,7 @@ test("the consent box starts unticked, and both fields are required", async ({ p
   const form = page.getByTestId("waitlist-form");
   await expect(form.getByRole("checkbox", { checked: false }).first()).toBeVisible();
   await page.waitForTimeout(500);
-  await form.getByRole("button", { name: "Đăng ký nhận tin" }).click();
+  await form.getByRole("button", { name: "Báo cho tôi khi ra mắt" }).click();
   await expect(form.getByText("Hãy nhập một địa chỉ email hợp lệ.")).toBeVisible();
   await expect(form.getByText("Bạn cần đánh dấu ô đồng ý")).toBeVisible();
 });
@@ -36,14 +36,14 @@ test("a signup sends only the email and consent record", async ({ page }) => {
   await page.waitForTimeout(500);
   await page.getByLabel("Email của bạn").fill("a@example.com");
   await page.getByTestId("waitlist-form").getByRole("checkbox").first().check();
-  await page.getByRole("button", { name: "Đăng ký nhận tin" }).click();
+  await page.getByRole("button", { name: "Báo cho tôi khi ra mắt" }).click();
   await expect(page.getByTestId("waitlist-done")).toBeVisible();
-  expect(sent).toEqual({ email: "a@example.com", consent: true, consentVersion: "2026-11-02", locale: "vi" });
+  expect(sent).toEqual({ email: "a@example.com", consent: true, consentVersion: "2026-11-03", locale: "vi" });
 });
 
 test("a failed signup says so, and the server reports no store configured as unavailable", async ({ page, request }) => {
   const res = await request.post("/api/waitlist", {
-    data: { email: "a@example.com", consent: true, consentVersion: "2026-11-02", locale: "vi" },
+    data: { email: "a@example.com", consent: true, consentVersion: "2026-11-03", locale: "vi" },
   });
   expect(res.status()).toBe(503);
   expect((await request.post("/api/waitlist", { data: { email: "a@example.com", consent: false } })).status()).toBe(400);
@@ -52,6 +52,6 @@ test("a failed signup says so, and the server reports no store configured as una
   await page.waitForTimeout(500);
   await page.getByLabel("Email của bạn").fill("a@example.com");
   await page.getByTestId("waitlist-form").getByRole("checkbox").first().check();
-  await page.getByRole("button", { name: "Đăng ký nhận tin" }).click();
+  await page.getByRole("button", { name: "Báo cho tôi khi ra mắt" }).click();
   await expect(page.getByText("Chưa gửi được.")).toBeVisible();
 });
