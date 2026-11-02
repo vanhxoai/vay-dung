@@ -48,7 +48,7 @@
         "Agribank"
       ],
       "licenseNumber": "Giấy phép số 24/GP-NHNN ngày 26/5/2021",
-      "website": null,
+      "website": "https://www.agribank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-nh%C3%A0-n%C6%B0%E1%BB%9Bc"
     },
     {
@@ -62,7 +62,7 @@
         "ACB"
       ],
       "licenseNumber": "Giấy phép số 91/GP-NHNN ngày 19/09/2018",
-      "website": null,
+      "website": "https://acb.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -76,7 +76,7 @@
         "LPBank"
       ],
       "licenseNumber": "Giấy phép số 33/GP-NHNN ngày 24/6/2026",
-      "website": null,
+      "website": "https://lpbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -104,7 +104,7 @@
         "Techcombank"
       ],
       "licenseNumber": "Giấy phép số 12/GP-NHNN ngày 18/03/2026",
-      "website": null,
+      "website": "https://techcombank.com",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -115,10 +115,12 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "MB"
+        "MB",
+        "MB Bank",
+        "MBBank"
       ],
       "licenseNumber": "Giấy phép số 03/GP-NHNN ngày 16/01/2026",
-      "website": null,
+      "website": "https://www.mbbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -132,7 +134,7 @@
         "VIB"
       ],
       "licenseNumber": "Giấy phép số 09/GP-NHNN ngày 13/02/2026",
-      "website": null,
+      "website": "https://www.vib.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -160,7 +162,7 @@
         "Sacombank"
       ],
       "licenseNumber": "Giấy phép số 111/GP-NHNN ngày 09/11/2018",
-      "website": null,
+      "website": "https://www.sacombank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -174,7 +176,7 @@
         "TPBank"
       ],
       "licenseNumber": "Giấy phép số 23/GP-NHNN ngày 25/5/2026",
-      "website": null,
+      "website": "https://tpb.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -185,10 +187,12 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "VPBank"
+        "VPBank",
+        "Cake",
+        "Cake by VPBank"
       ],
       "licenseNumber": "Giấy phép số 45/GP-NHNN ngày 31/7/2026",
-      "website": null,
+      "website": "https://www.vpbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -202,7 +206,7 @@
         "HDBank"
       ],
       "licenseNumber": "Giấy phép số 0026/NH-GP ngày 12/02/2020",
-      "website": null,
+      "website": "https://www.hdbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -239,9 +243,11 @@
       "legalName": "Ngân hàng TMCP An Bình",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "ABBank"
+      ],
       "licenseNumber": "Giấy phép số 120/GP-NHNN ngày 12/12/2018",
-      "website": null,
+      "website": "https://www.abbank.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -250,9 +256,11 @@
       "legalName": "Ngân hàng TMCP Bảo Việt",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "BAOVIET Bank"
+      ],
       "licenseNumber": "Giấy phép số 29/GP-NHNN ngày 09/6/2026",
-      "website": null,
+      "website": "https://baovietbank.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -261,9 +269,13 @@
       "legalName": "Ngân hàng TMCP Bản Việt",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "BVBank",
+        "Viet Capital Bank",
+        "Viet Capital Commercial Joint Stock Bank"
+      ],
       "licenseNumber": "Giấy phép số 0025/NH-GP ngày 22/8/1992",
-      "website": null,
+      "website": "https://bvbank.net.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -272,9 +284,11 @@
       "legalName": "Ngân hàng TMCP Bắc Á",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "BAC A BANK"
+      ],
       "licenseNumber": "Giấy phép số 47/GP-NHNN ngày 16/4/2019",
-      "website": null,
+      "website": "https://www.baca-bank.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -283,9 +297,11 @@
       "legalName": "Ngân hàng TMCP Xuất nhập khẩu Việt Nam",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "Eximbank"
+      ],
       "licenseNumber": "Giấy phép số 22/GP-NHNN ngày 14/5/2026",
-      "website": null,
+      "website": "https://eximbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -294,9 +310,11 @@
       "legalName": "Ngân hàng TMCP Kiên Long",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "KienlongBank"
+      ],
       "licenseNumber": "Giấy phép số 17/GP-NHNN ngày 03/4/2026",
-      "website": null,
+      "website": "https://kienlongbank.com",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -305,9 +323,11 @@
       "legalName": "Ngân hàng TMCP Hàng Hải Việt Nam",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "MSB"
+      ],
       "licenseNumber": "Giấy phép số 26/GP-NHNN ngày 28/5/2026",
-      "website": null,
+      "website": "https://www.msb.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -316,9 +336,12 @@
       "legalName": "Ngân hàng TMCP Nam Á",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "Nam A Bank",
+        "NamABank"
+      ],
       "licenseNumber": "Giấy phép số 18/GP-NHNN ngày 13/4/2023",
-      "website": null,
+      "website": "https://www.namabank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -327,9 +350,14 @@
       "legalName": "Ngân hàng TMCP Quốc dân",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "NCB",
+        "Ngân hàng Quốc Dân",
+        "National Citizen Bank",
+        "National Citizen Commercial Joint Stock Bank"
+      ],
       "licenseNumber": "Giấy phép số 01/GP-NHNN ngày 09/01/2026",
-      "website": null,
+      "website": "https://www.ncb-bank.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -338,9 +366,11 @@
       "legalName": "Ngân hàng TMCP Phương Đông",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "OCB"
+      ],
       "licenseNumber": "Giấy phép số 0061/NH-GP ngày 13/4/1996",
-      "website": null,
+      "website": "https://www.ocb.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -349,9 +379,13 @@
       "legalName": "Ngân hàng TMCP Thịnh vượng và Phát triển",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "PGBank",
+        "PG Bank",
+        "Prosperity and Growth Commercial Joint Stock Bank"
+      ],
       "licenseNumber": "Giấy phép số 42/GP-NHNN ngày 16/6/2021",
-      "website": null,
+      "website": "https://www.pgbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -360,9 +394,11 @@
       "legalName": "Ngân hàng TMCP Đại Chúng Việt Nam",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "PVcomBank"
+      ],
       "licenseNumber": "Giấy phép số 279/GP-NHNN ngày 16/9/2013",
-      "website": null,
+      "website": "https://www.pvcombank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -371,9 +407,11 @@
       "legalName": "Ngân hàng TMCP Sài Gòn",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "SCB"
+      ],
       "licenseNumber": "Giấy phép số 238/GP-NHNN ngày 26/12/2011",
-      "website": null,
+      "website": "https://www.scb.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -382,9 +420,11 @@
       "legalName": "Ngân hàng TMCP Đông Nam Á",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "SeABank"
+      ],
       "licenseNumber": "Giấy phép số 24/GP-NHNN ngày 26/5/2026",
-      "website": null,
+      "website": "https://www.seabank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -393,9 +433,11 @@
       "legalName": "Ngân hàng TMCP Sài Gòn công thương",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "Saigonbank"
+      ],
       "licenseNumber": "Giấy phép số 30/GP-NHNN ngày 18/6/2026",
-      "website": null,
+      "website": "https://www.saigonbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -404,9 +446,11 @@
       "legalName": "Ngân hàng TMCP Việt Á",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "VietABank"
+      ],
       "licenseNumber": "Giấy phép số 55/GP-NHNN ngày 31/05/2019",
-      "website": null,
+      "website": "https://vietabank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -415,9 +459,11 @@
       "legalName": "Ngân hàng TMCP Việt Nam Thương tín",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "Vietbank"
+      ],
       "licenseNumber": "Giấy phép số 05/GP-NHNN ngày 24/02/2023",
-      "website": null,
+      "website": "https://www.vietbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -442,9 +488,11 @@
       "legalNameEn": "Vietnam Joint Stock Commercial Bank of Industry and Trade",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "VietinBank"
+      ],
       "licenseNumber": "Giấy phép số 13/GP-NHNN ngày 17/6/2022",
-      "website": null,
+      "website": "https://www.vietinbank.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -454,9 +502,11 @@
       "legalNameEn": "Joint Stock Commercial Bank for Investment and Development of Vietnam",
       "category": "bank",
       "subtype": "NHTM Cổ phần",
-      "aliases": [],
+      "aliases": [
+        "BIDV"
+      ],
       "licenseNumber": "Giấy phép số 84/GP-NHNN ngày 23/4/2012",
-      "website": null,
+      "website": "https://bidv.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -467,10 +517,11 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "VCB"
+        "VCB",
+        "Vietcombank"
       ],
       "licenseNumber": "Giấy phép số 138/GP-NHNN ngày 23/5/2008",
-      "website": null,
+      "website": "https://www.vietcombank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -728,7 +779,9 @@
         "FE Credit",
         "FECredit",
         "FE",
-        "VPBank SMBC Finance"
+        "VPBank SMBC Finance",
+        "FE ONLINE",
+        "VPB SMBC FC"
       ],
       "licenseNumber": "Giấy phép số 69/GP-NHNN ngày 20/10/2021",
       "website": "https://fecredit.com.vn",
@@ -865,6 +918,6 @@
       "sourceUrl": "https://sbv.gov.vn/vi/c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh"
     }
   ],
-  "notes": "Source: SBV pages under \"Hệ thống các TCTD\" (https://sbv.gov.vn/vi/h%E1%BB%87-th%E1%BB%91ng-c%C3%A1c-tctd), each stating figures as of 30/09/2026 (list pages published 16-19/10/2026). Names are copied as shown on the SBV pages (including inconsistent casing); legalNameEn is the English name shown in the list where present. licenseNumber is the current/most recent licence shown on the list; many 2026 dates are re-issued licences (cấp đổi), not original founding dates. For TNEX the legalName keeps the SBV text including the \"tài chính cộng đồng cũ\" (former name) remark. Bank websites are null because the SBV bank pages do not list them (finance-company websites come from the SBV list's website column). Aliases are limited to names visible on the SBV list or its website column; common nicknames not shown there (e.g. OCB, MSB, SeABank, ABBank, PVcomBank, and \"$NAP\" for FE Credit) were deliberately NOT added because the SBV pages do not confirm them; add after checking each institution's own site. Ids vietinbank, bidv and vietcombank were assigned from the English legal names on the list. CLASSIFICATION: SBV lists only Agribank under NHTM Nhà nước; Vietcombank, BIDV and VietinBank appear under NHTM Cổ phần. The cổ phần page also lists TNHH MTV banks with zero charter capital (Vikki Bank, MBV, GPBank, VCB Neo), which the page does not explain; a footnote says VCB Neo was formerly Ngân hàng TNHH MTV Xây dựng. Other visible renames, not independently researched: Sacombank's legal name appears as \"Ngân hàng TMCP Sài Gòn Tài Lộc\", LPBank as \"Ngân hàng TMCP Lộc Phát Việt Nam\". FINANCE COMPANY CHANGES in the 30/09/2026 list: Lotte converted from specialised to general finance company (QĐ 1968/QĐ-NHNN 28/8/2026) with a name amendment (QĐ 119/QĐ-QLGS6 28/8/2026); SFinance received new licence 43/GP-NHNN on 10/7/2026 after a legal-form conversion (website shbfinance.com.vn); AEON had a name change (QĐ 2882/QĐ-QLGS6 24/10/2025); MB's finance arm is listed as \"MB Shinsei Consumer Credit Finance\" (old name Công ty tài chính TNHH MB; website mcredit.com.vn); VietCredit is listed as a general finance JSC (old name Xi Măng); FE Credit is listed as VPBank SMBC Finance (licence 69/GP-NHNN 20/10/2021 after legal-form change). Home Credit is still listed as operating on 30/09/2026; ownership is not covered by the SBV list and was not researched here. SKIPPED categories valid for category \"bank\" but not collected: Ngân hàng Chính sách xã hội (policy bank), Ngân hàng Hợp tác xã (Co-op Bank). SKIPPED because they do not fit the schema categories: công ty cho thuê tài chính (leasing), tổ chức tài chính vi mô (microfinance), quỹ tín dụng nhân dân, chi nhánh ngân hàng nước ngoài (foreign bank branches), văn phòng đại diện. Counts: 47 banks (1 state-owned, 34 under the NHTM Cổ phần heading, 10 foreign 100%-owned, 2 joint venture) and 16 finance companies.",
+  "notes": "Source: SBV pages under \"Hệ thống các TCTD\" (https://sbv.gov.vn/vi/h%E1%BB%87-th%E1%BB%91ng-c%C3%A1c-tctd), each stating figures as of 30/09/2026 (list pages published 16-19/10/2026). Names are copied as shown on the SBV pages (including inconsistent casing); legalNameEn is the English name shown in the list where present. licenseNumber is the current/most recent licence shown on the list; many 2026 dates are re-issued licences (cấp đổi), not original founding dates. For TNEX the legalName keeps the SBV text including the \"tài chính cộng đồng cũ\" (former name) remark. Bank websites are null because the SBV bank pages do not list them (finance-company websites come from the SBV list's website column). Aliases are limited to names visible on the SBV list or its website column; common nicknames not shown there (e.g. OCB, MSB, SeABank, ABBank, PVcomBank, and \"$NAP\" for FE Credit) were deliberately NOT added because the SBV pages do not confirm them; add after checking each institution's own site. Ids vietinbank, bidv and vietcombank were assigned from the English legal names on the list. CLASSIFICATION: SBV lists only Agribank under NHTM Nhà nước; Vietcombank, BIDV and VietinBank appear under NHTM Cổ phần. The cổ phần page also lists TNHH MTV banks with zero charter capital (Vikki Bank, MBV, GPBank, VCB Neo), which the page does not explain; a footnote says VCB Neo was formerly Ngân hàng TNHH MTV Xây dựng. Other visible renames, not independently researched: Sacombank's legal name appears as \"Ngân hàng TMCP Sài Gòn Tài Lộc\", LPBank as \"Ngân hàng TMCP Lộc Phát Việt Nam\". FINANCE COMPANY CHANGES in the 30/09/2026 list: Lotte converted from specialised to general finance company (QĐ 1968/QĐ-NHNN 28/8/2026) with a name amendment (QĐ 119/QĐ-QLGS6 28/8/2026); SFinance received new licence 43/GP-NHNN on 10/7/2026 after a legal-form conversion (website shbfinance.com.vn); AEON had a name change (QĐ 2882/QĐ-QLGS6 24/10/2025); MB's finance arm is listed as \"MB Shinsei Consumer Credit Finance\" (old name Công ty tài chính TNHH MB; website mcredit.com.vn); VietCredit is listed as a general finance JSC (old name Xi Măng); FE Credit is listed as VPBank SMBC Finance (licence 69/GP-NHNN 20/10/2021 after legal-form change). Home Credit is still listed as operating on 30/09/2026; ownership is not covered by the SBV list and was not researched here. SKIPPED categories valid for category \"bank\" but not collected: Ngân hàng Chính sách xã hội (policy bank), Ngân hàng Hợp tác xã (Co-op Bank). SKIPPED because they do not fit the schema categories: công ty cho thuê tài chính (leasing), tổ chức tài chính vi mô (microfinance), quỹ tín dụng nhân dân, chi nhánh ngân hàng nước ngoài (foreign bank branches), văn phòng đại diện. Counts: 47 banks (1 state-owned, 34 under the NHTM Cổ phần heading, 10 foreign 100%-owned, 2 joint venture) and 16 finance companies. ALIASES (2026-11-02): common brand names were added after checking each bank's own website, footer or an SBV page, because a real bank must not come back as 'not found' in the safety check. This replaces the earlier note that OCB, MSB, SeABank, ABBank and PVcomBank were left out. Left out: '$NAP' (only news articles link it to FE Credit), 'Ubank' (unverified), 'Timo' (the App Store lists BVBank's English name as publisher, but press reports say it was sold to Kredivo and BVBank's own site doesn't mention it). Bank websites were confirmed to load and show the bank's name; they are our data, not the SBV list.",
   "retrievedAt": "2026-11-01"
 }

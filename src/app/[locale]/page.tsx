@@ -20,6 +20,9 @@ export default function HomePage() {
       >
         {t("start")}
       </Link>
+      <Link href="/kiem-tra" className="inline-flex min-h-11 items-center underline underline-offset-4">
+        {t("checkLender")}
+      </Link>
       <p className="text-sm">{t("privacy")}</p>
       <Link
         href="/"

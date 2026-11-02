@@ -3,6 +3,7 @@
 import { useMemo, type RefObject } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { AFFORDABILITY } from "@/config/affordability";
+import { Link as IntlLink } from "@/i18n/navigation";
 import { formatDate, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
 import type { Offer, OfferRateNote } from "@/lib/recommend/offers";
 import { recommend, type IneligibleReason, type Need } from "@/lib/recommend/recommend";
@@ -229,6 +230,10 @@ export function Results({
           </ul>
         </details>
       ) : null}
+
+      <IntlLink href="/kiem-tra" className={linkClass}>
+        {t("Results.checkLender")}
+      </IntlLink>
 
       <SecondaryButton onClick={onEdit}>{t("Flow.edit")}</SecondaryButton>
     </div>
