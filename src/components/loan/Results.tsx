@@ -217,8 +217,11 @@ export function Results({
                   {offer.lenderName}: {locale === "en" && offer.nameEn ? offer.nameEn : offer.nameVi}
                 </p>
                 <p>{stale || offer.excludeCode === null ? t("Results.staleReason") : t(`Results.exclude.${offer.excludeCode}`)}</p>
+                {offer.existingCustomerRequired ? <p>{t("Offer.existingCustomer")}</p> : null}
+                {offer.confidence === "low" ? <p>{t("Offer.lowConfidence")}</p> : null}
                 {offer.rateNotes.map((n, i) => {
-                  const text = rateNoteText(n, t, locale);
+                  // A bank-wide average or an uncosted rate would read as this product's price.
+                  const text = n.kind === "benchmark" || n.kind === "offered_range" ? null : rateNoteText(n, t, locale);
                   return text ? (
                     <p key={i}>
                       {text}
@@ -227,9 +230,19 @@ export function Results({
                   ) : null;
                 })}
                 <p>
-                  <a href={offer.sourceUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                    {t("Offer.source")}
-                  </a>{" "}
+                  {offer.excludeCode === "conflicting_sources" ? (
+                    offer.sourceUrls.map((url, i) => (
+                      <span key={url}>
+                        <a href={url} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                          {t("Offer.sourceN", { n: i + 1 })}
+                        </a>{" "}
+                      </span>
+                    ))
+                  ) : (
+                    <a href={offer.sourceUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      {t("Offer.source")}
+                    </a>
+                  )}{" "}
                   · {t("Offer.checkedOn", { date: formatDate(offer.oldestRetrievedAt) })}
                 </p>
               </li>
@@ -271,7 +284,7 @@ function reasonValue(reason: IneligibleReason, o: Offer, locale: AppLocale): str
 
 /** A published rate that isn't this user's cost. It always states its basis and period. */
 export function rateNoteText(n: OfferRateNote, t: ReturnType<typeof useTranslations>, locale: AppLocale): string | null {
-  const period = n.period === "monthly" ? t("Offer.perMonth") : n.period === "yearly" ? t("Offer.perYear") : "";
+  const period = n.period === "daily" ? t("Offer.perDay") : n.period === "monthly" ? t("Offer.perMonth") : n.period === "yearly" ? t("Offer.perYear") : "";
   const parts = [n.basis === "flat" ? t("Offer.basisFlat") : n.basis === "reducing" ? t("Offer.basisReducing") : t("Offer.basisUnknown")];
   if (n.period === "unknown") parts.push(t("Offer.periodUnknown"));
   const basis = parts.join(", ");

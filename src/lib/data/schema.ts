@@ -109,7 +109,7 @@ export const ProductStatus = z.enum([
 
 /** How a rate is quoted. Never assumed: "unknown" when the source doesn't say. */
 export const RateBasis = z.enum(["flat", "reducing", "unknown"]);
-export const RatePeriod = z.enum(["monthly", "yearly", "unknown"]);
+export const RatePeriod = z.enum(["daily", "monthly", "yearly", "unknown"]);
 
 /**
  * What a published rate figure actually is (compliance M1). Only `offered_range`
@@ -351,6 +351,8 @@ export const Product = z.strictObject({
   /** If true, keep out of rankings (e.g. only secondary sources). Shown as "chưa đủ dữ liệu". */
   excludeFromRanking: z.boolean(),
   excludeReason: z.string().optional(),
+  /** Set when the general reasons in src/lib/recommend/offers.ts wouldn't be true of this product. */
+  excludeCode: z.enum(["conflicting_sources", "undated_document"]).optional(),
   notes: z.string().optional(),
 });
 export type Product = z.infer<typeof Product>;

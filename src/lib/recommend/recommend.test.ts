@@ -18,6 +18,26 @@ const need = (o: Partial<Need> = {}): Need => ({
   ...o,
 });
 
+describe("banks that publish no comparable rate", () => {
+  const find = (id: string) => offers.find((o) => o.key.endsWith(id)) as Offer;
+
+  it("never costs a daily rate", () => {
+    const acb = find("acb-thau-chi-tieu-dung-online");
+    expect(acb.rate).toBeNull();
+    expect(acb.rateNotes.find((n) => n.kind === "advertised_floor")?.period).toBe("daily");
+  });
+
+  it("gives the real reason when documents conflict or are undated", () => {
+    expect(find("sacombank-vay-tieu-dung-tu-the-tin-dung").excludeCode).toBe("conflicting_sources");
+    expect(find("hdbank-vay-tieu-dung-linh-hoat").excludeCode).toBe("undated_document");
+  });
+
+  it("keeps ACB, Sacombank, VIB and HDBank out of the ranking", () => {
+    const ranked = recommend(need(), offers, today).ranked.map((r) => r.offer.lenderName);
+    for (const name of ["ACB", "Sacombank", "VIB", "HDBank"]) expect(ranked).not.toContain(name);
+  });
+});
+
 function offer(o: Partial<Offer> = {}): Offer {
   return {
     key: "acme/loan",

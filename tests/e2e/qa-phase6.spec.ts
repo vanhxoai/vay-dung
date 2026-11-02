@@ -32,6 +32,17 @@ test.describe("phase 6 ship-check", () => {
     }
   });
 
+  // Compliance: a bank-wide average, or half of an unverified rate pair, read as the product's own rate.
+  test("products we can't compare show only what's true of them", async ({ page }) => {
+    await results(page, "20000000", "15000000", "12");
+    const section = page.locator("details").filter({ hasText: "0,06%/ngày" });
+    await expect(section).toContainText("Hai tài liệu chính thức của ngân hàng ghi lãi suất khác nhau");
+    await expect(section).toContainText("tài liệu không ghi ngày");
+    await expect(section).not.toContainText("tham chiếu");
+    await expect(section).not.toContainText("1,7");
+    await expect(section).not.toContainText("chưa rõ theo tháng hay theo năm: 0,06");
+  });
+
   // Regression: Back on a phone left the questionnaire and looked like the answers were lost.
   test("the Back button moves between steps and keeps the answers", async ({ page }) => {
     await results(page, "20000000", "15000000", "24");

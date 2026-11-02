@@ -174,8 +174,10 @@
       "lender_unverified": "Chúng tôi chưa xác minh được bên cho vay ghi trong hợp đồng của sản phẩm này.",
       "unverified": "Chúng tôi chưa xác minh được sản phẩm này và các điều kiện của nó trên trang chính thức.",
       "rate_varies": "Lãi suất thay đổi nhiều tùy chương trình hoặc nguồn đã cũ, nên chưa tính được mức cho bạn.",
-      "ceiling_only": "Chúng tôi chỉ tìm thấy khung lãi suất trần, chưa thấy lãi suất chào bán.",
-      "floor_only": "Chúng tôi chỉ tìm thấy mức \"từ X%\", chưa thấy khoảng lãi suất chào bán.",
+      "conflicting_sources": "Hai tài liệu chính thức của ngân hàng ghi lãi suất khác nhau cho cùng kỳ hạn và đều không ghi ngày, nên chưa biết mức nào đúng.",
+      "undated_document": "Số liệu chỉ đến từ một tài liệu không ghi ngày, khác với điều khoản mới hơn của ngân hàng, và chưa thấy trên trang sản phẩm.",
+      "ceiling_only": "Chúng tôi chỉ tìm thấy khung lãi suất trần, chưa thấy lãi suất thực tế.",
+      "floor_only": "Chúng tôi chỉ tìm thấy mức lãi suất khởi điểm (\"từ...\"), chưa thấy khoảng lãi suất thực tế.",
       "no_rate": "Chúng tôi chưa tìm thấy lãi suất được công bố cho sản phẩm này."
     },
     "checkLender": "Kiểm tra một bên cho vay hoặc ứng dụng"
@@ -192,6 +194,7 @@
     "advertised": "Lãi suất công bố",
     "basisFlat": "tính trên số tiền vay ban đầu (lãi phẳng)",
     "basisReducing": "tính trên dư nợ giảm dần",
+    "perDay": "/ngày",
     "perMonth": "/tháng",
     "perYear": "/năm",
     "assumption": "giả định: suy ra từ ví dụ của bên cho vay, cách tính lãi chưa được ghi rõ; hợp đồng sẽ ghi lãi suất quy đổi trên dư nợ giảm dần",

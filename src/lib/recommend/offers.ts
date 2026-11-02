@@ -43,7 +43,7 @@ export type OfferRateNote = {
   minPercent: number | null;
   maxPercent: number | null;
   basis: "flat" | "reducing" | "unknown";
-  period: "monthly" | "yearly" | "unknown";
+  period: "daily" | "monthly" | "yearly" | "unknown";
   oldDocumentDate: string | null;
 };
 
@@ -79,6 +79,8 @@ export type ExcludeCode =
   | "lender_unverified"
   | "unverified"
   | "rate_varies"
+  | "conflicting_sources"
+  | "undated_document"
   | "ceiling_only"
   | "floor_only"
   | "no_rate";
@@ -153,13 +155,14 @@ function pickOfferedRate(p: Product): Product["rates"][number] | null {
       r.minPercent.value !== null &&
       r.maxPercent.value !== null &&
       r.basis.value !== "unknown" &&
-      r.period.value !== "unknown",
+      (r.period.value === "monthly" || r.period.value === "yearly"),
   );
   return offered.find((r) => r.segment?.toLowerCase().includes("mới")) ?? offered.find((r) => r.segment === null) ?? offered[0] ?? null;
 }
 
 function exclusionCode(p: Product, rate: Product["rates"][number] | null): ExcludeCode | null {
   if (!p.excludeFromRanking && rate !== null) return null;
+  if (p.excludeCode) return p.excludeCode;
   const reason = (p.excludeReason ?? "").toLowerCase();
   if (reason.includes("blog")) return "secondary_sources";
   if (reason.includes("bên cho vay")) return "lender_unverified";
