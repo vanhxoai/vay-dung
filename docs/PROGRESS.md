@@ -115,7 +115,7 @@
 **Next:** the launch check below.
 
 ## Launch check (2026-11-02)
-**Status:** live at https://vay-dung.vercel.app. Not shared with anyone yet. Keeping it live is waiting for your decision.
+**Status:** live at https://vay-dung.vercel.app. Not shared with anyone yet. You decided to keep it live (2026-11-02).
 
 The deployment went straight to production, so there was no preview step (DECISIONS #51). The planned checks ran on the live site instead:
 
@@ -129,4 +129,4 @@ The deployment went straight to production, so there was no preview step (DECISI
 
 **First real visitor:** not yet. Record the date here when it happens, because the 60-day limit may start then.
 
-**Next:** your decision on keeping it live, then the interviews.
+**Next:** the interviews.
