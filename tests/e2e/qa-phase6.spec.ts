@@ -25,6 +25,13 @@ test.describe("phase 6 ship-check", () => {
     await expect(page.getByRole("heading", { name: "Bạn có thể làm gì thay vào đó" })).toBeVisible();
   });
 
+  test("during the soft launch, search engines are asked not to list any page", async ({ page }) => {
+    for (const path of ["/", "/en", "/vay", "/kiem-tra", "/rieng-tu"]) {
+      await page.goto(path);
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+    }
+  });
+
   // Regression: Back on a phone left the questionnaire and looked like the answers were lost.
   test("the Back button moves between steps and keeps the answers", async ({ page }) => {
     await results(page, "20000000", "15000000", "24");

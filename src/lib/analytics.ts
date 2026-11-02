@@ -6,9 +6,11 @@
  * was told (amount, income, verdict, lender) can ever be sent. The real URL doesn't change.
  */
 import { pageview } from "@vercel/analytics";
+import { ANALYTICS_ENABLED } from "@/config/site";
 
 export type FunnelStep = "buoc-2" | "ket-qua";
 
 export function trackStep(step: FunnelStep): void {
+  if (!ANALYTICS_ENABLED) return;
   pageview({ path: `/vay/${step}` });
 }

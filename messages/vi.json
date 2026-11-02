@@ -13,7 +13,7 @@
       "independent": "Hiện không nhận tiền từ bên cho vay, không bán thông tin của bạn, và không cho vay."
     },
     "start": "Bắt đầu (khoảng 2 phút)",
-    "privacy": "Không cần đăng nhập. Những gì bạn nhập chỉ được tính trên máy của bạn, không gửi đi. Chúng tôi có đếm lượt xem trang, không kèm những gì bạn nhập. Xem mục Quyền riêng tư ở cuối trang.",
+    "privacy": "Không cần đăng nhập. Những gì bạn nhập vào bảng câu hỏi và trang kiểm tra chỉ được tính trên máy của bạn, không gửi đi. Xem mục Quyền riêng tư ở cuối trang.",
     "switchLanguage": "English",
     "checkLender": "Kiểm tra một bên cho vay hoặc ứng dụng",
     "headline": "Trước khi vay, hãy biết bạn thật sự phải trả bao nhiêu",
@@ -43,7 +43,7 @@
     },
     "finances": {
       "title": "Tình hình tài chính của bạn",
-      "privacy": "Thông tin này chỉ dùng để tính toán ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu trên máy chủ. Riêng khi bạn đổi ngôn ngữ, câu trả lời được giữ tạm trên trình duyệt này để không phải nhập lại, rồi được xóa. Khi bạn bấm xem kết quả, chúng tôi chỉ đếm một lượt hoàn thành, không kèm con số nào.",
+      "privacy": "Thông tin này chỉ dùng để tính toán ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu trên máy chủ. Riêng khi bạn đổi ngôn ngữ, câu trả lời được giữ tạm trên trình duyệt này để không phải nhập lại, rồi được xóa.",
       "incomeLabel": "Thu nhập mỗi tháng của bạn",
       "incomeHint": "Số tiền thực nhận. Nếu chưa có thu nhập, hãy nhập 0.",
       "debtLabel": "Mỗi tháng bạn đang trả nợ bao nhiêu?",
@@ -265,7 +265,7 @@
   "Safety": {
     "title": "Kiểm tra bên cho vay",
     "intro": "Nhập tên bên cho vay, ứng dụng hoặc trang web. Chúng tôi đối chiếu với danh sách của Ngân hàng Nhà nước, và giúp bạn nhận ra các dấu hiệu cần kiểm tra.",
-    "privacy": "Việc kiểm tra diễn ra ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu lại những gì bạn nhập. Chúng tôi có đếm lượt xem trang, không kèm những gì bạn nhập.",
+    "privacy": "Việc kiểm tra diễn ra ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu lại những gì bạn nhập.",
     "nameLabel": "Tên bên cho vay, ứng dụng hoặc trang web",
     "nameHint": "Ví dụ: tên công ty, tên ứng dụng hoặc địa chỉ trang web. Không biết tên? Hãy chọn các dấu hiệu bên dưới.",
     "signsLabel": "Họ có làm điều nào dưới đây không?",
@@ -386,12 +386,12 @@
       "language": "Riêng khi bạn đổi ngôn ngữ giữa chừng trong bảng câu hỏi, câu trả lời được giữ tạm trên trình duyệt này. Sau 2 phút chúng không còn được dùng, và được xóa khi bạn mở lại một trang của Vay Đúng hoặc đóng thẻ."
     },
     "analytics": {
-      "title": "Thống kê lượt truy cập",
-      "body": "Chúng tôi dùng Vercel Web Analytics để biết có bao nhiêu người xem mỗi trang và đi hết từng bước của bảng câu hỏi. Với mỗi lượt xem, công cụ này ghi nhận thời điểm, địa chỉ trang, trang bạn đến từ đâu, vị trí ước tính (đến cấp thành phố), loại thiết bị, hệ điều hành và trình duyệt. Công cụ không dùng cookie của bên thứ ba. Vercel nhận biết lượt truy cập bằng một mã băm tạo từ yêu cầu gửi đến, và bỏ mã này sau 24 giờ. Chúng tôi chỉ xem số liệu tổng hợp, nhưng việc mở trang vay hoặc đi đến bước kết quả có thể cho thấy một người đang tìm hiểu về khoản vay. Công cụ không nhận số tiền, thu nhập, tuổi hay kết quả của bạn. Vercel là công ty Hoa Kỳ, và dữ liệu được xử lý bên ngoài Việt Nam. Ở gói miễn phí, Vercel chỉ cam kết giữ số liệu cho chúng tôi xem trong 1 tháng; thực tế Vercel có thể lưu lâu hơn."
+      "title": "Không dùng công cụ thống kê",
+      "body": "Hiện chúng tôi không dùng công cụ thống kê lượt truy cập. Máy chủ của Vercel vẫn nhận và ghi lại các yêu cầu khi bạn mở trang, như nêu ở mục Lưu trữ trang web bên dưới. Nếu sau này dùng công cụ thống kê, chúng tôi sẽ cập nhật trang này trước."
     },
     "hosting": {
       "title": "Lưu trữ trang web",
-      "body": "Trang web được đặt trên Vercel, công ty Hoa Kỳ, với máy chủ bên ngoài Việt Nam. Khi bạn mở một trang, máy chủ của Vercel nhận địa chỉ IP và thông tin kỹ thuật của yêu cầu, trong đó có địa chỉ trang bạn mở, để vận hành và bảo vệ dịch vụ. Những gì bạn nhập vào bảng câu hỏi và trang kiểm tra không nằm trong các yêu cầu này."
+      "body": "Trang web được đặt trên Vercel, công ty Hoa Kỳ, với máy chủ bên ngoài Việt Nam. Khi bạn mở một trang, máy chủ của Vercel nhận và ghi lại địa chỉ IP và thông tin kỹ thuật của yêu cầu, trong đó có địa chỉ trang bạn mở, để vận hành và bảo vệ dịch vụ. Những gì bạn nhập vào bảng câu hỏi và trang kiểm tra không nằm trong các yêu cầu này."
     },
     "waitlist": {
       "title": "Danh sách nhận tin",

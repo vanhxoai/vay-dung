@@ -55,19 +55,19 @@ test.describe("waitlist is off until a lawyer has answered", () => {
 });
 
 test.describe("privacy notice", () => {
-  test("names who runs the site, what stays on the device, analytics and rights", async ({ page }) => {
+  test("names who runs the site, what stays on the device, that there's no analytics, and rights", async ({ page }) => {
     await page.goto("/rieng-tu");
     const main = page.locator("main");
     await expect(main).toContainText("chjopchjop1210@gmail.com");
     await expect(main).toContainText("chỉ được xử lý ngay trên máy của bạn");
-    await expect(main).toContainText("Vercel Web Analytics");
-    await expect(main).toContainText("không dùng cookie");
+    await expect(main).toContainText("không dùng công cụ thống kê lượt truy cập");
+    await expect(main).not.toContainText("Vercel Web Analytics");
     await expect(main).toContainText("rút lại đồng ý");
   });
 });
 
 test.describe("analytics", () => {
-  test("only fixed step names are sent: nothing typed, and no verdict", async ({ page }) => {
+  test("off for the soft launch: the questionnaire records nothing, and no page claims to count", async ({ page }) => {
     await page.addInitScript(() => {
       const w = window as unknown as { va: (...a: unknown[]) => void; __calls: unknown[][] };
       w.__calls = [];
@@ -86,10 +86,8 @@ test.describe("analytics", () => {
     await expect(page.getByRole("heading", { name: "Kết quả của bạn" })).toBeVisible();
 
     const calls = await page.evaluate(() => (window as unknown as { __calls: unknown[][] }).__calls);
-    expect(calls).toEqual([
-      ["pageview", { path: "/vay/buoc-2" }],
-      ["pageview", { path: "/vay/ket-qua" }],
-    ]);
+    expect(calls).toEqual([]);
+    await expect(page.locator("main")).not.toContainText("đếm");
     expect(new URL(page.url()).pathname).toBe("/vay");
   });
 });

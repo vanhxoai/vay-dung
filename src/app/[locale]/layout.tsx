@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { DraftCleanup } from "@/components/loan/DraftCleanup";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
+import { ANALYTICS_ENABLED, SEARCH_INDEXING_ENABLED } from "@/config/site";
 import { SiteFooter } from "@/components/SiteFooter";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
@@ -20,7 +21,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata");
-  return { title: t("title"), description: t("description") };
+  return { title: t("title"), description: t("description"), robots: SEARCH_INDEXING_ENABLED ? undefined : { index: false, follow: false } };
 }
 
 export default async function LocaleLayout({
@@ -37,8 +38,8 @@ export default async function LocaleLayout({
           {children}
           <SiteFooter />
         </NextIntlClientProvider>
-        {/* Only when deployed on Vercel: nothing runs locally or in tests. */}
-        {process.env.VERCEL === "1" ? <SiteAnalytics /> : null}
+        {/* Only when switched on and deployed on Vercel: nothing runs locally or in tests. */}
+        {ANALYTICS_ENABLED && process.env.VERCEL === "1" ? <SiteAnalytics /> : null}
       </body>
     </html>
   );

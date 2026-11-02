@@ -110,4 +110,6 @@
 - Reviews: finance-math-checker (no blocker; premium low end fixed), compliance-reviewer (2 wording/logic blockers fixed; see docs/research/compliance-review-phase6.md), qa-tester (no blockers; Back button, under-20 verdict and smaller items fixed).
 - Data age: nothing over 90 days. Oldest figure 2026-11-01. Warnings start 31/12/2026; products stop being ranked after 30/01/2027 unless refreshed.
 
-**Next:** your decision on how to launch, then deployment.
+- Launch path chosen: soft launch by direct link, analytics off, search listing off (DECISIONS #49, #50).
+
+**Next:** preview deployment, the preview check, then production after your approval.

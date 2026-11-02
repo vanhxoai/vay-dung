@@ -13,7 +13,7 @@
       "independent": "Currently takes no money from lenders, doesn't sell your information, and doesn't lend."
     },
     "start": "Start (about 2 minutes)",
-    "privacy": "No login. What you enter is calculated only on your device and isn't sent anywhere. We do count page views, without anything you enter. See Privacy at the bottom of the page.",
+    "privacy": "No login. What you enter in the questionnaire and lender check is calculated only on your device and isn't sent anywhere. See Privacy at the bottom of the page.",
     "switchLanguage": "Tiếng Việt",
     "checkLender": "Check a lender or app",
     "headline": "Before you borrow, know what you'll really have to pay",
@@ -43,7 +43,7 @@
     },
     "finances": {
       "title": "Your finances",
-      "privacy": "This is only used for the calculation on your device. We don't send it anywhere or store it on a server. If you switch language, your answers are kept briefly in this browser so you don't have to retype them, then deleted. When you tap to see results, we only count one completion, without any of your numbers.",
+      "privacy": "This is only used for the calculation on your device. We don't send it anywhere or store it on a server. If you switch language, your answers are kept briefly in this browser so you don't have to retype them, then deleted.",
       "incomeLabel": "Your monthly income",
       "incomeHint": "What you actually receive. If you have no income right now, enter 0.",
       "debtLabel": "How much do you pay towards debts each month?",
@@ -265,7 +265,7 @@
   "Safety": {
     "title": "Check a lender",
     "intro": "Enter a lender, app or website. We compare it with the State Bank of Vietnam's lists and help you spot signs worth checking.",
-    "privacy": "The check runs on your device. We don't send or keep what you enter. We do count page views, without anything you enter.",
+    "privacy": "The check runs on your device. We don't send or keep what you enter.",
     "nameLabel": "Lender, app or website name",
     "nameHint": "For example: a company name, app name or web address. Don't know the name? Just choose the signs below.",
     "signsLabel": "Have they done any of these?",
@@ -386,12 +386,12 @@
       "language": "If you switch language midway through the questionnaire, your answers are kept briefly in this browser. After 2 minutes they're no longer used, and they're deleted when you open another Vay Đúng page or close the tab."
     },
     "analytics": {
-      "title": "Visit statistics",
-      "body": "We use Vercel Web Analytics to see how many people view each page and get through each step of the questionnaire. For each view it records the time, the page address, the site you came from, your estimated location (to city level), and your device type, operating system and browser. It doesn't use third-party cookies. Vercel recognises a visit using a hash made from the incoming request, and discards it after 24 hours. We only look at totals, but opening the loan page or reaching the results step can show that someone is looking into a loan. It doesn't receive your amount, income, age or result. Vercel is a US company, and the data is processed outside Vietnam. On the free plan Vercel only guarantees keeping the figures for us to view for 1 month; in practice Vercel may keep them longer."
+      "title": "No analytics tool",
+      "body": "We don't currently use a visitor analytics tool. Vercel's servers still receive and log requests when you open a page, as described under Website hosting below. If we start using an analytics tool, we'll update this page first."
     },
     "hosting": {
       "title": "Website hosting",
-      "body": "The site is hosted on Vercel, a US company, on servers outside Vietnam. When you open a page, Vercel's servers receive your IP address and technical request details, including the address of the page, to run and protect the service. What you enter in the questionnaire and lender check isn't part of these requests."
+      "body": "The site is hosted on Vercel, a US company, on servers outside Vietnam. When you open a page, Vercel's servers receive and log your IP address and technical request details, including the address of the page, to run and protect the service. What you enter in the questionnaire and lender check isn't part of these requests."
     },
     "waitlist": {
       "title": "News list",

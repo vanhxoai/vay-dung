@@ -10,6 +10,15 @@ export const CONTROLLER = {
 /** Bump when the consent text changes: each signup stores the version it agreed to. */
 export const CONSENT_VERSION = "2026-11-02";
 
+/**
+ * Analytics is OFF for the soft launch (DECISIONS #49). Turning it on also means restoring
+ * the privacy wording: see docs/validation/analytics-setup.md.
+ */
+export const ANALYTICS_ENABLED: boolean = false;
+
+/** Soft launch: reachable by direct link only, so search engines are asked not to list it (DECISIONS #50). */
+export const SEARCH_INDEXING_ENABLED: boolean = false;
+
 /** Signups are deleted after this, or when we've told people the app is open, whichever is first. */
 export const WAITLIST_RETENTION_MONTHS = 12;
 
