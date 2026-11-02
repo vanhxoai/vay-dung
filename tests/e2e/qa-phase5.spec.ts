@@ -5,7 +5,7 @@ const waitlistOn = process.env.WAITLIST_ENABLED === "true";
 test.describe("phase 5 QA: any state", () => {
   test("the privacy notice names the operator confirmed by the owner (DECISIONS #43)", async ({ page }) => {
     await page.goto("/rieng-tu");
-    await expect(page.locator("main")).toContainText("Nguyen Van A");
+    await expect(page.locator("main")).toContainText("Nguyễn Vân Anh");
   });
 
   test("the language switch keeps you on the same page, both ways", async ({ page }) => {

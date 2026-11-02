@@ -3,7 +3,7 @@
  * Law 91/2025 art. 9: consent must say who controls the data.
  */
 export const CONTROLLER = {
-  name: "Nguyen Van A",
+  name: "Nguyễn Vân Anh",
   contactEmail: "chjopchjop1210@gmail.com",
 } as const;
 
