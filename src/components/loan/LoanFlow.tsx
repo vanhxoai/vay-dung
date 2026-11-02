@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import { LanguageLink } from "@/components/LanguageLink";
 import { Link } from "@/i18n/navigation";
-import { parseMoneyInput, type AppLocale } from "@/lib/format";
+import { parseMoneyInput } from "@/lib/format";
 import type { Offer } from "@/lib/recommend/offers";
 import type { IncomeProof, Need, Purpose, Urgency } from "@/lib/recommend/recommend";
 import { saveDraft, takeDraft } from "./draft";
@@ -71,7 +72,6 @@ export function LoanFlow({
   licensedSources: { title: string; url: string }[];
 }) {
   const t = useTranslations();
-  const locale = useLocale() as AppLocale;
   const [form, setForm] = useState<Form>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -154,7 +154,6 @@ export function LoanFlow({
         }
       : null;
 
-  const otherLocale = locale === "vi" ? "en" : "vi";
   const rememberForLanguageSwitch = (e: React.MouseEvent) => {
     // Ctrl/Cmd-click opens another tab; nothing should be left behind in this one.
     if (form === EMPTY || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
@@ -167,9 +166,9 @@ export function LoanFlow({
         <Link href="/" className="inline-flex min-h-11 items-center font-bold">
           {t("Home.title")}
         </Link>
-        <Link href="/vay" locale={otherLocale} onClick={rememberForLanguageSwitch} className="inline-flex min-h-11 items-center px-2 underline underline-offset-4">
+        <LanguageLink href="/vay" onClick={rememberForLanguageSwitch} className="inline-flex min-h-11 items-center px-2 underline underline-offset-4">
           {t("Home.switchLanguage")}
-        </Link>
+        </LanguageLink>
       </header>
 
       {form.step === 1 ? (

@@ -22,12 +22,12 @@ test.describe("Phase 4 checkpoint: 3 licensed lenders", () => {
     test(`${name} is on the list, with its legal name, source and a caution`, async ({ page }) => {
       const r = await check(page, name);
       await expect(r).toHaveAttribute("data-name-kind", "licensed");
-      await expect(r).toContainText("Tên này có trong danh sách của Ngân hàng Nhà nước");
+      await expect(r).toContainText("Tên này khớp với một bên có trong danh sách của Ngân hàng Nhà nước");
       await expect(r).toContainText(legal);
       await expect(r).toContainText("Kẻ lừa đảo có thể mạo danh");
-      await expect(r.getByRole("link", { name: "Xem trên danh sách" })).toHaveAttribute("href", /sbv\.gov\.vn/);
-      // Being on the list is never presented as "safe".
-      await expect(r).not.toContainText(/an toàn|uy tín|đáng tin/i);
+      await expect(r.getByRole("link", { name: "Xem danh sách của Ngân hàng Nhà nước" })).toHaveAttribute("href", /sbv\.gov\.vn/);
+      await expect(r).toContainText("không có nghĩa là khoản vay an toàn");
+      await expect(r).not.toContainText(/uy tín|đáng tin/i);
     });
   }
 });
@@ -37,7 +37,7 @@ test.describe("Phase 4 checkpoint: 3 made-up names", () => {
     test(`${name} is "not found", never "unlicensed" or "scam"`, async ({ page }) => {
       const r = await check(page, name);
       await expect(r).toHaveAttribute("data-name-kind", "not_found");
-      await expect(r).toContainText("Không tìm thấy tên này trong danh sách của Ngân hàng Nhà nước");
+      await expect(r).toContainText("Không tìm thấy tên này trong dữ liệu chúng tôi lấy từ Ngân hàng Nhà nước");
       await expect(r).toContainText("không có nghĩa là họ không có giấy phép hoặc là lừa đảo");
       await expect(r).toHaveAttribute("data-level", "careful");
     });
@@ -52,7 +52,7 @@ test.describe("impersonation and warning signs", () => {
   });
 
   test("a real lender's name plus a high sign says stop, with sources", async ({ page }) => {
-    const r = await check(page, "Home Credit", ["Bắt tôi chuyển tiền trước"]);
+    const r = await check(page, "Home Credit", ["Bắt tôi chuyển khoản trước"]);
     await expect(r).toHaveAttribute("data-level", "stop");
     await expect(page.getByTestId("safety-stop")).toContainText("Hãy dừng lại");
     await expect(r).toContainText("Chúng tôi không thể kết luận đây là lừa đảo");
@@ -75,6 +75,29 @@ test.describe("impersonation and warning signs", () => {
   });
 });
 
+test("changing the name or a sign clears the old result, so it can't seem to apply to the new answer", async ({ page }) => {
+  const r = await check(page, "Home Credit");
+  await expect(r).toBeVisible();
+  await page.getByLabel("Tên bên cho vay, ứng dụng hoặc trang web").fill("Tiền Ơi");
+  await expect(page.getByTestId("safety-result")).toHaveCount(0);
+  await page.getByRole("button", { name: "Kiểm tra", exact: true }).click();
+  await expect(page.getByTestId("safety-result")).toHaveAttribute("data-name-kind", "not_found");
+  await page.getByText("Xin mã OTP").click();
+  await expect(page.getByTestId("safety-result")).toHaveCount(0);
+});
+
+test("someone who may be in a scam isn't sent on to the loan flow", async ({ page }) => {
+  const r = await check(page, "Home Credit", ["Xin mã OTP"]);
+  await expect(r).toBeVisible();
+  await expect(r.getByRole("link", { name: "Xem chi phí thật của khoản vay" })).toHaveCount(0);
+});
+
+test("a phone number says it wasn't checked", async ({ page }) => {
+  const r = await check(page, "0912 345 678");
+  await expect(r).toHaveAttribute("data-name-kind", "phone");
+  await expect(r).toContainText("không kiểm tra được số điện thoại");
+});
+
 test("nothing typed on this page goes over the network", async ({ page }) => {
   const seen: string[] = [];
   page.on("request", (r) => seen.push(`${r.url()} ${r.postData() ?? ""}`));
@@ -89,7 +112,7 @@ test.describe("English", () => {
     await expect(page.getByRole("button", { name: "Check", exact: true })).toBeEnabled();
     await page.getByLabel("Lender, app or website name").fill("Home Credit");
     await page.getByRole("button", { name: "Check", exact: true }).click();
-    await expect(page.getByTestId("safety-result")).toContainText("This name is on the State Bank of Vietnam's list");
+    await expect(page.getByTestId("safety-result")).toContainText("This name matches an institution on the State Bank of Vietnam's list");
   });
 });
 

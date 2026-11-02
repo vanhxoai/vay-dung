@@ -18,7 +18,9 @@ export type NameResult =
   | { kind: "empty" }
   | { kind: "licensed"; institution: SafetyInstitution; matchedWebsite: boolean }
   | { kind: "similar"; institutions: SafetyInstitution[] }
-  | { kind: "not_found" };
+  | { kind: "not_found" }
+  /** A phone number: we can't check those, and must not imply that we did. */
+  | { kind: "phone" };
 
 export type NameFlag = "generic_name" | "too_easy";
 
@@ -46,7 +48,9 @@ export function normalize(text: string): string {
 const compact = (normalized: string) => normalized.replace(/ /g, "");
 
 /** Legal-form phrases: "Ngân hàng TMCP Hàng Hải" and "Hàng Hải" are the same name to a user. */
-const LEGAL_PHRASES = /\b(ngan hang|tmcp|thuong mai co phan|cong ty tai chinh|tai chinh|cong ty|tnhh|mot thanh vien|mtv|co phan|joint stock|commercial|bank|finance|viet nam|vietnam)\b/g;
+const LEGAL_PHRASES = /\b(ngan hang|tmcp|thuong mai co phan|cong ty tai chinh|tai chinh|cong ty|tnhh|mot thanh vien|mtv|co phan|joint stock|commercial|bank|finance|viet nam|vietnam|vn)\b/g;
+/** Words too general to point at any one lender. */
+const GENERIC_INPUTS = new Set(["credit", "finance", "bank", "banking", "loan", "loans", "taichinh", "nganhang", "congty", "vay", "vaytien"]);
 const MIN_DISTINCT_NAME_LENGTH = 5;
 
 function withoutLegalWords(normalized: string): string {
@@ -91,6 +95,7 @@ function looksLike(input: string, name: string): boolean {
 export function checkName(input: string, institutions: readonly SafetyInstitution[]): NameResult {
   const text = input.trim();
   if (text === "") return { kind: "empty" };
+  if (/^[\d\s+().-]{7,}$/.test(text) && /\d/.test(text)) return { kind: "phone" };
 
   const host = hostnameOf(text);
   if (host) {
@@ -107,18 +112,33 @@ export function checkName(input: string, institutions: readonly SafetyInstitutio
     const exact = institutions.find((i) => namesOf(i).some((n) => compact(normalize(n)) === typedCompact));
     if (exact) return { kind: "licensed", institution: exact, matchedWebsite: false };
 
-    // "ngân hàng Hàng Hải" = "Hàng Hải": only when what's left is a distinctive name.
+    // "ngân hàng Hàng Hải" = "Hàng Hải", but "Công ty Lộc Phát" isn't LPBank: an unrelated
+    // company can share the descriptive part of a bank's legal name. So the word typed must
+    // agree with the institution's type, and a bare "company" word never matches.
+    const wantsBank = /\b(ngan hang|tmcp|bank)\b/.test(typed);
+    const wantsFinance = /\b(tai chinh|finance)\b/.test(typed);
+    const companyOnly = /\b(cong ty|tnhh|mtv|co phan)\b/.test(typed) && !wantsBank && !wantsFinance;
     const typedCore = withoutLegalWords(typed);
-    if (typedCore.length >= MIN_DISTINCT_NAME_LENGTH) {
-      const core = institutions.find((i) => namesOf(i).some((n) => withoutLegalWords(normalize(n)) === typedCore));
-      if (core) return { kind: "licensed", institution: core, matchedWebsite: false };
+    if (!companyOnly && typedCore.length >= (wantsBank ? 2 : MIN_DISTINCT_NAME_LENGTH)) {
+      const hits = institutions.filter((i) => {
+        if (wantsBank && i.category !== "bank") return false;
+        if (wantsFinance && i.category !== "finance_company") return false;
+        const names = wantsBank || wantsFinance ? [i.name, i.legalName, ...i.aliases] : [i.name, ...i.aliases];
+        return names.some((n) => withoutLegalWords(normalize(n)) === typedCore);
+      });
+      if (hits.length === 1) return { kind: "licensed", institution: hits[0], matchedWebsite: false };
+      // e.g. "Shinhan": both Shinhan Bank and Shinhan Finance. Name both rather than guess.
+      if (hits.length > 1) return { kind: "similar", institutions: hits.slice(0, 3) };
     }
   }
+
+  if (GENERIC_INPUTS.has(typedCompact)) return { kind: "not_found" };
 
   // 2. Not exact, but it uses or resembles a licensed name: a possible typo or impersonation.
   const tokens = new Set(typed.split(" "));
   const similar = institutions.filter((i) =>
-    namesOf(i).some((n) => {
+    // Not the short name: "Tân Bình" contains "An Bình", and place names aren't impersonation.
+    [i.legalName, ...i.aliases].some((n) => {
       const c = compact(normalize(n));
       if (c.length >= MIN_DISTINCT_NAME_LENGTH && typedCompact.includes(c)) return true;
       if (c.length >= 2 && c.length < MIN_DISTINCT_NAME_LENGTH && tokens.has(c)) return true;
@@ -135,7 +155,7 @@ export function checkName(input: string, institutions: readonly SafetyInstitutio
  * so nothing here is "high": licensed lenders use loose marketing words too.
  */
 const NAME_PATTERNS: readonly { flag: NameFlag; phrases: readonly string[] }[] = [
-  { flag: "too_easy", phrases: ["vay nong", "vay sieu toc", "no xau van vay", "khong can tham dinh", "khong tham dinh", "bao dau", "duyet 5 phut", "giai ngan 5 phut", "apk"] },
+  { flag: "too_easy", phrases: ["vay nong", "vay sieu toc", "no xau van vay", "khong can tham dinh", "khong tham dinh"] },
   { flag: "generic_name", phrases: ["vay nhanh", "vay tien nhanh", "vay tien online", "tien mat nhanh", "vay 247", "vay 24 7", "vay online"] },
 ];
 
@@ -153,7 +173,7 @@ export function checkSafety(input: string, ticked: readonly SignId[], institutio
 
   let level: SafetyResult["level"] = "neutral";
   if (highSigns.length > 0) level = "stop";
-  else if (mediumSigns.length > 0 || flags.length > 0 || name.kind === "similar" || name.kind === "not_found") level = "careful";
+  else if (mediumSigns.length > 0 || flags.length > 0 || name.kind === "similar" || name.kind === "not_found" || name.kind === "phone") level = "careful";
 
   return { name, nameFlags: flags, highSigns, mediumSigns, level };
 }

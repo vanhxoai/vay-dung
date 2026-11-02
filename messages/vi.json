@@ -254,7 +254,7 @@
     "intro": "Nhập tên bên cho vay, ứng dụng hoặc trang web. Chúng tôi đối chiếu với danh sách của Ngân hàng Nhà nước, và giúp bạn nhận ra các dấu hiệu cần kiểm tra.",
     "privacy": "Việc kiểm tra diễn ra ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu lại những gì bạn nhập.",
     "nameLabel": "Tên bên cho vay, ứng dụng hoặc trang web",
-    "nameHint": "Ví dụ: Home Credit, hoặc homecredit.vn",
+    "nameHint": "Ví dụ: tên công ty, tên ứng dụng hoặc địa chỉ trang web. Không biết tên? Hãy chọn các dấu hiệu bên dưới.",
     "signsLabel": "Họ có làm điều nào dưới đây không?",
     "signsHint": "Không bắt buộc. Chọn những gì đúng với trường hợp của bạn.",
     "submit": "Kiểm tra",
@@ -262,80 +262,85 @@
     "errorEmpty": "Hãy nhập tên hoặc chọn ít nhất một dấu hiệu.",
     "resultTitle": "Kết quả kiểm tra",
     "asOf": "Theo danh sách của Ngân hàng Nhà nước, tính đến {date}.",
-    "seeOnList": "Xem trên danh sách",
+    "seeOnList": "Xem danh sách của Ngân hàng Nhà nước",
     "licensed": {
-      "title": "Tên này có trong danh sách của Ngân hàng Nhà nước",
+      "title": "Tên này khớp với một bên có trong danh sách của Ngân hàng Nhà nước",
       "bank": "Ngân hàng",
       "finance_company": "Công ty tài chính",
       "websiteMatch": "Địa chỉ bạn nhập trùng với trang web của bên này trong dữ liệu của chúng tôi.",
-      "caution": "Điều này chỉ nói về cái tên, không phải về người đang liên hệ với bạn. Kẻ lừa đảo có thể mạo danh bên cho vay thật, nên hãy tự tìm trang web hoặc tổng đài chính thức để kiểm tra.",
+      "caution": "Hãy so sánh tên đầy đủ ở trên với tên ghi trong hợp đồng. Kết quả này chỉ nói về cái tên: không có nghĩa là bên đang liên hệ với bạn đúng là bên này, cũng không có nghĩa là khoản vay an toàn hay phù hợp với bạn. Kẻ lừa đảo có thể mạo danh bên cho vay thật, nên hãy tự tìm trang web hoặc tổng đài chính thức để kiểm tra.",
       "website": "Trang web trong dữ liệu của chúng tôi:"
     },
     "similar": {
       "title": "Tên này giống một bên có trong danh sách, nhưng không khớp",
-      "body": "\"{name}\" không trùng với tên nào trong danh sách. Có thể bạn gõ nhầm, hoặc có người đang dùng một cái tên gần giống. Có phải bạn muốn nói đến:",
+      "body": "\"{name}\" không trùng với tên nào trong dữ liệu của chúng tôi. Có thể bạn gõ nhầm, có thể đây là một đơn vị khác không liên quan, hoặc có người đang dùng tên gần giống. Chúng tôi không kết luận gì về đơn vị này. Có phải bạn muốn nói đến:",
       "advice": "Đừng dựa vào đường link hay số điện thoại mà họ gửi. Hãy tự tìm trang web hoặc tổng đài chính thức của bên đó và hỏi lại."
     },
     "notFound": {
-      "title": "Không tìm thấy tên này trong danh sách của Ngân hàng Nhà nước (tính đến {date})",
-      "body": "Tên này chưa được xác minh. Điều này không có nghĩa là họ không có giấy phép hoặc là lừa đảo: một ứng dụng có thể mang tên khác với công ty cho vay, và danh sách của chúng tôi chỉ gồm ngân hàng và công ty tài chính.",
+      "title": "Không tìm thấy tên này trong dữ liệu chúng tôi lấy từ Ngân hàng Nhà nước (tính đến {date})",
+      "body": "Chúng tôi chưa xác minh được tên này. Điều này không có nghĩa là họ không có giấy phép hoặc là lừa đảo: một ứng dụng có thể mang tên khác với công ty cho vay, và dữ liệu của chúng tôi chưa gồm mọi loại tổ chức (xem ghi chú bên dưới).",
       "advice": "Hãy hỏi tên đầy đủ của công ty ghi trong hợp đồng rồi kiểm tra lại. Nếu họ không nói rõ hoặc không có tên công ty, đừng chuyển tiền hay gửi giấy tờ."
     },
     "flag": {
-      "generic_name": "Đây là cách gọi chung, chưa phải tên một công ty. Hãy hỏi tên đầy đủ của bên cho vay.",
-      "too_easy": "Cách gọi này thường thấy trong quảng cáo vay tiền trên mạng. Đây là dấu hiệu cần kiểm tra, không phải kết luận."
+      "generic_name": "Tên này có cụm từ chung về vay tiền, nên chưa đủ để biết công ty nào cho vay. Hãy hỏi tên đầy đủ của bên cho vay.",
+      "too_easy": "Tên này có cách nói về vay dễ hoặc vay nhanh. Đây là điều cần kiểm tra, không phải kết luận."
     },
     "stop": {
       "title": "Hãy dừng lại trước khi chuyển tiền hay gửi thông tin",
-      "body": "Bạn đã chọn những dấu hiệu nằm trong các cảnh báo về lừa đảo cho vay. Chúng tôi không thể kết luận đây là lừa đảo, nhưng đừng làm gì thêm cho đến khi kiểm tra xong, kể cả khi họ dùng tên của một bên cho vay có thật."
+      "body": "Bạn đã chọn những dấu hiệu nằm trong các cảnh báo về lừa đảo cho vay. Chúng tôi không thể kết luận đây là lừa đảo, nhưng đừng chuyển tiền hay gửi thêm thông tin cho đến khi kiểm tra xong, kể cả khi họ dùng tên của một bên cho vay có thật."
     },
     "signsTitle": "Dấu hiệu bạn đã chọn",
     "signsIntro": "Đây là dấu hiệu cần kiểm tra, lấy từ các cảnh báo được báo chí đăng tải.",
     "sign": {
-      "pay_first": "Bắt tôi chuyển tiền trước (phí hồ sơ, phí bảo hiểm, phí giải ngân, tiền cọc…) thì mới được nhận tiền vay",
+      "pay_first": "Bắt tôi chuyển khoản trước (phí hồ sơ, phí bảo hiểm, phí giải ngân, tiền cọc…) rồi mới cho nhận tiền vay",
       "unlock_fee": "Nói hồ sơ hoặc số tài khoản bị sai, rồi đòi thêm tiền để sửa hoặc \"mở khóa\"",
       "prove_finance": "Bắt chuyển tiền để \"chứng minh tài chính\"",
       "otp": "Xin mã OTP, mật khẩu hoặc mã PIN của tôi",
       "personal_account": "Bắt chuyển tiền vào tài khoản cá nhân của một người",
-      "contacts": "Ứng dụng đòi truy cập danh bạ, ảnh hoặc tin nhắn",
+      "contacts": "Ứng dụng bắt cho truy cập danh bạ, thư viện ảnh hoặc tài khoản mạng xã hội thì mới cho vay",
       "harassment": "Đe dọa, hoặc gọi và nhắn tin cho người thân, đồng nghiệp của tôi để đòi nợ",
-      "hold_id": "Đòi giữ CCCD của tôi, hoặc đòi ảnh cá nhân làm bảo đảm",
-      "short_term": "Chỉ cho vay vài ngày đến vài tuần, và tiền nhận được ít hơn số được duyệt",
-      "chat_only": "Chỉ liên hệ qua Zalo, Facebook hoặc Telegram, hoặc gửi đường link lạ để tải ứng dụng",
+      "hold_id": "Đòi ảnh cá nhân hoặc số điện thoại người thân để làm bảo đảm cho khoản vay",
+      "short_term": "Chỉ cho vay vài ngày đến vài tuần, và tiền nhận được ít hơn số tiền được duyệt",
+      "chat_only": "Chỉ liên hệ qua Zalo hoặc Facebook, hoặc gửi đường link lạ để tải ứng dụng",
       "no_company": "Không có tên công ty, địa chỉ hay mẫu hợp đồng rõ ràng"
     },
     "why": {
-      "pay_first": "Công an cảnh báo đây là thủ đoạn thường gặp. Phí hợp lệ phải được ghi rõ trong hợp đồng, và bạn nên kiểm tra với tổng đài chính thức trước khi chuyển bất kỳ khoản nào.",
+      "pay_first": "Công an TP. Hà Nội cảnh báo việc đòi đóng phí mới cho nhận tiền vay có thể là bẫy lừa đảo. Một số bên cho vay có giấy phép có thu phí bảo hiểm lúc giải ngân, nên hãy hỏi tổng đài chính thức trước khi chuyển tiền. Đừng chỉ dựa vào hợp đồng được gửi qua tin nhắn, vì hợp đồng cũng có thể bị làm giả.",
       "unlock_fee": "Sau khoản phí đầu tiên, họ thường đưa ra lý do mới để đòi thêm tiền, rồi cắt liên lạc.",
       "prove_finance": "Đây là một cách đòi tiền được nêu trong cảnh báo về ứng dụng cho vay giả mạo.",
       "otp": "Có mã OTP hoặc mật khẩu, người khác có thể lấy tiền trong tài khoản của bạn. Đừng đưa cho ai.",
-      "personal_account": "Tiền chuyển vào tài khoản cá nhân của người lạ rất khó lấy lại. Hãy hỏi tổng đài chính thức của bên cho vay.",
-      "contacts": "Công an cảnh báo họ có thể lấy số người thân của bạn để gây sức ép khi bạn trả chậm.",
-      "harassment": "Công an cảnh báo đây là cách đòi nợ của tín dụng đen.",
-      "hold_id": "Công an khuyên không đưa giấy tờ tùy thân hay ảnh cá nhân cho người chưa xác minh được.",
-      "short_term": "Khi phí bị trừ ngay từ đầu và thời hạn rất ngắn, chi phí thật có thể cao hơn rất nhiều so với con số quảng cáo.",
-      "chat_only": "Kẻ lừa đảo có thể lập tài khoản và trang giả mạo. Hãy tự tìm kênh chính thức, và chỉ tải ứng dụng từ kho chính thức.",
+      "personal_account": "Tiền chuyển vào tài khoản cá nhân của người lạ có thể khó lấy lại. Hãy hỏi tổng đài chính thức của bên cho vay.",
+      "contacts": "Công an cảnh báo một số ứng dụng có thể lấy số người thân của bạn để gây sức ép khi bạn trả chậm.",
+      "harassment": "Công an cảnh báo tín dụng đen thường đòi nợ theo cách này. Riêng dấu hiệu này không cho biết ai đang làm việc đó, nên hãy giữ bằng chứng.",
+      "hold_id": "Công an TP. Hà Nội khuyên không đưa thông tin và hình ảnh cá nhân lên các trang mạng. Đừng đưa những thứ này cho bên bạn chưa xác minh được.",
+      "short_term": "Khi phí bị trừ ngay lúc nhận tiền và thời hạn rất ngắn, chi phí thật có thể cao hơn nhiều so với số tiền được duyệt cho thấy. Hãy hỏi rõ: nhận bao nhiêu, trả bao nhiêu, trả khi nào.",
+      "chat_only": "Kẻ lừa đảo có thể lập tài khoản và trang giả mạo. Hãy tự tìm kênh chính thức, và chỉ tải ứng dụng từ cửa hàng ứng dụng chính thức.",
       "no_company": "Không biết công ty nào cho vay thì bạn không thể kiểm tra giấy phép."
     },
     "todo": {
       "title": "Bạn nên làm gì",
-      "official": "Tự tìm trang web hoặc tổng đài chính thức của bên cho vay. Đừng dùng đường link hay số điện thoại trong tin nhắn họ gửi.",
-      "noPayment": "Trước khi chuyển bất kỳ khoản nào, hãy hỏi tổng đài chính thức. Phí hợp lệ phải được ghi rõ trong hợp đồng.",
+      "official": "Tự tìm trang web hoặc tổng đài chính thức của bên cho vay. Đừng dùng đường link hay số điện thoại trong tin nhắn họ gửi, và đừng bấm vào quảng cáo trên kết quả tìm kiếm.",
+      "noPayment": "Trước khi chuyển bất kỳ khoản nào, hãy hỏi tổng đài chính thức để biết khoản đó có đúng không.",
       "noOtp": "Không đưa mã OTP, mật khẩu hay mã PIN cho bất kỳ ai.",
-      "apps": "Chỉ tải ứng dụng từ App Store hoặc Google Play."
+      "apps": "Chỉ tải ứng dụng từ App Store hoặc Google Play, và kiểm tra đúng tên nhà phát triển. Có mặt trên các cửa hàng này chưa chắc đã là ứng dụng thật."
     },
     "paid": {
-      "title": "Nếu bạn đã chuyển tiền",
+      "title": "Nếu bạn đã chuyển tiền và nghi ngờ bị lừa",
       "stop": "Dừng liên lạc. Đừng chuyển thêm tiền để \"lấy lại tiền\".",
       "evidence": "Giữ lại tin nhắn, biên lai chuyển khoản, tên ứng dụng và ảnh chụp màn hình.",
       "police": "Mang các bằng chứng này đến cơ quan công an gần nhất để trình báo."
     },
     "harassment": {
       "title": "Nếu bạn đang bị đe dọa đòi nợ",
-      "body": "Giữ bình tĩnh, ghi âm cuộc gọi, lưu tin nhắn và nhờ người thân làm tương tự. Hãy trình báo cơ quan công an gần nhất."
+      "body": "Giữ bình tĩnh, lưu tin nhắn và ảnh chụp màn hình. Nếu điện thoại của bạn ghi âm được, hãy ghi lại cuộc gọi của chính bạn để làm bằng chứng. Nhờ người thân cũng lưu lại những gì họ nhận được. Hãy trình báo cơ quan công an gần nhất."
     },
-    "disclaimer": "Đây là thông tin để tham khảo, không phải kết luận pháp lý về bất kỳ công ty nào. Danh sách chỉ gồm ngân hàng và công ty tài chính; chúng tôi chưa đưa vào chi nhánh ngân hàng nước ngoài và một số loại tổ chức khác.",
+    "disclaimer": "Đây là thông tin để tham khảo, không phải kết luận pháp lý về bất kỳ công ty nào, và không cho biết khoản vay có an toàn hay không. Dữ liệu chỉ gồm ngân hàng thương mại, ngân hàng liên doanh, ngân hàng 100% vốn nước ngoài và công ty tài chính, lấy từ danh sách của Ngân hàng Nhà nước tính đến {date}; thông tin có thể đã thay đổi sau ngày đó. Chúng tôi chưa đưa vào chi nhánh ngân hàng nước ngoài, Ngân hàng Chính sách xã hội, Ngân hàng Hợp tác xã, công ty cho thuê tài chính, tổ chức tài chính vi mô và quỹ tín dụng nhân dân. Tên thương hiệu và trang web là do chúng tôi tự kiểm tra, không lấy từ danh sách.",
     "listSources": "Danh sách của Ngân hàng Nhà nước, tính đến {date}:",
-    "toFlow": "Xem chi phí thật của khoản vay"
+    "toFlow": "Xem chi phí thật của khoản vay",
+    "phone": {
+      "title": "Chúng tôi không kiểm tra được số điện thoại",
+      "body": "Bạn vừa nhập một số điện thoại, nên chúng tôi chưa kiểm tra gì. Hãy nhập tên công ty, rồi tự tìm tổng đài chính thức của họ để so sánh."
+    },
+    "listStale": "Danh sách này đã cũ, có thể đã có bản mới hơn. Hãy kiểm tra trực tiếp trên trang của Ngân hàng Nhà nước."
   }
 }

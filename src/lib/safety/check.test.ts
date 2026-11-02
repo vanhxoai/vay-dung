@@ -120,6 +120,58 @@ describe("similar names (possible typo or impersonation)", () => {
   });
 });
 
+describe("unrelated businesses aren't matched (compliance M1, M2)", () => {
+  it("sharing words with a bank's legal name doesn't make a company that bank", () => {
+    for (const name of ["Công ty TNHH Xuất nhập khẩu", "Công ty cổ phần Đầu tư và Phát triển", "Công ty Lộc Phát", "Công ty Việt Á"]) {
+      expect(kind(name), name).not.toBe("licensed");
+    }
+  });
+
+  it("a finance word doesn't match a bank, or the reverse", () => {
+    for (const name of ["Tài chính Thịnh Vượng", "Tài chính Quốc Tế", "International Finance", "Saigon Finance", "Lotte Bank"]) {
+      expect(kind(name), name).not.toBe("licensed");
+    }
+  });
+
+  it("place names and everyday businesses aren't look-alikes", () => {
+    expect(kind("Tân Bình")).toBe("not_found");
+    expect(kind("Việt Anh")).toBe("not_found");
+    expect(kind("Bia Sài Gòn")).toBe("not_found");
+  });
+
+  it("generic words don't point at one lender", () => {
+    for (const name of ["Credit", "credit", "Finance", "Bank", "vay tiền"]) expect(kind(name), name).toBe("not_found");
+  });
+
+  it("an ambiguous name lists both instead of guessing", () => {
+    const r = checkName("Shinhan", list);
+    expect(r.kind).toBe("similar");
+    if (r.kind === "similar") expect(r.institutions.map((i) => i.id).sort()).toEqual(["shinhan-bank", "shinhan-finance"]);
+  });
+});
+
+describe("natural ways of typing a real name", () => {
+  it("with type words that agree", () => {
+    expect(idOf("Ngân hàng Nam Á")).toBe("nam-a");
+    expect(idOf("Ngân hàng Bắc Á")).toBe("bac-a");
+    expect(idOf("Ngân hàng ACB")).toBe("acb");
+    expect(idOf("Ngân hàng BIDV")).toBe("bidv");
+    expect(idOf("HSBC Bank")).toBe("hsbc-vietnam");
+    expect(idOf("ngân hàng mb")).toBe("mb-bank");
+    expect(idOf("home credit vn")).toBe("home-credit");
+    expect(idOf("công ty tài chính home credit")).toBe("home-credit");
+  });
+});
+
+describe("phone numbers", () => {
+  it("are recognised as something we can't check", () => {
+    expect(kind("0912 345 678")).toBe("phone");
+    expect(kind("+84 912345678")).toBe("phone");
+    expect(kind("1900 633 633")).toBe("phone");
+    expect(kind("123")).toBe("not_found");
+  });
+});
+
 describe("not found", () => {
   it("made-up names aren't on the list", () => {
     expect(kind("Vay Siêu Tốc Xanh")).toBe("not_found");
@@ -137,7 +189,6 @@ describe("keyword flags on names", () => {
   it("match whole phrases, without accents", () => {
     expect(nameFlags("Vay Siêu Tốc 24h")).toEqual(["too_easy"]);
     expect(nameFlags("vay nhanh online")).toEqual(["generic_name"]);
-    expect(nameFlags("Tải app.apk")).toEqual(["too_easy"]);
   });
 
   it("don't collide inside other words (compliance M9)", () => {

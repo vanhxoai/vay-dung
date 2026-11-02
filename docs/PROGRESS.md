@@ -69,4 +69,19 @@
 - FE Credit's cash and phone loans can show identical numbers.
 - The 2-minute target hasn't been timed with real people (Phase 5 interviews).
 
-**Next:** Phase 4 (lender safety check).
+## Phase 4: Lender safety check (2026-11-02)
+**Status:** done, waiting for your review.
+
+- `/kiem-tra`: type a lender, app or website, and optionally tick warning signs. It runs in the browser only (an e2e test checks this).
+- Results: matches the SBV list (with legal name, licence number and source), resembles a name on the list, not found, or phone number (not checked). Ticking a high-risk sign says "stop" even with a real lender's name, because impersonators use real names.
+- `src/lib/safety/`: matching (accents, spacing, legal words, typos, web addresses) and signs with sources.
+- Everyday bank names and websites verified and added to `data/licensed-institutions.json`.
+- Reviews: compliance-reviewer (9 must-fix) and qa-tester (7 bugs), fixed; see docs/research/compliance-review-phase4.md.
+
+**Known limitations:**
+- Reporting advice is only "nearest police station"; official portals couldn't be confirmed.
+- The scam signs rest on press reports of police warnings, not official pages.
+- A similar name is only a hint: a lawful business can have a similar name, and a scammer can use an exact one.
+- Dates on the English page use day/month/year.
+
+**Next:** Phase 5 (validation kit).

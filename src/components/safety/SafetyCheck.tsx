@@ -1,14 +1,18 @@
 "use client";
 
 import { useId, useRef, useState, useSyncExternalStore } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { LanguageLink } from "@/components/LanguageLink";
 import { PrimaryButton } from "@/components/loan/fields";
 import { formatDate } from "@/lib/format";
+import { ageInDaysFrom } from "@/lib/recommend/dates";
 import { checkSafety, type SafetyInstitution, type SafetyResult } from "@/lib/safety/check";
 import { SIGNS, type SignId } from "@/lib/safety/signs";
 
 const linkClass = "inline-flex min-h-11 items-center underline underline-offset-2";
+/** SBV publishes its lists quarterly, a few weeks after the quarter ends. */
+const LIST_STALE_AFTER_DAYS = 120;
 
 const subscribeNever = () => () => {};
 
@@ -23,8 +27,6 @@ export function SafetyCheck({
 }) {
   const t = useTranslations("Safety");
   const tHome = useTranslations("Home");
-  const locale = useLocale();
-  const otherLocale = locale === "vi" ? "en" : "vi";
   // On a slow connection, the form stays disabled until it can work.
   const hydrated = useSyncExternalStore(subscribeNever, () => true, () => false);
 
@@ -33,10 +35,15 @@ export function SafetyCheck({
   const [result, setResult] = useState<SafetyResult | null>(null);
   const [checkedName, setCheckedName] = useState("");
   const [error, setError] = useState(false);
+  const [listStale, setListStale] = useState(false);
   const resultRef = useRef<HTMLHeadingElement>(null);
   const nameId = useId();
 
-  const toggle = (id: SignId) => setTicked((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]));
+  // A result must never stay on screen beside answers it doesn't describe.
+  const toggle = (id: SignId) => {
+    setResult(null);
+    setTicked((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]));
+  };
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,6 +54,7 @@ export function SafetyCheck({
     }
     setError(false);
     setCheckedName(name.trim());
+    setListStale(ageInDaysFrom(asOf, new Date()) > LIST_STALE_AFTER_DAYS);
     setResult(checkSafety(name, ticked, institutions));
     requestAnimationFrame(() => resultRef.current?.focus());
   };
@@ -57,9 +65,9 @@ export function SafetyCheck({
         <Link href="/" className="inline-flex min-h-11 items-center font-bold">
           {tHome("title")}
         </Link>
-        <Link href="/kiem-tra" locale={otherLocale} className="inline-flex min-h-11 items-center px-2 underline underline-offset-4">
+        <LanguageLink href="/kiem-tra" className="inline-flex min-h-11 items-center px-2 underline underline-offset-4">
           {tHome("switchLanguage")}
-        </Link>
+        </LanguageLink>
       </header>
 
       <div>
@@ -84,7 +92,10 @@ export function SafetyCheck({
               aria-describedby={`${nameId}-hint`}
               className="min-h-11 w-full rounded-lg border border-current/30 bg-transparent px-3 py-2 text-lg"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => {
+                setResult(null);
+                setName(e.target.value);
+              }}
             />
           </div>
 
@@ -114,7 +125,10 @@ export function SafetyCheck({
               {t("errorEmpty")}
             </p>
           ) : null}
-          <PrimaryButton type="submit">{hydrated ? t("submit") : t("loading")}</PrimaryButton>
+          {/* The list is long on a phone: keep the button in reach. */}
+          <div className="sticky bottom-0 bg-background py-2">
+            <PrimaryButton type="submit">{hydrated ? t("submit") : t("loading")}</PrimaryButton>
+          </div>
         </fieldset>
       </form>
 
@@ -132,6 +146,11 @@ export function SafetyCheck({
           ) : null}
 
           <NameCard result={result} checkedName={checkedName} asOf={asOf} />
+
+          <div data-testid="safety-disclaimer" className="rounded-lg border border-current/30 p-3">
+            <p>{t("disclaimer", { date: formatDate(asOf) })}</p>
+            {listStale ? <p className="mt-2 font-medium">{t("listStale")}</p> : null}
+          </div>
 
           {result.nameFlags.length > 0 ? (
             <div className="rounded-lg border border-amber-700 bg-amber-50 p-3 text-sm text-amber-950 dark:bg-amber-950 dark:text-amber-50">
@@ -170,8 +189,7 @@ export function SafetyCheck({
           ) : null}
 
           <div className="rounded-lg border border-current/30 p-3 text-sm">
-            <p>{t("disclaimer")}</p>
-            <p className="mt-2">{t("listSources", { date: formatDate(asOf) })}</p>
+            <p>{t("listSources", { date: formatDate(asOf) })}</p>
             <ul className="list-disc pl-5">
               {sources.map((s) => (
                 <li key={s.url}>
@@ -183,9 +201,11 @@ export function SafetyCheck({
             </ul>
           </div>
 
-          <Link href="/vay" className={linkClass}>
-            {t("toFlow")}
-          </Link>
+          {result.level === "stop" ? null : (
+            <Link href="/vay" className={linkClass}>
+              {t("toFlow")}
+            </Link>
+          )}
         </section>
       ) : null}
     </main>
@@ -202,7 +222,7 @@ function NameCard({ result, checkedName, asOf }: { result: SafetyResult; checked
   if (name.kind === "licensed") {
     const i = name.institution;
     return (
-      <div className="rounded-lg border-2 border-emerald-700 p-4">
+      <div className="rounded-lg border-2 border-current/30 p-4">
         <h3 className="text-lg font-bold">{t("licensed.title")}</h3>
         <p className="mt-2 font-medium">{i.legalName}</p>
         <p className="text-sm">{t(`licensed.${i.category}`)}</p>
@@ -223,6 +243,15 @@ function NameCard({ result, checkedName, asOf }: { result: SafetyResult; checked
             </a>
           </p>
         ) : null}
+      </div>
+    );
+  }
+
+  if (name.kind === "phone") {
+    return (
+      <div className="rounded-lg border-2 border-amber-700 bg-amber-50 p-4 text-amber-950 dark:bg-amber-950 dark:text-amber-50">
+        <h3 className="text-lg font-bold">{t("phone.title")}</h3>
+        <p className="mt-2">{t("phone.body")}</p>
       </div>
     );
   }

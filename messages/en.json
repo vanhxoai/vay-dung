@@ -254,7 +254,7 @@
     "intro": "Enter a lender, app or website. We compare it with the State Bank of Vietnam's lists and help you spot signs worth checking.",
     "privacy": "The check runs on your device. We don't send or keep what you enter.",
     "nameLabel": "Lender, app or website name",
-    "nameHint": "For example: Home Credit, or homecredit.vn",
+    "nameHint": "For example: a company name, app name or web address. Don't know the name? Just choose the signs below.",
     "signsLabel": "Have they done any of these?",
     "signsHint": "Optional. Choose whatever applies to you.",
     "submit": "Check",
@@ -262,80 +262,85 @@
     "errorEmpty": "Please enter a name or choose at least one sign.",
     "resultTitle": "Result",
     "asOf": "According to the State Bank of Vietnam's list, as of {date}.",
-    "seeOnList": "See it on the list",
+    "seeOnList": "See the State Bank of Vietnam's list",
     "licensed": {
-      "title": "This name is on the State Bank of Vietnam's list",
+      "title": "This name matches an institution on the State Bank of Vietnam's list",
       "bank": "Bank",
       "finance_company": "Finance company",
       "websiteMatch": "The address you entered matches this lender's website in our data.",
-      "caution": "This is only about the name, not about whoever is contacting you. Scammers can impersonate real lenders, so find the official website or hotline yourself to check.",
+      "caution": "Compare the full name above with the name in the contract. This result is only about the name: it doesn't mean whoever is contacting you really is this institution, or that the loan is safe or right for you. Scammers can impersonate real lenders, so find the official website or hotline yourself to check.",
       "website": "Website in our data:"
     },
     "similar": {
       "title": "This name resembles one on the list, but doesn't match",
-      "body": "\"{name}\" doesn't match any name on the list. You may have mistyped it, or someone may be using a similar name. Did you mean:",
+      "body": "\"{name}\" doesn't match any name in our data. You may have mistyped it, it may be an unrelated organisation, or someone may be using a similar name. We're drawing no conclusion about it. Did you mean:",
       "advice": "Don't rely on links or phone numbers they send you. Find that lender's official website or hotline yourself and ask."
     },
     "notFound": {
-      "title": "We didn't find this name on the State Bank of Vietnam's list (as of {date})",
-      "body": "This name is unverified. That doesn't mean they're unlicensed or a scam: an app may have a different name from the lending company, and our list covers only banks and finance companies.",
+      "title": "We didn't find this name in the data we took from the State Bank of Vietnam (as of {date})",
+      "body": "We couldn't verify this name. That doesn't mean they're unlicensed or a scam: an app may have a different name from the lending company, and our data doesn't cover every type of institution (see the note below).",
       "advice": "Ask for the company's full name as written in the contract, then check again. If they won't say or have no company name, don't transfer money or send documents."
     },
     "flag": {
-      "generic_name": "This is a general phrase, not a company's name. Ask for the lender's full name.",
-      "too_easy": "This wording is common in online loan ads. It's a sign to check, not a conclusion."
+      "generic_name": "This name contains a general lending phrase, so it isn't enough to tell which company is lending. Ask for the lender's full name.",
+      "too_easy": "This name uses wording about easy or fast loans. It's something to check, not a conclusion."
     },
     "stop": {
       "title": "Stop before you transfer money or send information",
-      "body": "You chose signs that appear in warnings about loan scams. We can't conclude this is a scam, but don't do anything more until you've checked, even if they use a real lender's name."
+      "body": "You chose signs that appear in warnings about loan scams. We can't conclude this is a scam, but don't transfer money or send more information until you've checked, even if they use a real lender's name."
     },
     "signsTitle": "The signs you chose",
     "signsIntro": "These are signs to check, taken from warnings reported in the press.",
     "sign": {
-      "pay_first": "Made me transfer money first (file fee, insurance fee, disbursement fee, deposit…) before I'd get the loan",
+      "pay_first": "Made me make a transfer first (file fee, insurance fee, disbursement fee, deposit…) before I'd get the loan",
       "unlock_fee": "Said my file or account number was wrong, then wanted more money to fix or \"unlock\" it",
       "prove_finance": "Made me transfer money to \"prove my finances\"",
       "otp": "Asked for my OTP code, password or PIN",
       "personal_account": "Made me transfer money to a person's personal account",
-      "contacts": "The app demands access to my contacts, photos or messages",
+      "contacts": "The app won't lend unless I allow access to my contacts, photo library or social media accounts",
       "harassment": "Threatened me, or called and messaged my family or colleagues about a debt",
-      "hold_id": "Wanted to keep my ID card, or wanted personal photos as security",
+      "hold_id": "Wanted personal photos or a relative's phone number as security for the loan",
       "short_term": "Lends only for days or a few weeks, and I get less than the approved amount",
-      "chat_only": "Only contacts me through Zalo, Facebook or Telegram, or sent a strange link to install an app",
+      "chat_only": "Only contacts me through Zalo or Facebook, or sent a strange link to install an app",
       "no_company": "No clear company name, address or contract template"
     },
     "why": {
-      "pay_first": "Police warn this is a common trick. A genuine fee must be written in the contract, and you should check with the official hotline before transferring anything.",
+      "pay_first": "Hanoi police warn that being told to pay a fee before you get the loan may be a scam. Some licensed lenders do collect insurance at disbursement, so ask the official hotline before transferring anything. Don't rely on a contract sent by message, because contracts can be forged too.",
       "unlock_fee": "After the first fee, they often give a new reason to ask for more, then disappear.",
       "prove_finance": "This is one of the ways of asking for money named in warnings about fake loan apps.",
       "otp": "With your OTP or password, someone else can take money from your account. Don't give it to anyone.",
-      "personal_account": "Money sent to a stranger's personal account is very hard to get back. Ask the lender's official hotline.",
-      "contacts": "Police warn they may take your relatives' numbers to pressure you if you pay late.",
-      "harassment": "Police warn this is how loan sharks collect debts.",
-      "hold_id": "Police advise not giving ID documents or personal photos to anyone you can't verify.",
-      "short_term": "When fees are taken at the start and the term is very short, the real cost can be far above the advertised figure.",
+      "personal_account": "Money sent to a stranger's personal account may be hard to get back. Ask the lender's official hotline.",
+      "contacts": "Police warn that some apps may take your relatives' numbers to pressure you if you pay late.",
+      "harassment": "Police warn that loan sharks often collect debts this way. This sign alone doesn't show who is doing it, so keep the evidence.",
+      "hold_id": "Hanoi police advise against putting personal information and photos on websites. Don't give these to anyone you can't verify.",
+      "short_term": "When fees are taken as you receive the money and the term is very short, the real cost can be far higher than the approved amount suggests. Ask how much you'll receive, how much you'll repay, and when.",
       "chat_only": "Scammers can set up fake accounts and pages. Find the official channel yourself, and install apps only from official stores.",
       "no_company": "If you don't know which company is lending, you can't check its licence."
     },
     "todo": {
       "title": "What you should do",
-      "official": "Find the lender's official website or hotline yourself. Don't use links or phone numbers in messages they send.",
-      "noPayment": "Before transferring anything, ask the official hotline. A genuine fee must be written in the contract.",
+      "official": "Find the lender's official website or hotline yourself. Don't use links or phone numbers in messages they send, and don't click ads in search results.",
+      "noPayment": "Before transferring anything, ask the official hotline whether the payment is genuine.",
       "noOtp": "Don't give your OTP, password or PIN to anyone.",
-      "apps": "Install apps only from the App Store or Google Play."
+      "apps": "Install apps only from the App Store or Google Play, and check the developer's name. Being in these stores doesn't prove an app is genuine."
     },
     "paid": {
-      "title": "If you've already transferred money",
+      "title": "If you've transferred money and suspect a scam",
       "stop": "Stop contact. Don't send more money to \"get your money back\".",
       "evidence": "Keep the messages, transfer receipts, app name and screenshots.",
       "police": "Take this evidence to your nearest police station to report it."
     },
     "harassment": {
       "title": "If you're being threatened over a debt",
-      "body": "Stay calm, record calls, save messages and ask your family to do the same. Report it to your nearest police station."
+      "body": "Stay calm and save messages and screenshots. If your phone can record, record your own calls as evidence. Ask your family to save what they receive too. Report it to your nearest police station."
     },
-    "disclaimer": "This is information for reference, not a legal conclusion about any company. The list covers only banks and finance companies; we haven't included foreign bank branches and some other types of institution.",
+    "disclaimer": "This is information for reference, not a legal conclusion about any company, and it doesn't tell you whether a loan is safe. Our data covers only commercial banks, joint-venture banks, wholly foreign-owned banks and finance companies, taken from the State Bank of Vietnam's lists as of {date}; things may have changed since then. We haven't included foreign bank branches, the Vietnam Bank for Social Policies, the Co-operative Bank, leasing companies, microfinance institutions or people's credit funds. Brand names and websites were checked by us and don't come from the list.",
     "listSources": "State Bank of Vietnam lists, as of {date}:",
-    "toFlow": "See the real cost of a loan"
+    "toFlow": "See the real cost of a loan",
+    "phone": {
+      "title": "We can't check phone numbers",
+      "body": "You entered a phone number, so nothing has been checked. Enter the company's name, then find its official hotline yourself to compare."
+    },
+    "listStale": "This list is old and a newer one may exist. Please check directly on the State Bank of Vietnam's site."
   }
 }
