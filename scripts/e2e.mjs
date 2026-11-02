@@ -10,7 +10,10 @@ import { spawn, spawnSync } from "node:child_process";
 const PORT = "3100";
 const NEXT = "node_modules/next/dist/bin/next";
 const PLAYWRIGHT = "node_modules/@playwright/test/cli.js";
-const env = { ...process.env, NEXT_TELEMETRY_DISABLED: "1" };
+// --waitlist-on builds the app with the waitlist form, and tests only that (no real provider).
+const waitlistOn = process.argv.includes("--waitlist-on");
+const playwrightArgs = waitlistOn ? ["tests/e2e/waitlist-on.spec.ts"] : process.argv.slice(2);
+const env = { ...process.env, NEXT_TELEMETRY_DISABLED: "1", ...(waitlistOn ? { WAITLIST_ENABLED: "true" } : {}) };
 
 function inUse(url) {
   return fetch(url).then(
@@ -47,5 +50,5 @@ if (!ready) {
   process.exit(1);
 }
 
-const tests = spawnSync(process.execPath, [PLAYWRIGHT, "test", ...process.argv.slice(2)], { stdio: "inherit", env });
+const tests = spawnSync(process.execPath, [PLAYWRIGHT, "test", ...playwrightArgs], { stdio: "inherit", env });
 process.exit(tests.status ?? 1);

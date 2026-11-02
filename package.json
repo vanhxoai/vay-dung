@@ -11,9 +11,11 @@
     "test:watch": "vitest",
     "test:e2e": "node scripts/e2e.mjs",
     "typecheck": "tsc --noEmit",
-    "validate-data": "tsx scripts/validate-data.ts"
+    "validate-data": "tsx scripts/validate-data.ts",
+    "test:e2e:waitlist": "node scripts/e2e.mjs --waitlist-on"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "next": "16.4.3",
     "next-intl": "^4.14.9",
     "react": "19.3.0",

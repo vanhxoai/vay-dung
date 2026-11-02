@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { DraftCleanup } from "@/components/loan/DraftCleanup";
+import { SiteAnalytics } from "@/components/SiteAnalytics";
+import { SiteFooter } from "@/components/SiteFooter";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
 
@@ -33,7 +35,10 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <DraftCleanup />
           {children}
+          <SiteFooter />
         </NextIntlClientProvider>
+        {/* Only when deployed on Vercel: nothing runs locally or in tests. */}
+        {process.env.VERCEL === "1" ? <SiteAnalytics /> : null}
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { LanguageLink } from "@/components/LanguageLink";
 import { Link } from "@/i18n/navigation";
+import { trackStep } from "@/lib/analytics";
 import { parseMoneyInput } from "@/lib/format";
 import type { Offer } from "@/lib/recommend/offers";
 import type { IncomeProof, Need, Purpose, Urgency } from "@/lib/recommend/recommend";
@@ -177,7 +178,10 @@ export function LoanFlow({
           noValidate
           onSubmit={(e) => {
             e.preventDefault();
-            if (checkStep1()) goTo(2);
+            if (checkStep1()) {
+              trackStep("buoc-2");
+              goTo(2);
+            }
           }}
         >
           <fieldset disabled={!hydrated} className="flex min-w-0 flex-col gap-5">
@@ -228,6 +232,7 @@ export function LoanFlow({
             e.preventDefault();
             if (checkStep2()) {
               setToday(new Date());
+              trackStep("ket-qua");
               goTo(3);
             }
           }}

@@ -5,16 +5,25 @@
   },
   "Home": {
     "title": "Vay Đúng",
-    "tagline": "See the real cost of a loan before you decide.",
+    "tagline": "Vay Đúng shows the real cost of a loan, helps you check a lender, and tells you when not to borrow.",
     "points": {
-      "cost": "Includes mandatory fees with a known amount, not just the advertised rate.",
-      "licensed": "Lists only lenders on the State Bank of Vietnam's list.",
-      "honest": "Tells you plainly when an amount goes over the guideline for what you can repay."
+      "cost": "Works out the real yearly cost, including mandatory fees with a known amount, so you can compare loans.",
+      "licensed": "Compares only products from institutions on the State Bank of Vietnam's list, with the source and the date checked.",
+      "honest": "Tells you plainly when an amount goes over the guideline for what you can repay, and suggests other options.",
+      "independent": "Takes no money from lenders, doesn't sell your information, and doesn't lend."
     },
     "start": "Start (about 2 minutes)",
     "privacy": "No login. Calculations run only on your device.",
     "switchLanguage": "Tiếng Việt",
-    "checkLender": "Check a lender or app"
+    "checkLender": "Check a lender or app",
+    "headline": "Before you borrow, know what you'll really pay",
+    "exampleTitle": "Why the advertised number isn't enough",
+    "exampleBody": "For example: borrowing {amount} over {term} months at a flat 1.5% a month. It sounds like 18% a year, but because interest is charged on the original amount for the whole term, you repay {total} in total. The real rate is about {apr} a year.",
+    "exampleNote": "This is an example of the calculation, not any lender's product.",
+    "whatTitle": "What Vay Đúng does for you",
+    "waitlistTitle": "Get news as we add more products",
+    "waitlistBody": "Leave your email and we'll tell you when Vay Đúng officially launches.",
+    "waitlistClosed": "The news list isn't open yet. We'll open it once the personal data requirements are done. We aren't collecting emails right now."
   },
   "Flow": {
     "stepOf": "Step {step} of {total}",
@@ -342,5 +351,56 @@
       "body": "You entered a phone number, so nothing has been checked. Enter the company's name, then find its official hotline yourself to compare."
     },
     "listStale": "This list is old and a newer one may exist. Please check directly on the State Bank of Vietnam's site."
+  },
+  "Footer": {
+    "notAdvice": "Vay Đúng provides information and calculations for reference, not financial advice, credit advice or brokerage. Vay Đúng doesn't lend.",
+    "privacy": "Privacy",
+    "contact": "Contact"
+  },
+  "Waitlist": {
+    "emailLabel": "Your email",
+    "emailError": "Please enter a valid email address.",
+    "consent": "I agree that {name} ({email}) may keep this email to tell me when Vay Đúng officially launches, and only for that. It's stored on servers outside Vietnam and deleted after {months} months at most. I can withdraw my consent at any time by emailing the address above.",
+    "privacyLink": "See the privacy notice",
+    "consentError": "Please tick the consent box to sign up. You can use Vay Đúng without signing up.",
+    "submit": "Sign up for news",
+    "sending": "Sending…",
+    "done": "Thank you. We'll tell you when Vay Đúng officially launches.",
+    "failed": "That didn't go through. Please try again later."
+  },
+  "Privacy": {
+    "title": "Privacy",
+    "updated": "Updated 2 November 2026.",
+    "who": {
+      "title": "Who runs this site",
+      "body": "Vay Đúng is run by {name}. Contact: {email}."
+    },
+    "device": {
+      "title": "What you enter in the questionnaire and lender check",
+      "body": "Your income, debts, age, the amount you need, lender names and the signs you choose are processed only on your device. We don't send them anywhere or store them on a server, and there's no login.",
+      "language": "If you switch language midway through the questionnaire, your answers are kept in this browser for up to 2 minutes so you don't have to retype them, then deleted."
+    },
+    "analytics": {
+      "title": "Visit statistics",
+      "body": "We use Vercel Web Analytics to see how many people view each page and complete each step of the questionnaire. It doesn't use cookies. It records the page viewed, the site you came from, your estimated city or country, and your device type, operating system and browser, as aggregate statistics. This data is processed outside Vietnam. It receives nothing you enter."
+    },
+    "hosting": {
+      "title": "Website hosting",
+      "body": "The site is hosted on Vercel, a service outside Vietnam. Like any web server, its servers may log IP addresses and technical request details to run and protect the service."
+    },
+    "waitlist": {
+      "title": "News list",
+      "off": "The news list isn't open yet, so we aren't collecting emails right now.",
+      "on": "If you sign up, we keep only your email, when you consented, the version of the consent text and the page's language, to tell you when Vay Đúng officially launches. We delete your email after {months} months at most, or sooner once we've told you.",
+      "processor": "Emails are stored at Supabase in its Singapore region, which is outside Vietnam."
+    },
+    "rights": {
+      "title": "Your rights",
+      "body": "You can ask to see, correct or delete your data, or withdraw your consent, by emailing {email}."
+    },
+    "never": {
+      "title": "What we don't do",
+      "body": "We don't sell your data, don't pass your information to lenders, and don't take money for rankings."
+    }
   }
 }

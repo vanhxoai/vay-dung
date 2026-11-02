@@ -13,7 +13,7 @@ test.describe("with an English-language browser", () => {
 test("home page is Vietnamese by default", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("html")).toHaveAttribute("lang", "vi");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Vay Đúng");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("hãy biết bạn sẽ trả bao nhiêu thật");
 });
 
 test("English lives under /en and the switcher goes back to Vietnamese", async ({ page }) => {
