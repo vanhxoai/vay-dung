@@ -51,3 +51,5 @@ __pycache__/
 
 # Playwright MCP browser logs
 /.playwright-mcp/
+
+.vercel
