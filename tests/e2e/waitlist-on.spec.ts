@@ -38,12 +38,12 @@ test("a signup sends only the email and consent record", async ({ page }) => {
   await page.getByTestId("waitlist-form").getByRole("checkbox").first().check();
   await page.getByRole("button", { name: "Báo cho tôi khi ra mắt" }).click();
   await expect(page.getByTestId("waitlist-done")).toBeVisible();
-  expect(sent).toEqual({ email: "a@example.com", consent: true, consentVersion: "2026-11-03", locale: "vi" });
+  expect(sent).toEqual({ email: "a@example.com", consent: true, consentVersion: "2026-11-02", locale: "vi" });
 });
 
 test("a failed signup says so, and the server reports no store configured as unavailable", async ({ page, request }) => {
   const res = await request.post("/api/waitlist", {
-    data: { email: "a@example.com", consent: true, consentVersion: "2026-11-03", locale: "vi" },
+    data: { email: "a@example.com", consent: true, consentVersion: "2026-11-02", locale: "vi" },
   });
   expect(res.status()).toBe(503);
   expect((await request.post("/api/waitlist", { data: { email: "a@example.com", consent: false } })).status()).toBe(400);

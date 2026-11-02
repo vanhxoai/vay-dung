@@ -111,6 +111,7 @@
     "guidelineNote": "Mức {limit} là hướng dẫn của Vay Đúng, không phải quy định của Ngân hàng Nhà nước.",
     "no_data": {
       "title": "Chưa thể tính tiền trả mỗi tháng cho khoản này",
+      "tooYoung": "Các sản phẩm chúng tôi tính được đều yêu cầu tuổi cao hơn tuổi bạn đã nhập, nên chưa có con số nào cho bạn. Xem chi tiết ở mục sản phẩm không phù hợp bên dưới.",
       "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Riêng tiền gốc đã khoảng {principalOnly} mỗi tháng, chưa kể lãi và phí, nên số tiền thật sẽ cao hơn. Nếu tiền trả mỗi tháng vượt {headroom}, chúng tôi không khuyên bạn vay số tiền này. Hãy hỏi rõ số tiền trả mỗi tháng trước khi ký."
     }
   },
@@ -132,7 +133,7 @@
     "medical": "Việc khẩn cấp: hãy kiểm tra bảo hiểm y tế và hỏi người thân trước. Nếu vẫn phải vay, chỉ chọn bên có trong danh sách của Ngân hàng Nhà nước, kể cả khi đang gấp.",
     "debt": "Vay để trả nợ: hãy cẩn thận, vì khoản nợ có thể lớn dần. Trước tiên, hãy liên hệ bên đang cho bạn vay để hỏi về việc kéo dài thời gian trả hoặc đổi lịch trả. Chỉ nên vay mới nếu chi phí thật thấp hơn rõ ràng so với khoản cũ.",
     "living": "Vay để chi tiêu hằng ngày: khoản vay sẽ làm tiền trả mỗi tháng tăng lên, trong khi thu nhập không đổi. Hãy xem có thể giảm chi tiêu hoặc ứng lương trước không.",
-    "other": "Vay tiền mặt linh hoạt hơn nhưng có thể đắt. Hãy vay đúng số tiền cần, và so sánh tổng số tiền phải trả ở các lựa chọn dưới đây.",
+    "other": "Vay tiền mặt linh hoạt hơn nhưng có thể đắt. Hãy vay đúng số tiền cần, và so sánh tổng số tiền phải trả trước khi chọn.",
     "urgent": "Đang gấp: người đang cần tiền gấp dễ bị lừa. Hãy cảnh giác nếu ai đó bắt bạn chuyển tiền trước, nhất là vào tài khoản cá nhân, thì mới duyệt hoặc giải ngân. Đừng chỉ dựa vào hợp đồng được gửi qua tin nhắn, vì hợp đồng cũng có thể bị làm giả. Hãy gọi tổng đài chính thức của bên cho vay để kiểm tra trước khi chuyển bất kỳ khoản nào."
   },
   "Results": {
@@ -374,7 +375,7 @@
   },
   "Privacy": {
     "title": "Quyền riêng tư",
-    "updated": "Cập nhật ngày 03/11/2026.",
+    "updated": "Cập nhật ngày 02/11/2026.",
     "who": {
       "title": "Ai vận hành trang này",
       "body": "Vay Đúng do {name} vận hành. Liên hệ: {email}."

@@ -103,7 +103,7 @@ test.describe("phase 5 QA: waitlist on", () => {
 
   test("a bot filling the hidden field gets no error, and nothing is stored", async ({ request }) => {
     const res = await request.post("/api/waitlist", {
-      data: { email: "a@example.com", consent: true, consentVersion: "2026-11-03", locale: "vi", website: "http://spam" },
+      data: { email: "a@example.com", consent: true, consentVersion: "2026-11-02", locale: "vi", website: "http://spam" },
     });
     expect(res.status()).toBe(200);
   });

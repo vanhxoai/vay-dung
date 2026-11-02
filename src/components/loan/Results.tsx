@@ -4,7 +4,7 @@ import { useMemo, type RefObject } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { AFFORDABILITY } from "@/config/affordability";
 import { Link as IntlLink } from "@/i18n/navigation";
-import { formatDate, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
+import { formatDate, formatLoanAmount, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
 import type { Offer, OfferRateNote } from "@/lib/recommend/offers";
 import { recommend, type IneligibleReason, type Need } from "@/lib/recommend/recommend";
 import { ChoiceGroup, SecondaryButton } from "./fields";
@@ -66,6 +66,7 @@ export function Results({
   else verdictBody = t("Verdict.too_much_with_interest.body", { ...common, lowestPayment: formatVnd(lowestPayment) });
 
   const showAlternatives = rec.verdict === "depends" || rec.verdict === "too_much" || rec.verdict === "no_income" || rec.verdict === "no_data";
+  const allTooYoung = rec.verdict === "no_data" && rec.ineligible.length > 0 && rec.ineligible.every((i) => i.reasons.includes("too_young"));
   const best = rec.ranked[0];
   const longestTerm = TERMS[TERMS.length - 1];
   // Only offer "repay longer" if it could actually bring the principal within reach.
@@ -82,7 +83,7 @@ export function Results({
         <h1 ref={headingRef} tabIndex={-1} className="text-2xl font-bold outline-none">
           {t("Results.title")}
         </h1>
-        <p className="mt-1">{t("Results.summary", { amount: m(need.amountVnd), term: need.termMonths })}</p>
+        <p className="mt-1">{t("Results.summary", { amount: formatLoanAmount(need.amountVnd, locale), term: need.termMonths })}</p>
         <div className="flex flex-wrap gap-x-4">
           <button type="button" onClick={onEdit} className={linkClass}>
             {t("Flow.edit")}
@@ -99,6 +100,7 @@ export function Results({
       <section role="status" data-testid="verdict" data-verdict={rec.verdict} className={`rounded-lg border-2 p-4 ${VERDICT_STYLE[rec.verdict]}`}>
         <h2 className="text-lg font-bold">{t(`Verdict.${rec.verdict}.title`)}</h2>
         <p className="mt-2">{verdictBody}</p>
+        {allTooYoung ? <p className="mt-2 font-medium">{t("Verdict.no_data.tooYoung")}</p> : null}
         {rec.verdict === "ok" && rec.someDontFit ? <p className="mt-2">{t("Verdict.ok.someOnly")}</p> : null}
         {rec.verdict !== "no_income" ? <p className="mt-2 text-sm">{t("Verdict.guidelineNote", { limit })}</p> : null}
       </section>
@@ -220,7 +222,7 @@ export function Results({
                   return text ? (
                     <p key={i}>
                       {text}
-                      {n.oldDocumentDate ? ` ${t("Offer.documentDate", { date: formatDate(n.oldDocumentDate) })}` : null}
+                      {n.oldDocumentDate ? <span className="block">{t("Offer.documentDate", { date: formatDate(n.oldDocumentDate) })}</span> : null}
                     </p>
                   ) : null;
                 })}

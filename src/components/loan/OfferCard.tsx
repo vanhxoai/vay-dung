@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { formatDate, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
+import { formatDate, formatLoanAmount, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
 import type { OfferFee } from "@/lib/recommend/offers";
 import type { Need, RankedOffer } from "@/lib/recommend/recommend";
 import { rateNoteText } from "./Results";
@@ -98,7 +98,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       {offer.employerRestriction ? <p className={notice}>{t("employer", { value: offer.employerRestriction })}</p> : null}
       {unknownLimits ? <p className={notice}>{t("unknownLimits")}</p> : null}
 
-      <p>{t("sentence", { amount: m(need.amountVnd), total: totalPaid, term: need.termMonths })}</p>
+      <p>{t("sentence", { amount: formatLoanAmount(need.amountVnd, locale), total: totalPaid, term: need.termMonths })}</p>
 
       <dl className="flex flex-col gap-2">
         <Row label={t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
@@ -169,7 +169,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
             return text ? (
               <p key={i}>
                 {text}
-                {n.oldDocumentDate ? ` ${t("documentDate", { date: formatDate(n.oldDocumentDate) })}` : null}
+                {n.oldDocumentDate ? <span className="block">{t("documentDate", { date: formatDate(n.oldDocumentDate) })}</span> : null}
               </p>
             ) : null;
           })}

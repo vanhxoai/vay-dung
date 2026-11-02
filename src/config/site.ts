@@ -8,7 +8,7 @@ export const CONTROLLER = {
 } as const;
 
 /** Bump when the consent text changes: each signup stores the version it agreed to. */
-export const CONSENT_VERSION = "2026-11-03";
+export const CONSENT_VERSION = "2026-11-02";
 
 /** Signups are deleted after this, or when we've told people the app is open, whichever is first. */
 export const WAITLIST_RETENTION_MONTHS = 12;

@@ -30,6 +30,12 @@ export function formatMillions(amount: number, locale: AppLocale): string {
   return formatVnd(amount);
 }
 
+/** "x triệu" only when that's exact, so a loan amount never disagrees with the full figure next to it. */
+export function formatLoanAmount(amount: number, locale: AppLocale): string {
+  const step = Math.abs(amount) >= 1_000_000_000 ? 100_000_000 : 100_000;
+  return amount % step === 0 ? formatMillions(amount, locale) : formatVnd(amount);
+}
+
 /** 0.309 → "30,9%" / "30.9%". */
 export function formatPercent(fraction: number, locale: AppLocale): string {
   return `${oneDecimal(fraction * 100, locale)}%`;

@@ -88,16 +88,35 @@ export function LoanFlow({
     // eslint-disable-next-line react-hooks/set-state-in-effect -- restoring browser-only state after a language switch
     setForm(saved);
     setToday(new Date());
+    window.history.replaceState({ loanStep: saved.step }, "");
   }, []);
 
   const set = <K extends keyof Form>(key: K, value: Form[K]) => setForm((f) => ({ ...f, [key]: value }));
 
-  const goTo = (step: Form["step"]) => {
+  const showStep = (step: Form["step"]) => {
     setForm((f) => ({ ...f, step }));
     setErrors({});
     window.scrollTo(0, 0);
-    requestAnimationFrame(() => headingRef.current?.focus());
+    // Someone who has already tapped a field keeps it; otherwise their typing would be lost.
+    requestAnimationFrame(() => {
+      if (!(document.activeElement instanceof HTMLInputElement)) headingRef.current?.focus();
+    });
   };
+
+  const goTo = (step: Form["step"]) => {
+    window.history.pushState({ loanStep: step }, "");
+    showStep(step);
+  };
+
+  // The phone's Back button moves between steps, rather than leaving the questionnaire.
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      const step = e.state?.loanStep;
+      showStep(step === 2 || step === 3 ? step : 1);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   /** Brings the first problem into view and puts the cursor there. */
   const showFirstError = () => {

@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-async function results(page: Page, amount: string, income: string, term: string, when = "Trong tháng này") {
+async function results(page: Page, amount: string, income: string, term: string, when = "Trong tháng này", age = "28") {
   await page.goto("/vay");
   await expect(page.getByRole("button", { name: "Tiếp tục" })).toBeEnabled();
   await page.getByText("Việc khác", { exact: true }).click();
@@ -10,7 +10,7 @@ async function results(page: Page, amount: string, income: string, term: string,
   await page.getByRole("button", { name: "Tiếp tục" }).click();
   await page.getByLabel("Thu nhập mỗi tháng của bạn").fill(income);
   await page.getByLabel("Mỗi tháng bạn đang trả nợ bao nhiêu?").fill("0");
-  await page.getByLabel("Bạn bao nhiêu tuổi?").fill("28");
+  await page.getByLabel("Bạn bao nhiêu tuổi?").fill(age);
   await page.getByText("Lương trả qua ngân hàng", { exact: true }).click();
   await page.getByRole("button", { name: "Xem kết quả" }).click();
 }
@@ -23,6 +23,46 @@ test.describe("phase 6 ship-check", () => {
     await expect(verdict).toHaveAttribute("data-verdict", "no_data");
     await expect(verdict).toContainText("chúng tôi không khuyên bạn vay số tiền này");
     await expect(page.getByRole("heading", { name: "Bạn có thể làm gì thay vào đó" })).toBeVisible();
+  });
+
+  // Regression: Back on a phone left the questionnaire and looked like the answers were lost.
+  test("the Back button moves between steps and keeps the answers", async ({ page }) => {
+    await results(page, "20000000", "15000000", "24");
+    await expect(page.getByTestId("verdict")).toBeVisible();
+    await page.goBack();
+    await expect(page.getByLabel("Thu nhập mỗi tháng của bạn")).toHaveValue("15.000.000");
+    await page.goBack();
+    await expect(page.getByLabel("Bạn cần bao nhiêu tiền?")).toHaveValue("20.000.000");
+    await page.goForward();
+    await page.goForward();
+    await expect(page.getByTestId("verdict")).toBeVisible();
+  });
+
+  // Regression: the focus move took the cursor out of a field already tapped, and typing was lost.
+  test("a field tapped as step 2 appears keeps its focus", async ({ page }) => {
+    await page.goto("/vay");
+    await expect(page.getByRole("button", { name: "Tiếp tục" })).toBeEnabled();
+    await page.getByText("Việc khác", { exact: true }).click();
+    await page.getByLabel("Bạn cần bao nhiêu tiền?").fill("20000000");
+    await page.getByText("Trong tháng này", { exact: true }).click();
+    await page.getByRole("button", { name: "Tiếp tục" }).click();
+    const income = page.getByLabel("Thu nhập mỗi tháng của bạn");
+    await income.focus();
+    await page.waitForTimeout(200);
+    await expect(income).toBeFocused();
+  });
+
+  // Regression: under-20s were told "can't calculate" with no hint that age was the reason.
+  test("when everything needs an older borrower, the verdict says so", async ({ page }) => {
+    await results(page, "20000000", "15000000", "24", "Trong tháng này", "19");
+    const verdict = page.getByTestId("verdict");
+    await expect(verdict).toHaveAttribute("data-verdict", "no_data");
+    await expect(verdict).toContainText("yêu cầu tuổi cao hơn");
+  });
+
+  test("an amount that isn't a round figure is shown in full, not rounded", async ({ page }) => {
+    await results(page, "3050000", "15000000", "12");
+    await expect(page.locator("main")).toContainText("Bạn cần 3.050.000");
   });
 
   // Regression: "see N options" sat above a "don't borrow" verdict.
