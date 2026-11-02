@@ -39,4 +39,18 @@
 - regulations.md: unverified claims are softened, and sections are added on the Law on Data, the Consumer Protection Law and MoIT website rules.
 - The compliance re-check marks most items fixed. Your decisions on N1, N2 and N11 and the DTI label are recorded as DECISIONS #14 and #19–21.
 
-**Next:** Phase 2 (cost engine).
+## Phase 2: Cost engine (2026-11-02)
+**Status:** done, waiting for your review.
+
+- `src/lib/finance/` is pure TypeScript:
+  - `schedule.ts`: annuity, equal-principal and flat schedules.
+  - `irr.ts`: Newton's method with a bisection fallback.
+  - `cost.ts`: money received, total paid, total cost, and the real APR (nominal and effective) including fees and insurance.
+  - `charges.ts`: fees with minimums/maximums, the "greater of" rule, and the three insurance premium methods.
+  - `affordability.ts`: debt-to-income check and a suggested smaller loan.
+  - `late.ts`: late-payment warning, kept separate from the APR.
+- Money is integer VND. Amounts derived from a rate use exact integer arithmetic, so half-đồng values round as documented.
+- 115 unit tests. They include the lenders' own published examples, which the engine reproduces: FE 11,692,000 total, Home Credit 20,975,000 total, Shinhan 8,812,500/month, and TPFico premiums of 700,000 and 572,917.
+- The finance-math-checker independently re-derived 15 cases in Python with exact decimals (`scripts/check/finance_check.py`): 0 failures. An IRR fuzz test over 4,094 random loans had 0 mismatches. Its 6 code findings are fixed, including an inverted IRR fallback and float rounding.
+
+**Next:** Phase 3 (questionnaire and recommendation).
