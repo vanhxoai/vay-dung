@@ -13,7 +13,7 @@ The `compliance-reviewer` agent wrote the findings. This is not legal advice. It
 - Server code is separated from the schema the browser uses.
 
 ## Blocks going public
-- **The operator's name in `src/config/site.ts` is "Nguyen Van A".** If that's a placeholder, the published identity is false. It must be the real one before deployment.
+- The operator name was confirmed by the owner on 2026-11-03 (DECISIONS #43), so this no longer blocks. Before going public, the lawyer question on cross-border transfer still applies.
 
 ## Before switching the waitlist on
 See docs/validation/waitlist-setup.md: the email-sending tool must be chosen and named, data-processing contracts, a rate limit, stored consent texts per version, the legal deletion deadline, and what "ra mắt chính thức" means.

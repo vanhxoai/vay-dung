@@ -94,7 +94,7 @@
 - Reviews: compliance-reviewer and qa-tester, fixed. See docs/research/compliance-review-phase5.md.
 
 **Known limitations:**
-- The operator's name must be confirmed before going public.
+- The operator name "Nguyen Van A" is confirmed (DECISIONS #43).
 - With the waitlist off, there are no signup numbers.
 - Analytics can only be checked for real after deployment.
 - Page weight is about 385 KB, and the form takes about 7–8 s to become usable on slow 3G.

@@ -3,10 +3,9 @@ import { expect, test, type Page } from "@playwright/test";
 const waitlistOn = process.env.WAITLIST_ENABLED === "true";
 
 test.describe("phase 5 QA: any state", () => {
-  // BUG: CONTROLLER.name in src/config/site.ts is still the placeholder "Nguyen Van A".
-  test.fail("the privacy notice names a real operator, not a placeholder", async ({ page }) => {
+  test("the privacy notice names the operator confirmed by the owner (DECISIONS #43)", async ({ page }) => {
     await page.goto("/rieng-tu");
-    await expect(page.locator("main")).not.toContainText("Nguyen Van A");
+    await expect(page.locator("main")).toContainText("Nguyen Van A");
   });
 
   test("the language switch keeps you on the same page, both ways", async ({ page }) => {
