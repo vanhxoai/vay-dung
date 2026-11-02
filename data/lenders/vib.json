@@ -1,0 +1,734 @@
+{
+  "schemaVersion": 2,
+  "slug": "vib",
+  "name": "VIB",
+  "legalName": "Ngân hàng TMCP Quốc Tế Việt Nam",
+  "licenseCategory": "bank",
+  "licensedInstitutionId": "vib",
+  "website": "https://www.vib.com.vn/",
+  "products": [
+    {
+      "id": "vib-vay-tin-chap-nhan-luong-qua-vib",
+      "nameVi": "Vay tiêu dùng tín chấp - nhận lương qua VIB",
+      "nameEn": "VIB unsecured consumer loan - salary paid via VIB",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vib",
+      "brandOrChannel": "MAX by VIB",
+      "online": true,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated on the product page."
+      },
+      "amountMaxVnd": {
+        "value": 1000000000,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: up to 1 tỷ đồng, no collateral. Stated once for the whole unsecured consumer loan page, not split by package."
+      },
+      "termMinMonths": {
+        "value": 12,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: 12 to 60 months for both packages."
+      },
+      "termMaxMonths": {
+        "value": 60,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: 12 to 60 months for both packages."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "nhận lương qua VIB",
+          "minPercent": {
+            "value": 1.9,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "Page: 'Từ 1.9%/tháng'. Floor only; no maximum, no basis stated."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No upper rate published. This is not an offered range."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Page does not say flat or reducing. The page example numerically matches an annuity (reducing) schedule, but that is our own check, not a statement by VIB."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "note": "Page: '/tháng'."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "note": "Not stated. Inferred only because the page example payment (8,457,141 for 300 triệu, 60 months) is close to an annuity at about 1.9167%/month; a flat schedule would give 10,700,000. Unconfirmed."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí tất toán trước hạn",
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+            "note": "Charged only on early settlement."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Arises only if the borrower settles early."
+          },
+          "base": "unknown",
+          "rule": "percent_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Stored as tiers."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No minimum stated."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": [
+              {
+                "from": 0,
+                "to": 1,
+                "unit": "year",
+                "percent": 4,
+                "note": "Năm 01"
+              },
+              {
+                "from": 1,
+                "to": 2,
+                "unit": "year",
+                "percent": 3,
+                "note": "Năm 02"
+              },
+              {
+                "from": 2,
+                "to": null,
+                "unit": "year",
+                "percent": 2,
+                "note": "Năm 03 trở đi"
+              }
+            ],
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "note": "Page: 'Năm 01: 4%, Năm 02: 3%, Năm 03 trở đi: 2%'. The page does not say what the percent is applied to (prepaid amount or outstanding principal), nor how partial prepayment is treated, so base is unknown."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thẩm định khoản vay",
+          "nameEn": "Appraisal fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Thông báo giao dịch qua SMS",
+          "nameEn": "SMS transaction alerts",
+          "trigger": "periodic",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 22,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Page: from 22 years old at the time of credit request."
+        },
+        "maxAge": {
+          "value": 55,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Page: at loan maturity not over 55 for women and 60 for men. Stricter value (55) stored."
+        },
+        "maxAgeAtLoanEnd": true,
+        "minMonthlyIncomeVnd": {
+          "value": 7000000,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Page: minimum income 7 triệu/tháng."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân / Thẻ Căn cước",
+            "Hồ sơ khác theo quy định của VIB từng thời kỳ"
+          ],
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Product page also says to apply with CCCD and the VNeID app."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Package is for salary paid through VIB; whether a VIB account is otherwise required is not stated."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Không có nợ xấu trong 2 năm gần nhất",
+            "Ở tỉnh/thành phố có chi nhánh VIB đang hoạt động",
+            "Quốc tịch Việt Nam",
+            "Làm hưởng lương từ 3 tháng trở lên (theo trang sản phẩm, chưa tách theo gói)"
+          ],
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Credit history, residence and nationality are from the fee page; the 3-month / 6-month conditions are from the main product page text and are not split by package there."
+        },
+        "notes": "Income 7 triệu is the same on both fee pages and the product page."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published on the consumer loan pages. The secured overdraft fee page states 150% of the in-term rate, but that is a different product and is not applied here."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 300000000,
+          "termMonths": 60,
+          "ratePercent": 1.9,
+          "rateBasis": "unknown",
+          "ratePeriod": "monthly",
+          "amortization": "unknown",
+          "monthlyPaymentVnd": 8457141,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": null,
+          "internallyConsistent": false,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Page: 300 triệu, 60 tháng, 1.9%/tháng (salary via VIB), payment 8,457,141, 'for reference only'. A plain annuity at 1.9%/month gives about 8,422,705; 8,457,141 corresponds to about 1.9167%/month (23%/year divided by 12). Difference about 34,000/month is unexplained. Do not use as a test fixture."
+        }
+      ],
+      "conflicts": [],
+      "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+      "retrievedAt": "2026-11-02",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "VIB publishes only a 'từ X%/tháng' floor, with no upper rate and no flat or reducing basis, so the real cost cannot be compared fairly.",
+      "notes": "The rate is an advertised floor (kind advertised_floor), not an offered range. Insurance and late-payment terms are not on the consumer loan pages; absence is not proof there is none."
+    },
+    {
+      "id": "vib-vay-tin-chap-luong-chuyen-khoan-the-tin-dung",
+      "nameVi": "Vay tiêu dùng tín chấp - lương chuyển khoản / thẻ tín dụng",
+      "nameEn": "VIB unsecured consumer loan - salary at another bank or credit card holder",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vib",
+      "brandOrChannel": "MAX by VIB",
+      "online": true,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated on the product page."
+      },
+      "amountMaxVnd": {
+        "value": 1000000000,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: up to 1 tỷ đồng, no collateral. Stated once for the whole unsecured consumer loan page, not split by package."
+      },
+      "termMinMonths": {
+        "value": 12,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: 12 to 60 months for both packages."
+      },
+      "termMaxMonths": {
+        "value": 60,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: 12 to 60 months for both packages."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "có lương chuyển khoản / thẻ tín dụng",
+          "minPercent": {
+            "value": 2,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "Page: 'Từ 2.0%/tháng'. Floor only; no maximum, no basis stated."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No upper rate published. This is not an offered range."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Page does not say flat or reducing. The page example numerically matches an annuity (reducing) schedule, but that is our own check, not a statement by VIB."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "note": "Page: '/tháng'."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "note": "Not stated. Inferred only from the example VIB publishes for its 1.9% salary package, which is close to an annuity. Unconfirmed."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí tất toán trước hạn",
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+            "note": "Charged only on early settlement."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Arises only if the borrower settles early."
+          },
+          "base": "unknown",
+          "rule": "percent_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Stored as tiers."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No minimum stated."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": [
+              {
+                "from": 0,
+                "to": 1,
+                "unit": "year",
+                "percent": 4,
+                "note": "Năm 01"
+              },
+              {
+                "from": 1,
+                "to": 2,
+                "unit": "year",
+                "percent": 3,
+                "note": "Năm 02"
+              },
+              {
+                "from": 2,
+                "to": null,
+                "unit": "year",
+                "percent": 2,
+                "note": "Năm 03 trở đi"
+              }
+            ],
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "note": "Page: 'Năm 01: 4%, Năm 02: 3%, Năm 03 trở đi: 2%'. The page does not say what the percent is applied to (prepaid amount or outstanding principal), nor how partial prepayment is treated, so base is unknown."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thẩm định khoản vay",
+          "nameEn": "Appraisal fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Thông báo giao dịch qua SMS",
+          "nameEn": "SMS transaction alerts",
+          "trigger": "periodic",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 22,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Page: from 22 years old at the time of credit request."
+        },
+        "maxAge": {
+          "value": 55,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Page: at loan maturity not over 55 for women and 60 for men. Stricter value (55) stored."
+        },
+        "maxAgeAtLoanEnd": true,
+        "minMonthlyIncomeVnd": {
+          "value": 7000000,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "Page: minimum income 7 triệu/tháng."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân / Thẻ Căn cước",
+            "Hồ sơ khác theo quy định của VIB từng thời kỳ"
+          ],
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Product page also says to apply with CCCD and the VNeID app."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Không có nợ xấu trong 2 năm gần nhất",
+            "Ở tỉnh/thành phố có chi nhánh VIB đang hoạt động",
+            "Quốc tịch Việt Nam",
+            "Làm hưởng lương từ 3 tháng trở lên, hoặc có thẻ tín dụng hoạt động từ 6 tháng tại VIB hoặc ngân hàng khác (theo trang sản phẩm, chưa tách theo gói)"
+          ],
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Credit history, residence and nationality are from the fee page; the 3-month / 6-month conditions are from the main product page text and are not split by package there."
+        },
+        "notes": "Income 7 triệu is the same on both fee pages and the product page."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published on the consumer loan pages. The secured overdraft fee page states 150% of the in-term rate, but that is a different product and is not applied here."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+      "retrievedAt": "2026-11-02",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "VIB publishes only a 'từ X%/tháng' floor, with no upper rate and no flat or reducing basis, so the real cost cannot be compared fairly.",
+      "notes": "The rate is an advertised floor (kind advertised_floor), not an offered range. Insurance and late-payment terms are not on the consumer loan pages; absence is not proof there is none."
+    }
+  ],
+  "researchNotes": "1) Licence: 'vib' is on data/licensed-institutions.json (legal name matches). 2) Products: two packages of the VIB unsecured consumer loan (MAX by VIB app), from the official product page and two official fee pages. Both are excludeFromRanking because the only rate is 'từ 1.9%/tháng' / 'từ 2.0%/tháng' (advertised_floor): no maximum, no flat/reducing basis. 3) Firm figures: up to 1 tỷ, 12-60 months, early settlement fee 4% / 3% / 2% by loan year (what it is applied to is not stated), appraisal and SMS free, age 22 and at maturity 55 (women) / 60 (men), income 7 triệu, no bad debt in 2 years. 4) Gaps: no insurance information on consumer loan pages (unknown, not zero); no late-payment terms for this product; no disbursement fee stated (not proof of zero); no loan contract or general terms document found; the FAQ page returned no loan answers; page dates unknown. 5) Surprise: the page example (300 triệu, 60 months, 1.9%/tháng, payment 8,457,141) does not match a 1.9%/month annuity (8,422,705) but matches 23%/year divided by 12 (1.9167%/month); a flat 1.9%/month would give 10,700,000, so the example looks like reducing balance, but VIB never says so. 6) Not recorded: VIB thấu chi (vib.com.vn/vn/thau-chi) is secured by real estate (up to 5 tỷ, 12-month limit, rate 'áp dụng theo từng thời kỳ'), so out of scope. Its fee page says overdue principal 150% of in-term rate and overdue interest 10%/year, but that is a secured product. Credit cards not recorded (not checked). A third-party aggregator (topi.vn) reports prepayment 1-3%; not used. 7) The two fee pages show identical fee and eligibility text; the page for salary at another bank says nothing extra for that package.",
+  "retrievedAt": "2026-11-02"
+}

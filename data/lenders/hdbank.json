@@ -1,0 +1,792 @@
+{
+  "schemaVersion": 2,
+  "slug": "hdbank",
+  "name": "HDBank",
+  "legalName": "Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh",
+  "licenseCategory": "bank",
+  "licensedInstitutionId": "hdbank",
+  "website": "https://www.hdbank.com.vn/",
+  "products": [
+    {
+      "id": "hdbank-vay-tieu-dung-khong-tai-san-bao-dam",
+      "nameVi": "Vay tiêu dùng không tài sản bảo đảm (vay tín chấp)",
+      "nameEn": "HDBank unsecured consumer loan",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "hdbank",
+      "brandOrChannel": null,
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated on the product page."
+      },
+      "amountMaxVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Page states the limit as a multiple of income ('đến 12 tháng thu nhập thực lãnh'), not a VND figure."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated."
+      },
+      "termMaxMonths": {
+        "value": 60,
+        "sourceUrl": "https://www.hdbank.com.vn/vi/personal/product/detail/san-pham-vay/vay-tieu-dung/vay-tieu-dung-khong-tai-san-bao-dam",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Page: 'Thời hạn vay tối đa 60 tháng.'"
+      },
+      "rates": [
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất cho vay bình quân, khoản vay trung dài hạn, mọi khách hàng cá nhân và doanh nghiệp (không riêng sản phẩm này)",
+          "minPercent": {
+            "value": 10.4,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/TBLAISUATCHOVAYBINHQUANTUNGAY01072026_1783328933712.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-07-01",
+            "note": "HDBank notice, applies from 01/07/2026: trung dài hạn 10,4%, ngắn hạn 8,5%. Bank-wide average for all VND loans to individuals and businesses; not this product's rate. The text read does not print the period or basis."
+          },
+          "maxPercent": {
+            "value": 10.4,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/TBLAISUATCHOVAYBINHQUANTUNGAY01072026_1783328933712.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-07-01",
+            "note": "Same single average figure."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Not stated in the notice."
+          },
+          "period": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "The text we read does not say per year or per month."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null,
+        "note": "Page says principal and interest are paid monthly but not the schedule type."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí phạt trả nợ trước hạn (khoản vay trung dài hạn)",
+          "nameEn": "Early repayment penalty (medium/long-term loans)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/PHULUC07BIEUPHIDICHVUTINDUNGDICHVUKHAC_1748313300000.pdf",
+            "note": "Charged only on early repayment."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only arises on early repayment."
+          },
+          "base": "prepaid_amount",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a flat percent of the amount. Bank-wide schedule (Phụ lục 07): per period = prepaid amount x days early x 1,5% / 360, i.e. 1,5% per year pro rata, summed over periods. Left unset so it is not read as 1,5% of the amount. Short-term loans: 0,03%/ngày, minimum 500.000 VND."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "unknown",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Giấy xác lập quan hệ khách hàng",
+            "CMND/Hộ chiếu/Căn cước công dân",
+            "Hộ khẩu thường trú/KT3/Giấy xác nhận tạm trú (nếu sống khác địa bàn thường trú)",
+            "HĐLĐ/Quyết định bổ nhiệm/chứng từ tương đương",
+            "Sao kê tài khoản lương 3 tháng gần nhất"
+          ],
+          "sourceUrl": "https://www.hdbank.com.vn/vi/personal/product/detail/san-pham-vay/vay-tieu-dung/vay-tieu-dung-khong-tai-san-bao-dam",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Page section 'Hồ sơ'."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "notes": "Page gives no age, minimum income or credit-history rules. Page is a lead form (staff call back)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not found for this product."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://www.hdbank.com.vn/vi/personal/product/detail/san-pham-vay/vay-tieu-dung/vay-tieu-dung-khong-tai-san-bao-dam",
+      "retrievedAt": "2026-11-02",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "HDBank publishes no rate for this product, only a bank-wide average, so the cost cannot be compared.",
+      "notes": "Page: loan up to 12 months of take-home pay, disbursement within 48 hours, 'Lãi suất cạnh tranh và rõ ràng' but no figure. Page footer says 2023. A search hint of a '13%/năm' starting rate from an HDBank-hosted article was not confirmed when we opened the article, so it is not recorded."
+    },
+    {
+      "id": "hdbank-vay-tieu-dung-linh-hoat",
+      "nameVi": "Vay tiêu dùng linh hoạt (cho chủ thẻ tín dụng HDBank, qua Mobile Banking)",
+      "nameEn": "HDBank flexible consumer loan (credit-card holders, via mobile app)",
+      "productType": "cash_loan",
+      "status": "unverified",
+      "validUntil": null,
+      "lenderOfRecord": "hdbank",
+      "brandOrChannel": "HDBank Mobile Banking",
+      "online": true,
+      "amountMinVnd": {
+        "value": 5000000,
+        "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Sheet: 'Tối thiểu 05 triệu'."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Sheet: 'tối đa 100 triệu đồng', and total loan balance no more than 50% of the card limit. Oct 2025 T&C says up to 80% of the card limit instead (see conflicts)."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Sheet: terms 6; 12; 24 and 36 months."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Sheet: terms 6; 12; 24 and 36 months."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "kỳ hạn 6 và 12 tháng",
+          "minPercent": {
+            "value": 1.5,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "HDBank product sheet: 1.5%/tháng (printed as 18,3%/năm)."
+          },
+          "maxPercent": {
+            "value": 1.5,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Single fixed rate per term, so min = max."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "stated",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "note": "Sheet: 'Lãi cho vay tính theo dư nợ ban đầu' (interest on the original balance). The sheet itself converts it to a much higher rate on the actual balance."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "note": "Sheet states %/tháng."
+          },
+          "promotional": null
+        },
+        {
+          "kind": "offered_range",
+          "segment": "kỳ hạn 24 và 36 tháng",
+          "minPercent": {
+            "value": 1.7,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "HDBank product sheet: 1.7%/tháng (printed as 20,7%/năm)."
+          },
+          "maxPercent": {
+            "value": 1.7,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "low",
+            "note": "Single fixed rate per term, so min = max."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "stated",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "note": "Sheet: 'Lãi cho vay tính theo dư nợ ban đầu' (interest on the original balance). The sheet itself converts it to a much higher rate on the actual balance."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "note": "Sheet states %/tháng."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "flat",
+        "provenance": "inferred",
+        "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+        "note": "Sheet: fixed monthly amount of principal plus interest, split evenly over the term, interest on the initial balance. Flat is our label."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí trả nợ trước hạn",
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf"
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only arises on early repayment; only full payoff is allowed (T&C)."
+          },
+          "base": "prepaid_amount",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": 4,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "Sheet: '4%/số tiền trả nợ trước hạn (tối thiểu 100.000 VNĐ)'. The Oct 2025 T&C only says the fee is set in the credit contract (see conflicts)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": 100000,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "Sheet: tối thiểu 100.000 VNĐ."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "existingCustomerRequired": {
+          "value": true,
+          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Must be the main holder of an HDBank personal credit card."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Thẻ tín dụng HDBank đã phát hành ít nhất 6 tháng và đang hoạt động",
+            "Trong 6 tháng gần nhất không có nợ thẻ/nhóm nợ CIC quá hạn từ nhóm 2 trở lên",
+            "Thẻ còn hiệu lực tối thiểu bằng kỳ hạn vay",
+            "Dùng Mobile Banking và đã xác minh KYC"
+          ],
+          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Sheet 'Điều kiện tham gia'."
+        },
+        "notes": "Not a general salary loan: only for HDBank credit-card holders. No age or income rule found."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nợ gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn.",
+          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Sheet: 'Lãi suất quá hạn: 150% lãi suất cho vay trong hạn tính trên dư nợ gốc quá hạn'."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium"
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated for this product."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "100.000.000 and loan balance <= 50% of card limit",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+              "note": "Product sheet."
+            },
+            {
+              "value": "up to 80% of the card limit",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/Cqtlo7QsbSFRuiQgumlM20251030090352/TnC1_1761789859111.pdf",
+              "note": "Oct 2025 terms and conditions."
+            }
+          ],
+          "resolution": "Stored 100 triệu from the sheet; the two limits are on different bases so the real cap may differ. Product kept out of ranking."
+        },
+        {
+          "field": "fees[0].percent",
+          "values": [
+            {
+              "value": "4% of prepaid amount, min 100.000",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf"
+            },
+            {
+              "value": "fee as set in the credit contract (no number)",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/Cqtlo7QsbSFRuiQgumlM20251030090352/TnC1_1761789859111.pdf"
+            }
+          ],
+          "resolution": "Stored the sheet's 4%; the contract amount is unseen."
+        }
+      ],
+      "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+      "retrievedAt": "2026-11-02",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Only for existing HDBank credit-card holders. The rate comes from an undated product sheet that looks like an internal document (file path dated about 2024-04) and conflicts with the 2025 terms; it is not on any HDBank product page.",
+      "notes": "The sheet prints equivalent rates on the actual balance: 6 months 31,3%/năm; 12 months 33,7%; 24 months 39,7%; 36 months 40,3%. Stated annual figures are 18,3% and 20,7% on the original balance. The rate differs by term, but the app picks one offered_range per product, so it would show 1,5%/tháng for a 24-month loan; do not rank until per-term rates are supported. Source date not printed on the sheet (sourceDocumentDate unknown; 2024-04 comes only from the file path). T&C (Oct 2025 path): only full early payoff, no partial.",
+      "excludeCode": "undated_document"
+    },
+    {
+      "id": "hdbank-the-tin-dung",
+      "nameVi": "Thẻ tín dụng cá nhân HDBank",
+      "nameEn": "HDBank personal credit card",
+      "productType": "credit_card",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "hdbank",
+      "brandOrChannel": null,
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "amountMaxVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Card limit not covered by the fee schedule."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "termMaxMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "thẻ tín dụng quốc tế (nội địa: 1,58%-3,0%/tháng)",
+          "minPercent": {
+            "value": 2,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-19",
+            "note": "Fee schedule effective 19/01/2026, line 22: 'Lãi suất trong hạn 2,0% - 3,0%/tháng' for international cards. The table text does not say which card tier or customer gets which rate."
+          },
+          "maxPercent": {
+            "value": 3,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-19",
+            "note": "Same line."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Not stated."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+            "note": "%/tháng."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "revolving",
+        "provenance": "inferred",
+        "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+        "note": "Credit card."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí chậm thanh toán dư nợ tín dụng",
+          "nameEn": "Late payment fee",
+          "trigger": "late_payment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf"
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "unknown",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": 4,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-19",
+            "note": "4,0% of the minimum payment amount, minimum 100.000."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": 100000,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-19",
+            "note": "tối thiểu 100.000"
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí sử dụng vượt hạn mức",
+          "nameEn": "Over-limit fee",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf"
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "transaction_amount",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": 2.5,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-19",
+            "note": "2,5% of the amount over the limit, minimum 55.000."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": 55000,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-19",
+            "note": "tối thiểu 55.000"
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "notes": "Not researched; credit cards are out of the MVP ranking scope."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Lãi quá hạn bằng 150% lãi suất trong hạn.",
+          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-01-19",
+          "note": "Fee schedule line 23."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-01-19",
+          "note": "150% lãi suất trong hạn."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Late-interest rate listed as 'Chưa áp dụng'."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/product/editor/98SgKQlVhNjHglehnlUU20260119102949/19126BieuphiThetindungcanhan_1768793446486.pdf",
+      "retrievedAt": "2026-11-02",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Credit card; basis of the interest rate is not stated and annual fees were not read reliably.",
+      "notes": "Annual and issuance fees are in the PDF but the table layout did not extract reliably, so they are not recorded. Installment-conversion fees (0,7%-1,2%/tháng) exist but are not recorded."
+    }
+  ],
+  "researchNotes": "1) Licence: 'hdbank' is on data/licensed-institutions.json (Giấy phép 0026/NH-GP). 2) Key finding: HDBank's public unsecured-loan page states max term 60 months, a limit of 12 months of net income and a document list, but NO interest rate and no VND limit; the only rate figure is the bank-wide average (10,4% medium/long term, from 01/07/2026), recorded as benchmark, so that product is not rankable. 3) The only real offered rates are for the card-linked 'vay tiêu dùng linh hoạt': 1,5%/tháng (6, 12 months) and 1,7%/tháng (24, 36 months), flat on the original balance, from an undated product sheet that looks internal, plus Oct 2025 T&C. Existing HDBank card holders only; excluded from ranking. 4) Gaps: no fee schedule specific to the unsecured loan; the credit fee schedule (Phụ lục 07; effective date not found in extracted text, another version applies from 03/06/2024) only gives a bank-wide early repayment formula (1,5%/360 per day early on the prepaid amount per period); no mandatory insurance information found; no age or income rules; no overdraft (thấu chi) page for individuals found (only generic debit-card terms mention a possible overdraft). HD Saison excluded as instructed. 5) Contradictions: card loan limit (50% of card limit, max 100 triệu in sheet vs 80% of card limit in Oct 2025 T&C); early repayment fee 4% (sheet) vs 'per contract' (T&C). 6) Surprising: the product sheet is an internal-looking submission published on HDBank's CDN; the Oct 2025 T&C file carries an MB form code (19.QĐSP - MB.01/TTT) although its text names HDBank; the credit-card interest range of 2,0%-3,0%/tháng is high. All figures read 2026-11-02.",
+  "retrievedAt": "2026-11-02"
+}
