@@ -40,16 +40,23 @@ export function checkAffordability(
 }
 
 /**
- * The largest amount you could borrow with an equal-instalment (reducing) loan
- * whose payment fits within `maxPaymentVnd`. Used to suggest a smaller loan.
- * Rounded DOWN to the nearest 100,000đ so the suggestion is always affordable.
+ * ESTIMATE of the largest amount you could borrow with an equal-instalment
+ * (reducing) loan whose instalment fits within `maxPaymentVnd`, in steps of
+ * 100,000đ. It ignores fees, insurance and flat pricing, so the app must
+ * re-check a suggested amount with `computeLoanCost(...).maxPaymentVnd` for the
+ * actual product before presenting it.
  */
-export function maxAffordablePrincipal(maxPaymentVnd: Vnd, monthlyRate: number, months: number): Vnd {
+export function maxAffordablePrincipal(maxPaymentVnd: Vnd, monthlyRateFraction: number, months: number): Vnd {
   assertVnd(maxPaymentVnd, "max payment");
   if (maxPaymentVnd <= 0) return 0;
-  const raw = monthlyRate === 0 ? maxPaymentVnd * months : (maxPaymentVnd * (1 - Math.pow(1 + monthlyRate, -months))) / monthlyRate;
+  const fits = (p: Vnd) => annuityPayment(p, monthlyRateFraction, months) <= maxPaymentVnd;
+  const raw =
+    monthlyRateFraction === 0
+      ? maxPaymentVnd * months
+      : (maxPaymentVnd * (1 - Math.pow(1 + monthlyRateFraction, -months))) / monthlyRateFraction;
   let p = Math.floor(raw / 100_000) * 100_000;
-  // Guard against payment rounding pushing just over the limit.
-  while (p > 0 && annuityPayment(p, monthlyRate, months) > maxPaymentVnd) p -= 100_000;
+  // The inverse uses the unrounded instalment, so the true answer may be one step either way.
+  if (fits(p + 100_000)) p += 100_000;
+  while (p > 0 && !fits(p)) p -= 100_000;
   return p;
 }

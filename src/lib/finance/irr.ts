@@ -22,13 +22,32 @@ function dNpv(flows: readonly number[], r: number): number {
   return total;
 }
 
-export function monthlyIrr(flows: readonly number[]): number {
+function assertLoanShaped(flows: readonly number[]) {
   if (flows.length < 2) throw new Error("need at least two cash flows");
   if (!(flows[0] > 0)) throw new Error("flows[0] must be the (positive) amount received");
   const paid = flows.slice(1).reduce((a, b) => a - b, 0);
   if (!(paid > 0) || flows.slice(1).some((f) => f > 0)) throw new Error("payments must be negative");
+}
 
-  // Newton
+/**
+ * Bisection. For loan-shaped flows (+received, then −payments) the NPV RISES as r
+ * rises (payments are discounted more), so the root has NPV < 0 below it and > 0 above.
+ */
+export function monthlyIrrBisection(flows: readonly number[]): number {
+  assertLoanShaped(flows);
+  let lo = -0.999999;
+  let hi = 1;
+  while (npv(flows, hi) < 0 && hi < 1e9) hi *= 2;
+  for (let i = 0; i < 2000 && hi - lo > TOLERANCE * Math.max(1, Math.abs(lo)); i++) {
+    const mid = (lo + hi) / 2;
+    if (npv(flows, mid) < 0) lo = mid;
+    else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+
+export function monthlyIrr(flows: readonly number[]): number {
+  assertLoanShaped(flows);
   let r = 0.02;
   for (let i = 0; i < MAX_ITER; i++) {
     const f = npv(flows, r);
@@ -39,16 +58,5 @@ export function monthlyIrr(flows: readonly number[]): number {
     if (Math.abs(next - r) < TOLERANCE) return next;
     r = next;
   }
-
-  // Bisection fallback. NPV falls as r rises; find a bracket first.
-  let lo = -0.99;
-  let hi = 1;
-  while (npv(flows, hi) > 0 && hi < 1e6) hi *= 2;
-  for (let i = 0; i < 500; i++) {
-    const mid = (lo + hi) / 2;
-    if (npv(flows, mid) > 0) lo = mid;
-    else hi = mid;
-    if (hi - lo < TOLERANCE) break;
-  }
-  return (lo + hi) / 2;
+  return monthlyIrrBisection(flows);
 }

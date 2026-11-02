@@ -13,19 +13,35 @@ export type LatePenaltyTerms = {
 };
 
 export type LateWarning = {
-  /** Yearly rate on overdue principal (nominal), null if unknown. */
+  /** Yearly rate on overdue principal, null if unknown. */
   overduePrincipalYearlyRate: number | null;
-  /** Extra cost of paying ONE instalment's principal 30 days late, null if unknown. */
+  /** Yearly rate on overdue interest, null if unknown. */
+  overdueInterestYearlyRate: number | null;
+  /** Extra cost of paying ONE instalment 30 days late, null if any part is unknown. */
   extraCostFor30DaysVnd: Vnd | null;
 };
 
 /**
- * @param inTermYearlyRate nominal yearly in-term rate as a fraction (e.g. 0.45)
- * @param overduePrincipalVnd principal of the late instalment
+ * @param contractYearlyRate the contract's in-term rate on the REDUCING balance, nominal
+ *   yearly, as a fraction (e.g. 0.45). For a flat-quoted loan pass its real APR
+ *   (`computeLoanCost().aprNominal`), not the flat headline, or the penalty comes out too low.
+ * @param overduePrincipalVnd principal part of the late instalment
+ * @param overdueInterestVnd interest part of the late instalment
  */
-export function lateWarning(terms: LatePenaltyTerms, inTermYearlyRate: number, overduePrincipalVnd: Vnd): LateWarning {
-  if (terms.overduePrincipalRateMultiplier === null) return { overduePrincipalYearlyRate: null, extraCostFor30DaysVnd: null };
-  const rate = inTermYearlyRate * terms.overduePrincipalRateMultiplier;
+export function lateWarning(
+  terms: LatePenaltyTerms,
+  contractYearlyRate: number,
+  overduePrincipalVnd: Vnd,
+  overdueInterestVnd: Vnd = 0,
+): LateWarning {
+  const principalRate =
+    terms.overduePrincipalRateMultiplier === null ? null : contractYearlyRate * terms.overduePrincipalRateMultiplier;
+  const interestRate = terms.overdueInterestRatePercentYear === null ? null : terms.overdueInterestRatePercentYear / 100;
   // Days/365, the convention in Vietnamese loan contracts.
-  return { overduePrincipalYearlyRate: rate, extraCostFor30DaysVnd: roundVnd((overduePrincipalVnd * rate * 30) / 365) };
+  const days = 30 / 365;
+  let extra: Vnd | null = null;
+  if (principalRate !== null && (interestRate !== null || overdueInterestVnd === 0)) {
+    extra = roundVnd(overduePrincipalVnd * principalRate * days + overdueInterestVnd * (interestRate ?? 0) * days);
+  }
+  return { overduePrincipalYearlyRate: principalRate, overdueInterestYearlyRate: interestRate, extraCostFor30DaysVnd: extra };
 }

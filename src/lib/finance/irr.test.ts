@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { monthlyIrr } from "./irr";
+import { monthlyIrr, monthlyIrrBisection } from "./irr";
 
 describe("monthlyIrr", () => {
   it("one period: receive 100, repay 110 → 10%", () => {
@@ -26,6 +26,24 @@ describe("monthlyIrr", () => {
     expect(monthlyIrr([1_428_000, -2_040_000])).toBeCloseTo(2_040_000 / 1_428_000 - 1, 10);
     // Receive 100, repay 1,000 → 900% per month
     expect(monthlyIrr([100, -1000])).toBeCloseTo(9, 8);
+  });
+
+  it("the bisection fallback (called directly) agrees with Newton", () => {
+    // Regression: the fallback once had its bracket inverted and returned ~1,048,576.
+    const cases: number[][] = [
+      [100, -110],
+      [100, -60, -60],
+      [1_428_000, -2_040_000],
+      [10_000_000, ...Array(11).fill(-974_333), -974_337],
+      [1200, ...Array(12).fill(-100)],
+    ];
+    for (const flows of cases) expect(monthlyIrrBisection(flows)).toBeCloseTo(monthlyIrr(flows), 9);
+  });
+
+  it("bisection handles a deeply negative IRR (repay far less than received)", () => {
+    // 1000 received, 1 repaid: 1000 = 1/(1+r) → r = −0.999
+    expect(monthlyIrrBisection([1000, -1])).toBeCloseTo(-0.999, 6);
+    expect(monthlyIrr([1000, -1])).toBeCloseTo(-0.999, 6);
   });
 
   it("rejects flows that aren't loan-shaped", () => {

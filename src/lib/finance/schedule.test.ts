@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { annuityPayment, buildSchedule } from "./schedule";
 
+// Monthly rate as an exact percent: m(1.41) = 1.41%/tháng
+const m = (percent: number) => ({ percent, divisor: 1 });
 const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
 
 describe("annuityPayment", () => {
@@ -20,7 +22,7 @@ describe("annuityPayment", () => {
 });
 
 describe("buildSchedule: annuity", () => {
-  const rows = buildSchedule(12_000_000, 0.01, 12, "annuity");
+  const rows = buildSchedule(12_000_000, m(1), 12, "annuity");
 
   it("month 1: interest = 12,000,000 × 1% = 120,000; principal = 1,066,185 − 120,000 = 946,185", () => {
     expect(rows[0]).toEqual({ month: 1, payment: 1_066_185, interest: 120_000, principal: 946_185, balance: 11_053_815 });
@@ -43,7 +45,7 @@ describe("buildSchedule: annuity", () => {
 
 describe("buildSchedule: flat (interest on the original amount)", () => {
   // FE Credit's published example: 10,000,000, 12 months, 1.41%/tháng flat
-  const rows = buildSchedule(10_000_000, 0.0141, 12, "flat");
+  const rows = buildSchedule(10_000_000, m(1.41), 12, "flat");
 
   it("interest is 10,000,000 × 1.41% = 141,000 every month, even as the balance falls", () => {
     expect(rows.every((r) => r.interest === 141_000)).toBe(true);
@@ -61,7 +63,7 @@ describe("buildSchedule: flat (interest on the original amount)", () => {
 
 describe("buildSchedule: equal principal (falling instalments)", () => {
   // Home Credit's published example: 20,000,000, 12 months, 0.75%/tháng on the remaining balance
-  const rows = buildSchedule(20_000_000, 0.0075, 12, "equal_principal");
+  const rows = buildSchedule(20_000_000, m(0.75), 12, "equal_principal");
 
   it("month 1: principal 1,666,666 + interest 150,000 = 1,816,666 (page shows ≈1,817,000)", () => {
     expect(rows[0]).toMatchObject({ principal: 1_666_666, interest: 150_000, payment: 1_816_666 });
@@ -79,15 +81,15 @@ describe("buildSchedule: equal principal (falling instalments)", () => {
 
 describe("buildSchedule: validation", () => {
   it("rejects non-integer money, zero/negative principal, bad terms and rates", () => {
-    expect(() => buildSchedule(1000.5, 0.01, 12, "annuity")).toThrow();
-    expect(() => buildSchedule(0, 0.01, 12, "annuity")).toThrow();
-    expect(() => buildSchedule(1_000_000, 0.01, 0, "annuity")).toThrow();
-    expect(() => buildSchedule(1_000_000, 0.01, 1.5, "annuity")).toThrow();
-    expect(() => buildSchedule(1_000_000, -0.01, 12, "annuity")).toThrow();
+    expect(() => buildSchedule(1000.5, m(1), 12, "annuity")).toThrow();
+    expect(() => buildSchedule(0, m(1), 12, "annuity")).toThrow();
+    expect(() => buildSchedule(1_000_000, m(1), 0, "annuity")).toThrow();
+    expect(() => buildSchedule(1_000_000, m(1), 1.5, "annuity")).toThrow();
+    expect(() => buildSchedule(1_000_000, m(-1), 12, "annuity")).toThrow();
   });
 
   it("a one-month loan repays everything at once", () => {
-    expect(buildSchedule(1_000_000, 0.02, 1, "annuity")).toEqual([
+    expect(buildSchedule(1_000_000, m(2), 1, "annuity")).toEqual([
       { month: 1, payment: 1_020_000, interest: 20_000, principal: 1_000_000, balance: 0 },
     ]);
   });

@@ -40,9 +40,11 @@ describe("checkAffordability (guideline: total debt payments ≤ 40% of income)"
 });
 
 describe("maxAffordablePrincipal", () => {
-  it("inverse of the annuity formula, rounded down to 100,000đ", () => {
-    // 1,066,185 × (1 − 1.01^−12) / 0.01 = 11,999,994.8 → 11,900,000
-    expect(maxAffordablePrincipal(1_066_185, 0.01, 12)).toBe(11_900_000);
+  it("finds the true maximum in 100,000đ steps, using the ROUNDED instalment", () => {
+    // Inverse of the unrounded formula: 1,066,185 × (1 − 1.01^−12) / 0.01 = 11,999,994.8 → floor 11,900,000,
+    // but 12,000,000's rounded instalment is exactly 1,066,185, which fits, so the answer is 12,000,000.
+    expect(maxAffordablePrincipal(1_066_185, 0.01, 12)).toBe(12_000_000);
+    expect(maxAffordablePrincipal(1_066_184, 0.01, 12)).toBe(11_900_000);
   });
 
   it("the suggested amount's instalment never exceeds the limit", () => {

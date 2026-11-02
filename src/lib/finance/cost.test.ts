@@ -74,6 +74,27 @@ describe("computeLoanCost: fees and insurance", () => {
     const paid = computeLoanCost({ ...base, charges: [{ label: "fee", amountVnd: 600_000, timing: "paid_upfront" }] });
     expect(paid.aprNominal).toBe(deducted.aprNominal);
     expect(paid.totalCostVnd).toBe(deducted.totalCostVnd);
+    // …but the money in hand and the out-of-pocket total are described honestly:
+    expect(paid.amountReceivedVnd).toBe(20_000_000); // you receive the full loan
+    expect(paid.upfrontPaidVnd).toBe(600_000); // and pay the fee separately
+    expect(paid.totalPaidVnd).toBe(paid.totalRepaidVnd + 600_000);
+    expect(deducted.amountReceivedVnd).toBe(19_400_000);
+    expect(deducted.totalPaidVnd).toBe(deducted.totalRepaidVnd);
+  });
+
+  it("the documented half-đồng rule holds inside schedules (30%/năm: 30/100/12 isn't exact in floating point)", () => {
+    // finance-math-checker case 4, month 6: opening balance 8,961,380 → interest 224,034.5 → 224,035
+    const c = computeLoanCost({
+      principalVnd: 10_000_000,
+      termMonths: 24,
+      rate: yearly(30),
+      charges: [{ label: "Bảo hiểm", amountVnd: 700_000, timing: "added_to_loan" }],
+    });
+    const m6 = c.schedule[5];
+    expect(m6.balance + m6.principal).toBe(8_961_380);
+    expect(m6.interest).toBe(224_035);
+    // Independent Python (Decimal) total for this case: 14,358,415
+    expect(c.totalRepaidVnd).toBe(14_358_415);
   });
 
   it("insurance added to the loan raises every instalment, but you never receive it (TPFico-style premium)", () => {
@@ -128,6 +149,26 @@ describe("computeLoanCost: very short and very long terms", () => {
     expect(c.firstPaymentVnd).toBe(2_649_388);
     expect(c.totalInterestVnd).toBeGreaterThan(58_900_000);
     expect(c.totalInterestVnd).toBeLessThan(59_000_000);
+  });
+});
+
+describe("computeLoanCost: payment fields", () => {
+  it("equal-principal loans report falling payments: first, last, min and max", () => {
+    // Home Credit example: 1,816,666 in month 1 down to 1,679,174 in month 12
+    const c = computeLoanCost({
+      principalVnd: 20_000_000,
+      termMonths: 12,
+      rate: { percent: 0.75, basis: "reducing", period: "monthly" },
+      amortization: "equal_principal",
+    });
+    expect(c.firstPaymentVnd).toBe(1_816_666);
+    expect(c.lastPaymentVnd).toBe(1_679_174);
+    expect(c.maxPaymentVnd).toBe(1_816_666);
+    expect(c.minPaymentVnd).toBe(1_679_174);
+  });
+
+  it("rejects terms beyond 120 months (rounding drift would create a balloon payment)", () => {
+    expect(() => computeLoanCost({ principalVnd: 10_000_000, termMonths: 121, rate: yearly(36) })).toThrow();
   });
 });
 
