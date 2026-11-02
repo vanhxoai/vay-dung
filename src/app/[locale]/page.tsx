@@ -9,7 +9,18 @@ export default function HomePage() {
     <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-4 px-4 py-10">
       <h1 className="text-3xl font-bold">{t("title")}</h1>
       <p className="text-lg">{t("tagline")}</p>
-      <p className="text-sm opacity-70">{t("comingSoon")}</p>
+      <ul className="list-disc space-y-1 pl-5">
+        <li>{t("points.cost")}</li>
+        <li>{t("points.licensed")}</li>
+        <li>{t("points.honest")}</li>
+      </ul>
+      <Link
+        href="/vay"
+        className="mt-2 inline-flex min-h-12 items-center justify-center rounded-lg bg-emerald-800 px-4 py-2 font-semibold text-white hover:bg-emerald-900"
+      >
+        {t("start")}
+      </Link>
+      <p className="text-sm">{t("privacy")}</p>
       <Link
         href="/"
         locale={otherLocale}

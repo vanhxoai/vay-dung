@@ -125,7 +125,7 @@ describe("ranking", () => {
   });
 
   it("compares flat and reducing quotes on real cost, not the headline", () => {
-    // 2%/month flat over 24 months is about 41.7%/yr real, costlier than 36%/yr reducing.
+    // 2%/month flat over 24 months is about 40.9%/yr real, costlier than 36%/yr reducing.
     const flat = offer({ key: "flat", rate: { ...offer().rate!, minPercent: 2, maxPercent: 2, basis: "flat", period: "monthly" } });
     const reducing = offer({ key: "reducing", rate: { ...offer().rate!, minPercent: 36, maxPercent: 36 } });
     expect(recommend(need(), [flat, reducing], today).ranked.map((x) => x.offer.key)).toEqual(["reducing", "flat"]);

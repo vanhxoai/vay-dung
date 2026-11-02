@@ -19,10 +19,5 @@ export default defineConfig({
       use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } },
     },
   ],
-  webServer: {
-    command: `npx next dev -p ${PORT}`,
-    url: `http://localhost:${PORT}`,
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
-  },
+  // No webServer here: `npm run test:e2e` (scripts/e2e.mjs) builds, starts and stops the app.
 });

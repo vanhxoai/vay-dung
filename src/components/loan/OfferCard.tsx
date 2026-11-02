@@ -1,0 +1,193 @@
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
+import { formatDate, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
+import type { OfferFee } from "@/lib/recommend/offers";
+import type { Need, RankedOffer } from "@/lib/recommend/recommend";
+import { rateNoteText } from "./Results";
+
+const FIT_STYLE = {
+  fits: "text-emerald-800 dark:text-emerald-300",
+  fits_only_low: "text-amber-800 dark:text-amber-300",
+  too_much: "text-red-800 dark:text-red-300",
+} as const;
+
+function Row({ label, value, note }: { label: string; value: string; note?: string }) {
+  return (
+    <div className="flex flex-col">
+      <dt className="text-sm opacity-75">{label}</dt>
+      <dd className="font-semibold">
+        {value}
+        {note ? <span className="ml-1 text-sm font-normal opacity-75">({note})</span> : null}
+      </dd>
+    </div>
+  );
+}
+
+function range(a: string, b: string): string {
+  return a === b ? a : `${a} – ${b}`;
+}
+
+export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: number; need: Need }) {
+  const t = useTranslations("Offer");
+  const tRoot = useTranslations();
+  const locale = useLocale() as AppLocale;
+  const { offer, low, high, fit } = ranked;
+  const rate = offer.rate as NonNullable<typeof offer.rate>;
+  const m = (n: number) => formatMillions(n, locale);
+  const en = locale === "en";
+
+  const period = rate.period === "monthly" ? t("perMonth") : t("perYear");
+  const advertised =
+    rate.minPercent === rate.maxPercent
+      ? `${formatRate(rate.minPercent, locale)}%${period}`
+      : `${formatRate(rate.minPercent, locale)}–${formatRate(rate.maxPercent, locale)}%${period}`;
+  const falling = high.firstPaymentVnd - high.lastPaymentVnd > need.termMonths * 10;
+
+  const feeText = (f: OfferFee): string => {
+    const parts: string[] = [];
+    const money = (n: number) => formatVnd(n);
+    if (f.greaterOfRemainingInterest && f.percent !== null) parts.push(t("feeGreater", { percent: formatRate(f.percent, locale) }));
+    else if (f.tiers) {
+      parts.push(
+        f.tiers
+          .map((x) =>
+            x.to === null
+              ? t("feeTiersOpen", { percent: formatRate(x.percent, locale), from: x.from ?? 0, unit: t(`unit.${x.unit}`) })
+              : t("feeTiers", { percent: formatRate(x.percent, locale), from: x.from ?? 0, to: x.to, unit: t(`unit.${x.unit}`) }),
+          )
+          .join("; "),
+      );
+    } else if (f.percent !== null) parts.push(`${formatRate(f.percent, locale)}%`);
+    if (f.fixedVnd !== null) parts.push(t("feeFixed", { amount: money(f.fixedVnd) }));
+    if (f.minVnd !== null) parts.push(t("feeMin", { amount: money(f.minVnd) }));
+    if (f.maxVnd !== null) parts.push(t("feeMax", { amount: money(f.maxVnd) }));
+    return `${en && f.nameEn ? f.nameEn : f.nameVi}: ${parts.join(", ")}`;
+  };
+
+  return (
+    <article data-testid="offer" data-offer={offer.key} className="flex flex-col gap-3 rounded-lg border border-current/30 p-4">
+      <header>
+        <p className="text-sm opacity-75">{t("rank", { n: rank })}</p>
+        <h3 className="text-lg font-bold">{offer.lenderName}</h3>
+        <p>{en && offer.nameEn ? offer.nameEn : offer.nameVi}</p>
+        {rate.segment ? <p className="text-sm opacity-75">{t("segment", { segment: rate.segment })}</p> : null}
+        <p className={`mt-1 font-medium ${FIT_STYLE[fit]}`}>{t(`fit.${fit}`)}</p>
+      </header>
+
+      {offer.confidence === "low" ? (
+        <p className="rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50">{t("lowConfidence")}</p>
+      ) : null}
+      {ranked.feesAllUnknown ? (
+        <p className="rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50">{t("feesUnknown")}</p>
+      ) : null}
+      {ranked.needsIncomeProofNote ? (
+        <p className="rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50">{t("incomeProofNote")}</p>
+      ) : null}
+
+      <p>{t("sentence", { amount: m(need.amountVnd), total: range(m(low.totalPaidVnd), m(high.totalPaidVnd)), term: need.termMonths })}</p>
+
+      <dl className="flex flex-col gap-2">
+        <Row label={t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
+        <Row
+          label={falling ? t("monthlyFalling") : t("monthly")}
+          value={range(formatVnd(low.firstPaymentVnd), formatVnd(high.firstPaymentVnd))}
+        />
+        <Row label={t("cost")} value={range(formatVnd(low.totalCostVnd), formatVnd(high.totalCostVnd))} />
+        <Row
+          label={t("realApr")}
+          value={`${range(formatPercent(low.aprNominal, locale), formatPercent(high.aprNominal, locale))}${t("perYear")}`}
+          note={t("realAprNote")}
+        />
+        <div className="flex flex-col">
+          <dt className="text-sm opacity-75">{t("advertised")}</dt>
+          <dd>
+            {advertised}, {rate.basis === "flat" ? t("basisFlat") : t("basisReducing")}
+            {rate.basisInferred ? <span className="block text-sm opacity-75">({t("assumption")})</span> : null}
+          </dd>
+        </div>
+      </dl>
+
+      <div className="flex flex-col gap-1 text-sm">
+        {offer.monthlyFees.map((f) => (
+          <p key={f.nameVi}>{t("monthlyFeesIncluded", { name: en && f.nameEn ? f.nameEn : f.nameVi, amount: formatVnd(f.amountVnd) })}</p>
+        ))}
+        {offer.uncostedFees.length > 0 ? <p>{t("uncosted", { names: offer.uncostedFees.join(", ") })}</p> : null}
+        {offer.feesCompleteness !== "complete" && !ranked.feesAllUnknown ? <p>{t("feesPartial")}</p> : null}
+        {ranked.insuranceCosts.map((i) => (
+          <p key={i.nameVi}>
+            {t(i.mandatory === false ? "insuranceOptional" : "insuranceUnclear", {
+              name: en && i.nameEn ? i.nameEn : i.nameVi,
+              min: formatVnd(i.minVnd),
+              max: formatVnd(i.maxVnd),
+              cost: formatVnd(i.costHigh.totalCostVnd),
+            })}
+          </p>
+        ))}
+        {ranked.insuranceUnknownPremium.length > 0 ? <p>{t("insuranceUnknown", { names: ranked.insuranceUnknownPremium.join(", ") })}</p> : null}
+        {offer.insurance.length === 0 ? <p>{t("insuranceNone")}</p> : null}
+      </div>
+
+      <div className="rounded border border-current/30 p-2 text-sm">
+        <h4 className="font-semibold">{t("lateTitle")}</h4>
+        <p>{(en ? offer.lateTextEn : null) ?? offer.lateTextVi ?? t("lateUnknown")}</p>
+      </div>
+
+      <details>
+        <summary className="min-h-8 cursor-pointer font-medium underline underline-offset-2">{t("detailsTitle")}</summary>
+        <div className="mt-2 flex flex-col gap-2 text-sm">
+          <p>
+            {t("effective")}: {range(formatPercent(low.aprEffective, locale), formatPercent(high.aprEffective, locale))}
+            {t("perYear")}
+          </p>
+          {offer.amortizationInferred && offer.amortization !== null ? <p>{t("repaymentAssumption")}</p> : null}
+          {offer.rateNotes.map((n, i) => {
+            const text = rateNoteText(n, tRoot, locale);
+            return text ? <p key={i}>{text}</p> : null;
+          })}
+          {offer.otherFees.length > 0 ? (
+            <div>
+              <p className="font-medium">{t("otherFeesTitle")}</p>
+              <ul className="list-disc pl-5">
+                {offer.otherFees.map((f) => (
+                  <li key={f.nameVi}>{feeText(f)}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          <p>
+            {t("documents")}: {offer.documents?.join("; ") ?? t("documentsUnknown")}
+          </p>
+          {offer.existingCustomerRequired ? <p>{t("existingCustomer")}</p> : null}
+          {offer.employerRestriction ? <p>{t("employer", { value: offer.employerRestriction })}</p> : null}
+          {offer.otherConditions && offer.otherConditions.length > 0 ? (
+            <div>
+              <p className="font-medium">{t("conditions")}</p>
+              <ul className="list-disc pl-5">
+                {offer.otherConditions.map((c) => (
+                  <li key={c}>{c}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {offer.conflictFields.length > 0 ? <p>{t("conflict")}</p> : null}
+          <p>
+            {t("legalName")}: {offer.legalName}. {t("licensed")}.
+          </p>
+        </div>
+      </details>
+
+      <p className="text-sm">
+        {offer.sourceUrls.slice(0, 3).map((url, i) => (
+          <span key={url}>
+            <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-8 items-center underline underline-offset-2">
+              {i === 0 ? t("source") : t("sourceN", { n: i + 1 })}
+            </a>
+            {" · "}
+          </span>
+        ))}
+        {t("checkedOn", { date: formatDate(offer.retrievedAt) })}
+      </p>
+    </article>
+  );
+}
