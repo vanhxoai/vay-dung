@@ -45,7 +45,7 @@ test.describe("eligibility boundaries", () => {
   test("age 18 and age 62 are filtered by each product's age rules", async ({ page }) => {
     await run(page, { amount: "20000000", income: "15000000", age: "18" });
     expect(await offerKeys(page)).toEqual([]);
-    await page.getByText(/Không phù hợp với thông tin bạn nhập/).click();
+    await page.locator("summary", { hasText: "Không phù hợp với thông tin bạn nhập" }).click();
     await expect(page.getByText("Yêu cầu từ 20 tuổi.").first()).toBeVisible();
 
     await run(page, { amount: "20000000", income: "15000000", age: "62" });
