@@ -234,7 +234,6 @@ print("financed instead:", {k: fin[k] for k in show}, "nom %.4f" % (fin["nominal
 plain = cost(VP, 20_000_000, 24, "high")
 print("no insurance high: nom %.4f cost %d" % (plain["nominal"] * 100, plain["totalCost"]))
 row("VPBank premium", "max (1.8% on 59% balances)", pmax_hi, appi["max"], "vnd")
-row("VPBank premium", "min (1.3% on 59% balances)", pmin_hi, appi["min"], "vnd")
 row("VPBank premium", "true low end (1.3% on 14.4% balances)", pmin_lo, appi["min"], "vnd")
 row("VPBank costHigh", "totalCost", ded["totalCost"], appi["costHigh"]["totalCost"], "vnd")
 row("VPBank costHigh", "nominal", ded["nominal"], appi["costHigh"]["nominal"], "pct")
