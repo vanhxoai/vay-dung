@@ -73,7 +73,9 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "LPBank"
+        "LPBank",
+        "LienVietPostBank",
+        "Ngân hàng Bưu điện Liên Việt"
       ],
       "licenseNumber": "Giấy phép số 33/GP-NHNN ngày 24/6/2026",
       "website": "https://lpbank.com.vn",
@@ -87,10 +89,14 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "Vikki Bank"
+        "Vikki Bank",
+        "Vikki",
+        "Ngân hàng Số Vikki",
+        "DongA Bank",
+        "Ngân hàng Đông Á"
       ],
       "licenseNumber": "Giấy phép số 50/GP-NHNN ngày 30/9/2026",
-      "website": null,
+      "website": "https://vikkibank.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -148,7 +154,7 @@
         "SHB"
       ],
       "licenseNumber": "Giấy phép số 19/GP-NHNN ngày 13/4/2026",
-      "website": null,
+      "website": "https://www.shb.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -159,7 +165,10 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "Sacombank"
+        "Sacombank",
+        "Sài Gòn Thương Tín",
+        "Ngân hàng Sài Gòn Thương Tín",
+        "Sài Gòn Tài Lộc"
       ],
       "licenseNumber": "Giấy phép số 111/GP-NHNN ngày 09/11/2018",
       "website": "https://www.sacombank.com.vn",
@@ -217,10 +226,13 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "MBV"
+        "MBV",
+        "OceanBank",
+        "Ngân hàng Đại Dương",
+        "Modern Bank of Vietnam"
       ],
       "licenseNumber": "Giấy phép số 14/GP-NHNN ngày 29/6/2022",
-      "website": null,
+      "website": "https://www.mbv.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -231,10 +243,12 @@
       "category": "bank",
       "subtype": "NHTM Cổ phần",
       "aliases": [
-        "GPBank"
+        "GPBank",
+        "Ngân hàng Dầu Khí Toàn Cầu",
+        "Kỷ Nguyên Thịnh Vượng"
       ],
       "licenseNumber": "Giấy phép số 35/GP-NHNN ngày 26/06/2026",
-      "website": null,
+      "website": "https://www.gpbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/nhtm-c%E1%BB%95-ph%E1%BA%A7n"
     },
     {
@@ -475,7 +489,9 @@
       "subtype": "NHTM Cổ phần",
       "aliases": [
         "VCB Neo",
-        "Vietcombank Neo"
+        "Vietcombank Neo",
+        "VCBNeo",
+        "Ngân hàng Xây dựng"
       ],
       "licenseNumber": "Giấy phép số 15/GP-NHNN ngày 27/3/2026",
       "website": null,
@@ -534,7 +550,7 @@
         "ANZ"
       ],
       "licenseNumber": "Giấy phép số 110/GP-NHNN ngày 09/11/2018",
-      "website": null,
+      "website": "https://www.anz.com/vietnam",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -547,7 +563,7 @@
         "Hong Leong"
       ],
       "licenseNumber": "Giấy phép số 37/GP-NHNN ngày 30/6/2026",
-      "website": null,
+      "website": "https://www.hlbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -560,7 +576,7 @@
         "HSBC"
       ],
       "licenseNumber": "Giấy phép số 34/GP-NHNN ngày 26/6/2026",
-      "website": null,
+      "website": "https://www.hsbc.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -573,7 +589,7 @@
         "Shinhan Bank"
       ],
       "licenseNumber": "Giấy phép số 106/GP-NHNN ngày 17/12/2019",
-      "website": null,
+      "website": "https://shinhan.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -586,7 +602,7 @@
         "Standard Chartered"
       ],
       "licenseNumber": "Giấy phép số 56/GP-NHNN ngày 27/11/2023",
-      "website": null,
+      "website": "https://www.sc.com/vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -599,7 +615,7 @@
         "Public Bank"
       ],
       "licenseNumber": "Giấy phép số 38/GP-NHNN ngày 24/3/2016",
-      "website": null,
+      "website": "https://www.publicbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -612,7 +628,7 @@
         "CIMB"
       ],
       "licenseNumber": "Giấy phép số 61/GP-NHNN ngày 31/8/2016",
-      "website": null,
+      "website": "https://www.cimbbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -625,7 +641,7 @@
         "Woori"
       ],
       "licenseNumber": "Giấy phép số 71/GP-NHNN ngày 31/10/2016",
-      "website": null,
+      "website": "https://woori.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -638,7 +654,7 @@
         "UOB"
       ],
       "licenseNumber": "Giấy phép số 36/GP-NHNN ngày 29/6/2026",
-      "website": null,
+      "website": "https://www.uob.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-100-v%E1%BB%91n-n%C6%B0%E1%BB%9Bc-ngo%C3%A0i"
     },
     {
@@ -667,7 +683,7 @@
         "Indovina"
       ],
       "licenseNumber": "Giấy phép số 07/GP-NHNN ngày 06/02/2026",
-      "website": null,
+      "website": "https://www.indovinabank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh"
     },
     {
@@ -681,7 +697,7 @@
         "VRB"
       ],
       "licenseNumber": "Giấy phép số 88/GP-NHNN ngày 18/9/2018",
-      "website": null,
+      "website": "https://www.vrbank.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/ng%C3%A2n-h%C3%A0ng-li%C3%AAn-doanh"
     },
     {
@@ -691,7 +707,8 @@
       "category": "finance_company",
       "subtype": "Công ty tài chính",
       "aliases": [
-        "AEON Finance"
+        "AEON Finance",
+        "AEON"
       ],
       "licenseNumber": "Giấy phép số 96/GP-NHNN ngày 28/9/2018",
       "website": "https://aeonfinance.vn",
@@ -720,7 +737,9 @@
       "category": "finance_company",
       "subtype": "Công ty tài chính",
       "aliases": [
-        "EVF"
+        "EVF",
+        "EVNFC",
+        "EVNFinance"
       ],
       "licenseNumber": "Giấy phép số 187/GP-NHNN ngày 07/7/2008",
       "website": "https://www.evnfc.vn",
@@ -762,7 +781,9 @@
       "category": "finance_company",
       "subtype": "Công ty tài chính",
       "aliases": [
-        "Mirae Asset Finance"
+        "Mirae Asset Finance",
+        "MAFC",
+        "Mirae Asset"
       ],
       "licenseNumber": "Giấy phép số 73/GP-NHNN ngày 12/11/2021",
       "website": "https://mafc.com.vn",

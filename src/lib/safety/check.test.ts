@@ -41,6 +41,16 @@ describe("licensed names", () => {
     expect(idOf("Cake")).toBe("vpbank");
   });
 
+  it("recognises finance companies' short names and old bank names the institution confirmed", () => {
+    expect(idOf("AEON")).toBe("aeon-finance");
+    expect(idOf("MAFC")).toBe("mirae-asset-finance");
+    expect(idOf("OceanBank")).toBe("mbv");
+    expect(idOf("DongA Bank")).toBe("vikki-bank");
+    expect(idOf("LienVietPostBank")).toBe("lpbank");
+    expect(idOf("Ngân hàng Sài Gòn Thương Tín")).toBe("sacombank");
+    expect(idOf("https://www.shb.com.vn")).toBe("shb");
+  });
+
   it("PGBank and VPBank stay separate, despite both having 'Thịnh Vượng' in their names", () => {
     expect(idOf("PGBank")).toBe("thinh-vuong-va-phat-trien");
     expect(idOf("Ngân hàng TMCP Việt Nam Thịnh Vượng")).toBe("vpbank");
