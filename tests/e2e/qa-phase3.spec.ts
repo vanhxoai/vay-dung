@@ -57,7 +57,7 @@ test.describe("regressions from the QA pass", () => {
   test("no product for this age: the verdict must not say the loan may exceed what you can pay", async ({ page }) => {
     await run(page, { amount: "20000000", income: "15000000", age: "18" });
     await expect(page.getByTestId("verdict")).toHaveAttribute("data-verdict", "no_data");
-    await expect(page.getByTestId("verdict")).not.toContainText("Có thể vượt sức trả");
+    await expect(page.getByTestId("verdict")).not.toContainText("Có thể vượt mức hướng dẫn");
   });
 
   test("'15tr' typed as income is not silently turned into 15 dong", async ({ page }) => {

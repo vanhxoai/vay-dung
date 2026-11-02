@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { loadLenders } from "@/lib/data/lenders";
 import { toOffers, type Offer } from "./offers";
-import { eligibilityProblems, rankOffers, recommend, type Need } from "./recommend";
+import { eligibilityProblems, premiumRange, rankOffers, recommend, type Need } from "./recommend";
 
 const today = new Date("2026-11-02T12:00:00Z");
 const offers = toOffers(loadLenders());
@@ -41,6 +41,7 @@ function offer(o: Partial<Offer> = {}): Offer {
       segment: null,
       sourceUrl: "https://example.com",
       retrievedAt: "2026-11-01",
+      oldDocumentDate: null,
     },
     rateNotes: [],
     amortization: "annuity",
@@ -216,6 +217,13 @@ describe("eligibility", () => {
   });
 });
 
+describe("old source documents", () => {
+  it("a rate read recently from an old document says so", () => {
+    const notes = offers.filter((o) => o.lenderName.startsWith("Shinhan")).flatMap((o) => o.rateNotes);
+    expect(notes.some((n) => n.oldDocumentDate === "2025-03-03")).toBe(true);
+  });
+});
+
 describe("costs and insurance", () => {
   it("uses the flat schedule for a flat quote and adds known mandatory monthly fees", () => {
     const o = offer({
@@ -249,6 +257,36 @@ describe("costs and insurance", () => {
     expect(r.insuranceCosts).toHaveLength(1);
     expect(r.insuranceCosts[0].minVnd).toBeLessThan(r.insuranceCosts[0].maxVnd);
     expect(r.insuranceCosts[0].costHigh.aprNominal).toBeGreaterThan(r.high.aprNominal);
+  });
+
+  it("the low end of a declining-balance premium uses the balances at the low loan rate", () => {
+    const ins = { nameVi: "BH", nameEn: null, mandatory: false, collection: "unknown" as const, method: "annual_rate_on_declining_balance" as const, ratePercentMin: 1, ratePercentMax: 2, insuredTiers: null, fixedVnd: null };
+    const o = offer({ rate: { ...offer().rate!, minPercent: 12, maxPercent: 60 } });
+    const [lo, hi] = premiumRange(ins, o, 20_000_000, 24)!;
+    const sameRate = offer({ rate: { ...offer().rate!, minPercent: 60, maxPercent: 60 } });
+    const [loAtHighBalances, hiAtHighBalances] = premiumRange(ins, sameRate, 20_000_000, 24)!;
+    expect(lo).toBeLessThan(loAtHighBalances);
+    expect(hi).toBe(hiAtHighBalances);
+  });
+
+  it("a suggested smaller amount still fits once mandatory insurance is counted", () => {
+    const o = offer({
+      insurance: [{ nameVi: "BH", nameEn: null, mandatory: true, collection: "added_to_loan", method: "fixed", ratePercentMin: null, ratePercentMax: null, insuredTiers: null, fixedVnd: 1_000_000 }],
+    });
+    const n = need({ amountVnd: 100_000_000, monthlyIncomeVnd: 2_500_000 }); // 1,000,000 a month of room
+    const rec = recommend(n, [o], today);
+    expect(rec.suggestedAmountVnd).not.toBeNull();
+    const again = recommend({ ...n, amountVnd: rec.suggestedAmountVnd! }, [o], today).ranked[0];
+    expect(again.high.maxPaymentVnd).toBeLessThanOrEqual(1_000_000);
+  });
+
+  it("mandatory insurance uses its lowest premium at the low end and its highest at the high end", () => {
+    const o = offer({
+      insurance: [{ nameVi: "BH", nameEn: null, mandatory: true, collection: "deducted_from_payout", method: "percent_of_principal", ratePercentMin: 5, ratePercentMax: 10, insuredTiers: null, fixedVnd: null }],
+    });
+    const r = recommend(need(), [o], today).ranked[0];
+    expect(r.low.amountReceivedVnd).toBe(19_000_000);
+    expect(r.high.amountReceivedVnd).toBe(18_000_000);
   });
 
   it("mandatory insurance IS in the headline cost and lowers the money in hand", () => {

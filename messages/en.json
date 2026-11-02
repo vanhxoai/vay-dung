@@ -7,16 +7,16 @@
     "title": "Vay Đúng",
     "tagline": "Vay Đúng helps you estimate the real cost of a loan, check a lender, and know when not to borrow.",
     "points": {
-      "cost": "Estimates the real yearly cost, including mandatory fees with a known amount, so you can compare loans.",
-      "licensed": "Compares only products from institutions on the lists the State Bank of Vietnam publishes, with the source and the date checked. Being on the list doesn't mean the State Bank recommends that product, or that the loan is right for you.",
-      "honest": "Tells you plainly when an amount goes over the guideline for what you can repay, and suggests other options.",
+      "cost": "Estimates the real yearly rate, including mandatory fees with a known amount, so you can compare loans.",
+      "licensed": "Compares only products from institutions on the State Bank of Vietnam's list, with the source and the date checked. Being on the list doesn't mean the State Bank recommends that product, or that the loan is right for you.",
+      "honest": "Tells you plainly when an amount goes over the Vay Đúng guideline for what you can repay, and suggests other options.",
       "independent": "Currently takes no money from lenders, doesn't sell your information, and doesn't lend."
     },
     "start": "Start (about 2 minutes)",
     "privacy": "No login. What you enter is calculated only on your device and isn't sent anywhere. We do count page views, without anything you enter. See Privacy at the bottom of the page.",
     "switchLanguage": "Tiếng Việt",
     "checkLender": "Check a lender or app",
-    "headline": "Before you borrow, know what you'll really pay",
+    "headline": "Before you borrow, know what you'll really have to pay",
     "exampleTitle": "Why the advertised number isn't enough",
     "exampleBody": "For example: borrowing {amount} over {term} months at a flat 1.5% a month. It sounds like 18% a year, but because interest is charged on the original amount for the whole term, you repay {total} in total. On a reducing-balance basis, that's equivalent to about {apr} a year.",
     "exampleNote": "This is an example of the calculation, before fees and insurance, and not any lender's product.",
@@ -88,13 +88,13 @@
   },
   "Verdict": {
     "ok": {
-      "title": "The monthly payment is within the guideline",
+      "title": "The monthly payment is within the Vay Đúng guideline",
       "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. This doesn't mean a lender will approve you.",
       "someOnly": "Only some options below are within this level. Check the note on each option."
     },
     "depends": {
-      "title": "This may be too much, depending on the rate you get",
-      "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. At the lowest rate this could fit, but at higher rates it goes over. Ask for the exact monthly payment before you sign.",
+      "title": "This may go over the Vay Đúng guideline, depending on the actual rate and fees",
+      "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. This could fit with some options, but it isn't certain: the rate you're approved for, unknown fees or the product's own conditions could push it over. Ask for the exact monthly payment before you sign.",
       "noOffers": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. We couldn't find a suitable product to cost this loan."
     },
     "too_much": {
@@ -111,7 +111,7 @@
     "guidelineNote": "The {limit} level is a Vay Đúng guideline, not a State Bank of Vietnam rule.",
     "no_data": {
       "title": "We can't work out the monthly payment for this loan yet",
-      "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. The principal alone is about {principalOnly} a month, before interest."
+      "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. The principal alone is about {principalOnly} a month, before interest and fees, so the real payment will be higher. If the monthly payment is above {headroom}, we don't recommend borrowing this amount. Ask for the exact monthly payment before you sign."
     }
   },
   "Alternatives": {
@@ -129,11 +129,11 @@
     "phone": "Buying electronics: ask about installments at the store first. If a plan is advertised as 0%, ask whether any fees or insurance come with it. If none do, it can be cheaper than a cash loan. Compare the total you'd pay.",
     "motorbike": "Buying a motorbike: compare dealer installments with a cash loan. Some installment loans use the bike as security or set conditions on its registration papers, so ask before signing. The total you'd pay is the number to compare.",
     "education": "Tuition: first ask about scholarships and paying in stages. If you're a student in difficult circumstances, ask your school or the Vietnam Bank for Social Policies about its student loan programme and whether you qualify.",
-    "medical": "An emergency: check your health insurance and ask family first. If you still need to borrow, use only a licensed lender, even in a hurry.",
+    "medical": "An emergency: check your health insurance and ask family first. If you still need to borrow, use only a lender on the State Bank of Vietnam's list, even in a hurry.",
     "debt": "Borrowing to pay debt: be careful, debts can snowball. First ask your current lender about more time or a new repayment schedule. Only take a new loan if its real cost is clearly lower than the old one.",
     "living": "Borrowing for everyday spending: the loan raises your monthly payments while your income stays the same. See whether you can cut spending or get a salary advance first.",
     "other": "A cash loan is flexible but can be expensive. Borrow only what you need, and compare the total you'd pay across the options below.",
-    "urgent": "In a hurry: people who need money fast are easier to scam. Be wary if anyone makes you transfer money first, especially to a personal account, before approving or paying out a loan. A genuine fee or insurance charge must be written in the contract. Call the lender's official hotline before transferring anything."
+    "urgent": "In a hurry: people who need money fast are easier to scam. Be wary if anyone makes you transfer money first, especially to a personal account, before approving or paying out a loan. Don't rely on a contract sent by message, because contracts can be forged too. Call the lender's official hotline before transferring anything."
   },
   "Results": {
     "title": "Your results",
@@ -149,7 +149,7 @@
     "whyTitle": "Why this order?",
     "why1": "We order by Vay Đúng's estimated real rate, at the highest level the lender publishes, because nobody knows yet which rate you'd get. It includes mandatory fees with a known amount, but not insurance that is optional or may not be required. This order isn't advice on which lender to choose.",
     "why2": "A product whose fees are all unknown can't be first, because its real cost may be higher than we can calculate.",
-    "why3": "No lender pays to be ranked higher. Vay Đúng takes no commission and doesn't sell your information.",
+    "why3": "No lender pays to be ranked higher. Vay Đúng currently takes no money from lenders, including commission, and doesn't sell your information.",
     "why4": "We only list lenders on the State Bank of Vietnam's lists (as of {date}):",
     "whyLink": "See the list",
     "disclaimerTitle": "Please note",
@@ -181,7 +181,7 @@
   },
   "Offer": {
     "rank": "#{n}",
-    "sentence": "You borrow {amount} and repay {total} in total over {term} months.",
+    "sentence": "You borrow {amount} and repay about {total} in total over {term} months.",
     "received": "Money in your hand",
     "monthly": "Monthly payment",
     "monthlyFalling": "First month (falls later)",
@@ -197,9 +197,10 @@
     "repaymentAssumption": "The way the principal is repaid is our assumption, worked out from the lender's example.",
     "segment": "Applies to: {segment}",
     "fit": {
-      "fits": "Within the guideline, even at the highest published rate",
+      "fits": "Within the Vay Đúng guideline, even at the highest published rate",
+      "fits_fees_unknown": "Within the Vay Đúng guideline at the highest published rate, but fees aren't counted because they're unknown",
       "fits_only_low": "Only within the guideline at a low rate",
-      "too_much": "Above the guideline"
+      "too_much": "Above the Vay Đúng guideline"
     },
     "lowConfidence": "Low confidence: this product's figures come from sources that are unclear or don't match. Check with the lender.",
     "feesUnknown": "Fees unknown: the real cost may be higher",
@@ -239,6 +240,7 @@
     "licensed": "On the State Bank of Vietnam's list",
     "source": "See source",
     "sourceN": "Source {n}",
+    "documentDate": "The source document is dated {date} and may be out of date.",
     "checkedOn": "Oldest figure checked on {date}",
     "floor": "Advertised: from {rate}{period}, {basis}",
     "ceiling": "Published rate framework: up to {rate}{period}, {basis}",
@@ -262,7 +264,7 @@
   "Safety": {
     "title": "Check a lender",
     "intro": "Enter a lender, app or website. We compare it with the State Bank of Vietnam's lists and help you spot signs worth checking.",
-    "privacy": "The check runs on your device. We don't send or keep what you enter.",
+    "privacy": "The check runs on your device. We don't send or keep what you enter. We do count page views, without anything you enter.",
     "nameLabel": "Lender, app or website name",
     "nameHint": "For example: a company name, app name or web address. Don't know the name? Just choose the signs below.",
     "signsLabel": "Have they done any of these?",
@@ -282,7 +284,7 @@
       "website": "Website in our data:"
     },
     "similar": {
-      "title": "This name resembles one on the list, but doesn't match",
+      "title": "This name resembles one on the State Bank of Vietnam's list, but doesn't match",
       "body": "\"{name}\" doesn't match any name in our data. You may have mistyped it, it may be an unrelated organisation, or someone may be using a similar name. We're drawing no conclusion about it. Did you mean:",
       "advice": "Don't rely on links or phone numbers they send you. Find that lender's official website or hotline yourself and ask."
     },
@@ -384,11 +386,11 @@
     },
     "analytics": {
       "title": "Visit statistics",
-      "body": "We use Vercel Web Analytics to see how many people view each page and get through each step of the questionnaire. For each view it records the time, the page address, the site you came from, your estimated location (to city level), and your device type, operating system and browser. It doesn't use third-party cookies. Vercel recognises a visit using a hash made from the incoming request, and discards it after 24 hours. We only look at totals, but opening the loan page or reaching the results step can show that someone is looking into a loan. It doesn't receive your amount, income, age or result. Vercel is a US company, and the data is processed outside Vietnam. On the free plan Vercel only guarantees keeping the figures for 1 month, and it may keep them longer."
+      "body": "We use Vercel Web Analytics to see how many people view each page and get through each step of the questionnaire. For each view it records the time, the page address, the site you came from, your estimated location (to city level), and your device type, operating system and browser. It doesn't use third-party cookies. Vercel recognises a visit using a hash made from the incoming request, and discards it after 24 hours. We only look at totals, but opening the loan page or reaching the results step can show that someone is looking into a loan. It doesn't receive your amount, income, age or result. Vercel is a US company, and the data is processed outside Vietnam. On the free plan Vercel only guarantees keeping the figures for us to view for 1 month; in practice Vercel may keep them longer."
     },
     "hosting": {
       "title": "Website hosting",
-      "body": "The site is hosted on Vercel, a US company, on servers outside Vietnam. When you open a page, Vercel's servers receive your IP address and technical request details, including the address of the page, to run and protect the service. What you enter in the questionnaire isn't part of these requests."
+      "body": "The site is hosted on Vercel, a US company, on servers outside Vietnam. When you open a page, Vercel's servers receive your IP address and technical request details, including the address of the page, to run and protect the service. What you enter in the questionnaire and lender check isn't part of these requests."
     },
     "waitlist": {
       "title": "News list",

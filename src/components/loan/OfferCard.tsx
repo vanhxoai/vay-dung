@@ -8,6 +8,7 @@ import { rateNoteText } from "./Results";
 
 const FIT_STYLE = {
   fits: "text-emerald-800 dark:text-emerald-300",
+  fits_fees_unknown: "text-amber-800 dark:text-amber-300",
   fits_only_low: "text-amber-800 dark:text-amber-300",
   too_much: "text-red-800 dark:text-red-300",
 } as const;
@@ -48,6 +49,12 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
   const falling = high.firstPaymentVnd - high.lastPaymentVnd > need.termMonths * 10;
   const unknownLimits =
     offer.amountMinVnd === null || offer.amountMaxVnd === null || offer.termMinMonths === null || offer.termMaxMonths === null;
+  const fitLabel = fit === "fits" && ranked.feesAllUnknown ? "fits_fees_unknown" : fit;
+  // Different amounts can round to the same "x triệu"; a real range must still look like one.
+  const totalPaid =
+    low.totalPaidVnd !== high.totalPaidVnd && m(low.totalPaidVnd) === m(high.totalPaidVnd)
+      ? range(formatVnd(low.totalPaidVnd), formatVnd(high.totalPaidVnd))
+      : range(m(low.totalPaidVnd), m(high.totalPaidVnd));
   const repaymentAssumed = offer.rate?.basis === "reducing" && (offer.amortizationInferred || offer.amortization === null);
 
   const feeText = (f: OfferFee): string => {
@@ -80,7 +87,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
         <h3 className="text-lg font-bold">{offer.lenderName}</h3>
         <p>{en && offer.nameEn ? offer.nameEn : offer.nameVi}</p>
         {rate.segment ? <p className="text-sm opacity-75">{t("segment", { segment: rate.segment })}</p> : null}
-        <p className={`mt-1 font-medium ${FIT_STYLE[fit]}`}>{t(`fit.${fit}`)}</p>
+        <p className={`mt-1 font-medium ${FIT_STYLE[fitLabel]}`}>{t(`fit.${fitLabel}`)}</p>
       </header>
 
       {offer.confidence === "low" ? <p className={notice}>{t("lowConfidence")}</p> : null}
@@ -91,7 +98,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       {offer.employerRestriction ? <p className={notice}>{t("employer", { value: offer.employerRestriction })}</p> : null}
       {unknownLimits ? <p className={notice}>{t("unknownLimits")}</p> : null}
 
-      <p>{t("sentence", { amount: m(need.amountVnd), total: range(m(low.totalPaidVnd), m(high.totalPaidVnd)), term: need.termMonths })}</p>
+      <p>{t("sentence", { amount: m(need.amountVnd), total: totalPaid, term: need.termMonths })}</p>
 
       <dl className="flex flex-col gap-2">
         <Row label={t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
@@ -111,6 +118,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
           <dd>
             {advertised}, {rate.basis === "flat" ? t("basisFlat") : t("basisReducing")}
             {rate.basisInferred ? <span className="block text-sm opacity-75">({t("assumption")})</span> : null}
+            {rate.oldDocumentDate ? <span className="block text-sm opacity-75">{t("documentDate", { date: formatDate(rate.oldDocumentDate) })}</span> : null}
             {repaymentAssumed ? <span className="block text-sm opacity-75">{t("repaymentAssumption")}</span> : null}
             <a href={rate.sourceUrl} target="_blank" rel="noopener noreferrer" className={`${linkClass} block text-sm`}>
               {t("rateSource")}
@@ -158,7 +166,12 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
           </p>
           {offer.rateNotes.map((n, i) => {
             const text = rateNoteText(n, tRoot, locale);
-            return text ? <p key={i}>{text}</p> : null;
+            return text ? (
+              <p key={i}>
+                {text}
+                {n.oldDocumentDate ? ` ${t("documentDate", { date: formatDate(n.oldDocumentDate) })}` : null}
+              </p>
+            ) : null;
           })}
           {offer.otherFees.length > 0 ? (
             <div>

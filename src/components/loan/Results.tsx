@@ -46,7 +46,7 @@ export function Results({
   const m = (n: number) => formatMillions(n, locale);
 
   const limit = formatPercent(AFFORDABILITY.maxDebtToIncome, locale);
-  const maxTotal = Math.floor(need.monthlyIncomeVnd * AFFORDABILITY.maxDebtToIncome);
+  const maxTotal = rec.affordabilityOfBest.maxTotalPaymentVnd;
   const common = {
     limit,
     max: formatVnd(maxTotal),
@@ -65,7 +65,7 @@ export function Results({
     verdictBody = t("Verdict.too_much.body", { ...common, principalOnly });
   else verdictBody = t("Verdict.too_much_with_interest.body", { ...common, lowestPayment: formatVnd(lowestPayment) });
 
-  const showAlternatives = rec.verdict === "depends" || rec.verdict === "too_much" || rec.verdict === "no_income";
+  const showAlternatives = rec.verdict === "depends" || rec.verdict === "too_much" || rec.verdict === "no_income" || rec.verdict === "no_data";
   const best = rec.ranked[0];
   const longestTerm = TERMS[TERMS.length - 1];
   // Only offer "repay longer" if it could actually bring the principal within reach.
@@ -89,7 +89,7 @@ export function Results({
           </button>
           {rec.ranked.length > 0 && rec.verdict !== "no_income" ? (
             <a href="#offers" className={linkClass}>
-              {t("Results.jumpToOffers", { count: rec.ranked.length })}
+              {rec.verdict === "too_much" ? t("Results.showOffersNoIncome") : t("Results.jumpToOffers", { count: rec.ranked.length })}
             </a>
           ) : null}
         </div>
@@ -217,7 +217,12 @@ export function Results({
                 <p>{stale || offer.excludeCode === null ? t("Results.staleReason") : t(`Results.exclude.${offer.excludeCode}`)}</p>
                 {offer.rateNotes.map((n, i) => {
                   const text = rateNoteText(n, t, locale);
-                  return text ? <p key={i}>{text}</p> : null;
+                  return text ? (
+                    <p key={i}>
+                      {text}
+                      {n.oldDocumentDate ? ` ${t("Offer.documentDate", { date: formatDate(n.oldDocumentDate) })}` : null}
+                    </p>
+                  ) : null;
                 })}
                 <p>
                   <a href={offer.sourceUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>

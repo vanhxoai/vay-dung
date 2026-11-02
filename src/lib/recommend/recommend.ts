@@ -149,9 +149,10 @@ export function premiumRange(ins: OfferInsurance, offer: Offer, amountVnd: numbe
       return [premiumOnInsuredAmount(amountVnd, lo, termMonths, ins.insuredTiers), premiumOnInsuredAmount(amountVnd, hi, termMonths, ins.insuredTiers)];
     case "annual_rate_on_declining_balance": {
       if (lo === null || hi === null || offer.rate === null) return null;
-      const rows = buildSchedule(amountVnd, monthlyRate(quoted(offer, offer.rate.maxPercent)), termMonths, offer.amortization ?? "annuity");
-      const opening = rows.map((r) => r.balance + r.principal);
-      return [premiumOnDecliningBalance(opening, lo), premiumOnDecliningBalance(opening, hi)];
+      // Each end pairs its premium rate with the balances at the same end of the loan rate.
+      const opening = (percent: number) =>
+        buildSchedule(amountVnd, monthlyRate(quoted(offer, percent)), termMonths, offer.amortization ?? "annuity").map((r) => r.balance + r.principal);
+      return [premiumOnDecliningBalance(opening(offer.rate.minPercent), lo), premiumOnDecliningBalance(opening(offer.rate.maxPercent), hi)];
     }
     case "fixed":
       return ins.fixedVnd === null ? null : [ins.fixedVnd, ins.fixedVnd];
@@ -160,9 +161,21 @@ export function premiumRange(ins: OfferInsurance, offer: Offer, amountVnd: numbe
   }
 }
 
+/** Insurance the source says is mandatory, at the low and high ends of its premium. */
+function mandatoryCharges(offer: Offer, need: Need): { low: Charge[]; high: Charge[] } {
+  const low: Charge[] = [];
+  const high: Charge[] = [];
+  for (const ins of offer.insurance) {
+    const range = ins.mandatory === true ? premiumRange(ins, offer, need.amountVnd, need.termMonths) : null;
+    if (!range) continue;
+    low.push({ label: ins.nameVi, amountVnd: range[0], timing: chargeTiming(ins) });
+    high.push({ label: ins.nameVi, amountVnd: range[1], timing: chargeTiming(ins) });
+  }
+  return { low, high };
+}
+
 function rankOffer(offer: Offer, need: Need): RankedOffer {
   const r = offer.rate as NonNullable<Offer["rate"]>;
-  const mandatoryCharges: Charge[] = [];
   const insuranceCosts: RankedOffer["insuranceCosts"] = [];
   const insuranceUnknownPremium: string[] = [];
   let mandatoryCollectionAssumed = false;
@@ -176,7 +189,6 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
     const collectionKnown = ins.collection !== "unknown" && ins.collection !== "on_event";
     // Only insurance the source says is mandatory goes into the headline cost.
     if (ins.mandatory === true) {
-      mandatoryCharges.push({ label: ins.nameVi, amountVnd: range[1], timing: chargeTiming(ins) });
       if (!collectionKnown) mandatoryCollectionAssumed = true;
     } else {
       insuranceCosts.push({
@@ -191,8 +203,9 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
     }
   }
 
-  const low = costAt(offer, r.minPercent, need, mandatoryCharges);
-  const high = costAt(offer, r.maxPercent, need, mandatoryCharges);
+  const charges = mandatoryCharges(offer, need);
+  const low = costAt(offer, r.minPercent, need, charges.low);
+  const high = costAt(offer, r.maxPercent, need, charges.high);
   const atLow = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, low.maxPaymentVnd);
   const atHigh = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, high.maxPaymentVnd);
   const fit: OfferFit = atHigh.verdict === "ok" ? "fits" : atLow.verdict === "ok" ? "fits_only_low" : "too_much";
@@ -243,7 +256,8 @@ function suggestAmount(best: RankedOffer, need: Need, headroomVnd: number): numb
   const estimate = maxAffordablePrincipal(headroomVnd, best.high.monthlyIrr, need.termMonths);
   for (let p = estimate; p >= 1_000_000; p -= 100_000) {
     if (best.offer.amountMinVnd !== null && p < best.offer.amountMinVnd) return null;
-    const cost = costAt(best.offer, (best.offer.rate as NonNullable<Offer["rate"]>).maxPercent, { ...need, amountVnd: p });
+    const smaller = { ...need, amountVnd: p };
+    const cost = costAt(best.offer, (best.offer.rate as NonNullable<Offer["rate"]>).maxPercent, smaller, mandatoryCharges(best.offer, smaller).high);
     if (cost.maxPaymentVnd <= headroomVnd) return p;
   }
   return null;

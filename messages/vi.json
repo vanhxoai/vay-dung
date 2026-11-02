@@ -7,16 +7,16 @@
     "title": "Vay Đúng",
     "tagline": "Vay Đúng giúp bạn ước tính chi phí thật của khoản vay, kiểm tra bên cho vay, và biết khi nào không nên vay.",
     "points": {
-      "cost": "Ước tính chi phí thật mỗi năm, gồm cả các phí bắt buộc đã biết số tiền, để so sánh các khoản vay.",
-      "licensed": "Chỉ so sánh sản phẩm của các bên có trong danh sách do Ngân hàng Nhà nước công bố, và ghi rõ nguồn cùng ngày kiểm tra. Có trong danh sách không có nghĩa là Ngân hàng Nhà nước giới thiệu sản phẩm đó, hay khoản vay đó phù hợp với bạn.",
-      "honest": "Nói thẳng khi số tiền vượt mức hướng dẫn về khả năng trả nợ, và gợi ý cách khác.",
+      "cost": "Ước tính lãi suất thật mỗi năm, gồm cả các phí bắt buộc đã biết số tiền, để so sánh các khoản vay.",
+      "licensed": "Chỉ so sánh sản phẩm của các bên có trong danh sách của Ngân hàng Nhà nước, và ghi rõ nguồn cùng ngày kiểm tra. Có trong danh sách không có nghĩa là Ngân hàng Nhà nước giới thiệu sản phẩm đó, hay khoản vay đó phù hợp với bạn.",
+      "honest": "Nói thẳng khi số tiền vượt mức hướng dẫn của Vay Đúng về khả năng trả nợ, và gợi ý cách khác.",
       "independent": "Hiện không nhận tiền từ bên cho vay, không bán thông tin của bạn, và không cho vay."
     },
     "start": "Bắt đầu (khoảng 2 phút)",
     "privacy": "Không cần đăng nhập. Những gì bạn nhập chỉ được tính trên máy của bạn, không gửi đi. Chúng tôi có đếm lượt xem trang, không kèm những gì bạn nhập. Xem mục Quyền riêng tư ở cuối trang.",
     "switchLanguage": "English",
     "checkLender": "Kiểm tra một bên cho vay hoặc ứng dụng",
-    "headline": "Trước khi vay, hãy biết bạn sẽ trả bao nhiêu thật",
+    "headline": "Trước khi vay, hãy biết bạn thật sự phải trả bao nhiêu",
     "exampleTitle": "Vì sao con số quảng cáo chưa đủ",
     "exampleBody": "Ví dụ: vay {amount} trong {term} tháng với lãi phẳng 1,5%/tháng. Nghe như 18%/năm, nhưng vì lãi tính trên số tiền vay ban đầu suốt cả thời hạn, bạn trả tổng cộng {total}. Tính theo dư nợ giảm dần, mức này tương đương khoảng {apr}/năm.",
     "exampleNote": "Đây là ví dụ để minh họa cách tính, chưa gồm phí và bảo hiểm, và không phải sản phẩm của bên cho vay nào.",
@@ -88,13 +88,13 @@
   },
   "Verdict": {
     "ok": {
-      "title": "Tiền trả mỗi tháng nằm trong mức hướng dẫn",
+      "title": "Tiền trả mỗi tháng nằm trong mức hướng dẫn của Vay Đúng",
       "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Điều này không có nghĩa là bên cho vay chắc chắn duyệt.",
       "someOnly": "Chỉ một số lựa chọn bên dưới nằm trong mức này. Hãy xem dòng ghi chú trên từng lựa chọn."
     },
     "depends": {
-      "title": "Có thể vượt sức trả, tùy lãi suất bạn được duyệt",
-      "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Với lãi suất thấp nhất khoản này có thể vừa, nhưng với lãi suất cao hơn thì vượt mức. Hãy hỏi rõ số tiền trả mỗi tháng trước khi ký.",
+      "title": "Có thể vượt mức hướng dẫn của Vay Đúng, tùy lãi suất và phí thực tế",
+      "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Khoản này có thể vừa ở một số lựa chọn, nhưng chưa chắc: lãi suất bạn được duyệt, phí chưa rõ hoặc điều kiện riêng của sản phẩm có thể làm nó vượt mức. Hãy hỏi rõ số tiền trả mỗi tháng trước khi ký.",
       "noOffers": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Chúng tôi chưa tìm được sản phẩm phù hợp để tính chi phí cho khoản này."
     },
     "too_much": {
@@ -111,7 +111,7 @@
     "guidelineNote": "Mức {limit} là hướng dẫn của Vay Đúng, không phải quy định của Ngân hàng Nhà nước.",
     "no_data": {
       "title": "Chưa thể tính tiền trả mỗi tháng cho khoản này",
-      "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Riêng tiền gốc đã khoảng {principalOnly} mỗi tháng, chưa kể lãi."
+      "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Riêng tiền gốc đã khoảng {principalOnly} mỗi tháng, chưa kể lãi và phí, nên số tiền thật sẽ cao hơn. Nếu tiền trả mỗi tháng vượt {headroom}, chúng tôi không khuyên bạn vay số tiền này. Hãy hỏi rõ số tiền trả mỗi tháng trước khi ký."
     }
   },
   "Alternatives": {
@@ -129,11 +129,11 @@
     "phone": "Mua đồ điện tử: hãy hỏi trả góp ngay tại cửa hàng trước. Nếu quảng cáo \"trả góp 0%\", hãy hỏi rõ có phí hay bảo hiểm kèm theo không. Nếu không có, trả góp có thể rẻ hơn vay tiền mặt. Hãy so sánh tổng số tiền phải trả.",
     "motorbike": "Mua xe máy: hãy so sánh trả góp qua đại lý với vay tiền mặt. Một số khoản trả góp dùng chính chiếc xe để bảo đảm khoản vay hoặc có điều kiện về giấy đăng ký xe, nên hãy hỏi rõ trước khi ký. Tổng số tiền phải trả mới là con số cần so sánh.",
     "education": "Học phí: hãy hỏi trước về học bổng và việc đóng học phí theo đợt. Nếu bạn là học sinh, sinh viên có hoàn cảnh khó khăn, hãy hỏi trường hoặc Ngân hàng Chính sách xã hội về chương trình vay dành cho sinh viên và xem mình có đủ điều kiện không.",
-    "medical": "Việc khẩn cấp: hãy kiểm tra bảo hiểm y tế và hỏi người thân trước. Nếu vẫn phải vay, chỉ chọn bên có giấy phép, kể cả khi đang gấp.",
+    "medical": "Việc khẩn cấp: hãy kiểm tra bảo hiểm y tế và hỏi người thân trước. Nếu vẫn phải vay, chỉ chọn bên có trong danh sách của Ngân hàng Nhà nước, kể cả khi đang gấp.",
     "debt": "Vay để trả nợ: hãy cẩn thận, vì khoản nợ có thể lớn dần. Trước tiên, hãy liên hệ bên đang cho bạn vay để hỏi về việc kéo dài thời gian trả hoặc đổi lịch trả. Chỉ nên vay mới nếu chi phí thật thấp hơn rõ ràng so với khoản cũ.",
     "living": "Vay để chi tiêu hằng ngày: khoản vay sẽ làm tiền trả mỗi tháng tăng lên, trong khi thu nhập không đổi. Hãy xem có thể giảm chi tiêu hoặc ứng lương trước không.",
     "other": "Vay tiền mặt linh hoạt hơn nhưng có thể đắt. Hãy vay đúng số tiền cần, và so sánh tổng số tiền phải trả ở các lựa chọn dưới đây.",
-    "urgent": "Đang gấp: người đang cần tiền gấp dễ bị lừa. Hãy cảnh giác nếu ai đó bắt bạn chuyển tiền trước, nhất là vào tài khoản cá nhân, thì mới duyệt hoặc giải ngân. Phí hoặc bảo hiểm hợp lệ phải được ghi rõ trong hợp đồng. Hãy gọi tổng đài chính thức của bên cho vay để kiểm tra trước khi chuyển bất kỳ khoản nào."
+    "urgent": "Đang gấp: người đang cần tiền gấp dễ bị lừa. Hãy cảnh giác nếu ai đó bắt bạn chuyển tiền trước, nhất là vào tài khoản cá nhân, thì mới duyệt hoặc giải ngân. Đừng chỉ dựa vào hợp đồng được gửi qua tin nhắn, vì hợp đồng cũng có thể bị làm giả. Hãy gọi tổng đài chính thức của bên cho vay để kiểm tra trước khi chuyển bất kỳ khoản nào."
   },
   "Results": {
     "title": "Kết quả của bạn",
@@ -149,7 +149,7 @@
     "whyTitle": "Vì sao có thứ tự này?",
     "why1": "Chúng tôi xếp theo lãi suất thật do Vay Đúng ước tính, tính ở mức cao nhất mà bên cho vay công bố, vì chưa ai biết bạn sẽ được mức nào. Con số này gồm các phí bắt buộc đã biết số tiền, chưa gồm bảo hiểm không bắt buộc hoặc chưa rõ có bắt buộc không. Thứ tự này không phải lời khuyên chọn bên nào.",
     "why2": "Sản phẩm mà toàn bộ phí đều chưa rõ không được xếp đầu, vì chi phí thật của nó có thể cao hơn con số tính được.",
-    "why3": "Không bên nào trả tiền để được xếp trên. Vay Đúng không nhận hoa hồng và không bán thông tin của bạn.",
+    "why3": "Không bên nào trả tiền để được xếp trên. Hiện Vay Đúng không nhận tiền từ bên cho vay, kể cả hoa hồng, và không bán thông tin của bạn.",
     "why4": "Chỉ liệt kê bên cho vay có trong danh sách của Ngân hàng Nhà nước (tính đến {date}):",
     "whyLink": "Xem danh sách",
     "disclaimerTitle": "Lưu ý",
@@ -181,7 +181,7 @@
   },
   "Offer": {
     "rank": "#{n}",
-    "sentence": "Bạn vay {amount}, trả tổng cộng {total} trong {term} tháng.",
+    "sentence": "Bạn vay {amount}, trả tổng cộng khoảng {total} trong {term} tháng.",
     "received": "Tiền về tay bạn",
     "monthly": "Trả mỗi tháng",
     "monthlyFalling": "Tháng đầu (giảm dần về sau)",
@@ -197,9 +197,10 @@
     "repaymentAssumption": "Cách trả gốc là giả định của chúng tôi, suy ra từ ví dụ của bên cho vay.",
     "segment": "Áp dụng cho: {segment}",
     "fit": {
-      "fits": "Vừa sức theo hướng dẫn, kể cả ở lãi suất cao nhất được công bố",
+      "fits": "Vừa sức theo hướng dẫn của Vay Đúng, kể cả ở lãi suất cao nhất được công bố",
+      "fits_fees_unknown": "Vừa sức theo hướng dẫn của Vay Đúng ở lãi suất cao nhất được công bố, nhưng chưa tính phí vì chưa rõ",
       "fits_only_low": "Chỉ vừa sức nếu được lãi suất thấp",
-      "too_much": "Vượt mức hướng dẫn"
+      "too_much": "Vượt mức hướng dẫn của Vay Đúng"
     },
     "lowConfidence": "Độ tin cậy thấp: số liệu của sản phẩm này đến từ nguồn chưa rõ ràng hoặc chưa khớp nhau. Hãy kiểm tra lại với bên cho vay.",
     "feesUnknown": "Chưa rõ phí: chi phí thật có thể cao hơn",
@@ -209,7 +210,7 @@
     "feesPartial": "Có thể còn phí khác chưa được công bố.",
     "insurance": "Bảo hiểm",
     "insuranceOptional": "{name}: không bắt buộc theo nguồn của bên cho vay. Nếu mua: khoảng {min}–{max}, khi đó chi phí vay tối đa khoảng {cost}.",
-    "insuranceUnclear": "{name}: nguồn không nói có bắt buộc hay không, hãy hỏi rõ. Nếu có: khoảng {min}–{max}. Nếu phí này được trừ vào tiền giải ngân, chi phí vay tối đa khoảng {cost}. Nếu phí được cộng vào khoản vay, tiền trả mỗi tháng sẽ cao hơn.",
+    "insuranceUnclear": "{name}: nguồn không nói có bắt buộc hay không, hãy hỏi rõ. Nếu có: khoảng {min}–{max}. Nếu phí này được trừ vào số tiền bạn nhận, chi phí vay tối đa khoảng {cost}. Nếu phí được cộng vào khoản vay, tiền trả mỗi tháng sẽ cao hơn.",
     "insuranceUnknown": "{names}: chưa rõ phí bảo hiểm.",
     "insuranceNone": "Chưa rõ có bảo hiểm kèm theo hay không.",
     "lateTitle": "Nếu trả chậm",
@@ -239,6 +240,7 @@
     "licensed": "Có trong danh sách của Ngân hàng Nhà nước",
     "source": "Xem nguồn",
     "sourceN": "Nguồn {n}",
+    "documentDate": "Tài liệu nguồn ghi ngày {date}, có thể đã cũ.",
     "checkedOn": "Số liệu cũ nhất được kiểm tra ngày {date}",
     "floor": "Quảng cáo: từ {rate}{period}, {basis}",
     "ceiling": "Khung lãi suất công bố: đến {rate}{period}, {basis}",
@@ -247,8 +249,8 @@
     "unknownValue": "chưa rõ",
     "lastMonth": "Tháng cuối",
     "unknownLimits": "Chưa rõ sản phẩm này có áp dụng cho số tiền hoặc thời hạn bạn chọn không.",
-    "insuranceOptionalUnknownCollection": "{name}: không bắt buộc theo nguồn của bên cho vay. Nếu mua: khoảng {min}–{max}. Nếu phí này được trừ vào tiền giải ngân, chi phí vay tối đa khoảng {cost}. Nếu phí được cộng vào khoản vay, tiền trả mỗi tháng sẽ cao hơn.",
-    "insuranceMandatoryAssumed": "Bảo hiểm bắt buộc được tính như thể trừ vào tiền giải ngân, vì nguồn không ghi rõ.",
+    "insuranceOptionalUnknownCollection": "{name}: không bắt buộc theo nguồn của bên cho vay. Nếu mua: khoảng {min}–{max}. Nếu phí này được trừ vào số tiền bạn nhận, chi phí vay tối đa khoảng {cost}. Nếu phí được cộng vào khoản vay, tiền trả mỗi tháng sẽ cao hơn.",
+    "insuranceMandatoryAssumed": "Bảo hiểm bắt buộc được tính như thể trừ vào số tiền bạn nhận, vì nguồn không ghi rõ.",
     "rateSource": "Nguồn lãi suất",
     "periodUnknown": "chưa rõ theo tháng hay theo năm",
     "basisUnknown": "chưa rõ cách tính lãi",
@@ -262,7 +264,7 @@
   "Safety": {
     "title": "Kiểm tra bên cho vay",
     "intro": "Nhập tên bên cho vay, ứng dụng hoặc trang web. Chúng tôi đối chiếu với danh sách của Ngân hàng Nhà nước, và giúp bạn nhận ra các dấu hiệu cần kiểm tra.",
-    "privacy": "Việc kiểm tra diễn ra ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu lại những gì bạn nhập.",
+    "privacy": "Việc kiểm tra diễn ra ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu lại những gì bạn nhập. Chúng tôi có đếm lượt xem trang, không kèm những gì bạn nhập.",
     "nameLabel": "Tên bên cho vay, ứng dụng hoặc trang web",
     "nameHint": "Ví dụ: tên công ty, tên ứng dụng hoặc địa chỉ trang web. Không biết tên? Hãy chọn các dấu hiệu bên dưới.",
     "signsLabel": "Họ có làm điều nào dưới đây không?",
@@ -282,7 +284,7 @@
       "website": "Trang web trong dữ liệu của chúng tôi:"
     },
     "similar": {
-      "title": "Tên này giống một bên có trong danh sách, nhưng không khớp",
+      "title": "Tên này giống một bên có trong danh sách của Ngân hàng Nhà nước, nhưng không khớp",
       "body": "\"{name}\" không trùng với tên nào trong dữ liệu của chúng tôi. Có thể bạn gõ nhầm, có thể đây là một đơn vị khác không liên quan, hoặc có người đang dùng tên gần giống. Chúng tôi không kết luận gì về đơn vị này. Có phải bạn muốn nói đến:",
       "advice": "Đừng dựa vào đường link hay số điện thoại mà họ gửi. Hãy tự tìm trang web hoặc tổng đài chính thức của bên đó và hỏi lại."
     },
@@ -384,11 +386,11 @@
     },
     "analytics": {
       "title": "Thống kê lượt truy cập",
-      "body": "Chúng tôi dùng Vercel Web Analytics để biết có bao nhiêu người xem mỗi trang và đi hết từng bước của bảng câu hỏi. Với mỗi lượt xem, công cụ này ghi nhận thời điểm, địa chỉ trang, trang bạn đến từ đâu, vị trí ước tính (đến cấp thành phố), loại thiết bị, hệ điều hành và trình duyệt. Công cụ không dùng cookie của bên thứ ba. Vercel nhận biết lượt truy cập bằng một mã băm tạo từ yêu cầu gửi đến, và bỏ mã này sau 24 giờ. Chúng tôi chỉ xem số liệu tổng hợp, nhưng việc mở trang vay hoặc đi đến bước kết quả có thể cho thấy một người đang tìm hiểu về khoản vay. Công cụ không nhận số tiền, thu nhập, tuổi hay kết quả của bạn. Vercel là công ty Hoa Kỳ, và dữ liệu được xử lý bên ngoài Việt Nam. Vercel chỉ cam kết lưu số liệu ở gói miễn phí trong 1 tháng, và có thể lưu lâu hơn."
+      "body": "Chúng tôi dùng Vercel Web Analytics để biết có bao nhiêu người xem mỗi trang và đi hết từng bước của bảng câu hỏi. Với mỗi lượt xem, công cụ này ghi nhận thời điểm, địa chỉ trang, trang bạn đến từ đâu, vị trí ước tính (đến cấp thành phố), loại thiết bị, hệ điều hành và trình duyệt. Công cụ không dùng cookie của bên thứ ba. Vercel nhận biết lượt truy cập bằng một mã băm tạo từ yêu cầu gửi đến, và bỏ mã này sau 24 giờ. Chúng tôi chỉ xem số liệu tổng hợp, nhưng việc mở trang vay hoặc đi đến bước kết quả có thể cho thấy một người đang tìm hiểu về khoản vay. Công cụ không nhận số tiền, thu nhập, tuổi hay kết quả của bạn. Vercel là công ty Hoa Kỳ, và dữ liệu được xử lý bên ngoài Việt Nam. Ở gói miễn phí, Vercel chỉ cam kết giữ số liệu cho chúng tôi xem trong 1 tháng; thực tế Vercel có thể lưu lâu hơn."
     },
     "hosting": {
       "title": "Lưu trữ trang web",
-      "body": "Trang web được đặt trên Vercel, công ty Hoa Kỳ, với máy chủ bên ngoài Việt Nam. Khi bạn mở một trang, máy chủ của Vercel nhận địa chỉ IP và thông tin kỹ thuật của yêu cầu, trong đó có địa chỉ trang bạn mở, để vận hành và bảo vệ dịch vụ. Những gì bạn nhập vào bảng câu hỏi không nằm trong các yêu cầu này."
+      "body": "Trang web được đặt trên Vercel, công ty Hoa Kỳ, với máy chủ bên ngoài Việt Nam. Khi bạn mở một trang, máy chủ của Vercel nhận địa chỉ IP và thông tin kỹ thuật của yêu cầu, trong đó có địa chỉ trang bạn mở, để vận hành và bảo vệ dịch vụ. Những gì bạn nhập vào bảng câu hỏi và trang kiểm tra không nằm trong các yêu cầu này."
     },
     "waitlist": {
       "title": "Danh sách nhận tin",

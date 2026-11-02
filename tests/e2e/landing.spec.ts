@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test.describe("landing page", () => {
   test("leads to the questionnaire and the lender check", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("hãy biết bạn sẽ trả bao nhiêu thật");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("hãy biết bạn thật sự phải trả bao nhiêu");
     await expect(page.getByRole("link", { name: /Bắt đầu/ })).toHaveAttribute("href", "/vay");
     await expect(page.getByRole("link", { name: "Kiểm tra một bên cho vay hoặc ứng dụng" })).toHaveAttribute("href", "/kiem-tra");
   });
@@ -26,7 +26,7 @@ test.describe("landing page", () => {
 
   test("works in English, with no sideways overflow on a phone", async ({ page }) => {
     await page.goto("/en");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("know what you'll really pay");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("know what you'll really have to pay");
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow).toBeLessThanOrEqual(0);
   });

@@ -19,6 +19,11 @@ import { LenderFile, type LenderFile as LenderFileT } from "./schema";
 
 const RAW: unknown[] = [feCredit, hdSaison, homeCredit, lotteFinance, mbBank, mcredit, shinhanFinance, techcombank, tpbank, vpbank];
 
+/** The oldest date across all lists: the claim "as of" must hold for every one of them. */
+export function oldestListDate(sources: readonly { asOf?: string | null; retrievedAt: string }[]): string {
+  return sources.map((s) => s.asOf ?? s.retrievedAt).sort()[0];
+}
+
 export function loadLenders(): LenderFileT[] {
   return RAW.map((raw) => LenderFile.parse(raw));
 }

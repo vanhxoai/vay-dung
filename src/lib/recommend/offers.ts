@@ -6,6 +6,8 @@
  * There are deliberately no commercial fields here, and ranking can only read these.
  */
 import type { LenderFile, Product } from "@/lib/data/schema";
+import { OLD_DOCUMENT_DAYS } from "@/lib/data/validate";
+import { ageInDaysFrom } from "./dates";
 
 export type Goods = "phone" | "motorbike";
 
@@ -30,6 +32,8 @@ export type OfferRate = {
   segment: string | null;
   sourceUrl: string;
   retrievedAt: string;
+  /** Set when the document behind this rate is old, however recently we read it. */
+  oldDocumentDate: string | null;
 };
 
 /** A published rate that can't be used for a user's cost: "từ X%", a ceiling, or a benchmark. */
@@ -40,6 +44,7 @@ export type OfferRateNote = {
   maxPercent: number | null;
   basis: "flat" | "reducing" | "unknown";
   period: "monthly" | "yearly" | "unknown";
+  oldDocumentDate: string | null;
 };
 
 export type OfferFee = {
@@ -165,6 +170,14 @@ function exclusionCode(p: Product, rate: Product["rates"][number] | null): Exclu
   return "no_rate";
 }
 
+/** The rate's source document date, if it was already old when we read it. */
+function oldDocumentDate(r: Product["rates"][number]): string | null {
+  const date = r.maxPercent.sourceDocumentDate ?? r.minPercent.sourceDocumentDate ?? null;
+  const read = r.maxPercent.retrievedAt ?? r.minPercent.retrievedAt;
+  if (date === null || !read) return null;
+  return ageInDaysFrom(date, new Date(`${read}T12:00:00+07:00`)) > OLD_DOCUMENT_DAYS ? date : null;
+}
+
 function toFee(f: Product["fees"][number]): OfferFee {
   return {
     nameVi: f.nameVi,
@@ -227,6 +240,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
             segment: rate.segment,
             sourceUrl: (rate.maxPercent.sourceUrl ?? rate.minPercent.sourceUrl ?? p.sourceUrl) as string,
             retrievedAt: (rate.maxPercent.retrievedAt ?? rate.minPercent.retrievedAt ?? p.retrievedAt) as string,
+            oldDocumentDate: oldDocumentDate(rate),
           },
     rateNotes: p.rates
       .filter((r) => r !== rate)
@@ -237,6 +251,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
         maxPercent: r.maxPercent.value,
         basis: r.basis.value,
         period: r.period.value,
+        oldDocumentDate: oldDocumentDate(r),
       })),
     amortization: p.amortization.value === "annuity" || p.amortization.value === "equal_principal" ? p.amortization.value : null,
     amortizationInferred: p.amortization.provenance !== "stated",
