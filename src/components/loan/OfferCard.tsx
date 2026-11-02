@@ -12,13 +12,16 @@ const FIT_STYLE = {
   too_much: "text-red-800 dark:text-red-300",
 } as const;
 
+const notice = "rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50";
+const linkClass = "inline-flex min-h-11 items-center underline underline-offset-2";
+
 function Row({ label, value, note }: { label: string; value: string; note?: string }) {
   return (
     <div className="flex flex-col">
       <dt className="text-sm opacity-75">{label}</dt>
       <dd className="font-semibold">
         {value}
-        {note ? <span className="ml-1 text-sm font-normal opacity-75">({note})</span> : null}
+        {note ? <span className="block text-sm font-normal opacity-75">({note})</span> : null}
       </dd>
     </div>
   );
@@ -28,7 +31,7 @@ function range(a: string, b: string): string {
   return a === b ? a : `${a} – ${b}`;
 }
 
-export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: number; need: Need }) {
+export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffer; rank: number; need: Need; showRank: boolean }) {
   const t = useTranslations("Offer");
   const tRoot = useTranslations();
   const locale = useLocale() as AppLocale;
@@ -43,10 +46,12 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
       ? `${formatRate(rate.minPercent, locale)}%${period}`
       : `${formatRate(rate.minPercent, locale)}–${formatRate(rate.maxPercent, locale)}%${period}`;
   const falling = high.firstPaymentVnd - high.lastPaymentVnd > need.termMonths * 10;
+  const unknownLimits =
+    offer.amountMinVnd === null || offer.amountMaxVnd === null || offer.termMinMonths === null || offer.termMaxMonths === null;
+  const repaymentAssumed = offer.rate?.basis === "reducing" && (offer.amortizationInferred || offer.amortization === null);
 
   const feeText = (f: OfferFee): string => {
     const parts: string[] = [];
-    const money = (n: number) => formatVnd(n);
     if (f.greaterOfRemainingInterest && f.percent !== null) parts.push(t("feeGreater", { percent: formatRate(f.percent, locale) }));
     else if (f.tiers) {
       parts.push(
@@ -59,31 +64,32 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
           .join("; "),
       );
     } else if (f.percent !== null) parts.push(`${formatRate(f.percent, locale)}%`);
-    if (f.fixedVnd !== null) parts.push(t("feeFixed", { amount: money(f.fixedVnd) }));
-    if (f.minVnd !== null) parts.push(t("feeMin", { amount: money(f.minVnd) }));
-    if (f.maxVnd !== null) parts.push(t("feeMax", { amount: money(f.maxVnd) }));
+    if (f.fixedVnd !== null) parts.push(t("feeFixed", { amount: formatVnd(f.fixedVnd) }));
+    if (f.minVnd !== null) parts.push(t("feeMin", { amount: formatVnd(f.minVnd) }));
+    if (f.maxVnd !== null) parts.push(t("feeMax", { amount: formatVnd(f.maxVnd) }));
     return `${en && f.nameEn ? f.nameEn : f.nameVi}: ${parts.join(", ")}`;
   };
+
+  // The rate's own source first, then every other source behind the card's figures.
+  const sources = [rate.sourceUrl, ...offer.sourceUrls.filter((u) => u !== rate.sourceUrl)];
 
   return (
     <article data-testid="offer" data-offer={offer.key} className="flex flex-col gap-3 rounded-lg border border-current/30 p-4">
       <header>
-        <p className="text-sm opacity-75">{t("rank", { n: rank })}</p>
+        {showRank ? <p className="text-sm opacity-75">{t("rank", { n: rank })}</p> : null}
         <h3 className="text-lg font-bold">{offer.lenderName}</h3>
         <p>{en && offer.nameEn ? offer.nameEn : offer.nameVi}</p>
         {rate.segment ? <p className="text-sm opacity-75">{t("segment", { segment: rate.segment })}</p> : null}
         <p className={`mt-1 font-medium ${FIT_STYLE[fit]}`}>{t(`fit.${fit}`)}</p>
       </header>
 
-      {offer.confidence === "low" ? (
-        <p className="rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50">{t("lowConfidence")}</p>
-      ) : null}
-      {ranked.feesAllUnknown ? (
-        <p className="rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50">{t("feesUnknown")}</p>
-      ) : null}
-      {ranked.needsIncomeProofNote ? (
-        <p className="rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50">{t("incomeProofNote")}</p>
-      ) : null}
+      {offer.confidence === "low" ? <p className={notice}>{t("lowConfidence")}</p> : null}
+      {ranked.feesAllUnknown ? <p className={notice}>{t("feesUnknown")}</p> : null}
+      {ranked.needsIncomeProofNote ? <p className={notice}>{t("incomeProofNote")}</p> : null}
+      {offer.conflictFields.length > 0 ? <p className={notice}>{t("conflict")}</p> : null}
+      {offer.existingCustomerRequired ? <p className={notice}>{t("existingCustomer")}</p> : null}
+      {offer.employerRestriction ? <p className={notice}>{t("employer", { value: offer.employerRestriction })}</p> : null}
+      {unknownLimits ? <p className={notice}>{t("unknownLimits")}</p> : null}
 
       <p>{t("sentence", { amount: m(need.amountVnd), total: range(m(low.totalPaidVnd), m(high.totalPaidVnd)), term: need.termMonths })}</p>
 
@@ -93,6 +99,7 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
           label={falling ? t("monthlyFalling") : t("monthly")}
           value={range(formatVnd(low.firstPaymentVnd), formatVnd(high.firstPaymentVnd))}
         />
+        {falling ? <Row label={t("lastMonth")} value={range(formatVnd(low.lastPaymentVnd), formatVnd(high.lastPaymentVnd))} /> : null}
         <Row label={t("cost")} value={range(formatVnd(low.totalCostVnd), formatVnd(high.totalCostVnd))} />
         <Row
           label={t("realApr")}
@@ -104,6 +111,10 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
           <dd>
             {advertised}, {rate.basis === "flat" ? t("basisFlat") : t("basisReducing")}
             {rate.basisInferred ? <span className="block text-sm opacity-75">({t("assumption")})</span> : null}
+            {repaymentAssumed ? <span className="block text-sm opacity-75">{t("repaymentAssumption")}</span> : null}
+            <a href={rate.sourceUrl} target="_blank" rel="noopener noreferrer" className={`${linkClass} block text-sm`}>
+              {t("rateSource")}
+            </a>
           </dd>
         </div>
       </dl>
@@ -114,16 +125,20 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
         ))}
         {offer.uncostedFees.length > 0 ? <p>{t("uncosted", { names: offer.uncostedFees.join(", ") })}</p> : null}
         {offer.feesCompleteness !== "complete" && !ranked.feesAllUnknown ? <p>{t("feesPartial")}</p> : null}
-        {ranked.insuranceCosts.map((i) => (
-          <p key={i.nameVi}>
-            {t(i.mandatory === false ? "insuranceOptional" : "insuranceUnclear", {
-              name: en && i.nameEn ? i.nameEn : i.nameVi,
-              min: formatVnd(i.minVnd),
-              max: formatVnd(i.maxVnd),
-              cost: formatVnd(i.costHigh.totalCostVnd),
-            })}
-          </p>
-        ))}
+        {ranked.insuranceCosts.map((i) => {
+          const key = i.mandatory === false ? (i.collectionKnown ? "insuranceOptional" : "insuranceOptionalUnknownCollection") : "insuranceUnclear";
+          return (
+            <p key={i.nameVi}>
+              {t(key, {
+                name: en && i.nameEn ? i.nameEn : i.nameVi,
+                min: formatVnd(i.minVnd),
+                max: formatVnd(i.maxVnd),
+                cost: formatVnd(i.costHigh.totalCostVnd),
+              })}
+            </p>
+          );
+        })}
+        {ranked.mandatoryCollectionAssumed ? <p>{t("insuranceMandatoryAssumed")}</p> : null}
         {ranked.insuranceUnknownPremium.length > 0 ? <p>{t("insuranceUnknown", { names: ranked.insuranceUnknownPremium.join(", ") })}</p> : null}
         {offer.insurance.length === 0 ? <p>{t("insuranceNone")}</p> : null}
       </div>
@@ -134,13 +149,13 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
       </div>
 
       <details>
-        <summary className="min-h-8 cursor-pointer font-medium underline underline-offset-2">{t("detailsTitle")}</summary>
-        <div className="mt-2 flex flex-col gap-2 text-sm">
+        <summary className="flex min-h-11 cursor-pointer items-center font-medium underline underline-offset-2">{t("detailsTitle")}</summary>
+        <div className="mt-1 flex flex-col gap-2 text-sm">
+          {en ? <p className="opacity-75">{t("viSourceNote")}</p> : null}
           <p>
             {t("effective")}: {range(formatPercent(low.aprEffective, locale), formatPercent(high.aprEffective, locale))}
             {t("perYear")}
           </p>
-          {offer.amortizationInferred && offer.amortization !== null ? <p>{t("repaymentAssumption")}</p> : null}
           {offer.rateNotes.map((n, i) => {
             const text = rateNoteText(n, tRoot, locale);
             return text ? <p key={i}>{text}</p> : null;
@@ -158,8 +173,6 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
           <p>
             {t("documents")}: {offer.documents?.join("; ") ?? t("documentsUnknown")}
           </p>
-          {offer.existingCustomerRequired ? <p>{t("existingCustomer")}</p> : null}
-          {offer.employerRestriction ? <p>{t("employer", { value: offer.employerRestriction })}</p> : null}
           {offer.otherConditions && offer.otherConditions.length > 0 ? (
             <div>
               <p className="font-medium">{t("conditions")}</p>
@@ -170,23 +183,19 @@ export function OfferCard({ ranked, rank, need }: { ranked: RankedOffer; rank: n
               </ul>
             </div>
           ) : null}
-          {offer.conflictFields.length > 0 ? <p>{t("conflict")}</p> : null}
           <p>
             {t("legalName")}: {offer.legalName}. {t("licensed")}.
           </p>
         </div>
       </details>
 
-      <p className="text-sm">
-        {offer.sourceUrls.slice(0, 3).map((url, i) => (
-          <span key={url}>
-            <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-8 items-center underline underline-offset-2">
-              {i === 0 ? t("source") : t("sourceN", { n: i + 1 })}
-            </a>
-            {" · "}
-          </span>
+      <p className="flex flex-wrap items-center gap-x-3 text-sm">
+        {sources.map((url, i) => (
+          <a key={url} href={url} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            {i === 0 ? t("source") : t("sourceN", { n: i + 1 })}
+          </a>
         ))}
-        {t("checkedOn", { date: formatDate(offer.retrievedAt) })}
+        <span>{t("checkedOn", { date: formatDate(offer.oldestRetrievedAt) })}</span>
       </p>
     </article>
   );

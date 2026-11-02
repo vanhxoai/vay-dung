@@ -46,12 +46,22 @@ export function formatDate(iso: string): string {
   return `${d}/${m}/${y}`;
 }
 
-/** Digits typed by the user → a whole number; "" → null. Accepts "20.000.000" and "20,000,000". */
+/**
+ * What the user typed → a whole number, or null if it isn't clearly one.
+ * Accepts "20.000.000" and "20,000,000". Anything else ("15tr", "-5") is null, so the form
+ * can ask again rather than silently misread it.
+ */
 export function parseMoneyInput(text: string): number | null {
+  if (!isPlainMoneyText(text)) return null;
   const digits = text.replace(/\D/g, "");
   if (digits === "") return null;
   const n = Number(digits);
   return Number.isSafeInteger(n) ? n : null;
+}
+
+/** Only digits and separators, so it can safely be reformatted while typing. */
+export function isPlainMoneyText(text: string): boolean {
+  return /^[\d.,\s]*$/.test(text);
 }
 
 /** 20000000 → "20.000.000", for inputs. */

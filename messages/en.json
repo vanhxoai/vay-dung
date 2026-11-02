@@ -7,12 +7,12 @@
     "title": "Vay Đúng",
     "tagline": "See the real cost of a loan before you decide.",
     "points": {
-      "cost": "Includes known fees and insurance, not just the advertised rate.",
+      "cost": "Includes mandatory fees with a known amount, not just the advertised rate.",
       "licensed": "Lists only lenders on the State Bank of Vietnam's list.",
-      "honest": "Tells you plainly when an amount is more than you can repay."
+      "honest": "Tells you plainly when an amount goes over the guideline for what you can repay."
     },
     "start": "Start (about 2 minutes)",
-    "privacy": "No login. Your information is only calculated on your device.",
+    "privacy": "No login. Calculations run only on your device.",
     "switchLanguage": "Tiếng Việt"
   },
   "Flow": {
@@ -25,32 +25,35 @@
       "title": "What do you need the loan for?",
       "purposeLabel": "Purpose",
       "amountLabel": "How much do you need?",
-      "amountHint": "For example: 20,000,000",
+      "amountHint": "For example: 20.000.000",
       "termLabel": "How long do you want to repay over?",
       "months": "{n} months",
-      "urgencyLabel": "How urgent is it?"
+      "urgencyLabel": "When do you need the money?"
     },
     "finances": {
       "title": "Your finances",
-      "privacy": "This is only used for the calculation on your device. We don't send it anywhere or keep it.",
+      "privacy": "This is only used for the calculation on your device. We don't send it anywhere or store it on a server. If you switch language, your answers are kept briefly in this browser so you don't have to retype them, then deleted.",
       "incomeLabel": "Your monthly income",
       "incomeHint": "What you actually receive. If you have no income right now, enter 0.",
       "debtLabel": "How much do you pay towards debts each month?",
-      "debtHint": "Include credit cards, installments and other loans. Leave blank if none.",
+      "debtHint": "Include credit cards, installments and other loans, for example 3.000.000. Leave blank if none.",
       "ageLabel": "How old are you?",
-      "proofLabel": "How can you prove your income?"
+      "proofLabel": "How can you prove your income?",
+      "debtRefinanceHint": "If the new loan fully pays off an old one, don't count that old loan's payment."
     },
     "errors": {
       "purpose": "Please choose a purpose.",
-      "amount": "Please enter an amount of at least 1,000,000 ₫.",
+      "amount": "Please enter an amount in digits, at least 1.000.000 ₫.",
       "amountTooBig": "That's too large for a consumer loan. This tool goes up to 2 billion đồng.",
       "urgency": "Please choose how urgent it is.",
-      "income": "Please enter your monthly income. If you have none, enter 0.",
+      "income": "Please enter your monthly income in digits, for example 15.000.000. If you have none, enter 0.",
       "debtTooBig": "That amount doesn't look right. Please check it.",
       "age": "Please enter your age as a number.",
       "underage": "You must be at least 18 to borrow.",
-      "proof": "Please choose how you can prove your income."
-    }
+      "proof": "Please choose how you can prove your income.",
+      "fullAmount": "Please enter the full amount in digits, for example 3.000.000."
+    },
+    "loading": "Loading…"
   },
   "Purpose": {
     "phone": "Phone, computer, electronics",
@@ -74,8 +77,9 @@
   },
   "Verdict": {
     "ok": {
-      "title": "This loan is within the level we recommend",
-      "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. This doesn't mean a lender will approve you."
+      "title": "The monthly payment is within the guideline",
+      "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. This doesn't mean a lender will approve you.",
+      "someOnly": "Only some options below are within this level. Check the note on each option."
     },
     "depends": {
       "title": "This may be too much, depending on the rate you get",
@@ -91,9 +95,13 @@
     },
     "no_income": {
       "title": "We don't recommend borrowing without a regular income",
-      "body": "A loan has to be repaid every month, even before you find work. Paying late adds more interest and damages your credit history."
+      "body": "A loan has to be repaid every month, even before you find work. Paying late adds more interest and can damage your credit history."
     },
-    "guidelineNote": "The {limit} level is a Vay Đúng guideline, not a State Bank of Vietnam rule."
+    "guidelineNote": "The {limit} level is a Vay Đúng guideline, not a State Bank of Vietnam rule.",
+    "no_data": {
+      "title": "We can't work out the monthly payment for this loan yet",
+      "body": "Under the Vay Đúng guideline, total debt payments shouldn't exceed {limit} of your income each month. For you that's {max}. You already pay {debt}, leaving {headroom} for a new loan. The principal alone is about {principalOnly} a month, before interest."
+    }
   },
   "Alternatives": {
     "title": "What you could do instead",
@@ -102,48 +110,61 @@
     "payDebt": "Pay down your current debts before borrowing more.",
     "save": "Save part of it first, then borrow less or not at all.",
     "family": "Ask family, or ask your employer about a salary advance.",
-    "avoid": "Don't turn to loan sharks or loan apps of unknown origin. Never transfer any fee before you've received the loan."
+    "avoid": "Don't turn to loan sharks or loan apps of unknown origin. If you're asked to transfer money before receiving a loan, stop and check with the lender's official hotline.",
+    "familyNoIncome": "Ask family whether they can help for now."
   },
   "Guidance": {
-    "title": "The type of credit that fits your need",
-    "phone": "Buying electronics: ask about installments at the store first. A true 0% plan can be cheaper than a cash loan, but ask about conversion fees and bundled insurance, and compare the total you'd pay.",
-    "motorbike": "Buying a motorbike: compare dealer installments with a cash loan. Installments usually use the bike as collateral, and the total you'd pay is the number to compare.",
-    "education": "Tuition: first ask about scholarships, paying the school in stages, and the Vietnam Bank for Social Policies' student credit programme. These can be cheaper than a consumer loan.",
+    "title": "What to know for this need",
+    "phone": "Buying electronics: ask about installments at the store first. If a plan is advertised as 0%, ask whether any fees or insurance come with it. If none do, it can be cheaper than a cash loan. Compare the total you'd pay.",
+    "motorbike": "Buying a motorbike: compare dealer installments with a cash loan. Some installment loans use the bike as security or set conditions on its registration papers, so ask before signing. The total you'd pay is the number to compare.",
+    "education": "Tuition: first ask about scholarships and paying in stages. If you're a student in difficult circumstances, ask your school or the Vietnam Bank for Social Policies about its student loan programme and whether you qualify.",
     "medical": "An emergency: check your health insurance and ask family first. If you still need to borrow, use only a licensed lender, even in a hurry.",
-    "debt": "Borrowing to pay debt: be careful, debts can snowball. First ask your current lender about extending or restructuring. Only take a new loan if its real cost is clearly lower than the old one.",
+    "debt": "Borrowing to pay debt: be careful, debts can snowball. First ask your current lender about more time or a new repayment schedule. Only take a new loan if its real cost is clearly lower than the old one.",
     "living": "Borrowing for everyday spending: the loan raises your monthly payments while your income stays the same. See whether you can cut spending or get a salary advance first.",
-    "other": "A cash loan is flexible but often expensive. Borrow only what you need, and compare the total you'd pay across the options below.",
-    "urgent": "In a hurry: this is when scams are most likely. A legal lender won't ask you to transfer money before paying out your loan."
+    "other": "A cash loan is flexible but can be expensive. Borrow only what you need, and compare the total you'd pay across the options below.",
+    "urgent": "In a hurry: people who need money fast are easier to scam. Be wary if anyone makes you transfer money first, especially to a personal account, before approving or paying out a loan. A genuine fee or insurance charge must be written in the contract. Call the lender's official hotline before transferring anything."
   },
   "Results": {
     "title": "Your results",
-    "summary": "You need {amount} over {term} months.",
+    "summary": "You need {amount}, repaid over {term} months.",
     "changeTerm": "Change the repayment time",
-    "offersTitle": "Your options, ordered by real cost",
+    "offersTitle": "Your options, ordered by estimated real rate",
     "offersTitleTooMuch": "Costs for reference, if you're still considering it",
-    "noOffers": "No product has enough data and fits your answers. Try a different amount or repayment time.",
+    "noOffers": "There's no product to compare for your answers right now. See the reasons in the sections below.",
     "ineligibleTitle": "Don't fit your answers ({count})",
     "insufficientTitle": "Not enough data to compare ({count})",
-    "insufficientIntro": "These products are from licensed lenders, but the lenders haven't published enough for us to calculate your real cost.",
+    "insufficientIntro": "These products aren't compared yet because we don't have enough reliable information to work out your cost. Each item gives the reason. This doesn't mean a product is good or bad.",
     "staleReason": "The data is over 90 days old and needs re-checking.",
-    "noRateReason": "No offered rate published.",
     "whyTitle": "Why this order?",
-    "why1": "We order by the real rate (including known fees) at the HIGHEST level the lender publishes, because nobody knows yet which rate you'd get. The lowest rate may not be the one you get.",
+    "why1": "We order by Vay Đúng's estimated real rate, at the highest level the lender publishes, because nobody knows yet which rate you'd get. It includes mandatory fees with a known amount, but not insurance that is optional or may not be required. This order isn't advice on which lender to choose.",
     "why2": "A product whose fees are all unknown can't be first, because its real cost may be higher than we can calculate.",
     "why3": "No lender pays to be ranked higher. Vay Đúng takes no commission and doesn't sell your information.",
-    "why4": "We only list lenders on the State Bank of Vietnam's list (as of {date}).",
+    "why4": "We only list lenders on the State Bank of Vietnam's lists (as of {date}):",
     "whyLink": "See the list",
     "disclaimerTitle": "Please note",
-    "disclaimer": "This is information and calculation for your reference, not financial advice, and it doesn't guarantee approval. Figures come from lenders' public pages on the date shown and may have changed. The official rate and fees are those in your contract. Read it carefully before signing.",
+    "disclaimer": "This is information and calculation for your reference, not financial advice, credit advice or brokerage. Vay Đúng doesn't lend and doesn't guarantee approval. The figures are our estimates, based on lenders' public pages on the date shown, and may have changed. The official rate and fees are those in your contract. Read it carefully before signing.",
     "reasons": {
       "amount_too_low": "The amount is below the minimum ({value}).",
       "amount_too_high": "The amount is above the maximum ({value}).",
-      "over_finance_company_cap": "Finance company: under the rule we found, consumer-loan balances at one company are capped at 100 million đồng, so we don't show higher amounts.",
+      "over_finance_company_cap": "For now we don't show amounts above 100 million đồng at finance companies. Circular 43/2016/TT-NHNN mentions this level for consumer loans, and we're awaiting legal confirmation. This isn't a comment on the lender's product. You can ask them directly.",
       "term_too_short": "The term is below the minimum ({value} months).",
       "term_too_long": "The term is above the maximum ({value} months).",
       "too_young": "Requires age {value} or over.",
       "too_old": "Requires age {value} or under.",
-      "income_too_low": "Requires income of {value} a month or more."
+      "income_too_low": "Requires income of {value} a month or more.",
+      "too_old_at_end": "Requires age {value} or under by the time the loan is repaid."
+    },
+    "jumpToOffers": "See {count} options below",
+    "disclaimerShort": "These are estimates for reference, not financial advice, and don't guarantee approval. The official figures are those in your contract.",
+    "showOffersNoIncome": "See costs for reference",
+    "exclude": {
+      "secondary_sources": "We only found figures in general articles, not on an official product page or contract.",
+      "lender_unverified": "We haven't been able to verify the lender named in this product's contract.",
+      "unverified": "We haven't been able to verify this product and its terms on an official page.",
+      "rate_varies": "The rate varies widely by programme or the source is old, so we can't work out a rate for you.",
+      "ceiling_only": "We only found a rate ceiling, not an offered rate.",
+      "floor_only": "We only found a \"from X%\" figure, not an offered range.",
+      "no_rate": "We haven't found a published rate for this product."
     }
   },
   "Offer": {
@@ -153,30 +174,30 @@
     "monthly": "Monthly payment",
     "monthlyFalling": "First month (falls later)",
     "cost": "Cost of the loan (total paid minus money received)",
-    "realApr": "Real yearly rate",
-    "realAprNote": "including known fees",
+    "realApr": "Real yearly rate (Vay Đúng estimate)",
+    "realAprNote": "includes mandatory fees with a known amount; excludes items listed separately below",
     "advertised": "Published rate",
     "basisFlat": "on the original amount (flat)",
     "basisReducing": "on the reducing balance",
     "perMonth": "/month",
     "perYear": "/year",
-    "assumption": "assumption: flat, worked out from the lender's example; the contract will state the equivalent reducing-balance rate",
+    "assumption": "assumption: worked out from the lender's example, as the interest method isn't stated; the contract will state the equivalent reducing-balance rate",
     "repaymentAssumption": "The way the principal is repaid is our assumption, worked out from the lender's example.",
     "segment": "Applies to: {segment}",
     "fit": {
-      "fits": "Within the guideline, even at the highest rate",
+      "fits": "Within the guideline, even at the highest published rate",
       "fits_only_low": "Only within the guideline at a low rate",
-      "too_much": "Above the level we recommend"
+      "too_much": "Above the guideline"
     },
-    "lowConfidence": "Low confidence: check with the lender",
+    "lowConfidence": "Low confidence: this product's figures come from sources that are unclear or don't match. Check with the lender.",
     "feesUnknown": "Fees unknown: the real cost may be higher",
-    "conflict": "The lender's official sources disagree on some figures; we use the one less favourable to you.",
+    "conflict": "The lender's pages give different figures for some items. We prefer the product page; if sources of the same type differ, we use the figure less favourable to you. Check with the lender before signing.",
     "monthlyFeesIncluded": "Included: {name} {amount}/month",
-    "uncosted": "Exists, amount unknown: {names}",
+    "uncosted": "Fees exist, amount unknown: {names}",
     "feesPartial": "There may be other unpublished fees.",
     "insurance": "Insurance",
-    "insuranceOptional": "{name}: optional. You don't have to buy it to get the loan. If you do: about {min}–{max}, and the loan would cost up to about {cost}.",
-    "insuranceUnclear": "{name}: the source doesn't say whether it's required, so ask. If it applies: about {min}–{max}, and the loan would cost up to about {cost}.",
+    "insuranceOptional": "{name}: optional according to the lender's source. If you buy it: about {min}–{max}, and the loan would cost up to about {cost}.",
+    "insuranceUnclear": "{name}: the source doesn't say whether it's required, so ask. If it applies: about {min}–{max}. If it's deducted from the payout, the loan would cost up to about {cost}. If it's added to the loan, your monthly payment will be higher.",
     "insuranceUnknown": "{names}: premium unknown.",
     "insuranceNone": "Unknown whether insurance is bundled.",
     "lateTitle": "If you pay late",
@@ -186,27 +207,44 @@
     "feeMin": "minimum {amount}",
     "feeMax": "maximum {amount}",
     "feeFixed": "{amount}",
-    "feeGreater": "the higher of {percent}% of the outstanding principal and all remaining interest",
+    "feeGreater": "the higher of {percent}% of the principal still owed and all remaining interest",
     "feeTiers": "{percent}% (from {from} to {to} {unit})",
     "feeTiersOpen": "{percent}% (from {from} {unit} on)",
-    "unit": { "month": "months", "year": "years", "instalment": "instalments" },
+    "unit": {
+      "month": "months",
+      "year": "years",
+      "instalment": "instalments"
+    },
     "detailsTitle": "Details and sources",
-    "effective": "Effective rate (compounded yearly)",
+    "effective": "Rate including interest on interest over a year",
     "documents": "Documents",
     "documentsUnknown": "Unknown",
     "conditions": "Other conditions",
     "existingCustomer": "You must already be a customer of this lender.",
     "employer": "Employer requirement: {value}",
-    "incomeProofNote": "This product may need proof of income, which you said you don't have right now.",
+    "incomeProofNote": "This product may need proof of income. Ask first whether the way you're paid is accepted.",
     "legalName": "Lender",
     "licensed": "On the State Bank of Vietnam's list",
     "source": "See source",
     "sourceN": "Source {n}",
-    "checkedOn": "Checked on {date}",
-    "floor": "Advertised: from {rate}{period}",
-    "ceiling": "Published rate framework: up to {rate}{period}",
-    "benchmark": "Reference rate (not this product's): {rate}{period}",
-    "otherRate": "{segment}: {min}–{max}%{period}",
-    "unknownValue": "unknown"
+    "checkedOn": "Oldest figure checked on {date}",
+    "floor": "Advertised: from {rate}{period}, {basis}",
+    "ceiling": "Published rate framework: up to {rate}{period}, {basis}",
+    "benchmark": "Reference rate (not this product's): {rate}{period}, {basis}",
+    "otherRate": "{segment}: {min}–{max}%{period}, {basis}",
+    "unknownValue": "unknown",
+    "lastMonth": "Last month",
+    "unknownLimits": "It's unclear whether this product covers your chosen amount or term.",
+    "insuranceOptionalUnknownCollection": "{name}: optional according to the lender's source. If you buy it: about {min}–{max}. If it's deducted from the payout, the loan would cost up to about {cost}. If it's added to the loan, your monthly payment will be higher.",
+    "insuranceMandatoryAssumed": "Mandatory insurance is calculated as if deducted from the payout, because the source doesn't say.",
+    "rateSource": "Rate source",
+    "periodUnknown": "unknown whether monthly or yearly",
+    "basisUnknown": "interest method unknown",
+    "viSourceNote": "Some details below are in Vietnamese, as published by the lender."
+  },
+  "Error": {
+    "title": "Something went wrong with the calculation",
+    "body": "We couldn't show your results. Your information wasn't sent anywhere. Please try again.",
+    "retry": "Try again"
   }
 }

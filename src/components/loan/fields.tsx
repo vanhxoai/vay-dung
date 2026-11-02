@@ -1,7 +1,7 @@
 "use client";
 
 import { useId } from "react";
-import { formatMoneyInput, parseMoneyInput } from "@/lib/format";
+import { formatMoneyInput, isPlainMoneyText, parseMoneyInput } from "@/lib/format";
 
 /** Big tap targets (min 44px) for phones. */
 const choiceBase =
@@ -85,7 +85,8 @@ export function MoneyField({
           aria-describedby={[hint ? `${id}-hint` : null, error ? `${id}-error` : null].filter(Boolean).join(" ") || undefined}
           aria-invalid={error ? true : undefined}
           className="min-h-11 w-full rounded-lg border border-current/30 bg-transparent px-3 py-2 text-lg"
-          value={value === "" ? "" : parsed === null ? value : formatMoneyInput(parsed)}
+          // Digits are grouped as you type; anything else ("15tr") stays visible so the error makes sense.
+          value={!isPlainMoneyText(value) || parsed === null ? value : formatMoneyInput(parsed)}
           onChange={(e) => onChange(e.target.value)}
         />
         <span aria-hidden="true">₫</span>
@@ -141,7 +142,7 @@ export function PrimaryButton({ children, onClick, type = "button" }: { children
     <button
       type={type}
       onClick={onClick}
-      className="min-h-12 w-full rounded-lg bg-emerald-800 px-4 py-2 font-semibold text-white hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+      className="min-h-12 w-full rounded-lg bg-emerald-800 px-4 py-2 font-semibold text-white hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 disabled:opacity-60"
     >
       {children}
     </button>

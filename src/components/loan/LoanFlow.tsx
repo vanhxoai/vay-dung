@@ -6,17 +6,22 @@ import { Link } from "@/i18n/navigation";
 import { parseMoneyInput, type AppLocale } from "@/lib/format";
 import type { Offer } from "@/lib/recommend/offers";
 import type { IncomeProof, Need, Purpose, Urgency } from "@/lib/recommend/recommend";
+import { saveDraft, takeDraft } from "./draft";
 import { ChoiceGroup, MoneyField, NumberField, PrimaryButton, SecondaryButton } from "./fields";
 import { Results } from "./Results";
+import { TERMS } from "./terms";
 
 const PURPOSES: Purpose[] = ["phone", "motorbike", "education", "medical", "debt", "living", "other"];
 const URGENCIES: Urgency[] = ["now", "soon", "flexible"];
 const PROOFS: IncomeProof[] = ["bank_salary", "cash_salary", "self_employed", "none"];
-export const TERMS = [6, 12, 18, 24, 36] as const;
 
 const MIN_AMOUNT = 1_000_000;
 const MAX_AMOUNT = 2_000_000_000;
 const MAX_MONEY = 100_000_000_000;
+/** Below these, someone almost certainly typed "15" or "3tr" rather than the full amount. */
+const MIN_PLAUSIBLE_INCOME = 100_000;
+const MIN_PLAUSIBLE_DEBT = 10_000;
+const MAX_AGE = 100;
 
 type Form = {
   step: 1 | 2 | 3;
@@ -32,12 +37,21 @@ type Form = {
 
 const EMPTY: Form = { step: 1, purpose: null, amount: "", term: 12, urgency: null, income: "", debt: "", age: "", proof: null };
 
-/**
- * Switching language reloads the page, which would lose the answers. They're kept in
- * this tab's sessionStorage ONLY for that moment and removed as soon as they're read.
- * Nothing leaves the browser.
- */
-const DRAFT_KEY = "vay-dung-language-switch";
+function isForm(x: unknown): x is Form {
+  if (!x || typeof x !== "object") return false;
+  const f = x as Partial<Form>;
+  return (
+    (f.step === 1 || f.step === 2 || f.step === 3) &&
+    (f.purpose === null || PURPOSES.includes(f.purpose as Purpose)) &&
+    typeof f.amount === "string" &&
+    TERMS.includes(f.term as (typeof TERMS)[number]) &&
+    (f.urgency === null || URGENCIES.includes(f.urgency as Urgency)) &&
+    typeof f.income === "string" &&
+    typeof f.debt === "string" &&
+    typeof f.age === "string" &&
+    (f.proof === null || PROOFS.includes(f.proof as IncomeProof))
+  );
+}
 
 const subscribeNever = () => () => {};
 /** False in the pre-rendered HTML, true once the page's JavaScript is running. */
@@ -47,7 +61,15 @@ function useHydrated(): boolean {
 
 type Errors = Partial<Record<"purpose" | "amount" | "urgency" | "income" | "debt" | "age" | "proof", string>>;
 
-export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[]; licensedAsOf: string; licensedUrl: string }) {
+export function LoanFlow({
+  offers,
+  licensedAsOf,
+  licensedSources,
+}: {
+  offers: Offer[];
+  licensedAsOf: string;
+  licensedSources: { title: string; url: string }[];
+}) {
   const t = useTranslations();
   const locale = useLocale() as AppLocale;
   const [form, setForm] = useState<Form>(EMPTY);
@@ -60,16 +82,11 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
   const [today, setToday] = useState<Date | null>(null);
 
   useEffect(() => {
-    try {
-      const saved = sessionStorage.getItem(DRAFT_KEY);
-      if (!saved) return;
-      sessionStorage.removeItem(DRAFT_KEY);
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- restoring browser-only state after a language switch
-      setForm(JSON.parse(saved) as Form);
-      setToday(new Date());
-    } catch {
-      // Storage can be blocked; the flow still works, it just starts again.
-    }
+    const saved = takeDraft();
+    if (!isForm(saved)) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- restoring browser-only state after a language switch
+    setForm(saved);
+    setToday(new Date());
   }, []);
 
   const set = <K extends keyof Form>(key: K, value: Form[K]) => setForm((f) => ({ ...f, [key]: value }));
@@ -81,6 +98,16 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
     requestAnimationFrame(() => headingRef.current?.focus());
   };
 
+  /** Brings the first problem into view and puts the cursor there. */
+  const showFirstError = () => {
+    requestAnimationFrame(() => {
+      const alert = document.querySelector('form [role="alert"]');
+      const group = alert?.closest("fieldset") ?? alert?.parentElement;
+      group?.scrollIntoView({ block: "center" });
+      group?.querySelector<HTMLElement>("input")?.focus({ preventScroll: true });
+    });
+  };
+
   const checkStep1 = (): boolean => {
     const e: Errors = {};
     if (!form.purpose) e.purpose = t("Flow.errors.purpose");
@@ -89,6 +116,7 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
     else if (amount > MAX_AMOUNT) e.amount = t("Flow.errors.amountTooBig");
     if (!form.urgency) e.urgency = t("Flow.errors.urgency");
     setErrors(e);
+    if (Object.keys(e).length > 0) showFirstError();
     return Object.keys(e).length === 0;
   };
 
@@ -96,14 +124,19 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
     const e: Errors = {};
     const income = parseMoneyInput(form.income);
     if (income === null) e.income = t("Flow.errors.income");
+    else if (income > 0 && income < MIN_PLAUSIBLE_INCOME) e.income = t("Flow.errors.fullAmount");
     else if (income > MAX_MONEY) e.income = t("Flow.errors.debtTooBig");
     const debt = parseMoneyInput(form.debt);
-    if (form.debt !== "" && (debt === null || debt > MAX_MONEY)) e.debt = t("Flow.errors.debtTooBig");
+    if (form.debt !== "") {
+      if (debt === null || (debt > 0 && debt < MIN_PLAUSIBLE_DEBT)) e.debt = t("Flow.errors.fullAmount");
+      else if (debt > MAX_MONEY) e.debt = t("Flow.errors.debtTooBig");
+    }
     const age = Number(form.age);
-    if (form.age === "" || !Number.isInteger(age) || age > 120) e.age = t("Flow.errors.age");
+    if (form.age === "" || !Number.isInteger(age) || age > MAX_AGE) e.age = t("Flow.errors.age");
     else if (age < 18) e.age = t("Flow.errors.underage");
     if (!form.proof) e.proof = t("Flow.errors.proof");
     setErrors(e);
+    if (Object.keys(e).length > 0) showFirstError();
     return Object.keys(e).length === 0;
   };
 
@@ -122,18 +155,16 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
       : null;
 
   const otherLocale = locale === "vi" ? "en" : "vi";
-  const rememberForLanguageSwitch = () => {
-    try {
-      if (form !== EMPTY) sessionStorage.setItem(DRAFT_KEY, JSON.stringify(form));
-    } catch {
-      // Storage can be blocked; the flow simply starts again.
-    }
+  const rememberForLanguageSwitch = (e: React.MouseEvent) => {
+    // Ctrl/Cmd-click opens another tab; nothing should be left behind in this one.
+    if (form === EMPTY || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    saveDraft(form);
   };
 
   return (
     <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-5 px-4 py-5">
       <header className="flex items-center justify-between gap-3">
-        <Link href="/" className="font-bold">
+        <Link href="/" className="inline-flex min-h-11 items-center font-bold">
           {t("Home.title")}
         </Link>
         <Link href="/vay" locale={otherLocale} onClick={rememberForLanguageSwitch} className="inline-flex min-h-11 items-center px-2 underline underline-offset-4">
@@ -185,7 +216,7 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
             onChange={(v) => set("urgency", v)}
             error={errors.urgency}
           />
-          <PrimaryButton type="submit">{t("Flow.next")}</PrimaryButton>
+          <PrimaryButton type="submit">{hydrated ? t("Flow.next") : t("Flow.loading")}</PrimaryButton>
           </fieldset>
         </form>
       ) : null}
@@ -219,7 +250,7 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
           />
           <MoneyField
             label={t("Flow.finances.debtLabel")}
-            hint={t("Flow.finances.debtHint")}
+            hint={form.purpose === "debt" ? `${t("Flow.finances.debtHint")} ${t("Flow.finances.debtRefinanceHint")}` : t("Flow.finances.debtHint")}
             value={form.debt}
             onChange={(v) => set("debt", v)}
             error={errors.debt}
@@ -247,7 +278,7 @@ export function LoanFlow({ offers, licensedAsOf, licensedUrl }: { offers: Offer[
           onChangeTerm={(n) => set("term", n)}
           onEdit={() => goTo(1)}
           licensedAsOf={licensedAsOf}
-          licensedUrl={licensedUrl}
+          licensedSources={licensedSources}
         />
       ) : null}
     </main>

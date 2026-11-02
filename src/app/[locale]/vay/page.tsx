@@ -8,6 +8,12 @@ export default function LoanPage() {
   // Runs at build time. The browser receives only slim offers; the user's answers never come back.
   const offers = toOffers(loadLenders());
   const list = LicensedList.parse(licensedList);
-  const finance = list.sources.find((s) => /tài chính/i.test(s.title)) ?? list.sources[0];
-  return <LoanFlow offers={offers} licensedAsOf={finance.asOf ?? finance.retrievedAt} licensedUrl={finance.url} />;
+  const first = list.sources[0];
+  return (
+    <LoanFlow
+      offers={offers}
+      licensedAsOf={first.asOf ?? first.retrievedAt}
+      licensedSources={list.sources.map((s) => ({ title: s.title, url: s.url }))}
+    />
+  );
 }

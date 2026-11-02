@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
+import { DraftCleanup } from "@/components/loan/DraftCleanup";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
 
@@ -29,7 +30,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <DraftCleanup />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

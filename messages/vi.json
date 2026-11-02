@@ -7,9 +7,9 @@
     "title": "Vay Đúng",
     "tagline": "Xem chi phí thật của khoản vay trước khi quyết định.",
     "points": {
-      "cost": "Tính cả phí và bảo hiểm đã biết, không chỉ lãi suất quảng cáo.",
+      "cost": "Tính cả các phí bắt buộc đã biết số tiền, không chỉ lãi suất quảng cáo.",
       "licensed": "Chỉ liệt kê bên cho vay có trong danh sách của Ngân hàng Nhà nước.",
-      "honest": "Nói thẳng khi số tiền vượt sức trả của bạn."
+      "honest": "Nói thẳng khi số tiền vượt mức hướng dẫn về khả năng trả nợ."
     },
     "start": "Bắt đầu (khoảng 2 phút)",
     "privacy": "Không cần đăng nhập. Thông tin của bạn chỉ được tính trên máy của bạn.",
@@ -28,29 +28,32 @@
       "amountHint": "Ví dụ: 20.000.000",
       "termLabel": "Bạn muốn trả trong bao lâu?",
       "months": "{n} tháng",
-      "urgencyLabel": "Bạn cần gấp không?"
+      "urgencyLabel": "Khi nào bạn cần tiền?"
     },
     "finances": {
       "title": "Tình hình tài chính của bạn",
-      "privacy": "Thông tin này chỉ dùng để tính toán ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu lại.",
+      "privacy": "Thông tin này chỉ dùng để tính toán ngay trên máy của bạn. Chúng tôi không gửi đi và không lưu trên máy chủ. Riêng khi bạn đổi ngôn ngữ, câu trả lời được giữ tạm trên trình duyệt này để không phải nhập lại, rồi được xóa.",
       "incomeLabel": "Thu nhập mỗi tháng của bạn",
       "incomeHint": "Số tiền thực nhận. Nếu chưa có thu nhập, hãy nhập 0.",
       "debtLabel": "Mỗi tháng bạn đang trả nợ bao nhiêu?",
-      "debtHint": "Cộng cả thẻ tín dụng, trả góp và các khoản vay khác. Nếu không có, để trống.",
+      "debtHint": "Cộng cả thẻ tín dụng, trả góp và các khoản vay khác, ví dụ 3.000.000. Nếu không có, để trống.",
       "ageLabel": "Bạn bao nhiêu tuổi?",
-      "proofLabel": "Bạn có thể chứng minh thu nhập bằng cách nào?"
+      "proofLabel": "Bạn có thể chứng minh thu nhập bằng cách nào?",
+      "debtRefinanceHint": "Nếu khoản mới dùng để trả hết một khoản cũ, đừng tính tiền trả của khoản cũ đó."
     },
     "errors": {
       "purpose": "Hãy chọn mục đích vay.",
-      "amount": "Hãy nhập số tiền, ít nhất 1.000.000 ₫.",
+      "amount": "Hãy nhập số tiền bằng chữ số, ít nhất 1.000.000 ₫.",
       "amountTooBig": "Số tiền này quá lớn so với vay tiêu dùng. Công cụ chỉ tính đến 2 tỷ đồng.",
       "urgency": "Hãy chọn mức độ gấp.",
-      "income": "Hãy nhập thu nhập mỗi tháng. Nếu chưa có thu nhập, hãy nhập 0.",
+      "income": "Hãy nhập thu nhập mỗi tháng bằng chữ số, ví dụ 15.000.000. Nếu chưa có thu nhập, hãy nhập 0.",
       "debtTooBig": "Số tiền này có vẻ chưa đúng. Hãy kiểm tra lại.",
       "age": "Hãy nhập tuổi của bạn bằng số.",
       "underage": "Bạn cần đủ 18 tuổi để vay tiền.",
-      "proof": "Hãy chọn một cách chứng minh thu nhập."
-    }
+      "proof": "Hãy chọn một cách chứng minh thu nhập.",
+      "fullAmount": "Hãy nhập đủ số tiền bằng chữ số, ví dụ 3.000.000."
+    },
+    "loading": "Đang tải…"
   },
   "Purpose": {
     "phone": "Mua điện thoại, máy tính, đồ điện tử",
@@ -74,8 +77,9 @@
   },
   "Verdict": {
     "ok": {
-      "title": "Khoản vay này nằm trong mức chúng tôi khuyên",
-      "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Điều này không có nghĩa là bên cho vay chắc chắn duyệt."
+      "title": "Tiền trả mỗi tháng nằm trong mức hướng dẫn",
+      "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Điều này không có nghĩa là bên cho vay chắc chắn duyệt.",
+      "someOnly": "Chỉ một số lựa chọn bên dưới nằm trong mức này. Hãy xem dòng ghi chú trên từng lựa chọn."
     },
     "depends": {
       "title": "Có thể vượt sức trả, tùy lãi suất bạn được duyệt",
@@ -91,9 +95,13 @@
     },
     "no_income": {
       "title": "Chúng tôi không khuyên bạn vay khi chưa có thu nhập đều",
-      "body": "Khoản vay cần được trả mỗi tháng, kể cả khi bạn chưa tìm được việc. Trả chậm sẽ phát sinh thêm lãi và làm xấu lịch sử tín dụng của bạn."
+      "body": "Khoản vay cần được trả mỗi tháng, kể cả khi bạn chưa tìm được việc. Trả chậm sẽ phát sinh thêm lãi và có thể làm xấu lịch sử tín dụng của bạn."
     },
-    "guidelineNote": "Mức {limit} là hướng dẫn của Vay Đúng, không phải quy định của Ngân hàng Nhà nước."
+    "guidelineNote": "Mức {limit} là hướng dẫn của Vay Đúng, không phải quy định của Ngân hàng Nhà nước.",
+    "no_data": {
+      "title": "Chưa thể tính tiền trả mỗi tháng cho khoản này",
+      "body": "Theo hướng dẫn của Vay Đúng, tổng tiền trả nợ mỗi tháng không nên vượt {limit} thu nhập. Với bạn là {max}. Bạn đang trả {debt}, nên còn {headroom} cho khoản mới. Riêng tiền gốc đã khoảng {principalOnly} mỗi tháng, chưa kể lãi."
+    }
   },
   "Alternatives": {
     "title": "Bạn có thể làm gì thay vào đó",
@@ -102,48 +110,61 @@
     "payDebt": "Trả bớt các khoản nợ hiện tại trước khi vay thêm.",
     "save": "Để dành trước một phần, rồi vay ít hơn hoặc không cần vay.",
     "family": "Hỏi người thân, hoặc hỏi công ty về việc ứng lương.",
-    "avoid": "Đừng tìm đến tín dụng đen hay ứng dụng cho vay không rõ nguồn gốc. Đừng chuyển bất kỳ khoản phí nào trước khi nhận tiền vay."
+    "avoid": "Đừng tìm đến tín dụng đen hay ứng dụng cho vay không rõ nguồn gốc. Nếu bị yêu cầu chuyển tiền trước khi nhận tiền vay, hãy dừng lại và kiểm tra với tổng đài chính thức của bên cho vay.",
+    "familyNoIncome": "Hỏi người thân xem có thể giúp tạm thời không."
   },
   "Guidance": {
-    "title": "Loại vay phù hợp với nhu cầu của bạn",
-    "phone": "Mua đồ điện tử: hãy hỏi trả góp ngay tại cửa hàng trước. Trả góp 0% thực sự có thể rẻ hơn vay tiền mặt, nhưng hãy hỏi kỹ có phí chuyển đổi hay bảo hiểm kèm theo không, và so sánh tổng số tiền phải trả.",
-    "motorbike": "Mua xe máy: hãy so sánh trả góp qua đại lý với vay tiền mặt. Khoản trả góp thường cần xe làm tài sản bảo đảm, và tổng số tiền phải trả mới là con số cần so sánh.",
-    "education": "Học phí: hãy hỏi trước về học bổng, học phí trả theo đợt của trường, và chương trình tín dụng cho sinh viên của Ngân hàng Chính sách xã hội. Những nguồn này có thể rẻ hơn vay tiêu dùng.",
+    "title": "Điều nên biết với nhu cầu này",
+    "phone": "Mua đồ điện tử: hãy hỏi trả góp ngay tại cửa hàng trước. Nếu quảng cáo \"trả góp 0%\", hãy hỏi rõ có phí hay bảo hiểm kèm theo không. Nếu không có, trả góp có thể rẻ hơn vay tiền mặt. Hãy so sánh tổng số tiền phải trả.",
+    "motorbike": "Mua xe máy: hãy so sánh trả góp qua đại lý với vay tiền mặt. Một số khoản trả góp dùng chính chiếc xe để bảo đảm khoản vay hoặc có điều kiện về giấy đăng ký xe, nên hãy hỏi rõ trước khi ký. Tổng số tiền phải trả mới là con số cần so sánh.",
+    "education": "Học phí: hãy hỏi trước về học bổng và việc đóng học phí theo đợt. Nếu bạn là học sinh, sinh viên có hoàn cảnh khó khăn, hãy hỏi trường hoặc Ngân hàng Chính sách xã hội về chương trình vay dành cho sinh viên và xem mình có đủ điều kiện không.",
     "medical": "Việc khẩn cấp: hãy kiểm tra bảo hiểm y tế và hỏi người thân trước. Nếu vẫn phải vay, chỉ chọn bên có giấy phép, kể cả khi đang gấp.",
-    "debt": "Vay để trả nợ: hãy cẩn thận, vì khoản nợ có thể lớn dần. Trước tiên, hãy liên hệ bên đang cho bạn vay để hỏi về việc giãn hoặc cơ cấu lại khoản nợ. Chỉ nên vay mới nếu chi phí thật thấp hơn rõ ràng so với khoản cũ.",
+    "debt": "Vay để trả nợ: hãy cẩn thận, vì khoản nợ có thể lớn dần. Trước tiên, hãy liên hệ bên đang cho bạn vay để hỏi về việc kéo dài thời gian trả hoặc đổi lịch trả. Chỉ nên vay mới nếu chi phí thật thấp hơn rõ ràng so với khoản cũ.",
     "living": "Vay để chi tiêu hằng ngày: khoản vay sẽ làm tiền trả mỗi tháng tăng lên, trong khi thu nhập không đổi. Hãy xem có thể giảm chi tiêu hoặc ứng lương trước không.",
-    "other": "Vay tiền mặt linh hoạt hơn nhưng thường đắt. Hãy vay đúng số tiền cần, và so sánh tổng số tiền phải trả ở các lựa chọn dưới đây.",
-    "urgent": "Đang gấp: đây là lúc dễ gặp lừa đảo nhất. Bên cho vay hợp pháp không yêu cầu bạn chuyển tiền trước khi giải ngân."
+    "other": "Vay tiền mặt linh hoạt hơn nhưng có thể đắt. Hãy vay đúng số tiền cần, và so sánh tổng số tiền phải trả ở các lựa chọn dưới đây.",
+    "urgent": "Đang gấp: người đang cần tiền gấp dễ bị lừa. Hãy cảnh giác nếu ai đó bắt bạn chuyển tiền trước, nhất là vào tài khoản cá nhân, thì mới duyệt hoặc giải ngân. Phí hoặc bảo hiểm hợp lệ phải được ghi rõ trong hợp đồng. Hãy gọi tổng đài chính thức của bên cho vay để kiểm tra trước khi chuyển bất kỳ khoản nào."
   },
   "Results": {
     "title": "Kết quả của bạn",
-    "summary": "Bạn cần {amount} trong {term} tháng.",
+    "summary": "Bạn cần {amount}, trả trong {term} tháng.",
     "changeTerm": "Đổi thời hạn trả",
-    "offersTitle": "Các lựa chọn, xếp theo chi phí thật",
+    "offersTitle": "Các lựa chọn, xếp theo lãi suất thật ước tính",
     "offersTitleTooMuch": "Chi phí tham khảo, nếu bạn vẫn đang cân nhắc",
-    "noOffers": "Không có sản phẩm nào đủ dữ liệu và phù hợp với thông tin của bạn. Hãy thử đổi số tiền hoặc thời hạn.",
+    "noOffers": "Hiện chưa có sản phẩm nào để so sánh với thông tin của bạn. Xem lý do ở các mục bên dưới.",
     "ineligibleTitle": "Không phù hợp với thông tin bạn nhập ({count})",
     "insufficientTitle": "Chưa đủ dữ liệu để so sánh ({count})",
-    "insufficientIntro": "Các sản phẩm này của bên có giấy phép, nhưng họ chưa công bố đủ thông tin để chúng tôi tính chi phí thật cho bạn.",
+    "insufficientIntro": "Các sản phẩm này chưa được đưa vào so sánh vì chúng tôi chưa có đủ thông tin đáng tin cậy để tính chi phí cho bạn. Lý do ghi ở từng mục. Điều này không nói lên sản phẩm tốt hay xấu.",
     "staleReason": "Dữ liệu đã quá 90 ngày, cần kiểm tra lại.",
-    "noRateReason": "Chưa công bố lãi suất chào bán.",
     "whyTitle": "Vì sao có thứ tự này?",
-    "why1": "Chúng tôi xếp theo lãi suất thật (đã gồm các phí đã biết) ở mức CAO NHẤT mà bên cho vay công bố, vì chưa ai biết bạn sẽ được mức nào. Mức thấp nhất không chắc là mức bạn nhận được.",
+    "why1": "Chúng tôi xếp theo lãi suất thật do Vay Đúng ước tính, tính ở mức cao nhất mà bên cho vay công bố, vì chưa ai biết bạn sẽ được mức nào. Con số này gồm các phí bắt buộc đã biết số tiền, chưa gồm bảo hiểm không bắt buộc hoặc chưa rõ có bắt buộc không. Thứ tự này không phải lời khuyên chọn bên nào.",
     "why2": "Sản phẩm mà toàn bộ phí đều chưa rõ không được xếp đầu, vì chi phí thật của nó có thể cao hơn con số tính được.",
     "why3": "Không bên nào trả tiền để được xếp trên. Vay Đúng không nhận hoa hồng và không bán thông tin của bạn.",
-    "why4": "Chỉ liệt kê bên cho vay có trong danh sách của Ngân hàng Nhà nước (tính đến {date}).",
+    "why4": "Chỉ liệt kê bên cho vay có trong danh sách của Ngân hàng Nhà nước (tính đến {date}):",
     "whyLink": "Xem danh sách",
     "disclaimerTitle": "Lưu ý",
-    "disclaimer": "Đây là thông tin và phép tính để bạn tham khảo, không phải lời khuyên tài chính, và không bảo đảm bạn sẽ được duyệt. Số liệu lấy từ trang công khai của bên cho vay vào ngày ghi trên từng mục và có thể đã thay đổi. Lãi suất và phí chính thức là những gì ghi trong hợp đồng của bạn. Hãy đọc kỹ trước khi ký.",
+    "disclaimer": "Đây là thông tin và phép tính để bạn tham khảo, không phải lời khuyên tài chính, tư vấn tín dụng hay môi giới. Vay Đúng không cho vay và không bảo đảm bạn sẽ được duyệt. Các con số là ước tính của chúng tôi, dựa trên trang công khai của bên cho vay vào ngày ghi trên từng mục, và có thể đã thay đổi. Lãi suất và phí chính thức là những gì ghi trong hợp đồng của bạn. Hãy đọc kỹ trước khi ký.",
     "reasons": {
       "amount_too_low": "Số tiền thấp hơn mức tối thiểu ({value}).",
       "amount_too_high": "Số tiền cao hơn mức tối đa ({value}).",
-      "over_finance_company_cap": "Công ty tài chính: theo quy định chúng tôi tìm được, dư nợ vay tiêu dùng tại một công ty tối đa 100 triệu đồng, nên chúng tôi không hiển thị số tiền cao hơn.",
+      "over_finance_company_cap": "Hiện chúng tôi chưa hiển thị khoản trên 100 triệu đồng ở công ty tài chính. Thông tư 43/2016/TT-NHNN có nêu mức này cho vay tiêu dùng, và chúng tôi đang chờ xác nhận về pháp lý. Đây không phải nhận xét về sản phẩm của bên cho vay. Bạn có thể hỏi trực tiếp họ.",
       "term_too_short": "Thời hạn ngắn hơn mức tối thiểu ({value} tháng).",
       "term_too_long": "Thời hạn dài hơn mức tối đa ({value} tháng).",
       "too_young": "Yêu cầu từ {value} tuổi.",
       "too_old": "Yêu cầu không quá {value} tuổi.",
-      "income_too_low": "Yêu cầu thu nhập từ {value} mỗi tháng."
+      "income_too_low": "Yêu cầu thu nhập từ {value} mỗi tháng.",
+      "too_old_at_end": "Yêu cầu không quá {value} tuổi, tính đến khi trả xong."
+    },
+    "jumpToOffers": "Xem {count} lựa chọn bên dưới",
+    "disclaimerShort": "Đây là ước tính để tham khảo, không phải lời khuyên tài chính và không bảo đảm bạn sẽ được duyệt. Số chính thức là số ghi trong hợp đồng.",
+    "showOffersNoIncome": "Xem chi phí tham khảo",
+    "exclude": {
+      "secondary_sources": "Chúng tôi chỉ tìm thấy số liệu trên các bài viết chung, chưa thấy trang sản phẩm hoặc hợp đồng chính thức.",
+      "lender_unverified": "Chúng tôi chưa xác minh được bên cho vay ghi trong hợp đồng của sản phẩm này.",
+      "unverified": "Chúng tôi chưa xác minh được sản phẩm này và các điều kiện của nó trên trang chính thức.",
+      "rate_varies": "Lãi suất thay đổi nhiều tùy chương trình hoặc nguồn đã cũ, nên chưa tính được mức cho bạn.",
+      "ceiling_only": "Chúng tôi chỉ tìm thấy khung lãi suất trần, chưa thấy lãi suất chào bán.",
+      "floor_only": "Chúng tôi chỉ tìm thấy mức \"từ X%\", chưa thấy khoảng lãi suất chào bán.",
+      "no_rate": "Chúng tôi chưa tìm thấy lãi suất được công bố cho sản phẩm này."
     }
   },
   "Offer": {
@@ -153,30 +174,30 @@
     "monthly": "Trả mỗi tháng",
     "monthlyFalling": "Tháng đầu (giảm dần về sau)",
     "cost": "Chi phí vay (tổng trả trừ tiền nhận)",
-    "realApr": "Lãi suất thật mỗi năm",
-    "realAprNote": "đã gồm các phí đã biết",
+    "realApr": "Lãi suất thật mỗi năm (Vay Đúng ước tính)",
+    "realAprNote": "đã gồm phí bắt buộc đã biết số tiền; chưa gồm các khoản ghi riêng bên dưới",
     "advertised": "Lãi suất công bố",
     "basisFlat": "tính trên số tiền vay ban đầu (lãi phẳng)",
     "basisReducing": "tính trên dư nợ giảm dần",
     "perMonth": "/tháng",
     "perYear": "/năm",
-    "assumption": "giả định: lãi phẳng, suy ra từ ví dụ của bên cho vay; hợp đồng sẽ ghi lãi suất quy đổi trên dư nợ giảm dần",
+    "assumption": "giả định: suy ra từ ví dụ của bên cho vay, cách tính lãi chưa được ghi rõ; hợp đồng sẽ ghi lãi suất quy đổi trên dư nợ giảm dần",
     "repaymentAssumption": "Cách trả gốc là giả định của chúng tôi, suy ra từ ví dụ của bên cho vay.",
     "segment": "Áp dụng cho: {segment}",
     "fit": {
-      "fits": "Vừa sức theo hướng dẫn, kể cả ở lãi suất cao nhất",
+      "fits": "Vừa sức theo hướng dẫn, kể cả ở lãi suất cao nhất được công bố",
       "fits_only_low": "Chỉ vừa sức nếu được lãi suất thấp",
-      "too_much": "Vượt mức chúng tôi khuyên"
+      "too_much": "Vượt mức hướng dẫn"
     },
-    "lowConfidence": "Độ tin cậy thấp: hãy kiểm tra lại với bên cho vay",
+    "lowConfidence": "Độ tin cậy thấp: số liệu của sản phẩm này đến từ nguồn chưa rõ ràng hoặc chưa khớp nhau. Hãy kiểm tra lại với bên cho vay.",
     "feesUnknown": "Chưa rõ phí: chi phí thật có thể cao hơn",
-    "conflict": "Các nguồn chính thức của bên cho vay chưa khớp nhau ở một vài số liệu; chúng tôi dùng con số bất lợi hơn cho bạn.",
+    "conflict": "Các trang của bên cho vay ghi một vài số liệu khác nhau. Chúng tôi ưu tiên trang sản phẩm; nếu các nguồn cùng loại khác nhau, chúng tôi dùng số bất lợi hơn cho bạn. Hãy hỏi lại bên cho vay trước khi ký.",
     "monthlyFeesIncluded": "Đã tính: {name} {amount}/tháng",
-    "uncosted": "Có nhưng chưa rõ số tiền: {names}",
+    "uncosted": "Có phí nhưng chưa rõ số tiền: {names}",
     "feesPartial": "Có thể còn phí khác chưa được công bố.",
     "insurance": "Bảo hiểm",
-    "insuranceOptional": "{name}: không bắt buộc. Bạn không phải mua để được vay. Nếu mua: khoảng {min}–{max}, khi đó chi phí vay tối đa khoảng {cost}.",
-    "insuranceUnclear": "{name}: nguồn không nói có bắt buộc hay không, hãy hỏi rõ. Nếu có: khoảng {min}–{max}, khi đó chi phí vay tối đa khoảng {cost}.",
+    "insuranceOptional": "{name}: không bắt buộc theo nguồn của bên cho vay. Nếu mua: khoảng {min}–{max}, khi đó chi phí vay tối đa khoảng {cost}.",
+    "insuranceUnclear": "{name}: nguồn không nói có bắt buộc hay không, hãy hỏi rõ. Nếu có: khoảng {min}–{max}. Nếu phí này được trừ vào tiền giải ngân, chi phí vay tối đa khoảng {cost}. Nếu phí được cộng vào khoản vay, tiền trả mỗi tháng sẽ cao hơn.",
     "insuranceUnknown": "{names}: chưa rõ phí bảo hiểm.",
     "insuranceNone": "Chưa rõ có bảo hiểm kèm theo hay không.",
     "lateTitle": "Nếu trả chậm",
@@ -186,27 +207,44 @@
     "feeMin": "tối thiểu {amount}",
     "feeMax": "tối đa {amount}",
     "feeFixed": "{amount}",
-    "feeGreater": "lấy số cao hơn giữa {percent}% dư nợ gốc và toàn bộ lãi còn lại",
+    "feeGreater": "lấy số cao hơn giữa {percent}% số tiền gốc còn nợ và toàn bộ lãi còn lại",
     "feeTiers": "{percent}% (từ {from} đến {to} {unit})",
     "feeTiersOpen": "{percent}% (từ {from} {unit} trở đi)",
-    "unit": { "month": "tháng", "year": "năm", "instalment": "kỳ" },
+    "unit": {
+      "month": "tháng",
+      "year": "năm",
+      "instalment": "kỳ"
+    },
     "detailsTitle": "Chi tiết và nguồn",
-    "effective": "Lãi suất hiệu dụng (tính gộp theo năm)",
+    "effective": "Lãi suất nếu tính cả lãi chồng lãi trong năm",
     "documents": "Giấy tờ",
     "documentsUnknown": "Chưa rõ",
     "conditions": "Điều kiện khác",
     "existingCustomer": "Cần là khách hàng hiện tại của bên cho vay.",
     "employer": "Yêu cầu về nơi làm việc: {value}",
-    "incomeProofNote": "Sản phẩm này có thể cần giấy tờ chứng minh thu nhập, mà bạn cho biết hiện chưa có.",
+    "incomeProofNote": "Sản phẩm này có thể cần giấy tờ chứng minh thu nhập. Hãy hỏi trước xem cách nhận lương của bạn có được chấp nhận không.",
     "legalName": "Bên cho vay",
     "licensed": "Có trong danh sách của Ngân hàng Nhà nước",
     "source": "Xem nguồn",
     "sourceN": "Nguồn {n}",
-    "checkedOn": "Kiểm tra ngày {date}",
-    "floor": "Quảng cáo: từ {rate}{period}",
-    "ceiling": "Khung lãi suất công bố: đến {rate}{period}",
-    "benchmark": "Lãi suất tham chiếu (không phải của sản phẩm): {rate}{period}",
-    "otherRate": "{segment}: {min}–{max}%{period}",
-    "unknownValue": "chưa rõ"
+    "checkedOn": "Số liệu cũ nhất được kiểm tra ngày {date}",
+    "floor": "Quảng cáo: từ {rate}{period}, {basis}",
+    "ceiling": "Khung lãi suất công bố: đến {rate}{period}, {basis}",
+    "benchmark": "Lãi suất tham chiếu (không phải của sản phẩm): {rate}{period}, {basis}",
+    "otherRate": "{segment}: {min}–{max}%{period}, {basis}",
+    "unknownValue": "chưa rõ",
+    "lastMonth": "Tháng cuối",
+    "unknownLimits": "Chưa rõ sản phẩm này có áp dụng cho số tiền hoặc thời hạn bạn chọn không.",
+    "insuranceOptionalUnknownCollection": "{name}: không bắt buộc theo nguồn của bên cho vay. Nếu mua: khoảng {min}–{max}. Nếu phí này được trừ vào tiền giải ngân, chi phí vay tối đa khoảng {cost}. Nếu phí được cộng vào khoản vay, tiền trả mỗi tháng sẽ cao hơn.",
+    "insuranceMandatoryAssumed": "Bảo hiểm bắt buộc được tính như thể trừ vào tiền giải ngân, vì nguồn không ghi rõ.",
+    "rateSource": "Nguồn lãi suất",
+    "periodUnknown": "chưa rõ theo tháng hay theo năm",
+    "basisUnknown": "chưa rõ cách tính lãi",
+    "viSourceNote": ""
+  },
+  "Error": {
+    "title": "Đã có lỗi khi tính toán",
+    "body": "Chúng tôi chưa thể hiển thị kết quả. Thông tin của bạn không được gửi đi. Hãy thử lại.",
+    "retry": "Thử lại"
   }
 }

@@ -69,6 +69,7 @@ test.describe("verdicts", () => {
     await expect(page.getByTestId("offer").first()).toContainText("₫");
     await expect(page.getByTestId("offer").first()).toContainText("/năm");
     await expect(page.getByText("không có nghĩa là bên cho vay chắc chắn duyệt")).toBeVisible();
+    await expect(page.getByTestId("disclaimer-short")).toContainText("không bảo đảm bạn sẽ được duyệt");
   });
 
   test("over-borrowing: a clear 'don't borrow', before any offer, with alternatives", async ({ page }) => {
@@ -82,7 +83,7 @@ test.describe("verdicts", () => {
     const offerBox = await page.getByTestId("offer").first().boundingBox();
     expect(verdictBox!.y).toBeLessThan(offerBox!.y);
     // Urgent users get the scam warning.
-    await expect(page.getByText("Bên cho vay hợp pháp không yêu cầu bạn chuyển tiền trước")).toBeVisible();
+    await expect(page.getByText("Đang gấp: người đang cần tiền gấp dễ bị lừa")).toBeVisible();
   });
 
   test("zero income: no recommendation to borrow", async ({ page }) => {
@@ -95,11 +96,11 @@ test.describe("results page", () => {
   test("always shows the disclaimer, the ranking explanation and sources with dates", async ({ page }) => {
     await complete(page, CAN_AFFORD);
     await expect(page.getByTestId("disclaimer")).toContainText("không phải lời khuyên tài chính");
-    await expect(page.getByText("Vì sao có thứ tự này?")).toBeVisible();
+    await page.getByText("Vì sao có thứ tự này?").click();
     await expect(page.getByText("Không bên nào trả tiền để được xếp trên")).toBeVisible();
     const first = page.getByTestId("offer").first();
     await expect(first.getByRole("link", { name: "Xem nguồn" })).toHaveAttribute("href", /^https:\/\//);
-    await expect(first).toContainText("Kiểm tra ngày");
+    await expect(first).toContainText("Số liệu cũ nhất được kiểm tra ngày");
   });
 
   test("changing the term updates the numbers without losing answers", async ({ page }) => {
@@ -148,7 +149,7 @@ test.describe("input edge cases", () => {
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto("/vay");
-    await expect(page.getByRole("button", { name: "Tiếp tục" })).toBeDisabled();
+    await expect(page.getByRole("button", { name: "Đang tải…" })).toBeDisabled();
     await context.close();
   });
 
@@ -156,7 +157,7 @@ test.describe("input edge cases", () => {
     await open(page);
     await page.getByRole("button", { name: "Tiếp tục" }).click();
     await expect(page.getByText("Hãy chọn mục đích vay.")).toBeVisible();
-    await expect(page.getByText("Hãy nhập số tiền, ít nhất 1.000.000 ₫.")).toBeVisible();
+    await expect(page.getByText("Hãy nhập số tiền bằng chữ số, ít nhất 1.000.000 ₫.")).toBeVisible();
     await expect(page.getByText("Bước 1/3")).toBeVisible();
   });
 
@@ -165,12 +166,26 @@ test.describe("input edge cases", () => {
     const amount = page.getByLabel("Bạn cần bao nhiêu tiền?");
     await amount.fill("abc");
     await page.getByRole("button", { name: "Tiếp tục" }).click();
-    await expect(page.getByText("Hãy nhập số tiền, ít nhất 1.000.000 ₫.")).toBeVisible();
+    await expect(page.getByText("Hãy nhập số tiền bằng chữ số, ít nhất 1.000.000 ₫.")).toBeVisible();
     await amount.fill("99999999999");
     await page.getByRole("button", { name: "Tiếp tục" }).click();
     await expect(page.getByText(/quá lớn/)).toBeVisible();
     await amount.fill("20000000");
     await expect(amount).toHaveValue("20.000.000");
+  });
+
+  test("a too-small debt ('3tr' typed as 3) is questioned, not silently accepted", async ({ page }) => {
+    await open(page);
+    await fillStep1(page, CAN_AFFORD);
+    await fillStep2(page, { ...CAN_AFFORD, debt: "3" });
+    await expect(page.getByText("Hãy nhập đủ số tiền bằng chữ số").first()).toBeVisible();
+    await expect(page.getByText("Bước 2/3")).toBeVisible();
+  });
+
+  test("a failed submit moves to the first problem", async ({ page }) => {
+    await open(page);
+    await page.getByRole("button", { name: "Tiếp tục" }).click();
+    await expect(page.getByText("Hãy chọn mục đích vay.")).toBeInViewport();
   });
 
   test("under 18 can't continue", async ({ page }) => {

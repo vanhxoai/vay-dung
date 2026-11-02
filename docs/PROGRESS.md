@@ -53,4 +53,20 @@
 - 115 unit tests. They include the lenders' own published examples, which the engine reproduces: FE 11,692,000 total, Home Credit 20,975,000 total, Shinhan 8,812,500/month, and TPFico premiums of 700,000 and 572,917.
 - The finance-math-checker independently re-derived 15 cases in Python with exact decimals (`scripts/check/finance_check.py`): 0 failures. An IRR fuzz test over 4,094 random loans had 0 mismatches. Its 6 code findings are fixed, including an inverted IRR fallback and float rounding.
 
-**Next:** Phase 3 (questionnaire and recommendation).
+## Phase 3: Questionnaire and recommendation (2026-11-02)
+**Status:** done, waiting for your review.
+
+- `/vay`: a 3-step, mobile-first flow in Vietnamese and English. All calculation runs in the browser, and an e2e test proves typed values never go over the network.
+- `src/lib/recommend/`: slim offers for the browser, eligibility filtering, ranking by estimated real APR at the high end of the range, and verdicts (ok, depends, too much, no income, no data).
+- Results page: verdict first, short disclaimer, alternatives, need guidance, changeable term, offer cards (sources, dates, fees, insurance, late-payment warning), why-this-order, full disclaimer, plus "doesn't fit" and "not enough data" lists with translated reasons.
+- Reviews: compliance-reviewer (14 must-fix) and qa-tester (9 bugs). See docs/research/compliance-review-phase3.md. The compliance items are fixed except the open list there. QA bugs 1–4, 7 and 8 are fixed; 6 got a loading cue; 9 is fixed. Some QA suggestions are open (below).
+- Tests: 156 unit, 28 browser. Screenshots in `docs/qa/screenshots/phase3-*`.
+
+**Known limitations:**
+- Slow 3G: the form takes about 7.6 s to become usable (810 KB). To look at in Phase 6.
+- Products with no numeric maximum age accept any age up to 100 (e.g. Shinhan says "to retirement age").
+- Conditions aren't filtered to the user's case (e.g. "over 100M" notes appear for smaller loans).
+- FE Credit's cash and phone loans can show identical numbers.
+- The 2-minute target hasn't been timed with real people (Phase 5 interviews).
+
+**Next:** Phase 4 (lender safety check).

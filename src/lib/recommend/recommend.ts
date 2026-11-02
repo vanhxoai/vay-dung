@@ -59,7 +59,17 @@ export type RankedOffer = {
   high: LoanCost;
   fit: OfferFit;
   /** Premium if the borrower takes the insurance; null when no premium is published. */
-  insuranceCosts: { nameVi: string; nameEn: string | null; mandatory: boolean | null; minVnd: number; maxVnd: number; costHigh: LoanCost }[];
+  insuranceCosts: {
+    nameVi: string;
+    nameEn: string | null;
+    mandatory: boolean | null;
+    collectionKnown: boolean;
+    minVnd: number;
+    maxVnd: number;
+    costHigh: LoanCost;
+  }[];
+  /** Mandatory insurance was assumed to be deducted from the payout because the source doesn't say. */
+  mandatoryCollectionAssumed: boolean;
   /** Insurance products whose premium isn't published. */
   insuranceUnknownPremium: string[];
   needsIncomeProofNote: boolean;
@@ -68,12 +78,16 @@ export type RankedOffer = {
 
 export type StaleLimit = { maxAgeDays: number };
 
-export type Verdict = "ok" | "depends" | "too_much" | "no_income";
+export type Verdict = "ok" | "depends" | "too_much" | "no_income" | "no_data";
 
 export type Recommendation = {
   verdict: Verdict;
   affordabilityOfBest: Affordability;
   headroomVnd: number;
+  /** Principal per month, before any interest. */
+  principalOnlyVnd: number;
+  /** Only some of the ranked offers fit the guideline at their highest rate. */
+  someDontFit: boolean;
   /** Estimate of a loan that would fit, or null if none does. */
   suggestedAmountVnd: number | null;
   ranked: RankedOffer[];
@@ -151,6 +165,7 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
   const mandatoryCharges: Charge[] = [];
   const insuranceCosts: RankedOffer["insuranceCosts"] = [];
   const insuranceUnknownPremium: string[] = [];
+  let mandatoryCollectionAssumed = false;
 
   for (const ins of offer.insurance) {
     const range = premiumRange(ins, offer, need.amountVnd, need.termMonths);
@@ -158,18 +173,22 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
       insuranceUnknownPremium.push(ins.nameVi);
       continue;
     }
-    // Only insurance the source says is mandatory goes into the headline cost. Collected at
-    // disbursement unless known otherwise, so it lowers the money in hand.
-    if (ins.mandatory === true) mandatoryCharges.push({ label: ins.nameVi, amountVnd: range[1], timing: "deducted_from_payout" });
-    else
+    const collectionKnown = ins.collection !== "unknown" && ins.collection !== "on_event";
+    // Only insurance the source says is mandatory goes into the headline cost.
+    if (ins.mandatory === true) {
+      mandatoryCharges.push({ label: ins.nameVi, amountVnd: range[1], timing: chargeTiming(ins) });
+      if (!collectionKnown) mandatoryCollectionAssumed = true;
+    } else {
       insuranceCosts.push({
         nameVi: ins.nameVi,
         nameEn: ins.nameEn,
         mandatory: ins.mandatory,
+        collectionKnown,
         minVnd: range[0],
         maxVnd: range[1],
-        costHigh: costAt(offer, r.maxPercent, need, [{ label: ins.nameVi, amountVnd: range[1], timing: "deducted_from_payout" }]),
+        costHigh: costAt(offer, r.maxPercent, need, [{ label: ins.nameVi, amountVnd: range[1], timing: chargeTiming(ins) }]),
       });
+    }
   }
 
   const low = costAt(offer, r.minPercent, need, mandatoryCharges);
@@ -186,9 +205,21 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
     fit,
     insuranceCosts,
     insuranceUnknownPremium,
+    mandatoryCollectionAssumed,
     needsIncomeProofNote: docsMentionIncome && (need.incomeProof === "none" || need.incomeProof === "cash_salary"),
     feesAllUnknown: offer.feesCompleteness === "unknown",
   };
+}
+
+/** How a premium enters the cash flows. When unknown we assume deducted, and the UI says so. */
+function chargeTiming(ins: OfferInsurance): Charge["timing"] {
+  if (ins.collection === "added_to_loan" || ins.collection === "paid_upfront") return ins.collection;
+  return "deducted_from_payout";
+}
+
+/** A verdict of "ok" can't rest on a product we can't fully cost or that many people can't get. */
+function isReliableForVerdict(r: RankedOffer): boolean {
+  return !r.feesAllUnknown && r.offer.existingCustomerRequired !== true && r.offer.employerRestriction === null;
 }
 
 /** Real cost order, high end first; a product with entirely unknown fees can't be first. */
@@ -199,9 +230,10 @@ export function rankOffers(ranked: RankedOffer[]): RankedOffer[] {
       a.low.aprNominal - b.low.aprNominal ||
       a.offer.key.localeCompare(b.offer.key),
   );
+  // Move the cheapest product with known fees to the front; everything else keeps its cost order.
   if (sorted[0]?.feesAllUnknown) {
     const i = sorted.findIndex((x) => !x.feesAllUnknown);
-    if (i > 0) [sorted[0], sorted[i]] = [sorted[i], sorted[0]];
+    if (i > 0) sorted.unshift(...sorted.splice(i, 1));
   }
   return sorted;
 }
@@ -245,9 +277,9 @@ export function recommend(need: Need, offers: readonly Offer[], today: Date): Re
   let verdict: Verdict;
   if (baseline.verdict === "no_income") verdict = "no_income";
   else if (principalCheck.verdict === "too_much") verdict = "too_much";
-  else if (ranked.length === 0) verdict = "depends";
+  else if (ranked.length === 0) verdict = "no_data";
   else if (ranked.every((r) => r.fit === "too_much")) verdict = "too_much";
-  else if (ranked.some((r) => r.fit === "fits")) verdict = "ok";
+  else if (ranked.some((r) => r.fit === "fits" && isReliableForVerdict(r))) verdict = "ok";
   else verdict = "depends";
 
   const best = ranked[0];
@@ -260,6 +292,8 @@ export function recommend(need: Need, offers: readonly Offer[], today: Date): Re
       ? checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, best.high.maxPaymentVnd)
       : principalCheck,
     headroomVnd,
+    principalOnlyVnd: principalOnly,
+    someDontFit: ranked.some((r) => r.fit !== "fits"),
     suggestedAmountVnd: suggestedAmountVnd !== null && suggestedAmountVnd < need.amountVnd ? suggestedAmountVnd : null,
     ranked,
     ineligible,

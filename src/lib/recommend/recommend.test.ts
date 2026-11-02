@@ -70,7 +70,7 @@ function offer(o: Partial<Offer> = {}): Offer {
     oldestRetrievedAt: "2026-11-01",
     confidence: "medium",
     excludeFromRanking: false,
-    excludeReason: null,
+    excludeCode: null,
     ...o,
   };
 }
@@ -109,6 +109,37 @@ describe("verdicts (qa-tester personas)", () => {
     expect(r.verdict).toBe("depends");
   });
 
+  it("a green ok can't rest on a product whose fees are entirely unknown", () => {
+    const unknownFees = offer({ key: "u", feesCompleteness: "unknown", rate: { ...offer().rate!, minPercent: 18, maxPercent: 20 } });
+    const pricey = offer({ key: "p", rate: { ...offer().rate!, minPercent: 80, maxPercent: 90 } });
+    const r = recommend(need({ termMonths: 12, monthlyIncomeVnd: 5_400_000 }), [unknownFees, pricey], today);
+    expect(r.ranked.find((x) => x.offer.key === "u")!.fit).toBe("fits");
+    expect(r.verdict).toBe("depends");
+  });
+
+  it("nor on a product limited to existing customers or an employer list", () => {
+    const own = offer({ existingCustomerRequired: true });
+    const employer = offer({ key: "e", employerRestriction: "Danh sách của ngân hàng" });
+    expect(recommend(need(), [own], today).verdict).toBe("depends");
+    expect(recommend(need(), [employer], today).verdict).toBe("depends");
+  });
+
+  it("no product to compare → no_data, not 'may exceed'", () => {
+    // Age 18 is below every minimum age; the principal alone comfortably fits.
+    const r = recommend(need({ age: 18 }), [offer({ minAge: 20 })], today);
+    expect(r.verdict).toBe("no_data");
+    expect(r.ineligible).toHaveLength(1);
+    expect(recommend(need(), [offer({ oldestRetrievedAt: "2026-07-01" })], today).verdict).toBe("no_data");
+  });
+
+  it("reports when only some offers fit", () => {
+    const cheap = offer({ key: "c", rate: { ...offer().rate!, minPercent: 18, maxPercent: 20 } });
+    const pricey = offer({ key: "p", rate: { ...offer().rate!, minPercent: 80, maxPercent: 90 } });
+    const r = recommend(need({ termMonths: 12, monthlyIncomeVnd: 5_400_000 }), [cheap, pricey], today);
+    expect(r.verdict).toBe("ok");
+    expect(r.someDontFit).toBe(true);
+  });
+
   it("suggests a smaller amount that really fits at the offer's high rate", () => {
     const r = recommend(need({ termMonths: 12, amountVnd: 30_000_000, monthlyIncomeVnd: 5_000_000 }), [offer()], today);
     expect(r.suggestedAmountVnd).not.toBeNull();
@@ -135,6 +166,13 @@ describe("ranking", () => {
     const unknown = offer({ key: "unknown", feesCompleteness: "unknown", rate: { ...offer().rate!, maxPercent: 30 } });
     const known = offer({ key: "known", rate: { ...offer().rate!, maxPercent: 50 } });
     expect(recommend(need(), [unknown, known], today).ranked.map((x) => x.offer.key)).toEqual(["known", "unknown"]);
+  });
+
+  it("moving a known-fee product first keeps the others in cost order", () => {
+    const u1 = offer({ key: "u1", feesCompleteness: "unknown", rate: { ...offer().rate!, maxPercent: 25 } });
+    const u2 = offer({ key: "u2", feesCompleteness: "unknown", rate: { ...offer().rate!, maxPercent: 30 } });
+    const k = offer({ key: "k", rate: { ...offer().rate!, maxPercent: 50 } });
+    expect(recommend(need(), [k, u2, u1], today).ranked.map((x) => x.offer.key)).toEqual(["k", "u1", "u2"]);
   });
 
   it("if every product has unknown fees, order stays by cost", () => {
@@ -197,6 +235,7 @@ describe("costs and insurance", () => {
           nameVi: "Bảo hiểm",
           nameEn: null,
           mandatory: null,
+          collection: "unknown",
           method: "annual_rate_on_declining_balance",
           ratePercentMin: 1.3,
           ratePercentMax: 1.8,
@@ -214,16 +253,33 @@ describe("costs and insurance", () => {
 
   it("mandatory insurance IS in the headline cost and lowers the money in hand", () => {
     const o = offer({
-      insurance: [{ nameVi: "BH", nameEn: null, mandatory: true, method: "percent_of_principal", ratePercentMin: 5, ratePercentMax: 5, insuredTiers: null, fixedVnd: null }],
+      insurance: [{ nameVi: "BH", nameEn: null, mandatory: true, collection: "deducted_from_payout", method: "percent_of_principal", ratePercentMin: 5, ratePercentMax: 5, insuredTiers: null, fixedVnd: null }],
     });
     const r = recommend(need(), [o], today).ranked[0];
     expect(r.high.amountReceivedVnd).toBe(19_000_000);
     expect(r.insuranceCosts).toEqual([]);
   });
 
+  it("financed mandatory insurance raises the payment instead of lowering the money in hand", () => {
+    const o = offer({
+      insurance: [{ nameVi: "BH", nameEn: null, mandatory: true, collection: "added_to_loan", method: "percent_of_principal", ratePercentMin: 5, ratePercentMax: 5, insuredTiers: null, fixedVnd: null }],
+    });
+    const r = recommend(need(), [o], today).ranked[0];
+    expect(r.high.amountReceivedVnd).toBe(20_000_000);
+    expect(r.high.financedPrincipalVnd).toBe(21_000_000);
+    expect(r.mandatoryCollectionAssumed).toBe(false);
+  });
+
+  it("an unknown insurance collection method is flagged, not hidden", () => {
+    const o = offer({
+      insurance: [{ nameVi: "BH", nameEn: null, mandatory: null, collection: "unknown", method: "percent_of_principal", ratePercentMin: 5, ratePercentMax: 5, insuredTiers: null, fixedVnd: null }],
+    });
+    expect(recommend(need(), [o], today).ranked[0].insuranceCosts[0].collectionKnown).toBe(false);
+  });
+
   it("an unpublished premium is reported as unknown, never as zero", () => {
     const o = offer({
-      insurance: [{ nameVi: "BH", nameEn: null, mandatory: false, method: "unknown", ratePercentMin: null, ratePercentMax: null, insuredTiers: null, fixedVnd: null }],
+      insurance: [{ nameVi: "BH", nameEn: null, mandatory: false, collection: "unknown", method: "unknown", ratePercentMin: null, ratePercentMax: null, insuredTiers: null, fixedVnd: null }],
     });
     expect(recommend(need(), [o], today).ranked[0].insuranceUnknownPremium).toEqual(["BH"]);
   });
@@ -261,6 +317,17 @@ describe("what's shown where", () => {
     const hc = offers.find((o) => o.key === "home-credit/cash-loan")!;
     expect(hc.rate).toMatchObject({ minPercent: 45, maxPercent: 55, segment: "Khách hàng mới" });
     expect(hc.rateNotes.some((n) => n.segment === "Khách hàng hiện hữu")).toBe(true);
+  });
+
+  it("every product not compared has a translated reason code, never raw research text", () => {
+    const r = recommend(need(), offers, today);
+    for (const x of r.insufficientData) expect(x.stale || x.offer.excludeCode !== null).toBe(true);
+    expect(JSON.stringify(offers)).not.toContain("excludeReason");
+  });
+
+  it("every rankable installment is tied to specific goods (a missed one would rank as general purpose)", () => {
+    const bad = offers.filter((o) => o.productType === "installment" && !o.excludeFromRanking && o.rate !== null && o.goods === null);
+    expect(bad.map((o) => o.key)).toEqual([]);
   });
 
   it("credit cards and expired products aren't offered", () => {

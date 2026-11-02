@@ -26,6 +26,9 @@ describe("money inputs", () => {
     expect(parseMoneyInput("20.000.000")).toBe(20_000_000);
     expect(parseMoneyInput("20,000,000")).toBe(20_000_000);
     expect(parseMoneyInput("abc")).toBeNull();
+    expect(parseMoneyInput("15tr")).toBeNull();
+    expect(parseMoneyInput("-5")).toBeNull();
+    expect(parseMoneyInput("3 triệu")).toBeNull();
     expect(parseMoneyInput("")).toBeNull();
     expect(parseMoneyInput("99999999999999999999")).toBeNull();
   });

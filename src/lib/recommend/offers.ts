@@ -59,12 +59,24 @@ export type OfferInsurance = {
   nameVi: string;
   nameEn: string | null;
   mandatory: boolean | null;
+  /** How the premium is collected. Unknown changes the cost, so the UI must say so. */
+  collection: "deducted_from_payout" | "added_to_loan" | "paid_upfront" | "monthly" | "on_event" | "unknown";
   method: "percent_of_principal" | "annual_rate_on_declining_balance" | "annual_rate_on_insured_amount" | "fixed" | "unknown";
   ratePercentMin: number | null;
   ratePercentMax: number | null;
   insuredTiers: { termMonthsMax: number | null; multiplier: number }[] | null;
   fixedVnd: number | null;
 };
+
+/** Why a product isn't compared. Translated in the UI; research notes never reach users. */
+export type ExcludeCode =
+  | "secondary_sources"
+  | "lender_unverified"
+  | "unverified"
+  | "rate_varies"
+  | "ceiling_only"
+  | "floor_only"
+  | "no_rate";
 
 export type Offer = {
   key: string;
@@ -115,7 +127,7 @@ export type Offer = {
   oldestRetrievedAt: string;
   confidence: "high" | "medium" | "low";
   excludeFromRanking: boolean;
-  excludeReason: string | null;
+  excludeCode: ExcludeCode | null;
 };
 
 function collect(node: unknown, key: string, out: Set<string>) {
@@ -139,6 +151,18 @@ function pickOfferedRate(p: Product): Product["rates"][number] | null {
       r.period.value !== "unknown",
   );
   return offered.find((r) => r.segment?.toLowerCase().includes("mới")) ?? offered.find((r) => r.segment === null) ?? offered[0] ?? null;
+}
+
+function exclusionCode(p: Product, rate: Product["rates"][number] | null): ExcludeCode | null {
+  if (!p.excludeFromRanking && rate !== null) return null;
+  const reason = (p.excludeReason ?? "").toLowerCase();
+  if (reason.includes("blog")) return "secondary_sources";
+  if (reason.includes("bên cho vay")) return "lender_unverified";
+  if (p.status === "unverified") return "unverified";
+  if (rate !== null) return "rate_varies";
+  if (p.rates.some((r) => r.kind === "regulatory_ceiling")) return "ceiling_only";
+  if (p.rates.some((r) => r.kind === "advertised_floor")) return "floor_only";
+  return "no_rate";
 }
 
 function toFee(f: Product["fees"][number]): OfferFee {
@@ -224,6 +248,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
       nameVi: i.nameVi,
       nameEn: i.nameEn ?? null,
       mandatory: i.mandatory.value,
+      collection: i.collection.value,
       method: i.premium.method.value,
       ratePercentMin: i.premium.ratePercentMin.value,
       ratePercentMax: i.premium.ratePercentMax.value,
@@ -250,7 +275,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
     oldestRetrievedAt: [...dates].sort()[0] ?? p.retrievedAt,
     confidence: p.confidence,
     excludeFromRanking: p.excludeFromRanking || p.status === "expired",
-    excludeReason: p.excludeReason ?? null,
+    excludeCode: exclusionCode(p, rate),
   };
 }
 
