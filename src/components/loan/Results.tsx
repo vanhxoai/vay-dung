@@ -292,7 +292,8 @@ export function rateNoteText(n: OfferRateNote, t: ReturnType<typeof useTranslati
   const r = (x: number) => `${formatRate(x, locale)}%`;
   switch (n.kind) {
     case "advertised_floor":
-      return n.minPercent === null ? null : t("Offer.floor", { rate: r(n.minPercent), period, basis });
+      // "From 0%" is a promotion on selected goods, not a starting price.
+      return n.minPercent === null || n.minPercent === 0 ? null : t("Offer.floor", { rate: r(n.minPercent), period, basis });
     case "regulatory_ceiling":
       return n.maxPercent === null ? null : t("Offer.ceiling", { rate: r(n.maxPercent), period, basis });
     case "benchmark": {

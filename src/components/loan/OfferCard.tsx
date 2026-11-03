@@ -167,7 +167,8 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
             {t("perYear")}
           </p>
           {offer.rateNotes.map((n, i) => {
-            const text = rateNoteText(n, tRoot, locale);
+            // A bank-wide average or a reference rate would read as this product's price.
+            const text = n.kind === "benchmark" ? null : rateNoteText(n, tRoot, locale);
             return text ? (
               <p key={i}>
                 {text}

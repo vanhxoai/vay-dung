@@ -43,6 +43,15 @@ test.describe("phase 6 ship-check", () => {
     await expect(section).not.toContainText("chưa rõ theo tháng hay theo năm: 0,06");
   });
 
+  // Compliance: a reference rate or a promotional 0% must not read as the product's price.
+  test("cards show no reference rates and never present 0% as the cost", async ({ page }) => {
+    await results(page, "20000000", "15000000", "24");
+    const card = page.locator('[data-offer="home-credit/cash-loan"]');
+    await expect(card).not.toContainText("33,94");
+    await expect(card).not.toContainText("tham chiếu");
+    await expect(page.locator("main")).not.toContainText("-0%");
+  });
+
   // Regression: Back on a phone left the questionnaire and looked like the answers were lost.
   test("the Back button moves between steps and keeps the answers", async ({ page }) => {
     await results(page, "20000000", "15000000", "24");
