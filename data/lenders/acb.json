@@ -22,14 +22,14 @@
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "Not stated on the product page."
+        "note": "Not stated on the product page (re-read 2026-11-03), nor in the ACB ONE registration guide (image-only PDF, not read) or the account T&C (QF-A1.66/KHCN-07.24), which only says an overdraft limit can be linked to a payment account."
       },
       "amountMaxVnd": {
         "value": null,
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "Page does not state the limit. A 2012 VnExpress article says salary-account overdraft up to 100 triệu, but it is 14 years old and not used."
+        "note": "Page does not state the limit; it only says 'Quản lý hạn mức thấu chi hoàn toàn trực tuyến'. Old figures exist but are for other ACB overdrafts and are not used: SGGP 17/07/2007 says up to 1 tỷ (depends on the type, incl. secured), VnExpress 21/06/2012 says salary-account overdraft up to 100 triệu."
       },
       "termMinMonths": {
         "value": null,
@@ -41,9 +41,10 @@
       "termMaxMonths": {
         "value": 12,
         "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "high",
-        "note": "Page: 'Thời hạn vay lên đến 12 tháng'."
+        "note": "Page: 'Thời hạn vay lên đến 12 tháng' and 'Thời hạn trả vốn lên đến 12 tháng'. Page date 09/07/2026 is the date ACB shows beside the product on the category page (https://acb.com.vn/vay-von/vay-tieu-dung) and the page's own CMS updated_at.",
+        "sourceDocumentDate": "2026-07-09"
       },
       "rates": [
         {
@@ -52,9 +53,10 @@
           "minPercent": {
             "value": 0.06,
             "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
-            "note": "Page: 'Lãi suất chỉ từ 0.06%/ngày theo số ngày thực tế sử dụng'. 'Chỉ từ' = starting rate, not the rate a borrower gets. Stored as quoted (per day); a simple x365 is about 21.9%/year but the page does not give a yearly figure and does not say how interest compounds."
+            "note": "Page: 'Lãi suất chỉ từ 0.06%/ngày theo số ngày thực tế sử dụng'. 'Chỉ từ' = starting rate, not the rate a borrower gets. Stored as quoted (per day); a simple x365 is about 21.9%/year but the page gives no yearly figure and does not say how interest compounds. Interest is paid on the 15th of each month. 100% interest waiver if the limit is used and repaid the same day before 17:00 Mon-Fri / 12:00 Sat. No upper rate or rate table found anywhere on acb.com.vn.",
+            "sourceDocumentDate": "2026-07-09"
           },
           "maxPercent": {
             "value": null,
@@ -67,12 +69,13 @@
             "value": "unknown",
             "provenance": "none",
             "sourceUrl": null,
-            "note": "Page says interest is charged on actual days used but does not say flat or reducing."
+            "note": "Page says interest is charged on actual days used but does not say flat or reducing, nor on which balance."
           },
           "period": {
             "value": "daily",
             "provenance": "stated",
-            "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online"
+            "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
+            "note": "'0.06%/ngày' (per day, actual days used)."
           },
           "promotional": null
         },
@@ -82,14 +85,14 @@
           "minPercent": {
             "value": 9.53,
             "sourceUrl": "https://acb.com.vn/lai-suat-cho-vay",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Page: 'lãi suất bình quân của các khoản vay mới giải ngân trong kỳ tháng 09/2026'; ACB says it is 'không phải là lãi suất áp dụng đối với từng khoản vay cụ thể'. Mostly secured and business loans; do not use as a consumer rate."
           },
           "maxPercent": {
             "value": 9.53,
             "sourceUrl": "https://acb.com.vn/lai-suat-cho-vay",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Same figure."
           },
@@ -142,9 +145,10 @@
           "fixedVnd": {
             "value": 0,
             "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
-            "note": "Page: 'Không phí quản lý thấu chi'. Other fees (e.g. early repayment, account) not published on this page, absence is not proof of zero."
+            "note": "Page: 'Không phí quản lý thấu chi'. No overdraft fee schedule (biểu phí) exists on acb.com.vn: /bieu-mau-bieu-phi and /bieu-mau1 show no documents. Early-repayment, account or other fees are not published; absence is not proof of zero.",
+            "sourceDocumentDate": "2026-07-09"
           },
           "minVnd": {
             "value": null,
@@ -174,16 +178,18 @@
         "minAge": {
           "value": 20,
           "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
-          "note": "Page: 'từ 20 đến 70 tuổi'."
+          "note": "Page: 'từ 20 đến 70 tuổi'.",
+          "sourceDocumentDate": "2026-07-09"
         },
         "maxAge": {
           "value": 70,
           "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
-          "note": "Page: 'tuổi tối đa bao gồm thời hạn cho vay'."
+          "note": "Page: 'tuổi tối đa bao gồm thời hạn cho vay'.",
+          "sourceDocumentDate": "2026-07-09"
         },
         "maxAgeAtLoanEnd": true,
         "minMonthlyIncomeVnd": {
@@ -204,9 +210,10 @@
         "existingCustomerRequired": {
           "value": true,
           "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
-          "note": "Page requires an ACB ONE account (so an ACB customer). Salary through ACB is not stated."
+          "note": "Page requires an ACB ONE account (so an ACB customer). Salary through ACB is not stated.",
+          "sourceDocumentDate": "2026-07-09"
         },
         "employerRestriction": {
           "value": null,
@@ -221,11 +228,12 @@
             "Đáp ứng điều kiện tín dụng của ACB từng thời kỳ"
           ],
           "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
-          "note": "Page 'Điều kiện'."
+          "note": "Page 'Điều kiện'.",
+          "sourceDocumentDate": "2026-07-09"
         },
-        "notes": "Interest-free (100%) if the limit is used and repaid the same day before 17:00 Mon-Fri (12:00 Saturday). Interest paid on the 15th monthly. Tab content read via text fetch only."
+        "notes": "Interest-free (100%) if the limit is used and repaid the same day before 17:00 Mon-Fri (12:00 Saturday). Interest paid on the 15th monthly. 'Không cần tài sản đảm bảo'. Registration in ACB ONE: Tài khoản > 'Đăng ký hạn mức thấu chi' > enter information > confirm contract (about 2 minutes). The contract itself is not published, so documents, income and the limit approved are unknown. Page read 2026-11-03 both as text and as raw HTML."
       },
       "latePenalty": {
         "textVi": {
@@ -233,7 +241,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not stated on the page; no published consumer fee schedule located."
+          "note": "Not stated on the page. Searched 2026-11-03: product page, /vay-von/vay-tieu-dung, /bieu-mau-bieu-phi, /bieu-mau1 (no documents), sitemap (1,627 URLs, no overdraft contract/T&C), account T&C (QF-A1.66/KHCN-07.24: no overdraft pricing or penalty), credit-card fee PDFs (card only)."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -251,13 +259,19 @@
       "representativeExamples": [],
       "conflicts": [],
       "sourceUrl": "https://acb.com.vn/vay-von/thau-chi-tieu-dung-online",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "confidence": "medium",
       "excludeFromRanking": true,
       "excludeReason": "ACB chỉ công bố mức 'từ 0,06%/ngày' (lãi suất khởi điểm), không có khoảng lãi suất thực tế, không rõ cách tính, hạn mức và phí khác, nên chưa so sánh được.",
-      "notes": "Only a starting daily rate is published. Not rankable."
+      "notes": "Only a starting daily rate is published (updated 09/07/2026). No limit, upper rate, late penalty, insurance or contract. Not rankable.",
+      "borrowerNotes": [
+        {
+          "vi": "0,06%/ngày tương đương khoảng 21,9%/năm nếu tính 365 ngày. Đây là phép tính của chúng tôi, ngân hàng không ghi con số này.",
+          "en": "0.06% a day is about 21.9% a year over 365 days. This is our calculation, not a figure the bank states."
+        }
+      ]
     }
   ],
-  "researchNotes": "1) Licence: 'acb' is on data/licensed-institutions.json (bank, GP 91/GP-NHNN). 2) Official consumer loan list (https://acb.com.vn/vay-von, read 2026-11-02) shows only ONE unsecured product: Thấu chi tiêu dùng Online. Others are secured (thế chấp, cầm cố, mua nhà, xây sửa nhà) and out of scope. No official salary-based/tín chấp cash loan page found: guessed URLs return 'Không tìm thấy trang'; /vay-von has no such product. Third-party sites (cellphones, topi, muaban) quote 10-23%/năm for ACB tín chấp (flat vs reducing figures that differ across sites); these are secondary, undated, not recorded. A 2012 VnExpress article describes an old fixed-on-original-balance tín chấp plan up to 500 triệu/60 months: obsolete, not used. 3) Rate: only 'từ 0,06%/ngày' (floor, daily) for overdraft; the 9,53%/năm figure at /lai-suat-cho-vay is a bank-wide average for new loans in 09/2026, stored as benchmark. 4) Gaps: no personal loan biểu phí found (only credit card/debit card/business PDFs); early repayment fee, late-penalty, insurance, overdraft limit, income and documents unknown. Business fee page lists overdraft limit management fee 0.2%/month, which is business only. 5) Credit cards: ACB publishes card fee/rate PDFs (https://acb.com.vn/acbwebsite/files/Bieu_phi_the_tin_dung.pdf, effective 1/1/2026, adjustment notice 16/7/2026) but the PDF text could not be extracted in this run, so no card product recorded; cards are out of MVP ranking anyway. 6) 'Giảm lãi vay tự động' (https://acb.com.vn/vay-von/giam-lai-vay-tu-dong) is a rate-reduction program for existing borrowers with CASA >= 10 triệu; no percentages published. 7) Surprising: ACB's main page for salaried workers does not list a tín chấp loan at all; www.acb.com.vn legacy portal URL returned 503.",
-  "retrievedAt": "2026-11-02"
+  "researchNotes": "RESEARCH 2026-11-03 (deep dive). 1) Licence: 'acb' is on data/licensed-institutions.json (bank). 2) Is there an unsecured salary or consumer cash loan? Not on any current official page. The official category 'Vay tiêu dùng' (https://acb.com.vn/vay-von/vay-tieu-dung) lists four items: Thấu chi tiêu dùng Online (09/07/2026, unsecured), Vay tiêu dùng thế chấp (21/03/2024), Vay cầm cố thẻ tiết kiệm, giấy tờ có giá (09/10/2024) and Vay mua xe ô tô (21/03/2024). /vay-von also lists Vay mua nhà đất, xây sửa nhà, Giảm lãi vay tự động and business loans. /vay-von/vay-von-qua-doi-tac ('Vay vốn qua đối tác') is a title page with no partners, products or figures. The sitemap (https://acb.com.vn/sitemap-0.xml, 1,627 URLs, read 2026-11-03) has no tín chấp / salary loan URL; /vay-von/cho-vay says 'Không có sản phẩm'. Guessed URLs (vay-tin-chap, vay-tieu-dung-linh-hoat...) return the site's soft-404 page (HTTP 200, 'Không tìm thấy trang'). 3) One trace of an older product: ACB's own library article https://acb.com.vn/thu-vien/vi-sao-cho-vay-tieu-dung-tai-ngan-hang-ngay-cang-thu-hut-gioi-tre (CMS metadata: published 2023-12-27, updated 2024-03-11; no date visible on the page) describes 'Vay tiêu dùng linh hoạt': unsecured, for salaried people aged 25-55 who receive salary through an ACB account, minimum salary 3 triệu/month, 10 triệu to 500 triệu, 6 to 60 months, interest on the declining balance, documents: ID + labour contract or payslip, no rate figure. Not recorded as a product: it is not on any current product page, the article is older than 12 months and calls itself general information. Related library articles (4-goi-vay-tieu-dung-pho-bien-nhat-hien-nay: secured loans, 'chỉ từ 0,75%/tháng' on declining balance for consumer loans generally, undated; lai-suat-cho-vay-tieu-dung-hien-nay-la-bao-nhieu: market range 12-23%, no ACB rate) give no usable unsecured rate. Old press: VnExpress 21/06/2012 (500 triệu / 60 months, interest fixed on total debt) and SGGP 17/07/2007 are obsolete and not used. 4) The 17.9%/year lead: no official ACB source supports it. It was not found on cellphones.com.vn, topi.vn, muaban.net or mytour.vn lender pages (checked 2026-11-03); those sites quote other, mutually inconsistent figures (11-12% / 20-22% / 21-23% / 22%, some flat some reducing, undated). Not recorded. 5) Overdraft (Thấu chi tiêu dùng Online): the only published rate is 'chỉ từ 0.06%/ngày theo số ngày thực tế sử dụng', stored as an advertised floor. Limit, upper rate, late penalty, insurance, early repayment fee and contract are not published. Searched: product page (text and raw HTML), category page, /lai-suat-cho-vay (bank-wide average only: 9,53%/năm for new loans in tháng 09/2026), /bieu-mau-bieu-phi and /bieu-mau1 (both show no documents), sitemap, the account/card T&C (QF-A1.66/KHCN-07.24; mentions overdraft only as a limit linked to a payment account), ACB ONE Google Play listing (mentions 'Giải ngân khoản vay' and 'Trả nợ tiền vay', no loan product, rate or overdraft; its reviews carry loan-ad spam, ignored). The registration guide PDF linked from the page ('Hướng dẫn thao tác đăng ký trên ACB ONE') is image-only, so its text could not be read. 6) Credit-card fee PDF (https://acb.com.vn/acbwebsite/files/Bieu_phi_the_tin_dung.pdf, effective 01/01/2026, read in full 2026-11-03 with pdftotext -raw): describes card products only, no loan. ACB Express (domestic credit card): in-term rate 20%/năm for salary-account holders and VIPs issued since 01/03/2021, 10% for ACB staff, 25% on cards issued before 01/03/2021 (other customers no longer issued); overdue interest 150% of the in-term rate; card-to-instalment conversion fee at non-partner merchants 1,99% (3 months) to 7,99% (12 months), free at partner merchants; cash-advance instalment 1% + 0,75% per statement on the original amount; early termination 2%. Premium cards 25-30%/năm. A second card fee PDF effective 10/04/2026 (Bieu_phi_the_tin_dung_07_04_26.pdf) covers other cards. Cards are out of MVP ranking, so none is recorded. 7) 'Giảm lãi vay tự động' (https://acb.com.vn/vay-von/giam-lai-vay-tu-dong) is a rate-reduction programme for existing borrowers; no percentages published. 8) Surprising: ACB's main page for salaried workers lists no unsecured term loan at all; its only unsecured consumer credit is the overdraft in ACB ONE, which requires an existing ACB ONE login. www.acb.com.vn legacy portal returned 503 earlier.",
+  "retrievedAt": "2026-11-03"
 }

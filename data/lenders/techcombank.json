@@ -9,70 +9,71 @@
   "products": [
     {
       "id": "vay-tieu-dung-tin-chap-tra-gop",
-      "nameVi": "Vay tiêu dùng tín chấp trả góp (trực tuyến, Techcombank Mobile)",
+      "nameVi": "Vay tiêu dùng tín chấp trả góp (Techcombank Mobile)",
+      "nameEn": "Unsecured instalment consumer loan (Techcombank Mobile)",
       "productType": "cash_loan",
-      "status": "unverified",
+      "status": "active",
       "validUntil": null,
       "lenderOfRecord": "techcombank",
-      "brandOrChannel": null,
+      "brandOrChannel": "Techcombank Mobile",
       "online": true,
       "amountMinVnd": {
         "value": null,
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "No minimum stated on the sources read."
+        "note": "The official product page states no minimum amount. Searched: product page, blog pages, credit fee schedule."
       },
       "amountMaxVnd": {
-        "value": 100000000,
-        "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-        "retrievedAt": "2026-11-01",
-        "confidence": "low",
-        "note": "\"Hạn mức cao: Tối đa 100 triệu VND\". Conflict recorded in conflicts[]; lowest figure stored. Blog page says its content is for reference only, compiled from general market information, and carries an expired label (da het han)."
+        "value": 1000000000,
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "\"Hạn mức vay lên đến 1 tỷ đồng\". An upper bound only. Conflicts with the blog's 100 million for online loans, see conflicts[]."
       },
       "termMinMonths": {
-        "value": 20,
-        "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-        "retrievedAt": "2026-11-01",
-        "confidence": "low",
-        "note": "\"kỳ hạn từ 20 - 36 tháng khi vay online\". Stricter of 20 vs 12 months (see conflicts[])."
+        "value": 12,
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "\"Thời gian vay linh hoạt từ 12 – 60 tháng\". Blog says 20-36 months online, see conflicts[]."
       },
       "termMaxMonths": {
-        "value": 36,
-        "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-        "retrievedAt": "2026-11-01",
-        "confidence": "low",
-        "note": "Online term up to 36 months on this page; lai-suat-vay-tin-chap says 60 (see conflicts[]). Lower maximum stored."
+        "value": 60,
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Same sentence. Blog says up to 36 months online, see conflicts[]."
       },
       "rates": [
         {
           "kind": "advertised_floor",
           "segment": null,
           "minPercent": {
-            "value": 1.2,
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "\"Lãi suất chỉ từ 1.2%/tháng (*) - tính trên dư nợ giảm dần\"; footnote: actual rate may be adjusted over time. Conflicts with 12.9%/year (about 1.075%/month) on https://techcombank.com/thong-tin/blog/lai-suat-vay-tin-chap and in this page's own worked example; higher cost (1.2%/month) stored, see conflicts[]."
+            "value": 12.9,
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"Lãi suất vay chỉ từ 12.9%/năm trên dư nợ giảm dần\". A 'từ' (from) figure, so ambiguous. The page does not say whether the rate is fixed or floating (the general credit terms say the bank may adjust rates)."
           },
           "maxPercent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "No maximum rate published; only 'từ' (from) rates."
+            "note": "No maximum rate published. Searched: the product page, the blogs, credit fee schedule Phụ lục 1.3 (04/2026), base-rate notice (effective 05/02/2026), average-lending-rate PDFs, Techcombank Mobile listings on Google Play and the App Store, the loan calculator (rate is user-typed). The contract template is not published."
           },
           "basis": {
             "value": "reducing",
             "provenance": "stated",
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-            "note": "Source wording: \"tính trên dư nợ giảm dần\"."
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+            "note": "Source wording: \"trên dư nợ giảm dần\"."
           },
           "period": {
-            "value": "monthly",
+            "value": "yearly",
             "provenance": "stated",
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-            "note": "Source wording: \"1.2%/tháng\"."
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+            "note": "Source wording: \"12.9%/năm\"."
           },
           "promotional": null
         }
@@ -80,8 +81,8 @@
       "amortization": {
         "value": "annuity",
         "provenance": "inferred",
-        "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-        "note": "Page says the borrower pays a fixed amount each month except the last month, and the example table shows equal instalments of 1,785,407 (reducing balance). 'Annuity' is our classification."
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+        "note": "The product page says reducing balance but not the instalment type. Equal instalments are our classification: the blog's worked example shows equal instalments of 1,785,407, and the general credit terms (clause 4.4) describe equal-instalment 'niên kim' repayment when the contract agrees it."
       },
       "fees": [
         {
@@ -91,8 +92,8 @@
           "timing": {
             "value": "on_event",
             "provenance": "inferred",
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-            "note": "Charged only when the borrower prepays; the source does not name a payment method."
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/documents/techcombank-bieu-phi-dich-vu-tin-dung-042026.pdf",
+            "note": "Charged only when the borrower prepays. The general credit terms (clause 4.5) say early repayment needs the bank's written consent and a fee set in the contract. No fee under 100,000 VND remaining principal (clause 4.4 b iv)."
           },
           "mandatory": {
             "value": null,
@@ -107,22 +108,20 @@
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
-            "confidence": null,
-            "note": "Tiered by year, see tiers."
+            "confidence": null
           },
           "fixedVnd": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
-            "confidence": null,
-            "note": "No flat fee; 200,000 VND is a minimum (minVnd)."
+            "confidence": null
           },
           "minVnd": {
-            "value": 200000,
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "\"phí tối thiểu 200,000 VND\" in each tier. Blog page says its content is for reference only, compiled from general market information, and carries an expired label (da het han)."
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Sources disagree on the minimum (200,000 vs 800,000 / 400,000 / 200,000), see conflicts[]. Left unknown."
           },
           "maxVnd": {
             "value": null,
@@ -151,13 +150,13 @@
                 "to": 3,
                 "unit": "year",
                 "percent": 2,
-                "note": "\"năm thứ 3: 2%\"; boundaries (from inclusive, to exclusive) are our reading of 'năm thứ N'."
+                "note": "\"năm thứ 3: 2%\"; boundaries (from inclusive, to exclusive) are our reading of 'năm thứ N'. The official schedule row for declining-balance loans says 2% runs to year 5 and the fee is free from year 6; not applied here because the product mapping is unconfirmed."
               }
             ],
             "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-            "retrievedAt": "2026-11-01",
+            "retrievedAt": "2026-11-02",
             "confidence": "low",
-            "note": "Percent of the amount prepaid. After year 3 the source states nothing."
+            "note": "Percent of the amount prepaid. Blog source (general market information, reference only). The same 4% / 3% / 2% appears in an official row of the credit fee schedule that cannot be tied to this product; see conflicts[]."
           },
           "payee": "lender"
         },
@@ -175,7 +174,7 @@
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "v1 had no source for this."
+            "note": "Not stated."
           },
           "base": "unknown",
           "rule": "other",
@@ -184,14 +183,14 @@
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not stated for Techcombank. Blogs only say generic application fees may apply. Personal-loan biểu phí not found."
+            "note": "Not published. The official credit fee schedule (Phụ lục 1.3, listed 13/04/2026) has only three sections: early repayment, guarantee fees, and MyCash settlement. It has no application or disbursement fee line for personal loans. The product page says nothing about fees. Absence is not a statement that there is no fee."
           },
           "fixedVnd": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not stated on the pages read."
+            "note": "Not published, see percent note."
           },
           "minVnd": {
             "value": null,
@@ -220,43 +219,44 @@
       "eligibility": {
         "minAge": {
           "value": 20,
-          "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "\"Là công dân Việt Nam 20 - 70 tuổi, có giấy tờ tuỳ thân hợp lệ.\""
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "\"Từ 20 đến 70 tuổi.\""
         },
         "maxAge": {
           "value": 70,
-          "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "Same sentence; unclear whether 70 is age at application or at maturity."
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Same sentence; the page does not say whether 70 is checked at application or at the end of the loan."
         },
         "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
           "value": 10000000,
-          "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "\"Thu nhập từ 10 triệu VND/tháng (sau khi nộp thuế)\" or as Techcombank sets at the time."
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "\"Thu nhập tối thiểu 10 triệu đồng/tháng\". The page does not say gross or net; the blog says after tax."
         },
-        "incomeBasis": "net",
+        "incomeBasis": "unknown",
         "documents": {
           "value": [
-            "CCCD",
-            "Giấy tờ chứng minh thu nhập theo quy định của ngân hàng"
+            "Đề nghị vay vốn kiêm hợp đồng tín dụng (theo mẫu của Techcombank)",
+            "CMND/Thẻ căn cước công dân/Hộ chiếu còn hiệu lực",
+            "Hồ sơ khác theo quy định của Techcombank từng thời kỳ"
           ],
-          "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "Document list is loose. https://techcombank.com/thong-tin/blog/vay-tien-mat lists application form, ID/CCCD/passport and income proof per bank rules."
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Official list. The blog says only a CCCD is needed for the online loan."
         },
         "existingCustomerRequired": {
           "value": true,
           "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-          "retrievedAt": "2026-11-01",
+          "retrievedAt": "2026-11-02",
           "confidence": "low",
-          "note": "Page lists \"sử dụng Techcombank thường xuyên\" as a requirement; vay-tien-mat blog says regular Techcombank customer. Stricter reading stored."
+          "note": "Not on the official product page's conditions list. The blog lists 'sử dụng Techcombank thường xuyên' as a requirement; kept at low confidence, not contradicted."
         },
         "employerRestriction": {
           "value": null,
@@ -270,11 +270,11 @@
             "Là khách hàng sử dụng Techcombank thường xuyên"
           ],
           "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-          "retrievedAt": "2026-11-01",
+          "retrievedAt": "2026-11-02",
           "confidence": "low",
-          "note": "From the eligibility list of the blog page."
+          "note": "From the blog's eligibility list; the official product page lists only nationality, age and income."
         },
-        "notes": "Figures come from a blog page. https://techcombank.com/thong-tin/blog/vay-tien-mat (published 2025-11-26) also says the borrower is a regular Techcombank customer."
+        "notes": "Nationality: Vietnamese. Official conditions: https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap"
       },
       "latePenalty": {
         "textVi": {
@@ -282,7 +282,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Chưa rõ: không có trang nào đã đọc nêu phí phạt trả chậm; điều khoản nằm trong hợp đồng tín dụng, chưa tìm thấy."
+          "note": "Chưa rõ: Techcombank chưa công bố mức phạt trả chậm của khoản vay này. Biểu phí dịch vụ tín dụng (04/2026) không có dòng lãi quá hạn cho vay cá nhân; điều khoản chung về tín dụng nói mức lãi quá hạn nằm trong hợp đồng tín dụng, mẫu hợp đồng chưa được đăng."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -304,17 +304,17 @@
           "ratePercent": 12.9,
           "rateBasis": "reducing",
           "ratePeriod": "yearly",
+          "amortization": "annuity",
           "monthlyPaymentVnd": 1785407,
           "totalRepaidVnd": 21324807,
-          "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "Page illustration (\"chỉ mang tính chất minh họa\"). Problems: (1) stated total repaid 21,324,807 does not equal 12 x 1,785,407 = 21,424,884; month-12 row shows 1,784,407 vs stated 1,785,407. (2) 12 months is below the 20-month online minimum on the same page. Month 1: principal 1,570,407 + interest 215,000 (20M x 1.075%). Uses 12.9%/year, not the 1.2%/month headline. Do not use as a test fixture.",
-          "amortization": "annuity",
           "statedAnnualRatePercent": null,
           "statedAnnualRateKind": null,
           "includesInsurance": null,
-          "internallyConsistent": false
+          "internallyConsistent": false,
+          "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
+          "retrievedAt": "2026-11-02",
+          "confidence": "low",
+          "note": "Blog illustration (\"chỉ mang tính chất minh họa\"; the page says it is general market information). Problems: stated total repaid 21,324,807 does not equal 12 x 1,785,407 = 21,424,884; month-12 row shows 1,784,407. The blog's 20-36 month online range does not include 12 months. Do not use as a test fixture."
         }
       ],
       "conflicts": [
@@ -322,9 +322,14 @@
           "field": "amountMaxVnd",
           "values": [
             {
+              "value": "1000000000",
+              "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+              "note": "Official product page: 'Hạn mức vay lên đến 1 tỷ đồng' (stored)"
+            },
+            {
               "value": "100000000",
               "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-              "note": "Tối đa 100 triệu VND"
+              "note": "Blog: 'Hạn mức cao: Tối đa 100 triệu VND' (online); the blog says it is general market information, for reference only"
             },
             {
               "value": "400000000",
@@ -334,88 +339,125 @@
             {
               "value": "1000000000",
               "sourceUrl": "https://techcombank.com/thong-tin/blog/lai-suat-vay-tin-chap",
-              "note": "up to 1 billion depending on income"
+              "note": "Blog: up to 1 billion depending on income"
             }
           ],
-          "resolution": "Stored the lowest (100,000,000) and confidence low. Blog pages are general content, not a product page or contract."
+          "resolution": "Stored the official product page's 1 billion as an upper bound (medium confidence). The blog's 100 million for online loans is lower and could be the practical online limit; do not promise a borrower more than the bank approves. Unresolved: only the app or the contract will show the real limit."
         },
         {
           "field": "termMinMonths",
           "values": [
             {
+              "value": "12",
+              "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+              "note": "'Thời gian vay linh hoạt từ 12 – 60 tháng' (stored)"
+            },
+            {
               "value": "20",
               "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-              "note": "20-36 months online; its own example uses 12"
+              "note": "Blog: 'kỳ hạn từ 20 - 36 tháng khi vay online' (same wording on https://techcombank.com/thong-tin/blog/vay-30-trieu); the blog's own worked example uses 12 months"
             },
             {
               "value": "12",
               "sourceUrl": "https://techcombank.com/thong-tin/blog/lai-suat-vay-tin-chap",
-              "note": "12-60 months"
+              "note": "Blog: 12-60 months"
             }
           ],
-          "resolution": "Stored the stricter minimum (20)."
+          "resolution": "Stored the official product page (12). If the online channel really starts at 20 months, the stored minimum is too low."
         },
         {
           "field": "termMaxMonths",
           "values": [
             {
+              "value": "60",
+              "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+              "note": "stored"
+            },
+            {
               "value": "36",
-              "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu"
+              "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
+              "note": "Blog: up to 36 months online"
             },
             {
               "value": "60",
               "sourceUrl": "https://techcombank.com/thong-tin/blog/lai-suat-vay-tin-chap"
             }
           ],
-          "resolution": "Stored the lower maximum (36)."
+          "resolution": "Stored the official product page (60). The blog's online maximum (36) is lower; unresolved."
         },
         {
           "field": "rates[0].minPercent",
           "values": [
             {
-              "value": "1.2%/month, reducing balance",
-              "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-              "note": "headline"
+              "value": "12.9%/year, reducing balance",
+              "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+              "note": "Official product page: 'Lãi suất vay chỉ từ 12.9%/năm trên dư nợ giảm dần' (stored). The blog's worked example also uses 12.9%/year."
             },
             {
-              "value": "12.9%/year (about 1.075%/month), reducing balance",
-              "sourceUrl": "https://techcombank.com/thong-tin/blog/lai-suat-vay-tin-chap",
-              "note": "also in the same page's worked example; marked expired"
+              "value": "1.2%/month, reducing balance (about 14.4%/year nominal)",
+              "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
+              "note": "Blog headline 'chỉ từ 1.2%/tháng (*)'; same wording on https://techcombank.com/thong-tin/blog/vay-30-trieu (rate 'updated to 13/11/2025'). The identical wording 'Lãi suất chỉ từ 1.2%/tháng' is on the official page of a different product, the unsecured overdraft limit (https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao), so the blog may have mixed the two products."
+            },
+            {
+              "value": "1.05%/month",
+              "sourceUrl": null,
+              "note": "Search-result snippet of a Techcombank blog page; page not read"
             }
           ],
-          "resolution": "Stored the higher-cost 1.2%/month as an advertised floor, low confidence."
+          "resolution": "Stored the official product page's 12.9%/year as an advertised floor (medium confidence). The blog's 1.2%/month is kept here, not as a rate, because it may belong to the overdraft-limit product."
+        },
+        {
+          "field": "fees[0].minVnd",
+          "values": [
+            {
+              "value": "200000 in every year",
+              "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
+              "note": "Blog: 'phí tối thiểu 200,000 VND' in each of years 1-3"
+            },
+            {
+              "value": "800000 (year 1), 400000 (year 2), 200000 (years 3-5)",
+              "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/documents/techcombank-bieu-phi-dich-vu-tin-dung-042026.pdf",
+              "note": "Official fee schedule 'Phụ lục 1.3: Biểu phí dịch vụ tín dụng cho khách hàng thường' (listed 13/04/2026), a row for a 'Sản phẩm vay tiền ...' line, loans on declining balance / annuity: 4% / 3% / 2%; free from year 6. Which product line this row covers is not clear, so it cannot be tied to this product."
+            },
+            {
+              "value": "200000 minimum, 3% / 3% / 2%",
+              "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/documents/techcombank-bieu-phi-dich-vu-tin-dung-042026.pdf",
+              "note": "Same schedule, general early-repayment rows (CN41-101 to 103): 3% year 1, 3% year 2, 2% from year 3. The rows are labelled for loans disbursed before or after dates in 2014; not tied to this product either."
+            }
+          ],
+          "resolution": "Percent tiers 4% / 3% / 2% kept from the blog (they match the official row for declining-balance loans) at low confidence. The minimum is left null because the sources disagree and the higher minimums would cost more."
         }
       ],
-      "sourceUrl": "https://techcombank.com/thong-tin/blog/vay-20-trieu",
-      "retrievedAt": "2026-11-01",
-      "confidence": "low",
+      "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap",
+      "retrievedAt": "2026-11-02",
+      "confidence": "medium",
       "excludeFromRanking": true,
-      "notes": "No official unsecured-loan product page, biểu phí or contract found (a guessed product-page URL returned 404; the vay-tieu-dung page is a different, mainly secured product). Insurance: nothing Techcombank-specific; the lai-suat-vay-tin-chap blog describes loan insurance only generically. Empty insurance list = unknown, not 'none'.",
-      "nameEn": "Unsecured instalment consumer loan (online, Techcombank Mobile)",
-      "excludeReason": "Chỉ có nguồn blog, chưa có trang sản phẩm hoặc hợp đồng chính thức"
+      "excludeReason": "Mới có lãi suất \"từ\" 12,9%/năm, chưa công bố mức tối đa nên chưa tính được chi phí thật",
+      "notes": "Official product page found (status moved from unverified to active): https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap (HTTP last-modified 2026-07-20; the 'đã hết hạn' text in the HTML is a hidden template element, class 'hidden', not shown to visitors; the page's own CTA opens Techcombank Mobile). Its rate is only a floor: 12.9%/year, reducing balance. Fee schedule: the page's 'Điều khoản & Điều kiện và Biểu phí' link leads to https://techcombank.com/cong-cu-tien-ich/bieu-phi-bieu-mau-dich-vu, where 'Biểu phí Dịch vụ tín dụng' (listed 13/04/2026) is a generic credit schedule. No unsecured-loan contract template, no insurance terms and no late-penalty rate are published there. General credit terms (listed as applying from 02/05/2018): interest = end-of-day balance x days x annual rate / 365, which is a reducing-balance method. To unlock ranking we need a stated maximum rate (or a rate table) for this loan; none exists on the public site."
     },
     {
       "id": "tai-khoan-thau-chi-mycash",
       "nameVi": "Tài khoản thấu chi MyCash",
+      "nameEn": "MyCash overdraft account",
       "productType": "overdraft",
-      "status": "unverified",
+      "status": "active",
       "validUntil": null,
       "lenderOfRecord": "techcombank",
-      "brandOrChannel": null,
+      "brandOrChannel": "Techcombank Mobile",
       "online": true,
       "amountMinVnd": {
         "value": null,
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "Not stated."
+        "note": "Not stated. The limit is granted per customer and shown in Techcombank Mobile."
       },
       "amountMaxVnd": {
         "value": 100000000,
         "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
         "retrievedAt": "2026-11-01",
         "confidence": "low",
-        "note": "\"Hạn mức cấp sẵn lên đến 100,000,000 VND\"; rate info stated updated 13/11/2025 although the blog is dated 2026-10-20 and marked expired. English product page https://techcombank.com/en/personal/borrow/consumer-loan/mycash (outdated) gives no limit."
+        "note": "Blog: \"Hạn mức cấp sẵn lên đến 100,000,000 VND\"; repeated on https://techcombank.com/thong-tin/blog/vay-30-trieu (read 2026-11-02). The official product page gives no limit figure. Blog says it is general market information."
       },
       "termMinMonths": {
         "value": null,
@@ -429,37 +471,37 @@
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "Not confirmed on a page read directly. A search summary of https://techcombank.com/thong-tin/blog/thoi-han-vay-thau-chi said max 12 months; not verified."
+        "note": "Not published. The contract template (https://techcombank.com/content/dam/techcombank/public-site/documents/hop-dong-mycash-1604.pdf) has a blank 'Thời hạn duy trì hạn mức: ... tháng'; the official product page says only 'Tùy chọn hạn trả nợ hằng tháng'. A search summary of a blog page mentioned 12 months; not verified."
       },
       "rates": [
         {
           "kind": "advertised_floor",
           "segment": null,
           "minPercent": {
-            "value": 14.9,
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "\"Lãi suất cạnh tranh chỉ từ 408 VND/triệu/ngày, tương đương từ 14.9%/năm\" (408*365/1e6 = 14.89%). Higher than 380 VND/million/day (about 13.9%/year) on the outdated English page, see conflicts[]; higher stored. May change over time per the page."
+            "value": 0.038,
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"Lãi suất cạnh tranh, chỉ từ 380 đồng/triệu/ngày\" = 380 / 1,000,000 = 0.038% per day (unit conversion only). That is about 13.87%/year at 365 days, a figure the bank does not print. A 'từ' figure."
           },
           "maxPercent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "No maximum published on the pages read."
+            "note": "No maximum published. The contract template says the rate is 'xác định theo biểu phí cho vay của sản phẩm thấu chi MyCash niêm yết trên website'; that rate table was not found on the public site (the Lãi suất page https://techcombank.com/cong-cu-tien-ich/bieu-phi-lai-suat has empty rate sections) and the MyCash fee PDF contains fees and overdue rates but no in-term rate."
           },
           "basis": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null,
-            "note": "Page says interest accrues only on the amount used, by actual days; it does not say flat or reducing, so not assumed."
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/thong-tin/thong-bao/huong-dan-thanh-toan-tai-khoan-thau-chi-mycash",
+            "note": "Interest is 'Lãi ngày = Dư nợ cuối ngày x Lãi suất : 365' (payment guide) and the general credit terms use the same end-of-day balance formula. Interest on the outstanding balance is a reducing-balance method; the word 'giảm dần' is not used."
           },
           "period": {
-            "value": "yearly",
+            "value": "daily",
             "provenance": "stated",
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
-            "note": "Source wording: \"tương đương từ 14.9%/năm\"; the bank also quotes per day."
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+            "note": "Source wording: \"380 đồng/triệu/ngày\"."
           },
           "promotional": null
         }
@@ -467,8 +509,8 @@
       "amortization": {
         "value": "revolving",
         "provenance": "inferred",
-        "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
-        "note": "Overdraft: no fixed schedule; interest only on the amount used, by actual days (\"Tiền lãi chỉ phát sinh khi khách hàng sử dụng hạn mức\")."
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+        "note": "Revolving limit: draw many times up to the limit, pay monthly; the FAQ says it works like a credit-card limit. Minimum payment is 5% of the end-of-period balance (payment guide)."
       },
       "fees": [
         {
@@ -494,14 +536,594 @@
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Source states fee is waived, not a percentage."
+            "note": "Source states the fee is waived, not a percentage."
           },
           "fixedVnd": {
             "value": 0,
-            "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
-            "retrievedAt": "2026-11-01",
-            "confidence": "low",
-            "note": "\"Miễn phí đăng ký và phí thường niên trọn đời\". Other fees (e.g. cash withdrawal) not found. Blog page says its content is for reference only, compiled from general market information, and carries an expired label (da het han)."
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+            "retrievedAt": "2026-11-02",
+            "confidence": "high",
+            "note": "\"Miễn phí đăng ký và phí thường niên trọn đời\". The fee PDF also shows free: account issuance (first time), annual maintenance, transfers to other banks, balance restoration, first Visa Debit MyCash card, card annual fee."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "unknown"
+        },
+        {
+          "nameVi": "Phí tất toán MyCash trước hạn",
+          "nameEn": "MyCash early settlement fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/documents/techcombank-bieu-phi-dich-vu-tin-dung-042026.pdf",
+            "note": "Charged only when the account is settled early."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only applies if the borrower settles early."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 50000,
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/documents/techcombank-bieu-phi-dich-vu-tin-dung-042026.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-04-13",
+            "note": "\"Phí tất toán Mycash trước hạn (áp dụng từ 06/07/2025) 50.000 VND/tài khoản\" in Phụ lục 1.3, Biểu phí dịch vụ tín dụng cho khách hàng thường. Text read from the PDF's text layer (Vietnamese accents partly missing); figures clear. Not subject to VAT per the schedule's note."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí phát hành lại thẻ Visa Debit MyCash",
+          "nameEn": "Visa Debit MyCash card re-issuance fee",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "note": "Charged only if the card is re-issued."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only on request."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 50000,
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"50.000 VND/thẻ\". The fee PDF's date fields are blank; the companion notice page (https://techcombank.com/thong-tin/thong-bao/bieu-phi-tai-khoan-thau-chi-mycash) was issued 22/07/2022. Treat as old or undated, but it is the schedule the current product page links as 'Biểu phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí cấp bản sao sao kê theo yêu cầu",
+          "nameEn": "Statement copy fee",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "note": "Only on request."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only on request."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 80000,
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"80.000 VND/lần\". Same document caveat as above (undated PDF; companion notice 22/07/2022)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí cấp bản sao hóa đơn giao dịch",
+          "nameEn": "Transaction invoice copy fee",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "note": "Only on request."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only on request."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 80000,
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"80.000 VND/lần\". Same document caveat."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí tra soát khiếu nại (nếu khách hàng khiếu nại không đúng)",
+          "nameEn": "Wrong-complaint investigation fee",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "note": "Only if a complaint is found incorrect."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only when it happens."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 80000,
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"80.000 VND/lần\". Same document caveat."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí giao dịch ngoại tệ / giao dịch ở nước ngoài",
+          "nameEn": "Foreign-currency and overseas transaction fee",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+            "note": "Per transaction."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only if the card is used abroad or in foreign currency."
+          },
+          "base": "transaction_amount",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "The fee PDF says 'theo chính sách hiện tại của thẻ ghi nợ quốc tế Techcombank'; no number given in the document."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the official pages."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the official pages."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated; the limit is granted in-app. The contract template is a blank form."
+        },
+        "existingCustomerRequired": {
+          "value": true,
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+          "retrievedAt": "2026-11-02",
+          "confidence": "high",
+          "note": "FAQ on the product page: \"Hiện tại tài khoản thấu chi MyCash chỉ được cấp cho những Khách hàng hiện hữu của Techcombank\"."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Hạn mức được cấp sẵn: khách hàng chỉ đăng ký được khi nhận thông báo cấp hạn mức trong Techcombank Mobile"
+          ],
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Registration steps on the product page: step 1 'Nhận thông báo trên Techcombank Mobile nếu được cấp hạn mức'. The contract template also bars using the limit for cash withdrawal or transfers to yourself (https://techcombank.com/content/dam/techcombank/public-site/documents/hop-dong-mycash-1604.pdf)."
+        },
+        "notes": "No cash withdrawal; spending is by transfer, QR or the virtual Visa Debit MyCash card. No interest-free period (the product page's comparison table)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu không trả đủ khoản đến hạn: lãi quá hạn trên gốc bằng 100% lãi trong hạn đến ngày thứ 60 và 150% từ ngày thứ 61; lãi chậm trả trên lãi quá hạn là 10%/năm. Sau 10 ngày quá hạn, chức năng ứng tiền bị khóa; sau 60 ngày tài khoản bị khóa vĩnh viễn.",
+          "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Overdue rows 14-16 of the MyCash fee PDF; the lock rules are in the FAQ (https://techcombank.com/content/dam/techcombank/public-site/imported-assets/FAQ_My_Cash_v1_ce7a322126.pdf). The fee PDF is undated; the companion notice page was issued 22/07/2022."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "100% of the in-term rate until day 60, 150% from day 61; the higher figure is stored (see conflicts[])."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": 10,
+          "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "\"Lãi chậm trả trên dư nợ lãi chuyển quá hạn: 10%/năm\"."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "380 VND per million per day (0.038%/day)",
+              "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+              "note": "Official product page: 'chỉ từ 380 đồng/triệu/ngày' (stored). The old English page https://techcombank.com/en/personal/borrow/consumer-loan/mycash says the same."
+            },
+            {
+              "value": "408 VND per million per day (from 14.9%/year)",
+              "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
+              "note": "Blog; rate stated as updated 13/11/2025. Also on https://techcombank.com/thong-tin/blog/vay-30-trieu. 408 x 365 / 1,000,000 = 14.89%/year."
+            },
+            {
+              "value": "16-25%/year (example uses 18%)",
+              "sourceUrl": "https://techcombank.com/thong-tin/thong-bao/huong-dan-thanh-toan-tai-khoan-thau-chi-mycash",
+              "note": "Official payment guide dated 22/07/2022: 'lãi suất ... từ 16-25%/năm'. A 380-VND/day rate is about 13.9%/year, below this range, so the 2022 range is superseded or stale."
+            }
+          ],
+          "resolution": "Stored the official product page's 380 VND/million/day as an advertised floor (medium confidence). The 408 figure (14.9%/year) would be the higher-cost reading and the blog says it was updated 13/11/2025; which one the app shows today is unresolved. The 2022 range of 16-25%/year is kept here only: it is old and contradicted by the newer page, so it is not recorded as an offered range."
+        },
+        {
+          "field": "latePenalty.overduePrincipalRateMultiplier",
+          "values": [
+            {
+              "value": "1.0 (100% of in-term rate) up to day 60 overdue",
+              "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf"
+            },
+            {
+              "value": "1.5 (150% of in-term rate) from day 61",
+              "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf"
+            },
+            {
+              "value": "1.5 after 60 days past the due date",
+              "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/FAQ_My_Cash_v1_ce7a322126.pdf",
+              "note": "FAQ ties the 150% rate to the permanent lock after 60 days"
+            }
+          ],
+          "resolution": "Stored the higher 1.5 (worst case). The text says 100% applies until day 60."
+        }
+      ],
+      "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash",
+      "retrievedAt": "2026-11-02",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Mới có lãi suất \"từ\" 380 đồng/triệu/ngày, chưa công bố mức tối đa, hạn mức và kỳ hạn chính thức",
+      "notes": "Official product page found (status moved from unverified to active): https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash (HTTP last-modified 2026-07-20; the 'đã hết hạn' text in the HTML is a hidden template element, not shown to visitors). Official documents linked from it: terms https://techcombank.com/thong-tin/thong-bao/dieu-kien-dieu-khoan, fee PDF https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf, blank contract form MB04-QT.TDC/137 v1.2 https://techcombank.com/content/dam/techcombank/public-site/documents/hop-dong-mycash-1604.pdf, payment guide https://techcombank.com/thong-tin/thong-bao/huong-dan-thanh-toan-tai-khoan-thau-chi-mycash, FAQ https://techcombank.com/content/dam/techcombank/public-site/imported-assets/FAQ_My_Cash_v1_ce7a322126.pdf. None of them states a maximum or a firm in-term rate. The product is invite-only (limit granted to existing customers in the app). Fee PDFs: pdftotext text layer was usable for numbers but not for accents.",
+      "borrowerNotes": [
+        {
+          "vi": "380 đồng mỗi triệu mỗi ngày tương đương khoảng 13,9%/năm nếu tính 365 ngày. Đây là phép tính của chúng tôi, ngân hàng không ghi con số này.",
+          "en": "380 đồng per million per day is about 13.9% a year over 365 days. This is our calculation, not a figure the bank states."
+        }
+      ]
+    },
+    {
+      "id": "vay-han-muc-thau-chi-khong-tai-san-bao-dam",
+      "nameVi": "Vay hạn mức thấu chi không tài sản bảo đảm",
+      "nameEn": "Unsecured overdraft credit line",
+      "productType": "overdraft",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "techcombank",
+      "brandOrChannel": "Techcombank Mobile",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "The official product page states no amount. Searched: product page, general terms."
+      },
+      "amountMaxVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "The official product page states no limit."
+      },
+      "termMinMonths": {
+        "value": 3,
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "\"Thời gian của hạn mức từ 3-12 tháng\" (the length of the credit line, not an instalment term)."
+      },
+      "termMaxMonths": {
+        "value": 12,
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+        "retrievedAt": "2026-11-02",
+        "confidence": "medium",
+        "note": "Same sentence."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": null,
+          "minPercent": {
+            "value": 1.2,
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"Lãi suất chỉ từ 1.2%/tháng.\" A 'từ' figure."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum published on the product page. Not found elsewhere on the public site."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://techcombank.com/content/dam/techcombank/public-site/imported-assets/Dieu_khoan_dieu_kien_chung_ve_tin_dung_2018_1tieh_pdf_91916ed0f0_451689de4e.pdf",
+            "note": "The page says 'Lãi tính cho số ngày thực dùng' (interest for the days actually used). The general credit terms (listed as applying from 02/05/2018) compute interest on the end-of-day balance x days x annual rate / 365, which is a reducing-balance method. The page itself does not say flat or reducing."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+            "note": "Source wording: \"1.2%/tháng\"."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "revolving",
+        "provenance": "inferred",
+        "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+        "note": "A credit line used as needed ('hạn mức dự phòng'); early repayment allowed at any time. No fixed schedule is stated."
+      },
+      "fees": [
+        {
+          "nameVi": "Mọi loại phí (theo trang sản phẩm: miễn phí)",
+          "nameEn": "All fees (product page: free)",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+            "retrievedAt": "2026-11-02",
+            "confidence": "medium",
+            "note": "\"Miễn phí mọi loại phí.\" A marketing statement; the contract and the credit fee schedule were not found for this product, so late and early-repayment charges may still apply under the contract."
           },
           "minVnd": {
             "value": null,
@@ -529,41 +1151,47 @@
       "insuranceCompleteness": "unknown",
       "eligibility": {
         "minAge": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Not stated."
+          "value": 20,
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "\"Từ 20-60 tuổi.\""
         },
         "maxAge": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Not stated."
+          "value": 60,
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Same sentence; the page does not say whether 60 is checked at application or at the end of the line."
         },
         "maxAgeAtLoanEnd": null,
         "minMonthlyIncomeVnd": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null,
-          "note": "Not stated."
+          "value": 5000000,
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "\"Thu nhập từ lương tối thiểu 5 triệu đồng/tháng hoặc là khách hàng đã có giao dịch với Techcombank nằm trong danh sách phê duyệt trước\". Either-or: salary of 5 million, or being on the pre-approved list."
         },
         "incomeBasis": "unknown",
         "documents": {
+          "value": [
+            "Đơn đề nghị vay vốn kiêm hợp đồng vay vốn (theo mẫu của Techcombank)",
+            "CMND/Hộ chiếu còn hiệu lực",
+            "Hộ khẩu/Giấy tạm trú/KT3 tại nơi sinh sống/làm việc",
+            "Hợp đồng lao động hoặc giấy tờ tương đương thể hiện vị trí và thâm niên công tác, sao kê trả lương qua ngân hàng (nếu cần)",
+            "Các giấy tờ liên quan khác (nếu có)"
+          ],
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Official 'Hồ sơ vay vốn' list on the product page."
+        },
+        "existingCustomerRequired": {
           "value": null,
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not stated."
-        },
-        "existingCustomerRequired": {
-          "value": true,
-          "sourceUrl": "https://techcombank.com/en/personal/borrow/consumer-loan/mycash",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "Per the English product page (marked outdated) MyCash is for existing Techcombank customers."
+          "note": "The page offers two routes (salary of 5 million, or pre-approved existing customer), so being a customer is not stated as required."
         },
         "employerRestriction": {
           "value": null,
@@ -573,14 +1201,15 @@
         },
         "otherConditions": {
           "value": [
-            "Hạn mức được ngân hàng xét theo thu nhập, nghề nghiệp và điểm tín dụng"
+            "Quốc tịch Việt Nam",
+            "Mục đích vay phù hợp với quy định của ngân hàng từng thời kỳ"
           ],
-          "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
-          "retrievedAt": "2026-11-01",
-          "confidence": "low",
-          "note": "General statement on the blog page, not specific criteria."
+          "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+          "retrievedAt": "2026-11-02",
+          "confidence": "medium",
+          "note": "Official conditions list."
         },
-        "notes": "Existing-customer condition comes from the outdated English page; low confidence."
+        "notes": "Applying: the page's button is 'Đăng ký tư vấn' (consultation request); use of the line is described in Techcombank Mobile."
       },
       "latePenalty": {
         "textVi": {
@@ -588,7 +1217,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Chưa rõ: các trang đã đọc không nêu phí phạt trả chậm."
+          "note": "Chưa rõ: trang sản phẩm không nêu mức phạt trả chậm; mức lãi quá hạn nằm trong hợp đồng, chưa được đăng."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -604,32 +1233,15 @@
         }
       },
       "representativeExamples": [],
-      "conflicts": [
-        {
-          "field": "rates[0].minPercent",
-          "values": [
-            {
-              "value": "408 VND/triệu/ngày (từ 14.9%/năm)",
-              "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi"
-            },
-            {
-              "value": "380 VND/million/day (about 13.9%/year)",
-              "sourceUrl": "https://techcombank.com/en/personal/borrow/consumer-loan/mycash",
-              "note": "page marked outdated"
-            }
-          ],
-          "resolution": "Stored the higher 14.9%/year, confidence low. An older expired notice reportedly said 16-25%/year, not read, not used."
-        }
-      ],
-      "sourceUrl": "https://techcombank.com/thong-tin/blog/han-muc-thau-chi-la-gi",
-      "retrievedAt": "2026-11-01",
-      "confidence": "low",
+      "conflicts": [],
+      "sourceUrl": "https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao",
+      "retrievedAt": "2026-11-02",
+      "confidence": "medium",
       "excludeFromRanking": true,
-      "notes": "Rate basis is not stated, so basis = unknown. The bank quotes per day; the yearly figure is the bank's own conversion. termMaxMonths: a search summary of .../blog/thoi-han-vay-thau-chi mentioned 12 months, not verified, so left null.",
-      "nameEn": "MyCash overdraft account",
-      "excludeReason": "Chỉ có nguồn blog, chưa có trang sản phẩm hoặc hợp đồng chính thức"
+      "excludeReason": "Mới có lãi suất \"từ\" 1,2%/tháng, chưa công bố mức tối đa và hạn mức",
+      "notes": "New product found 2026-11-02. This is likely the product behind the 'chỉ từ 1.2%/tháng' wording that the Techcombank blogs attach to the unsecured instalment loan. The English version of the page (https://techcombank.com/en/personal/borrow/consumer-loan/secured-overdraft-no-collateral-required, titled 'Secured overdraft with no collateral required') repeats 1.2%/month and 'all fees free'; its date is unclear. Terms link: https://techcombank.com/cong-cu-tien-ich/bieu-phi-bieu-mau-dich-vu (#dkdk). The 'đã hết hạn' text in the HTML is a hidden template element."
     }
   ],
-  "researchNotes": "LICENSING: Techcombank is on data/licensed-institutions.json (id techcombank). GAPS: no official product page with a rate table (https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung is a mainly secured consumer product up to 5 billion VND, a different product); no personal-loan fee schedule (biểu phí) or terms for unsecured loans (only corporate/credit-card fee PDFs); no insurance, application/disbursement fee or late-penalty data; credit-card installment not researched. RATE DISCLOSURE: Techcombank publishes monthly average lending-rate PDFs (e.g. https://techcombank.com/content/dam/techcombank/public-site/documents/lai-suat-cho-vay-binh-quan-khcn-techcombank-thang-06-2026.pdf) and base-rate notices, but the PDF text could not be extracted, so no figure recorded. CONTRADICTIONS (all in conflicts[]): amount 100M vs 400M vs 1B, term 20-36 vs 12-60, rate 1.2%/month vs 12.9%/year, MyCash 408 vs 380 VND/million/day. All figures come from techcombank.com blog pages that say they are compiled from general market information; several carry 'đã hết hạn' labels and publication dates differ from stated data dates. SURPRISING: the only worked example has arithmetic errors and a term below the stated online minimum. Both products are excluded from ranking until an official product page or contract is found.",
-  "retrievedAt": "2026-11-01"
+  "researchNotes": "LICENSING: Techcombank is on data/licensed-institutions.json (id techcombank, bank). OFFICIAL PAGES FOUND (2026-11-02): the unsecured instalment loan (https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tin-chap), MyCash (https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash) and the unsecured overdraft credit line (https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/vay-han-muc-thau-chi-khong-tai-san-dam-bao). All three were previously known only through blogs. The 'đã hết hạn' (expired) text seen by earlier readers is a hidden template span (class 'article-expired-text hidden') on every Techcombank page, not a real expiry; the HTTP last-modified of the three product pages is 2026-07-20. WHAT IS PUBLISHED: instalment loan: from 12.9%/year reducing balance, up to 1 billion VND, 12-60 months, age 20-70, income 10 million. MyCash: from 380 VND per million per day, fee schedule and overdue rates in a PDF, blank contract form. Overdraft line: from 1.2%/month, 3-12 months, age 20-60, income 5 million, 'miễn phí mọi loại phí'. WHAT IS NOT PUBLISHED (searched, not found): any maximum rate or rate table for any of the three; unsecured-loan contract or fee line for application/disbursement; insurance terms; late-penalty rate for the instalment loan and the overdraft line. Searched: the three product pages, techcombank.com/cong-cu-tien-ich/bieu-phi-bieu-mau-dich-vu (all KHCN biểu phí, biểu mẫu and ĐKĐK PDFs; the only loan documents are 'Biểu phí Dịch vụ tín dụng' listed 13/04/2026, the loan-application terms of 12/05/2022 (about credit approval-in-principle, no rates), and general credit terms of 02/05/2018), the Lãi suất page (empty rate sections), the loan calculator (user types the rate), the base-rate notice effective 05/02/2026 (benchmark only; not tied to these products), the Google Play and App Store listings of Techcombank Mobile (no loan text), and blogs. Average-lending-rate PDFs exist (monthly, whole individual book) and are benchmarks, not product rates; not recorded. CONTRADICTIONS (in conflicts[]): amount 1 billion vs 100 million vs 400 million; term 12-60 vs 20-36; rate 12.9%/year vs the blogs' 1.2%/month (which is the official wording for the overdraft line); MyCash 380 vs 408 VND/million/day vs the old 16-25%/year; early-repayment minimum 200,000 vs 800,000/400,000/200,000. SURPRISING: (1) the 'expired' labels are a template artifact; (2) the blog's 1.2%/month looks like the overdraft line's rate attached to the instalment loan; (3) the credit fee schedule has an early-repayment row for a 'vay tiền' product with flat interest (0.25% x prepaid principal x months early), which suggests Techcombank also lends on flat interest somewhere, but no product page says so; (4) the instalment loan's only worked example (blog) has arithmetic errors. All three products stay out of the ranking: each has only a 'từ' floor. Unlock: a stated maximum rate for the instalment loan and the overdraft line, or MyCash's in-term rate table (referred to by the contract as 'biểu phí cho vay ... niêm yết trên website' but not on the site). Credit-card installment and the secured consumer loans were not researched (out of the MVP scope).",
+  "retrievedAt": "2026-11-02"
 }

@@ -27,47 +27,78 @@
       "amountMaxVnd": {
         "value": 1000000000,
         "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Page: up to 1 tỷ đồng, no collateral. Stated once for the whole unsecured consumer loan page, not split by package."
       },
       "termMinMonths": {
         "value": 12,
         "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Page: 12 to 60 months for both packages."
       },
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Page: 12 to 60 months for both packages."
       },
       "rates": [
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất tham khảo trong máy tính của VIB (KHÔNG phải khoảng lãi suất chào bán; VIB không công bố mức tối đa)",
+          "minPercent": {
+            "value": 23,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Measured with VIB's own calculator on the product page (vib.com.vn/vn/vay-tieu-dung), 2026-11-03, term 12/24/36/48/60 months, amounts 30M/100M/300M/1 tỷ plus 101M/150M/200M/250M/299M. The rate depends on the loan AMOUNT, not on the term: package 'Nhận lương qua VIB' showed 'Lãi suất: 24%' for 30M, 100M, 101M, 150M, 200M and 250M, and 'Lãi suất: 23%' for 299M, 300M and 1 tỷ. 23% is the lowest value shown. The tier boundary lies between 250M and 299M (not pinned down). Page footnote: 'Công cụ mang tính tham khảo tùy chính sách vay tại từng thời điểm'; schedule page footnote: 'Lãi suất có thể thay đổi theo từng thời điểm, giảm xuống hoặc tăng lên phụ thuộc vào sự thay đổi của thị trường'. Schedule with 'Lãi suất áp dụng: 23%': https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=300000000&kyhan=60&nhanluong=12&luong=1&theTd=0"
+          },
+          "maxPercent": {
+            "value": 24,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Highest value the calculator showed for this package ('Lãi suất: 24%', amounts up to 250M). VIB nowhere states 24% as a maximum or cap: it is the calculator's reference rate. Schedule page with 'Lãi suất áp dụng: 24%': https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=12&luong=0&theTd=1"
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=12&luong=0&theTd=1",
+            "note": "Not stated in words. Worked out from VIB's own repayment schedule: 30,000,000 at 24%, 12 months. Month 1 interest = 600,000 = 30,000,000 x 24% / 12; month 2 interest = 555,264 = 27,763,212 x 2%; remaining balance falls each month; total instalment is equal (2,836,788) every month; last month interest 55,623 = 2,781,165 x 2%. That is interest on the outstanding balance (reducing, annuity). Schedule assumes a 30-day month."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=12&luong=0&theTd=1",
+            "note": "The calculator and schedule print 'Lãi suất: 24%' / 'Lãi suất áp dụng: 24%' with no period. Worked out: monthly interest = balance x 24% / 12, so it is a nominal yearly rate. The headline '1.9%/tháng' is 23% / 12 = 1.9167% rounded."
+          },
+          "promotional": null
+        },
         {
           "kind": "advertised_floor",
           "segment": "nhận lương qua VIB",
           "minPercent": {
             "value": 1.9,
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
-            "note": "Page: 'Từ 1.9%/tháng'. Floor only; no maximum, no basis stated."
+            "note": "Page: 'Từ 1.9%/tháng' and 'Lãi suất chỉ từ 1.9%/tháng'. Re-read 2026-11-03. Equals the calculator's 23%/year divided by 12 (1.9167%), rounded down for display."
           },
           "maxPercent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "No upper rate published. This is not an offered range."
+            "note": "No upper rate in the headline figure; the calculator's 24% is stored in the offered_range entry."
           },
           "basis": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null,
-            "note": "Page does not say flat or reducing. The page example numerically matches an annuity (reducing) schedule, but that is our own check, not a statement by VIB."
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=300000000&kyhan=60&nhanluong=12&luong=1&theTd=0",
+            "note": "Same page's calculator and schedule use interest on the outstanding balance; the headline text itself does not say."
           },
           "period": {
             "value": "monthly",
@@ -81,8 +112,8 @@
       "amortization": {
         "value": "annuity",
         "provenance": "inferred",
-        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "note": "Not stated. Inferred only because the page example payment (8,457,141 for 300 triệu, 60 months) is close to an annuity at about 1.9167%/month; a flat schedule would give 10,700,000. Unconfirmed."
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=12&luong=0&theTd=1",
+        "note": "Not stated in words. VIB's own schedule shows an equal total instalment each month (principal + interest) on a falling balance. Could arguably be treated as stated; kept as inferred because the page never names the method."
       },
       "fees": [
         {
@@ -155,7 +186,7 @@
               }
             ],
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Page: 'Năm 01: 4%, Năm 02: 3%, Năm 03 trở đi: 2%'. The page does not say what the percent is applied to (prepaid amount or outstanding principal), nor how partial prepayment is treated, so base is unknown."
           },
@@ -188,7 +219,7 @@
           "fixedVnd": {
             "value": 0,
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Page: 'Miễn phí'."
           },
@@ -239,7 +270,7 @@
           "fixedVnd": {
             "value": 0,
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Page: 'Miễn phí'."
           },
@@ -271,14 +302,14 @@
         "minAge": {
           "value": 22,
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
           "note": "Page: from 22 years old at the time of credit request."
         },
         "maxAge": {
           "value": 55,
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
           "note": "Page: at loan maturity not over 55 for women and 60 for men. Stricter value (55) stored."
         },
@@ -286,7 +317,7 @@
         "minMonthlyIncomeVnd": {
           "value": 7000000,
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
           "note": "Page: minimum income 7 triệu/tháng."
         },
@@ -297,7 +328,7 @@
             "Hồ sơ khác theo quy định của VIB từng thời kỳ"
           ],
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "note": "Product page also says to apply with CCCD and the VNeID app."
         },
@@ -322,7 +353,7 @@
             "Làm hưởng lương từ 3 tháng trở lên (theo trang sản phẩm, chưa tách theo gói)"
           ],
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "note": "Credit history, residence and nationality are from the fee page; the 3-month / 6-month conditions are from the main product page text and are not split by package there."
         },
@@ -334,7 +365,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not published on the consumer loan pages. The secured overdraft fee page states 150% of the in-term rate, but that is a different product and is not applied here."
+          "note": "Not published on the consumer loan product page, the two fee pages, or the FAQ. Searched 2026-11-03: the VIB guide article https://www.vib.com.vn/vn/cam-nang/vay/vay-the-chap/cach-tinh-no-qua-han (dated 2025-06-17) is generic (penalty rate 'thường cao hơn lãi suất thông thường từ 50% đến 150%', and elsewhere '150-200%'), so it is not this product's term. The 150% of the in-term rate that appears on VIB's mortgage, car and secured overdraft fee pages is for those secured products and is not applied here. No loan contract or general credit terms for the unsecured loan were found on vib.com.vn."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -353,29 +384,69 @@
         {
           "principalVnd": 300000000,
           "termMonths": 60,
-          "ratePercent": 1.9,
-          "rateBasis": "unknown",
-          "ratePeriod": "monthly",
-          "amortization": "unknown",
+          "ratePercent": 23,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
           "monthlyPaymentVnd": 8457141,
           "totalRepaidVnd": null,
-          "statedAnnualRatePercent": null,
-          "statedAnnualRateKind": null,
+          "statedAnnualRatePercent": 23,
+          "statedAnnualRateKind": "nominal",
           "includesInsurance": null,
-          "internallyConsistent": false,
-          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-          "retrievedAt": "2026-11-02",
+          "internallyConsistent": true,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=300000000&kyhan=60&nhanluong=12&luong=1&theTd=0",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
-          "note": "Page: 300 triệu, 60 tháng, 1.9%/tháng (salary via VIB), payment 8,457,141, 'for reference only'. A plain annuity at 1.9%/month gives about 8,422,705; 8,457,141 corresponds to about 1.9167%/month (23%/year divided by 12). Difference about 34,000/month is unexplained. Do not use as a test fixture."
+          "note": "The product page's own text example says '300 triệu, 60 tháng, 1.9%/tháng, 8.457.141 VNĐ'. Run through the calculator it shows 'Lãi suất: 23%' and the schedule shows month 1: interest 5,750,000 (= 300,000,000 x 23% / 12), principal 2,707,141, total 8,457,141. A plain annuity at 23%/12 = 1.916667%/month gives exactly 8,457,141, so the example is consistent once 1.9% is read as the rounded 23%/12. (At a literal 1.9%/month an annuity would give 8,422,705.) Basis and period are our reading of VIB's schedule, not words on the page."
+        },
+        {
+          "principalVnd": 30000000,
+          "termMonths": 12,
+          "ratePercent": 24,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 2836788,
+          "totalRepaidVnd": 34041456,
+          "statedAnnualRatePercent": 24,
+          "statedAnnualRateKind": "nominal",
+          "includesInsurance": null,
+          "internallyConsistent": true,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=12&luong=0&theTd=1",
+          "retrievedAt": "2026-11-03",
+          "confidence": "medium",
+          "note": "Calculator output for 30,000,000 over 12 months, package 'Nhận lương qua VIB': 'Lãi suất: 24%', 'Tiền trả hàng tháng: 2.836.788 VNĐ'. The schedule page lists 12 equal instalments of 2,836,788 (total 34,041,456 = 12 x 2,836,788, our sum). Matches an annuity at 2%/month exactly. Excludes any fee or insurance (none published)."
         }
       ],
-      "conflicts": [],
+      "conflicts": [
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "24%/year (2.0%/month), amounts up to ~250M, package 'nhận lương qua VIB'; 23%/year above ~299M. Interest on the reducing balance (our reading of the schedule).",
+              "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+              "note": "Tier 1: product page calculator and schedule. STORED."
+            },
+            {
+              "value": "'từ 2,5%/tháng (tính theo dư nợ giảm dần)' for 30,000,000 over 36 months, 'khoảng 1,2 triệu/tháng'",
+              "sourceUrl": "https://didongviet.vn/dchannel/vay-30-trieu-3-phut-max-vib-di-dong-viet/",
+              "note": "Tier 3: article by retailer Di Động Việt dated 2026-04-02, promotion 2026-04-01 to 2026-12-31, 'MAX by VIB' fast loan. VIB's own vay-nhanh page that search engines index for this offer (vib.com.vn/vn/vay-nhanh/) returned a 404 page on 2026-11-03, so VIB's side of this offer could not be read. Possibly a different campaign product; not stored."
+            },
+            {
+              "value": "'từ 1.1%/tháng' (MAX app cash loan, up to 1 tỷ); 'từ 0.92%/tháng' (App Store listing)",
+              "sourceUrl": "https://www.vib.com.vn/vn/cam-nang/vay/vay-the-chap/dac-diem-cho-vay-tieu-dung",
+              "note": "Tier 2: VIB guide article dated 2026-03-03 (says 'lãi suất thực tế có thể thay đổi') and the VIB MAX app page https://www.vib.com.vn/i/max-app; App Store listing https://apps.apple.com/vn/app/max-by-vib/id6474231257. No basis, term or conditions given; the App Store text is next to the Super Cash limit, a different product. Lower than the calculator, never stored over a Tier 1 figure."
+            }
+          ],
+          "resolution": "Stored the Tier 1 calculator figures (23% and 24%/year). The lower Tier 2 figures are marketing 'from' rates and are not used. The higher 2.5%/month (30%/year) figure from a partner campaign is Tier 3 and a 36-month 30M loan; it is NOT stored but shows the real rate for a given borrower could be higher than the calculator's. Calculator rates are VIB reference figures, not a guaranteed offer."
+        }
+      ],
       "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "confidence": "medium",
       "excludeFromRanking": true,
-      "excludeReason": "VIB publishes only a 'từ X%/tháng' floor, with no upper rate and no flat or reducing basis, so the real cost cannot be compared fairly.",
-      "notes": "The rate is an advertised floor (kind advertised_floor), not an offered range. Insurance and late-payment terms are not on the consumer loan pages; absence is not proof there is none."
+      "notes": "Rates: VIB's calculator applies 24%/year up to roughly 250M and 23%/year from about 299M (not by term); reducing balance, equal instalments (our reading of VIB's repayment schedule). VIB never prints 'dư nợ giảm dần' for this product and never states a maximum rate; the headline 'từ 1.9%/tháng' is 23%/12 rounded. The rate shown is a reference figure and VIB says it can change. Insurance: no mention on the product page, two fee pages, FAQ, VIB guide articles or app listing. Late payment: no consumer-loan-specific term found (VIB's guide article on overdue interest, dated 2025-06-17, is generic: it quotes a 50% to 150% range and uses 150% only in an example). Absence is not proof there is none. Minimum amount: the calculator slider starts at 30,000,000 but VIB does not state it as a product minimum.",
+      "excludeReason": "VIB publishes a 'từ X%/tháng' floor and a calculator with reference rates, but no maximum rate. Calculator rates are not a stated range, and a retailer article suggests real rates can be higher, so ranking on them could make this loan look cheaper than it is."
     },
     {
       "id": "vib-vay-tin-chap-luong-chuyen-khoan-the-tin-dung",
@@ -397,47 +468,78 @@
       "amountMaxVnd": {
         "value": 1000000000,
         "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Page: up to 1 tỷ đồng, no collateral. Stated once for the whole unsecured consumer loan page, not split by package."
       },
       "termMinMonths": {
         "value": 12,
         "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Page: 12 to 60 months for both packages."
       },
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Page: 12 to 60 months for both packages."
       },
       "rates": [
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất tham khảo trong máy tính của VIB (KHÔNG phải khoảng lãi suất chào bán; VIB không công bố mức tối đa)",
+          "minPercent": {
+            "value": 24,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Measured with VIB's own calculator on the product page (vib.com.vn/vn/vay-tieu-dung), 2026-11-03, package 'Có lương chuyển khoản/ Thẻ tín dụng', tested at 30M/12m, 100M/12m, 100M/60m, 300M/12m, 300M/60m, 1 tỷ/60m. The rate depends on the loan AMOUNT, not on the term: 'Lãi suất: 25%' for 30M and 100M; 'Lãi suất: 24%' for 300M and 1 tỷ. 24% is the lowest value shown. The tier boundary between 100M and 300M was not pinned down for this package (for the salary-via-VIB package it lies between 250M and 299M)."
+          },
+          "maxPercent": {
+            "value": 25,
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Highest value the calculator showed for this package. VIB does not state 25% as a maximum. Schedule page with 'Lãi suất áp dụng: 25%': https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=10&luong=0&theTd=0"
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=10&luong=0&theTd=0",
+            "note": "Not stated in words. VIB's schedule for 30,000,000 / 12 months at 25%: month 1 interest 625,000 = 30,000,000 x 25% / 12; balance falls (27,773,674 after month 1); equal total instalment 2,851,326. Interest on the outstanding balance."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=10&luong=0&theTd=0",
+            "note": "Calculator and schedule print '25%' with no period; monthly interest = balance x 25% / 12, so it is a nominal yearly rate. The headline '2.0%/tháng' equals 24%/12 exactly."
+          },
+          "promotional": null
+        },
         {
           "kind": "advertised_floor",
           "segment": "có lương chuyển khoản / thẻ tín dụng",
           "minPercent": {
             "value": 2,
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
-            "note": "Page: 'Từ 2.0%/tháng'. Floor only; no maximum, no basis stated."
+            "note": "Page: 'Từ 2.0%/tháng'. Re-read 2026-11-03. Equals the calculator's 24%/year divided by 12."
           },
           "maxPercent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "No upper rate published. This is not an offered range."
+            "note": "No upper rate in the headline figure; the calculator's 25% is stored in the offered_range entry."
           },
           "basis": {
-            "value": "unknown",
-            "provenance": "none",
-            "sourceUrl": null,
-            "note": "Page does not say flat or reducing. The page example numerically matches an annuity (reducing) schedule, but that is our own check, not a statement by VIB."
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=10&luong=0&theTd=0",
+            "note": "Same page's calculator and schedule use interest on the outstanding balance; the headline text itself does not say."
           },
           "period": {
             "value": "monthly",
@@ -451,8 +553,8 @@
       "amortization": {
         "value": "annuity",
         "provenance": "inferred",
-        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "note": "Not stated. Inferred only from the example VIB publishes for its 1.9% salary package, which is close to an annuity. Unconfirmed."
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=10&luong=0&theTd=0",
+        "note": "Not stated in words. VIB's schedule for this package shows an equal total instalment each month on a falling balance."
       },
       "fees": [
         {
@@ -525,7 +627,7 @@
               }
             ],
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Page: 'Năm 01: 4%, Năm 02: 3%, Năm 03 trở đi: 2%'. The page does not say what the percent is applied to (prepaid amount or outstanding principal), nor how partial prepayment is treated, so base is unknown."
           },
@@ -558,7 +660,7 @@
           "fixedVnd": {
             "value": 0,
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Page: 'Miễn phí'."
           },
@@ -609,7 +711,7 @@
           "fixedVnd": {
             "value": 0,
             "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "note": "Page: 'Miễn phí'."
           },
@@ -641,14 +743,14 @@
         "minAge": {
           "value": 22,
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
           "note": "Page: from 22 years old at the time of credit request."
         },
         "maxAge": {
           "value": 55,
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
           "note": "Page: at loan maturity not over 55 for women and 60 for men. Stricter value (55) stored."
         },
@@ -656,7 +758,7 @@
         "minMonthlyIncomeVnd": {
           "value": 7000000,
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
           "note": "Page: minimum income 7 triệu/tháng."
         },
@@ -667,7 +769,7 @@
             "Hồ sơ khác theo quy định của VIB từng thời kỳ"
           ],
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "note": "Product page also says to apply with CCCD and the VNeID app."
         },
@@ -692,7 +794,7 @@
             "Làm hưởng lương từ 3 tháng trở lên, hoặc có thẻ tín dụng hoạt động từ 6 tháng tại VIB hoặc ngân hàng khác (theo trang sản phẩm, chưa tách theo gói)"
           ],
           "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "note": "Credit history, residence and nationality are from the fee page; the 3-month / 6-month conditions are from the main product page text and are not split by package there."
         },
@@ -704,7 +806,524 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not published on the consumer loan pages. The secured overdraft fee page states 150% of the in-term rate, but that is a different product and is not applied here."
+          "note": "Not published on the consumer loan product page, the two fee pages, or the FAQ. Searched 2026-11-03: the VIB guide article https://www.vib.com.vn/vn/cam-nang/vay/vay-the-chap/cach-tinh-no-qua-han (dated 2025-06-17) is generic (penalty rate 'thường cao hơn lãi suất thông thường từ 50% đến 150%', and elsewhere '150-200%'), so it is not this product's term. The 150% of the in-term rate that appears on VIB's mortgage, car and secured overdraft fee pages is for those secured products and is not applied here. No loan contract or general credit terms for the unsecured loan were found on vib.com.vn."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 30000000,
+          "termMonths": 12,
+          "ratePercent": 25,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 2851326,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": 25,
+          "statedAnnualRateKind": "nominal",
+          "includesInsurance": null,
+          "internallyConsistent": true,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=10&luong=0&theTd=0",
+          "retrievedAt": "2026-11-03",
+          "confidence": "medium",
+          "note": "Calculator output for 30,000,000 over 12 months, package 'Có lương chuyển khoản/ Thẻ tín dụng': 'Lãi suất: 25%', 'Tiền trả hàng tháng: 2.851.326 VNĐ'. Schedule month 1: interest 625,000, principal 2,226,326. Matches an annuity at 25%/12 exactly. Excludes any fee or insurance (none published)."
+        },
+        {
+          "principalVnd": 300000000,
+          "termMonths": 60,
+          "ratePercent": 24,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 8630390,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": 24,
+          "statedAnnualRateKind": "nominal",
+          "includesInsurance": null,
+          "internallyConsistent": true,
+          "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+          "retrievedAt": "2026-11-03",
+          "confidence": "medium",
+          "note": "Calculator output (main page, no schedule opened) for 300,000,000 over 60 months, package 'Có lương chuyển khoản/ Thẻ tín dụng': 'Lãi suất: 24%', 'Tiền trả hàng tháng: 8.630.390 VNĐ'. Matches an annuity at 24%/12 exactly (checked by our own calculation)."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "25%/year (2.08%/month) up to at least 100M; 24%/year at 300M and above, package 'có lương chuyển khoản / thẻ tín dụng'. Interest on the reducing balance (our reading).",
+              "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+              "note": "Tier 1: product page calculator and schedule. STORED."
+            },
+            {
+              "value": "'từ 2,5%/tháng (tính theo dư nợ giảm dần)' for 30,000,000 over 36 months",
+              "sourceUrl": "https://didongviet.vn/dchannel/vay-30-trieu-3-phut-max-vib-di-dong-viet/",
+              "note": "Tier 3: retailer Di Động Việt article dated 2026-04-02 (campaign to 2026-12-31). VIB's vay-nhanh page returned 404 on 2026-11-03. Not stored."
+            },
+            {
+              "value": "'từ 1.1%/tháng'; App Store 'từ 0.92%/tháng'",
+              "sourceUrl": "https://www.vib.com.vn/vn/cam-nang/vay/vay-the-chap/dac-diem-cho-vay-tieu-dung",
+              "note": "Tier 2 VIB guide article (2026-03-03), MAX app page https://www.vib.com.vn/i/max-app and App Store listing https://apps.apple.com/vn/app/max-by-vib/id6474231257. Marketing 'from' rates without basis; lower than the calculator; never stored over Tier 1."
+            }
+          ],
+          "resolution": "Stored the Tier 1 calculator figures (24% and 25%/year). Lower Tier 2 figures are marketing floors. The higher 2.5%/month partner-campaign figure is Tier 3 and not stored, but shows a real borrower's rate could be above the calculator's. Calculator rates are VIB reference figures, not a guaranteed offer."
+        }
+      ],
+      "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+      "retrievedAt": "2026-11-03",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "notes": "Rates: VIB's calculator applies 25%/year up to at least 100M and 24%/year from 300M (by amount, not term); reducing balance, equal instalments (our reading of VIB's repayment schedule). VIB never prints 'dư nợ giảm dần' for this product and never states a maximum rate. Insurance and late-payment terms not published on the consumer loan pages (see the first package for what was searched). Absence is not proof there is none. Minimum amount: the calculator slider starts at 30,000,000 but VIB does not state it as a product minimum.",
+      "excludeReason": "VIB publishes a 'từ X%/tháng' floor and a calculator with reference rates, but no maximum rate. Calculator rates are not a stated range, and a retailer article suggests real rates can be higher, so ranking on them could make this loan look cheaper than it is."
+    },
+    {
+      "id": "vib-super-cash",
+      "nameVi": "Super Cash - hạn mức vay tín chấp luân chuyển với thẻ tín dụng",
+      "nameEn": "VIB Super Cash - unsecured cash limit shared with a credit card (existing customers, by invitation)",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vib",
+      "brandOrChannel": "Super Cash / MAX by VIB",
+      "online": true,
+      "amountMinVnd": {
+        "value": 3000000,
+        "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+        "retrievedAt": "2026-11-03",
+        "confidence": "high",
+        "note": "Page: 'Linh hoạt từ 3 triệu đến 1 tỷ VNĐ'."
+      },
+      "amountMaxVnd": {
+        "value": 1000000000,
+        "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+        "retrievedAt": "2026-11-03",
+        "confidence": "high",
+        "note": "Page: 'Linh hoạt từ 3 triệu đến 1 tỷ VNĐ'. The limit is granted per customer and may be lower."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Page: 'Linh hoạt từ 1 ngày đến 5 năm'. The minimum is one day, which the schema (whole months) cannot hold. The FAQ suggests choosing a 3-month term and settling early for a 7-day need."
+      },
+      "termMaxMonths": {
+        "value": 60,
+        "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+        "retrievedAt": "2026-11-03",
+        "confidence": "high",
+        "note": "Page: 'Tối đa 5 năm'."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "khách hàng được VIB cấp hạn mức Super Cash (đang vay thế chấp và/hoặc dùng thẻ tín dụng VIB)",
+          "minPercent": {
+            "value": 1.63,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Page: 'Lãi suất 1.63%-2.5%/ tháng', repeated on the fee page https://www.vib.com.vn/vn/super-cash/bieu-phi-dieu-kien-super-cash. The banner on the same page says 'Chỉ từ 425 đồng cho mỗi triệu vay mỗi ngày', which does not match 1.63%/month (see conflicts). Confidence kept at medium for that reason and because no basis is given."
+          },
+          "maxPercent": {
+            "value": 2.5,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Page: '1.63%-2.5%/ tháng'. The page does not say which borrowers get which rate."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Neither the product page nor the fee page says flat or reducing, and there is no worked example. The calculator on the page asks the user to type the rate ('Lãi suất theo thông báo từ VIB (%/năm)'). 'Lịch trả nợ: Số tiền cố định hàng tháng' (fixed monthly amount) does not settle it."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+            "note": "Page: '/ tháng'."
+          },
+          "promotional": null
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Con số trên banner, không khớp với khoảng lãi suất đã công bố",
+          "minPercent": {
+            "value": 0.0425,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Banner: 'Chỉ từ 425 đồng cho mỗi triệu vay mỗi ngày' = 425 / 1,000,000 = 0.0425% per day (about 1.28% per 30 days, about 15.5% per 365 days)."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Floor only."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Not stated."
+          },
+          "period": {
+            "value": "daily",
+            "provenance": "stated",
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+            "note": "Banner: 'mỗi ngày'."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null,
+        "note": "Fee page / product page: 'Lịch trả nợ: Số tiền cố định hàng tháng' (fixed monthly amount). Whether that is an annuity or flat is not stated."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí tất toán trước hạn",
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thay đổi hạn mức",
+          "nameEn": "Limit change fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash/bieu-phi-dieu-kien-super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí phát hành thẻ tín dụng",
+          "nameEn": "Card issuance fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash/bieu-phi-dieu-kien-super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thẩm định khoản vay",
+          "nameEn": "Appraisal fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash/bieu-phi-dieu-kien-super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Thông báo giao dịch qua SMS",
+          "nameEn": "SMS transaction alerts",
+          "trigger": "periodic",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "Free, so no timing."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.vib.com.vn/vn/super-cash/bieu-phi-dieu-kien-super-cash",
+            "retrievedAt": "2026-11-03",
+            "confidence": "high",
+            "note": "Page: 'Miễn phí'."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the Super Cash pages."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the Super Cash pages."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the Super Cash pages."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân / Thẻ căn cước",
+            "Hồ sơ khác theo quy định của VIB từng thời kỳ, hướng dẫn trên app MAX khi đăng ký"
+          ],
+          "sourceUrl": "https://www.vib.com.vn/vn/super-cash/bieu-phi-dieu-kien-super-cash",
+          "retrievedAt": "2026-11-03",
+          "confidence": "high",
+          "note": "Fee page, 'Hồ sơ cần thiết'."
+        },
+        "existingCustomerRequired": {
+          "value": true,
+          "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+          "retrievedAt": "2026-11-03",
+          "confidence": "high",
+          "note": "Page: 'Hạn mức Super Cash được cấp cho Khách hàng đang vay thế chấp và/hoặc sử dụng thẻ tín dụng tại VIB'. Fee page: eligibility 'Theo thư mời của VIB và kiểm tra trên app Max'. The page points others to the standard unsecured loan."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Đã vay thế chấp và/hoặc dùng thẻ tín dụng tại VIB ít nhất 6 tháng",
+            "Có lịch sử tín dụng tốt",
+            "Được cấp tự động theo thư mời của VIB, kiểm tra trên app MAX (không đăng ký tự do)"
+          ],
+          "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+          "retrievedAt": "2026-11-03",
+          "confidence": "high",
+          "note": "FAQ: 'Super Cash hiện áp dụng tự động cho Khách hàng có lịch sử tín dụng tốt và đã vay thế chấp và/hoặc sử dụng thẻ tín dụng tại VIB ít nhất 6 tháng'."
+        },
+        "notes": "Open only to people who already hold a VIB credit card or mortgage; not a first-loan product for new customers."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published on the Super Cash product page or its fee page."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -720,15 +1339,39 @@
         }
       },
       "representativeExamples": [],
-      "conflicts": [],
-      "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-      "retrievedAt": "2026-11-02",
+      "conflicts": [
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "1.63%-2.5%/tháng",
+              "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+              "note": "Product page and fee page 'Lãi suất'. STORED as the offered range."
+            },
+            {
+              "value": "'Chỉ từ 425 đồng cho mỗi triệu vay mỗi ngày' = 0.0425%/day, about 1.28% per 30 days",
+              "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+              "note": "Banner on the same page. Lower than 1.63%/month; the page does not reconcile the two."
+            }
+          ],
+          "resolution": "Stored the monthly range (higher cost) as the offered range and the daily banner figure as an advertised floor only. Not reconciled by VIB."
+        }
+      ],
+      "sourceUrl": "https://www.vib.com.vn/vn/super-cash",
+      "retrievedAt": "2026-11-03",
       "confidence": "medium",
       "excludeFromRanking": true,
-      "excludeReason": "VIB publishes only a 'từ X%/tháng' floor, with no upper rate and no flat or reducing basis, so the real cost cannot be compared fairly.",
-      "notes": "The rate is an advertised floor (kind advertised_floor), not an offered range. Insurance and late-payment terms are not on the consumer loan pages; absence is not proof there is none."
+      "excludeReason": "VIB gives a monthly range (1.63% to 2.5%) but does not say whether it is flat or reducing balance, and Super Cash is only granted to existing VIB credit card or mortgage customers by invitation, so it cannot be compared fairly or offered to a new borrower.",
+      "notes": "New product found 2026-11-03. Unsecured per the page's wording ('vay tín chấp') but the page never says 'unsecured' about the whole limit; the limit moves between a credit card and a cash loan. Page undated. Late payment, insurance and basis not published.",
+      "excludeCode": "range_basis_unknown",
+      "borrowerNotes": [
+        {
+          "vi": "VIB công bố 1,63–2,5%/tháng cho sản phẩm này.",
+          "en": "VIB publishes 1.63–2.5% a month for this product."
+        }
+      ]
     }
   ],
-  "researchNotes": "1) Licence: 'vib' is on data/licensed-institutions.json (legal name matches). 2) Products: two packages of the VIB unsecured consumer loan (MAX by VIB app), from the official product page and two official fee pages. Both are excludeFromRanking because the only rate is 'từ 1.9%/tháng' / 'từ 2.0%/tháng' (advertised_floor): no maximum, no flat/reducing basis. 3) Firm figures: up to 1 tỷ, 12-60 months, early settlement fee 4% / 3% / 2% by loan year (what it is applied to is not stated), appraisal and SMS free, age 22 and at maturity 55 (women) / 60 (men), income 7 triệu, no bad debt in 2 years. 4) Gaps: no insurance information on consumer loan pages (unknown, not zero); no late-payment terms for this product; no disbursement fee stated (not proof of zero); no loan contract or general terms document found; the FAQ page returned no loan answers; page dates unknown. 5) Surprise: the page example (300 triệu, 60 months, 1.9%/tháng, payment 8,457,141) does not match a 1.9%/month annuity (8,422,705) but matches 23%/year divided by 12 (1.9167%/month); a flat 1.9%/month would give 10,700,000, so the example looks like reducing balance, but VIB never says so. 6) Not recorded: VIB thấu chi (vib.com.vn/vn/thau-chi) is secured by real estate (up to 5 tỷ, 12-month limit, rate 'áp dụng theo từng thời kỳ'), so out of scope. Its fee page says overdue principal 150% of in-term rate and overdue interest 10%/year, but that is a secured product. Credit cards not recorded (not checked). A third-party aggregator (topi.vn) reports prepayment 1-3%; not used. 7) The two fee pages show identical fee and eligibility text; the page for salary at another bank says nothing extra for that package.",
-  "retrievedAt": "2026-11-02"
+  "researchNotes": "Deep dive 2026-11-03. 1) Licence: 'vib' is on data/licensed-institutions.json (legal name matches). 2) KEY FINDING: VIB's own calculator and repayment schedule (vib.com.vn/vn/vay-tieu-dung and its 'Xem chi tiết' page chi-tiet-khoan-vay) use real rates and a reducing-balance annuity. Package 'nhận lương qua VIB': 24%/year up to about 250M, 23%/year from about 299M (the headline 'từ 1.9%/tháng' is 23%/12 rounded). Package 'lương chuyển khoản / thẻ tín dụng': 25%/year up to at least 100M, 24%/year from 300M (headline 'từ 2.0%/tháng' = 24%/12). The rate depends on loan amount, not term (tested 12 to 60 months). Every calculator payment recomputed (8 samples across both packages) matches an annuity at rate/12 to the dong, and the schedule's month-1 interest equals balance x rate / 12 (30-day month). This resolves the oddity in the page example (300M, 60 months, 8,457,141): it is 23%/12 = 1.9167%/month, not 1.9%. 3) Wording caveat: VIB never writes 'dư nợ giảm dần' for this product and never states a maximum rate; the calculator is described as 'for reference, depends on lending policy at the time' and the schedule says the rate 'có thể thay đổi'. So basis and period are provenance inferred, and the 23% to 25% range is a reference range, not a guarantee. Because the three offered-range conditions are met (VIB's own product page gives a rate per amount tier, basis and period are worked out from VIB's own schedule, no newer official source contradicts it) the two unsecured loan packages are set to excludeFromRanking false; this is a judgement call and can be reverted by setting it back to true. 4) Contradicting figures, none stored: 'từ 1.1%/tháng' (VIB guide article 2026-03-03 and MAX app page), 'từ 0.92%/tháng' (App Store listing, next to Super Cash), and 'từ 2,5%/tháng dư nợ giảm dần' for 30M/36 months in a retailer (Di Động Việt, 2026-04-02) article for an April to December 2026 campaign. VIB's own vay-nhanh page, which search engines index for the 2.5% offer, returned 404 on 2026-11-03. The 2.5% case suggests an individual borrower's rate can be higher than the calculator's. 5) '17%/year' lead: not found. topi.vn/lai-suat-ngan-hang-vib.html (dated 2026-11-02) lists no VIB unsecured rate (its only consumer figure is secured, 8.8%). VIB's own guide table (vib.com.vn/vn/cam-nang/vay/vay-bat-dong-san/lai-suat-vay-cac-ngan-hang, dated 2024-12-06) lists VIB unsecured as 'Từ 14' %/year and shows '17' only for other banks (Agribank 7.0-17, SHB 8.5-17). No official source supports 17%/year; do not use it. 6) Insurance: nothing on any unsecured-loan page; the only VIB insurance premium found (1.5% x 120% of loan) belongs to the secured car loan. Late penalty: no unsecured-loan contract or general credit terms on vib.com.vn (searched site:vib.com.vn filetype:pdf; mortgage/car/overdraft fee pages carry the 150% clause, not applied). VIB's generic guide article on overdue interest (2025-06-17) says 50% to 150%, and 150-200% elsewhere, so it is no source. 7) Fees: early repayment 4%/3%/2% by year (what it is applied to not stated), appraisal and SMS free; no disbursement fee published (not proof of zero). 8) New product Super Cash (vib.com.vn/vn/super-cash): '1.63%-2.5%/tháng', 3M to 1 tỷ, up to 5 years, free early repayment, but only for existing VIB credit card or mortgage customers by invitation, basis not stated, so excluded from ranking; its daily banner (425 đ per million per day = 0.0425%/day) does not match the monthly range. 9) Not recorded: secured overdraft (thấu chi), mortgage, car loans, credit cards. 10) No app-store listing states an APR range or a worked example: the App Store listing has only 'từ 0.92%/tháng' and the Google Play page could not be read. Search for 'Max by VIB' Google Play was not successful. UPDATE 2026-11-03: the two MAX by VIB loans are excluded from ranking and their calculator rates are stored as benchmarks: VIB states no maximum and calls the calculator for reference.",
+  "retrievedAt": "2026-11-03"
 }

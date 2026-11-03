@@ -20,17 +20,17 @@
       "amountMinVnd": {
         "value": 5000000,
         "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/%C4%91i%E1%BB%81u-kho%E1%BA%A3n-%C4%91i%E1%BB%81u-ki%E1%BB%87n/DKDK_VTCTL_2024.pdf",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "low",
         "sourceDocumentDate": "2024-09-12",
-        "note": "T&C Điều 2.2: tối thiểu 5.000.000 đồng/khoản vay. Form BM-CTD.TCONLINE.02 dated 12/09/2024; the T&C says these parameters may change over time."
+        "note": "T&C Dieu 2.2: minimum 5.000.000 dong per loan. Form BM-CTD.TCONLINE.02 is dated 12/09/2024; the current PDF file has 2026-06-01 creation metadata (a hint only, not proof). The T&C says these parameters may change over time. The Vietnamese product page states no minimum."
       },
       "amountMaxVnd": {
         "value": 50000000,
-        "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/unsecured-salary-loan.html",
-        "retrievedAt": "2026-11-02",
+        "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tin-chap-tu-luong.html",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
-        "note": "Product page (English): up to VND 50,000,000. The T&C (12/09/2024) says up to 100.000.000 đồng per loan, so 50 triệu is the conservative value. See conflicts."
+        "note": "Vietnamese product page: 'Số tiền vay đến 50 triệu VND' (the English page says the same). The T&C (form dated 12/09/2024) Dieu 2.2 says up to 100.000.000 dong per loan, so 50 triệu is the conservative value. See conflicts."
       },
       "termMinMonths": {
         "value": null,
@@ -41,10 +41,10 @@
       },
       "termMaxMonths": {
         "value": 24,
-        "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/unsecured-salary-loan.html",
-        "retrievedAt": "2026-11-02",
+        "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tin-chap-tu-luong.html",
+        "retrievedAt": "2026-11-03",
         "confidence": "high",
-        "note": "Product page: maximum 24 months. T&C Điều 3 also says tối đa 24 tháng. Two official sources agree."
+        "note": "Vietnamese product page: 'Thời hạn vay đến 24 tháng'. T&C Dieu 3 also says at most 24 months. Two official sources agree."
       },
       "rates": [],
       "amortization": {
@@ -76,7 +76,7 @@
           "percent": {
             "value": 0,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "sourceDocumentDate": "2026-04-09",
             "note": "Fee schedule I.1.b, online channel: Vay tín chấp từ lương: miễn phí. Effective 09/04/2026."
@@ -129,7 +129,7 @@
           "percent": {
             "value": 2,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
             "sourceDocumentDate": "2026-04-09",
             "note": "Schedule III.3: 2% x số tiền cho vay, tối thiểu 100.000 đồng, tối đa 300.000 đồng; before VAT. Base taken as the loan amount (số tiền cho vay)."
@@ -143,14 +143,14 @@
           "minVnd": {
             "value": 100000,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
             "sourceDocumentDate": "2026-04-09"
           },
           "maxVnd": {
             "value": 300000,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
             "sourceDocumentDate": "2026-04-09"
           },
@@ -195,10 +195,10 @@
         },
         "existingCustomerRequired": {
           "value": true,
-          "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/unsecured-salary-loan.html",
-          "retrievedAt": "2026-11-02",
+          "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tin-chap-tu-luong.html",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
-          "note": "Product page: you must receive your salary through SACOMBANK. T&C 1.6: the disbursement account must be the payroll account for regular customers."
+          "note": "Vietnamese product page: 'Áp dụng cho khách hàng đang được chi lương qua SACOMBANK tối thiểu 6 tháng.' T&C 1.6: for regular customers the disbursement account must be the payroll account."
         },
         "employerRestriction": {
           "value": null,
@@ -208,22 +208,22 @@
         },
         "otherConditions": {
           "value": [
-            "Có tài khoản nhận lương tại Sacombank",
-            "Cài đặt ứng dụng SACOMBANK PAY và xác thực danh tính hai lớp",
+            "Đang được chi lương qua tài khoản Sacombank tối thiểu 6 tháng",
+            "Có ứng dụng SACOMBANK PAY và đã định danh cấp 2",
             "Phải đáp ứng điều kiện cho vay của Sacombank tại từng thời điểm; chấp thuận không được đảm bảo"
           ],
-          "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/unsecured-salary-loan.html",
-          "retrievedAt": "2026-11-02",
-          "confidence": "medium",
-          "note": "Product page and T&C 1.2. Credit conditions (income, age, history) are not published."
+          "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tin-chap-tu-luong.html",
+          "retrievedAt": "2026-11-03",
+          "confidence": "high",
+          "note": "Vietnamese product page, section 'Điều kiện và thủ tục', and T&C 2.1. Credit conditions (age, minimum income, credit history) are not published."
         },
-        "notes": "Age, minimum income and documents are not published in the sources read."
+        "notes": "Age, minimum income and documents are not published in the product page or the T&C. The Combo Đại Lộc page (https://www.sacombank.com.vn/ca-nhan/tai-khoan/combo-dai-loc.html) says customers receiving salary of 25 triệu/month or more through Sacombank get a 'ưu đãi lãi suất vay tín chấp từ lương' with no figure, registered at a branch; it is unclear whether it applies to the SACOMBANK PAY channel. The '0,15%' on that page is a savings bonus, not a loan rate."
       },
       "latePenalty": {
         "textVi": {
           "value": "Lãi chậm trả: 10%/năm tính trên số lãi trả chậm, theo số ngày chậm. Mức phạt trên nợ gốc quá hạn của sản phẩm này chưa rõ.",
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "sourceDocumentDate": "2026-04-09",
           "note": "General credit-contract penalty schedule effective 09/04/2026 (section II). Not specific to this product; the product contract may differ."
@@ -238,7 +238,7 @@
         "overdueInterestRatePercentYear": {
           "value": 10,
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "sourceDocumentDate": "2026-04-09",
           "note": "Schedule II.1 and II.4: lãi suất chậm trả 10%/năm. General schedule, not product-specific."
@@ -251,24 +251,24 @@
           "values": [
             {
               "value": "50,000,000",
-              "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/unsecured-salary-loan.html",
-              "note": "Product page."
+              "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tin-chap-tu-luong.html",
+              "note": "Vietnamese product page (English page identical): 'Số tiền vay đến 50 triệu VND'."
             },
             {
               "value": "100,000,000",
               "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/%C4%91i%E1%BB%81u-kho%E1%BA%A3n-%C4%91i%E1%BB%81u-ki%E1%BB%87n/DKDK_VTCTL_2024.pdf",
-              "note": "T&C 12/09/2024 Điều 2.2: max 100 triệu per loan."
+              "note": "T&C Dieu 2.2: max 100 triệu per loan. Form dated 12/09/2024; the PDF file was re-issued 2026-06-01 per its metadata (hint only)."
             }
           ],
-          "resolution": "Stored the lower figure, 50 triệu. Confidence medium."
+          "resolution": "Both are tier-1 official documents and neither shows an effective date, so we cannot say which is newer. Stored the lower figure (50 triệu), confidence medium. Ask Sacombank."
         }
       ],
-      "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/unsecured-salary-loan.html",
-      "retrievedAt": "2026-11-02",
+      "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tin-chap-tu-luong.html",
+      "retrievedAt": "2026-11-03",
       "confidence": "medium",
       "excludeFromRanking": true,
-      "excludeReason": "Sacombank does not publish an interest rate for this product (only 'Competitive interest rates'), so the cost cannot be calculated.",
-      "notes": "Best fit for salaried workers, but no rate is published anywhere we could read. Early repayment is free per the fee schedule effective 09/04/2026, but a 2% commitment fee (100k-300k VND) applies. No Vietnamese product page found (guessed paths returned 404); English page used."
+      "excludeReason": "Sacombank does not publish an interest rate for this product (the product page only says 'Lãi suất cạnh tranh'). The app listing, T&C, the on-site calculator and the fee schedule contain no rate or worked example, so the cost cannot be calculated.",
+      "notes": "Best fit for salaried workers, but no rate is published in any official source we could read. Searched (2026-11-03): Vietnamese and English product pages, T&C DKDK_VTCTL (12/09/2024, no rate), App Store listing for SACOMBANK PAY (no rate; Google Play page could not be loaded), the base-rate table, the rate/fee tools on the site, the Combo Đại Lộc page, the fee schedule. The Vietnamese product page exists (earlier guessed paths were wrong). Early repayment is free online per the fee schedule effective 09/04/2026, but a 2% commitment fee (100k-300k VND) applies under the same schedule. A '9,6%/năm' figure from a secondary site has no support in any official source and is not recorded."
     },
     {
       "id": "sacombank-vay-tieu-dung-tu-luong",
@@ -288,10 +288,10 @@
       },
       "amountMaxVnd": {
         "value": 500000000,
-        "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/salary-loans.html",
-        "retrievedAt": "2026-11-02",
+        "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tu-luong.html",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
-        "note": "Page: 16 times of your salary, up to VND 500 million."
+        "note": "Vietnamese page: 'Số tiền vay đến 16 lần thu nhập, tối đa 500 triệu VND'. The English page is the same page in English."
       },
       "termMinMonths": {
         "value": null,
@@ -301,10 +301,10 @@
       },
       "termMaxMonths": {
         "value": 60,
-        "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/salary-loans.html",
-        "retrievedAt": "2026-11-02",
+        "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tu-luong.html",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
-        "note": "Page: loan term 5 years."
+        "note": "Vietnamese page: 'Thời hạn vay đến 5 năm'."
       },
       "rates": [
         {
@@ -313,7 +313,7 @@
           "minPercent": {
             "value": 6.5,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/cong-cu/lai-suat/vay-co-so/khcn/Sacombank_LaiSuat_Viet.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
             "sourceDocumentDate": "2026-05-26",
             "note": "Base rate table effective 26/05/2026: 1-3 tháng 6,5%; 4-6 tháng 7,8%; 7-9 tháng 7,9%; 10-12 tháng 8,2%; trung dài hạn mục đích khác 10,0%; BĐS 10,5%. A base rate only; the borrower's rate is not published."
@@ -321,7 +321,7 @@
           "maxPercent": {
             "value": 10.5,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/cong-cu/lai-suat/vay-co-so/khcn/Sacombank_LaiSuat_Viet.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
             "sourceDocumentDate": "2026-05-26",
             "note": "Highest figure in the table is the real-estate medium/long-term base. For other purposes it is 10,0%. Not this product's rate."
@@ -345,7 +345,7 @@
         "value": "unknown",
         "provenance": "none",
         "sourceUrl": null,
-        "note": "Page: the borrower chooses between repayment on the original balance (flat) and on the decreasing balance, so the schedule depends on the choice."
+        "note": "The page says the borrower can choose a flexible repayment method, and its calculator offers 'Dư nợ giảm dần' and 'Dư nợ góp đều', so the schedule depends on the choice. It is not clear what 'góp đều' means here (interest on original balance, or equal instalments)."
       },
       "fees": [
         {
@@ -382,7 +382,7 @@
           "minVnd": {
             "value": 200000,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
             "sourceDocumentDate": "2026-04-09"
           },
@@ -417,10 +417,62 @@
               }
             ],
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
             "sourceDocumentDate": "2026-04-09",
             "note": "Từ = at least. Years 1 and 2: from 3%; from year 3: from 2%. Percent is carried by the tiers, not a single figure."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí trả nợ trước hạn (khoản vay tính lãi trên dư nợ ban đầu)",
+          "nameEn": "Early repayment fee, loan with interest on the original balance",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
+            "note": "Fee schedule I.3.b (effective 09/04/2026): on early settlement, collect the full interest of the settlement period, then charge a fee equal to the difference between interest on the original balance and interest on the declining balance; where the contract names a specific fee, the contract applies. The schedule gives its own conversion formula L = 2n x a / (n + 1) (L: declining-balance rate %/year; n: loan months; a: original-balance rate %/year)."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only arises on early repayment."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not a fixed percentage: see the timing note."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
           },
           "payee": "lender"
         }
@@ -428,14 +480,14 @@
       "feesCompleteness": "partial",
       "insurance": [
         {
-          "nameVi": "Bảo hiểm tín dụng (Credit Life Insurance)",
+          "nameVi": "Bảo hiểm 'An Tâm Tín Dụng' (bảo hiểm tín dụng)",
           "nameEn": "Credit life insurance",
           "mandatory": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Page says you receive Credit Life Insurance during the loan period. It does not say whether it is compulsory or who pays."
+            "note": "Vietnamese page: 'Tặng ngay bảo hiểm An Tâm Tín Dụng trong suốt thời gian vay' (given as a gift). The page does not say whether it is compulsory, and gives no premium, insurer, cover or beneficiary. No official terms for this cover were found."
           },
           "collection": {
             "value": "unknown",
@@ -472,11 +524,12 @@
               "value": null,
               "sourceUrl": null,
               "retrievedAt": null,
-              "confidence": null
+              "confidence": null,
+              "note": "Not set to 0: the page says 'tặng' (marketing wording) but no insurance terms confirm that the borrower pays no premium."
             }
           },
           "beneficiary": null,
-          "covers": "Not stated."
+          "covers": "Not stated. The page only names the cover and says it is given for the whole loan term."
         }
       ],
       "insuranceCompleteness": "partial",
@@ -504,13 +557,13 @@
         "documents": {
           "value": [
             "Căn cước công dân",
-            "Thông tin cư trú",
-            "Giấy tờ chứng minh công việc, thâm niên và mức lương"
+            "Xác nhận thông tin về cư trú",
+            "Giấy tờ chứng minh về công tác, thâm niên tại cơ quan và mức lương"
           ],
-          "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/salary-loans.html",
-          "retrievedAt": "2026-11-02",
+          "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tu-luong.html",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
-          "note": "Page lists citizen ID, residence information, proof of employment, length of service and salary level."
+          "note": "Vietnamese page, section 'Điều kiện'."
         },
         "existingCustomerRequired": {
           "value": null,
@@ -530,13 +583,13 @@
           "retrievedAt": null,
           "confidence": null
         },
-        "notes": "Age, minimum income and employer restrictions are not published on the page. Whether salary must be paid through Sacombank is not stated for this product."
+        "notes": "Age, minimum income and employer restrictions are not published. The page does not say whether salary must be paid through Sacombank. The Combo Đại Lộc page says customers receiving 25 triệu/month or more via Sacombank get a preferential rate on salary-based unsecured loans, with no figure."
       },
       "latePenalty": {
         "textVi": {
           "value": "Lãi chậm trả: 10%/năm tính trên số lãi trả chậm. Mức phạt trên nợ gốc quá hạn của sản phẩm này chưa rõ.",
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "low",
           "sourceDocumentDate": "2026-04-09",
           "note": "General credit-contract schedule (09/04/2026), not tied to this product."
@@ -550,7 +603,7 @@
         "overdueInterestRatePercentYear": {
           "value": 10,
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/bieu-phi/phi-tin-dung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "low",
           "sourceDocumentDate": "2026-04-09",
           "note": "General schedule II.1: 10%/năm."
@@ -558,12 +611,12 @@
       },
       "representativeExamples": [],
       "conflicts": [],
-      "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/salary-loans.html",
-      "retrievedAt": "2026-11-02",
+      "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/vay-tieu-dung-tu-luong.html",
+      "retrievedAt": "2026-11-03",
       "confidence": "low",
       "excludeFromRanking": true,
       "excludeReason": "Sacombank does not publish this product's interest rate; only the base rate (a benchmark) is public, so the cost cannot be calculated.",
-      "notes": "The page lets the borrower choose flat or reducing repayment. Only the base rate table is recorded, as a benchmark."
+      "notes": "Vietnamese page (found 2026-11-03): up to 16x income, max 500 triệu, up to 5 years, no collateral, 'An Tâm Tín Dụng' insurance given free during the loan. The page's calculator takes a user-typed rate; its sample values (8%, 8.5%) are interface placeholders, not a product rate (the sample '500 triệu, 6 months, 8,5%' shows total interest 42 triệu, which matches neither reducing balance nor flat), so they are not used. Only the base-rate table is recorded, as a benchmark."
     },
     {
       "id": "sacombank-thau-chi-tieu-dung",
@@ -583,10 +636,10 @@
       },
       "amountMaxVnd": {
         "value": 150000000,
-        "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/consumer-overdraft.html",
-        "retrievedAt": "2026-11-02",
+        "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/thau-chi-tieu-dung.html",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
-        "note": "Page: consumption overdraft up to 4 times income and no more than VND 150 million."
+        "note": "Vietnamese page: 'Hạn mức thấu chi lên đến 04 lần thu nhập được chuyển khoản vào tài khoản tại SACOMBANK, tối đa 150 triệu đồng'."
       },
       "termMinMonths": {
         "value": null,
@@ -595,10 +648,11 @@
         "confidence": null
       },
       "termMaxMonths": {
-        "value": null,
-        "sourceUrl": null,
-        "retrievedAt": null,
-        "confidence": null
+        "value": 12,
+        "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/thau-chi-tieu-dung.html",
+        "retrievedAt": "2026-11-03",
+        "confidence": "medium",
+        "note": "Vietnamese page: 'Thời hạn cấp hạn mức thấu chi tối đa 01 năm'. This is how long the limit is granted for, not a repayment term per drawing."
       },
       "rates": [],
       "amortization": {
@@ -635,19 +689,21 @@
         "documents": {
           "value": [
             "Căn cước công dân",
-            "Thông tin cư trú",
-            "Giấy tờ chứng minh thu nhập và mục đích sử dụng vốn"
+            "Xác nhận thông tin cư trú",
+            "Giấy tờ chứng minh về công tác, thâm niên tại cơ quan",
+            "Sao kê tài khoản nhận lương chuyển khoản qua Sacombank 6 tháng gần nhất"
           ],
-          "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/consumer-overdraft.html",
-          "retrievedAt": "2026-11-02",
-          "confidence": "low",
-          "note": "English page lists ID, residence information, income documents and capital-use purpose. It also lists original collateral documents without saying when they apply, so it is unclear whether the consumption overdraft is unsecured."
+          "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/thau-chi-tieu-dung.html",
+          "retrievedAt": "2026-11-03",
+          "confidence": "medium",
+          "note": "Vietnamese page, section 'Điều kiện'. The English page also lists original collateral documents without saying when they apply (likely the deposit-backed overdraft); the Vietnamese page has no such item."
         },
         "existingCustomerRequired": {
-          "value": null,
-          "sourceUrl": null,
-          "retrievedAt": null,
-          "confidence": null
+          "value": true,
+          "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/thau-chi-tieu-dung.html",
+          "retrievedAt": "2026-11-03",
+          "confidence": "medium",
+          "note": "Implied by the document list: six months of salary-account statements through SACOMBANK. The page does not say 'must be an existing customer' in so many words."
         },
         "employerRestriction": {
           "value": null,
@@ -661,7 +717,7 @@
           "retrievedAt": null,
           "confidence": null
         },
-        "notes": "The page also describes a deposit overdraft up to 100% of the deposit (secured)."
+        "notes": "The Vietnamese page says 'Không cần tài sản bảo đảm' for the consumption overdraft. Age and minimum income are not published. The deposit-backed overdraft (up to 100% of a deposit) is a separate secured product and is not recorded here."
       },
       "latePenalty": {
         "textVi": {
@@ -685,19 +741,19 @@
       },
       "representativeExamples": [],
       "conflicts": [],
-      "sourceUrl": "https://www.sacombank.com.vn/en/personal/loans/consumer-loans/consumer-overdraft.html",
-      "retrievedAt": "2026-11-02",
+      "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/vay/vay-tieu-dung/thau-chi-tieu-dung.html",
+      "retrievedAt": "2026-11-03",
       "confidence": "low",
       "excludeFromRanking": true,
-      "excludeReason": "Interest rate, fees, term and whether it is unsecured are not published, so the cost cannot be compared.",
-      "notes": "Only the limit (4x income, max 150 triệu) is stated. Rates sit behind a site interest-rate tool whose loan tab showed only base rates."
+      "excludeReason": "Interest rate, fees and calculation method are not published (the page only says 'Lãi suất cạnh tranh'), so the cost cannot be compared.",
+      "notes": "The Vietnamese page settles the earlier open question: the consumption overdraft is unsecured ('Không cần tài sản bảo đảm'). Limit is up to 4x income transferred to Sacombank, max 150 triệu, granted for up to 1 year; six months of payroll statements via Sacombank are required. No rate on the product page, the on-site calculators or the base-rate table (base rates only)."
     },
     {
       "id": "sacombank-vay-tieu-dung-tu-the-tin-dung",
-      "nameVi": "Vay tiêu dùng từ thẻ tín dụng (SACOMBANK PAY)",
-      "nameEn": "Sacombank consumer loan for credit-card holders (SACOMBANK PAY)",
+      "nameVi": "Vay tiêu dùng nhiều lần trên SACOMBANK PAY (dành cho chủ thẻ tín dụng)",
+      "nameEn": "Sacombank multiple consumer loans on SACOMBANK PAY (credit-card holders)",
       "productType": "cash_loan",
-      "status": "unverified",
+      "status": "active",
       "validUntil": null,
       "lenderOfRecord": "sacombank",
       "brandOrChannel": "SACOMBANK PAY",
@@ -705,28 +761,28 @@
       "amountMinVnd": {
         "value": 6000000,
         "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Minimum depends on term: 6 triệu for 2-6 months up to 60 triệu for 60 months. Smallest value stored. Document undated."
       },
       "amountMaxVnd": {
         "value": 100000000,
         "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
-        "note": "FAQ Q11 and rate sheet: maximum 100.000.000 VND. Document undated."
+        "note": "FAQ Q11 and rate sheet: maximum 100.000.000 VND per loan; neither document is dated. The Vietnamese product page says 'Tổng giá trị vay tối đa đến 400 triệu VND' (possibly the total across up to 5 loans), and the English page shows 400 million in its headline and 100 million under Benefits. 100 triệu is the conservative value. See conflicts."
       },
       "termMinMonths": {
         "value": 2,
         "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Terms: 2-12, 18, 24, 30, 36, 48, 60 months."
       },
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
         "note": "Same table."
       },
@@ -737,14 +793,14 @@
           "minPercent": {
             "value": 1.2,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
             "note": "Lowest figure in either document: rate sheet, 2-5 months. The FAQ gives 1.5% for those terms. Not a per-term rate; see conflicts."
           },
           "maxPercent": {
             "value": 1.5,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
             "note": "Highest figure in either document, but they apply it to different terms: FAQ 2-5 months, rate sheet 6-60 months. See conflicts."
           },
@@ -752,13 +808,44 @@
             "value": "flat",
             "provenance": "stated",
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
-            "note": "FAQ Q4: lãi góp đều mỗi tháng trên dư nợ giải ngân ban đầu (interest on the original disbursed amount). The FAQ example 6.000.000 over 6 months at 1,40% gives 1.084.000/month, which matches flat."
+            "note": "FAQ Q4: interest is 'lãi góp đều mỗi tháng trên dư nợ giải ngân ban đầu' (on the original disbursed amount). The FAQ example, 6.000.000 over 6 months at 1,40%, gives 1.084.000/month, which matches flat. The rate sheet says 'Phương thức tính lãi: Góp đều' and the product page says 'Lãi suất góp đều'."
           },
           "period": {
             "value": "monthly",
             "provenance": "stated",
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
             "note": "Stated as %/tháng."
+          },
+          "promotional": null
+        },
+        {
+          "kind": "advertised_floor",
+          "segment": "Chủ thẻ tín dụng cá nhân Sacombank",
+          "minPercent": {
+            "value": 1,
+            "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/the/dich-vu-the/vay-tieu-dung-tren-sacombank-pay.html",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "note": "Vietnamese product page: 'Lãi suất góp đều, từ 1%/tháng (Xem chi tiết tại đây)'. The 'Xem chi tiết' link goes to the rate sheet (ChiTietLaiSuatVayTieuDung.pdf), whose lowest figure is 1.2%. It is not stated who gets 1% or when (possibly a promotion). A 'từ' floor only, not used for cost."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "The page gives no upper figure."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
+            "note": "The page says 'góp đều'. The FAQ for the same product (Q4) defines it as interest on the original disbursed amount and its example matches flat."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/the/dich-vu-the/vay-tieu-dung-tren-sacombank-pay.html",
+            "note": "Page wording: '%/tháng'."
           },
           "promotional": null
         }
@@ -791,9 +878,9 @@
           "percent": {
             "value": 2,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
-            "note": "FAQ Q6: 2% x dư nợ gốc còn lại. Rate sheet and fee schedule say 2% x vốn gốc tất toán trước hạn. The fee schedule's general online minimum of 50.000 VND is not stated for this product."
+            "note": "FAQ Q6: 2% x remaining principal. The rate sheet and the fee schedule of 09/04/2026 (I.1.b) say 2% x principal settled early; the product page says '2%* dư nợ gốc còn lại' (the asterisk is not explained on the page). The fee schedule's general online minimum of 50.000 VND is not stated for this product."
           },
           "fixedVnd": {
             "value": null,
@@ -842,7 +929,7 @@
           "percent": {
             "value": 3,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium",
             "note": "Rate sheet item 7 and fee schedule II.5: 3% x số tiền (gốc + lãi) thanh toán hàng tháng; min 100.000, max 300.000 VND."
           },
@@ -855,13 +942,13 @@
           "minVnd": {
             "value": 100000,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium"
           },
           "maxVnd": {
             "value": 300000,
             "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "medium"
           },
           "tiers": {
@@ -906,9 +993,9 @@
         "existingCustomerRequired": {
           "value": true,
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "high",
-          "note": "Rate sheet: chỉ áp dụng chủ thẻ tín dụng cá nhân."
+          "note": "Rate sheet: 'chỉ áp dụng chủ thẻ tín dụng cá nhân'. Product page: 'Khách hàng sở hữu thẻ tín dụng cá nhân SACOMBANK'."
         },
         "employerRestriction": {
           "value": null,
@@ -924,7 +1011,7 @@
             "Trả nợ tự động từ tài khoản thanh toán Sacombank"
           ],
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "note": "FAQ Q1, Q3, Q12."
         },
@@ -934,7 +1021,7 @@
         "textVi": {
           "value": "Trả chậm bị phạt 3% trên số tiền (gốc + lãi) phải trả tháng đó, tối thiểu 100.000 đồng, tối đa 300.000 đồng.",
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "note": "Rate sheet item 7; fee schedule II.5."
         },
@@ -966,7 +1053,7 @@
           "includesInsurance": null,
           "internallyConsistent": true,
           "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
-          "retrievedAt": "2026-11-02",
+          "retrievedAt": "2026-11-03",
           "confidence": "medium",
           "note": "FAQ Q4. 6.000.000/6 = 1.000.000 principal + 84.000 interest (1,4% x 6.000.000) = 1.084.000, so consistent. Total repaid not printed. Document undated. The rate sheet gives 1.5% for a 6-month term, so the example may be outdated."
         }
@@ -982,9 +1069,19 @@
             {
               "value": "Rate sheet: 1.2%/tháng (2-5 tháng); 1.5%/tháng (6-60 tháng)",
               "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf"
+            },
+            {
+              "value": "Product page: từ 1%/tháng",
+              "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/the/dich-vu-the/vay-tieu-dung-tren-sacombank-pay.html",
+              "note": "Advertised floor, below every figure in both documents."
+            },
+            {
+              "value": "Expired promotion (14/04/2025-31/12/2025): 12%/năm for 2-5 months and 15.6%/năm for 6-60 months",
+              "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/khuyen-mai/cn-chuong-trinh-uu-dai/ctkm/Sacombank_TangTheXanhTraoLaiSoc_311225_TnC.pdf",
+              "note": "For information only. Divided by 12 these are 1.0% and 1.3% per month: exactly 0.2 points below the rate sheet for both term groups, but 0.5 and 0.1 points away from the FAQ."
             }
           ],
-          "resolution": "Unresolved: neither document is dated. The stored range spans both documents and is not a rate for any term. Excluded from ranking; ask Sacombank."
+          "resolution": "Unresolved: neither tier-1 document is dated. Hints, not proof: (1) the live product page points its 'Lãi suất' and 'Biểu phí' sections to the rate sheet, while the FAQ is only under 'Câu hỏi thường gặp'; (2) PDF metadata: the rate sheet was created 2026-01-30 and still carries the old bank name 'Sài Gòn Thương Tín', while the FAQ was created 2023-06-28 and modified 2026-06-04 together with two sibling PDFs within 12 minutes (looks like a batch edit, possibly the bank rename); (3) the 2025 promotion sits a steady 0.2 points under the rate sheet. All three lean toward the rate sheet but do not justify replacing the FAQ figures. Stored the span across both documents (not the rate for any single term). Excluded from ranking. Ask Sacombank."
         },
         {
           "field": "rates[0].maxPercent",
@@ -998,18 +1095,34 @@
               "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_ChiTietLaiSuatVayTieuDung.pdf"
             }
           ],
-          "resolution": "Unresolved: neither document is dated. The stored range spans both documents and is not a rate for any term. Excluded from ranking; ask Sacombank."
+          "resolution": "Unresolved: neither document is dated; see rates[0].minPercent. Stored the span across both documents. Excluded from ranking. Ask Sacombank."
+        },
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "100,000,000 per loan",
+              "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
+              "note": "FAQ Q11 and the rate sheet (maximum registration value 100.000.000 VND)."
+            },
+            {
+              "value": "400,000,000 total maximum",
+              "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/the/dich-vu-the/vay-tieu-dung-tren-sacombank-pay.html",
+              "note": "Vietnamese product page, 'Tiện ích'; may be the total across up to 5 simultaneous loans. The English page shows 400 million in the headline and 100 million under Benefits."
+            }
+          ],
+          "resolution": "Stored 100 triệu (conservative; matches the rate sheet and FAQ). 400 triệu may be a total across loans. Ask Sacombank."
         }
       ],
-      "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
-      "retrievedAt": "2026-11-02",
+      "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/the/dich-vu-the/vay-tieu-dung-tren-sacombank-pay.html",
+      "retrievedAt": "2026-11-03",
       "confidence": "low",
       "excludeFromRanking": true,
-      "excludeReason": "Two undated official documents give different rates for the same terms, and the loan is only open to Sacombank credit-card holders.",
-      "notes": "Flat monthly rate, so the true yearly cost is well above the quoted figure; compute with the cost engine.",
+      "excludeReason": "Two undated official documents give different rates for the same terms (and the product page advertises a floor of 1%/month, below both), and the loan is only open to Sacombank credit-card holders.",
+      "notes": "Flat monthly rate, so the true yearly cost is well above the quoted figure; compute with the cost engine. Vietnamese product page found 2026-11-03 ('Vay tiêu dùng nhiều lần trên SACOMBANK PAY'): flat ('góp đều') interest from 1%/tháng, up to 5 loans at once, early settlement 2%* of remaining principal. The schema cannot hold a rate per term band, so only one span across both documents is stored.",
       "excludeCode": "conflicting_sources"
     }
   ],
-  "researchNotes": "1) Licence: 'sacombank' is on data/licensed-institutions.json. Legal name there is Ngân hàng TMCP Sài Gòn Tài Lộc (formerly Sài Gòn Thương Tín); the bank's T&C and PDFs use the new name. 2) Key finding: Sacombank does NOT publish an offered rate range for its salary loans (online or branch) or its consumer overdraft. Pages say 'Competitive interest rates' and point to a rate tool whose loan tab shows only base rates (effective 26/05/2026: 6,5% to 10,5%/năm by term, basis not stated), recorded as a benchmark on the branch salary loan. A monthly average-lending-rate notice exists (March 2026) but its figure was not readable and it is not a product rate. 3) The only product with published rates is the credit-card-holder loan on SACOMBANK PAY (flat 1,2-1,5%/tháng), but two undated official documents disagree and it needs a Sacombank credit card, so it is excluded from ranking. 4) Fees come from the credit-contract fee schedule effective 09/04/2026 (phi-tin-dung.pdf): online salary loan early repayment free; commitment fee 2% (100k-300k VND) on the online salary loan; late interest 10%/năm; counter loans early repayment from 3% (years 1-2) and 2% (from year 3), min 200.000. 5) Conflicts: online salary loan max 50 triệu (product page) vs 100 triệu (T&C 12/09/2024); card-loan rates FAQ vs rate sheet. 6) Gaps: no Vietnamese product page found (guessed URLs 404, English pages used); age, income and document rules for the online salary loan; insurance cost for the branch loan; overdraft rate, fee and term. 7) Surprising: the 2% commitment fee on the online salary loan is not on the product page; the branch loan lets the borrower pick flat or reducing repayment. Time-limited promo packages (from 7,5%/năm, 40.000 tỷ) were not recorded.",
-  "retrievedAt": "2026-11-02"
+  "researchNotes": "1) Licence: 'sacombank' is on data/licensed-institutions.json; legal name Ngân hàng TMCP Sài Gòn Tài Lộc (formerly Sài Gòn Thương Tín; a news report says the SBV approved the rename on 01/06/2026, not checked at an official source). 2) Vietnamese product pages FOUND on 2026-11-03: /ca-nhan/vay/vay-tieu-dung/vay-tin-chap-tu-luong.html, .../vay-tieu-dung-tu-luong.html, .../thau-chi-tieu-dung.html, and /ca-nhan/the/dich-vu-the/vay-tieu-dung-tren-sacombank-pay.html. 3) Main finding: Sacombank does NOT publish an offered rate for the salary loans (online or branch) or the consumption overdraft; the pages say only 'Lãi suất cạnh tranh'. Searched: Vietnamese and English product pages; T&C DKDK_VTCTL (12/09/2024, no rate); App Store listing for SACOMBANK PAY (no rate; Google Play could not be loaded); the on-site loan calculator (the rate box is typed by the user, sample 8%/8.5% are placeholders); the rate tool (only the base-rate table effective 26/05/2026: 6,5%-8,2%/năm short term, 10,0% mid/long term other purposes, 10,5% real estate); the Combo Đại Lộc page (salary of 25 triệu/month or more through Sacombank gets a 'preferential rate on salary-based unsecured loans', no figure; its '0,15%' is a savings bonus); the fee schedule; the March 2026 average-lending-rate notice (an image, not a product rate). 4) The '9,6%/năm' (0,8%/tháng) figure from a secondary site has no support in any official source and is not recorded; another aggregator's 8,5%/năm (2023) is equally unverified. 5) Card-holder loan: the rate sheet (1.2% / 1.5%) and the FAQ (1.5% / 1.4%) still disagree and neither is dated. The live product page points its rate and fee sections to the rate sheet, and advertises 'từ 1%/tháng'. PDF metadata hints (not proof): rate sheet created 2026-01-30 with the old bank name; FAQ created 2023-06-28 and modified 2026-06-04 with two sibling PDFs within 12 minutes; the expired 2025 promotion (12% / 15.6% per year) sits 0.2 points under the rate sheet. These lean to the rate sheet but do not settle it. 6) Fee schedule effective 09/04/2026 (phi-tin-dung.pdf, file last modified 2026-05-12): online salary loan early repayment free; 2% commitment fee (100k-300k) on that loan; late interest 10%/năm; counter loans early repayment from 3% (years 1-2), from 2% (year 3 on), minimum 200.000; original-balance (flat) loans pay the difference between the two interest methods, using the bank's formula L = 2n x a / (n + 1). 7) Conflicts: online salary loan max 50 triệu (product page) vs 100 triệu (T&C 12/09/2024); card-holder loan 100 triệu per loan (documents) vs 400 triệu total (Vietnamese page). 8) Surprising: the 2% commitment fee on the online salary loan is not on the product page; the counter salary loan 'gives' 'An Tâm Tín Dụng' insurance with no terms found; the consumption overdraft is unsecured per the Vietnamese page; the salary-loan calculator's sample result matches no standard calculation. Time-limited promotions (from 7,5%/năm, 40.000 tỷ) are not recorded.",
+  "retrievedAt": "2026-11-03"
 }

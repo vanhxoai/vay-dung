@@ -22,14 +22,14 @@
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "Not stated on the product page."
+        "note": "Product page gives no minimum. Segment programmes on the same product family start at 20 triệu (Women's Union members, business-association members) but those are not the general product."
       },
       "amountMaxVnd": {
         "value": null,
         "sourceUrl": null,
         "retrievedAt": null,
         "confidence": null,
-        "note": "Page states the limit as a multiple of income ('đến 12 tháng thu nhập thực lãnh'), not a VND figure."
+        "note": "Page states the limit as a multiple of income ('đến 12 tháng thu nhập thực lãnh'), not a VND figure. Searched 2026-11-03: product page, HDBank FAQ/Q&A, HDBank blog, programme pages. Only segment programmes state VND caps (300 triệu for Women's Union members and business-association members; 100 triệu for business-association members without bank-paid salary). Stored null; see conflicts."
       },
       "termMinMonths": {
         "value": null,
@@ -41,9 +41,9 @@
       "termMaxMonths": {
         "value": 60,
         "sourceUrl": "https://www.hdbank.com.vn/vi/personal/product/detail/san-pham-vay/vay-tieu-dung/vay-tieu-dung-khong-tai-san-bao-dam",
-        "retrievedAt": "2026-11-02",
+        "retrievedAt": "2026-11-03",
         "confidence": "medium",
-        "note": "Page: 'Thời hạn vay tối đa 60 tháng.'"
+        "note": "Page (re-read 2026-11-03): 'Thời hạn vay tối đa 60 tháng.' Page footer shows copyright 2023, no document date."
       },
       "rates": [
         {
@@ -52,15 +52,15 @@
           "minPercent": {
             "value": 10.4,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/TBLAISUATCHOVAYBINHQUANTUNGAY01072026_1783328933712.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "sourceDocumentDate": "2026-07-01",
-            "note": "HDBank notice, applies from 01/07/2026: trung dài hạn 10,4%, ngắn hạn 8,5%. Bank-wide average for all VND loans to individuals and businesses; not this product's rate. The text read does not print the period or basis."
+            "note": "HDBank notice, applies from 01/07/2026 (re-read 2026-11-03): trung dài hạn 10,4%, ngắn hạn 8,5%. Bank-wide average for all VND loans to individuals and businesses; not this product's rate. The notice does not print the period or basis. It also says the gap between average deposit and lending rate is 3,2%."
           },
           "maxPercent": {
             "value": 10.4,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/TBLAISUATCHOVAYBINHQUANTUNGAY01072026_1783328933712.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "high",
             "sourceDocumentDate": "2026-07-01",
             "note": "Same single average figure."
@@ -78,6 +78,39 @@
             "note": "The text we read does not say per year or per month."
           },
           "promotional": null
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Con số chung trong một bài viết của HDBank ngày 26/02/2025 (KHÔNG phải khoảng lãi suất chào bán của sản phẩm này)",
+          "minPercent": {
+            "value": 13,
+            "sourceUrl": "https://hdbank.com.vn/vi/news/detail/tin-tuc-khac/vay-tin-chap-la-gi",
+            "retrievedAt": "2026-11-03",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-02-26",
+            "note": "HDBank blog 'Vay tín chấp là gì?' (26/02/2025), section 'Lãi suất và hạn mức vay tín chấp': HDBank unsecured packages range from 13% to 24%/năm; it adds that rates change with HDBank's policy and promotions. General information article, not a product page. Basis (flat or reducing) is not stated."
+          },
+          "maxPercent": {
+            "value": 24,
+            "sourceUrl": "https://hdbank.com.vn/vi/news/detail/tin-tuc-khac/vay-tin-chap-la-gi",
+            "retrievedAt": "2026-11-03",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-02-26",
+            "note": "Same sentence: upper end 24%/năm. This is the only official HDBank statement of a 24%/năm figure; no product page, fee schedule or T&C repeats it."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null,
+            "note": "The blog explains flat and reducing methods in general but does not say which applies to HDBank's rate."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://hdbank.com.vn/vi/news/detail/tin-tuc-khac/vay-tin-chap-la-gi",
+            "note": "'%/năm'."
+          },
+          "promotional": null
         }
       ],
       "amortization": {
@@ -88,14 +121,14 @@
       },
       "fees": [
         {
-          "nameVi": "Phí phạt trả nợ trước hạn (khoản vay trung dài hạn)",
-          "nameEn": "Early repayment penalty (medium/long-term loans)",
+          "nameVi": "Phí phạt trả nợ trước hạn (khoản vay tính lãi trên dư nợ thực tế)",
+          "nameEn": "Early repayment penalty (loans charged on the actual balance)",
           "trigger": "prepayment",
           "timing": {
             "value": "on_event",
             "provenance": "inferred",
-            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/PHULUC07BIEUPHIDICHVUTINDUNGDICHVUKHAC_1748313300000.pdf",
-            "note": "Charged only on early repayment."
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/23122025WEBBIEUPHIDICHVUDANHCHOKHCN_1767598713753.pdf",
+            "note": "Charged only when the borrower repays early."
           },
           "mandatory": {
             "value": null,
@@ -105,13 +138,13 @@
             "note": "Only arises on early repayment."
           },
           "base": "prepaid_amount",
-          "rule": "other",
+          "rule": "percent_with_min_max",
           "percent": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
             "confidence": null,
-            "note": "Not a flat percent of the amount. Bank-wide schedule (Phụ lục 07): per period = prepaid amount x days early x 1,5% / 360, i.e. 1,5% per year pro rata, summed over periods. Left unset so it is not read as 1,5% of the amount. Short-term loans: 0,03%/ngày, minimum 500.000 VND."
+            "note": "Percent depends on the year of the loan; see tiers."
           },
           "fixedVnd": {
             "value": null,
@@ -120,27 +153,54 @@
             "confidence": null
           },
           "minVnd": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "value": 500000,
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/23122025WEBBIEUPHIDICHVUDANHCHOKHCN_1767598713753.pdf",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-12-23",
+            "note": "Individual-customer counter fee schedule (Phụ lục 08), applies from 23/12/2025: minimum 500.000 VND per early repayment. Layout of the table is merged, so the minimum may apply to all rows."
           },
           "maxVnd": {
             "value": null,
             "sourceUrl": null,
             "retrievedAt": null,
-            "confidence": null
+            "confidence": null,
+            "note": "'Không quy định' (no maximum)."
           },
           "tiers": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null
+            "value": [
+              {
+                "from": 0,
+                "to": 1,
+                "unit": "year",
+                "percent": 3,
+                "note": "'Trong năm đầu tiên': 3% of the amount repaid early."
+              },
+              {
+                "from": 1,
+                "to": 2,
+                "unit": "year",
+                "percent": 2,
+                "note": "'Trong năm thứ 2': 2%."
+              },
+              {
+                "from": 2,
+                "to": null,
+                "unit": "year",
+                "percent": 1,
+                "note": "'Từ năm thứ 3 trở đi': 1%."
+              }
+            ],
+            "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/23122025WEBBIEUPHIDICHVUDANHCHOKHCN_1767598713753.pdf",
+            "retrievedAt": "2026-11-03",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-12-23",
+            "note": "Phụ lục 08, item 1.1 'khoản vay lãi suất tính theo dư nợ thực tế'. The schedule does not say from when the years are counted (assumed from disbursement) and does not name this product; it is the credit-fee page for individual customers. Item 1.2 lists a separate '3% of the prepaid amount' for 'add-on' (flat) loans. HDBank also publishes a bank-wide Phụ lục 07 with a different formula (see conflicts). Schedule says HDBank may change fees without notice unless agreed otherwise."
           },
           "payee": "lender"
         }
       ],
-      "feesCompleteness": "unknown",
+      "feesCompleteness": "partial",
       "insurance": [],
       "insuranceCompleteness": "unknown",
       "eligibility": {
@@ -206,7 +266,7 @@
           "sourceUrl": null,
           "retrievedAt": null,
           "confidence": null,
-          "note": "Not found for this product."
+          "note": "Not found for this product. Searched 2026-11-03: product page, Phụ lục 07 and 08 fee schedules, T&C PDFs, HDBank blog, fees-and-forms page (no consumer-loan contract template is published). Only credit-card terms and the card-holder loan sheet state a 150% overdue-interest multiple."
         },
         "overduePrincipalRateMultiplier": {
           "value": null,
@@ -221,21 +281,83 @@
           "confidence": null
         }
       },
-      "representativeExamples": [],
-      "conflicts": [],
+      "representativeExamples": [
+        {
+          "principalVnd": 500000000,
+          "termMonths": 60,
+          "ratePercent": 7,
+          "rateBasis": "unknown",
+          "ratePeriod": "yearly",
+          "amortization": "unknown",
+          "monthlyPaymentVnd": null,
+          "totalRepaidVnd": 602476200,
+          "statedAnnualRatePercent": 7,
+          "statedAnnualRateKind": "unknown",
+          "includesInsurance": null,
+          "internallyConsistent": false,
+          "sourceUrl": "https://hdbank.com.vn/vi/personal/promotion/detail/san-pham-vay/vay-tin-chap-300-trieu-cho-hoi-viencbnv-hoi-lien-hiep-phu-nu",
+          "retrievedAt": "2026-11-03",
+          "confidence": "low",
+          "note": "Footnote under HDBank's loan calculator on its promotion pages: 'vay 500 triệu, 60 tháng, 7%/năm, tổng phải trả 602.476.200đ, tổng lãi 102.476.200đ'. It is a generic illustration, not a rate for this product (the same page advertises 'từ 12%/năm'). The same example was printed for this product in a 2023 trade-press article. Our check: at 7%/năm the total would be 594.035.956 (annuity), 588.958.333 (equal principal, interest on declining balance) or 675.000.000 (flat); 602.476.200 matches none (it implies about 7,6%/năm annuity or 8,1% equal principal). HDBank's own calculator, with the page's default inputs (500 triệu, 60 tháng, 7), shows an equal-principal schedule: first instalment 11.250.000 (8.333.333 principal + 2.916.667 interest), falling by about 48.611 a month, total about 588.958.333. Never use this example as a test fixture."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "fees[0].tiers",
+          "values": [
+            {
+              "value": "3% (year 1), 2% (year 2), 1% (year 3+) of the amount repaid early, minimum 500.000 VND",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/23122025WEBBIEUPHIDICHVUDANHCHOKHCN_1767598713753.pdf",
+              "note": "Individual-customer counter fee schedule, applies from 23/12/2025."
+            },
+            {
+              "value": "per period: prepaid amount x days early x 1,5% / 360 (about 1,5%/năm pro rata); short-term loans 0,03%/ngày, minimum 500.000 VND",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/PHULUC07BIEUPHIDICHVUTINDUNGDICHVUKHAC_1748313300000.pdf",
+              "note": "Bank-wide Phụ lục 07 (credit fee schedule). One copy states 'áp dụng từ 03/06/2024'; the copy linked here prints no date. The schedule calls itself reference only."
+            }
+          ],
+          "resolution": "Stored the 23/12/2025 individual-customer schedule: it is newer, specific to individuals and, for most repayment dates, costs more. Which schedule the contract uses is not stated on the product page. Fee kept in 'partial' completeness."
+        },
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "12 tháng thu nhập thực lãnh (no VND figure)",
+              "sourceUrl": "https://www.hdbank.com.vn/vi/personal/product/detail/san-pham-vay/vay-tieu-dung/vay-tieu-dung-khong-tai-san-bao-dam",
+              "note": "Product page."
+            },
+            {
+              "value": "'hơn 500 triệu đồng' for unsecured loans in general",
+              "sourceUrl": "https://hdbank.com.vn/vi/news/detail/tin-tuc-khac/vay-tin-chap-la-gi",
+              "note": "HDBank blog dated 26/02/2025, general information."
+            },
+            {
+              "value": "up to 300 triệu (100 triệu if salary is not paid through a bank)",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/bHmqnpP3jlF4Sexs9gbe20261028165102/THELECTCHOVAYUUDAIHOIVIENHOIDOANHNHAN_1793181218961.pdf",
+              "note": "Programme for business-association members, 2026; segment only."
+            },
+            {
+              "value": "20 triệu to 300 triệu",
+              "sourceUrl": "https://hdbank.com.vn/vi/personal/promotion/detail/san-pham-vay/vay-tin-chap-300-trieu-cho-hoi-viencbnv-hoi-lien-hiep-phu-nu",
+              "note": "Programme for Women's Union members, from 19/03/2026; segment only."
+            }
+          ],
+          "resolution": "Stored null: no source states a VND cap for the general product, and the segment caps are not the general product."
+        }
+      ],
       "sourceUrl": "https://www.hdbank.com.vn/vi/personal/product/detail/san-pham-vay/vay-tieu-dung/vay-tieu-dung-khong-tai-san-bao-dam",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "confidence": "medium",
       "excludeFromRanking": true,
-      "excludeReason": "HDBank publishes no rate for this product, only a bank-wide average, so the cost cannot be compared.",
-      "notes": "Page: loan up to 12 months of take-home pay, disbursement within 48 hours, 'Lãi suất cạnh tranh và rõ ràng' but no figure. Page footer says 2023. A search hint of a '13%/năm' starting rate from an HDBank-hosted article was not confirmed when we opened the article, so it is not recorded."
+      "excludeReason": "HDBank's product page publishes no interest rate. The only HDBank figures are a general range of 13%-24%/năm with no stated basis in a Feb 2025 article, and a bank-wide average, neither of which is this product's rate. No VND limit is published either.",
+      "notes": "Re-read 2026-11-03. Product page: up to 12 months of take-home pay, max 60 months, 48-hour disbursement, 'lãi suất cạnh tranh và rõ ràng', document list; no rate, no fees, no insurance, no VND limit. The page has no calculator and no FAQ text. HDBank's blog 'Vay tín chấp là gì?' (26/02/2025) says unsecured packages run 13%-24%/năm, limit 'hơn 500 triệu', income from 5 triệu: general-information article, 20 months old, basis not stated (recorded as low confidence, not rankable). Official segment programmes that use the same unsecured consumer loan show what a real rate looks like but are not available to the general public: Women's Union members/staff 'chỉ từ 12%/năm, dư nợ giảm dần', 20-300 triệu, up to 5 years, no insurance or service fee, relative must co-sign (from 19/03/2026); business-association members 12%/năm fixed 6 months then base rate + 5% (or 12,5% fixed 12 months then base + 5,5%), interest on reducing balance, principal monthly/quarterly/6-monthly, free early repayment, age 22-75 at loan end, 20-300 triệu (terms uploaded 2026-10-28); Dak Lak/Khanh Hoa women's flood-relief programme 7,5%/năm fixed 6 months. HDBank's base rate (LSCS) is not published on any page we found. 'Free early repayment' and 'no commitment fee' are listed as perks of those programmes, which suggests the standard product charges them; the 23/12/2025 schedule confirms the early-repayment fee."
     },
     {
       "id": "hdbank-vay-tieu-dung-linh-hoat",
       "nameVi": "Vay tiêu dùng linh hoạt (cho chủ thẻ tín dụng HDBank, qua Mobile Banking)",
       "nameEn": "HDBank flexible consumer loan (credit-card holders, via mobile app)",
       "productType": "cash_loan",
-      "status": "unverified",
+      "status": "active",
       "validUntil": null,
       "lenderOfRecord": "hdbank",
       "brandOrChannel": "HDBank Mobile Banking",
@@ -243,30 +365,30 @@
       "amountMinVnd": {
         "value": 5000000,
         "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-        "retrievedAt": "2026-11-02",
-        "confidence": "medium",
-        "note": "Sheet: 'Tối thiểu 05 triệu'."
+        "retrievedAt": "2026-11-03",
+        "confidence": "low",
+        "note": "Sheet: 'Tối thiểu 05 triệu'. Aug 2024 promotion terms (official, programme dated 15/08/2024-31/01/2025) also start at 5 triệu. Sheet prints no date; HDBank's CDN path shows it was uploaded 2024-04-02, before HDBank's own 24/09/2024 rate update (see conflicts)."
       },
       "amountMaxVnd": {
         "value": 100000000,
         "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-        "retrievedAt": "2026-11-02",
-        "confidence": "medium",
-        "note": "Sheet: 'tối đa 100 triệu đồng', and total loan balance no more than 50% of the card limit. Oct 2025 T&C says up to 80% of the card limit instead (see conflicts)."
+        "retrievedAt": "2026-11-03",
+        "confidence": "low",
+        "note": "Sheet: 'tối đa 100 triệu đồng', total loan balance at most 50% of the card limit. Aug 2024 promotion terms also top out at 100 triệu. Oct 2025 T&C says up to 80% of the card limit with no VND cap (see conflicts). Sheet prints no date; HDBank's CDN path shows it was uploaded 2024-04-02, before HDBank's own 24/09/2024 rate update (see conflicts)."
       },
       "termMinMonths": {
         "value": 6,
         "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-        "retrievedAt": "2026-11-02",
-        "confidence": "medium",
-        "note": "Sheet: terms 6; 12; 24 and 36 months."
+        "retrievedAt": "2026-11-03",
+        "confidence": "low",
+        "note": "Sheet and Aug 2024 promotion terms: terms 6, 12, 24 and 36 months. Sheet prints no date; HDBank's CDN path shows it was uploaded 2024-04-02, before HDBank's own 24/09/2024 rate update (see conflicts)."
       },
       "termMaxMonths": {
         "value": 36,
         "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-        "retrievedAt": "2026-11-02",
-        "confidence": "medium",
-        "note": "Sheet: terms 6; 12; 24 and 36 months."
+        "retrievedAt": "2026-11-03",
+        "confidence": "low",
+        "note": "Sheet and Aug 2024 promotion terms: terms 6, 12, 24 and 36 months. Sheet prints no date; HDBank's CDN path shows it was uploaded 2024-04-02, before HDBank's own 24/09/2024 rate update (see conflicts)."
       },
       "rates": [
         {
@@ -275,14 +397,14 @@
           "minPercent": {
             "value": 1.5,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
-            "note": "HDBank product sheet: 1.5%/tháng (printed as 18,3%/năm)."
+            "note": "HDBank product sheet: 1.5%/tháng (printed as 18,3%/năm). Sheet prints no date; HDBank's CDN path shows it was uploaded 2024-04-02, before HDBank's own 24/09/2024 rate update (see conflicts). HDBank's product page says rates were updated from 24/09/2024 and publishes no new figures."
           },
           "maxPercent": {
             "value": 1.5,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
             "note": "Single fixed rate per term, so min = max."
           },
@@ -306,14 +428,14 @@
           "minPercent": {
             "value": 1.7,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
-            "note": "HDBank product sheet: 1.7%/tháng (printed as 20,7%/năm)."
+            "note": "HDBank product sheet: 1.7%/tháng (printed as 20,7%/năm). Sheet prints no date; HDBank's CDN path shows it was uploaded 2024-04-02, before HDBank's own 24/09/2024 rate update (see conflicts). HDBank's product page says rates were updated from 24/09/2024 and publishes no new figures."
           },
           "maxPercent": {
             "value": 1.7,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-            "retrievedAt": "2026-11-02",
+            "retrievedAt": "2026-11-03",
             "confidence": "low",
             "note": "Single fixed rate per term, so min = max."
           },
@@ -360,9 +482,9 @@
           "percent": {
             "value": 4,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-            "retrievedAt": "2026-11-02",
-            "confidence": "medium",
-            "note": "Sheet: '4%/số tiền trả nợ trước hạn (tối thiểu 100.000 VNĐ)'. The Oct 2025 T&C only says the fee is set in the credit contract (see conflicts)."
+            "retrievedAt": "2026-11-03",
+            "confidence": "low",
+            "note": "Sheet: '4%/số tiền trả nợ trước hạn (tối thiểu 100.000 VNĐ)'. The Oct 2025 T&C only says the fee is set in the credit contract (see conflicts). HDBank's page says the early-settlement fee was updated from 24/09/2024 without giving the new figure; the 23/12/2025 individual fee schedule lists 3% of the prepaid amount for 'add-on' (flat) loans, which this loan appears to be, but does not name the product."
           },
           "fixedVnd": {
             "value": null,
@@ -373,8 +495,8 @@
           "minVnd": {
             "value": 100000,
             "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-            "retrievedAt": "2026-11-02",
-            "confidence": "medium",
+            "retrievedAt": "2026-11-03",
+            "confidence": "low",
             "note": "Sheet: tối thiểu 100.000 VNĐ."
           },
           "maxVnd": {
@@ -427,10 +549,10 @@
         },
         "existingCustomerRequired": {
           "value": true,
-          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-          "retrievedAt": "2026-11-02",
-          "confidence": "medium",
-          "note": "Must be the main holder of an HDBank personal credit card."
+          "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/Cqtlo7QsbSFRuiQgumlM20251030090352/TnC1_1761789859111.pdf",
+          "retrievedAt": "2026-11-03",
+          "confidence": "high",
+          "note": "Oct 2025 T&C (Điều 2.1): applies only to individuals who are primary holders of an HDBank credit card (not domestic-chain or business cards). T&C prints no date; CDN path shows upload 2025-10-30."
         },
         "employerRestriction": {
           "value": null,
@@ -446,25 +568,25 @@
             "Dùng Mobile Banking và đã xác minh KYC"
           ],
           "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-          "retrievedAt": "2026-11-02",
-          "confidence": "medium",
+          "retrievedAt": "2026-11-03",
+          "confidence": "low",
           "note": "Sheet 'Điều kiện tham gia'."
         },
-        "notes": "Not a general salary loan: only for HDBank credit-card holders. No age or income rule found."
+        "notes": "Not a general salary loan: only for HDBank credit-card holders. Oct 2025 T&C also needs: card issued and active, ID valid, card valid at least as long as the loan, Mobile Banking with KYC done, and 'other HDBank lending conditions'. No age or income rule found. The sheet's extra conditions (card at least 6 months old, no CIC group 2+ debt in 6 months) are older and may have changed."
       },
       "latePenalty": {
         "textVi": {
           "value": "Nợ gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn.",
           "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-          "retrievedAt": "2026-11-02",
-          "confidence": "medium",
+          "retrievedAt": "2026-11-03",
+          "confidence": "low",
           "note": "Sheet: 'Lãi suất quá hạn: 150% lãi suất cho vay trong hạn tính trên dư nợ gốc quá hạn'."
         },
         "overduePrincipalRateMultiplier": {
           "value": 1.5,
           "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-          "retrievedAt": "2026-11-02",
-          "confidence": "medium"
+          "retrievedAt": "2026-11-03",
+          "confidence": "low"
         },
         "overdueInterestRatePercentYear": {
           "value": null,
@@ -505,14 +627,46 @@
             }
           ],
           "resolution": "Stored the sheet's 4%; the contract amount is unseen."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "1,5%/tháng flat for 6 and 12 months; 1,7%/tháng flat for 24 and 36 months",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+              "note": "Product sheet, undated, uploaded 2024-04-02 per CDN path."
+            },
+            {
+              "value": "'từ ngày 24/09/2024, HDBank cập nhật lãi suất vay và phí tất toán trước hạn ưu đãi' (no figures)",
+              "sourceUrl": "https://hdbank.com.vn/vi/personal/promotion/detail/the/san-pham-vay-tieu-dung-linh-hoat",
+              "note": "HDBank's own page for the product, read 2026-11-03. Its linked T&C (Oct 2025) contains no rate."
+            }
+          ],
+          "resolution": "Kept the sheet's rates (low confidence) because no newer figure is published. The official page says they were changed after the sheet was uploaded, so they must not be shown as current. Product stays out of ranking."
+        },
+        {
+          "field": "fees[0].percent",
+          "values": [
+            {
+              "value": "4% of prepaid amount, min 100.000",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
+              "note": "Product sheet (before 24/09/2024)."
+            },
+            {
+              "value": "3% of prepaid amount for 'add-on' loans",
+              "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/document/23122025WEBBIEUPHIDICHVUDANHCHOKHCN_1767598713753.pdf",
+              "note": "Individual-customer counter fee schedule from 23/12/2025; does not name this product."
+            }
+          ],
+          "resolution": "Stored the sheet's 4% (the higher figure). The schedule's 3% may be the newer figure for this loan, but the product is not named there."
         }
       ],
-      "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-      "retrievedAt": "2026-11-02",
+      "sourceUrl": "https://hdbank.com.vn/vi/personal/promotion/detail/the/san-pham-vay-tieu-dung-linh-hoat",
+      "retrievedAt": "2026-11-03",
       "confidence": "low",
       "excludeFromRanking": true,
-      "excludeReason": "Only for existing HDBank credit-card holders. The rate comes from an undated product sheet that looks like an internal document (file path dated about 2024-04) and conflicts with the 2025 terms; it is not on any HDBank product page.",
-      "notes": "The sheet prints equivalent rates on the actual balance: 6 months 31,3%/năm; 12 months 33,7%; 24 months 39,7%; 36 months 40,3%. Stated annual figures are 18,3% and 20,7% on the original balance. The rate differs by term, but the app picks one offered_range per product, so it would show 1,5%/tháng for a 24-month loan; do not rank until per-term rates are supported. Source date not printed on the sheet (sourceDocumentDate unknown; 2024-04 comes only from the file path). T&C (Oct 2025 path): only full early payoff, no partial.",
+      "excludeReason": "Only for existing HDBank credit-card holders. The rates come from an undated product sheet that looks like an internal document (uploaded 2024-04-02), and HDBank's own product page says the rates and early-settlement fee were updated from 24/09/2024 without publishing the new figures. The 2025 terms give no rate.",
+      "notes": "Re-read 2026-11-03. HDBank's public page for this loan (under Ưu đãi > Thẻ) says the feature launched on the HDBank app and that from 24/09/2024 rates and the early-settlement fee were updated, linking to the Oct 2025 T&C, which has no rate. That dates the sheet: it is older than the update and its rates cannot be shown as current. The Aug 2024 promotion terms ('Vay tặng đến 1 triệu đồng', 15/08/2024-31/01/2025) confirm product name, 5-100 triệu and terms 6/12/24/36 months at that date only. Sheet prints equivalent rates on the actual balance: 6 months 31,3%/năm; 12 months 33,7%; 24 months 39,7%; 36 months 40,3%; stated annual figures on the original balance are 18,3% and 20,7%. Rates differ by term but the app picks one offered_range per product, so it would show 1,5%/tháng for a 24-month loan; do not rank until per-term rates are supported and a current rate is published. Unlock: a current HDBank rate notice or contract template for this loan. T&C (Oct 2025 path): only full early payoff, no partial; interest charged monthly on the statement date (15th).",
       "excludeCode": "undated_document"
     },
     {
@@ -787,6 +941,6 @@
       "notes": "Annual and issuance fees are in the PDF but the table layout did not extract reliably, so they are not recorded. Installment-conversion fees (0,7%-1,2%/tháng) exist but are not recorded."
     }
   ],
-  "researchNotes": "1) Licence: 'hdbank' is on data/licensed-institutions.json (Giấy phép 0026/NH-GP). 2) Key finding: HDBank's public unsecured-loan page states max term 60 months, a limit of 12 months of net income and a document list, but NO interest rate and no VND limit; the only rate figure is the bank-wide average (10,4% medium/long term, from 01/07/2026), recorded as benchmark, so that product is not rankable. 3) The only real offered rates are for the card-linked 'vay tiêu dùng linh hoạt': 1,5%/tháng (6, 12 months) and 1,7%/tháng (24, 36 months), flat on the original balance, from an undated product sheet that looks internal, plus Oct 2025 T&C. Existing HDBank card holders only; excluded from ranking. 4) Gaps: no fee schedule specific to the unsecured loan; the credit fee schedule (Phụ lục 07; effective date not found in extracted text, another version applies from 03/06/2024) only gives a bank-wide early repayment formula (1,5%/360 per day early on the prepaid amount per period); no mandatory insurance information found; no age or income rules; no overdraft (thấu chi) page for individuals found (only generic debit-card terms mention a possible overdraft). HD Saison excluded as instructed. 5) Contradictions: card loan limit (50% of card limit, max 100 triệu in sheet vs 80% of card limit in Oct 2025 T&C); early repayment fee 4% (sheet) vs 'per contract' (T&C). 6) Surprising: the product sheet is an internal-looking submission published on HDBank's CDN; the Oct 2025 T&C file carries an MB form code (19.QĐSP - MB.01/TTT) although its text names HDBank; the credit-card interest range of 2,0%-3,0%/tháng is high. All figures read 2026-11-02.",
-  "retrievedAt": "2026-11-02"
+  "researchNotes": "All figures read 2026-11-03 unless a note says otherwise. 1) Licence: 'hdbank' is on data/licensed-institutions.json (Giấy phép 0026/NH-GP). 2) Unsecured consumer loan: HDBank's product page, its blog, fee schedules, T&C PDFs and campaign pages were searched. No product-level rate, VND limit, late-payment penalty, insurance rule or age/income rule is published. Only: bank-wide average lending rate (10,4% medium/long term from 01/07/2026, benchmark), a general 13%-24%/năm range with unstated basis in HDBank's own Feb 2025 blog (low confidence), and the early-repayment fee in the 23/12/2025 individual fee schedule (3%/2%/1% by year, min 500.000). 3) '24%/năm' lead: third-party aggregators repeat '13%-24%/năm' for HDBank unsecured loans. The only official support is the Feb 2025 HDBank blog sentence; no product page, fee schedule, T&C or rate notice says it, and the blog does not say flat or reducing, so it cannot be ranked. 4) Segment programmes for the same unsecured product (Women's Union from 19/03/2026: 'từ 12%/năm' reducing balance, 20-300 triệu, 5 years, no insurance/service fee; business-association members terms uploaded 2026-10-28: 12%/năm fixed 6 months then base rate + 5%, reducing balance, free early repayment; Dak Lak/Khanh Hoa women 7,5%/năm) show real rates and reducing-balance method but are not open to the target user, so they were not added as products. 5) Card-holder flexible loan: HDBank's public page says rates and early-settlement fee were updated from 24/09/2024 with no new numbers, which shows the 2024-04 sheet is out of date; stays excluded. 6) Card fee schedule: a newer version (file path about 2026-07-27, BieuphiThetindungcanhan_1785119694459.pdf) exists on the fees-and-forms page; the credit-card product here still cites the 19/01/2026 version and was not re-read (out of scope). 7) Contradictions: card loan limit (50% of limit, max 100 triệu in sheet vs 80% of limit in Oct 2025 T&C); early repayment fee (4% sheet vs 3% add-on schedule vs 'per contract'); early repayment for the unsecured loan (23/12/2025 schedule vs Phụ lục 07 formula); the 500 triệu/60 tháng/7% worked example printed on HDBank's pages does not match any standard method nor HDBank's own calculator. 8) Surprises: HDBank's public calculator uses equal principal with interest on the declining balance (first instalment 11.250.000 for 500 triệu, 60 months, 7%); the T&C file for the card loan carries an MB form code (19.QĐSP - MB.01/TTT); the April 2026 'vay bằng phương tiện điện tử' T&C is for savings-secured loans, not the unsecured product. 9) HD Saison excluded as instructed.",
+  "retrievedAt": "2026-11-03"
 }
