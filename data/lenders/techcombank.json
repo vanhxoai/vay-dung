@@ -1011,8 +1011,8 @@
       "notes": "Official product page found (status moved from unverified to active): https://techcombank.com/khach-hang-ca-nhan/vay/vay-tieu-dung/mycash (HTTP last-modified 2026-07-20; the 'đã hết hạn' text in the HTML is a hidden template element, not shown to visitors). Official documents linked from it: terms https://techcombank.com/thong-tin/thong-bao/dieu-kien-dieu-khoan, fee PDF https://techcombank.com/content/dam/techcombank/public-site/imported-assets/My-Cash-Fee-256ba19f8f.pdf, blank contract form MB04-QT.TDC/137 v1.2 https://techcombank.com/content/dam/techcombank/public-site/documents/hop-dong-mycash-1604.pdf, payment guide https://techcombank.com/thong-tin/thong-bao/huong-dan-thanh-toan-tai-khoan-thau-chi-mycash, FAQ https://techcombank.com/content/dam/techcombank/public-site/imported-assets/FAQ_My_Cash_v1_ce7a322126.pdf. None of them states a maximum or a firm in-term rate. The product is invite-only (limit granted to existing customers in the app). Fee PDFs: pdftotext text layer was usable for numbers but not for accents.",
       "borrowerNotes": [
         {
-          "vi": "380 đồng mỗi triệu mỗi ngày tương đương khoảng 13,9%/năm nếu tính 365 ngày. Đây là phép tính của chúng tôi, ngân hàng không ghi con số này.",
-          "en": "380 đồng per million per day is about 13.9% a year over 365 days. This is our calculation, not a figure the bank states."
+          "vi": "Mức quảng cáo thấp nhất là 380 đồng mỗi triệu mỗi ngày, tương đương khoảng 13,9%/năm nếu tính 365 ngày. Đây là phép tính của chúng tôi, ngân hàng không ghi con số này. Một bài viết của Techcombank lại ghi mức từ 408 đồng, tức từ 14,9%/năm, và chưa có mức tối đa, nên lãi suất của bạn có thể cao hơn. Hãy hỏi lại ngân hàng.",
+          "en": "The lowest advertised rate is 380 đồng per million per day, about 13.9% a year over 365 days. This is our calculation, not a figure the bank states. A Techcombank article says from 408 đồng, which is from 14.9% a year, and no maximum is published, so your rate could be higher. Check with the bank."
         }
       ]
     },

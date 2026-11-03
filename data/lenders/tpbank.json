@@ -1252,8 +1252,8 @@
       "notes": "New product found on the TPBank unsecured-loan listing (it was not covered in the first pass). Lender is TPBank: the contract template 'Đề nghị vay vốn kiêm Hợp đồng cho vay (khách hàng sử dụng nền tảng Kredivo)' prints 'Ngân hàng TMCP Tiên Phong' as lender and the T&C calls TPBank 'Bên Cho Vay'; Kredivo (Công ty cổ phần Kredivo Việt Nam) only runs the app. The contract template has blank fields for 'lãi suất thông thường' and 'lãi suất ưu đãi (áp dụng có điều kiện)', so the rate is set per loan and may include a conditional promotional rate; no figure is published. Interest = actual balance × rate × days ÷ 365 (T&C 3.4). For BNPL purchases there is a 14-day window to cancel and a 29-day window if the merchant cancels (T&C article 6). Searched: product page, FAQ, T&C, contract template, listing, fee schedule (Phụ lục 02 does not cover it).",
       "borrowerNotes": [
         {
-          "vi": "Nếu trả hết sớm, bạn vẫn phải trả toàn bộ tiền lãi còn lại theo lịch, nên trả sớm gần như không tiết kiệm được tiền lãi. Điều khoản cũng ghi: nếu mua sản phẩm Samsung bằng khoản vay này, thiết bị có thể bị khóa chức năng khi bạn chậm trả hoặc không trả.",
-          "en": "If you repay in full early, you still pay all the remaining scheduled interest, so paying early saves almost no interest. The terms also say that if you buy a Samsung product with this loan, the device's functions can be locked if you pay late or don't pay."
+          "vi": "Nếu trả hết sớm, bạn vẫn phải trả toàn bộ tiền lãi còn lại theo lịch, nên trả sớm không tiết kiệm được tiền lãi. Điều khoản cũng ghi: nếu mua sản phẩm Samsung bằng khoản vay này, thiết bị có thể bị khóa chức năng khi bạn chậm trả hoặc không trả.",
+          "en": "If you repay in full early, you still pay all the remaining scheduled interest, so paying early saves no interest. The terms also say that if you buy a Samsung product with this loan, the device's functions can be locked if you pay late or don't pay."
         }
       ]
     },

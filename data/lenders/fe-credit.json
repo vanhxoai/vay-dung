@@ -767,8 +767,8 @@
           "en": "FE Credit calls 3.86% a month its maximum preferential rate and hasn't published its standard rate, so your rate could be higher. This may be a loan or a cash feature on a credit card; ask before signing."
         },
         {
-          "vi": "Bảo hiểm là tự nguyện, bạn có quyền từ chối. Phí 1,5–7,99% khoản vay là khoảng chung cho các sản phẩm của FE Credit. Hãy kiểm tra ô mua bảo hiểm đã được đánh dấu sẵn hay chưa.",
-          "en": "Insurance is voluntary and you can refuse it. The 1.5–7.99% of the loan is FE Credit's range across its products. Check whether the insurance box is already ticked."
+          "vi": "Theo mẫu đơn của FE Credit, bảo hiểm là tự nguyện. Phí 1,5–7,99% khoản vay là khoảng chung cho các sản phẩm của FE Credit. Hãy kiểm tra ô mua bảo hiểm đã được đánh dấu sẵn hay chưa.",
+          "en": "FE Credit's form says insurance is voluntary. The 1.5–7.99% of the loan is FE Credit's range across its products. Check whether the insurance box is already ticked."
         }
       ]
     },
@@ -1327,8 +1327,8 @@
           "en": "This range joins a general footnote on the page with the 5.7% a month maximum in the FAQ; no single source states it. Ask for your rate."
         },
         {
-          "vi": "Bảo hiểm là tự nguyện, bạn có quyền từ chối. Phí 1,5–7,99% khoản vay là khoảng chung cho các sản phẩm của FE Credit. Hãy kiểm tra ô mua bảo hiểm đã được đánh dấu sẵn hay chưa.",
-          "en": "Insurance is voluntary and you can refuse it. The 1.5–7.99% of the loan is FE Credit's range across its products. Check whether the insurance box is already ticked."
+          "vi": "Theo mẫu đơn của FE Credit, bảo hiểm là tự nguyện. Phí 1,5–7,99% khoản vay là khoảng chung cho các sản phẩm của FE Credit. Hãy kiểm tra ô mua bảo hiểm đã được đánh dấu sẵn hay chưa.",
+          "en": "FE Credit's form says insurance is voluntary. The 1.5–7.99% of the loan is FE Credit's range across its products. Check whether the insurance box is already ticked."
         }
       ]
     },
@@ -1900,12 +1900,12 @@
       "nameEn": "Phone and electronics installment loan",
       "borrowerNotes": [
         {
-          "vi": "Khoảng lãi suất này lấy từ chú thích chung trên trang; phần câu hỏi thường gặp của sản phẩm ghi 0–2,69%/tháng. Hãy hỏi mức của bạn.",
-          "en": "This range comes from a general footnote on the page; the product's FAQ says 0–2.69% a month. Ask for your rate."
+          "vi": "Khoảng lãi suất này lấy từ chú thích chung trên trang. Phần câu hỏi thường gặp của sản phẩm ghi khoảng khác, 0–2,69%/tháng, nhưng trang không nói mức 0% áp dụng khi nào. Chỉ tính theo 0% nếu hợp đồng ghi rõ. Hãy hỏi mức của bạn.",
+          "en": "This range comes from a general footnote on the page. The product's FAQ gives a different range, 0–2.69% a month, but the page doesn't say when 0% applies. Only count on 0% if your contract states it. Ask for your rate."
         },
         {
-          "vi": "Bảo hiểm là tự nguyện, bạn có quyền từ chối. Phí 1,5–7,99% khoản vay là khoảng chung cho các sản phẩm của FE Credit. Hãy kiểm tra ô mua bảo hiểm đã được đánh dấu sẵn hay chưa.",
-          "en": "Insurance is voluntary and you can refuse it. The 1.5–7.99% of the loan is FE Credit's range across its products. Check whether the insurance box is already ticked."
+          "vi": "Theo mẫu đơn của FE Credit, bảo hiểm là tự nguyện. Phí 1,5–7,99% khoản vay là khoảng chung cho các sản phẩm của FE Credit. Hãy kiểm tra ô mua bảo hiểm đã được đánh dấu sẵn hay chưa.",
+          "en": "FE Credit's form says insurance is voluntary. The 1.5–7.99% of the loan is FE Credit's range across its products. Check whether the insurance box is already ticked."
         }
       ]
     },

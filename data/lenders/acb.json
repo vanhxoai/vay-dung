@@ -266,8 +266,8 @@
       "notes": "Only a starting daily rate is published (updated 09/07/2026). No limit, upper rate, late penalty, insurance or contract. Not rankable.",
       "borrowerNotes": [
         {
-          "vi": "0,06%/ngày tương đương khoảng 21,9%/năm nếu tính 365 ngày. Đây là phép tính của chúng tôi, ngân hàng không ghi con số này.",
-          "en": "0.06% a day is about 21.9% a year over 365 days. This is our calculation, not a figure the bank states."
+          "vi": "Mức quảng cáo thấp nhất là 0,06%/ngày, tương đương khoảng 21,9%/năm nếu tính 365 ngày. Đây là phép tính của chúng tôi, ngân hàng không ghi con số này. ACB chưa công bố mức tối đa, nên lãi suất của bạn có thể cao hơn.",
+          "en": "The lowest advertised rate is 0.06% a day, about 21.9% a year over 365 days. This is our calculation, not a figure the bank states. ACB hasn't published a maximum, so your rate could be higher."
         }
       ]
     }
