@@ -143,7 +143,7 @@ The deployment went straight to production, so there was no preview step (DECISI
 **Next:** the interviews. Ask interviewees which lenders they'd consider and for real offers they've received.
 
 ## Lender data deep dive (2026-11-03)
-**Status:** committed, not live. Waiting for your review. See docs/research/data-coverage.md.
+**Status:** live since 2026-11-04, published with your approval after a final compliance check. See docs/research/data-coverage.md.
 
 - 13 lenders researched from rate sheets, contracts, app listings and calculators. HD Saison stopped at your request.
 - 48 products shown, 7 ranked (was 38 and 6). Most lenders state a "from" rate or a wide company range and set the real rate at approval.
@@ -151,4 +151,6 @@ The deployment went straight to production, so there was no preview step (DECISI
 - Compliance review: all 8 must-fix items addressed. Some should-fix items remain: early repayment fees for lenders without a note sit in the collapsed details, "from" notes drop their qualifiers, percent fees don't say what they apply to, and low-confidence products can still rank first.
 - New lawyer questions are in the compliance report, including the 100 million cap against FE Credit's 400M and Shinhan's 500M.
 
-**Next:** your decision on publishing, and on what to do about the unranked products.
+Checked on the live site: nothing typed appears in requests, no cookies, the 0% and "don't borrow" cases behave correctly, and amounts above 100 million show only the cap reason.
+
+**Next:** your decision on what to do about the 41 unranked products.
