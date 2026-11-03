@@ -343,7 +343,8 @@ for g in dump["grid"]:
     r = chosen_rate(p)
     fee = fee_of(p)
     amort = p["amortization"]["value"]
-    for end, key in (("low", "minPercent"), ("high", "maxPercent")):
+    # A promotional minimum is never used for a borrower's cost, so the low end is the maximum.
+    for end, key in (("low", "maxPercent" if r.get("minIsPromotional") else "minPercent"), ("high", "maxPercent")):
         s = g[end]
         n_checked += 1
         ex = exact_pays(g["amountVnd"], r[key]["value"], r["period"]["value"], r["basis"]["value"], g["termMonths"], amort)
@@ -376,7 +377,8 @@ gaps = []
 for g in twenty:
     p = products[g["key"]]
     r = chosen_rate(p)
-    for end, key in (("low", "minPercent"), ("high", "maxPercent")):
+    # A promotional minimum is never used for a borrower's cost, so the low end is the maximum.
+    for end, key in (("low", "maxPercent" if r.get("minIsPromotional") else "minPercent"), ("high", "maxPercent")):
         w = [e + fee_of(p) for e in exact_pays(20_000_000, r[key]["value"], r["period"]["value"], r["basis"]["value"], g["termMonths"], p["amortization"]["value"])]
         gaps.append((round(abs(float(sum(w)) - g[end]["totalRepaid"]), 2), g["key"], g["termMonths"], end))
 print("largest total difference from exact maths at 20M, 12/24/36 months:", max(gaps))
@@ -392,7 +394,7 @@ for k, v in dump["twentyM"].items():
         fee = fee_of(p)
         n = int(k.split("/")[1])
         am = p["amortization"]["value"]
-        nl = apr(irr(20_000_000, [e + fee for e in exact_pays(20_000_000, r["minPercent"]["value"], r["period"]["value"], r["basis"]["value"], n, am)]))[0]
+        nl = apr(irr(20_000_000, [e + fee for e in exact_pays(20_000_000, r["maxPercent" if r.get("minIsPromotional") else "minPercent"]["value"], r["period"]["value"], r["basis"]["value"], n, am)]))[0]
         nh = apr(irr(20_000_000, [e + fee for e in exact_pays(20_000_000, r["maxPercent"]["value"], r["period"]["value"], r["basis"]["value"], n, am)]))[0]
         print(f"{k:16} {g['key']:46} {str(r['minPercent']['value']) + '-' + str(r['maxPercent']['value']) + ('m' if r['period']['value'] == 'monthly' else 'y'):>12} {g['low']['first']:>10,} {g['high']['first']:>10,} {g['low']['totalRepaid']:>11,} {g['high']['totalRepaid']:>11,} {g['low']['totalCost']:>10,} {g['high']['totalCost']:>10,} {g['low']['nominal'] * 100:8.2f} {g['high']['nominal'] * 100:8.2f} {g['low']['effective'] * 100:8.2f} {g['high']['effective'] * 100:8.2f} {nl:7.2f}/{nh:7.2f}")
     print(f"   verdict {v['verdict']}; ineligible: {[(a.split('/')[1], b) for a, b in v['ineligible']]}")

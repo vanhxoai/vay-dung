@@ -141,3 +141,14 @@ The deployment went straight to production, so there was no preview step (DECISI
 - Still unresolved: Sacombank's two documents disagree on the card-loan rate, and HDBank's card-loan sheet is undated. Only the banks can settle these.
 
 **Next:** the interviews. Ask interviewees which lenders they'd consider and for real offers they've received.
+
+## Lender data deep dive (2026-11-03)
+**Status:** committed, not live. Waiting for your review. See docs/research/data-coverage.md.
+
+- 13 lenders researched from rate sheets, contracts, app listings and calculators. HD Saison stopped at your request.
+- 48 products shown, 7 ranked (was 38 and 6). Most lenders state a "from" rate or a wide company range and set the real rate at approval.
+- Math check: engine correct on all ranked products. Fixed a "-0%" display and flat-loan rounding of a few đồng.
+- Compliance review: all 8 must-fix items addressed. Some should-fix items remain: early repayment fees for lenders without a note sit in the collapsed details, "from" notes drop their qualifiers, percent fees don't say what they apply to, and low-confidence products can still rank first.
+- New lawyer questions are in the compliance report, including the 100 million cap against FE Credit's 400M and Shinhan's 500M.
+
+**Next:** your decision on publishing, and on what to do about the unranked products.
