@@ -38,7 +38,7 @@ export function formatLoanAmount(amount: number, locale: AppLocale): string {
 
 /** 0.309 → "30,9%" / "30.9%". */
 export function formatPercent(fraction: number, locale: AppLocale): string {
-  return `${oneDecimal(fraction * 100, locale)}%`;
+  return `${oneDecimal(Math.abs(fraction) < 1e-9 ? 0 : fraction * 100, locale)}%`; // IRR noise must not print "-0%"
 }
 
 /** A published rate as printed by the lender: 1.41 → "1,41" (keeps its decimals). */

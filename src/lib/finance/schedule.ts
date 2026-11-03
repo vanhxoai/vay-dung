@@ -4,9 +4,9 @@
  * Rounding rule: each month's interest is computed exactly and rounded to the
  * nearest đồng (half away from zero); principal parts are whole đồng; the LAST
  * instalment absorbs any remainder so the principal repaid always equals the
- * amount borrowed exactly. The level annuity instalment is rounded once; over a
- * consumer-loan term (≤ MAX_TERM_MONTHS) the last instalment differs by a few
- * đồng at most.
+ * amount borrowed exactly, and on a flat loan the interest totals the exact
+ * figure. The level annuity instalment is rounded once, so its last instalment
+ * can differ by up to a few hundred đồng on long terms at high rates.
  */
 import { assertVnd, percentOf, roundVnd, type Vnd } from "./money";
 import { asFraction, type MonthlyRate } from "./rates";
@@ -60,7 +60,8 @@ export function buildSchedule(principal: Vnd, rate: MonthlyRate, months: number,
 
   for (let month = 1; month <= months; month++) {
     const last = month === months;
-    const interest = method === "flat" ? flatInterest : interestOn(balance);
+    let interest = method === "flat" ? flatInterest : interestOn(balance);
+    if (last && method === "flat") interest = percentOf(principal, rate.percent * months, rate.divisor) - flatInterest * (months - 1);
     let principalPart: Vnd;
     if (last) principalPart = balance;
     else if (method === "annuity") principalPart = Math.min(balance, Math.max(0, level - interest));

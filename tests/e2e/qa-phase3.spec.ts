@@ -44,18 +44,20 @@ test.describe("eligibility boundaries", () => {
 
   test("age 18 and age 62 are filtered by each product's age rules", async ({ page }) => {
     await run(page, { amount: "20000000", income: "15000000", age: "18" });
-    expect(await offerKeys(page)).toEqual([]);
+    expect(await offerKeys(page)).toEqual(["home-credit/installment-electronics"]);
     await page.locator("summary", { hasText: "Không phù hợp với thông tin bạn nhập" }).click();
     await expect(page.getByText("Yêu cầu từ 20 tuổi.").first()).toBeVisible();
 
     await run(page, { amount: "20000000", income: "15000000", age: "62" });
-    expect((await offerKeys(page)).every((k) => k.startsWith("shinhan"))).toBe(true);
+    const at62 = await offerKeys(page);
+    expect(at62.length).toBeGreaterThan(0);
+    expect(at62.every((k) => k.startsWith("vpbank"))).toBe(true);
   });
 });
 
 test.describe("regressions from the QA pass", () => {
   test("no product for this age: the verdict must not say the loan may exceed what you can pay", async ({ page }) => {
-    await run(page, { amount: "20000000", income: "15000000", age: "18" });
+    await run(page, { amount: "20000000", income: "15000000", age: "70" });
     await expect(page.getByTestId("verdict")).toHaveAttribute("data-verdict", "no_data");
     await expect(page.getByTestId("verdict")).not.toContainText("Có thể vượt mức hướng dẫn");
   });

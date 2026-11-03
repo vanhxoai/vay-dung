@@ -133,6 +133,8 @@ export const Rate = z.strictObject({
   period: classified(RatePeriod),
   /** True if the rate is a limited-time promotion. */
   promotional: z.boolean().nullable(),
+  /** The minimum is a promotion on selected goods, so it is never used for a borrower's cost or verdict. */
+  minIsPromotional: z.boolean().optional(),
 });
 export type Rate = z.infer<typeof Rate>;
 
@@ -352,7 +354,9 @@ export const Product = z.strictObject({
   excludeFromRanking: z.boolean(),
   excludeReason: z.string().optional(),
   /** Set when the general reasons in src/lib/recommend/offers.ts wouldn't be true of this product. */
-  excludeCode: z.enum(["conflicting_sources", "undated_document"]).optional(),
+  excludeCode: z.enum(["conflicting_sources", "undated_document", "unverified", "range_basis_unknown"]).optional(),
+  /** Things a borrower should know about this product, shown on its card or list item. */
+  borrowerNotes: z.array(z.strictObject({ vi: z.string(), en: z.string() })).optional(),
   notes: z.string().optional(),
 });
 export type Product = z.infer<typeof Product>;

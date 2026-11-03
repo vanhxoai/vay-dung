@@ -219,6 +219,7 @@ export function Results({
                 <p>{stale || offer.excludeCode === null ? t("Results.staleReason") : t(`Results.exclude.${offer.excludeCode}`)}</p>
                 {offer.existingCustomerRequired ? <p>{t("Offer.existingCustomer")}</p> : null}
                 {offer.confidence === "low" ? <p>{t("Offer.lowConfidence")}</p> : null}
+                {offer.borrowerNotes?.map((n) => <p key={n.vi}>{locale === "en" ? n.en : n.vi}</p>)}
                 {offer.rateNotes.map((n, i) => {
                   // A bank-wide average or an uncosted rate would read as this product's price.
                   const text = n.kind === "benchmark" || n.kind === "offered_range" ? null : rateNoteText(n, t, locale);

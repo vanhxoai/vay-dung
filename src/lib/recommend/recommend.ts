@@ -107,10 +107,9 @@ export function eligibilityProblems(offer: Offer, need: Need): IneligibleReason[
   const out: IneligibleReason[] = [];
   const { amountVnd: a, termMonths: t, age, monthlyIncomeVnd: inc } = need;
   if (offer.amountMinVnd !== null && a < offer.amountMinVnd) out.push("amount_too_low");
-  if (offer.amountMaxVnd !== null && a > offer.amountMaxVnd) out.push("amount_too_high");
-  // Compliance M8: until a lawyer confirms, amounts above the cap aren't shown as achievable.
-  if (offer.category === "finance_company" && a > FINANCE_COMPANY_CONSUMER_LOAN_CAP_VND && !out.includes("amount_too_high"))
-    out.push("over_finance_company_cap");
+  // Compliance M8: until a lawyer confirms, amounts above the cap aren't shown as achievable, so the cap reason comes first.
+  if (offer.category === "finance_company" && a > FINANCE_COMPANY_CONSUMER_LOAN_CAP_VND) out.push("over_finance_company_cap");
+  else if (offer.amountMaxVnd !== null && a > offer.amountMaxVnd) out.push("amount_too_high");
   if (offer.termMinMonths !== null && t < offer.termMinMonths) out.push("term_too_short");
   if (offer.termMaxMonths !== null && t > offer.termMaxMonths) out.push("term_too_long");
   if (offer.minAge !== null && age < offer.minAge) out.push("too_young");
@@ -204,7 +203,8 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
   }
 
   const charges = mandatoryCharges(offer, need);
-  const low = costAt(offer, r.minPercent, need, charges.low);
+  // A promotional minimum isn't this borrower's rate, so it can't soften the cost or the verdict.
+  const low = r.minIsPromotional ? costAt(offer, r.maxPercent, need, charges.high) : costAt(offer, r.minPercent, need, charges.low);
   const high = costAt(offer, r.maxPercent, need, charges.high);
   const atLow = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, low.maxPaymentVnd);
   const atHigh = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, high.maxPaymentVnd);

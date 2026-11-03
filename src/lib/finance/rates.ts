@@ -3,8 +3,8 @@
  *
  * - Loans are modelled in monthly periods. A yearly reducing-balance rate R%/năm
  *   becomes a monthly periodic rate R/12 (how Vietnamese lenders convert it).
- *   Lenders accrue daily (actual/365); the monthly model differs by a few đồng
- *   per instalment and is the standard basis for comparison.
+ *   Lenders accrue daily (actual/365); the monthly model can differ by a few
+ *   hundred đồng per instalment and is the standard basis for comparison.
  * - A flat rate charges interest on the ORIGINAL amount every month.
  * - "Real APR" shown in the app = nominal yearly rate = monthly IRR × 12, the
  *   same convention lenders use, so it is directly comparable to their quotes.

@@ -44,6 +44,12 @@ describe("buildSchedule: annuity", () => {
 });
 
 describe("buildSchedule: flat (interest on the original amount)", () => {
+  // FE Credit's app listing: 10,000,000, 12 months, 28%/năm flat, total 12,800,000. By hand: interest = 10,000,000 × 28% = 2,800,000.
+  it("totals the exact interest, with the last instalment absorbing the rounding", () => {
+    const total = buildSchedule(10_000_000, { percent: 28, divisor: 12 }, 12, "flat").reduce((s, r) => s + r.payment, 0);
+    expect(total).toBe(12_800_000);
+  });
+
   // FE Credit's published example: 10,000,000, 12 months, 1.41%/tháng flat
   const rows = buildSchedule(10_000_000, m(1.41), 12, "flat");
 

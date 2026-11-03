@@ -18,6 +18,28 @@ const need = (o: Partial<Need> = {}): Need => ({
   ...o,
 });
 
+describe("a promotional 0% minimum", () => {
+  const phone = need({ purpose: "phone", monthlyIncomeVnd: 10_000_000, existingDebtVnd: 3_100_000 });
+
+  it("can't stop the 'too much' verdict", () => {
+    // Room is 900.000/month: every eligible product is over it at any rate it can really charge.
+    expect(recommend(phone, offers, today).verdict).toBe("too_much");
+  });
+
+  it("is never used for the borrower's cost", () => {
+    const hc = recommend(need({ purpose: "phone" }), offers, today).ranked.find((r) => r.offer.key === "home-credit/installment-electronics");
+    expect(hc?.low.totalCostVnd).toBe(hc?.high.totalCostVnd);
+    expect(hc?.low.totalCostVnd).toBeGreaterThan(0);
+  });
+});
+
+describe("the finance-company cap", () => {
+  it("is the only amount reason above 100 million, so a higher advertised maximum isn't shown", () => {
+    const hc = offers.find((o) => o.key === "home-credit/cash-loan") as Offer;
+    expect(eligibilityProblems(hc, need({ amountVnd: 300_000_000 }))).toEqual(["over_finance_company_cap"]);
+  });
+});
+
 describe("banks that publish no comparable rate", () => {
   const find = (id: string) => offers.find((o) => o.key.endsWith(id)) as Offer;
 

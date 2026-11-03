@@ -1,6 +1,6 @@
 # Lender data deep dive: brief for researchers
 
-Date: 2026-11-02. Use this date for `retrievedAt`.
+Started 2026-11-02. Use the day you actually read a source for `retrievedAt`.
 
 ## Why this exists
 Of 38 products shown in the app, only 6 can be ranked. None has high confidence and 23 have low confidence. The first research pass mostly read product landing pages. This pass goes further for one purpose: find the real rate, how it is calculated, and the fees, for every product.
@@ -27,6 +27,8 @@ Search in Vietnamese first. Try the product's exact name, and the lender's other
 - Don't remove a figure unless a better source replaces it. If figures disagree, record both in `conflicts`.
 - Set `sourceDocumentDate` when a document states its date. Old or undated documents must say so.
 - Change `retrievedAt` only on figures you actually re-checked today.
+- The Playwright browser is shared, so another researcher can change the page you're reading. Prefer curl and WebFetch. If you use the browser, confirm the URL each time you read a page, and never store a figure from a page you didn't confirm.
+- Test every flat or reducing label against a worked example where one exists, and say so in your report.
 
 ## When a product may be ranked
 Set `excludeFromRanking: false` only when all of these hold:

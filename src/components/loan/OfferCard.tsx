@@ -91,6 +91,8 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       </header>
 
       {offer.confidence === "low" ? <p className={notice}>{t("lowConfidence")}</p> : null}
+      {rate.minIsPromotional ? <p className={notice}>{t("promoLow")}</p> : null}
+      {offer.borrowerNotes?.map((n) => <p key={n.vi} className={notice}>{en ? n.en : n.vi}</p>)}
       {ranked.feesAllUnknown ? <p className={notice}>{t("feesUnknown")}</p> : null}
       {ranked.needsIncomeProofNote ? <p className={notice}>{t("incomeProofNote")}</p> : null}
       {offer.conflictFields.length > 0 ? <p className={notice}>{t("conflict")}</p> : null}
@@ -101,7 +103,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       <p>{t("sentence", { amount: formatLoanAmount(need.amountVnd, locale), total: totalPaid, term: need.termMonths })}</p>
 
       <dl className="flex flex-col gap-2">
-        <Row label={t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
+        <Row label={offer.goods ? t("receivedGoods") : t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
         <Row
           label={falling ? t("monthlyFalling") : t("monthly")}
           value={range(formatVnd(low.firstPaymentVnd), formatVnd(high.firstPaymentVnd))}

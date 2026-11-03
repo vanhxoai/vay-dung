@@ -29,6 +29,8 @@ export type OfferRate = {
   period: "monthly" | "yearly";
   /** The basis was worked out by us, not stated by the lender. The UI labels it "giả định". */
   basisInferred: boolean;
+  /** The minimum is a promotion on selected goods: costs use the maximum. */
+  minIsPromotional?: boolean;
   segment: string | null;
   sourceUrl: string;
   retrievedAt: string;
@@ -80,6 +82,8 @@ export type ExcludeCode =
   | "unverified"
   | "rate_varies"
   | "conflicting_sources"
+  | "range_basis_unknown"
+  | "floor_and_range"
   | "undated_document"
   | "ceiling_only"
   | "floor_only"
@@ -135,6 +139,7 @@ export type Offer = {
   confidence: "high" | "medium" | "low";
   excludeFromRanking: boolean;
   excludeCode: ExcludeCode | null;
+  borrowerNotes?: { vi: string; en: string }[];
 };
 
 function collect(node: unknown, key: string, out: Set<string>) {
@@ -168,7 +173,9 @@ function exclusionCode(p: Product, rate: Product["rates"][number] | null): Exclu
   if (reason.includes("bên cho vay")) return "lender_unverified";
   if (p.status === "unverified") return "unverified";
   if (rate !== null) return "rate_varies";
-  if (p.rates.some((r) => r.kind === "regulatory_ceiling")) return "ceiling_only";
+  const hasRange = p.rates.some((r) => r.kind === "regulatory_ceiling");
+  if (hasRange && p.rates.some((r) => r.kind === "advertised_floor")) return "floor_and_range";
+  if (hasRange) return "ceiling_only";
   if (p.rates.some((r) => r.kind === "advertised_floor")) return "floor_only";
   return "no_rate";
 }
@@ -214,7 +221,8 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
   }
 
   const urls = new Set<string>([p.sourceUrl]);
-  collect(p, "sourceUrl", urls);
+  // Only sources behind what the card shows, not rejected conflict values or worked examples.
+  collect({ ...p, conflicts: [], representativeExamples: [] }, "sourceUrl", urls);
   const dates = new Set<string>();
   collect(p, "retrievedAt", dates);
 
@@ -240,6 +248,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
             basis: rate.basis.value as "flat" | "reducing",
             period: rate.period.value as "monthly" | "yearly",
             basisInferred: rate.basis.provenance === "inferred",
+            minIsPromotional: rate.minIsPromotional,
             segment: rate.segment,
             sourceUrl: (rate.maxPercent.sourceUrl ?? rate.minPercent.sourceUrl ?? p.sourceUrl) as string,
             retrievedAt: (rate.maxPercent.retrievedAt ?? rate.minPercent.retrievedAt ?? p.retrievedAt) as string,
@@ -292,6 +301,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
     retrievedAt: p.retrievedAt,
     oldestRetrievedAt: [...dates].sort()[0] ?? p.retrievedAt,
     confidence: p.confidence,
+    borrowerNotes: p.borrowerNotes,
     excludeFromRanking: p.excludeFromRanking || p.status === "expired",
     excludeCode: exclusionCode(p, rate),
   };

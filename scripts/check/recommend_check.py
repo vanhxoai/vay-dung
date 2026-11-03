@@ -220,11 +220,11 @@ def prem(open_bal, annual):
 
 
 _, ob_hi = schedule(20_000_000, 59, "yearly", "reducing", "annuity", 24)
-_, ob_lo = schedule(20_000_000, 14.4, "yearly", "reducing", "annuity", 24)
+_, ob_lo = schedule(20_000_000, 18, "yearly", "reducing", "annuity", 24)
 pmin_hi, pmax_hi = prem(ob_hi, 1.3), prem(ob_hi, 1.8)
 pmin_lo, pmax_lo = prem(ob_lo, 1.3), prem(ob_lo, 1.8)
 appi = next(x for x in dump["t24"]["ranked"] if x["key"] == VP)["ins"][0]
-print("balances at 59%:", pmin_hi, pmax_hi, " balances at 14.4%:", pmin_lo, pmax_lo, " app:", appi["min"], appi["max"], "mandatory", appi["mandatory"])
+print("balances at 59%:", pmin_hi, pmax_hi, " balances at 18%:", pmin_lo, pmax_lo, " app:", appi["min"], appi["max"], "mandatory", appi["mandatory"])
 ded = cost(VP, 20_000_000, 24, "high", deducted=pmax_hi)
 fin = cost(VP, 20_000_000, 24, "high", financed=pmax_hi)
 show = ("received", "first", "totalPaid", "totalCost")
@@ -234,7 +234,7 @@ print("financed instead:", {k: fin[k] for k in show}, "nom %.4f" % (fin["nominal
 plain = cost(VP, 20_000_000, 24, "high")
 print("no insurance high: nom %.4f cost %d" % (plain["nominal"] * 100, plain["totalCost"]))
 row("VPBank premium", "max (1.8% on 59% balances)", pmax_hi, appi["max"], "vnd")
-row("VPBank premium", "true low end (1.3% on 14.4% balances)", pmin_lo, appi["min"], "vnd")
+row("VPBank premium", "true low end (1.3% on 18% balances)", pmin_lo, appi["min"], "vnd")
 row("VPBank costHigh", "totalCost", ded["totalCost"], appi["costHigh"]["totalCost"], "vnd")
 row("VPBank costHigh", "nominal", ded["nominal"], appi["costHigh"]["nominal"], "pct")
 s, ob = schedule(100_000_000, 20, "yearly", "reducing", "annuity", 12)
@@ -247,9 +247,10 @@ print("\nBOUNDARIES")
 b = dump["boundaries"]
 for k, v in b.items():
     print(k, v["verdict"], "headroom", v["headroom"], "principalOnly", v["principalOnly"], "suggested", v["suggested"], [(x["key"].split("/")[0], x["fit"], x["high"]["max"], x["low"]["max"]) for x in v["ranked"]])
-row("exact 40% (1,750,000 / 4,375,000)", "verdict", "ok", b["exact40"]["verdict"], "eq")
-row("1 VND income below", "verdict", "depends", b["oneBelow40"]["verdict"], "eq")
-row("equal principal: first month over, average under", "verdict", "too_much", b["ep_avgFitsFirstNot"]["verdict"], "eq")
+# Home Credit cash is now an annuity at 45-55% with an 11,000 fee: 20M/24 pays 1,289,378 to 1,402,239 a month.
+row("HC only, income 4,375,000", "verdict", "ok", b["exact40"]["verdict"], "eq")
+row("HC only, income 4,374,999", "verdict", "ok", b["oneBelow40"]["verdict"], "eq")
+row("HC only, headroom 1,400,000: low fits, high 1,402,239 does not", "verdict", "depends", b["ep_avgFitsFirstNot"]["verdict"], "eq")
 row("principal 833,334 = limit", "not too_much by principal", True, b["principalFits"]["principalOnly"] == 833334 and b["principalFits"]["headroom"] == 833334, "eq")
 row("principal 1 VND over", "verdict", "too_much", b["principalFails"]["verdict"], "eq")
 row("principal + debt over", "verdict", "too_much", b["principalFailsWithDebt"]["verdict"], "eq")
@@ -257,7 +258,7 @@ row("FE highest month 1,617,341 inc. 12,000 fee: exact limit", "fit", "fits", b[
 row("FE fee boundary, 1 VND income below", "fit", "fits_only_low", b["feFee_below"]["ranked"][0]["fit"], "eq")
 row("no offers, principal = limit", "verdict", "no_data", b["noOffersPrincipalFits"]["verdict"], "eq")
 row("no offers, principal 1 VND over", "verdict", "too_much", b["noOffersPrincipalFails"]["verdict"], "eq")
-row("only product has unknown fees", "verdict", "depends", b["shinhanOnly"]["verdict"], "eq")
+row("Shinhan only: fees now marked complete", "verdict", "ok", b["shinhanOnly"]["verdict"], "eq")
 row("debt uses all headroom", "suggested", None, b["allDebt"]["suggested"], "eq")
 
 
