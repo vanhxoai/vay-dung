@@ -36,9 +36,9 @@ test.describe("phase 6 ship-check", () => {
   test("products we can't compare show only what's true of them", async ({ page }) => {
     await results(page, "20000000", "15000000", "12");
     const section = page.locator("details").filter({ hasText: "0,06%/ngày" });
-    await expect(section).toContainText("Hai tài liệu chính thức của ngân hàng ghi lãi suất khác nhau");
+    await expect(section).toContainText("Các tài liệu chính thức của bên cho vay ghi lãi suất hoặc cách tính khác nhau");
     await expect(section).toContainText("tài liệu không ghi ngày");
-    await expect(section).not.toContainText("tham chiếu");
+    await expect(section).not.toContainText("Lãi suất tham chiếu (không phải của sản phẩm)");
     await expect(section).not.toContainText("1,7");
     await expect(section).not.toContainText("chưa rõ theo tháng hay theo năm: 0,06");
   });

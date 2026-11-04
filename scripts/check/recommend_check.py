@@ -21,6 +21,12 @@ GOODS = {
     "hd-saison/electronics-installment": "phone",
     "home-credit/installment-motorbike": "motorbike",
     "home-credit/installment-electronics": "phone",
+    "jaccs/motorbike-installment": "motorbike",
+    "jaccs/electronics-installment": "phone",
+    "mirae-asset/installment-motorbike": "motorbike",
+    "mirae-asset/installment-electronics": "phone",
+    "sfinance/tra-gop-dien-thoai": "phone",
+    "sfinance/tra-gop-dien-may": "phone",
     "shinhan-finance/motorbike-installment-loan": "motorbike",
 }
 CAP = 100_000_000
@@ -58,7 +64,7 @@ for fn in sorted(os.listdir(os.path.join(root, "data", "lenders"))):
             and r["minPercent"]["value"] is not None
             and r["maxPercent"]["value"] is not None
             and r["basis"]["value"] != "unknown"
-            and r["period"]["value"] != "unknown"
+            and r["period"]["value"] in ("monthly", "yearly")
         ]
         rate = (
             next((r for r in off if r["segment"] and "mới" in r["segment"].lower()), None)
@@ -69,6 +75,13 @@ for fn in sorted(os.listdir(os.path.join(root, "data", "lenders"))):
         walk(p, "retrievedAt", dates)
         stale = (TODAY - date.fromisoformat(min(dates))).days > 90
         products[l["slug"] + "/" + p["id"]] = dict(p=p, l=l, rate=rate, stale=stale)
+
+
+def end_percent(r, end, n):
+    """The rate behind each end of the cost. A promotional or unconfirmed minimum is never used (DECISIONS 56, 61)."""
+    if end == "low" and not (r.get("minIsPromotional") or r.get("minUnconfirmed")):
+        return next((m["percent"] for m in r.get("minByTerm") or [] if n >= m["termMonthsMin"]), r["minPercent"]["value"])
+    return r["maxPercent"]["value"]
 
 
 def monthly_fee(p):
@@ -122,7 +135,7 @@ def cost(key, P, n, end, deducted=0, financed=0):
     d = products[key]
     p = d["p"]
     r = d["rate"]
-    pct = r["minPercent" if end == "low" else "maxPercent"]["value"]
+    pct = end_percent(r, end, n)
     s, _ = schedule(P + financed, pct, r["period"]["value"], r["basis"]["value"], p["amortization"]["value"], n)
     fee = monthly_fee(p)
     pays = [x + fee for x in s]
@@ -295,7 +308,7 @@ def maxpay(key, P, n, end):
     if k not in cache:
         d = products[key]
         r = d["rate"]
-        s, _ = schedule(P, r["minPercent" if end == "low" else "maxPercent"]["value"], r["period"]["value"], r["basis"]["value"], d["p"]["amortization"]["value"], n)
+        s, _ = schedule(P, end_percent(r, end, n), r["period"]["value"], r["basis"]["value"], d["p"]["amortization"]["value"], n)
         cache[k] = max(s) + monthly_fee(d["p"])
     return cache[k]
 
@@ -303,7 +316,9 @@ def maxpay(key, P, n, end):
 def reliable(k):
     p = products[k]["p"]
     e = p["eligibility"]
-    return p["feesCompleteness"] != "unknown" and e["existingCustomerRequired"]["value"] is not True and e["employerRestriction"]["value"] is None
+    # An "ok" verdict can't rest on a product with no published age limits (c82869c).
+    age_known = e["minAge"]["value"] is not None and e["maxAge"]["value"] is not None
+    return p["feesCompleteness"] != "unknown" and age_known and e["existingCustomerRequired"]["value"] is not True and e["employerRestriction"]["value"] is None
 
 
 bad = {"verdict": 0, "keys": 0, "suggest_notfit": 0, "suggest_notmax": 0, "suggest_other": 0, "missed": 0, "already_fits": 0}
@@ -389,6 +404,7 @@ for p in dump["probes"]:
     print(p)
 print("\nROWS", len(rows), "PASS", sum(" PASS |" in r for r in rows), "FAIL", sum(" FAIL |" in r for r in rows))
 print("\n".join(r for r in rows if "12m" not in r and "36m" not in r))
-print("\nFAILURES", len(fails))
+print("\nFAILURES", len(fails), "GRID FAILURES", sum(bad.values()), "FLOOR MISMATCHES", dump["floorMismatch"])
 for f in fails:
     print(f)
+sys.exit(1 if fails or any(bad.values()) or dump["floorMismatch"] else 0)

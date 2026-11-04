@@ -63,6 +63,27 @@ def exact_pays(P, pct, period, basis, n, amort="annuity"):
     return [pmt(P, r, n)] * n
 
 
+def vnd_pays(P, pct, period, basis, n, amort="annuity"):
+    """Whole-VND instalments under the documented rule: interest rounded each month, the last instalment clears."""
+    r = monthly_rate(pct, period)
+    if basis == "flat":
+        pr, i = P // n, rnd(P * r)
+        return [pr + i] * (n - 1) + [P - pr * (n - 1) + rnd(P * r * n) - i * (n - 1)]
+    out, bal = [], P
+    lvl = rnd(pmt(P, r, n))
+    for k in range(n):
+        i = rnd(bal * r)
+        if k == n - 1:
+            part = bal
+        elif amort == "equal_principal":
+            part = P // n
+        else:
+            part = min(bal, max(0, lvl - i))
+        out.append(part + i)
+        bal -= part
+    return out
+
+
 def opening_balances(P, pct, period, n):
     r = monthly_rate(pct, period)
     p = pmt(P, r, n)
@@ -81,10 +102,21 @@ def apr(m):
     return m * 12 * 100, ((1 + m) ** 12 - 1) * 100
 
 
+def pct_at(r, key, n):
+    """minByTerm limits the minimum to some terms (JACCS)."""
+    return next((m["percent"] for m in r.get("minByTerm") or [] if n >= m["termMonthsMin"]), r["minPercent"]["value"]) if key == "minPercent" else r[key]["value"]
+
+
+def low_key(r):
+    """Which end of the range costs the low end. A promotional or unconfirmed minimum is never used (DECISIONS 56, 61)."""
+    return "maxPercent" if r.get("minIsPromotional") or r.get("minUnconfirmed") else "minPercent"
+
+
 print("\n=== WORKED EXAMPLES: exact maths vs app vs published ===")
 print(f"{'case':38} {'exact pay':>14} {'app first':>11} {'app last':>11} {'publ':>11} | {'exact total':>14} {'app total':>12} {'publ tot':>11} | {'my APR':>8} {'app APR':>8} {'my eff':>8} {'app eff':>8}")
 cases = json.load(open(os.path.join(root, "scripts", "check", "lender_update_cases.json"), encoding="utf-8"))
 fails = []
+total_gaps = []
 for c in cases:
     fee = c.get("monthlyFee", 0)
     pays = [p + fee for p in exact_pays(c["P"], c["pct"], c["period"], c["basis"], c["n"], c.get("amort", "annuity"))]
@@ -92,12 +124,15 @@ for c in cases:
     m = irr(c["P"], pays)
     nom, eff = apr(m)
     tot = sum(pays)
+    whole = sum(vnd_pays(c["P"], c["pct"], c["period"], c["basis"], c["n"], c.get("amort", "annuity"))) + fee * c["n"]
+    total_gaps.append((abs(float(tot) - a["totalRepaid"]), c["id"]))
     print(
         f"{c['id']:38} {float(pays[0]):>14,.2f} {a['first']:>11,} {a['last']:>11,} {c.get('pubMonthly', 0):>11,} | {float(tot):>14,.2f} {a['totalRepaid']:>12,} {c.get('pubTotal', 0):>11,} | {nom:8.3f} {a['nominal'] * 100:8.3f} {eff:8.3f} {a['effective'] * 100:8.3f}"
     )
-    if abs(float(pays[0]) - a["first"]) > AMT_TOL or abs(nom - a["nominal"] * 100) > PP_TOL or abs(eff - a["effective"] * 100) > PP_TOL or abs(float(tot) - a["totalRepaid"]) > AMT_TOL:
-        fails.append((c["id"], float(pays[0]), a["first"], float(tot), a["totalRepaid"]))
-print("exact vs app outside +-1 VND or +-0.01pp:", fails or "none")
+    if abs(float(pays[0]) - a["first"]) > AMT_TOL or abs(nom - a["nominal"] * 100) > PP_TOL or abs(eff - a["effective"] * 100) > PP_TOL or abs(whole - a["totalRepaid"]) > AMT_TOL:
+        fails.append((c["id"], float(pays[0]), a["first"], whole, a["totalRepaid"]))
+print("first payment and rates vs exact maths, total vs whole-VND schedule, outside +-1 VND or +-0.01pp:", fails or "none")
+print("largest gap between the app's total and unrounded maths (the level instalment is rounded once, by design): %.2f VND on %s" % max(total_gaps))
 
 print("\n=== 1. Home Credit: rate implied by the published payment, and the flat labels ===")
 
@@ -144,21 +179,17 @@ print("\n=== 2. Home Credit installments at 0% and 49.5% ===")
 for key, P, n in [("electronics", 10_000_000, 12), ("electronics", 20_000_000, 12), ("electronics", 20_000_000, 24), ("motorbike", 40_000_000, 24), ("motorbike", 20_000_000, 36)]:
     k = "home-credit/installment-" + key
     a = next((g for g in dump["grid"] if g["key"] == k and g["amountVnd"] == P and g["termMonths"] == n), None)
-    hi = exact_pays(P, 49.5, "yearly", "reducing", n)
+    hi = [p + 11_000 for p in exact_pays(P, 49.5, "yearly", "reducing", n)]
     h = apr(irr(P, hi))
-    fee_lo = apr(irr(P, [F(P, n) + 11_000] * n))
-    fee_hi = apr(irr(P, [p + 11_000 for p in hi]))
-    print(f"{k} {P:,}/{n}: mine low pay {float(F(P, n)):,.2f} cost 0 APR 0; mine high pay {float(hi[0]):,.2f} total {float(sum(hi)):,.2f} cost {float(sum(hi) - P):,.2f} APR {h[0]:.3f} eff {h[1]:.3f}")
+    print(f"{k} {P:,}/{n}: mine low = high (0% is promotional, DECISIONS 56), with the 11,000 fee: pay {float(hi[0]):,.2f} total {float(sum(hi)):,.2f} cost {float(sum(hi) - P):,.2f} APR {h[0]:.3f} eff {h[1]:.3f}")
     if a:
         print(f"   app low first {a['low']['first']:,} last {a['low']['last']:,} total {a['low']['totalRepaid']:,} cost {a['low']['totalCost']:,} APR {a['low']['nominal'] * 100!r} eff {a['low']['effective'] * 100!r} | high first {a['high']['first']:,} last {a['high']['last']:,} total {a['high']['totalRepaid']:,} cost {a['high']['totalCost']:,} APR {a['high']['nominal'] * 100:.3f} eff {a['high']['effective'] * 100:.3f} | shown {a['aprVi']} / {a['effVi']} / {a['totalVi']}")
-    print(f"   if the 11k transfer fee applied per instalment (unconfirmed): low APR {fee_lo[0]:.3f}, cost {11_000 * n:,}; high APR {fee_hi[0]:.3f}")
 z = dump["zero"]
-neg = [x for x in z if x["nominal"] < 0 or x["effective"] < 0]
-nonzero = [x for x in z if x["nominal"] != 0 or x["effective"] != 0]
-bad_text = [x for x in z if x["nominalVi"] != "0%" or x["effectiveVi"] != "0%"]
-print(f"zero sweep: {len(z)} loans; non-finite {sum(1 for x in z if x['nominal'] is None or x['effective'] is None)}; raw IRR not exactly 0: {len(nonzero)}; negative: {len(neg)}; text other than 0%: {len(bad_text)}; total cost not 0: {sum(1 for x in z if x['totalCost'] != 0)}; max |APR|: {max(abs(x['nominal']) for x in z):.3e}; largest first-last gap: {max(abs(x['first'] - x['last']) for x in z)}")
-for x in bad_text[:12]:
-    print("   ", {k: x[k] for k in ("key", "amountVnd", "termMonths", "nominal", "effective", "nominalVi", "effectiveVi")})
+# Every product with a 0% floor has it flagged, so nobody should ever see a free loan.
+shows_zero = [x for x in z if x["nominal"] is None or x["effective"] is None or x["nominal"] <= 0 or x["effective"] <= 0 or x["nominalVi"] == "0%" or x["effectiveVi"] == "0%" or x["totalCost"] <= 0]
+print(f"0% floor sweep: {len(z)} loans; non-finite {sum(1 for x in z if x['nominal'] is None or x['effective'] is None)}; shown as free or at 0%: {len(shows_zero)}; lowest APR shown {min(x['nominal'] for x in z) * 100:.3f}; largest first-last gap: {max(abs(x['first'] - x['last']) for x in z)}")
+for x in shows_zero[:12]:
+    print("   FAIL", {k: x[k] for k in ("key", "amountVnd", "termMonths", "nominal", "effective", "nominalVi", "effectiveVi")})
 print("verdicts changed by the 0% offers (income, term, amount, purpose: with -> without):")
 for v in dump["verdicts"]:
     if v["verdict"] != v["verdictWithoutZeroOffers"]:
@@ -343,11 +374,10 @@ for g in dump["grid"]:
     r = chosen_rate(p)
     fee = fee_of(p)
     amort = p["amortization"]["value"]
-    # A promotional minimum is never used for a borrower's cost, so the low end is the maximum.
-    for end, key in (("low", "maxPercent" if r.get("minIsPromotional") else "minPercent"), ("high", "maxPercent")):
+    for end, key in (("low", low_key(r)), ("high", "maxPercent")):
         s = g[end]
         n_checked += 1
-        ex = exact_pays(g["amountVnd"], r[key]["value"], r["period"]["value"], r["basis"]["value"], g["termMonths"], amort)
+        ex = exact_pays(g["amountVnd"], pct_at(r, key, g["termMonths"]), r["period"]["value"], r["basis"]["value"], g["termMonths"], amort)
         w = [e + fee for e in ex]
         m = irr(g["amountVnd"], w)
         nom, eff = apr(m)
@@ -377,9 +407,8 @@ gaps = []
 for g in twenty:
     p = products[g["key"]]
     r = chosen_rate(p)
-    # A promotional minimum is never used for a borrower's cost, so the low end is the maximum.
-    for end, key in (("low", "maxPercent" if r.get("minIsPromotional") else "minPercent"), ("high", "maxPercent")):
-        w = [e + fee_of(p) for e in exact_pays(20_000_000, r[key]["value"], r["period"]["value"], r["basis"]["value"], g["termMonths"], p["amortization"]["value"])]
+    for end, key in (("low", low_key(r)), ("high", "maxPercent")):
+        w = [e + fee_of(p) for e in exact_pays(20_000_000, pct_at(r, key, g["termMonths"]), r["period"]["value"], r["basis"]["value"], g["termMonths"], p["amortization"]["value"])]
         gaps.append((round(abs(float(sum(w)) - g[end]["totalRepaid"]), 2), g["key"], g["termMonths"], end))
 print("largest total difference from exact maths at 20M, 12/24/36 months:", max(gaps))
 for f in failures[:20]:
@@ -394,7 +423,11 @@ for k, v in dump["twentyM"].items():
         fee = fee_of(p)
         n = int(k.split("/")[1])
         am = p["amortization"]["value"]
-        nl = apr(irr(20_000_000, [e + fee for e in exact_pays(20_000_000, r["maxPercent" if r.get("minIsPromotional") else "minPercent"]["value"], r["period"]["value"], r["basis"]["value"], n, am)]))[0]
+        nl = apr(irr(20_000_000, [e + fee for e in exact_pays(20_000_000, pct_at(r, low_key(r), n), r["period"]["value"], r["basis"]["value"], n, am)]))[0]
         nh = apr(irr(20_000_000, [e + fee for e in exact_pays(20_000_000, r["maxPercent"]["value"], r["period"]["value"], r["basis"]["value"], n, am)]))[0]
         print(f"{k:16} {g['key']:46} {str(r['minPercent']['value']) + '-' + str(r['maxPercent']['value']) + ('m' if r['period']['value'] == 'monthly' else 'y'):>12} {g['low']['first']:>10,} {g['high']['first']:>10,} {g['low']['totalRepaid']:>11,} {g['high']['totalRepaid']:>11,} {g['low']['totalCost']:>10,} {g['high']['totalCost']:>10,} {g['low']['nominal'] * 100:8.2f} {g['high']['nominal'] * 100:8.2f} {g['low']['effective'] * 100:8.2f} {g['high']['effective'] * 100:8.2f} {nl:7.2f}/{nh:7.2f}")
     print(f"   verdict {v['verdict']}; ineligible: {[(a.split('/')[1], b) for a, b in v['ineligible']]}")
+
+total_fails = len(fails) + len(shows_zero) + len(failures) + len(not_int)
+print(f"\nFAILURES {total_fails} (worked examples {len(fails)}, 0% floor {len(shows_zero)}, grid {len(failures)}, integer/balance {len(not_int)})")
+sys.exit(1 if total_fails else 0)
