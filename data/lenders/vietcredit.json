@@ -1,0 +1,2985 @@
+{
+  "schemaVersion": 2,
+  "slug": "vietcredit",
+  "name": "VietCredit",
+  "legalName": "Công ty Tài chính tổng hợp cổ phần Tín Việt",
+  "licenseCategory": "finance_company",
+  "licensedInstitutionId": "vietcredit",
+  "website": "https://vietcredit.com.vn",
+  "products": [
+    {
+      "id": "tin-vay-personal-loan",
+      "nameVi": "Tin Vay - vay tiêu dùng cá nhân (tín chấp)",
+      "nameEn": "Tin Vay unsecured personal consumer loan (all partner channels)",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "Tin Vay (tinvay.com.vn) trên MoMo, Viettel Money, Zalo, TOPI, VNPT Money, ZaloPay...",
+      "online": true,
+      "amountMinVnd": {
+        "value": 5000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Tin Vay 'Vay cá nhân' page: \"Cho vay từ 5 đến 50 triệu đồng\". Partner tables on the same page show other minimums (MoMo 2M, VietinBank 2M, Grab Driver 2M, TOPI 8M); see conflicts."
+      },
+      "amountMaxVnd": {
+        "value": 50000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Tin Vay 'Vay cá nhân' page and home page: \"Cho vay từ 5 đến 50 triệu đồng\". The same page's partner tables list higher limits per channel (MoMo 2-100M, Zalo (Fiza) 5-100M, TOPI 8-100M, AhaMove 5-100M, Grab 5-100M, VietinBank 2-100M, Fundiin 5-80M, ZaloPay 5-30M, Viettel Money 5-50M, VNPT Money 5-20M, Grab Driver 2-200M). Stored the headline 50M, the lower figure. Above the 100M per-customer finance-company cap (Circular 43/2016/TT-NHNN art. 3(1)); see docs/research/regulations.md."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page: \"kỳ hạn linh hoạt 6 đến 21 tháng\". Some partner rows show shorter terms; see conflicts."
+      },
+      "termMaxMonths": {
+        "value": 21,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page: \"kỳ hạn linh hoạt 6 đến 21 tháng\". Partner rows show up to 24 months (most) and 48 months (MoMo); see conflicts."
+      },
+      "rates": [
+        {
+          "kind": "regulatory_ceiling",
+          "segment": "Khung lãi suất công bố cho cả sản phẩm Tin Vay vay tiêu dùng cá nhân (mọi kênh đối tác), không phải mức riêng của một khách hàng. Lãi suất cụ thể do VietCredit duyệt cho từng khách hàng.",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-02-01",
+            "note": "Biểu lãi suất, Quyết định 145C/2026/VietCredit-QĐ: \"Lãi suất cho vay trong hạn: Thấp nhất 0%/năm\". A 0% floor is a framework floor (it allows interest-free promotions such as the free first month on MoMo); it is not a typical rate."
+          },
+          "maxPercent": {
+            "value": 89,
+            "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-02-01",
+            "note": "Same table: \"Cao nhất 89%/năm\", column header \"LÃI SUẤT (%/năm/Dư nợ giảm dần)\". Effective 01/02/2026 until amended. The two previous tables read 72%/năm (330D/2025, 21/05/2025) and 76%/năm (192B/2025). Medium, not high: a tier 3 lead (topi.vn) quotes a different range (see conflicts) and the PDF file metadata is dated 2026-08-19, so a newer version may exist that is not listed."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+            "note": "Source wording: \"%/năm/Dư nợ giảm dần\". Contract template: \"theo phương thức dư nợ giảm dần\"; interest = daily balance x days x annual rate / 365 (T&C art. 3, contract art. 1.8)."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+            "note": "Source wording: \"%/năm\"; one year = 365 days (T&C art. 3.1)."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí trả nợ trước hạn (tất toán toàn bộ khoản vay)",
+          "nameEn": "Early repayment fee (full settlement)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/tinvay/dieu-khoan-giao-dich-chung-cho-vay-tieu-dung.pdf",
+            "note": "Charged when the borrower settles the whole loan early (T&C 4.2, 8.2). Paying instalments in advance without settling carries no fee (T&C 8.1)."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/tinvay/hop-dong-tin-dung.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Only incurred if the borrower chooses to settle early."
+          },
+          "base": "prepaid_amount",
+          "rule": "percent_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "The generic contract template leaves the percentage blank. It has two bands for monthly-term loans: prepaying up to the first payment date, and prepaying after it. Other templates in the same family state 5% x principal repaid early (GrabPAX, Grab Driver/Merchant) and the Viettel Money page states 5% x remaining principal."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Percentage not filled in the generic template (contract art. 1.7(d)); the two band boundaries are first payment date. Not stored as tiers because the percentages are unknown."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí dịch vụ thu hộ / chuyển khoản",
+          "nameEn": "Collection or transfer service fee (third party)",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/tinvay/cho-vay-tieu-dung-ca-nhan-lich-thanh-toan.pdf",
+            "note": "The payment schedule template has a separate column 'Phí thu hộ/chuyển khoản' in each instalment's total. VietCredit's MoMo page says it is added to the remaining debt after each payment."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only when the borrower pays through a collection or transfer provider; contract terms 4.4 say it is paid to that provider, per payment, and is not a VietCredit fee."
+          },
+          "base": "not_applicable",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Amount is set by each collection/transfer provider and is not published by VietCredit (T&C 4.4; schedule template note)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân (CCCD) gắn chip; chụp ảnh khi đăng ký trên ứng dụng đối tác"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page: \"Chỉ cần chụp ảnh CCCD và điền một số thông tin cơ bản\"."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Không cần tài sản đảm bảo; không cần chứng minh thu nhập (theo trang sản phẩm)",
+            "Đăng ký qua ứng dụng đối tác (MoMo, Viettel Money, Zalo, TOPI, VNPT Money, ZaloPay...); độ tuổi và điều kiện khác nhau theo kênh (MoMo 18-50, Viettel Money 18-55, TOPI và VNPT Money 18-55)",
+            "Một số kênh chỉ mời khách hàng nằm trong danh sách do VietCredit và đối tác chọn"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Age and invitation rules are per channel on the channel pages (see the channel products). The generic page gives no minimum age or income."
+        },
+        "notes": "Hanoi head office and HCMC branch per tinvay.com.vn; the loan is online so the whole country is served."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 130% lãi suất trong hạn (theo biểu lãi suất Tin Vay áp dụng từ 01/02/2026). Hợp đồng mẫu ghi lãi chậm trả lãi là 0%. Hợp đồng còn có điều khoản phạt vi phạm 8% giá trị nghĩa vụ vi phạm, nhưng điều khoản đó ghi rõ không áp dụng khi chậm trả nợ gốc, lãi.",
+          "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-02-01",
+          "note": "Rate table 145C/2026: \"Lãi suất quá hạn: 130% lãi suất cho vay trong hạn\". Contract template (06/10/2025): \"Lãi suất chậm trả lãi: 0%\". T&C art. 17.1 and 17.4: 8% breach penalty, not applied to failure to pay principal or interest. Channel pages differ (Viettel Money: 150%); see conflicts."
+        },
+        "textEn": "Overdue principal is charged 130% of the in-term rate. The template contract sets interest on late interest at 0%.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.3,
+          "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-02-01",
+          "note": "130% of the in-term rate (rate table 145C/2026)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": 0,
+          "sourceUrl": "https://www.vietcredit.vn/pdf/tinvay/cho-vay-tieu-dung-ca-nhan-hop-dong-tin-dung.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Credit contract template of 06/10/2025, art. 1.7(c): \"Lãi suất chậm trả lãi: 0%\". The other template of the same date (hop-dong-tin-dung.pdf) leaves it blank."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "50,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Headline: \"Cho vay từ 5 đến 50 triệu đồng\"."
+            },
+            {
+              "value": "100,000,000 VND (most channels)",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Partner table on the same page: MoMo 2-100M, Zalo (Fiza) 5-100M, TOPI 8-100M, AhaMove 5-100M, Grab 5-100M, VietinBank 2-100M, Fundiin 5-80M, ZaloPay 5-30M, Viettel Money 5-50M, VNPT Money 5-20M, Grab Driver 2-200M."
+            },
+            {
+              "value": "200,000,000 VND (Grab Driver)",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Grab Driver row; outside our salaried target group."
+            },
+            {
+              "value": "100,000,000 VND per customer per finance company",
+              "sourceUrl": null,
+              "note": "Circular 43/2016/TT-NHNN art. 3(1); see docs/research/regulations.md."
+            }
+          ],
+          "resolution": "Stored 50,000,000 (the product headline, the lowest figure). Channel limits are on the channel products. Lawyer to confirm; app does not show amounts above 100M as achievable."
+        },
+        {
+          "field": "amountMinVnd",
+          "values": [
+            {
+              "value": "5,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Headline."
+            },
+            {
+              "value": "2,000,000 VND (MoMo, VietinBank, Grab Driver)",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Partner table."
+            },
+            {
+              "value": "8,000,000 VND (TOPI)",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Partner table; the TOPI FAQ says 10M."
+            }
+          ],
+          "resolution": "Stored 5,000,000 (headline). Medium."
+        },
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "21 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Headline."
+            },
+            {
+              "value": "24 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Viettel Money, Zalo, TOPI, AhaMove, Grab rows."
+            },
+            {
+              "value": "48 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "MoMo row."
+            },
+            {
+              "value": "12-18 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "VietinBank 12, ZaloPay 18, Grab Driver 18."
+            }
+          ],
+          "resolution": "Stored 21 (headline). Terms differ by channel; see channel products. Medium."
+        },
+        {
+          "field": "termMinMonths",
+          "values": [
+            {
+              "value": "6 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Headline."
+            },
+            {
+              "value": "1-3 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Zalo, ZaloPay, AhaMove, Grab 3; VietinBank and Grab Driver 1."
+            }
+          ],
+          "resolution": "Stored 6 (headline, stricter). Medium."
+        },
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "89%/year, reducing balance",
+              "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+              "note": "Lender's own rate table 145C/2026, effective 01/02/2026."
+            },
+            {
+              "value": "72%/year",
+              "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat21052025330D2025.pdf",
+              "note": "Previous table 330D/2025, effective 21/05/2025; replaced by 145C/2026."
+            },
+            {
+              "value": "48.31%/year (365-day basis), reducing balance, from March 2026",
+              "sourceUrl": null,
+              "note": "Lead from a topi.vn comparison page (tier 3). topi.vn is also a Tin Vay distribution partner. Not found in any VietCredit document, page or contract read on 2026-11-04."
+            }
+          ],
+          "resolution": "Stored 89 from the lender's own document (tier 1). The lead is not stored. Confidence medium because of the unexplained difference and the file's 2026-08-19 metadata date."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "0%/year",
+              "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+              "note": "Rate table 145C/2026."
+            },
+            {
+              "value": "9.12%/year",
+              "sourceUrl": null,
+              "note": "Same topi.vn lead (tier 3); not found in any lender document."
+            }
+          ],
+          "resolution": "Stored 0 (lender's table). It is a framework floor and is never used for a borrower's cost."
+        },
+        {
+          "field": "latePenalty.overduePrincipalRateMultiplier",
+          "values": [
+            {
+              "value": "1.3 (130%)",
+              "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+              "note": "Rate table 145C/2026 (general)."
+            },
+            {
+              "value": "1.5 (150%)",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+              "note": "Viettel Money channel page formula: principal x 150% x base rate x days."
+            },
+            {
+              "value": "130% to 150%",
+              "sourceUrl": "https://www.momo.vn/vay-nhanh",
+              "note": "MoMo's generic Vay Nhanh FAQ (several lenders, not only VietCredit)."
+            }
+          ],
+          "resolution": "Stored 1.3 for the general product because it is the general table and is dated. The Viettel Money product stores 1.5. Medium."
+        }
+      ],
+      "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "VietCredit publishes only a company-wide rate framework for Tin Vay (0-89%/year, reducing balance), not an offered range for this product. Actual rates come with each approval.",
+      "borrowerNotes": [
+        {
+          "vi": "VietCredit chỉ công bố khung lãi suất Tin Vay từ 0% đến 89%/năm (dư nợ giảm dần) cho mọi khách hàng. Đây không phải lãi suất bạn sẽ nhận: lãi suất của bạn chỉ rõ sau khi được duyệt, ghi trong hợp đồng. Hãy đọc kỹ trước khi ký.",
+          "en": "VietCredit only publishes a Tin Vay rate framework of 0% to 89% a year (reducing balance) for all customers. It is not the rate you will get: your rate is set when you are approved and is written in the contract. Read it before you sign."
+        },
+        {
+          "vi": "Trả hết nợ trước hạn có phí trả nợ trước hạn (tỷ lệ ghi trong hợp đồng; trang Viettel Money công bố 5% dư nợ gốc còn lại). Trả trước một phần các kỳ sau thì không mất phí.",
+          "en": "Settling the whole loan early costs an early repayment fee (the percentage is in the contract; the Viettel Money page states 5% of the remaining principal). Paying later instalments in advance is free."
+        },
+        {
+          "vi": "Nếu trả nợ qua điểm thu hộ hoặc chuyển khoản, đơn vị thu hộ có thể tính phí riêng cho mỗi lần thanh toán.",
+          "en": "If you pay through a collection point or transfer service, that provider may charge its own fee on each payment."
+        }
+      ],
+      "notes": "Scope and source of the company rate table: 'BIỂU LÃI SUẤT CHO SẢN PHẨM VAY TIÊU DÙNG TIN VAY (Dành cho khách hàng cá nhân vay tiêu dùng)', Decision 145C/2026/VietCredit-QĐ, effective 01/02/2026 until amended; it replaces decision 330D/2025/VietCredit-QĐ of 21/05/2025 (issued for the Digital Lending business centre). It covers the Tin Vay individual consumer loan only: not credit cards, BNPL, small-trader or business loans. It does not name channels; that it covers every partner channel is our reading of the 'TIN VAY' contract family, not a statement in the table. Read 2026-11-04 with pdftotext. Contract documents read: T&C (BM 02-CVTD-L6, dated 12.10.2026 on the forms list, also 18.08.2026), credit contract and loan application templates (06.10.2025), payment schedule template. Contract art. 1.7 says VietCredit charges no other interest or fee than those listed in the contract, and no insurance appears in any of these documents; insurance is therefore not in the product, but because the percentage fields are blank the file is marked 'unknown' for insurance."
+    },
+    {
+      "id": "tin-vay-viettel-money",
+      "nameVi": "Tin Vay trên Viettel Money",
+      "nameEn": "Tin Vay unsecured loan in the Viettel Money app",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "Viettel Money",
+      "online": true,
+      "amountMinVnd": {
+        "value": 5000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page: \"Từ 5 triệu đến 50 triệu đồng\". Page is undated."
+      },
+      "amountMaxVnd": {
+        "value": 50000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Same sentence. A press article of 08/04/2026 says up to 60M (tier 3); see conflicts."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page lists terms 6, 9, 12, 15, 18, 21, 24 months."
+      },
+      "termMaxMonths": {
+        "value": 24,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Same list."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "Viettel Money",
+          "minPercent": {
+            "value": 3.5,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Page: \"Dịch vụ có lãi suất cố định từ 3.5%/tháng (tùy theo đánh giá tín dụng của tổ chức tài chính)\". No maximum is stated. The page is undated."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "note": "Page: \"Lãi suất tính theo dư nợ giảm dần\", details in the credit contract."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "note": "Source wording: \"3.5%/tháng\"."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí trả nợ trước hạn toàn bộ khoản vay",
+          "nameEn": "Early repayment fee (full settlement)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "note": "Charged when the whole loan is settled early."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Only if the borrower settles early."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 5,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Page: \"Phí trả nợ trước hạn toàn bộ khoản vay là 5% x Dư nợ gốc còn lại.\" Page is undated; the contract template leaves the percentage blank."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí đăng ký dịch vụ",
+          "nameEn": "Service registration fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Page: \"Dịch vụ miễn phí đăng ký dịch vụ, không phát sinh phí ẩn.\""
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Free per the page. This says nothing about early-repayment, late or collection charges."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí dịch vụ thu hộ / chuyển khoản",
+          "nameEn": "Collection or transfer service fee (third party)",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/tinvay/cho-vay-tieu-dung-ca-nhan-lich-thanh-toan.pdf",
+            "note": "The payment schedule template has a separate column 'Phí thu hộ/chuyển khoản' in each instalment's total. VietCredit's MoMo page says it is added to the remaining debt after each payment."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only when the borrower pays through a collection or transfer provider; contract terms 4.4 say it is paid to that provider, per payment, and is not a VietCredit fee."
+          },
+          "base": "not_applicable",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Amount is set by each collection/transfer provider and is not published by VietCredit (T&C 4.4; schedule template note)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page: \"Trong độ tuổi 18-55 tuổi\"."
+        },
+        "maxAge": {
+          "value": 55,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Same sentence. Not stated whether checked at application or at loan end."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Xác thực định danh (CCCD) trong ứng dụng Viettel Money",
+            "Liên kết tài khoản ngân hàng"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium"
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Là khách hàng của Viettel Money",
+            "Đáp ứng các điều kiện khác của tổ chức tín dụng; quyết định phê duyệt thuộc về VietCredit"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium"
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Lãi chậm trả gốc = số tiền gốc đến hạn trả chậm x 150% x lãi suất cơ sở x số ngày chậm. Khi quá hạn, bạn phải trả nợ gốc, lãi trong hạn, lãi quá hạn và phí (nếu có).",
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page formula; 'lãi suất cơ sở' is not defined on the page (probably the in-term rate). The general rate table says 130%."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "150% in the page formula; the general table 145C/2026 says 130%, see conflicts."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated on the Viettel Money page. The generic contract template says 0%."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "50,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+              "note": "Channel page."
+            },
+            {
+              "value": "60,000,000 VND",
+              "sourceUrl": "https://thoibaotaichinhvietnam.vn/vung-da-tang-truong-vietcredit-tiep-tuc-mo-rong-mang-vay-tieu-dung-ca-nhan-195235.html",
+              "note": "Thời báo Tài chính Việt Nam, 08/04/2026 (tier 3)."
+            }
+          ],
+          "resolution": "Stored 50M from the channel page (tier 1, lower)."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "3.5%/month",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+              "note": "Channel page, undated."
+            },
+            {
+              "value": "3.2%/month",
+              "sourceUrl": "https://thoibaotaichinhvietnam.vn/vung-da-tang-truong-vietcredit-tiep-tuc-mo-rong-mang-vay-tieu-dung-ca-nhan-195235.html",
+              "note": "Press, 08/04/2026 (tier 3)."
+            }
+          ],
+          "resolution": "Stored 3.5 (official page, higher cost). It is a starting rate, not an offered range."
+        },
+        {
+          "field": "latePenalty.overduePrincipalRateMultiplier",
+          "values": [
+            {
+              "value": "150%",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+              "note": "Channel page formula."
+            },
+            {
+              "value": "130%",
+              "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+              "note": "General rate table 145C/2026."
+            }
+          ],
+          "resolution": "Stored 1.5 (higher cost)."
+        }
+      ],
+      "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Only a starting rate (from 3.5%/month) is published for this channel, with no maximum, so it is not an offered range.",
+      "borrowerNotes": [
+        {
+          "vi": "Trang Viettel Money chỉ ghi lãi suất \"từ 3,5%/tháng\" (dư nợ giảm dần), không ghi mức tối đa. Lãi suất của bạn do VietCredit duyệt và ghi trong hợp đồng.",
+          "en": "The Viettel Money page only says \"from 3.5% a month\" (reducing balance), with no maximum. Your rate is set by VietCredit and written in the contract."
+        },
+        {
+          "vi": "Tất toán trước hạn: phí 5% dư nợ gốc còn lại.",
+          "en": "Settling early: a fee of 5% of the remaining principal."
+        }
+      ]
+    },
+    {
+      "id": "tin-vay-vnpt-money",
+      "nameVi": "Tin Vay trên VNPT Money",
+      "nameEn": "Tin Vay unsecured loan in the VNPT Money app",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "VNPT Money",
+      "online": true,
+      "amountMinVnd": {
+        "value": 5000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "FAQ: \"từ 5 đến 20 triệu đồng\". Page is undated."
+      },
+      "amountMaxVnd": {
+        "value": 20000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "FAQ and loan table. A press article (08/04/2026) says 15M; see conflicts."
+      },
+      "termMinMonths": {
+        "value": 9,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "The loan table lists 9, 12 and 15 months; the FAQ says 6 to 12 months. Stored the stricter bound of the two (9); see conflicts."
+      },
+      "termMaxMonths": {
+        "value": 12,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "FAQ: up to 12 months; the loan table lists up to 15. Stored the stricter (12); see conflicts."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "VNPT Money",
+          "minPercent": {
+            "value": 0.1,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "FAQ: \"Lãi suất: Minh bạch từ 0.1%/ngày, tính theo dư nợ giảm dần\". No maximum. A press article (08/04/2026) quotes \"từ 5.6%/tháng\" for VNPT Money, which is much higher than 0.1%/day (about 3%/month); see conflicts."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+            "note": "FAQ: \"tính theo dư nợ giảm dần\"."
+          },
+          "period": {
+            "value": "daily",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+            "note": "Source wording: \"0.1%/ngày\"."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí trả nợ trước hạn (tất toán)",
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+            "note": "Charged on settlement if applicable."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "FAQ: \"Mức phí tất toán (nếu có) sẽ được ghi rõ trong hợp đồng tín dụng.\""
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "The percentage is not on the page."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí dịch vụ",
+          "nameEn": "Service fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "FAQ: no service fee, no hidden fee; the borrower pays principal and interest only."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Per FAQ; the collection/transfer fee and the early-repayment fee are not covered by this statement."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "FAQ: \"Người dùng từ 18 đến 55 tuổi\"."
+        },
+        "maxAge": {
+          "value": 55,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Same sentence."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân còn hiệu lực",
+            "Tài khoản VNPT Money đã xác thực",
+            "Tài khoản ngân hàng liên kết"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "No income proof or asset papers required, per the page."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Được mời vay theo tiêu chí sàng lọc của VietCredit và VNPT Money"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium"
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "The VNPT Money page gives no overdue-interest formula."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "20,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+              "note": "Channel page."
+            },
+            {
+              "value": "15,000,000 VND",
+              "sourceUrl": "https://thoibaotaichinhvietnam.vn/vung-da-tang-truong-vietcredit-tiep-tuc-mo-rong-mang-vay-tieu-dung-ca-nhan-195235.html",
+              "note": "Press 08/04/2026 (tier 3)."
+            }
+          ],
+          "resolution": "Stored 20M (tier 1)."
+        },
+        {
+          "field": "termMinMonths",
+          "values": [
+            {
+              "value": "9 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+              "note": "Loan table (9, 12, 15)."
+            },
+            {
+              "value": "6 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+              "note": "FAQ (6 to 12)."
+            }
+          ],
+          "resolution": "Stored 9 (stricter)."
+        },
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "12 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+              "note": "FAQ."
+            },
+            {
+              "value": "15 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+              "note": "Loan table."
+            }
+          ],
+          "resolution": "Stored 12 (stricter)."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "0.1%/day, reducing balance",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+              "note": "FAQ."
+            },
+            {
+              "value": "5.6%/month",
+              "sourceUrl": "https://thoibaotaichinhvietnam.vn/vung-da-tang-truong-vietcredit-tiep-tuc-mo-rong-mang-vay-tieu-dung-ca-nhan-195235.html",
+              "note": "Press 08/04/2026 (tier 3); 0.1%/day is roughly 3%/month."
+            }
+          ],
+          "resolution": "Stored the official page figure. Not an offered range."
+        }
+      ],
+      "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Only a starting rate (from 0.1%/day) is published for this channel, with no maximum, so it is not an offered range.",
+      "borrowerNotes": [
+        {
+          "vi": "Trang VNPT Money chỉ ghi lãi suất \"từ 0,1%/ngày\" (dư nợ giảm dần), không ghi mức tối đa. Phí tất toán sớm (nếu có) ghi trong hợp đồng.",
+          "en": "The VNPT Money page only says \"from 0.1% a day\" (reducing balance), with no maximum. Any early settlement fee is in the contract."
+        }
+      ]
+    },
+    {
+      "id": "tin-vay-topi",
+      "nameVi": "Tin Vay trên TOPI",
+      "nameEn": "Tin Vay unsecured loan in the TOPI app (for TOPI investors)",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "TOPI",
+      "online": true,
+      "amountMinVnd": {
+        "value": 10000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "FAQ: \"từ 10 – 100 triệu đồng\". The loan table shows 8 million; stored the higher (stricter); see conflicts."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page: \"đến 100 triệu\"; FAQ \"10 – 100 triệu\". Equal to, not above, the finance-company cap."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Table and FAQ: from 6 months."
+      },
+      "termMaxMonths": {
+        "value": 18,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "FAQ: \"Linh hoạt từ 6 đến 18 tháng\"; the loan table lists up to 24. Stored the stricter (18); see conflicts."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "Trang chính TOPI (theo tháng)",
+          "minPercent": {
+            "value": 2.08,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Page: \"lãi suất ưu đãi chỉ từ 2.08%/tháng\". No maximum. The basis is not stated next to this figure."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "note": "Source wording: \"2.08%/tháng\"."
+          },
+          "promotional": null
+        },
+        {
+          "kind": "advertised_floor",
+          "segment": "FAQ TOPI (theo ngày)",
+          "minPercent": {
+            "value": 0.06,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "FAQ: \"Chỉ từ 0.06%/ngày, tính theo dư nợ giảm dần\". 0.06%/day is about 1.8%/month, which does not match 2.08%/month on the same page."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "note": "FAQ: \"tính theo dư nợ giảm dần\"."
+          },
+          "period": {
+            "value": "daily",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "note": "Source wording: \"0.06%/ngày\"."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí tất toán sớm",
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "note": "Charged on settlement if applicable."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "FAQ: settle at any time; the fee, if any, is in the contract."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "The percentage is not on the page."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí dịch vụ",
+          "nameEn": "Service fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Main page: \"không phí dịch vụ\"."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Per the page; other charges are not covered."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "FAQ: 18 to 55."
+        },
+        "maxAge": {
+          "value": 55,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Same sentence."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân còn hiệu lực",
+            "Xác thực định danh và liên kết tài khoản ngân hàng"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium"
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Là người dùng ứng dụng TOPI, có hoạt động đầu tư hoặc tích lũy ổn định từ 3 tháng trở lên",
+            "Thuộc nhóm khách hàng được chọn theo hệ thống đánh giá của TOPI và VietCredit",
+            "Không cần chứng minh thu nhập hay tài sản đảm bảo (theo trang)"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium"
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "The TOPI page gives no overdue-interest formula."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMinVnd",
+          "values": [
+            {
+              "value": "10,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+              "note": "FAQ."
+            },
+            {
+              "value": "8,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+              "note": "Loan table."
+            }
+          ],
+          "resolution": "Stored 10M (stricter)."
+        },
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "18 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+              "note": "FAQ."
+            },
+            {
+              "value": "24 months",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+              "note": "Loan table."
+            },
+            {
+              "value": "12 months",
+              "sourceUrl": "https://thoibaotaichinhvietnam.vn/vung-da-tang-truong-vietcredit-tiep-tuc-mo-rong-mang-vay-tieu-dung-ca-nhan-195235.html",
+              "note": "Press 08/04/2026 (tier 3)."
+            }
+          ],
+          "resolution": "Stored 18 (stricter within the official page)."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "2.08%/month",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+              "note": "Main page."
+            },
+            {
+              "value": "0.06%/day (about 1.8%/month)",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+              "note": "FAQ on the same page."
+            },
+            {
+              "value": "1.7%/month",
+              "sourceUrl": "https://topi.vn/vay-tien-online-topi",
+              "note": "TOPI's own page (a distribution partner, tier 3): \"Chỉ từ 1.7%/tháng\"."
+            },
+            {
+              "value": "1.25%/month",
+              "sourceUrl": "https://thoibaotaichinhvietnam.vn/vung-da-tang-truong-vietcredit-tiep-tuc-mo-rong-mang-vay-tieu-dung-ca-nhan-195235.html",
+              "note": "Press 08/04/2026 (tier 3)."
+            }
+          ],
+          "resolution": "Stored 2.08 (VietCredit's own page, higher cost). All are starting rates, none is an offered range."
+        }
+      ],
+      "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/topi",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Only starting rates are published for this channel (and they disagree), with no maximum, so there is no offered range.",
+      "borrowerNotes": [
+        {
+          "vi": "Các mức \"chỉ từ\" trên TOPI không giống nhau giữa các trang (2,08%/tháng, 0,06%/ngày...). Hãy dựa vào lãi suất trong hợp đồng sau khi được duyệt.",
+          "en": "The \"from\" rates on TOPI differ between pages (2.08% a month, 0.06% a day...). Rely on the rate in your contract after approval."
+        }
+      ]
+    },
+    {
+      "id": "tin-vay-fiza-zalo",
+      "nameVi": "Tin Vay trên Zalo (Fiza)",
+      "nameEn": "Tin Vay unsecured loan in the Fiza mini app on Zalo",
+      "productType": "cash_loan",
+      "status": "campaign",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "Zalo - Fiza",
+      "online": true,
+      "amountMinVnd": {
+        "value": 5000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Partner table on the Tin Vay 'Vay cá nhân' page: Zalo (Fiza) 5-100 million."
+      },
+      "amountMaxVnd": {
+        "value": 70000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "The same page's description says \"vay đến 70 triệu\" while its table and the notice of 17/03/2026 say 100 million. Stored the lower figure; see conflicts."
+      },
+      "termMinMonths": {
+        "value": 3,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Partner table: 3-24 months."
+      },
+      "termMaxMonths": {
+        "value": 24,
+        "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-tren-fiza-zalo-tung-uu-dai-nang-han-muc-den-100-trieu-yQL.html",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "sourceDocumentDate": "2026-03-17",
+        "note": "Notice 17/03/2026: \"Thời hạn vay linh hoạt đến 24 tháng\"; table 3-24."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "Ưu đãi riêng trên Fiza (có thời hạn)",
+          "minPercent": {
+            "value": 1.42,
+            "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-tren-fiza-zalo-tung-uu-dai-nang-han-muc-den-100-trieu-yQL.html",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-03-17",
+            "note": "Notice: \"Lãi suất chỉ từ 1.42%/tháng\" in a limited-time offer with no end date. No maximum, basis not stated."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-tren-fiza-zalo-tung-uu-dai-nang-han-muc-den-100-trieu-yQL.html",
+            "note": "Source wording: \"1.42%/tháng\"."
+          },
+          "promotional": true
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [],
+      "feesCompleteness": "unknown",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Đăng ký qua Mini App \"Tin Vay\" trong Zalo (Khám phá > Tiện ích tài chính > Tin Vay)"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-tren-fiza-zalo-tung-uu-dai-nang-han-muc-den-100-trieu-yQL.html",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-03-17",
+          "note": "The notice gives no age, income or other conditions."
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not found for this product."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "100,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-tren-fiza-zalo-tung-uu-dai-nang-han-muc-den-100-trieu-yQL.html",
+              "note": "Notice 17/03/2026 (title: raises the limit to 100 million) and the partner table."
+            },
+            {
+              "value": "70,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Description line on the 'Vay cá nhân' page: \"vay đến 70 triệu\"."
+            }
+          ],
+          "resolution": "Stored 70M (lower, conservative). The 100M figure equals the finance-company cap and is not above it."
+        }
+      ],
+      "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-tren-fiza-zalo-tung-uu-dai-nang-han-muc-den-100-trieu-yQL.html",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Only a limited-time starting rate (from 1.42%/month) is published; no maximum, basis or fees.",
+      "borrowerNotes": [
+        {
+          "vi": "Mức \"chỉ từ 1,42%/tháng\" là ưu đãi có thời hạn, không phải lãi suất của mọi khách hàng.",
+          "en": "The \"from 1.42% a month\" rate is a limited-time offer, not the rate every customer gets."
+        }
+      ]
+    },
+    {
+      "id": "tin-vay-momo",
+      "nameVi": "Tin Vay trên MoMo (Vay nhanh)",
+      "nameEn": "Tin Vay unsecured loan on MoMo (Vay nhanh)",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "MoMo - Vay nhanh",
+      "online": true,
+      "amountMinVnd": {
+        "value": 6000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "FAQ: \"tối thiểu 6 triệu và tối đa là 50 triệu đồng\". The loan table on the same site shows 2-100 million; stored the FAQ (stricter); see conflicts."
+      },
+      "amountMaxVnd": {
+        "value": 50000000,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Same FAQ sentence; limits depend on credit score."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page lists terms 6, 9, 12, 15, 18, 21, 24 and 48 months."
+      },
+      "termMaxMonths": {
+        "value": 48,
+        "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Same list."
+      },
+      "rates": [],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí tất toán trước hạn",
+          "nameEn": "Early repayment fee",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+            "note": "Page: \"Khi tất toán sẽ có phí tất toán\"."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Only if the borrower settles early. Partial payments before the due date are allowed."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Amount is in the credit contract. MoMo's generic Vay Nhanh page (several lenders) says 5% of the remaining principal; it does not name VietCredit, so it is not stored."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thu hộ",
+          "nameEn": "Collection fee",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "added_to_loan",
+            "provenance": "inferred",
+            "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+            "note": "Page: \"Phí thu hộ sẽ được cộng thêm vào dư nợ còn lại\" after each payment."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Amount and conditions are not stated on the VietCredit page. MoMo's generic page says 20,000 VND per payment (several lenders; not stored)."
+          },
+          "base": "not_applicable",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not on the VietCredit page."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "FAQ: \"Khách hàng thuộc độ tuổi 18-50 tuổi.\""
+        },
+        "maxAge": {
+          "value": 50,
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Same sentence."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Ví MoMo đã xác thực danh tính (CCCD)"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium"
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Nằm trong danh sách khách hàng đủ điều kiện do bên cho vay xác định",
+            "Điểm Tin Cậy cao hơn có thể tăng cơ hội được vay",
+            "Muốn vay lại phải tất toán khoản vay trước"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium"
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "The VietCredit MoMo page lists what is owed when overdue (principal, in-term interest, overdue interest, fees) but gives no multiplier. MoMo's generic page says 130% to 150% (several lenders)."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "50,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+              "note": "FAQ."
+            },
+            {
+              "value": "100,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Partner table on the Tin Vay 'Vay cá nhân' page (MoMo 2-100M; press 08/04/2026 says 100M and up to 36 months)."
+            }
+          ],
+          "resolution": "Stored 50M (FAQ, lower)."
+        },
+        {
+          "field": "amountMinVnd",
+          "values": [
+            {
+              "value": "6,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+              "note": "FAQ."
+            },
+            {
+              "value": "2,000,000 VND",
+              "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
+              "note": "Partner table."
+            }
+          ],
+          "resolution": "Stored 6M (stricter)."
+        }
+      ],
+      "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Bên cho vay thực tế trên MoMo không chắc là VietCredit: the same page names MB Shinsei (MCredit) and EVN Finance as lenders of MoMo Vay nhanh. No rate is published on the VietCredit page.",
+      "borrowerNotes": [
+        {
+          "vi": "Trên MoMo, khoản vay có thể do một công ty tài chính khác cho vay. Hãy kiểm tra tên bên cho vay và lãi suất trong hợp đồng trước khi đồng ý.",
+          "en": "On MoMo, the loan may come from a different finance company. Check the lender's name and the rate in the contract before you agree."
+        }
+      ]
+    },
+    {
+      "id": "tin-vay-plus",
+      "nameVi": "Tin Vay Plus (ứng dụng VietCredit)",
+      "nameEn": "Tin Vay Plus, instalment loan inside the VietCredit app",
+      "productType": "cash_loan",
+      "status": "unverified",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "Ứng dụng VietCredit",
+      "online": true,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "amountMaxVnd": {
+        "value": 70000000,
+        "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-plus-vay-tieu-dung-ngay-tren-ung-dung-vietcredit-qVo.html",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "sourceDocumentDate": "2026-03-25",
+        "note": "Notice 25/03/2026: \"khoản vay lên tới 70 triệu đồng\". The lender's English release of 27/03/2026 says pre-approved limits up to 70 million. Announcement only; no product page found."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://www.vietcredit.com.vn/en/news/vietcredit-launches-new-financial-products-expanding-from-consumer-loans-to-business-capital-on-digital-platforms/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "sourceDocumentDate": "2026-03-27",
+        "note": "VietCredit English release 27/03/2026: terms 6 to 24 months."
+      },
+      "termMaxMonths": {
+        "value": 24,
+        "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-plus-vay-tieu-dung-ngay-tren-ung-dung-vietcredit-qVo.html",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "sourceDocumentDate": "2026-03-25",
+        "note": "Notice: \"Thời hạn vay lên đến 24 tháng\"."
+      },
+      "rates": [],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [],
+      "feesCompleteness": "unknown",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân (CCCD)"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-plus-vay-tieu-dung-ngay-tren-ung-dung-vietcredit-qVo.html",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "sourceDocumentDate": "2026-03-25",
+          "note": "Notice: users only need a CCCD to start."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Hiện ưu tiên khách hàng trong danh sách trải nghiệm sản phẩm (được mời)"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-plus-vay-tieu-dung-ngay-tren-ung-dung-vietcredit-qVo.html",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "sourceDocumentDate": "2026-03-25",
+          "note": "Notice: offered first to customers on the experience list."
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not found for this product."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-plus-vay-tieu-dung-ngay-tren-ung-dung-vietcredit-qVo.html",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Seen only in launch announcements; invite-only, and no rate, fee or condition is published.",
+      "borrowerNotes": [
+        {
+          "vi": "Chỉ tải ứng dụng VietCredit từ App Store hoặc CH Play. VietCredit từng cảnh báo ứng dụng giả mạo \"TinVietCredit.apk\" và không thu phí trước khi giải ngân.",
+          "en": "Download the VietCredit app only from the App Store or Google Play. VietCredit has warned about a fake \"TinVietCredit.apk\" app, and says it does not charge fees before disbursement."
+        }
+      ],
+      "notes": "A press article (08/04/2026) says 'từ 0.06%/ngày' for Tin Vay Plus; the same figure appears in the TOPI FAQ. Neither the VietCredit notice nor its English release states a rate, so it is not stored. The VNBA scam warning about the fake app is dated 03/12/2021."
+    },
+    {
+      "id": "tin-vay-payday",
+      "nameVi": "Tin Vay PayDay (vay ngắn ngày)",
+      "nameEn": "Tin Vay PayDay, 30-55 day loan on Zalo",
+      "productType": "cash_loan",
+      "status": "unverified",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "Zalo - Tin Vay Mini App",
+      "online": true,
+      "amountMinVnd": {
+        "value": 3000000,
+        "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/ra-mat-tin-vay-payday-vay-ngan-ngay-dDn.html",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "sourceDocumentDate": "2026-03-26",
+        "note": "Notice 26/03/2026: \"hạn mức vay từ 3 – 6 triệu đồng\". The lender's English release gives the same."
+      },
+      "amountMaxVnd": {
+        "value": 6000000,
+        "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/ra-mat-tin-vay-payday-vay-ngan-ngay-dDn.html",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "sourceDocumentDate": "2026-03-26",
+        "note": "Same sentence."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Term is 30 to 55 days (\"kỳ hạn từ 30 đến 55 ngày\", one payment at the end); the schema stores whole months only, so no value is entered."
+      },
+      "termMaxMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "See termMinMonths: 55 days, one payment at the end."
+      },
+      "rates": [],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [],
+      "feesCompleteness": "unknown",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Đăng ký qua Mini App Tin Vay trên Fiza (Zalo); xác thực bằng CCCD"
+          ],
+          "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/ra-mat-tin-vay-payday-vay-ngan-ngay-dDn.html",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "sourceDocumentDate": "2026-03-26",
+          "note": "No age or income condition is stated."
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not found for this product."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/ra-mat-tin-vay-payday-vay-ngan-ngay-dDn.html",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Seen only in launch announcements; no rate or fee is published.",
+      "notes": "A press article (08/04/2026) says 2-10 million; the lender's own notice and release say 3-6 million (stored). Rate is not stated per day, month or year."
+    },
+    {
+      "id": "mua-truoc-tra-sau",
+      "nameVi": "Mua trước trả sau",
+      "nameEn": "VietCredit buy-now-pay-later",
+      "productType": "bnpl",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": null,
+      "online": true,
+      "amountMinVnd": {
+        "value": 800000,
+        "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Page: \"Hạn mức: 800.000 VND – 27.000.000 VND\". The page is undated (product launched 27/08/2021 per the page)."
+      },
+      "amountMaxVnd": {
+        "value": 27000000,
+        "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Same sentence."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Page: \"Thời hạn vay: 30 ngày – 12 tháng\"; the minimum is in days, so no whole-month value is entered."
+      },
+      "termMaxMonths": {
+        "value": 12,
+        "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Same sentence."
+      },
+      "rates": [],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [],
+      "feesCompleteness": "unknown",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Page: age 18 to 60."
+        },
+        "maxAge": {
+          "value": 60,
+          "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Same sentence."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "CMND/CCCD còn hiệu lực",
+            "Ảnh chân dung tự chụp"
+          ],
+          "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low"
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Công dân Việt Nam",
+            "Có nguồn thu nhập cá nhân"
+          ],
+          "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low"
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not found for this product."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://www.vietcredit.com.vn/mua-truoc-tra-sau/",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "The page states no interest-rate figure and is undated: interest-free in some cases, otherwise reducing balance on a 365-day year, with no percentage.",
+      "notes": "Page: interest-free for Samsung Finance Plus loans and, for 30-day or 3-month terms, when paying a third-party seller; otherwise 'dư nợ giảm dần', 365-day year. No fee schedule is linked from the page."
+    },
+    {
+      "id": "tincard-loyalty",
+      "nameVi": "Thẻ tín dụng số TinCard Loyalty",
+      "nameEn": "TinCard Loyalty digital credit card",
+      "productType": "credit_card",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "vietcredit",
+      "brandOrChannel": "TinCard Loyalty",
+      "online": true,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "amountMaxVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "termMaxMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "Thẻ tín dụng số TinCard Loyalty",
+          "minPercent": {
+            "value": 2.9,
+            "sourceUrl": "https://www.vietcredit.vn/lai-suat-the-loyalty",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Page: \"dao động từ khoảng 2.9% đến 4,3 %/tháng (tương đương 35% - 52%/năm) tính trên dư nợ gốc thực tế trên cơ sở 365 ngày\". The word 'khoảng' (about) and the page being undated keep this at medium."
+          },
+          "maxPercent": {
+            "value": 4.3,
+            "sourceUrl": "https://www.vietcredit.vn/lai-suat-the-loyalty",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Same sentence. The rate applied is in each card's issuance notice."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://www.vietcredit.vn/lai-suat-the-loyalty",
+            "note": "Page: the rate applies to the declining principal balance, interest on actual principal, 365-day year."
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.vietcredit.vn/lai-suat-the-loyalty",
+            "note": "Source wording: \"%/tháng (tương đương 35% - 52%/năm)\"."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "revolving",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.vietcredit.vn/lai-suat-the-loyalty",
+        "note": "Revolving credit card; no fixed schedule."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí chậm thanh toán",
+          "nameEn": "Late payment fee",
+          "trigger": "late_payment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "note": "Charged when payment is late."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Only on late payment."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 200000,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Fee table, TinCard Loyalty column: 200,000 VND per time. The table is undated."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí rút tiền mặt",
+          "nameEn": "Cash withdrawal fee",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "note": "Per cash withdrawal."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Only if cash is withdrawn."
+          },
+          "base": "transaction_amount",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": 1.5,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "1.5% of the transaction value, minimum 30,000 VND per transaction."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": 30000,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Minimum 30,000 VND per transaction."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí quản lý hạn mức",
+          "nameEn": "Credit limit management fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "note": "Per month."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Fee table lists it for TinCard Loyalty; whether it applies to every cardholder is not stated."
+          },
+          "base": "credit_limit",
+          "rule": "percent_only",
+          "percent": {
+            "value": 0.3,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "0.3% of the card limit per month (fee table, undated)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí phát hành thẻ vật lý",
+          "nameEn": "Physical card issuance fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "The digital card is free; the physical card is optional."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 150000,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "150,000 VND per time."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí đóng thẻ (trong 12 tháng đầu)",
+          "nameEn": "Card closure fee (within 12 months of activation)",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "note": "On closing the card."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Only if the card is closed within 12 months."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 450000,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "450,000 VND (TinCard Loyalty column)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí vượt hạn mức tín dụng",
+          "nameEn": "Over-limit fee",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "note": "When the limit is exceeded."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Only when over the limit."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 50000,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "50,000 VND per time."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí SMS",
+          "nameEn": "SMS notification fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "note": "Per month."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not stated whether SMS alerts are optional."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": 16500,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "16,500 VND per month."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí chuyển đổi trả góp",
+          "nameEn": "Instalment conversion fee",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "note": "On converting a purchase to instalments."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Optional feature; free for 2-month conversions of 500,000-2,000,000 VND (max 4 per month)."
+          },
+          "base": "transaction_amount",
+          "rule": "percent_only",
+          "percent": {
+            "value": 1.3,
+            "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "1.3% per instalment period (TinCard Loyalty column)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Chậm thanh toán: phí 200.000 đồng mỗi lần, cộng lãi trên dư nợ.",
+          "sourceUrl": "https://www.vietcredit.vn/pdf/bieu-phi-the-loyalty.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Fee table (undated). The multiplier for overdue interest is not read."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://www.vietcredit.vn/lai-suat-the-loyalty",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Credit cards are outside the MVP ranking; the rate page and fee table are undated and the rate is 'about'.",
+      "notes": "The page heading 'Miễn lãi đến 45 ngày' has no further detail. The domestic TinCard rate table (Decision 1452B/2023, effective 02/01/2024) is older than 12 months and the domestic card fee schedule is a layered table whose rows could not be matched safely, so that card is not included."
+    }
+  ],
+  "researchNotes": "Researched 2026-11-04 (retrievedAt on every figure that was re-read that day). Lender: Công ty Tài chính tổng hợp cổ phần Tín Việt (VietCredit), licensed finance company. Consumer lending brand: Tin Vay (tinvay.com.vn, hotline 1900 638 996). Corporate sites: vietcredit.com.vn (company, investors, BNPL, small-trader loan) and vietcredit.vn (credit cards, app, Tin Vay PDF documents).\n\nKEY FINDING, RATES: the only rate document VietCredit publishes for Tin Vay is a company rate table, 'BIỂU LÃI SUẤT CHO SẢN PHẨM VAY TIÊU DÙNG TIN VAY (Dành cho khách hàng cá nhân vay tiêu dùng)', Decision 145C/2026/VietCredit-QĐ, effective 01/02/2026 until amended (https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf). Wording: 'LÃI SUẤT (%/năm/Dư nợ giảm dần)'; 'Lãi suất cho vay trong hạn: Thấp nhất 0%/năm, Cao nhất 89%/năm'; 'Lãi suất quá hạn: 130% lãi suất cho vay trong hạn'; 'Lãi suất cụ thể áp dụng cho các khách hàng theo phê duyệt của Công ty trong từng thời kỳ'. It replaces 330D/2025 (21/05/2025, 0-72%) which replaced 192B/2025 (0-76%) and 777D/2024 (18-72%). It applies to one product line (Tin Vay individual consumer loans), not to the whole company, and it is a framework, so it is stored as regulatory_ceiling with a clear segment. Because no product has an offered range, no VietCredit product is rankable.\n\nTHE topi.vn LEAD (9.12-48.31%/year, reducing balance, 365-day basis, from March 2026): not found in any VietCredit page, rate table, contract, T&C, card document or press article read. Searched: all 7 consumer rate tables on tinvay.com.vn/bieu-mau (6 listed, 4 read), T&C 12.10.2026 and 18.08.2026, contract templates 06.10.2025 (two), loan application, payment schedule, GrabPAX and Grab driver/merchant templates, TinCard and TikTok PayLater T&C, the investor pages, and text searches for '9,12', '48,31' and 'khung lãi suất'. The figures do sit inside the lender's own 0-89% frame, so they are not necessarily false, but they are not stated by VietCredit. topi.vn is a Tin Vay distribution partner (its page says 'Lãi suất ưu đãi riêng cho TOPI - chỉ từ 1.7%/tháng'), so it is not a neutral comparison source.\n\nCHANNEL RATES: the Tin Vay channel pages (Viettel Money from 3.5%/month, TOPI from 2.08%/month or 0.06%/day, VNPT Money from 0.1%/day, Zalo Fiza from 1.42%/month promo) are all 'từ' starting rates with no maximum, so they are advertised_floor. Press of 08/04/2026 quotes lower or different floors (Viettel Money 3.2%, TOPI 1.25%, VNPT 5.6%/month, ZaloPay 3.6%/month); these are tier 3 and not stored.\n\nBASIS TESTS: all VietCredit-stated bases are 'dư nợ giảm dần' (rate table, contract template art. 1.7(a), Viettel Money, VNPT, TOPI FAQ), with interest = daily balance x days x annual rate / 365 (T&C art. 3.5; contract art. 1.8). VietCredit publishes no worked example (no sample loan with an instalment) on any page, so the labels could not be tested against an example. Repayment style (equal instalments or equal principal) is not named anywhere: amortization is 'unknown'. Surprise: MoMo's generic 'Vay nhanh' page (several lenders, so not stored as VietCredit data) gives 50,000,000 over 12 months at 2.95%/month, total interest 17,692,000 and 5,661,000 a month; that equals flat arithmetic (50M x 2.95% x 12 = 17.7M, plus 20,000 collection fee a month), not reducing balance, although the page says 'trên dư nợ gốc'. Worth asking MoMo/VietCredit which basis applies on that channel.\n\nLICENCE NUMBER: tinvay.com.vn states 'Giấy phép số 59/GP-NHNN ngày 18/06/2018'; data/licensed-institutions.json has 'Giấy phép số 48/GP-NHNN ngày 06/11/2023' (SBV list). Same company (legal name and tax code 0102766770); probably a re-issued licence. Not a data conflict in this file but worth a check against the SBV list. The legal name on the SBV list is 'Công ty Tài chính tổng hợp cổ phần Tín Việt' (documents print 'Tổng hợp Cổ phần').\n\nFEES AND INSURANCE: the generic contract template (art. 1.7) lists only the in-term rate, overdue-principal rate, interest on late interest (0% in one template, blank in the other) and an early-repayment fee in two bands (before/after the first payment date), percentages left blank, and says VietCredit charges no other interest or fee. The Viettel Money page states 5% x remaining principal; GrabPAX and Grab driver/merchant templates state 5% x principal repaid early. Paying instalments in advance without settling is free (T&C art. 8.1). Collection or transfer fees are charged by third parties per payment and are shown as a column in the payment schedule (amount unknown). T&C art. 17 has an 8% breach penalty that does not apply to late principal or interest. No insurance is mentioned in any Tin Vay document, so insurance lists are empty and marked 'unknown' (the template is silent; we did not see a published statement that no insurance is sold).\n\nLIMITS AND ELIGIBILITY: no age, income or residence rule is published for the generic product. Age rules exist per channel (MoMo 18-50, Viettel Money 18-55, TOPI 18-55, VNPT Money 18-55). Tin Vay needs only a CCCD, no income proof (page), so it will not filter for salaried status. Amounts: generic page 5-50 million; channel tables up to 100 million, and Grab Driver up to 200 million (above the 100M finance-company cap; recorded as a conflict on the generic product).\n\nNOT INCLUDED, WITH REASONS: small-trader instalment loan (vay-tieu-dung-tieu-thuong, 48%/year reducing, up to 100M, 12 months, age 20-60, for business owners, not salaried); Grab Driver loans and the GFIN electric-motorbike instalment loan (Grab driver partners only; rates 12.9-19% by term on declining balance per the 13/08/2026 notice, 0 down payment); Tin Vay Biz and household/business loans; car loan PDF (Tin Go); domestic TinCard (rate table 1452B/2023 effective 02/01/2024 is older than 12 months, fee table is layered and could not be matched row by row); Fundiin, AhaMove, VietinBank iPay and ZaloPay channels (announcements and table rows only, no rates; Fundiin 'tới 80 triệu', VietinBank iPay 'lên đến 100 triệu').\n\nWHERE SEARCHED, STILL UNKNOWN: (1) Per-customer or per-product offered rate range: not published; searched the rate tables, T&C, templates, channel pages, notices (20 on tinvay.com.vn/tin-tuc/thong-bao), app listing page (vietcredit.vn/thong-bao/tai-ung-dung-vietcredit has no figures; Google Play and App Store listing pages could not be opened by URL), investor pages, news (thoibaotaichinhvietnam.vn, vnba.org.vn, VietCredit English news). (2) Early-repayment percentage for the generic product and for MoMo, VNPT, TOPI: left blank in the template, 'see contract' on channel pages. (3) Insurance: no document mentions it. (4) Any worked example: none on lender pages.\n\nDOCUMENT FRESHNESS: the 145C/2026 PDF has file metadata dated 2026-08-19 although the decision is dated 01/02/2026; the forms page also lists T&C dated 12.10.2026 and Grab contract forms dated 04.09.2026 and 12.10.2026, so the forms page is maintained. A newer rate table could exist but none is listed. Treat confidence as medium until VietCredit confirms.",
+  "retrievedAt": "2026-11-04"
+}

@@ -1,0 +1,2557 @@
+{
+  "schemaVersion": 2,
+  "slug": "sfinance",
+  "name": "SFinance",
+  "legalName": "Công ty Tài chính Tín dụng tiêu dùng Trách nhiệm hữu hạn Một thành viên SFinance",
+  "licenseCategory": "finance_company",
+  "licensedInstitutionId": "sfinance",
+  "website": "https://www.sfinance.com.vn/",
+  "products": [
+    {
+      "id": "vay-tien-mat",
+      "nameVi": "Vay tiền mặt",
+      "nameEn": "Unsecured cash loan (website application)",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "sfinance",
+      "brandOrChannel": "SFinance (trước đây SHBFinance)",
+      "online": true,
+      "amountMinVnd": {
+        "value": 10000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Cash-loan page table: \"Hạn mức vay nhanh 10 triệu - 100 triệu đồng (hoặc vay nhanh đến 7 lần thu nhập)\"; calculator slider 10,000,000 to 100,000,000. The app-loan page says 5 million; see conflicts."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Same table and FAQ: \"10 - 100 triệu đồng (hoặc tối đa đến 7 lần thu nhập)\"; the app-loan page also says 100 million. Equal to, not above, the 100M finance-company cap (Circular 43/2016 art. 3(1))."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Table: \"Kỳ hạn trả góp 6 - 36 tháng\"; FAQ and calculator agree; the app-loan page agrees."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Same sources: 36 months."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": 16.44,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Cash-loan page (read 2026-11-04): \"Lãi suất từ 1.37%/tháng\" and, in the example, \"lãi suất phẳng 16,44%/năm\" (16,44 = 1,37 x 12). The page calls it a reference flat rate (\"mức lãi suất thẳng tham chiếu (16,44%/năm)\"). Same page: \"lãi suất tính trên dư nợ gốc, tương đương 2.4%/tháng trên dư nợ giảm dần\"."
+          },
+          "maxPercent": {
+            "value": 35.4,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Cash-loan page (read 2026-11-04): \"Lãi suất phẳng (tham chiếu) tối đa trong năm là 35,4%\" (35,4%/year flat is about 2,95%/month flat). A reference maximum, so medium. Converted to a reducing-balance equivalent this is roughly 55 to 60%/year (our calculation, not a SFinance figure). No document says whether the 35,4% covers every term or every customer."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "stated",
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "note": "Source wording: \"lãi suất phẳng (tham chiếu)\" and \"tính trên dư nợ gốc\". The contract terms (T&C 09.10.2026 art. 4.2) and the rate-framework document compute interest on the declining principal, so the flat figure is a marketing quote of the same cost (data-entry-rules section 6). The engine converts it with IRR."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "note": "The example and footnote state \"%/năm\" (16,44%/năm; 35,4%). The headline \"1.37%/tháng\" is the same rate per month."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": "Khung lãi suất công bố cho toàn bộ sản phẩm \"Cho vay tiền mặt\" của SFinance (không riêng sản phẩm này)",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework, table row 1 \"Cho vay tiền mặt\": minimum 0%/năm. The document adds that the 0% promotional rate applies only for a limited time and to some special products."
+          },
+          "maxPercent": {
+            "value": 70,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework, table row 1 \"Cho vay tiền mặt\": maximum 70%/năm. The PDF shows no date; file metadata says created 2026-08-05; the lender's documents page lists it as posted 2026-08-23 (the rebrand was announced 2026-08-24). Medium: a company-wide ceiling in an undated document."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "Source wording: \"tính trên dư nợ gốc giảm dần ... nhưng không vượt quá mức Lãi suất khung\"; interest = sum(daily balance x days x rate) / 365."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "Source wording: \"%/năm\", 365-day year."
+          },
+          "promotional": true,
+          "minIsPromotional": true
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất tham chiếu mà máy tính khoản vay trên trang dùng cho mọi người vay (không phải lãi suất của riêng bạn)",
+          "minPercent": {
+            "value": 29,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "The cash-loan page's own calculator sends interestRate 29 to its payment API for every amount and term (request read in the browser on 2026-11-04). The returned monthly payment equals the annuity at 29%/year reducing balance to within about 0.01% (10,000,000 / 36 months: API 419,070 vs annuity 419,057). It matches the page text \"2.4%/tháng trên dư nợ giảm dần\" (29/12 = 2,417%). Not printed on the page, so low."
+          },
+          "maxPercent": {
+            "value": 29,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Same single reference value."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "note": "Inferred from the annuity arithmetic above and the page's own words \"dư nợ giảm dần\"."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "inferred",
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "note": "interestRate 29 is annual: 29/12 = 2,417%/month matches the \"2.4%/tháng\" in the page text."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+        "note": "No document names the repayment method. Inferred from the page calculator: an equal monthly amount over the term, equal to the annuity at 29%/year (see the benchmark rate). T&C art. 4.2 and 2.1: interest on the actual daily balance, so the monthly amount can differ slightly with the number of days."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí hồ sơ, phí tư vấn",
+          "nameEn": "Application and advisory fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Cash-loan page: \"0% phí tư vấn/hồ sơ\" and \"SFinance không thu bất kỳ khoản phí nào cho đến khi khoản vay được giải ngân\". Marketing page; the contract says nothing about an application fee."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Not charged per the page sentence above. Says nothing about fees after disbursement."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí trả nợ trước hạn",
+          "nameEn": "Early repayment fee (full early settlement)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "Paid on the day the borrower asks to settle early, together with the settlement amount (T&C art. 7.1(b))."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "Only incurred if the borrower chooses to settle early."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 5,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C effective 09.10.2026, art. 7.1(b): \"phí trả nợ trước hạn được tính bằng 05% đối với khoản vay tiền mặt và 10% đối với khoản vay trả góp tại Điểm giới thiệu dịch vụ trên Dư nợ gốc trong hạn tại ngày xử lý trả nợ trước hạn\". Conditions (art. 7.1(a)): at least 6 instalments paid for cash loans of 10 months or more, notify SFinance and get its agreement. Art. 7.3: SFinance does not support partial early repayment. Same 5% in the T&C versions of 09.03.2026, 05.06.2026, 24.08.2026 and 11.09.2026. The rate framework says only \"Theo quy định của hợp đồng tín dụng\"."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thu hộ (khi trả nợ qua đơn vị thu hộ / trung gian thanh toán)",
+          "nameEn": "Collection fee when paying through a payment intermediary",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "T&C art. 2.1 puts the collection fee inside the monthly amount payable; the page calculator's API returns monthly payment = annuity + 12,000 rounded up to 1,000 (10,000,000 / 36 months: 419,070 -> 432,000). Art. 2.2 note: if the borrower pays without a collection agent, SFinance holds the collection-fee part, pays no interest on it and deducts it from the next month's amount."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Unclear whether it is always charged: the T&C ties it to payments through intermediaries and credits it back otherwise, but the calculator and the page's worked example include it by default."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C art. 2.2 note: \"đang quy định mức phí thu hộ là 12.000 đồng/1 giao dịch trả nợ\" (current level set by the intermediaries; can change). Same figure in the 09.03.2026 version."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        },
+        {
+          "nameVi": "Phí chi hộ khi giải ngân qua đại lý chi hộ (nếu có)",
+          "nameEn": "Disbursement-agent fee, if any",
+          "trigger": "disbursement",
+          "timing": {
+            "value": "deducted_from_payout",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "T&C art. 2.2: \"số tiền giải ngân cho Bên vay là số tiền đã trừ đi phí chi hộ\"; art. 6.5: costs of receiving the loan through a bank account, a disbursement agent or an intermediary are borne by the borrower."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only when disbursing through a disbursement agent; amount and conditions are not published."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Amount not published in any SFinance document found."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [
+        {
+          "nameVi": "Bảo hiểm đi kèm khoản vay (tự nguyện)",
+          "nameEn": "Optional insurance offered with the loan",
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.sfinance.com.vn/bao-hiem",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "note": "Insurance FAQ: \"Không bắt buộc ... việc tham gia các sản phẩm bảo hiểm là hoàn toàn tự nguyện ... không phải là điều kiện bắt buộc để được phê duyệt hay giải ngân khoản vay\". The cash-loan worked example also says \"trừ phí bảo hiểm không bắt buộc\". Not seen: whether the option is pre-selected in the app."
+          },
+          "collection": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium not published for any loan-linked insurance. The insurance page lists health, accident and motor-vehicle products only, with insurers named as VietinBank Phương Nam, Tasco and DBV \"và các thương hiệu lớn khác\"."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            }
+          },
+          "beneficiary": null,
+          "covers": "FAQ: the insurer can pay up to 100% of the outstanding loan if the borrower suffers an insured risk (accident, serious illness, disability). Conditions and exclusions are not published."
+        }
+      ],
+      "insuranceCompleteness": "partial",
+      "eligibility": {
+        "minAge": {
+          "value": 20,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Cash-loan page section \"Điều kiện vay\": \"Từ 20 đến 60 tuổi\" and \"từ 20 đến không quá 60 tuổi\"."
+        },
+        "maxAge": {
+          "value": 59,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Strictest figure on an official SFinance page for this loan: the app-loan page says \"Từ 20 đến 59 tuổi\"; the cash-loan page says up to 60. See conflicts."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": 3000000,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "\"Thu nhập từ 3 triệu đồng/tháng\" (both the cash-loan page and the app page). Gross or net is not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "CCCD còn hiệu lực (chụp rõ 2 mặt); trên app: CCCD gắn chip, xác thực khuôn mặt",
+            "Khoản vay trên 30 triệu: có thể bổ sung một trong các giấy tờ sau để tăng khả năng duyệt (nếu có): chứng từ lương (BHYT/BHXH, sao kê hoặc xác nhận lương), hóa đơn điện/nước, hợp đồng bảo hiểm nhân thọ, giấy phép kinh doanh, đăng ký ô tô/xe máy, chứng từ lịch sử tín dụng"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Cash-loan page FAQ \"cần những giấy tờ gì\" (opened in the browser 2026-11-04). The SEO table lists \"sao kê lương, thông tin bảo hiểm nhân thọ, hóa đơn điện/nước\" as optional extras."
+        },
+        "existingCustomerRequired": {
+          "value": false,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "The page invites anyone to register with name, phone and CCCD; no existing-customer condition. (The page describes the in-app route as meant for repeat borrowers.)"
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No employer list published."
+        },
+        "otherConditions": {
+          "value": [
+            "Công dân Việt Nam, đủ năng lực hành vi dân sự",
+            "Có nguồn thu nhập ổn định (ưu tiên người nhận lương qua tài khoản, có hợp đồng bảo hiểm nhân thọ hoặc là chủ hộ kinh doanh để được lãi suất tốt nhất)",
+            "Khoản vay tối đa 7 lần thu nhập (bảng thông tin của trang vay tiền mặt; tiêu đề trang ghi \"đến 10 lần thu nhập\")",
+            "Không cần thế chấp; đang có khoản vay hoặc dư nợ thẻ ở nơi khác vẫn có thể đăng ký",
+            "Người có nợ xấu hoặc chưa có lịch sử tín dụng vẫn có thể đăng ký, kết quả tùy thẩm định"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Cash-loan page section \"Điều kiện vay\" and FAQ, read 2026-11-04. The page also says approval depends on credit assessment and that people with bad debt or no CIC history may still apply."
+        },
+        "notes": "Target-user fit: a salaried 22-35 year old in Hanoi or HCMC meets the stated age and income conditions. Salary-account holders and people with a life-insurance contract are said to get the best rate (cash-loan page)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; tiền lãi chậm trả bị tính thêm 10%/năm. Với khoản vay lãi ưu đãi 0%, lãi trong hạn dùng để tính phạt là 45%/năm. Điều khoản không ghi phí phạt cố định riêng.",
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "T&C effective 09.10.2026 art. 4.3: overdue principal interest = 150% x in-term rate / 365 x overdue principal x days; late interest = overdue interest x 10% / 365 x days. Application form (14.10.2026) art. 1.7: for 0%-rate products the in-term rate used as the base is 45%/year. No fixed late fee in the T&C or the rate framework. Unchanged since the 09.03.2026 version."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate; late interest is charged 10% a year on overdue interest. For 0% promotional loans the base rate used is 45% a year. No separate fixed late fee is listed.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "150% of the in-term rate (T&C art. 4.3)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": 10,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "10%/year on overdue interest (T&C art. 4.3)."
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 20000000,
+          "termMonths": 18,
+          "ratePercent": 16.44,
+          "rateBasis": "flat",
+          "ratePeriod": "yearly",
+          "amortization": "unknown",
+          "monthlyPaymentVnd": null,
+          "totalRepaidVnd": 25110000,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": false,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page example (identical on the cash-loan and app pages): \"Khách hàng vay 20.000.000đ trong 18 tháng, với lãi suất phẳng 16,44%/năm, thì tổng số tiền cần thanh toán là 25.110.000đ (đã bao gồm các loại phí, trừ phí bảo hiểm không bắt buộc, phí chuyển tiền và phí trả nợ trước hạn)\". Check: pure flat 16,44% gives interest 20,000,000 x 16.44% x 1.5 = 4,932,000, total 24,932,000. The extra 178,000 is not itemised, and 12,000 x 18 = 216,000 of collection fees would give 25,148,000. A 29%/year reducing annuity plus 12,000 a month gives about 25,128,000. Neither reading reproduces 25,110,000 exactly (difference 18,000 to 38,000), so the numbers do not add up as printed. Do not use as a test fixture."
+        },
+        {
+          "principalVnd": 10000000,
+          "termMonths": 36,
+          "ratePercent": 29,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 432000,
+          "totalRepaidVnd": 15552000,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": true,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Output of the cash-loan page's own public calculator, read in the browser on 2026-11-04 (no personal details entered). Request: loanAmt 10000000, loanTerm 36, interestRate 29, productCode TOPUP_DG01. Response: emiOrg 419070, emi 432000, totalPayment 15552000. emi = emiOrg + 12,000 collection fee, rounded up to 1,000; 36 x 432000 = 15552000. emiOrg matches the annuity at 29%/year reducing balance. The page DISPLAYS emiOrg rounded (for example 420,000 for 10,000,000 / 36 months), not emi, so the on-screen figure is lower than the contract amount by the collection fee. The rate 29 is the same for every input: a reference rate, not a quote for a particular borrower. Basis and annuity are inferred from the arithmetic."
+        },
+        {
+          "principalVnd": 55000000,
+          "termMonths": 36,
+          "ratePercent": 29,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 2317000,
+          "totalRepaidVnd": 83412000,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": true,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Output of the cash-loan page's own public calculator, read in the browser on 2026-11-04 (no personal details entered). Request: loanAmt 55000000, loanTerm 36, interestRate 29, productCode TOPUP_DG01. Response: emiOrg 2304883, emi 2317000, totalPayment 83412000. emi = emiOrg + 12,000 collection fee, rounded up to 1,000; 36 x 2317000 = 83412000. emiOrg matches the annuity at 29%/year reducing balance. The page DISPLAYS emiOrg rounded (for example 420,000 for 10,000,000 / 36 months), not emi, so the on-screen figure is lower than the contract amount by the collection fee. The rate 29 is the same for every input: a reference rate, not a quote for a particular borrower. Basis and annuity are inferred from the arithmetic."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "amountMinVnd",
+          "values": [
+            {
+              "value": "10,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+              "note": "Cash-loan page: \"Hạn mức vay nhanh 10 triệu - 100 triệu đồng\"; calculator slider starts at 10,000,000."
+            },
+            {
+              "value": "5,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+              "note": "App-loan page: \"Gói vay từ 5 triệu – 100 triệu đồng\"."
+            }
+          ],
+          "resolution": "Stored 10,000,000 (the stricter minimum) on both products. Medium."
+        },
+        {
+          "field": "eligibility.maxAge",
+          "values": [
+            {
+              "value": "60 (\"từ 20 đến không quá 60 tuổi\")",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+              "note": "Cash-loan page."
+            },
+            {
+              "value": "59 (\"Từ 20 đến 59 tuổi\")",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+              "note": "App-loan page; the installment pages say 18-59."
+            }
+          ],
+          "resolution": "Stored 59 (stricter). Not stated whether checked at application or at loan end. Medium."
+        },
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "35.4%/year flat (about 2.95%/month flat)",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+              "note": "Cash-loan and app-loan pages: \"Lãi suất phẳng (tham chiếu) tối đa ... 35,4%\"."
+            },
+            {
+              "value": "1.86%/month (about 22.3%/year flat)",
+              "sourceUrl": null,
+              "note": "Figure given by the requester from a comparison site (topi.vn): \"1.37-1.86%/month\". No SFinance page, document, store listing or news item found states 1.86%. Secondary lead only, not stored."
+            }
+          ],
+          "resolution": "Stored the lender's own 35.4%/year flat reference maximum. The 1.86% lead was not confirmed at any official source."
+        }
+      ],
+      "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": false,
+      "notes": "Researched 2026-11-04. The lender's own product page gives a floor (1.37%/month = 16.44%/year flat) and a reference maximum (35.4%/year flat), so this is stored as offered_range, flat, yearly, medium confidence, because both are labelled \"tham chiếu\" (reference). The contract rate is a reducing-balance rate printed in the loan contract (\"__ %/tháng, tương đương __ %/năm\", form 14.10.2026 art. 1.6); the rate framework (0-70%/year) is a separate company-wide ceiling. The page's own calculator uses a single 29%/year reducing reference for every borrower.",
+      "borrowerNotes": [
+        {
+          "vi": "SFinance quảng cáo lãi \"phẳng\" từ 1,37%/tháng và ghi tương đương khoảng 2,4%/tháng trên dư nợ giảm dần. Mức lãi bạn nhận được ghi trong hợp đồng và có thể cao hơn.",
+          "en": "SFinance advertises a \"flat\" rate from 1.37% a month and says it equals about 2.4% a month on the declining balance. Your own rate is written in your contract and may be higher."
+        },
+        {
+          "vi": "Trả nợ trước hạn: phí 5% dư nợ gốc còn lại; chỉ tất toán toàn bộ (không trả trước một phần) và sau khi đã trả ít nhất 6 kỳ nếu vay từ 10 tháng trở lên.",
+          "en": "Early repayment: a fee of 5% of the remaining principal; full settlement only (no partial prepayment), after at least 6 instalments for loans of 10 months or more."
+        },
+        {
+          "vi": "Số tiền phải trả hàng tháng theo hợp đồng có thể gồm phí thu hộ 12.000 đồng cho mỗi lần trả nợ qua đơn vị thu hộ; máy tính trên trang chưa cộng khoản này vào số hiển thị.",
+          "en": "The monthly amount under the contract can include a 12,000 đồng collection fee for each payment made through a collection unit; the page calculator does not add it to the figure it shows."
+        }
+      ]
+    },
+    {
+      "id": "vay-nhanh-tren-ung-dung",
+      "nameVi": "Vay nhanh trên ứng dụng SFinance",
+      "nameEn": "Quick loan on the SFinance app",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "sfinance",
+      "brandOrChannel": "Ứng dụng SFinance (trước đây SHBFinance)",
+      "online": true,
+      "amountMinVnd": {
+        "value": 10000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "App-loan page says \"Gói vay từ 5 triệu – 100 triệu đồng\"; stored 10,000,000, the cash-loan page's higher minimum (stricter). See conflicts."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "App-loan page: range 5 to 100 million; the cash-loan page agrees on 100 million."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "App-loan page: \"Thời gian vay từ 6 tháng - 36 tháng\"."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Same page: 36 months."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": null,
+          "minPercent": {
+            "value": 16.44,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "App-loan page (read 2026-11-04): \"Lãi suất từ 1.37%/tháng\" and, in the example, \"lãi suất phẳng 16,44%/năm\" (16,44 = 1,37 x 12). The page calls it a reference flat rate (\"mức lãi suất thẳng tham chiếu (16,44%/năm)\")."
+          },
+          "maxPercent": {
+            "value": 35.4,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "App-loan page (read 2026-11-04): \"Lãi suất phẳng (tham chiếu) tối đa của năm là 35,4%\" (35,4%/year flat is about 2,95%/month flat). A reference maximum, so medium. Converted to a reducing-balance equivalent this is roughly 55 to 60%/year (our calculation, not a SFinance figure). No document says whether the 35,4% covers every term or every customer."
+          },
+          "basis": {
+            "value": "flat",
+            "provenance": "stated",
+            "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+            "note": "Source wording: \"lãi suất phẳng (tham chiếu)\". The contract terms (T&C 09.10.2026 art. 4.2) and the rate-framework document compute interest on the declining principal, so the flat figure is a marketing quote of the same cost (data-entry-rules section 6). The engine converts it with IRR."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+            "note": "The example and footnote state \"%/năm\" (16,44%/năm; 35,4%). The headline \"1.37%/tháng\" is the same rate per month."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": "Khung lãi suất công bố cho toàn bộ sản phẩm \"Cho vay tiền mặt\" của SFinance (không riêng sản phẩm này)",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework, table row 1 \"Cho vay tiền mặt\": minimum 0%/năm. The document adds that the 0% promotional rate applies only for a limited time and to some special products."
+          },
+          "maxPercent": {
+            "value": 70,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework, table row 1 \"Cho vay tiền mặt\": maximum 70%/năm. The PDF shows no date; file metadata says created 2026-08-05; the lender's documents page lists it as posted 2026-08-23 (the rebrand was announced 2026-08-24). Medium: a company-wide ceiling in an undated document."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "Source wording: \"tính trên dư nợ gốc giảm dần ... nhưng không vượt quá mức Lãi suất khung\"; interest = sum(daily balance x days x rate) / 365."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "Source wording: \"%/năm\", 365-day year."
+          },
+          "promotional": true,
+          "minIsPromotional": true
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+        "note": "Same loan as the cash-loan product; inferred from that page's calculator (an equal monthly amount equal to the annuity at 29%/year) and T&C art. 4.2."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí hồ sơ, phí tư vấn",
+          "nameEn": "Application and advisory fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Cash-loan page: \"0% phí tư vấn/hồ sơ\" and \"SFinance không thu bất kỳ khoản phí nào cho đến khi khoản vay được giải ngân\". Marketing page; the contract says nothing about an application fee."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Not charged per the page sentence above. Says nothing about fees after disbursement."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí trả nợ trước hạn",
+          "nameEn": "Early repayment fee (full early settlement)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "Paid on the day the borrower asks to settle early, together with the settlement amount (T&C art. 7.1(b))."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "Only incurred if the borrower chooses to settle early."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 5,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C effective 09.10.2026, art. 7.1(b): \"phí trả nợ trước hạn được tính bằng 05% đối với khoản vay tiền mặt và 10% đối với khoản vay trả góp tại Điểm giới thiệu dịch vụ trên Dư nợ gốc trong hạn tại ngày xử lý trả nợ trước hạn\". Conditions (art. 7.1(a)): at least 6 instalments paid for cash loans of 10 months or more, notify SFinance and get its agreement. Art. 7.3: SFinance does not support partial early repayment. Same 5% in the T&C versions of 09.03.2026, 05.06.2026, 24.08.2026 and 11.09.2026. The rate framework says only \"Theo quy định của hợp đồng tín dụng\"."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thu hộ (khi trả nợ qua đơn vị thu hộ / trung gian thanh toán)",
+          "nameEn": "Collection fee when paying through a payment intermediary",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "T&C art. 2.1 puts the collection fee inside the monthly amount payable; the page calculator's API returns monthly payment = annuity + 12,000 rounded up to 1,000 (10,000,000 / 36 months: 419,070 -> 432,000). Art. 2.2 note: if the borrower pays without a collection agent, SFinance holds the collection-fee part, pays no interest on it and deducts it from the next month's amount."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Unclear whether it is always charged: the T&C ties it to payments through intermediaries and credits it back otherwise, but the calculator and the page's worked example include it by default."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C art. 2.2 note: \"đang quy định mức phí thu hộ là 12.000 đồng/1 giao dịch trả nợ\" (current level set by the intermediaries; can change). Same figure in the 09.03.2026 version."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        },
+        {
+          "nameVi": "Phí chi hộ khi giải ngân qua đại lý chi hộ (nếu có)",
+          "nameEn": "Disbursement-agent fee, if any",
+          "trigger": "disbursement",
+          "timing": {
+            "value": "deducted_from_payout",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "T&C art. 2.2: \"số tiền giải ngân cho Bên vay là số tiền đã trừ đi phí chi hộ\"; art. 6.5: costs of receiving the loan through a bank account, a disbursement agent or an intermediary are borne by the borrower."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Only when disbursing through a disbursement agent; amount and conditions are not published."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Amount not published in any SFinance document found."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [
+        {
+          "nameVi": "Bảo hiểm đi kèm khoản vay (tự nguyện)",
+          "nameEn": "Optional insurance offered with the loan",
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://www.sfinance.com.vn/bao-hiem",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "note": "Insurance FAQ: \"Không bắt buộc ... việc tham gia các sản phẩm bảo hiểm là hoàn toàn tự nguyện ... không phải là điều kiện bắt buộc để được phê duyệt hay giải ngân khoản vay\". The cash-loan worked example also says \"trừ phí bảo hiểm không bắt buộc\". Not seen: whether the option is pre-selected in the app."
+          },
+          "collection": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Premium not published for any loan-linked insurance. The insurance page lists health, accident and motor-vehicle products only, with insurers named as VietinBank Phương Nam, Tasco and DBV \"và các thương hiệu lớn khác\"."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            }
+          },
+          "beneficiary": null,
+          "covers": "FAQ: the insurer can pay up to 100% of the outstanding loan if the borrower suffers an insured risk (accident, serious illness, disability). Conditions and exclusions are not published."
+        }
+      ],
+      "insuranceCompleteness": "partial",
+      "eligibility": {
+        "minAge": {
+          "value": 20,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "App-loan page section \"Điều kiện vay\": \"Từ 20 đến 59 tuổi\" (the cash-loan page says 20 to 60)."
+        },
+        "maxAge": {
+          "value": 59,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "App-loan page: \"Từ 20 đến 59 tuổi\" (the cash-loan page says up to 60). See conflicts."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": 3000000,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "\"Thu nhập từ 3 triệu đồng/tháng\" (both the cash-loan page and the app page). Gross or net is not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "CCCD còn hiệu lực (chụp rõ 2 mặt); trên app: CCCD gắn chip, xác thực khuôn mặt",
+            "Khoản vay trên 30 triệu: có thể bổ sung một trong các giấy tờ sau để tăng khả năng duyệt (nếu có): chứng từ lương (BHYT/BHXH, sao kê hoặc xác nhận lương), hóa đơn điện/nước, hợp đồng bảo hiểm nhân thọ, giấy phép kinh doanh, đăng ký ô tô/xe máy, chứng từ lịch sử tín dụng"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Cash-loan page FAQ \"cần những giấy tờ gì\" (opened in the browser 2026-11-04). The SEO table lists \"sao kê lương, thông tin bảo hiểm nhân thọ, hóa đơn điện/nước\" as optional extras."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Cash-loan page: in-app application is \"dành cho khách hàng vay thêm/vay lại\"; the app-loan page itself shows a general sign-up flow (phone number, CCCD chip, face scan). It is unclear whether a first loan can be taken in the app."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No employer list published."
+        },
+        "otherConditions": {
+          "value": [
+            "Công dân Việt Nam, đủ năng lực hành vi dân sự",
+            "Có nguồn thu nhập ổn định (ưu tiên người nhận lương qua tài khoản, có hợp đồng bảo hiểm nhân thọ hoặc là chủ hộ kinh doanh để được lãi suất tốt nhất)",
+            "Khoản vay tối đa 7 lần thu nhập (bảng thông tin của trang vay tiền mặt; tiêu đề trang ghi \"đến 10 lần thu nhập\")",
+            "Không cần thế chấp; đang có khoản vay hoặc dư nợ thẻ ở nơi khác vẫn có thể đăng ký",
+            "Người có nợ xấu hoặc chưa có lịch sử tín dụng vẫn có thể đăng ký, kết quả tùy thẩm định",
+            "Có lịch sử tín dụng tốt, không nợ xấu (điều kiện ghi trên trang vay nhanh trên ứng dụng)"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "App-loan page section \"Điều kiện vay\" and FAQ, read 2026-11-04. The page also says approval depends on credit assessment and that people with bad debt or no CIC history may still apply."
+        },
+        "notes": "Target-user fit: a salaried 22-35 year old in Hanoi or HCMC meets the stated age and income conditions. Salary-account holders and people with a life-insurance contract are said to get the best rate (cash-loan page)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; tiền lãi chậm trả bị tính thêm 10%/năm. Với khoản vay lãi ưu đãi 0%, lãi trong hạn dùng để tính phạt là 45%/năm. Điều khoản không ghi phí phạt cố định riêng.",
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "T&C effective 09.10.2026 art. 4.3: overdue principal interest = 150% x in-term rate / 365 x overdue principal x days; late interest = overdue interest x 10% / 365 x days. Application form (14.10.2026) art. 1.7: for 0%-rate products the in-term rate used as the base is 45%/year. No fixed late fee in the T&C or the rate framework. Unchanged since the 09.03.2026 version."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate; late interest is charged 10% a year on overdue interest. For 0% promotional loans the base rate used is 45% a year. No separate fixed late fee is listed.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "150% of the in-term rate (T&C art. 4.3)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": 10,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "10%/year on overdue interest (T&C art. 4.3)."
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 20000000,
+          "termMonths": 18,
+          "ratePercent": 16.44,
+          "rateBasis": "flat",
+          "ratePeriod": "yearly",
+          "amortization": "unknown",
+          "monthlyPaymentVnd": null,
+          "totalRepaidVnd": 25110000,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": false,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page example (identical on the cash-loan and app pages): \"Khách hàng vay 20.000.000đ trong 18 tháng, với lãi suất phẳng 16,44%/năm, thì tổng số tiền cần thanh toán là 25.110.000đ (đã bao gồm các loại phí, trừ phí bảo hiểm không bắt buộc, phí chuyển tiền và phí trả nợ trước hạn)\". Check: pure flat 16,44% gives interest 20,000,000 x 16.44% x 1.5 = 4,932,000, total 24,932,000. The extra 178,000 is not itemised, and 12,000 x 18 = 216,000 of collection fees would give 25,148,000. A 29%/year reducing annuity plus 12,000 a month gives about 25,128,000. Neither reading reproduces 25,110,000 exactly (difference 18,000 to 38,000), so the numbers do not add up as printed. Do not use as a test fixture."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "amountMinVnd",
+          "values": [
+            {
+              "value": "10,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+              "note": "Cash-loan page: \"Hạn mức vay nhanh 10 triệu - 100 triệu đồng\"; calculator slider starts at 10,000,000."
+            },
+            {
+              "value": "5,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+              "note": "App-loan page: \"Gói vay từ 5 triệu – 100 triệu đồng\"."
+            }
+          ],
+          "resolution": "Stored 10,000,000 (the stricter minimum) on both products. Medium."
+        },
+        {
+          "field": "eligibility.maxAge",
+          "values": [
+            {
+              "value": "60 (\"từ 20 đến không quá 60 tuổi\")",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+              "note": "Cash-loan page."
+            },
+            {
+              "value": "59 (\"Từ 20 đến 59 tuổi\")",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+              "note": "App-loan page; the installment pages say 18-59."
+            }
+          ],
+          "resolution": "Stored 59 (stricter). Not stated whether checked at application or at loan end. Medium."
+        },
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "35.4%/year flat (about 2.95%/month flat)",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+              "note": "Cash-loan and app-loan pages: \"Lãi suất phẳng (tham chiếu) tối đa ... 35,4%\"."
+            },
+            {
+              "value": "1.86%/month (about 22.3%/year flat)",
+              "sourceUrl": null,
+              "note": "Figure given by the requester from a comparison site (topi.vn): \"1.37-1.86%/month\". No SFinance page, document, store listing or news item found states 1.86%. Secondary lead only, not stored."
+            }
+          ],
+          "resolution": "Stored the lender's own 35.4%/year flat reference maximum. The 1.86% lead was not confirmed at any official source."
+        }
+      ],
+      "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "notes": "Researched 2026-11-04. The app page repeats the cash-loan page's floor (1.37%/month), reference maximum (35.4%/year flat), amounts and 6-36 month terms. The T&C and early-repayment fee are the same documents as for the cash loan. This is probably the same loan as vay-tien-mat applied for through the app, so listing both may show the same lender twice. The app page is the only one to say a 5 million minimum, ages 20-59 and \"lịch sử tín dụng tốt\".",
+      "borrowerNotes": [
+        {
+          "vi": "SFinance quảng cáo lãi \"phẳng\" từ 1,37%/tháng và ghi tương đương khoảng 2,4%/tháng trên dư nợ giảm dần. Mức lãi bạn nhận được ghi trong hợp đồng và có thể cao hơn.",
+          "en": "SFinance advertises a \"flat\" rate from 1.37% a month and says it equals about 2.4% a month on the declining balance. Your own rate is written in your contract and may be higher."
+        },
+        {
+          "vi": "Trả nợ trước hạn: phí 5% dư nợ gốc còn lại; chỉ tất toán toàn bộ (không trả trước một phần) và sau khi đã trả ít nhất 6 kỳ nếu vay từ 10 tháng trở lên.",
+          "en": "Early repayment: a fee of 5% of the remaining principal; full settlement only (no partial prepayment), after at least 6 instalments for loans of 10 months or more."
+        },
+        {
+          "vi": "Số tiền phải trả hàng tháng theo hợp đồng có thể gồm phí thu hộ 12.000 đồng cho mỗi lần trả nợ qua đơn vị thu hộ; máy tính trên trang chưa cộng khoản này vào số hiển thị.",
+          "en": "The monthly amount under the contract can include a 12,000 đồng collection fee for each payment made through a collection unit; the page calculator does not add it to the figure it shows."
+        }
+      ],
+      "excludeCode": "same_loan_other_channel",
+      "excludeReason": "The app page repeats the cash loan's rates, so ranking both would show the same loan twice."
+    },
+    {
+      "id": "vay-qua-doi-tac-momo-zalopay",
+      "nameVi": "Vay qua đối tác (ví MoMo, ví ZaloPay)",
+      "nameEn": "SFinance loan applied for inside the MoMo or ZaloPay app",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "sfinance",
+      "brandOrChannel": "MoMo; ZaloPay",
+      "online": true,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated on the partner page or the cash-loan page."
+      },
+      "amountMaxVnd": {
+        "value": 30000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Cash-loan page: \"khoản vay nhanh đến 30 triệu đồng thông qua các ứng dụng đối tác ... ZaloPay và MoMo\". The partner page itself states no amount."
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated."
+      },
+      "termMaxMonths": {
+        "value": 24,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-qua-doi-tac",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Partner page: \"Thời hạn linh hoạt đến 24 tháng\"."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": null,
+          "minPercent": {
+            "value": 2.79,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-qua-doi-tac",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Partner page: \"Lãi suất từ 2.79%/tháng\". A \"from\" figure; no maximum is published for this channel."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum published for the partner channel."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://www.sfinance.com.vn/vay-qua-doi-tac",
+            "note": "Source wording: \"%/tháng\"."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": "Khung lãi suất công bố cho toàn bộ sản phẩm \"Cho vay tiền mặt\" của SFinance (không riêng kênh đối tác)",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework row 1 \"Cho vay tiền mặt\": 0%/năm minimum (promotional only)."
+          },
+          "maxPercent": {
+            "value": 70,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework row 1: 70%/năm maximum. Undated PDF; see the cash-loan product."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "\"tính trên dư nợ gốc giảm dần\""
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "\"%/năm\""
+          },
+          "promotional": true,
+          "minIsPromotional": true
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [],
+      "feesCompleteness": "unknown",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated for the partner channel."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân (CCCD) gắn chip còn hiệu lực"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-qua-doi-tac",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Partner page FAQ: \"Bạn chỉ cần chuẩn bị Căn cước công dân (CCCD) gắn chip còn hiệu lực\"."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Đăng ký 100% trực tuyến trong ứng dụng đối tác, không cần tài sản đảm bảo"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-qua-doi-tac",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Partner page FAQ."
+        },
+        "notes": "Whether the main SFinance T&C (early repayment, late interest) governs partner loans is not stated on the page, so those figures are not copied here."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated for the partner channel; the main T&C (09.10.2026) is not said to cover it."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://www.sfinance.com.vn/vay-qua-doi-tac",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Chỉ công bố mức lãi 'từ 2,79%/tháng' (không rõ cách tính) và khung lãi suất toàn công ty; chưa có khoảng lãi suất thực tế cho kênh này.",
+      "notes": "Researched 2026-11-04. The partner page shows a MoMo wallet flow and a ZaloPay flow, each with a \"Hướng dẫn vay\" link. Only the floor 2.79%/month is published; the basis (flat or reducing) is not stated. Fees, early repayment and late penalties for this channel are not published separately. To unlock: a partner-channel rate range, or a contract/T&C that names this channel."
+    },
+    {
+      "id": "tra-gop-dien-thoai",
+      "nameVi": "Vay nhanh trả góp điện thoại",
+      "nameEn": "Installment loan for phones at partner stores",
+      "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "sfinance",
+      "brandOrChannel": "Điểm giới thiệu dịch vụ (cửa hàng đối tác của SFinance)",
+      "online": null,
+      "amountMinVnd": {
+        "value": 10000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Phone installment page FAQ: \"Hạn mức khoản vay trả góp tại SFinance từ 10 triệu đến 50 triệu đồng ... Giá trị sản phẩm tối thiểu để đăng ký mua trả góp là 10 triệu đồng\". The same page's other FAQ says the minimum is 1,000,000 and its slider and text say 1 to 50 million; stored 10,000,000 (stricter). See conflicts."
+      },
+      "amountMaxVnd": {
+        "value": 50000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Phone installment page: \"Cung cấp hạn mức vay từ 1 - 50 triệu đồng\"; FAQ \"từ 10 triệu đến 50 triệu\". The actual limit depends on the customer's file."
+      },
+      "termMinMonths": {
+        "value": 4,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Phone installment page: \"Kỳ hạn trả góp từ 4 - 36 tháng\"; calculator slider 4 to 36 months."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Phone installment page: 36 months."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "Chương trình ưu đãi theo từng thời kỳ của SFinance và đối tác",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Phone installment page: \"Chỉ từ 0% lãi suất*\" with the footnote \"(*) Áp dụng cho chương trình ưu đãi theo từng thời kỳ của SFinance và đối tác\". Promotional, no unit given, no maximum."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum rate published for this product."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "promotional": true,
+          "minIsPromotional": true
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": "Khung lãi suất công bố cho toàn bộ sản phẩm \"Cho vay trả góp tại điểm giới thiệu dịch vụ\" của SFinance (mọi loại hàng)",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework row 2 \"Cho vay trả góp tại điểm giới thiệu dịch vụ\": minimum 0%/năm (promotional only)."
+          },
+          "maxPercent": {
+            "value": 59,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework row 2: maximum 59%/năm. Undated PDF (file metadata 2026-08-05; listed as posted 2026-08-23). A ceiling for all point-of-sale installment loans, not an offered range for this product."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "\"tính trên dư nợ gốc giảm dần\""
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "\"%/năm\""
+          },
+          "promotional": true,
+          "minIsPromotional": true
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí trả nợ trước hạn",
+          "nameEn": "Early repayment fee (full early settlement)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "Paid on the day the borrower asks to settle early (T&C art. 7.1(b))."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "Only incurred if the borrower chooses to settle early."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 10,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C effective 09.10.2026 art. 7.1: 10% of the in-term outstanding principal for installment loans at a service introduction point (5% for cash loans). Allowed after at least 1 instalment is paid, with notice and SFinance's agreement; no partial early repayment (art. 7.3). The page FAQ agrees on 1 instalment and says the fee follows the contract. Same 10% in the T&C of 05.06.2026 to 11.09.2026."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thu hộ (khi trả nợ qua đơn vị thu hộ / trung gian thanh toán)",
+          "nameEn": "Collection fee when paying through a payment intermediary",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "T&C art. 2.1: the collection fee is part of the monthly amount payable; credited back if the borrower does not use a collection agent (art. 2.2 note)."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Unclear whether always charged; see the cash-loan product."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C art. 2.2 note: \"12.000 đồng/1 giao dịch trả nợ\" (current level)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Phone installment page: \"Trong độ tuổi từ 18 đến 59\"."
+        },
+        "maxAge": {
+          "value": 59,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Phone installment page: 18 to 59. Not stated whether checked at application or at loan end."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No minimum income published for installment loans."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "CCCD / Căn cước gắn chip còn thời hạn tối thiểu 01 tháng kể từ ngày nhập liệu lên hệ thống lần đầu"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Phone installment page FAQ and conditions."
+        },
+        "existingCustomerRequired": {
+          "value": false,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Open to any customer who meets the conditions; no existing-customer rule stated."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Công dân Việt Nam, đủ năng lực hành vi dân sự, có thu nhập ổn định",
+            "Đăng ký tại cửa hàng đối tác của SFinance, xác minh danh tính trên ứng dụng SFinance",
+            "Trả trước có thể từ 0% (tùy chính sách từng thời kỳ)",
+            "Trang tự mâu thuẫn về việc đang có khoản vay khác: một câu hỏi ghi \"Không\" (phải hoàn tất khoản trả góp hiện tại trước), một câu hỏi khác ghi \"Có thể\" nếu tổng dư nợ không vượt hạn mức"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Phone installment page conditions and FAQ, read 2026-11-04."
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; tiền lãi chậm trả bị tính thêm 10%/năm. Với khoản vay lãi ưu đãi 0%, lãi trong hạn dùng để tính phạt là 45%/năm. Điều khoản không ghi phí phạt cố định riêng.",
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "T&C effective 09.10.2026 art. 4.3: overdue principal interest = 150% x in-term rate / 365 x overdue principal x days; late interest = overdue interest x 10% / 365 x days. Application form (14.10.2026) art. 1.7: for 0%-rate products the in-term rate used as the base is 45%/year. No fixed late fee in the T&C or the rate framework. Unchanged since the 09.03.2026 version."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate; late interest is charged 10% a year on overdue interest. For 0% promotional loans the base rate used is 45% a year. No separate fixed late fee is listed.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "150% of the in-term rate (T&C art. 4.3)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": 10,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "10%/year on overdue interest (T&C art. 4.3)."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMinVnd",
+          "values": [
+            {
+              "value": "10,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+              "note": "FAQ on limits: loan limit from 10 to 50 million; minimum product value 10 million."
+            },
+            {
+              "value": "1,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+              "note": "Same page: \"Hạn mức vay từ 1 - 50 triệu đồng\"; another FAQ says the minimum is 1,000,000; the calculator slider starts at 1,000,000."
+            }
+          ],
+          "resolution": "Stored 10,000,000 (stricter). Medium."
+        }
+      ],
+      "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-thoai",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Chỉ công bố lãi 'từ 0%' (khuyến mãi) và khung lãi suất toàn công ty; chưa có khoảng lãi suất thực tế cho sản phẩm này.",
+      "notes": "Researched 2026-11-04. Installment loan at partner stores, 4-36 months. The advertised \"từ 0%\" is a promotion by SFinance and its partners; the only other rate is the company-wide framework 0-59%/year reducing for point-of-sale installment loans. The page calculator showed 2,214,000 a month for a 40,000,000 price, 20% down payment and 18 months; no published rate explains that (40,000,000 / 18 alone is 2,222,222) and it did not respond to my input changes, so it is not recorded as an example. The page also mentions a \"phí chuyển đổi\" (conversion fee) without defining it. To unlock ranking: a per-product rate range, or the partner/promotion terms that state the rate."
+    },
+    {
+      "id": "tra-gop-dien-may",
+      "nameVi": "Vay nhanh trả góp điện máy",
+      "nameEn": "Installment loan for home appliances and electronics at partner stores",
+      "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "sfinance",
+      "brandOrChannel": "Điểm giới thiệu dịch vụ (cửa hàng đối tác của SFinance)",
+      "online": null,
+      "amountMinVnd": {
+        "value": 10000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Electronics installment page FAQ: \"Hạn mức khoản vay trả góp tại SFinance từ 10 triệu đến 50 triệu đồng ... Giá trị sản phẩm tối thiểu để đăng ký mua trả góp là 10 triệu đồng\". The same page's other FAQ says the minimum is 1,000,000 and its slider and text say 1 to 50 million; stored 10,000,000 (stricter). See conflicts."
+      },
+      "amountMaxVnd": {
+        "value": 50000000,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Electronics installment page: \"Cung cấp hạn mức vay từ 1 - 50 triệu đồng\"; FAQ \"từ 10 triệu đến 50 triệu\". The actual limit depends on the customer's file."
+      },
+      "termMinMonths": {
+        "value": 4,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Electronics installment page: \"Kỳ hạn trả góp từ 4 - 36 tháng\"; calculator slider 4 to 36 months."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+        "retrievedAt": "2026-11-04",
+        "confidence": "high",
+        "note": "Electronics installment page: 36 months."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": "Chương trình ưu đãi theo từng thời kỳ của SFinance và đối tác",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Electronics installment page: \"Chỉ từ 0% lãi suất*\" with the footnote \"(*) Áp dụng cho chương trình ưu đãi theo từng thời kỳ của SFinance và đối tác\". Promotional, no unit given, no maximum."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum rate published for this product."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "promotional": true,
+          "minIsPromotional": true
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": "Khung lãi suất công bố cho toàn bộ sản phẩm \"Cho vay trả góp tại điểm giới thiệu dịch vụ\" của SFinance (mọi loại hàng)",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework row 2 \"Cho vay trả góp tại điểm giới thiệu dịch vụ\": minimum 0%/năm (promotional only)."
+          },
+          "maxPercent": {
+            "value": 59,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Rate framework row 2: maximum 59%/năm. Undated PDF (file metadata 2026-08-05; listed as posted 2026-08-23). A ceiling for all point-of-sale installment loans, not an offered range for this product."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "\"tính trên dư nợ gốc giảm dần\""
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
+            "note": "\"%/năm\""
+          },
+          "promotional": true,
+          "minIsPromotional": true
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí trả nợ trước hạn",
+          "nameEn": "Early repayment fee (full early settlement)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "Paid on the day the borrower asks to settle early (T&C art. 7.1(b))."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "Only incurred if the borrower chooses to settle early."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 10,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "high",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C effective 09.10.2026 art. 7.1: 10% of the in-term outstanding principal for installment loans at a service introduction point (5% for cash loans). Allowed after at least 1 instalment is paid, with notice and SFinance's agreement; no partial early repayment (art. 7.3). The page FAQ agrees on 1 instalment and says the fee follows the contract. Same 10% in the T&C of 05.06.2026 to 11.09.2026."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí thu hộ (khi trả nợ qua đơn vị thu hộ / trung gian thanh toán)",
+          "nameEn": "Collection fee when paying through a payment intermediary",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "monthly",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "note": "T&C art. 2.1: the collection fee is part of the monthly amount payable; credited back if the borrower does not use a collection agent (art. 2.2 note)."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Unclear whether always charged; see the cash-loan product."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-09",
+            "note": "T&C art. 2.2 note: \"12.000 đồng/1 giao dịch trả nợ\" (current level)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Electronics installment page: \"Trong độ tuổi từ 18 đến 59\"."
+        },
+        "maxAge": {
+          "value": 59,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Electronics installment page: 18 to 59. Not stated whether checked at application or at loan end."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No minimum income published for installment loans."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "CCCD / Căn cước gắn chip còn thời hạn tối thiểu 01 tháng kể từ ngày nhập liệu lên hệ thống lần đầu"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Electronics installment page FAQ and conditions."
+        },
+        "existingCustomerRequired": {
+          "value": false,
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Open to any customer who meets the conditions; no existing-customer rule stated."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Công dân Việt Nam, đủ năng lực hành vi dân sự, có thu nhập ổn định",
+            "Đăng ký tại cửa hàng đối tác của SFinance, xác minh danh tính trên ứng dụng SFinance",
+            "Trả trước có thể từ 0% (tùy chính sách từng thời kỳ)",
+            "Trang tự mâu thuẫn về việc đang có khoản vay khác: một câu hỏi ghi \"Không\" (phải hoàn tất khoản trả góp hiện tại trước), một câu hỏi khác ghi \"Có thể\" nếu tổng dư nợ không vượt hạn mức"
+          ],
+          "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Electronics installment page conditions and FAQ, read 2026-11-04."
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; tiền lãi chậm trả bị tính thêm 10%/năm. Với khoản vay lãi ưu đãi 0%, lãi trong hạn dùng để tính phạt là 45%/năm. Điều khoản không ghi phí phạt cố định riêng.",
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "T&C effective 09.10.2026 art. 4.3: overdue principal interest = 150% x in-term rate / 365 x overdue principal x days; late interest = overdue interest x 10% / 365 x days. Application form (14.10.2026) art. 1.7: for 0%-rate products the in-term rate used as the base is 45%/year. No fixed late fee in the T&C or the rate framework. Unchanged since the 09.03.2026 version."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate; late interest is charged 10% a year on overdue interest. For 0% promotional loans the base rate used is 45% a year. No separate fixed late fee is listed.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "150% of the in-term rate (T&C art. 4.3)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": 10,
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "high",
+          "sourceDocumentDate": "2026-10-09",
+          "note": "10%/year on overdue interest (T&C art. 4.3)."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMinVnd",
+          "values": [
+            {
+              "value": "10,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+              "note": "FAQ on limits: loan limit from 10 to 50 million; minimum product value 10 million."
+            },
+            {
+              "value": "1,000,000 VND",
+              "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+              "note": "Same page: \"Hạn mức vay từ 1 - 50 triệu đồng\"; another FAQ says the minimum is 1,000,000; the calculator slider starts at 1,000,000."
+            }
+          ],
+          "resolution": "Stored 10,000,000 (stricter). Medium."
+        }
+      ],
+      "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tra-gop-dien-may",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Chỉ công bố lãi 'từ 0%' (khuyến mãi) và khung lãi suất toàn công ty; chưa có khoảng lãi suất thực tế cho sản phẩm này.",
+      "notes": "Researched 2026-11-04. Installment loan at partner stores, 4-36 months. The advertised \"từ 0%\" is a promotion by SFinance and its partners; the only other rate is the company-wide framework 0-59%/year reducing for point-of-sale installment loans. The page calculator showed 2,214,000 a month for a 40,000,000 price, 20% down payment and 18 months; no published rate explains that (40,000,000 / 18 alone is 2,222,222) and it did not respond to my input changes, so it is not recorded as an example. The page also mentions a \"phí chuyển đổi\" (conversion fee) without defining it. To unlock ranking: a per-product rate range, or the partner/promotion terms that state the rate."
+    },
+    {
+      "id": "the-tin-dung-sung-tuc",
+      "nameVi": "Thẻ tín dụng quốc tế SFinance (Thẻ Sung Túc)",
+      "nameEn": "SFinance international credit card (Sung Túc card)",
+      "productType": "credit_card",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "sfinance",
+      "brandOrChannel": "Thẻ Sung Túc",
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Credit limits are not in the fee schedule (a separate card-limit document exists on the documents page; not read)."
+      },
+      "amountMaxVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null
+      },
+      "termMinMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Revolving card."
+      },
+      "termMaxMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Revolving card."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "Lãi suất thông thường (không phải lãi ưu đãi)",
+          "minPercent": {
+            "value": 29,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Card fee schedule row 18 (listing: fee schedule in force from 06/10/2026; file created 2026-09-23): \"Lãi suất thông thường 29% - 60%/ năm. Mức lãi suất cụ thể được SFinance thông báo cho Khách hàng tại thời điểm phê duyệt phát hành thẻ tín dụng\". Promotional rates follow separate campaigns."
+          },
+          "maxPercent": {
+            "value": 60,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Same row: 60%/năm."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "note": "Source wording: \"%/ năm\"."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [
+        {
+          "nameVi": "Phí gói Sung Túc hàng năm",
+          "nameEn": "Annual Sung Túc package fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Only for customers who register for the Sung Túc package (\"NA\" for others)."
+          },
+          "base": "credit_limit",
+          "rule": "percent_only",
+          "percent": {
+            "value": 3,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Fee schedule row 1a, column for customers who register the package: \"3%* Hạn mức tín dụng\", charged each year from the first transaction and auto-renewed (note 1). The PDF table is partly scrambled; read from the raw text order."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí gói Sung Túc trọn đời",
+          "nameEn": "Lifetime Sung Túc package fee",
+          "trigger": "other",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Only for customers who register for the Sung Túc package."
+          },
+          "base": "credit_limit",
+          "rule": "percent_only",
+          "percent": {
+            "value": 7.5,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Fee schedule row 1b: \"7.5% *Hạn mức tín dụng\", charged once over the card's validity, from the first transaction (note 2)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí chậm thanh toán",
+          "nameEn": "Late payment fee",
+          "trigger": "late_payment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "note": "Charged on a late payment."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Charged only on late payment."
+          },
+          "base": "unknown",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": 4,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Fee schedule row 13: \"4%* số tiền chậm thanh toán, tối thiểu 100.000 VND\" (both columns). The base is the overdue amount."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": 100000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Minimum 100,000 VND per row 13."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí ứng tiền mặt (không áp dụng với rút tiền tại ATM)",
+          "nameEn": "Cash advance fee (not for ATM withdrawals)",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Free for customers who register the Sung Túc package."
+          },
+          "base": "transaction_amount",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": 0.2,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Fee schedule row 17, column for customers without the package: \"0.2% * số tiền rút thành công (tối thiểu 20.000 VND, tối đa 60.000 VND/ giao dịch)\"."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": 20000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Minimum 20,000 VND per transaction."
+          },
+          "maxVnd": {
+            "value": 60000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Maximum 60,000 VND per transaction."
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí chuyển đổi ngoại tệ",
+          "nameEn": "Foreign-currency conversion fee",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Free for customers who register the Sung Túc package."
+          },
+          "base": "transaction_amount",
+          "rule": "percent_only",
+          "percent": {
+            "value": 3.3,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Fee schedule row 15, column for customers without the package: \"3.3%* Số tiền giao dịch\"."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí xử lý giao dịch",
+          "nameEn": "Transaction processing fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Whether the fee is charged at every statement or only in months with transactions is not stated."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 18000,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-06",
+            "note": "Fee schedule row 16: \"18.000 VND/ kỳ sao kê\" in both columns."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not read for the card."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not read for the card."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not read for the card."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not read for the card."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Card terms and application form are listed on the documents page but were not read."
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Phí chậm thanh toán 4% số tiền chậm thanh toán, tối thiểu 100.000 đồng.",
+          "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-10-06",
+          "note": "Fee schedule row 13. Interest on late balances was not read."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://static-files.sfinance.com.vn/uploads/Bi%E1%BB%83u%20ph%C3%AD%20Th%E1%BA%BB%20SFinance_2026.10.pdf",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Thẻ tín dụng nằm ngoài phạm vi so sánh của MVP; hạn mức và điều kiện chưa được đọc.",
+      "notes": "Researched 2026-11-04. Included because SFinance publishes a card fee schedule with a 29-60%/year interest range. Only fee rows that could be read unambiguously are stored; rows 3 to 12 (reissue, limit management, ATM, SMS and others) sit in a scrambled table in the PDF and were not mapped to columns, so feesCompleteness is partial. A card promotion required cash withdrawals of at least 90% of the limit to enter a draw. The card has no product page of its own that I could open (the website's footer link goes to a dead path), so the source is the fee schedule on the documents page https://www.sfinance.com.vn/van-ban-can-biet/van-ban-the."
+    }
+  ],
+  "researchNotes": "Researched 2026-11-04 (retrievedAt on every figure is the day it was read).\n\nNAME AND LICENCE CHECK\n- The licensed list (data/licensed-institutions.json id sfinance, from the SBV finance-company page, as of 30/09/2026) gives legalName \"Công ty Tài chính Tín dụng tiêu dùng Trách nhiệm hữu hạn Một thành viên SFinance\", licence 43/GP-NHNN dated 10/7/2026, website shbfinance.com.vn. The lender's own documents use the same name with the abbreviation: \"Công ty Tài chính Tín dụng tiêu dùng TNHH MTV SFinance\" (loan contract 14.10.2026, which also gives enterprise code 0107779290); the website footer writes it with different capitals. The Apple App Store developer is \"SFinance Consumer Credit Finance Company Limited\", matching legalNameEn. No mismatch other than abbreviation and capitals.\n- RECENT NAME CHANGE: the company was SHBFinance (Công ty Tài chính TNHH Ngân hàng TMCP Sài Gòn - Hà Nội; licences 77/GP-NHNN of 12/12/2016 and 21/GP-NHNN of 25/04/2023, per the SBV list). The State Bank approved the change of legal form on 10/7/2026 (new licence 43/GP-NHNN) and the brand SFinance was announced on 24/08/2026 (App Store release note; an earlier release note says 18/8). Some pages and old documents still say SHBFinance (installment pages, one FAQ answer, older T&C versions, the card fee schedules before 24/08/2026).\n- OWNERSHIP CHANGE: SFinance's own news of 2026-11-02 says Krungsri (Bank of Ayudhya, MUFG group) completed payment on 15/10/2026 for 100% of the company from SHB bank. It is no longer an SHB subsidiary, so SHB-bank fee schedules must not be used for it.\n- DOMAIN CHANGE: shbfinance.com.vn now redirects (301) to www.sfinance.com.vn. The licensed list still shows shbfinance.com.vn as the website; suggest updating it to https://www.sfinance.com.vn. Back-end API calls still go to gateway-api-mobile.shbfinance.com.vn.\n\nTHE topi.vn LEAD (1.37-1.86%/month, up to 100 million, up to 36 months)\n- SFinance's own pages say \"Lãi suất từ 1.37%/tháng\", up to 100 million, 6-36 months, and name no 1.86%. The only upper rate figure is \"Lãi suất phẳng (tham chiếu) tối đa [trong năm / của năm] là 35,4%\" (flat, per year, about 2.95%/month) on the cash-loan and app-loan pages. No SFinance page, PDF, store listing or news item mentions 1.86%. 1.37% is 16.44%/year flat; the page says it equals about 2.4%/month on a declining balance. A secondary article (VNBA, 2025-06-22) repeats 1.37% flat = 2.4% declining. The comparison-site range is not confirmed.\n\nTHE RATE FRAMEWORK (khung lãi suất)\n- Title on the lender's \"Văn bản cần biết\" page (tab Vay tiền mặt), posted 2026-08-23: \"KHUNG LÃI SUẤT CHO VAY TIÊU DÙNG, CÁC LOẠI PHÍ, PHƯƠNG PHÁP TÍNH LÃI VÀ CÁC HÌNH THỨC TIẾP NHẬN GÓP Ý CỦA KHÁCH HÀNG\" (PDF heading: \"KHUNG LÃI SUẤT CHO VAY TIÊU DÙNG, CÁC LOẠI PHÍ, PHƯƠNG PHÁP TÍNH LÃI\"). URL: https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf. The PDF prints no effective date; its file metadata says created 2026-08-05. The previous version (posted 2025-06-24, still listed, written for \"SHB FC\") has one row, 0-70%/year, for all consumer lending.\n- Wording: table \"Khung lãi suất cho vay tại SFinance\": row 1 \"Cho vay tiền mặt\" minimum 0%/năm, maximum 70%/năm; row 2 \"Cho vay trả góp tại điểm giới thiệu dịch vụ\" minimum 0%/năm, maximum 59%/năm. \"Lãi suất ưu đãi 0% chỉ được áp dụng trong một thời gian nhất định và một số sản phẩm đặc thù\". Fees: only \"Phí trả nợ trước hạn - Theo quy định của hợp đồng tín dụng\". Method: \"tính trên dư nợ gốc giảm dần\", %/năm on a 365-day year, interest = sum(daily balance x days x rate)/365, \"không vượt quá mức Lãi suất khung\".\n- Scope: it covers two product categories company-wide (every cash loan; every point-of-sale installment loan), not one product, and it is a reducing-balance ceiling. Stored as regulatory_ceiling with a segment naming the category on the cash, app, partner and installment products. Not an offered range.\n\nWHAT IS AND IS NOT AN OFFERED RANGE\n- Cash loan (vay-tien-mat) and app loan: the product pages give a floor (16.44%/year flat = 1.37%/month) and a \"reference maximum\" of 35.4%/year flat. Stored as offered_range, flat, yearly, medium confidence, excludeFromRanking false. This is a judgement call, because both numbers are labelled \"tham chiếu\" (reference) and the real contract rate is a reducing-balance rate printed per customer. Set excludeFromRanking to true if you do not want to treat the reference maximum as a real maximum.\n- Partner channel (MoMo/ZaloPay): only \"từ 2.79%/tháng\", basis unknown: advertised_floor, excluded.\n- Installment (phone, electronics): only \"chỉ từ 0%\" (promotional) plus the company-wide ceiling 0-59%: excluded.\n- Credit card: 29-60%/year range in the fee schedule, basis unknown; the card is out of MVP scope: excluded.\n\nFLAT OR REDUCING TESTS\n- The cash-loan page's own calculator (read in the browser 2026-11-04) sends interestRate 29 to its EMI API for every input. Results match the annuity at 29%/year reducing: 10,000,000 / 36 months -> emiOrg 419,070 (annuity 419,057); 55,000,000 / 36 -> 2,304,883 (annuity 2,304,814). 29%/12 = 2.417%/month, which is the page's \"2.4%/tháng trên dư nợ giảm dần\". The IRR of a 1.37%/month flat loan is 29.2% at 18 months, 28.2% at 36 months and 27.7% at 6 months, so \"1.37% flat is about 2.4% reducing\" holds roughly. The IRR of the 35.4%/year flat maximum is about 55-60%/year, below the 70% framework.\n- The page's worked example (20,000,000 / 18 months / flat 16.44% -> total 25,110,000 \"including fees\") does not add up as printed: flat gives 24,932,000 before fees; see the example note. Marked internallyConsistent false.\n- The calculator DISPLAYS the payment without the 12,000 collection fee (420,000 for 10M/36m) while the API's contract-style figure includes it (432,000).\n\nSTILL UNKNOWN, AND WHERE I LOOKED\n- Insurance premium, insurer and collection method for loan-linked insurance: searched the insurance page (www.sfinance.com.vn/bao-hiem) and its FAQ (only says voluntary, up to 100% of the balance, partners VietinBank Phương Nam, Tasco, DBV), the T&C of 09.10.2026 and the loan contract of 14.10.2026 (no insurance clause), and the rate framework. Not published.\n- Amount of the disbursement-agent (chi hộ) fee: T&C art. 2.2 and 6.5 mention it without an amount.\n- Partner-channel eligibility and terms, card limits and card eligibility: not read or not published.\n- Installment pages: no rate, no worked example, calculator output not explainable. The \"phí chuyển đổi\" mentioned on those pages is not defined anywhere I found.\n- Google Play listing for com.shbfinance.mobilecustomer: the fetch returned content for unrelated apps, so it was not used. The App Store listing (id1562062854) has no rate, term or fee text.\n- Searched: /vay-tien-mat, /vay-nhanh-tren-ung-dung, /vay-qua-doi-tac, /vay-nhanh-tra-gop-dien-thoai, /vay-nhanh-tra-gop-dien-may, /bao-hiem, /ve-sfinance, /huong-dan-thanh-toan, /van-ban-can-biet (all 3 pages of the cash-loan tab; the card and policy tabs; the installment and insurance tabs say \"Không có dữ liệu\"), five dated T&C versions (09.03.2026 to 09.10.2026) and the current loan contract; web searches \"SFinance vay tiền mặt lãi suất 1.37%/tháng 1.86%/tháng\", \"site:sfinance.com.vn khung lãi suất phí trả nợ trước hạn\".\n\nCONTRADICTIONS AND SURPRISES\n- The cash-loan and app-loan pages disagree on the minimum amount (10M vs 5M), maximum age (60 vs 59), and the cash-loan page itself says both \"đến 7 lần thu nhập\" (table) and \"đến 10 lần thu nhập\" (banner).\n- The installment pages disagree with themselves on the minimum amount (1M vs 10M) and on whether a customer with an existing installment loan may borrow again.\n- The early-repayment fee is 5% (cash) or 10% (installment) of outstanding principal, but the loan can only be settled in full, and only after 6 paid instalments for cash loans of 10 months or more.\n- The contract prints the in-term rate per customer as %/month and the equivalent %/year (form art. 1.6), so the real APR is only known at contract time.\n- For 0% promotional loans, late interest is computed from a 45%/year base rate (form art. 1.7).\n",
+  "retrievedAt": "2026-11-04"
+}

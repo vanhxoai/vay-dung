@@ -19,6 +19,12 @@ const GOODS_BY_PRODUCT: Record<string, Goods> = {
   "hd-saison/electronics-installment": "phone",
   "home-credit/installment-motorbike": "motorbike",
   "home-credit/installment-electronics": "phone",
+  "jaccs/motorbike-installment": "motorbike",
+  "jaccs/electronics-installment": "phone",
+  "mirae-asset/installment-motorbike": "motorbike",
+  "mirae-asset/installment-electronics": "phone",
+  "sfinance/tra-gop-dien-thoai": "phone",
+  "sfinance/tra-gop-dien-may": "phone",
   "shinhan-finance/motorbike-installment-loan": "motorbike",
 };
 
@@ -83,6 +89,7 @@ export type ExcludeCode =
   | "rate_varies"
   | "conflicting_sources"
   | "range_basis_unknown"
+  | "same_loan_other_channel"
   | "floor_and_range"
   | "undated_document"
   | "ceiling_only"

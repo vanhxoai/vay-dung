@@ -1,0 +1,1002 @@
+{
+  "schemaVersion": 2,
+  "slug": "tnex-finance",
+  "name": "TNEX Finance",
+  "legalName": "Công ty Tài chính trách nhiệm hữu hạn một thành viên TNEX (TNEX Finance) ( tài chính cộng đồng cũ)",
+  "licenseCategory": "finance_company",
+  "licensedInstitutionId": "tnex-finance",
+  "website": "https://tnex.com.vn",
+  "products": [
+    {
+      "id": "vay-tieu-dung-tung-lan-app",
+      "nameVi": "Vay tiêu dùng cá nhân TNEX (vay từng lần trên ứng dụng TNEX)",
+      "nameEn": "TNEX personal consumer cash loan (single disbursement, in the TNEX app)",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "tnex-finance",
+      "brandOrChannel": "Ứng dụng TNEX (mục 'Vay tiêu dùng')",
+      "online": true,
+      "amountMinVnd": {
+        "value": 10000000,
+        "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Lower end of the amount slider in the product page's loan calculator (10,000,000 to 25,000,000 VND), read 2026-11-04. No sentence on the page states a minimum loan."
+      },
+      "amountMaxVnd": {
+        "value": 40000000,
+        "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page title 'Tín Chấp Tới 40 Triệu' and the 3-step section: 'Sở hữu ngay khoản vay lên tới 40 triệu đồng' (read 2026-11-04). The Google Play and App Store listings say up to 70,000,000 and the page's own cross-promotion says 'Cơ hội nhận tới 70 triệu'; the calculator slider stops at 25,000,000. See conflicts. Not above the 100M finance-company cap."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Product page FAQ 'Tôi có thể vay khoản vay trong bao lâu?': 'Kỳ hạn linh hoạt từ 6 đến 36 tháng' (2026-11-04). The calculator slider runs 3 to 15 months; see conflicts."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Same FAQ sentence: up to 36 months."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "Khách hàng mới (cách đọc của chúng tôi: nhóm 'khách hàng đến từ các kênh bán/kênh giới thiệu khác' xếp hạng CIC R1 đến R12, và nhóm 'Non CIC và CIC No Loan', mục 4 và 5 của Thông báo 237/2025; văn bản không dùng chữ 'khách hàng mới'), lãi suất thông thường",
+          "minPercent": {
+            "value": 50,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Min 50% = R1 normal rate in item 4 (customers from other sales/referral channels). Max 60% = R5-R12 normal rate in item 4. Item 5 (Non CIC and CIC No Loan) = 55% normal, inside the range."
+          },
+          "maxPercent": {
+            "value": 60,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Min 50% = R1 normal rate in item 4 (customers from other sales/referral channels). Max 60% = R5-R12 normal rate in item 4. Item 5 (Non CIC and CIC No Loan) = 55% normal, inside the range."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+            "note": "Contract template MB02/QĐ.TD.027 (11/11/2025): 'Lãi suất cho vay được tính trên dư nợ gốc thực tế giảm dần', %/năm, 365 ngày. The notice itself does not name the basis. The product page's own example (2,26%/tháng 'lãi phẳng') and the app listings use the word flat; see conflicts."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "note": "Notice header: 'Lãi suất cho vay (%/năm)'."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "offered_range",
+          "segment": "Ưu đãi: khách dùng đồng thời dịch vụ/sản phẩm bán chéo khác của TNEX Finance (cùng các nhóm với dòng trên, mục 4 và 5)",
+          "minPercent": {
+            "value": 45,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Preferential column of items 4 and 5: R1 45%, R2-R4 50%, R5-R12 55%, Non CIC / CIC No Loan 50%. Footnote 2: 'Áp dụng với khách hàng có sử dụng đồng thời các dịch vụ/sản phẩm bán chéo khác của TNEX Finance'. The notice does not say which products count."
+          },
+          "maxPercent": {
+            "value": 55,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Preferential column of items 4 and 5: R1 45%, R2-R4 50%, R5-R12 55%, Non CIC / CIC No Loan 50%. Footnote 2: 'Áp dụng với khách hàng có sử dụng đồng thời các dịch vụ/sản phẩm bán chéo khác của TNEX Finance'. The notice does not say which products count."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+            "note": "Same contract wording as the normal-rate row."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "note": "Notice header: 'Lãi suất cho vay (%/năm)'."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "offered_range",
+          "segment": "Khách hàng hiện hữu trên nền tảng TNEX, đến từ kênh cộng tác viên hoặc đối tác (CAS, FIA, RIO, Mfast, bán hàng trực tiếp, quảng cáo trả phí), lãi suất thông thường",
+          "minPercent": {
+            "value": 55,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Items 1 and 2 (row 378D/2024/TB-TNEX FINANCE, 'cho khách hàng hiện hữu trên nền tảng TNEX'): R1 55%, R2-R4 60%, R5-R12 65% normal; 50%, 55%, 60% preferential. Existing-customer rates are stored for information only and are not the main range."
+          },
+          "maxPercent": {
+            "value": 65,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Items 1 and 2 (row 378D/2024/TB-TNEX FINANCE, 'cho khách hàng hiện hữu trên nền tảng TNEX'): R1 55%, R2-R4 60%, R5-R12 65% normal; 50%, 55%, 60% preferential. Existing-customer rates are stored for information only and are not the main range."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+            "note": "Same contract wording."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "note": "Notice header: 'Lãi suất cho vay (%/năm)'."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "offered_range",
+          "segment": "Tái cấp / top-up cho khách hàng có lịch sử tín dụng tốt tại TNEX Finance (không phải khách mới)",
+          "minPercent": {
+            "value": 45,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Row 68A/2025/TB-TNEX FINANCE ('cho vay tái cấp, topup cho khách hàng có lịch sử tín dụng tốt'): 50% normal, 45% preferential. Not for first-time borrowers."
+          },
+          "maxPercent": {
+            "value": 50,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2025-11-11",
+            "note": "Thông báo số 237/2025/TB-TNEX FINANCE, 'Thông báo lãi suất cho vay tiêu dùng từng lần trên nền tảng số', Hà Nội, ngày 11 tháng 11 năm 2025, Tổng giám đốc Nguyễn Thế Minh; effective 11/11/2025 per the routing slip (the notice's own clause 2(a) has an illegible date 'kể từ ngày ../../2025'). Scanned image, rotated, read visually 2026-11-04. Table 'Lãi suất cho vay (%/năm)' by CIC-model rank, columns 'thông thường' (normal) and 'ưu đãi' (preferential, for customers who also use other TNEX Finance products). Row 68A/2025/TB-TNEX FINANCE ('cho vay tái cấp, topup cho khách hàng có lịch sử tín dụng tốt'): 50% normal, 45% preferential. Not for first-time borrowers."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+            "note": "Same contract wording."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+            "note": "Notice header: 'Lãi suất cho vay (%/năm)'."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "regulatory_ceiling",
+          "segment": "Toàn công ty: mọi sản phẩm cho vay tiêu dùng (không riêng sản phẩm này). Phụ lục 01, Quyết định 97A/2025/QĐ-TNEX FINANCE ngày 23/05/2025",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-05-23",
+            "note": "Phụ lục 01: 'THÔNG TIN LÃI SUẤT NIÊM YẾT CỦA SẢN PHẨM CHO VAY TIÊU DÙNG', attached to Quyết định 97A/2025/QĐ-TNEX FINANCE of 23/05/2025 (site metadata: 'PL01 QĐ97A/2025', issued 2025-05-23; file name dated 27/05/25). Scanned page, read visually. Row 'Sản phẩm cho vay tiêu dùng': Tối thiểu 0%, Tối đa 58%, Bình quân 29.0%. Footnote: 'Lãi suất cụ thể đối với từng khách hàng sẽ phụ thuộc vào sự đáp ứng của khách hàng đối với các điều kiện và điều khoản của TNEX Finance'. This is a company-wide listing for all consumer loans, not an offered range for one product. Document is older than 12 months, so low. The 2025-11-11 notice cites a later decision (149/2025/QĐ-TNEX FINANCE, 18/07/2025, 'Thay đổi lãi suất cho vay tiêu dùng') and lists rates up to 65%, so this ceiling may be superseded."
+          },
+          "maxPercent": {
+            "value": 58,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-05-23",
+            "note": "Phụ lục 01: 'THÔNG TIN LÃI SUẤT NIÊM YẾT CỦA SẢN PHẨM CHO VAY TIÊU DÙNG', attached to Quyết định 97A/2025/QĐ-TNEX FINANCE of 23/05/2025 (site metadata: 'PL01 QĐ97A/2025', issued 2025-05-23; file name dated 27/05/25). Scanned page, read visually. Row 'Sản phẩm cho vay tiêu dùng': Tối thiểu 0%, Tối đa 58%, Bình quân 29.0%. Footnote: 'Lãi suất cụ thể đối với từng khách hàng sẽ phụ thuộc vào sự đáp ứng của khách hàng đối với các điều kiện và điều khoản của TNEX Finance'. This is a company-wide listing for all consumer loans, not an offered range for one product. Document is older than 12 months, so low. The 2025-11-11 notice cites a later decision (149/2025/QĐ-TNEX FINANCE, 18/07/2025, 'Thay đổi lãi suất cho vay tiêu dùng') and lists rates up to 65%, so this ceiling may be superseded."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "note": "Table header: 'LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/NĂM'."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "note": "Table header: 'LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/NĂM'."
+          },
+          "promotional": null,
+          "minIsPromotional": true
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Toàn công ty: lãi suất bình quân của sản phẩm cho vay tiêu dùng (cùng Phụ lục 01)",
+          "minPercent": {
+            "value": 29.0,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-05-23",
+            "note": "Phụ lục 01 (Quyết định 97A/2025/QĐ-TNEX FINANCE, 23/05/2025), column 'Bình quân' = 29.0%. A portfolio average, not an offer to any borrower. Document older than 12 months."
+          },
+          "maxPercent": {
+            "value": 29.0,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-05-23",
+            "note": "Phụ lục 01 (Quyết định 97A/2025/QĐ-TNEX FINANCE, 23/05/2025), column 'Bình quân' = 29.0%. A portfolio average, not an offer to any borrower. Document older than 12 months."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "note": "Table header: 'LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/NĂM'."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+            "note": "Table header: 'LÃI SUẤT THEO DƯ NỢ GIẢM DẦN/NĂM'."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "stated",
+        "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+        "note": "Contract template MB02/QĐ.TD.027 (11/11/2025): 'Trả góp hàng tháng, tổng nợ gốc và lãi trả đều hàng tháng (trừ kỳ trả nợ cuối cùng)'; last instalment = remaining principal + interest to the end date. Equal monthly principal-plus-interest is an annuity. The product page example (equal 1,666,666 principal + 226,000 interest) is a flat schedule instead; see conflicts."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí trả nợ trước hạn (chỉ được trả toàn bộ khoản vay)",
+          "nameEn": "Early repayment fee (full early settlement only)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/MB_01_QD_TD_027_De_nghi_vay_von_Hop_dong_cho_vay_tieu_dung_TNEX_Finance_hieu_luc_26_05_25_ba0206c6a6.pdf",
+            "note": "Paid in one go together with overdue interest, accrued interest and all remaining principal on the early-repayment date (clause I.12(a))."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/MB_01_QD_TD_027_De_nghi_vay_von_Hop_dong_cho_vay_tieu_dung_TNEX_Finance_hieu_luc_26_05_25_ba0206c6a6.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-05-26",
+            "note": "Only charged if the borrower chooses to repay early."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": 6,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/MB_01_QD_TD_027_De_nghi_vay_von_Hop_dong_cho_vay_tieu_dung_TNEX_Finance_hieu_luc_26_05_25_ba0206c6a6.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-05-26",
+            "note": "Loan application and contract template MB01/QĐ.TD.027, effective 26/05/2025, clause I.12(a): 'Phí trả nợ trước hạn: 6% * dư nợ gốc tại thời điểm tất toán trước hạn, tối thiểu 350.000 VNĐ'. Partial early repayment is not allowed ('Bên vay chỉ được trả nợ trước hạn toàn bộ khoản vay'). The newest template (MB02/QĐ.TD.027, 11/11/2025) leaves this fee blank ('Phí trả nợ trước hạn: ………'), so the current amount is not published; see conflicts. Text layer of the PDF lost some Vietnamese letters; the numbers are intact."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": 350000,
+            "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/MB_01_QD_TD_027_De_nghi_vay_von_Hop_dong_cho_vay_tieu_dung_TNEX_Finance_hieu_luc_26_05_25_ba0206c6a6.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2025-05-26",
+            "note": "Same clause: minimum 350,000 VND. No maximum stated."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 20,
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page, section 'Tôi có đủ điều kiện để vay tiền tại TNEX không?': 'Độ tuổi từ 20-65'. Other TNEX product pages for specific income groups say from 25 (salaried) or 22 (business owners)."
+        },
+        "maxAge": {
+          "value": 65,
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Same line. The page does not say whether 65 is checked at application or at the end of the loan."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No minimum income stated; the page says no income proof is needed ('Không chứng minh thu nhập, không thẩm định người thân')."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân gắn chip 12 số mới nhất",
+            "Tài khoản TNEX đã xác thực danh tính điện tử (eKYC) trên ứng dụng"
+          ],
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page: 'Căn cước công dân gắn chip 12 số mới nhất'; 'Chỉ cần CCCD' and eKYC steps in the how-to text."
+        },
+        "existingCustomerRequired": {
+          "value": false,
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Our reading: the page tells anyone to download the app, register and apply, and states no existing-customer condition. The rate notice has separate lower-rate rows for existing customers, which is a pricing difference, not an eligibility rule."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Công dân Việt Nam",
+            "Có nguồn thu từ lương, kinh doanh hoặc nguồn thu hợp pháp khác đảm bảo khả năng trả nợ (không cần chứng minh thu nhập theo trang sản phẩm)",
+            "Không yêu cầu số năm kinh nghiệm làm việc",
+            "Hợp đồng ký điện tử bằng mã OTP; giải ngân vào tài khoản TNEX (mở tại MSB), trả nợ bằng trích nợ tự động từ tài khoản đó"
+          ],
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Product page eligibility, FAQ and contract template MB02/QĐ.TD.027."
+        },
+        "notes": "Approval is automatic 'in a few seconds' per the page; no approval-rate or score cut-off is published."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, nợ gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn tại thời điểm chuyển nợ quá hạn, tính theo số ngày chậm. Không thấy phí phạt cố định riêng trong hợp đồng mẫu. Mức lãi tính trên tiền lãi chậm trả chưa rõ. Thông tin nợ quá hạn có thể được báo cho CIC.",
+          "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "sourceDocumentDate": "2025-11-11",
+          "note": "Contract template MB02/QĐ.TD.027 (11/11/2025): 'Lãi suất quá hạn áp dụng đối với nợ gốc quá hạn bằng 150% lãi suất cho vay trong hạn tại thời điểm chuyển nợ quá hạn'. Terms and conditions MB01/QĐ.TD.027 (26/05/2025), IV.2: late payments are reported to CIC. The template lists 'Phí khác (nếu có)' without naming any late fee."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate for the days late. No separate fixed late fee appears in the sample contract. The rate on late-paid interest is unclear. Late payments can be reported to the credit bureau (CIC).",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "sourceDocumentDate": "2025-11-11",
+          "note": "150% of the in-term rate (template MB02/QĐ.TD.027, 11/11/2025; same in the 26/05/2025 template)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not decided. Every template reads 'Lãi chậm trả áp dụng đối với nợ lãi chậm trả là: 0 %/năm' (26/05/2025 and 11/11/2025 templates; the older 2024 paper template adds a footnote: set by TNEX Finance from time to time, not above 10%/năm). We could not tell if 0 is a real rate or a template default, so it is left unknown."
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 10000000,
+          "termMonths": 6,
+          "ratePercent": 2.26,
+          "rateBasis": "flat",
+          "ratePeriod": "monthly",
+          "amortization": "flat",
+          "monthlyPaymentVnd": 1892666,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": null,
+          "internallyConsistent": true,
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Product page 'Ví dụ về khoản vay' (read 2026-11-04): 'vay tiền mặt nhanh online tại TNEX với số tiền 10.000.000đ trong 6 tháng, lãi suất phẳng 2,26%/tháng. Mỗi tháng bạn sẽ trả 1.892.666đ; trong đó 1.666.666đ là tiền gốc và 226.000đ là tiền lãi'. Arithmetic checked: 10,000,000/6 = 1,666,666 plus 2.26% x 10,000,000 = 226,000 gives 1,892,666, so the example really is flat (interest on the original amount every month). Implied yield, our calculation: about 3.76%/month, 45.1%/year nominal, 55.7% effective. Fits the notice's lowest preferential rate (45%) but conflicts with the contract wording (reducing balance); see conflicts. Fees and insurance not mentioned. Product page is undated."
+        },
+        {
+          "principalVnd": 10000000,
+          "termMonths": 6,
+          "ratePercent": 2.26,
+          "rateBasis": "flat",
+          "ratePeriod": "monthly",
+          "amortization": "unknown",
+          "monthlyPaymentVnd": 1917983,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": null,
+          "internallyConsistent": false,
+          "sourceUrl": "https://play.google.com/store/apps/details?id=vn.tnex.consumer&hl=vi",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Google Play listing of the TNEX app (vn.tnex.consumer), read 2026-11-04: 'Bạn có khoản vay 10.000.000đ trong 6 tháng, lãi suất phẳng 2,26%/tháng, như vậy mỗi tháng bạn sẽ trả 1.917.983đ'. The App Store listing (id1527220699, English text) gives the same figures. A flat 2.26%/month loan would cost 1,892,666 a month, not 1,917,983. 1,917,983 equals the reducing-balance annuity at 50%/year (4.1667%/month) for 10,000,000 over 6 months (1,917,982 by our calculation), which is the notice's R1 normal rate, so the 'flat' label does not fit the payment. Do not use as a test fixture. The two official examples differ by 25,317 VND a month."
+        },
+        {
+          "principalVnd": 10000000,
+          "termMonths": 12,
+          "ratePercent": 2.62,
+          "rateBasis": "reducing",
+          "ratePeriod": "monthly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 981968,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": null,
+          "internallyConsistent": true,
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Output of the product page's public loan calculator (inputs 10,000,000 VND and 12 months, no personal details), read 2026-11-04: 'Số tiền cần trả hàng tháng 981.968đ', 'Lãi suất: 2.62%/tháng'. Other points read the same day, all at 2.62%/month: 10M x 3 months 3,509,506; x 6 months 1,822,793; x 9 months 1,261,681; 17M x 3 months 5,966,160; x 6 months 3,098,747; x 9 months 2,144,858. Every output equals the reducing-balance annuity at 2.62%/month exactly (so reducing basis is INFERRED from arithmetic, not stated by the page; flat 2.62% would give 1,095,333 for the 12-month case). 2.62%/month is 31.4%/year nominal, below every rate in the 11/11/2025 notice (minimum 45%), and below the page's own flat example; treat as a calculator default, not an offer. Slider ranges (10M to 25M, 3 to 15 months) differ from the text (up to 40M, 6 to 36 months)."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "50%/year reducing (normal), 45%/year preferential, by customer group",
+              "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+              "note": "Notice 237/2025/TB-TNEX FINANCE, 11/11/2025, items 4 and 5."
+            },
+            {
+              "value": "2.62%/month reducing (about 31.4%/year), fixed for every amount and term",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "The page's calculator; reducing basis worked out from its output."
+            },
+            {
+              "value": "2.26%/month flat (about 45.1%/year nominal, 55.7% effective)",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "The page's text example, and 'chỉ từ 2,26%/tháng' as relayed by comparison sites (not a source)."
+            },
+            {
+              "value": "payment 1,917,983 for the same example = 50%/year reducing",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=vn.tnex.consumer&hl=vi",
+              "note": "App listing example labelled flat 2.26%/month."
+            }
+          ],
+          "resolution": "Stored the notice (50% normal minimum): it is the dated rate disclosure, and the calculator and flat example are below it. The cheaper figures are not stored as rates. Confidence medium. Lender to confirm which row a first-time borrower gets."
+        },
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "60%/year (R5-R12, normal, items 4 and 5)",
+              "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/237_2025_TB_TNEX_FINANCE_TB_Lai_suat_cho_vay_tieu_dung_tung_lan_tren_nen_tang_so_Bao_hiem_2_975967e5c0.pdf",
+              "note": "Existing-customer rows go to 65%."
+            },
+            {
+              "value": "58%/year maximum for all consumer loans",
+              "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/PL_Khung_LS_Cho_vay_tieu_dung_27_05_25_77a9c49cf9.pdf",
+              "note": "Phụ lục 01, QĐ 97A/2025, 23/05/2025. Older than the notice, which cites a later rate-change decision (149/2025/QĐ-TNEX FINANCE, 18/07/2025). The notice's 60% and 65% appear to differ from this ceiling."
+            }
+          ],
+          "resolution": "Stored 60 (newer, higher cost). Framework kept as regulatory_ceiling with low confidence."
+        },
+        {
+          "field": "rates[0].basis",
+          "values": [
+            {
+              "value": "flat ('lãi suất phẳng 2,26%/tháng')",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "Product page example; the Google Play and App Store listings use the same label."
+            },
+            {
+              "value": "reducing ('tính trên dư nợ gốc thực tế giảm dần', daily balance, 365 days)",
+              "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+              "note": "Contract template and terms MB01/QĐ.TD.027; the notice's table header gives only '%/năm'."
+            }
+          ],
+          "resolution": "Stored reducing, 'stated' by the contract, because the contract is the binding document and the Play example payment fits a reducing schedule. The page's flat example matches a flat schedule, so the two official examples disagree with each other. Needs lender confirmation."
+        },
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "40,000,000 VND",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "Title and 3-step text."
+            },
+            {
+              "value": "70,000,000 VND",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=vn.tnex.consumer&hl=vi",
+              "note": "Google Play and App Store: 'Hạn mức lên đến 70.000.000đ'; the page's BNPL cross-promotion also says 'tới 70 triệu'."
+            },
+            {
+              "value": "25,000,000 VND",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "Calculator slider maximum."
+            }
+          ],
+          "resolution": "Stored 40,000,000 (the product page's stated maximum, stricter than the app listings). Confidence medium."
+        },
+        {
+          "field": "termMinMonths",
+          "values": [
+            {
+              "value": "6 months",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "FAQ: 6 to 36 months; example is 6 months."
+            },
+            {
+              "value": "3 months",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "Calculator slider minimum."
+            }
+          ],
+          "resolution": "Stored 6 from the FAQ text (stricter). Slider treated as a display range."
+        },
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "36 months",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "FAQ."
+            },
+            {
+              "value": "15 months",
+              "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+              "note": "Calculator slider maximum."
+            }
+          ],
+          "resolution": "Stored 36 from the FAQ text; slider treated as a display range. Medium confidence."
+        },
+        {
+          "field": "fees[0].percent",
+          "values": [
+            {
+              "value": "6% of outstanding principal, minimum 350,000 VND",
+              "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/MB_01_QD_TD_027_De_nghi_vay_von_Hop_dong_cho_vay_tieu_dung_TNEX_Finance_hieu_luc_26_05_25_ba0206c6a6.pdf",
+              "note": "Digital-signature contract, effective 26/05/2025."
+            },
+            {
+              "value": "5% of outstanding principal, minimum 1,650,000 VND (2,200,000 VND if fewer than 3 instalments paid)",
+              "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/Hop_dong_cho_vay_tieu_dung_chu_ky_tuoi_03072024_d29afb02a2.pdf",
+              "note": "Older paper-signature contract template (file name dated 03/07/2024), also listed on the site as document 2 with the same reference MB01/QĐ.TD.027."
+            },
+            {
+              "value": "blank",
+              "sourceUrl": "https://tnex.com.vn/mau-van-ban-tnex-finance/hop-dong-cho-vay-tieu-dung-tnex-finance-msb",
+              "note": "Newest template MB02/QĐ.TD.027 (11/11/2025): 'Phí trả nợ trước hạn: ………'."
+            }
+          ],
+          "resolution": "Stored the 26/05/2025 digital contract figure (the channel the app uses) with low confidence because it is older than 12 months and the newest template leaves the fee blank. The paper template charges more on small loans; not stored. Lender to confirm the current fee."
+        }
+      ],
+      "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "The lender's rate notice (11/11/2025) gives rates by customer group (50-60% a year for the group we read as new customers, reducing balance per the contract), but the same product page shows a flat 2.26%/month example and a 2.62%/month calculator that disagree with it, the app listing example fits neither, and the notice does not say which row a first-time borrower gets. The early-repayment fee is blank in the newest contract template.",
+      "excludeCode": "conflicting_sources",
+      "borrowerNotes": [
+        {
+          "vi": "Trang sản phẩm ghi ví dụ 'lãi phẳng 2,26%/tháng', nhưng Thông báo lãi suất ngày 11/11/2025 công bố 45% đến 65%/năm tùy nhóm khách hàng và hợp đồng tính lãi trên dư nợ giảm dần. Hãy xem mức lãi %/năm và lịch trả nợ trong hợp đồng trước khi xác nhận bằng OTP.",
+          "en": "The product page shows a 'flat 2.26% a month' example, but the 11 Nov 2025 rate notice lists 45% to 65% a year depending on customer group, and the contract charges interest on the reducing balance. Check the yearly rate and the repayment schedule in the contract before you confirm with the OTP."
+        },
+        {
+          "vi": "Chỉ được trả nợ trước hạn toàn bộ khoản vay. Hợp đồng mẫu 5/2025 ghi phí 6% dư nợ gốc, tối thiểu 350.000đ; mẫu mới 11/2025 chưa ghi mức phí.",
+          "en": "You can only repay the whole loan early. The May 2025 sample contract shows a fee of 6% of the remaining principal, at least 350,000 đồng; the newest sample (Nov 2025) leaves the fee blank."
+        }
+      ],
+      "notes": "Researched 2026-11-04. Documents read: product page and its calculator, FAQ, rate notice 237/2025/TB-TNEX FINANCE (11/11/2025), rate framework Phụ lục 01 / QĐ 97A/2025 (23/05/2025), digital-signature contract and application MB01/QĐ.TD.027 (26/05/2025), terms and conditions MB01/QĐ.TD.027 (26/05/2025), contract template MB02/QĐ.TD.027 (11/11/2025), older paper contract, limit-loan contract MB01/QĐ.TD.028 (16/04/2025), Google Play and App Store listings. No insurance premium, no biểu phí and no application or processing fee schedule was found for this product. The notice's PDF file name ends in 'Bao_hiem_2', which may hint at insurance-related content, but nothing in the scan mentions insurance (only 'sản phẩm bán chéo')."
+    },
+    {
+      "id": "tieu-truoc-tra-sau",
+      "nameVi": "Tiêu trước trả sau (hạn mức tiêu dùng trên ứng dụng TNEX)",
+      "nameEn": "TNEX Buy Now, Pay Later (spending limit in the TNEX app)",
+      "productType": "bnpl",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "tnex-finance",
+      "brandOrChannel": "Tiêu trước trả sau trên ứng dụng TNEX",
+      "online": true,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "No minimum limit published."
+      },
+      "amountMaxVnd": {
+        "value": 20000000,
+        "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page: 'Tiêu trước tới 20.000.000đ' and 'phê duyệt tới 20 triệu đồng' (2026-11-04). The Google Play and App Store listings say up to 25,000,000 ('Hạn mức thả ga tới 25.000.000đ'); see conflicts."
+      },
+      "termMinMonths": {
+        "value": 1,
+        "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Page: instalment conversion 'từ 1 tháng đến 2 tháng' for purchases under 700,000 VND, 'từ 1 tháng đến 6 tháng' for 700,000 VND and above."
+      },
+      "termMaxMonths": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Page says up to 6 months for purchases of 700,000 VND or more, but the limit-loan contract template MB01/QĐ.TD.028 (16/04/2025) says single drawdowns have a term of '4 tháng và x ngày' (x = days to the first due date). Not decided; left unknown."
+      },
+      "rates": [],
+      "amortization": {
+        "value": "revolving",
+        "provenance": "inferred",
+        "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+        "note": "A spending limit that can be used any time ('Hạn mức Vay'), with a statement each month (contract MB01/QĐ.TD.028 definitions) and optional instalment conversion; no fixed schedule for the whole limit."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí đăng ký",
+          "nameEn": "Registration fee",
+          "trigger": "application",
+          "timing": {
+            "value": "paid_upfront",
+            "provenance": "inferred",
+            "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+            "note": "Free, so nothing is collected."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Page: 'Không phí đăng ký'; also 'Không bị tính phí hay lãi khi chưa sử dụng đến'."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "'Không phí đăng ký' (2026-11-04)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 18,
+          "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page: 'Độ tuổi từ 18 - 50 tuổi'."
+        },
+        "maxAge": {
+          "value": 50,
+          "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page: 'Độ tuổi từ 18 - 50 tuổi'; not stated whether at application or at the end of the limit."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No income proof required ('không chứng minh thu nhập')."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân gắn chip 12 số mới nhất"
+          ],
+          "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Page: three criteria are the chip ID card, age 18-50, Vietnamese citizen."
+        },
+        "existingCustomerRequired": {
+          "value": false,
+          "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Our reading: anyone can register in the app; no existing-customer condition on the page."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Công dân Việt Nam",
+            "Hạn mức do TNEX Finance xét theo mức độ tín nhiệm (hợp đồng hạn mức MB01/QĐ.TD.028)"
+          ],
+          "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Page criteria; contract template III.1."
+        }
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu có dư nợ quá hạn, nợ gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn và TNEX Finance có quyền tạm dừng giải ngân. Mức phí phạt và lãi chậm trả theo biểu phí chưa tìm thấy.",
+          "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/MB_01_QD_TD_028_De_nghi_vay_von_kiem_hop_dong_cho_vay_han_muc_TNEX_Finance_hieu_luc_16_4_2025_43c353bacc.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "sourceDocumentDate": "2025-04-16",
+          "note": "Limit-loan contract template MB01/QĐ.TD.028 (effective 16/04/2025), VII.1 and III.3: overdue principal at 150% of the in-term rate; disbursement may be stopped while overdue. Fees 'theo Biểu phí do TNEX Finance công bố … niêm yết trên website'; no biểu phí page was found."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate and further spending can be stopped. Late fees are said to follow a fee schedule that we could not find.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://consumer-images.tnex.com.vn/tnf-website/MB_01_QD_TD_028_De_nghi_vay_von_kiem_hop_dong_cho_vay_han_muc_TNEX_Finance_hieu_luc_16_4_2025_43c353bacc.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "sourceDocumentDate": "2025-04-16",
+          "note": "150% of the in-term rate (contract MB01/QĐ.TD.028)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Template reads 0%/năm on late-paid interest; not decided (see the cash loan product)."
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [
+        {
+          "field": "amountMaxVnd",
+          "values": [
+            {
+              "value": "20,000,000 VND",
+              "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+              "note": "Product page."
+            },
+            {
+              "value": "25,000,000 VND",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=vn.tnex.consumer&hl=vi",
+              "note": "Google Play and App Store listings."
+            }
+          ],
+          "resolution": "Stored 20,000,000 (stricter, product page). Confidence medium."
+        }
+      ],
+      "sourceUrl": "https://tnex.com.vn/san-pham/tieu-truoc-tra-sau",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "No interest rate is published for the instalment conversion after the 35 interest-free days (the contract leaves it blank), and no fee schedule was found.",
+      "borrowerNotes": [
+        {
+          "vi": "Miễn lãi tới 35 ngày khi trả đúng hạn. Lãi suất khi chuyển trả góp chưa được công bố; hãy xem trong ứng dụng trước khi chọn trả góp.",
+          "en": "Interest-free for up to 35 days if you pay on time. The interest rate for instalments is not published; check it in the app before choosing instalments."
+        }
+      ],
+      "notes": "Page text: 'Tận hưởng 35 ngày chi tiêu miễn lãi', 'Không phí đăng ký', 'Trả góp kỳ hạn linh hoạt khi chi tiêu'. The contract template MB01/QĐ.TD.028 says the interest-free period runs from drawdown to the end of the first due date ('ân hạn lãi'), and the rate is '…%/năm trên dư nợ thực tế giảm dần', left blank, and that TNEX may change it with 7 days' notice. A FAQ on instalment amounts was not found in the page data."
+    },
+    {
+      "id": "vay-tieu-dung-co-luong",
+      "nameVi": "Vay tiêu dùng cho khách hàng có nguồn thu từ lương",
+      "nameEn": "TNEX consumer loan for salaried customers (VssID or salary statement)",
+      "productType": "cash_loan",
+      "status": "unverified",
+      "validUntil": null,
+      "lenderOfRecord": "tnex-finance",
+      "brandOrChannel": null,
+      "online": null,
+      "amountMinVnd": {
+        "value": null,
+        "sourceUrl": null,
+        "retrievedAt": null,
+        "confidence": null,
+        "note": "Not stated."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Page: 'Nhận tới 100.000.000 đồng'. Equal to, not above, the 100M finance-company cap. Page is undated, linked only from the sitemap."
+      },
+      "termMinMonths": {
+        "value": 12,
+        "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Page: 'chủ động trả dần từ 12 tới 36 tháng'."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Same sentence."
+      },
+      "rates": [
+        {
+          "kind": "advertised_floor",
+          "segment": null,
+          "minPercent": {
+            "value": 3.75,
+            "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Page: 'Lãi suất vô cùng hấp dẫn, chỉ từ 3.75%/tháng'. The page does not say flat or reducing and gives no maximum or example. 3.75% x 12 = 45%/year, which equals the lowest preferential rate in the 11/11/2025 notice (our observation, not stated by the lender). Sibling pages for other customer groups say from 3.33%/month (business owners), 4%/month (Agribank borrowers) and 4.58%/month (fast loan up to 30M, POS area)."
+          },
+          "maxPercent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+            "note": "Page wording: 'chỉ từ 3.75%/tháng'."
+          },
+          "promotional": null
+        }
+      ],
+      "amortization": {
+        "value": "unknown",
+        "provenance": "none",
+        "sourceUrl": null
+      },
+      "fees": [],
+      "feesCompleteness": "unknown",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": 25,
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Page: 'Từ 25 tuổi trở lên đến 65 tuổi tại thời điểm kết thúc khoản vay'."
+        },
+        "maxAge": {
+          "value": 65,
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Same sentence: 65 at the end of the loan."
+        },
+        "maxAgeAtLoanEnd": true,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Hộ chiếu hoặc Căn cước công dân QR",
+            "Căn cước công dân hoặc thông tin VNeID",
+            "Thông tin Bảo hiểm xã hội (VssID) hoặc sao kê lương bản gốc/online"
+          ],
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Page, 'Đăng ký với hồ sơ đơn giản'."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "otherConditions": {
+          "value": [
+            "Có nguồn thu ổn định từ lương",
+            "Thời gian làm việc tối thiểu 3 tháng",
+            "Có thông tin BHXH (VssID) hoặc sao kê lương"
+          ],
+          "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+          "retrievedAt": "2026-11-04",
+          "confidence": "low",
+          "note": "Page eligibility list. The page's HTML title says 'KH có nguồn thu từ kinh doanh', apparently a copy-paste error."
+        },
+        "notes": "Aged 25 or over at application, so most 22-24 year olds are out."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product."
+        },
+        "overduePrincipalRateMultiplier": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        }
+      },
+      "representativeExamples": [],
+      "conflicts": [],
+      "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
+      "retrievedAt": "2026-11-04",
+      "confidence": "low",
+      "excludeFromRanking": true,
+      "excludeReason": "Only an advertised 'from 3.75%/month' floor on an undated page that is not linked from the site menu; no range, no basis, no fees.",
+      "excludeCode": "unverified",
+      "notes": "Found through https://tnex.com.vn/sitemap.xml (no lastmod). The page is not in the site navigation, whose only consumer-loan link is /san-pham/vay-tieu-dung-ca-nhan. Same template exists for customers with a credit-card limit (from 3.75%/month, up to 100M), business owners (from 3.33%/month), property owners (from 3.75%/month), Agribank borrowers (from 4%/month, up to 50M) and a 'siêu nhanh' loan (from 4.58%/month, up to 30M, 12-24 months, only in POS areas); those were not added as products because they are segment- or channel-specific."
+    }
+  ],
+  "researchNotes": "Researched 2026-11-04. Lender: TNEX Finance (Công ty Tài chính TNHH MTV TNEX), tax code 0301516782, app sold as \"TNEX\", banking services on the app are provided by MSB.\n\nLICENCE CHECK. Matches data/licensed-institutions.json id \"tnex-finance\" (finance company, licence 20/GP-NHNN of 26/04/2021, website tnex.com.vn). Name mismatches, none blocking: (1) the SBV list string carries a former-name remark \"( tài chính cộng đồng cũ)\" and spells out \"trách nhiệm hữu hạn một thành viên\"; the lender's own contracts say \"Công ty Tài chính TNHH MTV TNEX (TNEX Finance)\". legalName here is copied exactly from the list. (2) Contracts and the app listings use tnexfinance.com.vn, which redirects to www.tnex.vn, not the listed tnex.com.vn; tnex.com.vn serves the same site. (3) The Google Play and App Store developer name is MSB (Vietnam Maritime Commercial Joint Stock Bank), not TNEX Finance; loans are disbursed into, and repaid by auto-debit from, the borrower's TNEX payment account opened at MSB, but the lender in the loan contract is TNEX Finance.\n\nWHAT IS PUBLISHED, BY DOCUMENT (all on https://tnex.com.vn/mau-van-ban-tnex-finance, \"Mẫu văn bản TNEX\"):\n1) \"Thông tin lãi suất Vay tiêu dùng và các sản phẩm vay khác\", ref PL01 QĐ97A/2025, issued 2025-05-23. The scan is \"PHỤ LỤC 01: THÔNG TIN LÃI SUẤT NIÊM YẾT CỦA SẢN PHẨM CHO VAY TIÊU DÙNG\", attached to Quyết định 97A/2025/QĐ-TNEX FINANCE of 23/05/2025. One row, \"Sản phẩm cho vay tiêu dùng\", \"Lãi suất theo dư nợ giảm dần/năm\": tối thiểu 0%, tối đa 58%, bình quân 29.0%. Footnote: the specific rate depends on each customer meeting TNEX Finance's conditions. Reducing balance, yearly, stated. COMPANY-WIDE, all consumer lending, not product-specific. Stored as regulatory_ceiling (0 to 58, minIsPromotional true) plus a benchmark (29.0), both low confidence because the document is about 17 months old.\n2) \"Lãi suất cho vay tiêu dùng từng lần trên nền tảng số\", Thông báo 237/2025/TB-TNEX FINANCE, 11/11/2025, replaces notices 08A/2025 (10/01/2025) and 151/2025 (18/07/2025) and cites decision 149/2025/QĐ-TNEX FINANCE (18/07/2025, \"Thay đổi lãi suất cho vay tiêu dùng\"). PRODUCT-SPECIFIC (single-disbursement consumer loans on the digital platform = the app's Vay tiêu dùng), %/năm, by customer group and CIC rank. Existing customers via CTV/partner channels: 55/60/65% normal (R1 / R2-R4 / R5-R12), 50/55/60% preferential. Customers screened by partners and from the same channels without CIC history: 60% normal, 55% preferential. Customers from other sales/referral channels: 50/55/60% normal, 45/50/55% preferential. Non CIC and CIC No Loan: 55% normal, 50% preferential. Refinance/top-up for good-history customers: 50% normal, 45% preferential. Preferential applies to customers who also use other TNEX Finance products. Basis is not named in the notice; the contract says reducing. This is the only real offered range found. Stored as offered_range for the group we read as new customers (50 to 60 normal; 45 to 55 preferential).\n3) Contracts and terms: \"Điều khoản, điều kiện cho vay kèm theo hợp đồng cho vay tiêu dùng\" (MB01/QĐ.TD.027, 2025-05-26): interest = sum(daily actual balance x days x rate)/365, equal monthly payments except the last, overdue principal at 150% of the in-term rate, early repayment fee \"quy định cụ thể tại Hợp đồng\". Application + contract (MB01/QĐ.TD.027, effective 26/05/2025): \"Lãi suất cho vay được tính trên dư nợ gốc thực tế giảm dần\", early repayment 6% of principal at settlement, minimum 350,000 VND, full settlement only. Newest contract template MB02/QĐ.TD.027 (2025-11-11, a .docx): same interest wording, fee left blank. Older paper contract (file dated 03/07/2024): 5% of remaining principal, minimum 1,650,000 VND (2,200,000 if under 3 instalments paid), \"các loại phí, chi phí khác: không\".\n\nKEY FINDING: THE FLAT/REDUCING LABELS CONTRADICT EACH OTHER. The product page's worked example \"10 triệu, 6 tháng, lãi suất phẳng 2,26%/tháng, trả 1.892.666đ/tháng\" really is flat (1,666,666 principal + 226,000 interest every month). The Google Play and App Store listing give the same words but a payment of 1.917.983đ, which is NOT flat 2.26% (that would be 1,892,666) but equals the reducing-balance annuity at 50%/year to within 1 VND, which is the notice's R1 normal rate. The product page's calculator returns the reducing annuity at 2.62%/month for every input I tried (10M x 3, 6, 9, 12 months; 17M x 3, 6, 9: all matched to the VND). The contract says reducing. So \"from 2.26%/month\" (the topi.vn lead) is only the example rate: it is not a floor or a range, and by our calculation it equals about 45% a year nominal (55.7% effective), not a cheap rate. No page states a range in %/tháng for the app loan.\n\nPRODUCT PAGE AGE. No page is dated. The notice is 358 days old on 2026-11-04 and the 365-day \"old document\" limit (OLD_DOCUMENT_DAYS) is reached on 2026-11-12; after that the notice-based figures must drop to low confidence unless a newer notice is published.\n\nSEGMENT. The notice never says \"khách hàng mới\". Rows for \"khách hàng hiện hữu\", \"tái cấp/top-up\" and \"được sàng lọc bởi đối tác\" are separate; I labelled the remaining groups (items 4 and 5) as new customers by elimination. This needs a decision by the project owner.\n\nOTHER PAGES. tnex.vn sitemap lists six more loan pages (salaried, business owners, credit-card holders, property owners, Agribank borrowers, \"siêu nhanh\") with only \"chỉ từ X%/tháng\" floors (3.75, 3.33, 3.75, 3.75, 4, 4.58). Not linked from the menu, undated. Only the salaried one is stored (status unverified). 3.75%/month x 12 = 45%/year matches the notice's lowest preferential rate. Also on the site, not stored: business loan for online sellers (TBoss, up to 100M), mortgage-backed loans (BĐS), savings, payment account, QR/VietQR features. No credit card product exists.\n\nNOT FOUND (searched, not published): premium or insurer name for any loan insurance (contracts, terms, notice, product pages and both app listings mention none; the notice's file name ends in \"Bao_hiem_2\" but the scan has no insurance text); a biểu phí (the limit-loan contract says fees follow a \"Biểu phí\" posted on tnexfinance.com.vn, which redirects to tnex.vn, no such page in the sitemap or the \"Mẫu văn bản\" list); rate and fees for Tiêu trước trả sau instalments (contract rate left blank); collection-point charges (FAQ names Payoo, Viettel Money and MSB counters but no price); minimum income; whether 0%/năm on late-paid interest is real; the current early-repayment fee. Searches: site pages /san-pham/*, /cau-hoi-thuong-gap, /han-muc-giao-dich, /dieu-khoan-dieu-kien, /mau-van-ban-tnex-finance and all 14 documents, /sitemap.xml, robots.txt, Google Play (vn.tnex.consumer), App Store (id1527220699 via the iTunes lookup API). The web search tool hit its usage limit mid-task, so no outside-news cross-check was made and no Vietnamese press search for \"TNEX lãi suất\", \"biểu phí TNEX\", \"bảo hiểm khoản vay TNEX\" was run.\n\nACCESS. No site blocked automated requests. The product page calculator was used in a shared browser with sample values only; the notice PDFs are scanned images and were read visually (rotated 90 degrees), so every figure from them is medium at best. The text layer of the 2025 PDFs drops some Vietnamese letters; numbers were unaffected.\n\nTOPI.VN LEAD (never used as a source): \"from 2.26%/month, no registration, consultation or hidden fees at sign-up\". Traced to the product page example and app listing example only. \"No hidden fees\" matches the app listing (\"Không phí đăng ký, không phí ẩn\") and the contract (\"Ngoài các khoản phải trả … Bên vay không phải trả thêm bất kỳ khoản phí\") but the early-repayment fee is a real cost.",
+  "retrievedAt": "2026-11-04"
+}

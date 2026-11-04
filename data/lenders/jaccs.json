@@ -1,0 +1,2880 @@
+{
+  "schemaVersion": 2,
+  "slug": "jaccs",
+  "name": "JACCS",
+  "legalName": "Công ty Tài chính TNHH MTV Quốc tế Việt Nam JACCS",
+  "licenseCategory": "finance_company",
+  "licensedInstitutionId": "jaccs-finance",
+  "website": "https://jaccs.com.vn",
+  "products": [
+    {
+      "id": "cash-loan",
+      "nameVi": "Vay tiêu dùng tiền mặt",
+      "nameEn": "Personal cash loan",
+      "productType": "cash_loan",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "jaccs-finance",
+      "brandOrChannel": "JACCS",
+      "online": null,
+      "amountMinVnd": {
+        "value": 10000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Minimum of the loan calculator slider on the product page (10,000,000 VND, read 2026-11-04). No sentence on the page states a minimum amount."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Maximum of the same calculator slider (100,000,000 VND). No text states a maximum; it equals, and does not exceed, the 100M finance-company cap (Circular 43/2016 art. 3(1))."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator slider 6-36 months (steps 6, 9, 12, 15, 18, 20, 24, 30, 36). The rate table lists 3 months on one row only (row 20, 49.92%); other rows start at 6, 9, 15 or 18 months; see conflicts."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator slider; no row of the 04/11/2026 rate table goes beyond 36 months. The Google Play listing says 6-84 months for personal loans in general (probably including car loans); see conflicts."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "khách hàng mới",
+          "minPercent": {
+            "value": 30,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-04",
+            "note": "Table \"BẢNG NIÊM YẾT LÃI SUẤT CHO VAY TIÊU DÙNG CÁ NHÂN TẠI ĐIỂM GIỚI THIỆU DỊCH VỤ\", \"Ngày cập nhật: 04/11/2026\" (scanned image, read visually). Lowest row for new customers = row 4, 30.0000%, terms 15, 18, 20, 24, 30, 36 months, customers \"Khách hàng cũ, khách hàng mới\". For terms of 6-12 months the lowest new-customer row is row 23 (36.0400%, 6-36 months, 'Khách hàng mới'), so 30% does NOT apply to short terms. Not stored here: row 1 11.3000% (JIVF employees only, 18-36 months), row 2 24.0000% (partner-company staff), and the rows for existing customers (lowest 28.0800%, 'Khách hàng cũ, Khách có cavet oto')."
+          },
+          "maxPercent": {
+            "value": 49.92,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-04",
+            "note": "Highest row = row 20, 49.9200%, terms 3, 6, 9, 12, 15, 18, 20, 24, 30, 36 months, 'Khách hàng cũ, Khách hàng mới'. The table has 26 rows of discrete rates by customer group; new-customer rows: 4 (30.00), 8 (36.12), 10 (38.9333), 12 (40.20), 16 (44.52), 20 (49.92), 21 (47.28), 22 (39.36), 23 (36.04), 24 (48.60), 25 (40.80), 26 (40.08). Note 2 of the table: \"Tuỳ từng trường hợp, lãi suất có thể được áp dụng khác nhau đối với cùng 1 đối tượng áp dụng và phụ thuộc vào điều kiện vay hoặc chương trình ưu đãi (nếu có)\". The Google Play listing says max 36%; see conflicts. The table's update date is today, so it may change."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+            "note": "Table note 1 (ghi chú): \"Lãi suất được tính theo phương pháp dư nợ giảm dần, trên cơ sở 1 năm là 365 ngày.\" The same wording is in 'Điều kiện giao dịch chung' art. 1.2(1)."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+            "note": "Column header \"Lãi suất áp dụng (%/ năm)\"."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Khung lãi suất thả nổi toàn công ty, mọi sản phẩm vay (công bố 08/10/2026, hiệu lực 13/10/2026); chỉ áp dụng cho hợp đồng chọn lãi suất thả nổi, KHÔNG phải mức lãi suất của riêng sản phẩm này",
+          "minPercent": {
+            "value": 13.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Announcement \"V/v: CÔNG BỐ KHUNG LÃI SUẤT THẢ NỔI (BAO GỒM LÃI SUẤT CƠ BẢN VÀ BIÊN ĐỘ)\", posted 08/10/2026 16:21: floating rate = base rate 9.894%/năm (adjusted every 3 months) + margin 3.5% => 13.394%/năm. Applies from 13/10/2026 to \"các sản phẩm vay\" (no product named)."
+          },
+          "maxPercent": {
+            "value": 14.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Same announcement: margin 4.5% => 14.394%/năm. The margin (3.5% or 4.5%) is set 'tùy theo từng sản phẩm và đối tượng khách hàng' by the credit policy when the contract is signed. NOTE: this is far BELOW the rates in each product's own rate table and below JACCS's own average (28.8%), so it is not a cap on what a borrower pays; it is a base-rate-plus-margin formula for floating-rate contracts."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"Phương pháp tính lãi áp dụng theo dư nợ giảm dần (%/năm)\"; \"1 năm = 365 ngày\"."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất cho vay bình quân toàn công ty tháng 10/2026 (mọi sản phẩm, không riêng sản phẩm này)",
+          "minPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Notice \"THÔNG BÁO VỀ VIỆC CÔNG BỐ LÃI SUẤT CHO VAY BÌNH QUÂN\", posted 03/11/2026 17:10: \"Lãi suất cho vay bình quân trong tháng 10/2026 tại JIVF: 28.8029%/năm.\" Products and calculation basis are not stated."
+          },
+          "maxPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Same single figure (a portfolio average, so min = max)."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "note": "No document names the repayment method. Inferred from the product page calculator: 10,000,000 VND, 6 months at 4.16%/month (49.92%/year) shows 1,917,567 VND, the equal-instalment annuity (read 2026-11-04 in the browser). The contract template says each instalment is \"gốc + lãi + phí\" and the Google Play example shows one fixed monthly figure. Real interest is accrued daily on a 365-day year (GTC art. 1.2)."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí thủ tục đăng ký / làm hồ sơ và giải ngân khoản vay",
+          "nameEn": "Application, processing and disbursement fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Product page 'Vì sao nên chọn JACCS' says \"Không thu phí thủ tục đăng ký khoản vay\". The loan-contract template appendix (https://jaccs.com.vn/en/consumer-loan-contract/, undated) says under \"PHÍ LÀM HỒ SƠ & GIẢI NGÂN KHOẢN VAY\": \"JIVF KHÔNG THU PHÍ DƯỚI BẤT CỨ HÌNH THỨC NÀO\"."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Same two statements as above. They cover registration, processing and disbursement only; they say nothing about the management, early-repayment or insurance charges."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí quản lý khoản vay",
+          "nameEn": "Loan management fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Tariff: the fee \"được phân bổ vào khoản phải trả hàng tháng\" (spread into the monthly amount payable) until the loan ends."
+          },
+          "mandatory": {
+            "value": true,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Listed in the tariff with no opt-out, and the contract says each instalment is \"gốc + lãi + phí\". Not stated in so many words that it is compulsory. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 1: \"12.000 (Mười hai ngàn đồng)\". Wording: \"Phí quản lý khoản vay: Là khoản phí không hoàn lại ... được tính cho toàn bộ thời hạn vay và được phân bổ vào khoản phải trả hàng tháng\". AMBIGUOUS: it is not clear whether 12,000 VND is charged every month or is a one-off total for the whole term spread over the instalments. Stored as a monthly amount, the costlier reading (conservative rule); ask JACCS. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí cấp bản sao giấy tờ liên quan đến hợp đồng tín dụng",
+          "nameEn": "Copies of loan documents",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 2: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí gửi tin nhắn SMS",
+          "nameEn": "SMS notification fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 3: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí tất toán trước hạn (phương án 2)",
+          "nameEn": "Early settlement fee (option 2: pay principal and interest to the settlement date)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Charged only when the borrower picks option 2 in 'Điều kiện giao dịch chung' art. 2.2."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Only if the borrower prepays and chooses option 2. Option 1 has no early-settlement fee but requires paying all interest for the whole remaining term. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Percent changes by instalment: see tiers."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": 1650000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.1: column 'Số tiền thanh toán tối thiểu' = 1,650,000 VND. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum stated."
+          },
+          "tiers": {
+            "value": [
+              {
+                "from": 0,
+                "to": 2,
+                "unit": "instalment",
+                "percent": 6,
+                "note": "\"Trước và ngay kỳ thanh toán đầu tiên\": 6% trên dư nợ gốc tại thời điểm tất toán (settling before, or at, the first instalment, i.e. instalments 0 and 1)."
+              },
+              {
+                "from": 2,
+                "to": null,
+                "unit": "instalment",
+                "percent": 5,
+                "note": "\"Sau kỳ thanh toán đầu tiên\": 5% trên dư nợ gốc tại thời điểm tất toán (from the second instalment on)."
+              }
+            ],
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.1. In the page's HTML table the 6% and 5% cells are merged (rowspan=2) across rows 4.1 and 4.2, so both rows share them. Boundary read as 'to' exclusive: settlement at the first instalment = 6%. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phạt vi phạm hợp đồng khi hợp đồng bị chấm dứt do bên vay vi phạm",
+          "nameEn": "Contract-breach compensation if the contract is terminated for the borrower's breach",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only on termination because of a breach."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Applies only if the contract ends because the borrower breaches it; 'Điều kiện giao dịch chung' art. 8."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 6,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Art. 8: \"bên có lỗi có trách nhiệm bồi thường vi phạm hợp đồng cho bên bị vi phạm khoản tiền phạt vi phạm Hợp đồng bằng 6% dư nợ gốc tại thời điểm chấm dứt Hợp đồng\". The page shows no date (footer code V01-04.26)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Chi phí thanh toán qua ngân hàng, bưu điện, ví điện tử (Payoo, MoMo...)",
+          "nameEn": "Payment-channel charges",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/hop-dong-tin-dung/",
+            "note": "Charged by the payment channel when the borrower pays."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Contract art. 3.4: \"Bên vay chịu mọi chi phí liên quan đến việc thanh toán tiền vay, lãi tiền vay và/hoặc phí thanh toán\". Whether any channel charges anything is not published by JACCS."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Set by each channel; not published by JACCS."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [
+        {
+          "nameVi": "Bảo hiểm dư nợ tín dụng cá nhân (Bảo hiểm AAA), nếu bạn chọn mua",
+          "nameEn": "Credit-balance cover from AAA Insurance (optional)",
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "GTC art. 4: \"Trường hợp Bên vay đồng ý tham gia mua bảo hiểm ... (tùy theo chính sách của JIVF trong từng thời kỳ)\" and \"việc mua bảo hiểm là quyết định xuất phát từ nhu cầu của chính Bên vay\". Not stated outright as optional. Caution: the consumer-loan contract template pre-prints \"Mục đích vay: ... Và mua bảo hiểm\" and has fields 'Tổng số tiền vay mua bảo hiểm', so cover may be offered by default at signing; whether it is pre-selected in practice is not known."
+          },
+          "collection": {
+            "value": "added_to_loan",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/en/consumer-loan-contract/",
+            "note": "The consumer-loan contract template (undated; old address 'Phường Võ Thị Sáu, Quận 3') has separate lines 'Số tiền vay mua hàng hóa', 'Tổng số tiền vay mua bảo hiểm' and 'Tổng số tiền vay', and disbursement \"bao gồm chuyển khoản cho bên bán Bảo hiểm nếu có\". That points to a premium financed inside the loan. But its appendix says \"Bên vay tự đóng phí bảo hiểm và đã giao biên lai thu tiền cho Nhân viên tư vấn\" (the borrower pays the premium themselves). The two statements disagree; which applies is unknown."
+          },
+          "premium": {
+            "method": {
+              "value": "unknown",
+              "provenance": "none",
+              "sourceUrl": null
+            },
+            "ratePercentMin": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "The premium is blank in the contract template and the insurance request form, and no premium table is published by JACCS or the insurer that we found."
+            },
+            "ratePercentMax": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            },
+            "insuredMultiplierTiers": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null,
+              "note": "Template: sum insured = the initial loan amount; no multiplier stated."
+            },
+            "fixedVnd": {
+              "value": null,
+              "sourceUrl": null,
+              "retrievedAt": null,
+              "confidence": null
+            }
+          },
+          "beneficiary": "JIVF (người thụ hưởng đầu tiên); người thụ hưởng thứ hai theo luật",
+          "covers": "Product 'Dư nợ tín dụng cá nhân của Bảo hiểm AAA' (Công ty Cổ phần Bảo hiểm AAA). The request form asks for a health declaration; undeclared pre-existing conditions can void cover. On early settlement the borrower must contact the insurer for any refund of unused premium (GTC art. 4)."
+        }
+      ],
+      "insuranceCompleteness": "partial",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn. The calculator only offers document options (ID only, or ID plus income proof); no income threshold is stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân (CCCD)",
+            "Chứng từ chứng minh thu nhập (tùy trường hợp)"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Calculator option labels on the product page: \"Giấy tờ bạn có: Căn cước công dân\" or \"Căn cước công dân + Chứng từ chứng minh thu nhập\". These are calculator choices, not a stated requirement list; the 'Các bước vay' text says only \"CCCD và các giấy tờ cần thiết khác (nếu có)\". The FAQ (undated) also lists CMND/CCCD and hộ khẩu."
+        },
+        "existingCustomerRequired": {
+          "value": false,
+          "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "sourceDocumentDate": "2026-11-04",
+          "note": "The rate table has rows for 'Khách hàng mới' (new customers), so an existing JACCS loan is not required."
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "None stated."
+        },
+        "otherConditions": {
+          "value": [
+            "Lãi suất phụ thuộc nhóm khách hàng (khách hàng mới / cũ / nhân viên) và kỳ hạn theo bảng niêm yết",
+            "Làm hồ sơ theo hướng dẫn của tổng đài vay tiêu dùng (028) 3622 8801: đến quầy tư vấn, ký hợp đồng tín dụng, nhận giải ngân qua tài khoản hoặc tiền mặt tại Vietinbank",
+            "Hợp đồng tự hủy nếu bên vay không nhận tiền giải ngân trong 14 ngày (khoản vay tiền mặt)"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Process steps from the product page ('Các bước vay tiêu dùng'); the 14-day clause is from the contract template (undated)."
+        },
+        "notes": "No age, income or employment rule is published, so the app cannot say whether a 22-35 salaried borrower qualifies. Whether JACCS serves Hanoi and HCMC for this product is not stated on the product page (a 20/10/2026 news post describes 34 provinces and cities and 2,000+ referral points)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn. Nếu hợp đồng bị chấm dứt vì bên vay vi phạm, bên vay phải bồi thường 6% dư nợ gốc tại thời điểm chấm dứt. Biểu phí không ghi phí phạt trả chậm cố định riêng. Chưa thấy lãi suất áp dụng cho lãi chậm trả.",
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "GTC art. 1.2(5)b and art. 8; the tariff has no separate fixed late fee. Page undated (footer code V01-04.26). The 6% breach compensation is also recorded as a fee."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate. If the contract is terminated because of the borrower's breach, the borrower owes 6% of the outstanding principal. The tariff lists no separate fixed late fee. No rate for interest on overdue interest was found.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "'Điều kiện giao dịch chung' art. 1.2(5)b: overdue principal bears \"150% lãi suất cho vay trong hạn tại thời điểm chuyển nợ quá hạn\"; contract art. 1: \"Lãi suất quá hạn (%): Bằng 150% lãi suất trong hạn\". Page undated (footer code V01-04.26)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No rate for interest on overdue interest was found in the contract, the general conditions or the tariff."
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 10000000,
+          "termMonths": 6,
+          "ratePercent": 49.92,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 1917567,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": true,
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Product-page calculator, read 2026-11-04 in the browser (defaults: 10,000,000 VND, 6 months): \"Khoản thanh toán hàng tháng: 1,917,567 VNĐ\". The page's script uses 4.16%/month (= 49.92%/year, the top of the new-customer range). The annuity formula at 4.16%/month for 6 months gives 1,917,567, so the figure is consistent. The total is not printed; 6 x 1,917,567 = 11,505,402 (our arithmetic). The page's own script (function pmt, rate/1200 per month, equal instalments) gives the same figure, so this is an equal-instalment annuity with monthly compounding. The contract instead accrues interest daily on a 365-day year, so a real schedule differs slightly. The calculator ignores fees and insurance and uses one fixed rate per product, not the borrower's own rate; the page says the result is only a reference (\"chỉ mang tính chất tham khảo\")."
+        },
+        {
+          "principalVnd": 10000000,
+          "termMonths": 12,
+          "ratePercent": 28.68,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "unknown",
+          "monthlyPaymentVnd": 1088506,
+          "totalRepaidVnd": 13145506,
+          "statedAnnualRatePercent": 28.68,
+          "statedAnnualRateKind": "nominal",
+          "includesInsurance": null,
+          "internallyConsistent": false,
+          "sourceUrl": "https://play.google.com/store/apps/details?id=com.fis.ddc.jlos.cusprod&hl=vi",
+          "retrievedAt": "2026-11-04",
+          "sourceDocumentDate": "2026-09-11",
+          "confidence": "low",
+          "note": "JACCS Vietnam app listing (developer JACCS INTERNATIONAL VIETNAM FINANCE COMPANY LIMITED; last updated 11 Sep 2026): 'VÍ DỤ MÔ PHỎNG KHOẢN VAY' 10,000,000 VND, 12 months, 'Lãi xuất tháng 2,39%', 'Lãi xuất năm 28,680%', 'Hình thức lãi: Theo dư nợ giảm dần', monthly 1,088,506, total (Gốc + Lãi) 13,145,506. FLAT/REDUCING TEST: 2.39% x 12 = 28.68, so the yearly figure is nominal (monthly x 12). Equal instalments at 2.39%/month on a reducing balance would be about 968,390 a month (11.62 million total); flat interest would be 1,072,333 a month (12.87 million total). The stated 1,088,506 fits neither label (it equals a reducing-balance annuity at about 52.4%/year, or the example includes charges the listing does not itemise). Also 12 x 1,088,506 = 13,062,072, which is 83,434 VND short of the stated total 13,145,506. So the example does not add up: do not use as a test fixture. The listing does not say which product it illustrates, and 28.68% is below the 30%/year new-customer minimum in the 04/11/2026 cash-loan table."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "49.92%/year",
+              "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+              "note": "Table row 20, 49.9200% (product-specific rate table, tier 1)."
+            },
+            {
+              "value": "36%/year",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=com.fis.ddc.jlos.cusprod&hl=vi",
+              "note": "JACCS Vietnam app listing on Google Play (updated 11 Sep 2026): \"Lãi suất năm theo dư nợ giảm dần thấp nhất là 0% cao nhất là 36%\" for \"các khoản vay cá nhân\". Generic, not tied to one product; its own worked example does not add up (see representativeExamples of the cash loan)."
+            }
+          ],
+          "resolution": "Stored 49.92: the product-specific, dated rate table is tier 1 and gives the higher cost; the app listing is generic. Confidence medium. Ask JACCS whether loans taken in the app are capped at 36%."
+        },
+        {
+          "field": "rates[0].minPercent",
+          "values": [
+            {
+              "value": "30%/year (new customers, terms 15-36 months)",
+              "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+              "note": "Table row 4; for 6-12 month terms the lowest new-customer row is 36.04%."
+            },
+            {
+              "value": "0%/year",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=com.fis.ddc.jlos.cusprod&hl=vi",
+              "note": "Google Play listing: \"thấp nhất là 0%\" for all personal loans (the 0% is a promotional rate on selected goods, see the goods loans)."
+            }
+          ],
+          "resolution": "Stored 30 (the product-specific table, new customers). A 0% rate does not appear for cash loans in the table. The 30% applies only to terms of 15 months or more; for shorter terms the table's lowest new-customer rate is 36.04%. The schema cannot hold a rate by term."
+        },
+        {
+          "field": "termMinMonths",
+          "values": [
+            {
+              "value": "6 months",
+              "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+              "note": "Calculator slider; also the shortest term on most table rows (the others start at 9, 15 or 18 months)."
+            },
+            {
+              "value": "3 months",
+              "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
+              "note": "Row 20 only (49.92%, 'Khách hàng cũ, Khách hàng mới')."
+            }
+          ],
+          "resolution": "Stored 6 (the calculator and the usual shortest term in the table; the 3-month term exists only on the most expensive row). Confidence medium."
+        },
+        {
+          "field": "termMaxMonths",
+          "values": [
+            {
+              "value": "36 months",
+              "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+              "note": "Calculator slider; no table row goes beyond 36 months."
+            },
+            {
+              "value": "84 months",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=com.fis.ddc.jlos.cusprod&hl=vi",
+              "note": "Google Play listing: \"Kỳ hạn tối thiểu là 6 tháng, tối đa là 84 tháng\" for personal loans in general (car and machinery loans run to 84 months)."
+            }
+          ],
+          "resolution": "Stored 36 (product-specific page and table). The 84 is generic. Confidence medium."
+        }
+      ],
+      "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": false,
+      "notes": "The rate table 'Bảng niêm yết lãi suất cho vay tiêu dùng cá nhân tại điểm giới thiệu dịch vụ', updated 04/11/2026, applies to this cash-loan product only (not the whole company). It is a list of 26 discrete rates by customer group and term, all 'dư nợ giảm dần, 365 ngày', not a single range; the new-customer range 30-49.92%/year is our min-max of the new-customer rows, and the lender says the rate applied can differ for the same customer group. Application is through a consultation counter ('điểm giới thiệu dịch vụ'); the product page's quick-contact form is a lead form and was not used. No age, income or employer rule is published. Fees come from a tariff dated 01.08.2024 and are capped at low confidence.",
+      "borrowerNotes": [
+        {
+          "vi": "Theo bảng niêm yết JACCS cập nhật 04/11/2026, khách hàng mới có lãi suất từ 30% đến 49,92%/năm trên dư nợ giảm dần. Mức 30% chỉ áp dụng cho kỳ hạn từ 15 tháng; kỳ hạn dưới 15 tháng thấp nhất là 36,04%/năm. Mức thực tế do JACCS quyết định khi thẩm định.",
+          "en": "JACCS's rate table updated 4 Nov 2026 lists 30% to 49.92% a year on the reducing balance for new customers. 30% applies only to terms of 15 months or more; shorter terms start at 36.04%. JACCS decides your actual rate."
+        },
+        {
+          "vi": "Khi tất toán trước hạn, bạn chọn (1) trả hết gốc và toàn bộ lãi của thời gian còn lại, không phí; hoặc (2) trả gốc và lãi đến ngày tất toán cộng phí 6% (5% nếu đã qua kỳ đầu) trên dư nợ gốc, tối thiểu 1,65 triệu đồng.",
+          "en": "To repay early you choose (1) pay the principal plus all interest for the remaining term, no fee, or (2) pay principal and interest to the settlement date plus a fee of 6% (5% after the first instalment) of the outstanding principal, at least 1.65 million đồng."
+        },
+        {
+          "vi": "Biểu phí ghi phí quản lý khoản vay 12.000 đồng, chưa rõ thu mỗi tháng hay một lần cho cả kỳ hạn. Phí bảo hiểm (nếu bạn mua) chưa được công bố.",
+          "en": "The tariff lists a 12,000 đồng loan management fee; it is unclear whether it is charged monthly or once for the whole term. The insurance premium (if you buy it) is not published."
+        }
+      ]
+    },
+    {
+      "id": "motorbike-installment",
+      "nameVi": "Vay mua xe máy trả góp",
+      "nameEn": "Motorbike installment loan",
+      "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "jaccs-finance",
+      "brandOrChannel": "JACCS",
+      "online": null,
+      "amountMinVnd": {
+        "value": 5000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Minimum of the 'Xe máy' tab of the loan calculator slider (5,000,000 VND, read 2026-11-04 from the calculator widget that every JACCS product page carries; read on the cash-loan page). No sentence states a minimum."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Maximum of the same 'Xe máy' calculator tab (100,000,000 VND). No text states a maximum; it equals, and does not exceed, the 100M finance-company cap."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator tab slider 6-36 months; the shortest term in the rate table is 6 months."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator tab slider and the rate table stop at 36 months. The promotional 0% row is limited to shorter terms where the table says so."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "khách hàng thường",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/07/MB_BANG-NIEM-YET-LAI-SUAT_01.08.2026-VN-stamped.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-08-01",
+            "note": "Table \"BẢNG NIÊM YẾT LÃI SUẤT CHO VAY XE MÁY TẠI ĐIỂM GIỚI THIỆU DỊCH VỤ\", \"Ngày cập nhật: 01/08/2026\" (scanned image, read visually; the PDF itself was scanned 24/07/2026). Row 1: 0.0000%, terms 6, 9, 12, 15, 18, 20, 24, 30, 36, customers 'Khách hàng thường'. The table does not say the 0% is a promotion; it is marked promotional (minIsPromotional) by us because JACCS's news posts tie 0% and low rates to named models and dates (Yamaha Nozza Grande 0%, 01-31/10/2026; Honda Wave Alpha 0.39%/month 'tính theo dư nợ ban đầu', 01/08-31/10/2026; Honda 'từ 0.69%/tháng', basis not stated), and those campaigns ended 31/10/2026 while this table still shows 0%. The next rows are 8.64% (row 2) and 12.84% (row 3, from 12 months); whether they are also promotional is not stated."
+          },
+          "maxPercent": {
+            "value": 50.1266,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/07/MB_BANG-NIEM-YET-LAI-SUAT_01.08.2026-VN-stamped.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-08-01",
+            "note": "Highest row = row 20, 50.1266%, terms 6-36 months, 'Khách hàng thường'. 20 rows in all (0.00, 8.64, 12.84, 15.1589, 17.52, 19.43, 21.7783, 25.915, 28.0916, 30.0516, 33.215, 35.2833, 36.135, 37.92, 38.40, 41.3664, 42.0966, 44.85, 46.1116, 50.1266). Note 2: the rate applied can differ for the same customer group depending on loan conditions or promotions. The table is dated 01/08/2026; the JACCS Vietnam app listing (11/09/2026) says 'cao nhất là 36%'; see conflicts."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/07/MB_BANG-NIEM-YET-LAI-SUAT_01.08.2026-VN-stamped.pdf",
+            "note": "Table note 1 (ghi chú): \"Lãi suất được tính theo phương pháp dư nợ giảm dần, trên cơ sở 1 năm là 365 ngày.\" The same wording is in 'Điều kiện giao dịch chung' art. 1.2(1)."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/07/MB_BANG-NIEM-YET-LAI-SUAT_01.08.2026-VN-stamped.pdf",
+            "note": "Column header \"Lãi suất áp dụng (%/ năm)\"."
+          },
+          "promotional": false,
+          "minIsPromotional": true
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Khung lãi suất thả nổi toàn công ty, mọi sản phẩm vay (công bố 08/10/2026, hiệu lực 13/10/2026); chỉ áp dụng cho hợp đồng chọn lãi suất thả nổi, KHÔNG phải mức lãi suất của riêng sản phẩm này",
+          "minPercent": {
+            "value": 13.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Announcement \"V/v: CÔNG BỐ KHUNG LÃI SUẤT THẢ NỔI (BAO GỒM LÃI SUẤT CƠ BẢN VÀ BIÊN ĐỘ)\", posted 08/10/2026 16:21: floating rate = base rate 9.894%/năm (adjusted every 3 months) + margin 3.5% => 13.394%/năm. Applies from 13/10/2026 to \"các sản phẩm vay\" (no product named)."
+          },
+          "maxPercent": {
+            "value": 14.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Same announcement: margin 4.5% => 14.394%/năm. The margin (3.5% or 4.5%) is set 'tùy theo từng sản phẩm và đối tượng khách hàng' by the credit policy when the contract is signed. NOTE: this is far BELOW the rates in each product's own rate table and below JACCS's own average (28.8%), so it is not a cap on what a borrower pays; it is a base-rate-plus-margin formula for floating-rate contracts."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"Phương pháp tính lãi áp dụng theo dư nợ giảm dần (%/năm)\"; \"1 năm = 365 ngày\"."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất cho vay bình quân toàn công ty tháng 10/2026 (mọi sản phẩm, không riêng sản phẩm này)",
+          "minPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Notice \"THÔNG BÁO VỀ VIỆC CÔNG BỐ LÃI SUẤT CHO VAY BÌNH QUÂN\", posted 03/11/2026 17:10: \"Lãi suất cho vay bình quân trong tháng 10/2026 tại JIVF: 28.8029%/năm.\" Products and calculation basis are not stated."
+          },
+          "maxPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Same single figure (a portfolio average, so min = max)."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "note": "No document names the repayment method. Inferred from the calculator's 'Xe máy' tab: 5,000,000 VND for 6 months shows 907,880 VND, the equal-instalment annuity at 30.0516%/year (read 2026-11-04 in the browser). Real interest is accrued daily on a 365-day year (GTC art. 1.2)."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí thủ tục đăng ký / làm hồ sơ và giải ngân khoản vay",
+          "nameEn": "Application, processing and disbursement fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Product page 'Vì sao nên chọn JACCS' says \"Không thu phí thủ tục đăng ký khoản vay\". The loan-contract template appendix (https://jaccs.com.vn/en/consumer-loan-contract/, undated) says under \"PHÍ LÀM HỒ SƠ & GIẢI NGÂN KHOẢN VAY\": \"JIVF KHÔNG THU PHÍ DƯỚI BẤT CỨ HÌNH THỨC NÀO\"."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Same two statements as above. They cover registration, processing and disbursement only; they say nothing about the management, early-repayment or insurance charges."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí quản lý khoản vay",
+          "nameEn": "Loan management fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Tariff: the fee \"được phân bổ vào khoản phải trả hàng tháng\" (spread into the monthly amount payable) until the loan ends."
+          },
+          "mandatory": {
+            "value": true,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Listed in the tariff with no opt-out, and the contract says each instalment is \"gốc + lãi + phí\". Not stated in so many words that it is compulsory. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 1: \"12.000 (Mười hai ngàn đồng)\". Wording: \"Phí quản lý khoản vay: Là khoản phí không hoàn lại ... được tính cho toàn bộ thời hạn vay và được phân bổ vào khoản phải trả hàng tháng\". AMBIGUOUS: it is not clear whether 12,000 VND is charged every month or is a one-off total for the whole term spread over the instalments. Stored as a monthly amount, the costlier reading (conservative rule); ask JACCS. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí cấp bản sao giấy tờ liên quan đến hợp đồng tín dụng",
+          "nameEn": "Copies of loan documents",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 2: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí gửi tin nhắn SMS",
+          "nameEn": "SMS notification fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 3: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí tất toán trước hạn (phương án 2)",
+          "nameEn": "Early settlement fee (option 2: pay principal and interest to the settlement date)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Charged only when the borrower picks option 2 in 'Điều kiện giao dịch chung' art. 2.2."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Only if the borrower prepays and chooses option 2. Option 1 has no early-settlement fee but requires paying all interest for the whole remaining term. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Percent changes by instalment: see tiers."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": 1650000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.1: column 'Số tiền thanh toán tối thiểu' = 1,650,000 VND. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum stated."
+          },
+          "tiers": {
+            "value": [
+              {
+                "from": 0,
+                "to": 2,
+                "unit": "instalment",
+                "percent": 6,
+                "note": "\"Trước và ngay kỳ thanh toán đầu tiên\": 6% trên dư nợ gốc tại thời điểm tất toán (settling before, or at, the first instalment, i.e. instalments 0 and 1)."
+              },
+              {
+                "from": 2,
+                "to": null,
+                "unit": "instalment",
+                "percent": 5,
+                "note": "\"Sau kỳ thanh toán đầu tiên\": 5% trên dư nợ gốc tại thời điểm tất toán (from the second instalment on)."
+              }
+            ],
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.1. In the page's HTML table the 6% and 5% cells are merged (rowspan=2) across rows 4.1 and 4.2, so both rows share them. Boundary read as 'to' exclusive: settlement at the first instalment = 6%. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phạt vi phạm hợp đồng khi hợp đồng bị chấm dứt do bên vay vi phạm",
+          "nameEn": "Contract-breach compensation if the contract is terminated for the borrower's breach",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only on termination because of a breach."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Applies only if the contract ends because the borrower breaches it; 'Điều kiện giao dịch chung' art. 8."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 6,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Art. 8: \"bên có lỗi có trách nhiệm bồi thường vi phạm hợp đồng cho bên bị vi phạm khoản tiền phạt vi phạm Hợp đồng bằng 6% dư nợ gốc tại thời điểm chấm dứt Hợp đồng\". The page shows no date (footer code V01-04.26)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Chi phí thanh toán qua ngân hàng, bưu điện, ví điện tử (Payoo, MoMo...)",
+          "nameEn": "Payment-channel charges",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/hop-dong-tin-dung/",
+            "note": "Charged by the payment channel when the borrower pays."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Contract art. 3.4: \"Bên vay chịu mọi chi phí liên quan đến việc thanh toán tiền vay, lãi tiền vay và/hoặc phí thanh toán\". Whether any channel charges anything is not published by JACCS."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Set by each channel; not published by JACCS."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn. The calculator only offers document options (ID only, or ID plus income proof); no income threshold is stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân (CCCD); có thể cần giấy tờ khác theo hướng dẫn của nhân viên tư vấn hoặc đại lý"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-xe-may/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Calculator option label: \"Giấy tờ bạn có: Căn cước công dân\". Process steps: \"Cung cấp CCCD và các giấy tờ cần thiết khác (nếu có) theo hướng dẫn của Nhân viên tư vấn JIVF hoặc Nhân viên Đại lý\". Campaign posts say \"chỉ cần CCCD gắn chip\"."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "None stated."
+        },
+        "otherConditions": {
+          "value": [
+            "Mua hàng tại cửa hàng/đại lý liên kết với JIVF; thanh toán khoản trả trước cho đại lý theo thỏa thuận (nếu có)",
+            "Lãi suất phụ thuộc điều kiện vay hoặc chương trình ưu đãi do JIVF thông báo (nhân viên tư vấn giải thích)",
+            "Xe được đăng ký và dùng làm tài sản bảo đảm; JIVF có quyền thu hồi và xử lý xe nếu bên vay không trả nợ (hợp đồng, điều 6)",
+            "Bản chính giấy đăng ký xe: hợp đồng mẫu (điều 6.4) ghi bên vay gửi JIVF giữ đến khi trả hết nợ; thông báo đăng 19/05/2025 ghi JIVF ngừng thu hồi cà vẹt gốc từ 10/04/2025 cho khách ký hợp đồng trả góp xe máy; bài khuyến mại 08/2026 ghi 'nhận Cavet gốc'. Hỏi lại nhân viên trước khi ký"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-xe-may/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Process steps ('Các bước') on the product page."
+        },
+        "notes": "No age, income or employment rule is published, so the app cannot say whether a 22-35 salaried borrower qualifies. Whether JACCS serves Hanoi and HCMC for this product is not stated on the product page (a 20/10/2026 news post describes 34 provinces and cities and 2,000+ referral points)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; riêng khoản vay không có lãi (0%) bị chuyển nợ quá hạn thì lãi quá hạn là 45%/năm trên dư nợ gốc. Nếu hợp đồng bị chấm dứt vì bên vay vi phạm, bên vay phải bồi thường 6% dư nợ gốc tại thời điểm chấm dứt. Chưa thấy lãi suất áp dụng cho lãi chậm trả.",
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "GTC art. 1.2(5)b, 1.2(5)c and art. 8. The 45%/year for zero-interest loans is table note 3 (\"Trường hợp khoản nợ vay không có lãi bị chuyển nợ quá hạn ... 45.0000%/năm\", https://jaccs.com.vn/wp-content/uploads/2026/07/MB_BANG-NIEM-YET-LAI-SUAT_01.08.2026-VN-stamped.pdf). Page undated (footer code V01-04.26)."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate; a zero-interest loan that goes overdue is charged 45% a year on the overdue principal. If the contract is terminated because of the borrower's breach, the borrower owes 6% of the outstanding principal. No rate for interest on overdue interest was found.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "'Điều kiện giao dịch chung' art. 1.2(5)b: overdue principal bears \"150% lãi suất cho vay trong hạn tại thời điểm chuyển nợ quá hạn\"; contract art. 1: \"Lãi suất quá hạn (%): Bằng 150% lãi suất trong hạn\". Page undated (footer code V01-04.26)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No rate for interest on overdue interest was found in the contract, the general conditions or the tariff."
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 5000000,
+          "termMonths": 6,
+          "ratePercent": 30.0516,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 907880,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": true,
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Product-page calculator, 'Xe máy' tab, read 2026-11-04 in the browser (defaults 5,000,000 VND, 6 months): \"Khoản thanh toán hàng tháng: 907,880 VNĐ\". The page's script rate is 2.50430%/month (= 30.0516%/year). The annuity formula gives 907,880, so the figure is consistent. The total is not printed. The page's own script (function pmt, rate/1200 per month, equal instalments) gives the same figure, so this is an equal-instalment annuity with monthly compounding. The contract instead accrues interest daily on a 365-day year, so a real schedule differs slightly. The calculator ignores fees and insurance and uses one fixed rate per product, not the borrower's own rate; the page says the result is only a reference (\"chỉ mang tính chất tham khảo\")."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "50.1266%/year",
+              "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/07/MB_BANG-NIEM-YET-LAI-SUAT_01.08.2026-VN-stamped.pdf",
+              "note": "Highest table row, 50.1266% (product-specific rate table, tier 1)."
+            },
+            {
+              "value": "36%/year",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=com.fis.ddc.jlos.cusprod&hl=vi",
+              "note": "JACCS Vietnam app listing on Google Play (updated 11 Sep 2026): \"Lãi suất năm theo dư nợ giảm dần thấp nhất là 0% cao nhất là 36%\" for \"các khoản vay cá nhân\". Generic, not tied to one product; its own worked example does not add up (see representativeExamples of the cash loan)."
+            }
+          ],
+          "resolution": "Stored 50.1266: the product-specific, dated rate table is tier 1 and gives the higher cost; the app listing is generic. Confidence medium. Ask JACCS whether loans taken in the app are capped at 36%."
+        }
+      ],
+      "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-xe-may/",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Bảng niêm yết 01/08/2026 ghi tối đa 50,1266%/năm, nhưng mô tả ứng dụng JACCS Vietnam (cập nhật 11/09/2026, mới hơn) ghi lãi suất cao nhất 36%/năm cho khoản vay cá nhân; chưa rõ mức nào áp dụng. Mức thấp nhất 0% là khuyến mại trên một số hàng hóa nên không dùng để tính chi phí.",
+      "excludeCode": "conflicting_sources",
+      "notes": "Rate table for 'Xe máy' (updated 01/08/2026). The website's electric-motorbike link serves an older table headed 'Xe máy' dated 06/01/2026, so no electric-motorbike table was recorded. Campaign posts (Honda Wave Alpha 0.39%/month on the INITIAL balance, i.e. flat; Honda 'từ 0.69%/tháng', basis not stated; Yamaha Nozza Grande 0%) all ended 31/10/2026 and were not stored as products. Flat check: 0.39%/month flat over 12-36 months is about 8.5-8.7%/year on a reducing balance (our IRR), and 0.69%/month flat is about 15%/year reducing; those values are close to rows 2 (8.64%) and 4 (15.1589%) of the table, which suggests campaign rates may be quoted flat monthly while the table restates them reducing yearly, but JACCS does not say so. A promoter's '0,39%/tháng' must not be compared directly with a '%/năm dư nợ giảm dần' figure. The calculator's 2.5043%/month x 12 = 30.0516% is row 10 of this table.",
+      "borrowerNotes": [
+        {
+          "vi": "Mức 0%/năm trong bảng niêm yết là ưu đãi cho một số hàng hóa/chương trình, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm trên dư nợ giảm dần. Hỏi nhân viên JACCS hoặc đại lý lãi suất của đúng khoản vay của bạn trước khi ký.",
+          "en": "The 0% a year in the rate table is a promotion on certain goods or programmes, not a rate you are sure to get. The highest rate in the table is 50.1266% a year on the reducing balance. Ask JACCS or the dealer for the rate on your own loan before you sign."
+        },
+        {
+          "vi": "Khi tất toán trước hạn, bạn chọn (1) trả hết gốc và toàn bộ lãi của thời gian còn lại, không phí; hoặc (2) trả gốc và lãi đến ngày tất toán cộng phí 6% (5% nếu đã qua kỳ đầu) trên dư nợ gốc, tối thiểu 1,65 triệu đồng.",
+          "en": "To repay early you choose (1) pay the principal plus all interest for the remaining term, no fee, or (2) pay principal and interest to the settlement date plus a fee of 6% (5% after the first instalment) of the outstanding principal, at least 1.65 million đồng."
+        },
+        {
+          "vi": "Quảng cáo của JACCS đôi khi ghi lãi theo tháng trên dư nợ ban đầu (ví dụ 0,39%/tháng cho Wave Alpha, hết 31/10/2026), khác cách tính %/năm trên dư nợ giảm dần của bảng niêm yết; không so sánh trực tiếp hai con số này.",
+          "en": "JACCS promotions sometimes quote a monthly rate on the original balance (for example 0.39% a month for the Wave Alpha, ended 31 Oct 2026), which is not comparable with the table's yearly rate on the reducing balance."
+        }
+      ]
+    },
+    {
+      "id": "electronics-installment",
+      "nameVi": "Vay mua điện máy trả góp",
+      "nameEn": "Home appliance and electronics installment loan",
+      "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "jaccs-finance",
+      "brandOrChannel": "JACCS",
+      "online": null,
+      "amountMinVnd": {
+        "value": 3000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Minimum of the 'Điện máy' tab of the loan calculator slider (3,000,000 VND, read 2026-11-04 from the calculator widget that every JACCS product page carries; read on the cash-loan page). No sentence states a minimum."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Maximum of the same 'Điện máy' calculator tab (100,000,000 VND). No text states a maximum; it equals, and does not exceed, the 100M finance-company cap."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator tab slider 6-36 months; the shortest term in the rate table is 6 months."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator tab slider and the rate table stop at 36 months. The promotional 0% row is limited to shorter terms where the table says so."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "khách hàng thường và khách hàng có chứng minh thu nhập",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/CE_VN.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-06",
+            "note": "Table \"BẢNG NIÊM YẾT LÃI SUẤT CHO VAY ĐIỆN MÁY TẠI ĐIỂM GIỚI THIỆU DỊCH VỤ\", \"Ngày cập nhật: 06/01/2026\" (scanned image, PDF file date 22/01/2026, read visually). Row 1: 0.0000%, terms 6, 9, 12, 15, 18, 20, 24 (not 30 or 36), 'Khách hàng thường'. Marked promotional (minIsPromotional) by us: the table does not say so, but a 0% rate is an interest-free subsidy that applies only to short terms. Next rows: 12.84% (row 2), 17.52%, 21.738% (6-12 months only), 25.915%. The table is about 10 months old (under the 12-month limit)."
+          },
+          "maxPercent": {
+            "value": 50.1266,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/CE_VN.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-06",
+            "note": "Highest row = row 9, 50.1266%, terms 6-36 months, 'Khách hàng thường'. 9 rows (0.00, 12.84, 17.52, 21.738, 25.915, 34.0666, 38.0816, 42.0966, 50.1266); rows 6-7 apply to 'Khách hàng có chứng minh thu nhập' (34.0666 and 38.0816). Note 2: the rate applied can differ for the same group. A newer official statement (Google Play listing, 11/09/2026) says the highest rate is 36%; see conflicts."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/CE_VN.pdf",
+            "note": "Table note 1 (ghi chú): \"Lãi suất được tính theo phương pháp dư nợ giảm dần, trên cơ sở 1 năm là 365 ngày.\" The same wording is in 'Điều kiện giao dịch chung' art. 1.2(1)."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/CE_VN.pdf",
+            "note": "Column header \"Lãi suất áp dụng (%/ năm)\"."
+          },
+          "promotional": false,
+          "minIsPromotional": true
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Khung lãi suất thả nổi toàn công ty, mọi sản phẩm vay (công bố 08/10/2026, hiệu lực 13/10/2026); chỉ áp dụng cho hợp đồng chọn lãi suất thả nổi, KHÔNG phải mức lãi suất của riêng sản phẩm này",
+          "minPercent": {
+            "value": 13.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Announcement \"V/v: CÔNG BỐ KHUNG LÃI SUẤT THẢ NỔI (BAO GỒM LÃI SUẤT CƠ BẢN VÀ BIÊN ĐỘ)\", posted 08/10/2026 16:21: floating rate = base rate 9.894%/năm (adjusted every 3 months) + margin 3.5% => 13.394%/năm. Applies from 13/10/2026 to \"các sản phẩm vay\" (no product named)."
+          },
+          "maxPercent": {
+            "value": 14.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Same announcement: margin 4.5% => 14.394%/năm. The margin (3.5% or 4.5%) is set 'tùy theo từng sản phẩm và đối tượng khách hàng' by the credit policy when the contract is signed. NOTE: this is far BELOW the rates in each product's own rate table and below JACCS's own average (28.8%), so it is not a cap on what a borrower pays; it is a base-rate-plus-margin formula for floating-rate contracts."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"Phương pháp tính lãi áp dụng theo dư nợ giảm dần (%/năm)\"; \"1 năm = 365 ngày\"."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất cho vay bình quân toàn công ty tháng 10/2026 (mọi sản phẩm, không riêng sản phẩm này)",
+          "minPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Notice \"THÔNG BÁO VỀ VIỆC CÔNG BỐ LÃI SUẤT CHO VAY BÌNH QUÂN\", posted 03/11/2026 17:10: \"Lãi suất cho vay bình quân trong tháng 10/2026 tại JIVF: 28.8029%/năm.\" Products and calculation basis are not stated."
+          },
+          "maxPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Same single figure (a portfolio average, so min = max)."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "note": "No document names the repayment method. Inferred from the calculator's 'Điện máy' tab: 3,000,000 VND for 6 months shows 563,153 VND, the equal-instalment annuity at 42.096%/year (read 2026-11-04 in the browser). Real interest is accrued daily on a 365-day year (GTC art. 1.2)."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí thủ tục đăng ký / làm hồ sơ và giải ngân khoản vay",
+          "nameEn": "Application, processing and disbursement fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Product page 'Vì sao nên chọn JACCS' says \"Không thu phí thủ tục đăng ký khoản vay\". The loan-contract template appendix (https://jaccs.com.vn/en/consumer-loan-contract/, undated) says under \"PHÍ LÀM HỒ SƠ & GIẢI NGÂN KHOẢN VAY\": \"JIVF KHÔNG THU PHÍ DƯỚI BẤT CỨ HÌNH THỨC NÀO\"."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Same two statements as above. They cover registration, processing and disbursement only; they say nothing about the management, early-repayment or insurance charges."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí quản lý khoản vay",
+          "nameEn": "Loan management fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Tariff: the fee \"được phân bổ vào khoản phải trả hàng tháng\" (spread into the monthly amount payable) until the loan ends."
+          },
+          "mandatory": {
+            "value": true,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Listed in the tariff with no opt-out, and the contract says each instalment is \"gốc + lãi + phí\". Not stated in so many words that it is compulsory. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 1: \"12.000 (Mười hai ngàn đồng)\". Wording: \"Phí quản lý khoản vay: Là khoản phí không hoàn lại ... được tính cho toàn bộ thời hạn vay và được phân bổ vào khoản phải trả hàng tháng\". AMBIGUOUS: it is not clear whether 12,000 VND is charged every month or is a one-off total for the whole term spread over the instalments. Stored as a monthly amount, the costlier reading (conservative rule); ask JACCS. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí cấp bản sao giấy tờ liên quan đến hợp đồng tín dụng",
+          "nameEn": "Copies of loan documents",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 2: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí gửi tin nhắn SMS",
+          "nameEn": "SMS notification fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 3: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí tất toán trước hạn (phương án 2)",
+          "nameEn": "Early settlement fee (option 2: pay principal and interest to the settlement date)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Charged only when the borrower picks option 2 in 'Điều kiện giao dịch chung' art. 2.2."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Only if the borrower prepays and chooses option 2. Option 1 has no early-settlement fee but requires paying all interest for the whole remaining term. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Percent changes by instalment: see tiers."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": 850000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.2: column 'Số tiền thanh toán tối thiểu' = 850,000 VND. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum stated."
+          },
+          "tiers": {
+            "value": [
+              {
+                "from": 0,
+                "to": 2,
+                "unit": "instalment",
+                "percent": 6,
+                "note": "\"Trước và ngay kỳ thanh toán đầu tiên\": 6% trên dư nợ gốc tại thời điểm tất toán (settling before, or at, the first instalment, i.e. instalments 0 and 1)."
+              },
+              {
+                "from": 2,
+                "to": null,
+                "unit": "instalment",
+                "percent": 5,
+                "note": "\"Sau kỳ thanh toán đầu tiên\": 5% trên dư nợ gốc tại thời điểm tất toán (from the second instalment on)."
+              }
+            ],
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.2. In the page's HTML table the 6% and 5% cells are merged (rowspan=2) across rows 4.1 and 4.2, so both rows share them. Boundary read as 'to' exclusive: settlement at the first instalment = 6%. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phạt vi phạm hợp đồng khi hợp đồng bị chấm dứt do bên vay vi phạm",
+          "nameEn": "Contract-breach compensation if the contract is terminated for the borrower's breach",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only on termination because of a breach."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Applies only if the contract ends because the borrower breaches it; 'Điều kiện giao dịch chung' art. 8."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 6,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Art. 8: \"bên có lỗi có trách nhiệm bồi thường vi phạm hợp đồng cho bên bị vi phạm khoản tiền phạt vi phạm Hợp đồng bằng 6% dư nợ gốc tại thời điểm chấm dứt Hợp đồng\". The page shows no date (footer code V01-04.26)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Chi phí thanh toán qua ngân hàng, bưu điện, ví điện tử (Payoo, MoMo...)",
+          "nameEn": "Payment-channel charges",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/hop-dong-tin-dung/",
+            "note": "Charged by the payment channel when the borrower pays."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Contract art. 3.4: \"Bên vay chịu mọi chi phí liên quan đến việc thanh toán tiền vay, lãi tiền vay và/hoặc phí thanh toán\". Whether any channel charges anything is not published by JACCS."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Set by each channel; not published by JACCS."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn. The calculator only offers document options (ID only, or ID plus income proof); no income threshold is stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân (CCCD); có thể cần giấy tờ khác theo hướng dẫn của nhân viên tư vấn hoặc đại lý"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-dien-may/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Calculator option label: \"Giấy tờ bạn có: Căn cước công dân\". Process steps: \"Cung cấp CCCD và các giấy tờ cần thiết khác (nếu có) theo hướng dẫn của Nhân viên tư vấn JIVF hoặc Nhân viên Đại lý\". Campaign posts say \"chỉ cần CCCD gắn chip\"."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "None stated."
+        },
+        "otherConditions": {
+          "value": [
+            "Mua hàng tại cửa hàng/đại lý liên kết với JIVF; thanh toán khoản trả trước cho đại lý theo thỏa thuận (nếu có)",
+            "Lãi suất phụ thuộc điều kiện vay hoặc chương trình ưu đãi do JIVF thông báo (nhân viên tư vấn giải thích)"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-dien-may/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Process steps ('Các bước') on the product page."
+        },
+        "notes": "No age, income or employment rule is published, so the app cannot say whether a 22-35 salaried borrower qualifies. Whether JACCS serves Hanoi and HCMC for this product is not stated on the product page (a 20/10/2026 news post describes 34 provinces and cities and 2,000+ referral points)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; riêng khoản vay không có lãi (0%) bị chuyển nợ quá hạn thì lãi quá hạn là 45%/năm trên dư nợ gốc. Nếu hợp đồng bị chấm dứt vì bên vay vi phạm, bên vay phải bồi thường 6% dư nợ gốc tại thời điểm chấm dứt. Chưa thấy lãi suất áp dụng cho lãi chậm trả.",
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "GTC art. 1.2(5)b, 1.2(5)c and art. 8. The 45%/year for zero-interest loans is table note 3 (\"Trường hợp khoản nợ vay không có lãi bị chuyển nợ quá hạn ... 45.0000%/năm\", https://jaccs.com.vn/wp-content/uploads/2026/01/CE_VN.pdf). Page undated (footer code V01-04.26)."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate; a zero-interest loan that goes overdue is charged 45% a year on the overdue principal. If the contract is terminated because of the borrower's breach, the borrower owes 6% of the outstanding principal. No rate for interest on overdue interest was found.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "'Điều kiện giao dịch chung' art. 1.2(5)b: overdue principal bears \"150% lãi suất cho vay trong hạn tại thời điểm chuyển nợ quá hạn\"; contract art. 1: \"Lãi suất quá hạn (%): Bằng 150% lãi suất trong hạn\". Page undated (footer code V01-04.26)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No rate for interest on overdue interest was found in the contract, the general conditions or the tariff."
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 3000000,
+          "termMonths": 6,
+          "ratePercent": 42.096,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 563153,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": true,
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Product-page calculator, 'Điện máy' tab, read 2026-11-04 in the browser (defaults 3,000,000 VND, 6 months): \"Khoản thanh toán hàng tháng: 563,153 VNĐ\". The page's script rate is 3.50800%/month (= 42.096%/year). The annuity formula gives 563,153, so the figure is consistent. The total is not printed. The page's own script (function pmt, rate/1200 per month, equal instalments) gives the same figure, so this is an equal-instalment annuity with monthly compounding. The contract instead accrues interest daily on a 365-day year, so a real schedule differs slightly. The calculator ignores fees and insurance and uses one fixed rate per product, not the borrower's own rate; the page says the result is only a reference (\"chỉ mang tính chất tham khảo\")."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "50.1266%/year",
+              "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/CE_VN.pdf",
+              "note": "Highest table row, 50.1266% (product-specific rate table, tier 1)."
+            },
+            {
+              "value": "36%/year",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=com.fis.ddc.jlos.cusprod&hl=vi",
+              "note": "JACCS Vietnam app listing on Google Play (updated 11 Sep 2026): \"Lãi suất năm theo dư nợ giảm dần thấp nhất là 0% cao nhất là 36%\" for \"các khoản vay cá nhân\". Generic, not tied to one product; its own worked example does not add up (see representativeExamples of the cash loan)."
+            }
+          ],
+          "resolution": "Stored 50.1266: the product-specific, dated rate table is tier 1 and gives the higher cost; the app listing is generic. Confidence medium. Ask JACCS whether loans taken in the app are capped at 36%."
+        }
+      ],
+      "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-dien-may/",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Bảng niêm yết 06/01/2026 ghi tối đa 50,1266%/năm, nhưng mô tả ứng dụng JACCS Vietnam (cập nhật 11/09/2026, mới hơn) ghi lãi suất cao nhất 36%/năm cho khoản vay cá nhân; chưa rõ mức nào áp dụng. Mức thấp nhất 0% là khuyến mại trên một số hàng hóa nên không dùng để tính chi phí.",
+      "excludeCode": "conflicting_sources",
+      "notes": "Rate table for 'Điện máy' dated 06/01/2026. The calculator uses 3.5080%/month = 42.096%/year, which is row 8 of the table (42.0966%) to rounding. The same 3,000,000 / 6-month output is shown on the furniture tab (same 3.5080%/month).",
+      "borrowerNotes": [
+        {
+          "vi": "Mức 0%/năm trong bảng niêm yết là ưu đãi cho một số hàng hóa/chương trình, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm trên dư nợ giảm dần. Hỏi nhân viên JACCS hoặc đại lý lãi suất của đúng khoản vay của bạn trước khi ký.",
+          "en": "The 0% a year in the rate table is a promotion on certain goods or programmes, not a rate you are sure to get. The highest rate in the table is 50.1266% a year on the reducing balance. Ask JACCS or the dealer for the rate on your own loan before you sign."
+        },
+        {
+          "vi": "Khi tất toán trước hạn, bạn chọn (1) trả hết gốc và toàn bộ lãi của thời gian còn lại, không phí; hoặc (2) trả gốc và lãi đến ngày tất toán cộng phí 6% (5% nếu đã qua kỳ đầu) trên dư nợ gốc, tối thiểu 0,85 triệu đồng.",
+          "en": "To repay early you choose (1) pay the principal plus all interest for the remaining term, no fee, or (2) pay principal and interest to the settlement date plus a fee of 6% (5% after the first instalment) of the outstanding principal, at least 0.85 million đồng."
+        }
+      ]
+    },
+    {
+      "id": "furniture-installment",
+      "nameVi": "Vay mua nội thất trả góp",
+      "nameEn": "Furniture installment loan",
+      "productType": "installment",
+      "status": "active",
+      "validUntil": null,
+      "lenderOfRecord": "jaccs-finance",
+      "brandOrChannel": "JACCS",
+      "online": null,
+      "amountMinVnd": {
+        "value": 3000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Minimum of the 'Nội thất' tab of the loan calculator slider (3,000,000 VND, read 2026-11-04 from the calculator widget that every JACCS product page carries; read on the cash-loan page). No sentence states a minimum."
+      },
+      "amountMaxVnd": {
+        "value": 100000000,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "low",
+        "note": "Maximum of the same 'Nội thất' calculator tab (100,000,000 VND). No text states a maximum; it equals, and does not exceed, the 100M finance-company cap."
+      },
+      "termMinMonths": {
+        "value": 6,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator tab slider 6-36 months; the shortest term in the rate table is 6 months."
+      },
+      "termMaxMonths": {
+        "value": 36,
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "retrievedAt": "2026-11-04",
+        "confidence": "medium",
+        "note": "Calculator tab slider and the rate table stop at 36 months. The promotional 0% row is limited to shorter terms where the table says so."
+      },
+      "rates": [
+        {
+          "kind": "offered_range",
+          "segment": "khách hàng thường và khách hàng có chứng minh thu nhập",
+          "minPercent": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/FL_VN.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-06",
+            "note": "Table \"BẢNG NIÊM YẾT LÃI SUẤT CHO VAY NỘI THẤT TẠI ĐIỂM GIỚI THIỆU DỊCH VỤ\", \"Ngày cập nhật: 06/01/2026\" (scanned image, PDF file date 22/01/2026, read visually). Row 1: 0.0000%, terms 6, 9, 12, 15, 18, 20, 24 (not 30 or 36), 'Khách hàng thường, Khách hàng có chứng minh thu nhập'. Marked promotional (minIsPromotional) by us: the table does not say so, but a 0% rate is an interest-free subsidy that applies only to short terms. Next rows: 34.10% and 38.10% (customers with income proof only), 42.10%."
+          },
+          "maxPercent": {
+            "value": 50.1266,
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/FL_VN.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-01-06",
+            "note": "Highest row = row 5, 50.1266%, terms 6-36 months, 'Khách hàng thường'. 5 rows (0.00, 34.10, 38.10, 42.10, 50.1266). Note the gap: nothing between 0% and 34.1%. Note 2: the rate applied can differ for the same group. A newer official statement (Google Play listing, 11/09/2026) says the highest rate is 36%; see conflicts."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/FL_VN.pdf",
+            "note": "Table note 1 (ghi chú): \"Lãi suất được tính theo phương pháp dư nợ giảm dần, trên cơ sở 1 năm là 365 ngày.\" The same wording is in 'Điều kiện giao dịch chung' art. 1.2(1)."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/FL_VN.pdf",
+            "note": "Column header \"Lãi suất áp dụng (%/ năm)\"."
+          },
+          "promotional": false,
+          "minIsPromotional": true
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Khung lãi suất thả nổi toàn công ty, mọi sản phẩm vay (công bố 08/10/2026, hiệu lực 13/10/2026); chỉ áp dụng cho hợp đồng chọn lãi suất thả nổi, KHÔNG phải mức lãi suất của riêng sản phẩm này",
+          "minPercent": {
+            "value": 13.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Announcement \"V/v: CÔNG BỐ KHUNG LÃI SUẤT THẢ NỔI (BAO GỒM LÃI SUẤT CƠ BẢN VÀ BIÊN ĐỘ)\", posted 08/10/2026 16:21: floating rate = base rate 9.894%/năm (adjusted every 3 months) + margin 3.5% => 13.394%/năm. Applies from 13/10/2026 to \"các sản phẩm vay\" (no product named)."
+          },
+          "maxPercent": {
+            "value": 14.394,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-10-08",
+            "note": "Same announcement: margin 4.5% => 14.394%/năm. The margin (3.5% or 4.5%) is set 'tùy theo từng sản phẩm và đối tượng khách hàng' by the credit policy when the contract is signed. NOTE: this is far BELOW the rates in each product's own rate table and below JACCS's own average (28.8%), so it is not a cap on what a borrower pays; it is a base-rate-plus-margin formula for floating-rate contracts."
+          },
+          "basis": {
+            "value": "reducing",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"Phương pháp tính lãi áp dụng theo dư nợ giảm dần (%/năm)\"; \"1 năm = 365 ngày\"."
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        },
+        {
+          "kind": "benchmark",
+          "segment": "Lãi suất cho vay bình quân toàn công ty tháng 10/2026 (mọi sản phẩm, không riêng sản phẩm này)",
+          "minPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Notice \"THÔNG BÁO VỀ VIỆC CÔNG BỐ LÃI SUẤT CHO VAY BÌNH QUÂN\", posted 03/11/2026 17:10: \"Lãi suất cho vay bình quân trong tháng 10/2026 tại JIVF: 28.8029%/năm.\" Products and calculation basis are not stated."
+          },
+          "maxPercent": {
+            "value": 28.8029,
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "sourceDocumentDate": "2026-11-03",
+            "note": "Same single figure (a portfolio average, so min = max)."
+          },
+          "basis": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "period": {
+            "value": "yearly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
+            "note": "\"%/năm\"."
+          },
+          "promotional": false
+        }
+      ],
+      "amortization": {
+        "value": "annuity",
+        "provenance": "inferred",
+        "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+        "note": "No document names the repayment method. Inferred from the calculator's 'Nội thất' tab: 3,000,000 VND for 6 months shows 563,153 VND, the equal-instalment annuity at 42.096%/year (read 2026-11-04 in the browser). Real interest is accrued daily on a 365-day year (GTC art. 1.2)."
+      },
+      "fees": [
+        {
+          "nameVi": "Phí thủ tục đăng ký / làm hồ sơ và giải ngân khoản vay",
+          "nameEn": "Application, processing and disbursement fee",
+          "trigger": "application",
+          "timing": {
+            "value": "unknown",
+            "provenance": "none",
+            "sourceUrl": null
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Product page 'Vì sao nên chọn JACCS' says \"Không thu phí thủ tục đăng ký khoản vay\". The loan-contract template appendix (https://jaccs.com.vn/en/consumer-loan-contract/, undated) says under \"PHÍ LÀM HỒ SƠ & GIẢI NGÂN KHOẢN VAY\": \"JIVF KHÔNG THU PHÍ DƯỚI BẤT CỨ HÌNH THỨC NÀO\"."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Same two statements as above. They cover registration, processing and disbursement only; they say nothing about the management, early-repayment or insurance charges."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí quản lý khoản vay",
+          "nameEn": "Loan management fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "monthly",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Tariff: the fee \"được phân bổ vào khoản phải trả hàng tháng\" (spread into the monthly amount payable) until the loan ends."
+          },
+          "mandatory": {
+            "value": true,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Listed in the tariff with no opt-out, and the contract says each instalment is \"gốc + lãi + phí\". Not stated in so many words that it is compulsory. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 12000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 1: \"12.000 (Mười hai ngàn đồng)\". Wording: \"Phí quản lý khoản vay: Là khoản phí không hoàn lại ... được tính cho toàn bộ thời hạn vay và được phân bổ vào khoản phải trả hàng tháng\". AMBIGUOUS: it is not clear whether 12,000 VND is charged every month or is a one-off total for the whole term spread over the instalments. Stored as a monthly amount, the costlier reading (conservative rule); ask JACCS. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí cấp bản sao giấy tờ liên quan đến hợp đồng tín dụng",
+          "nameEn": "Copies of loan documents",
+          "trigger": "on_request",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 2: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí gửi tin nhắn SMS",
+          "nameEn": "SMS notification fee",
+          "trigger": "periodic",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only when the borrower asks or when a message is sent."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Free service, so never a cost of the loan. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "not_applicable",
+          "rule": "fixed_only",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "fixedVnd": {
+            "value": 0,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 3: \"Miễn phí\". Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phí tất toán trước hạn (phương án 2)",
+          "nameEn": "Early settlement fee (option 2: pay principal and interest to the settlement date)",
+          "trigger": "prepayment",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Charged only when the borrower picks option 2 in 'Điều kiện giao dịch chung' art. 2.2."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Only if the borrower prepays and chooses option 2. Option 1 has no early-settlement fee but requires paying all interest for the whole remaining term. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_with_min_max",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Percent changes by instalment: see tiers."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": 850000,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.2: column 'Số tiền thanh toán tối thiểu' = 850,000 VND. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "No maximum stated."
+          },
+          "tiers": {
+            "value": [
+              {
+                "from": 0,
+                "to": 2,
+                "unit": "instalment",
+                "percent": 6,
+                "note": "\"Trước và ngay kỳ thanh toán đầu tiên\": 6% trên dư nợ gốc tại thời điểm tất toán (settling before, or at, the first instalment, i.e. instalments 0 and 1)."
+              },
+              {
+                "from": 2,
+                "to": null,
+                "unit": "instalment",
+                "percent": 5,
+                "note": "\"Sau kỳ thanh toán đầu tiên\": 5% trên dư nợ gốc tại thời điểm tất toán (from the second instalment on)."
+              }
+            ],
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "sourceDocumentDate": "2024-08-01",
+            "note": "Tariff row 4.2. In the page's HTML table the 6% and 5% cells are merged (rowspan=2) across rows 4.1 and 4.2, so both rows share them. Boundary read as 'to' exclusive: settlement at the first instalment = 6%. Tariff printed at the end of the 'Điều kiện giao dịch chung' page, headed \"BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)\". The same page ends with a version code 'V01-04.26'; we cannot tell whether the tariff was re-issued in April 2026, so the tariff's own effective date (2024-08-01, more than 12 months old) is used and confidence is capped at low (data-entry rules section 2)."
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Phạt vi phạm hợp đồng khi hợp đồng bị chấm dứt do bên vay vi phạm",
+          "nameEn": "Contract-breach compensation if the contract is terminated for the borrower's breach",
+          "trigger": "other",
+          "timing": {
+            "value": "on_event",
+            "provenance": "stated",
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "note": "Only on termination because of a breach."
+          },
+          "mandatory": {
+            "value": false,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Applies only if the contract ends because the borrower breaches it; 'Điều kiện giao dịch chung' art. 8."
+          },
+          "base": "outstanding_principal",
+          "rule": "percent_only",
+          "percent": {
+            "value": 6,
+            "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+            "retrievedAt": "2026-11-04",
+            "confidence": "medium",
+            "note": "Art. 8: \"bên có lỗi có trách nhiệm bồi thường vi phạm hợp đồng cho bên bị vi phạm khoản tiền phạt vi phạm Hợp đồng bằng 6% dư nợ gốc tại thời điểm chấm dứt Hợp đồng\". The page shows no date (footer code V01-04.26)."
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Not applicable"
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "lender"
+        },
+        {
+          "nameVi": "Chi phí thanh toán qua ngân hàng, bưu điện, ví điện tử (Payoo, MoMo...)",
+          "nameEn": "Payment-channel charges",
+          "trigger": "per_transaction",
+          "timing": {
+            "value": "on_event",
+            "provenance": "inferred",
+            "sourceUrl": "https://jaccs.com.vn/vi/hop-dong-tin-dung/",
+            "note": "Charged by the payment channel when the borrower pays."
+          },
+          "mandatory": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Contract art. 3.4: \"Bên vay chịu mọi chi phí liên quan đến việc thanh toán tiền vay, lãi tiền vay và/hoặc phí thanh toán\". Whether any channel charges anything is not published by JACCS."
+          },
+          "base": "unknown",
+          "rule": "other",
+          "percent": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "fixedVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null,
+            "note": "Set by each channel; not published by JACCS."
+          },
+          "minVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "maxVnd": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "tiers": {
+            "value": null,
+            "sourceUrl": null,
+            "retrievedAt": null,
+            "confidence": null
+          },
+          "payee": "third_party"
+        }
+      ],
+      "feesCompleteness": "partial",
+      "insurance": [],
+      "insuranceCompleteness": "unknown",
+      "eligibility": {
+        "minAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAge": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn."
+        },
+        "maxAgeAtLoanEnd": null,
+        "minMonthlyIncomeVnd": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "Not published for this product. Searched: product page and its calculator, FAQ (hoi-dap), 'Điều kiện giao dịch chung', credit-contract templates (vi and en), the JACCS Vietnam Google Play listing, news posts (04-10/2026), and a site: search of jaccs.com.vn. The calculator only offers document options (ID only, or ID plus income proof); no income threshold is stated."
+        },
+        "incomeBasis": "unknown",
+        "documents": {
+          "value": [
+            "Căn cước công dân (CCCD); có thể cần giấy tờ khác theo hướng dẫn của nhân viên tư vấn hoặc đại lý"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-noi-that/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Calculator option label: \"Giấy tờ bạn có: Căn cước công dân\". Process steps: \"Cung cấp CCCD và các giấy tờ cần thiết khác (nếu có) theo hướng dẫn của Nhân viên tư vấn JIVF hoặc Nhân viên Đại lý\". Campaign posts say \"chỉ cần CCCD gắn chip\"."
+        },
+        "existingCustomerRequired": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null
+        },
+        "employerRestriction": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "None stated."
+        },
+        "otherConditions": {
+          "value": [
+            "Mua hàng tại cửa hàng/đại lý liên kết với JIVF; thanh toán khoản trả trước cho đại lý theo thỏa thuận (nếu có)",
+            "Lãi suất phụ thuộc điều kiện vay hoặc chương trình ưu đãi do JIVF thông báo (nhân viên tư vấn giải thích)"
+          ],
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-noi-that/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Process steps ('Các bước') on the product page."
+        },
+        "notes": "No age, income or employment rule is published, so the app cannot say whether a 22-35 salaried borrower qualifies. Whether JACCS serves Hanoi and HCMC for this product is not stated on the product page (a 20/10/2026 news post describes 34 provinces and cities and 2,000+ referral points)."
+      },
+      "latePenalty": {
+        "textVi": {
+          "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; riêng khoản vay không có lãi (0%) bị chuyển nợ quá hạn thì lãi quá hạn là 45%/năm trên dư nợ gốc. Nếu hợp đồng bị chấm dứt vì bên vay vi phạm, bên vay phải bồi thường 6% dư nợ gốc tại thời điểm chấm dứt. Chưa thấy lãi suất áp dụng cho lãi chậm trả.",
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "GTC art. 1.2(5)b, 1.2(5)c and art. 8. The 45%/year for zero-interest loans is table note 3 (\"Trường hợp khoản nợ vay không có lãi bị chuyển nợ quá hạn ... 45.0000%/năm\", https://jaccs.com.vn/wp-content/uploads/2026/01/FL_VN.pdf). Page undated (footer code V01-04.26)."
+        },
+        "textEn": "Overdue principal is charged 150% of the in-term rate; a zero-interest loan that goes overdue is charged 45% a year on the overdue principal. If the contract is terminated because of the borrower's breach, the borrower owes 6% of the outstanding principal. No rate for interest on overdue interest was found.",
+        "overduePrincipalRateMultiplier": {
+          "value": 1.5,
+          "sourceUrl": "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "'Điều kiện giao dịch chung' art. 1.2(5)b: overdue principal bears \"150% lãi suất cho vay trong hạn tại thời điểm chuyển nợ quá hạn\"; contract art. 1: \"Lãi suất quá hạn (%): Bằng 150% lãi suất trong hạn\". Page undated (footer code V01-04.26)."
+        },
+        "overdueInterestRatePercentYear": {
+          "value": null,
+          "sourceUrl": null,
+          "retrievedAt": null,
+          "confidence": null,
+          "note": "No rate for interest on overdue interest was found in the contract, the general conditions or the tariff."
+        }
+      },
+      "representativeExamples": [
+        {
+          "principalVnd": 3000000,
+          "termMonths": 6,
+          "ratePercent": 42.096,
+          "rateBasis": "reducing",
+          "ratePeriod": "yearly",
+          "amortization": "annuity",
+          "monthlyPaymentVnd": 563153,
+          "totalRepaidVnd": null,
+          "statedAnnualRatePercent": null,
+          "statedAnnualRateKind": null,
+          "includesInsurance": false,
+          "internallyConsistent": true,
+          "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-tieu-dung/",
+          "retrievedAt": "2026-11-04",
+          "confidence": "medium",
+          "note": "Product-page calculator, 'Nội thất' tab, read 2026-11-04 in the browser (defaults 3,000,000 VND, 6 months): \"Khoản thanh toán hàng tháng: 563,153 VNĐ\". The page's script rate is 3.50800%/month (= 42.096%/year). The annuity formula gives 563,153, so the figure is consistent. The total is not printed. The page's own script (function pmt, rate/1200 per month, equal instalments) gives the same figure, so this is an equal-instalment annuity with monthly compounding. The contract instead accrues interest daily on a 365-day year, so a real schedule differs slightly. The calculator ignores fees and insurance and uses one fixed rate per product, not the borrower's own rate; the page says the result is only a reference (\"chỉ mang tính chất tham khảo\")."
+        }
+      ],
+      "conflicts": [
+        {
+          "field": "rates[0].maxPercent",
+          "values": [
+            {
+              "value": "50.1266%/year",
+              "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/FL_VN.pdf",
+              "note": "Highest table row, 50.1266% (product-specific rate table, tier 1)."
+            },
+            {
+              "value": "36%/year",
+              "sourceUrl": "https://play.google.com/store/apps/details?id=com.fis.ddc.jlos.cusprod&hl=vi",
+              "note": "JACCS Vietnam app listing on Google Play (updated 11 Sep 2026): \"Lãi suất năm theo dư nợ giảm dần thấp nhất là 0% cao nhất là 36%\" for \"các khoản vay cá nhân\". Generic, not tied to one product; its own worked example does not add up (see representativeExamples of the cash loan)."
+            }
+          ],
+          "resolution": "Stored 50.1266: the product-specific, dated rate table is tier 1 and gives the higher cost; the app listing is generic. Confidence medium. Ask JACCS whether loans taken in the app are capped at 36%."
+        }
+      ],
+      "sourceUrl": "https://jaccs.com.vn/vi/category_product/vay-mua-noi-that/",
+      "retrievedAt": "2026-11-04",
+      "confidence": "medium",
+      "excludeFromRanking": true,
+      "excludeReason": "Bảng niêm yết 06/01/2026 ghi tối đa 50,1266%/năm, nhưng mô tả ứng dụng JACCS Vietnam (cập nhật 11/09/2026, mới hơn) ghi lãi suất cao nhất 36%/năm cho khoản vay cá nhân; chưa rõ mức nào áp dụng. Mức thấp nhất 0% là khuyến mại trên một số hàng hóa nên không dùng để tính chi phí.",
+      "excludeCode": "conflicting_sources",
+      "notes": "Rate table for 'Nội thất' dated 06/01/2026. The calculator uses 3.5080%/month = 42.096%/year, whereas the table row says 42.1000% (rounding difference). Nothing between 0% and 34.1%, so a borrower is either on the promotional 0% (up to 24 months) or at 34.1% or above.",
+      "borrowerNotes": [
+        {
+          "vi": "Mức 0%/năm trong bảng niêm yết là ưu đãi cho một số hàng hóa/chương trình, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm trên dư nợ giảm dần. Hỏi nhân viên JACCS hoặc đại lý lãi suất của đúng khoản vay của bạn trước khi ký.",
+          "en": "The 0% a year in the rate table is a promotion on certain goods or programmes, not a rate you are sure to get. The highest rate in the table is 50.1266% a year on the reducing balance. Ask JACCS or the dealer for the rate on your own loan before you sign."
+        },
+        {
+          "vi": "Khi tất toán trước hạn, bạn chọn (1) trả hết gốc và toàn bộ lãi của thời gian còn lại, không phí; hoặc (2) trả gốc và lãi đến ngày tất toán cộng phí 6% (5% nếu đã qua kỳ đầu) trên dư nợ gốc, tối thiểu 0,85 triệu đồng.",
+          "en": "To repay early you choose (1) pay the principal plus all interest for the remaining term, no fee, or (2) pay principal and interest to the settlement date plus a fee of 6% (5% after the first instalment) of the outstanding principal, at least 0.85 million đồng."
+        }
+      ]
+    }
+  ],
+  "researchNotes": "Researched 2026-11-04. LICENCE: 'Công ty Tài chính TNHH MTV Quốc tế Việt Nam JACCS' (id jaccs-finance, licence 80/GP-NHNN of 25/7/2018) is on data/licensed-institutions.json and the legal name matches. LEAD CHECK (topi.vn, a comparison site, not copied): JACCS's own documents are per-product 'Bảng niêm yết lãi suất ... tại điểm giới thiệu dịch vụ' PDFs linked from each product page. Consumer loan: 'BẢNG NIÊM YẾT LÃI SUẤT CHO VAY TIÊU DÙNG CÁ NHÂN TẠI ĐIỂM GIỚI THIỆU DỊCH VỤ', Ngày cập nhật 04/11/2026, 26 rows from 11.3000% to 49.9200%/year, 'dư nợ giảm dần, 1 năm = 365 ngày'; it applies to the cash-loan product only, not the whole company. The 11.3% is for JIVF employees only (topi's '18-36 months' matches only that row; the table's terms overall run 3-36 months). Motorbike: 'BẢNG NIÊM YẾT LÃI SUẤT CHO VAY XE MÁY TẠI ĐIỂM GIỚI THIỆU DỊCH VỤ', Ngày cập nhật 01/08/2026, 0.0000% to 50.1266%, 6-36 months (matches topi). topi's 'average 21.84%/year' is not supported: JACCS's own monthly average-rate notices give 28.8029% (Oct 2026), 28.8323% (Sep), 29.7802% (Aug), 28.61% (Jul), 29.0064% (Jun), 30.3678% (May), 30.4655% (Apr), 30.1152% (Mar), 28.3218% (Jan) and 28.5898% (Dec 2025). COMPANY-WIDE FRAMEWORK: 'V/v: CÔNG BỐ KHUNG LÃI SUẤT THẢ NỔI (BAO GỒM LÃI SUẤT CƠ BẢN VÀ BIÊN ĐỘ)', posted 08/10/2026, effective 13/10/2026, covers 'các sản phẩm vay' (no product named): base rate 9.894%/year, adjusted every 3 months, plus a margin of 3.5% or 4.5%, giving 13.394% or 14.394%/year, reducing balance, 365 days. Stored on each product as regulatory_ceiling with an explicit company-wide segment, but it is NOT a cap: the contract template offers three rate forms (1 giai đoạn / nhiều giai đoạn / thả nổi), the floating one being 'lãi suất thả nổi được công bố ... sau các ngày 12/01, 12/04, 12/07 và 12/10', and every listed product rate (and JACCS's own 28.8% average) is far above 14.4%. Showing it as 'trần công bố' would mislead; 'benchmark' (base rate plus margin) is the closer meaning. The monthly average-rate notice (28.8029%, Oct 2026) is stored as a benchmark. OFFERED RANGES: only the cash loan is rankable (new customers 30-49.92%/year, from the table dated 04/11/2026, newer than every conflicting source). The three goods loans (motorbike, electronics, furniture) have a table range 0-50.1266% whose 0% is a promotion, and the JACCS Vietnam app listing (Google Play, updated 11/09/2026, newer than those tables) says personal loans are 0-36%, 6-84 months; they are excluded as conflicting_sources until JACCS says which applies. FLAT/REDUCING TESTS: the product-page calculators (cash 10M/6m = 1,917,567; motorbike 5M/6m = 907,880; electronics and furniture 3M/6m = 563,153, read in the browser) equal an equal-instalment annuity at annual rate/12 per month, matching the 'dư nợ giảm dần' label (monthly compounding, whereas the contract accrues daily on 365 days). The Google Play example (10M, 12m, 2.39%/month = 28.68%/year, 'dư nợ giảm dần', pays 1,088,506, total 13,145,506) fits neither reducing (968,390) nor flat (1,072,333), and 12 x 1,088,506 differs from the stated total by 83,434; it is marked internallyConsistent=false. The Honda Wave Alpha campaign states '0,39%/tháng (tính theo dư nợ ban đầu)', i.e. flat, a different basis from the tables. FEES: the only tariff found ('BIỂU PHÍ (ÁP DỤNG TỪ 01.08.2024)', at the end of 'Điều kiện giao dịch chung', page footer code V01-04.26) lists a 12,000 VND loan management fee (monthly or one-off for the term: ambiguous), free copies and SMS, and an early-settlement fee of 6% before/at the first instalment and 5% afterwards on outstanding principal (minimum 1,650,000 VND for cash and motorbike; 850,000 VND for electronics and furniture). Because the tariff states a 2024 effective date, its figures are capped at low. Early settlement option 1 requires paying all interest for the remaining term. A 6% breach compensation applies if the contract is terminated for the borrower's breach. INSURANCE: GTC art. 4 makes cover depend on the borrower agreeing; the consumer-loan contract template names 'Dư nợ tín dụng cá nhân' by Bảo hiểm AAA (premium blank, sum insured = initial loan, JIVF first beneficiary) and pre-prints 'Và mua bảo hiểm' as a loan purpose, with insurance lines inside the loan amount, but its appendix also says the borrower pays the premium. No premium figure is published anywhere we found. Car loans require vehicle insurance (out of scope). NOT FOUND (searched, not published): minimum/maximum age, minimum income and employer rules for any product (searched the product pages and calculators, FAQ, GTC, both contract templates, the Google Play listing, news posts of 04-10/2026, and a site:jaccs.com.vn search); a premium rate; an App Store listing (the website links only Google Play); a published worked example with amounts for the motorbike, electronics or furniture loans; whether the products are available in Hanoi and HCMC (the site mentions 34 provinces and cities). NOT RECORDED (out of scope or table mismatch): car, big motorbike (PKL), machinery, car parts, e-bicycle, electric motorbike and health/beauty loans. The website's electric-motorbike link (Published-Interest-Rate-EM_VN.pdf) actually serves a motorbike table dated 06/01/2026, and the car-parts and e-bicycle links look swapped (AS_VN and EB_VN). The 'JACCS Vietnam' app (developer JACCS INTERNATIONAL VIETNAM FINANCE COMPANY LIMITED) exists, but the product pages describe a counter-based process, so online is left null. JACCS also warns on its site of scammers impersonating JIVF. SURPRISES: the cash-loan rate table was updated on the same day as this research and may change; the tariff is dated 2024; no age rule or insurance premium is published; the contract-template address predates the 2025 ward reorganisation, so the template is probably old.",
+  "retrievedAt": "2026-11-04"
+}

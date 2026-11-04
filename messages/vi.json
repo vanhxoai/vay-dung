@@ -176,6 +176,7 @@
       "rate_varies": "Lãi suất thay đổi nhiều tùy chương trình hoặc nguồn đã cũ, nên chưa tính được mức cho bạn.",
       "conflicting_sources": "Hai tài liệu chính thức của ngân hàng ghi lãi suất khác nhau cho cùng kỳ hạn và đều không ghi ngày, nên chưa biết mức nào đúng.",
       "undated_document": "Số liệu chỉ đến từ một tài liệu không ghi ngày. Ngân hàng cho biết lãi suất đã thay đổi nhưng chưa công bố mức mới.",
+      "same_loan_other_channel": "Sản phẩm này có vẻ là cùng khoản vay với khoản vay tiền mặt của bên này, chỉ khác kênh đăng ký, nên không xếp hạng riêng.",
       "range_basis_unknown": "Ngân hàng công bố một khoảng lãi suất nhưng không nói tính trên số tiền vay ban đầu hay dư nợ giảm dần, nên chưa tính được chi phí.",
       "floor_and_range": "Chúng tôi chỉ tìm thấy mức quảng cáo (\"từ...\") và khung lãi suất chung do công ty công bố. Lãi suất thực tế tùy kết quả thẩm định hồ sơ.",
       "ceiling_only": "Chúng tôi chỉ tìm thấy khung lãi suất chung, chưa thấy lãi suất thực tế.",
