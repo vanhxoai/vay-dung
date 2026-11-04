@@ -66,7 +66,9 @@ export function Results({
   else verdictBody = t("Verdict.too_much_with_interest.body", { ...common, lowestPayment: formatVnd(lowestPayment) });
 
   const showAlternatives = rec.verdict === "depends" || rec.verdict === "too_much" || rec.verdict === "no_income" || rec.verdict === "no_data";
-  const allTooYoung = rec.verdict === "no_data" && rec.ineligible.length > 0 && rec.ineligible.every((i) => i.reasons.includes("too_young"));
+  // Products with no published age limit can't be blocked by age, so they don't count here.
+  const withAgeLimit = rec.ineligible.filter((i) => i.offer.minAge !== null);
+  const allTooYoung = rec.verdict === "no_data" && withAgeLimit.length > 0 && withAgeLimit.every((i) => i.reasons.includes("too_young"));
   const best = rec.ranked[0];
   const longestTerm = TERMS[TERMS.length - 1];
   // Only offer "repay longer" if it could actually bring the principal within reach.

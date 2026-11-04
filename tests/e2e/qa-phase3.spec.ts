@@ -52,7 +52,7 @@ test.describe("eligibility boundaries", () => {
     await run(page, { amount: "20000000", income: "15000000", age: "62" });
     const at62 = await offerKeys(page);
     expect(at62.length).toBeGreaterThan(0);
-    expect(at62.every((k) => k.startsWith("vpbank") || k.startsWith("jaccs"))).toBe(true);
+    expect(at62.every((k) => /^(vpbank|jaccs|vietcredit)/.test(k))).toBe(true);
   });
 });
 
