@@ -203,8 +203,8 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
   }
 
   const charges = mandatoryCharges(offer, need);
-  // A promotional minimum isn't this borrower's rate, so it can't soften the cost or the verdict.
-  const low = r.minIsPromotional ? costAt(offer, r.maxPercent, need, charges.high) : costAt(offer, r.minPercent, need, charges.low);
+  // A promotional or unconfirmed minimum isn't this borrower's rate, so it can't soften the cost or the verdict.
+  const low = r.minIsPromotional || r.minUnconfirmed ? costAt(offer, r.maxPercent, need, charges.high) : costAt(offer, r.minPercent, need, charges.low);
   const high = costAt(offer, r.maxPercent, need, charges.high);
   const atLow = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, low.maxPaymentVnd);
   const atHigh = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, high.maxPaymentVnd);
@@ -232,7 +232,8 @@ function chargeTiming(ins: OfferInsurance): Charge["timing"] {
 
 /** A verdict of "ok" can't rest on a product we can't fully cost or that many people can't get. */
 function isReliableForVerdict(r: RankedOffer): boolean {
-  return !r.feesAllUnknown && r.offer.existingCustomerRequired !== true && r.offer.employerRestriction === null;
+  const ageKnown = r.offer.minAge !== null && r.offer.maxAge !== null;
+  return !r.feesAllUnknown && ageKnown && r.offer.existingCustomerRequired !== true && r.offer.employerRestriction === null;
 }
 
 /** Real cost order, high end first; a product with entirely unknown fees can't be first. */

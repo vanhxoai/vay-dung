@@ -135,6 +135,8 @@ export const Rate = z.strictObject({
   promotional: z.boolean().nullable(),
   /** The minimum is a promotion on selected goods, so it is never used for a borrower's cost or verdict. */
   minIsPromotional: z.boolean().optional(),
+  /** The minimum disagrees with what the lender advertises for this product, so costs use the maximum. */
+  minUnconfirmed: z.boolean().optional(),
 });
 export type Rate = z.infer<typeof Rate>;
 

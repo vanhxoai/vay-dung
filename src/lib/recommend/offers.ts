@@ -37,6 +37,8 @@ export type OfferRate = {
   basisInferred: boolean;
   /** The minimum is a promotion on selected goods: costs use the maximum. */
   minIsPromotional?: boolean;
+  /** The minimum disagrees with what the lender advertises: costs use the maximum. */
+  minUnconfirmed?: boolean;
   segment: string | null;
   sourceUrl: string;
   retrievedAt: string;
@@ -256,6 +258,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
             period: rate.period.value as "monthly" | "yearly",
             basisInferred: rate.basis.provenance === "inferred",
             minIsPromotional: rate.minIsPromotional,
+            minUnconfirmed: rate.minUnconfirmed,
             segment: rate.segment,
             sourceUrl: (rate.maxPercent.sourceUrl ?? rate.minPercent.sourceUrl ?? p.sourceUrl) as string,
             retrievedAt: (rate.maxPercent.retrievedAt ?? rate.minPercent.retrievedAt ?? p.retrievedAt) as string,

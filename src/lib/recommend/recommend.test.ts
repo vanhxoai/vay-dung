@@ -33,6 +33,24 @@ describe("a promotional 0% minimum", () => {
   });
 });
 
+describe("a published range for a customer group", () => {
+  it("is costed at its top when the minimum disagrees with the lender's own adverts", () => {
+    const lotte = recommend(need(), offers, today).ranked.find((r) => r.offer.key === "lotte-finance/lotte-salaried-cash-loan");
+    expect(lotte?.low.totalCostVnd).toBe(lotte?.high.totalCostVnd);
+    expect(lotte?.high.aprNominal).toBeGreaterThan(0.6);
+  });
+
+  it("can't give an OK verdict for a product with no published age limits", () => {
+    const rec = recommend(need({ age: 70, purpose: "phone" }), offers, today);
+    expect(rec.ranked.map((r) => r.offer.key)).toEqual(["jaccs/cash-loan"]);
+    expect(rec.verdict).toBe("depends");
+  });
+
+  it("keeps Mirae Asset unranked until its figures are confirmed by hand", () => {
+    expect(recommend(need(), offers, today).ranked.some((r) => r.offer.key.startsWith("mirae-asset"))).toBe(false);
+  });
+});
+
 describe("the finance-company cap", () => {
   it("is the only amount reason above 100 million, so a higher advertised maximum isn't shown", () => {
     const hc = offers.find((o) => o.key === "home-credit/cash-loan") as Offer;

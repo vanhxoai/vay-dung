@@ -81,7 +81,7 @@ test.describe("phase 6 ship-check", () => {
 
   // Regression: under-20s were told "can't calculate" with no hint that age was the reason.
   test("when everything needs an older borrower, the verdict says so", async ({ page }) => {
-    await results(page, "20000000", "15000000", "24", "Trong tháng này", "19");
+    await results(page, "3000000", "15000000", "12", "Trong tháng này", "19");
     const verdict = page.getByTestId("verdict");
     await expect(verdict).toHaveAttribute("data-verdict", "no_data");
     await expect(verdict).toContainText("yêu cầu tuổi cao hơn");

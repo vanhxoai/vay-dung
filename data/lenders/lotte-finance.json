@@ -77,7 +77,7 @@
           "promotional": null
         },
         {
-          "kind": "regulatory_ceiling",
+          "kind": "offered_range",
           "segment": "Khách hàng có nguồn thu nhập từ lương",
           "minPercent": {
             "value": 8,
@@ -107,7 +107,8 @@
             "sourceUrl": "https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg",
             "note": "Framework column is in %/năm."
           },
-          "promotional": null
+          "promotional": null,
+          "minUnconfirmed": true
         }
       ],
       "amortization": {
@@ -516,10 +517,15 @@
       "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/6F20D0AF676341B09BE048AA30C95831",
       "retrievedAt": "2026-11-02",
       "confidence": "medium",
-      "excludeFromRanking": true,
+      "excludeFromRanking": false,
       "notes": "Advertised rate is a floor quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\"; the published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) gives 8%-66%/year (row 4) with basis unstated, so the rate a borrower gets is unknown. The calculator on the loan list page offers 6-60 months; product pages say 6-36; we store 36. 2026-11-02 deep dive: Lotte's loan terms (Điều 5, 8) and contract template say the contract rate is %/year on the actual balance with equal monthly payments (PMT), so the 'từ X%/tháng tính theo dư nợ ban đầu' on the page is a flat-equivalent figure. The framework is Lotte's company-set rate range per customer group (Circular 43 art. 9), not a legal cap, and the loan-list simulator says the rate is decided at appraisal. No scheme-level rate table, worked example for this scheme, or insurance premium is published. A stale hidden attribute in the page source (not displayed) shows the page used to quote a monthly reducing-balance rate with a flat 'dư nợ ban đầu' equivalent about 1.85x lower, which fits this reading; it is not used as a figure. To unlock ranking: Lotte must state a min-max rate for this scheme (product page, scheme-code rate table, or contract) with its basis, or the project must decide to accept the Art. 9 range as offered_range (the data is ready: reducing, yearly, inferred). Framework minimum 8% for this group is below the page floor's reducing equivalent (about 19-20%), so it is probably for sub-schemes not shown on the page.",
       "nameEn": "Cash loan for customers with salary income",
-      "excludeReason": "Trang sản phẩm chỉ nêu lãi suất 'từ' (thấp nhất), quy đổi theo dư nợ ban đầu. Lotte công bố khung lãi suất theo năm cho nhóm khách hàng này (tính trên dư nợ giảm dần, suy luận từ điều kiện giao dịch chung), nhưng lãi suất thực tế do thẩm định hồ sơ quyết định. Chưa có mức lãi suất chào bán cho sản phẩm này."
+      "borrowerNotes": [
+        {
+          "vi": "Lotte công bố khung 8–66%/năm cho nhóm khách hàng này, còn trang sản phẩm quảng cáo từ 0,94%/tháng lãi phẳng. Hai con số này không khớp nhau, nên chúng tôi tính theo mức cao nhất, 66%/năm. Lãi suất thực tế của bạn có thể thấp hơn; hãy hỏi trước khi ký.",
+          "en": "Lotte publishes a 8–66% a year range for this customer group, while the product page advertises from 0.94% a month flat. These don't match, so we calculate at the top, 66% a year. Your actual rate may be lower; ask before signing."
+        }
+      ]
     },
     {
       "id": "lotte-credit-history-cash-loan",
@@ -591,7 +597,7 @@
           "promotional": null
         },
         {
-          "kind": "regulatory_ceiling",
+          "kind": "offered_range",
           "segment": "Khách hàng có lịch sử vay tại các TCTD",
           "minPercent": {
             "value": 20,
@@ -621,7 +627,8 @@
             "sourceUrl": "https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg",
             "note": "Framework column is in %/năm."
           },
-          "promotional": null
+          "promotional": null,
+          "minUnconfirmed": true
         }
       ],
       "amortization": {
@@ -1008,10 +1015,15 @@
       "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/B2B0B070C98A44609E348C5EDD7419BF",
       "retrievedAt": "2026-11-02",
       "confidence": "medium",
-      "excludeFromRanking": true,
+      "excludeFromRanking": false,
       "notes": "Advertised rate is a floor quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\"; the published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) gives 20%-59%/year (row 5) with basis unstated, so the rate a borrower gets is unknown. Condition: customer has had or has a loan at a credit institution. 2026-11-02 deep dive: Lotte's loan terms (Điều 5, 8) and contract template say the contract rate is %/year on the actual balance with equal monthly payments (PMT), so the 'từ X%/tháng tính theo dư nợ ban đầu' on the page is a flat-equivalent figure. The framework is Lotte's company-set rate range per customer group (Circular 43 art. 9), not a legal cap, and the loan-list simulator says the rate is decided at appraisal. No scheme-level rate table, worked example for this scheme, or insurance premium is published. A stale hidden attribute in the page source (not displayed) shows the page used to quote a monthly reducing-balance rate with a flat 'dư nợ ban đầu' equivalent about 1.85x lower, which fits this reading; it is not used as a figure. To unlock ranking: Lotte must state a min-max rate for this scheme (product page, scheme-code rate table, or contract) with its basis, or the project must decide to accept the Art. 9 range as offered_range (the data is ready: reducing, yearly, inferred).",
       "nameEn": "Cash loan for customers with loan history at credit institutions",
-      "excludeReason": "Trang sản phẩm chỉ nêu lãi suất 'từ' (thấp nhất), quy đổi theo dư nợ ban đầu. Lotte công bố khung lãi suất theo năm cho nhóm khách hàng này (tính trên dư nợ giảm dần, suy luận từ điều kiện giao dịch chung), nhưng lãi suất thực tế do thẩm định hồ sơ quyết định. Chưa có mức lãi suất chào bán cho sản phẩm này."
+      "borrowerNotes": [
+        {
+          "vi": "Lotte công bố khung 20–59%/năm cho nhóm khách hàng này, còn trang sản phẩm quảng cáo từ 1,98%/tháng lãi phẳng. Hai con số này không khớp nhau, nên chúng tôi tính theo mức cao nhất, 59%/năm. Lãi suất thực tế của bạn có thể thấp hơn; hãy hỏi trước khi ký.",
+          "en": "Lotte publishes a 20–59% a year range for this customer group, while the product page advertises from 1.98% a month flat. These don't match, so we calculate at the top, 59% a year. Your actual rate may be lower; ask before signing."
+        }
+      ]
     },
     {
       "id": "lotte-life-insurance-cash-loan",
@@ -1083,7 +1095,7 @@
           "promotional": null
         },
         {
-          "kind": "regulatory_ceiling",
+          "kind": "offered_range",
           "segment": "Khách hàng có hợp đồng bảo hiểm nhân thọ",
           "minPercent": {
             "value": 20,
@@ -1113,7 +1125,8 @@
             "sourceUrl": "https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg",
             "note": "Framework column is in %/năm."
           },
-          "promotional": null
+          "promotional": null,
+          "minUnconfirmed": true
         }
       ],
       "amortization": {
@@ -1496,10 +1509,15 @@
       "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTXK21-GK2JHK",
       "retrievedAt": "2026-11-02",
       "confidence": "medium",
-      "excludeFromRanking": true,
+      "excludeFromRanking": false,
       "notes": "Advertised rate is a floor quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\"; the published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) gives 20%-55%/year (row 3) with basis unstated, so the rate a borrower gets is unknown. Not a typical salaried-worker product. 2026-11-02 deep dive: Lotte's loan terms (Điều 5, 8) and contract template say the contract rate is %/year on the actual balance with equal monthly payments (PMT), so the 'từ X%/tháng tính theo dư nợ ban đầu' on the page is a flat-equivalent figure. The framework is Lotte's company-set rate range per customer group (Circular 43 art. 9), not a legal cap, and the loan-list simulator says the rate is decided at appraisal. No scheme-level rate table, worked example for this scheme, or insurance premium is published. A stale hidden attribute in the page source (not displayed) shows the page used to quote a monthly reducing-balance rate with a flat 'dư nợ ban đầu' equivalent about 1.85x lower, which fits this reading; it is not used as a figure. To unlock ranking: Lotte must state a min-max rate for this scheme (product page, scheme-code rate table, or contract) with its basis, or the project must decide to accept the Art. 9 range as offered_range (the data is ready: reducing, yearly, inferred).",
       "nameEn": "Cash loan for customers with a life insurance contract",
-      "excludeReason": "Trang sản phẩm chỉ nêu lãi suất 'từ' (thấp nhất), quy đổi theo dư nợ ban đầu. Lotte công bố khung lãi suất theo năm cho nhóm khách hàng này (tính trên dư nợ giảm dần, suy luận từ điều kiện giao dịch chung), nhưng lãi suất thực tế do thẩm định hồ sơ quyết định. Chưa có mức lãi suất chào bán cho sản phẩm này."
+      "borrowerNotes": [
+        {
+          "vi": "Lotte công bố khung 20–55%/năm cho nhóm khách hàng này, còn trang sản phẩm quảng cáo từ 2,03%/tháng lãi phẳng. Hai con số này không khớp nhau, nên chúng tôi tính theo mức cao nhất, 55%/năm. Lãi suất thực tế của bạn có thể thấp hơn; hãy hỏi trước khi ký.",
+          "en": "Lotte publishes a 20–55% a year range for this customer group, while the product page advertises from 2.03% a month flat. These don't match, so we calculate at the top, 55% a year. Your actual rate may be lower; ask before signing."
+        }
+      ]
     },
     {
       "id": "lotte-women-cash-loan",
@@ -1571,7 +1589,7 @@
           "promotional": null
         },
         {
-          "kind": "regulatory_ceiling",
+          "kind": "offered_range",
           "segment": "Khách hàng là phụ nữ",
           "minPercent": {
             "value": 20,
@@ -1601,7 +1619,8 @@
             "sourceUrl": "https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg",
             "note": "Framework column is in %/năm."
           },
-          "promotional": null
+          "promotional": null,
+          "minUnconfirmed": true
         }
       ],
       "amortization": {
@@ -1985,10 +2004,15 @@
       "sourceUrl": "https://lottefinance.vn/web/loan/loanMainDetail/U75NPTD46P-GK2J2U",
       "retrievedAt": "2026-11-02",
       "confidence": "medium",
-      "excludeFromRanking": true,
+      "excludeFromRanking": false,
       "notes": "Advertised rate is a floor quoted \"từ X%/tháng (tính theo dư nợ ban đầu)\"; the published rate framework (effective 01/03/2026, https://lottefinance.vn/images/resources/file/KhungLaiSuat_100226.jpg) gives 20%-66%/year (row 6) with basis unstated, so the rate a borrower gets is unknown. Photo of motorbike registration only (not kept). 2026-11-02 deep dive: Lotte's loan terms (Điều 5, 8) and contract template say the contract rate is %/year on the actual balance with equal monthly payments (PMT), so the 'từ X%/tháng tính theo dư nợ ban đầu' on the page is a flat-equivalent figure. The framework is Lotte's company-set rate range per customer group (Circular 43 art. 9), not a legal cap, and the loan-list simulator says the rate is decided at appraisal. No scheme-level rate table, worked example for this scheme, or insurance premium is published. A stale hidden attribute in the page source (not displayed) shows the page used to quote a monthly reducing-balance rate with a flat 'dư nợ ban đầu' equivalent about 1.85x lower, which fits this reading; it is not used as a figure. To unlock ranking: Lotte must state a min-max rate for this scheme (product page, scheme-code rate table, or contract) with its basis, or the project must decide to accept the Art. 9 range as offered_range (the data is ready: reducing, yearly, inferred).",
       "nameEn": "Cash loan for women",
-      "excludeReason": "Trang sản phẩm chỉ nêu lãi suất 'từ' (thấp nhất), quy đổi theo dư nợ ban đầu. Lotte công bố khung lãi suất theo năm cho nhóm khách hàng này (tính trên dư nợ giảm dần, suy luận từ điều kiện giao dịch chung), nhưng lãi suất thực tế do thẩm định hồ sơ quyết định. Chưa có mức lãi suất chào bán cho sản phẩm này."
+      "borrowerNotes": [
+        {
+          "vi": "Lotte công bố khung 20–66%/năm cho nhóm khách hàng này, còn trang sản phẩm quảng cáo từ 1,04%/tháng lãi phẳng. Hai con số này không khớp nhau, nên chúng tôi tính theo mức cao nhất, 66%/năm. Lãi suất thực tế của bạn có thể thấp hơn; hãy hỏi trước khi ký.",
+          "en": "Lotte publishes a 20–66% a year range for this customer group, while the product page advertises from 1.04% a month flat. These don't match, so we calculate at the top, 66% a year. Your actual rate may be lower; ask before signing."
+        }
+      ]
     },
     {
       "id": "lotte-paylater",

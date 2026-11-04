@@ -47,8 +47,8 @@
       },
       "rates": [
         {
-          "kind": "regulatory_ceiling",
-          "segment": "Khung lãi suất công bố cho cả sản phẩm Tin Vay vay tiêu dùng cá nhân (mọi kênh đối tác), không phải mức riêng của một khách hàng. Lãi suất cụ thể do VietCredit duyệt cho từng khách hàng.",
+          "kind": "offered_range",
+          "segment": "Biểu lãi suất công bố cho sản phẩm Tin Vay, không phải mức riêng của một khách hàng",
           "minPercent": {
             "value": 0,
             "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
@@ -77,7 +77,8 @@
             "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
             "note": "Source wording: \"%/năm\"; one year = 365 days (T&C art. 3.1)."
           },
-          "promotional": false
+          "promotional": false,
+          "minUnconfirmed": true
         }
       ],
       "amortization": {
@@ -432,20 +433,11 @@
       "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan",
       "retrievedAt": "2026-11-04",
       "confidence": "medium",
-      "excludeFromRanking": true,
-      "excludeReason": "VietCredit publishes only a company-wide rate framework for Tin Vay (0-89%/year, reducing balance), not an offered range for this product. Actual rates come with each approval.",
+      "excludeFromRanking": false,
       "borrowerNotes": [
         {
-          "vi": "VietCredit chỉ công bố khung lãi suất Tin Vay từ 0% đến 89%/năm (dư nợ giảm dần) cho mọi khách hàng. Đây không phải lãi suất bạn sẽ nhận: lãi suất của bạn chỉ rõ sau khi được duyệt, ghi trong hợp đồng. Hãy đọc kỹ trước khi ký.",
-          "en": "VietCredit only publishes a Tin Vay rate framework of 0% to 89% a year (reducing balance) for all customers. It is not the rate you will get: your rate is set when you are approved and is written in the contract. Read it before you sign."
-        },
-        {
-          "vi": "Trả hết nợ trước hạn có phí trả nợ trước hạn (tỷ lệ ghi trong hợp đồng; trang Viettel Money công bố 5% dư nợ gốc còn lại). Trả trước một phần các kỳ sau thì không mất phí.",
-          "en": "Settling the whole loan early costs an early repayment fee (the percentage is in the contract; the Viettel Money page states 5% of the remaining principal). Paying later instalments in advance is free."
-        },
-        {
-          "vi": "Nếu trả nợ qua điểm thu hộ hoặc chuyển khoản, đơn vị thu hộ có thể tính phí riêng cho mỗi lần thanh toán.",
-          "en": "If you pay through a collection point or transfer service, that provider may charge its own fee on each payment."
+          "vi": "VietCredit công bố 0–89%/năm cho sản phẩm Tin Vay và không nói mức nào dành cho ai, nên chúng tôi tính theo mức cao nhất, 89%/năm. Lãi suất thực tế của bạn có thể thấp hơn nhiều; hãy hỏi trước khi ký.",
+          "en": "VietCredit publishes 0–89% a year for Tin Vay without saying who gets which rate, so we calculate at the top, 89% a year. Your actual rate may be much lower; ask before signing."
         }
       ],
       "notes": "Scope and source of the company rate table: 'BIỂU LÃI SUẤT CHO SẢN PHẨM VAY TIÊU DÙNG TIN VAY (Dành cho khách hàng cá nhân vay tiêu dùng)', Decision 145C/2026/VietCredit-QĐ, effective 01/02/2026 until amended; it replaces decision 330D/2025/VietCredit-QĐ of 21/05/2025 (issued for the Digital Lending business centre). It covers the Tin Vay individual consumer loan only: not credit cards, BNPL, small-trader or business loans. It does not name channels; that it covers every partner channel is our reading of the 'TIN VAY' contract family, not a statement in the table. Read 2026-11-04 with pdftotext. Contract documents read: T&C (BM 02-CVTD-L6, dated 12.10.2026 on the forms list, also 18.08.2026), credit contract and loan application templates (06.10.2025), payment schedule template. Contract art. 1.7 says VietCredit charges no other interest or fee than those listed in the contract, and no insurance appears in any of these documents; insurance is therefore not in the product, but because the percentage fields are blank the file is marked 'unknown' for insurance."

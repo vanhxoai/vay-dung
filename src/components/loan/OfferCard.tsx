@@ -99,6 +99,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       {offer.existingCustomerRequired ? <p className={notice}>{t("existingCustomer")}</p> : null}
       {offer.employerRestriction ? <p className={notice}>{t("employer", { value: offer.employerRestriction })}</p> : null}
       {unknownLimits ? <p className={notice}>{t("unknownLimits")}</p> : null}
+      {offer.minAge === null && offer.maxAge === null ? <p className={notice}>{t("ageUnknown")}</p> : null}
 
       <p>{t("sentence", { amount: formatLoanAmount(need.amountVnd, locale), total: totalPaid, term: need.termMonths })}</p>
 
