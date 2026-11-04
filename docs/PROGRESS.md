@@ -154,3 +154,15 @@ The deployment went straight to production, so there was no preview step (DECISI
 Checked on the live site: nothing typed appears in requests, no cookies, the 0% and "don't borrow" cases behave correctly, and amounts above 100 million show only the cap reason.
 
 **Next:** your decision on what to do about the 41 unranked products.
+
+## Six more lenders and group ranges (2026-11-04)
+**Status:** committed, not live. Waiting for your decision on publishing.
+
+- Added AEON, JACCS, Mirae Asset, SFinance, TNEX and VietCredit, using the lenders' own documents. Topi was used only for leads.
+- 20 lender files, 82 products shown, 14 ranked (was 14 files, 48 and 7).
+- New rule (DECISIONS #61): a range naming a product or customer group can be ranked. Where its minimum disagrees with the lender's adverts, costs use the maximum and the card says so.
+- Mirae Asset's 11 products stay unranked until you confirm its public PDF by hand (DECISIONS #62).
+- Math check, compliance review and QA are done, with their must-fix items applied. 220 unit tests and 119 browser tests pass, and three independent math checks report no failures.
+- Open: long cards, some goods loans listed under every purpose, the 1-đồng gap between the verdict and a card, and new lawyer questions, including naming a lender at a top-of-range rate.
+
+**Next:** your decision on publishing.
