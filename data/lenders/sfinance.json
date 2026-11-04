@@ -75,7 +75,8 @@
             "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
             "note": "The example and footnote state \"%/năm\" (16,44%/năm; 35,4%). The headline \"1.37%/tháng\" is the same rate per month."
           },
-          "promotional": false
+          "promotional": false,
+          "maxIsReference": true
         },
         {
           "kind": "regulatory_ceiling",
@@ -266,11 +267,11 @@
             "note": "T&C art. 2.1 puts the collection fee inside the monthly amount payable; the page calculator's API returns monthly payment = annuity + 12,000 rounded up to 1,000 (10,000,000 / 36 months: 419,070 -> 432,000). Art. 2.2 note: if the borrower pays without a collection agent, SFinance holds the collection-fee part, pays no interest on it and deducts it from the next month's amount."
           },
           "mandatory": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Unclear whether it is always charged: the T&C ties it to payments through intermediaries and credits it back otherwise, but the calculator and the page's worked example include it by default."
+            "value": true,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Costed as mandatory under the conservative rule: SFinance's own calculator includes it. It may depend on how you pay."
           },
           "base": "not_applicable",
           "rule": "fixed_only",
@@ -468,9 +469,9 @@
         "otherConditions": {
           "value": [
             "Công dân Việt Nam, đủ năng lực hành vi dân sự",
-            "Có nguồn thu nhập ổn định (ưu tiên người nhận lương qua tài khoản, có hợp đồng bảo hiểm nhân thọ hoặc là chủ hộ kinh doanh để được lãi suất tốt nhất)",
+            "Theo trang của SFinance: Có nguồn thu nhập ổn định (ưu tiên người nhận lương qua tài khoản, có hợp đồng bảo hiểm nhân thọ hoặc là chủ hộ kinh doanh để được lãi suất tốt nhất)",
             "Khoản vay tối đa 7 lần thu nhập (bảng thông tin của trang vay tiền mặt; tiêu đề trang ghi \"đến 10 lần thu nhập\")",
-            "Không cần thế chấp; đang có khoản vay hoặc dư nợ thẻ ở nơi khác vẫn có thể đăng ký",
+            "Theo trang của SFinance: Không cần thế chấp; đang có khoản vay hoặc dư nợ thẻ ở nơi khác vẫn có thể đăng ký",
             "Người có nợ xấu hoặc chưa có lịch sử tín dụng vẫn có thể đăng ký, kết quả tùy thẩm định"
           ],
           "sourceUrl": "https://www.sfinance.com.vn/vay-tien-mat",
@@ -620,8 +621,8 @@
       "notes": "Researched 2026-11-04. The lender's own product page gives a floor (1.37%/month = 16.44%/year flat) and a reference maximum (35.4%/year flat), so this is stored as offered_range, flat, yearly, medium confidence, because both are labelled \"tham chiếu\" (reference). The contract rate is a reducing-balance rate printed in the loan contract (\"__ %/tháng, tương đương __ %/năm\", form 14.10.2026 art. 1.6); the rate framework (0-70%/year) is a separate company-wide ceiling. The page's own calculator uses a single 29%/year reducing reference for every borrower.",
       "borrowerNotes": [
         {
-          "vi": "SFinance quảng cáo lãi \"phẳng\" từ 1,37%/tháng và ghi tương đương khoảng 2,4%/tháng trên dư nợ giảm dần. Mức lãi bạn nhận được ghi trong hợp đồng và có thể cao hơn.",
-          "en": "SFinance advertises a \"flat\" rate from 1.37% a month and says it equals about 2.4% a month on the declining balance. Your own rate is written in your contract and may be higher."
+          "vi": "SFinance gọi các mức này là lãi suất \"tham chiếu\": từ 1,37%/tháng (16,44%/năm) đến tối đa 35,4%/năm, đều là lãi phẳng, tức tính trên số tiền vay ban đầu. SFinance ghi 1,37%/tháng lãi phẳng tương đương khoảng 2,4%/tháng trên dư nợ giảm dần. Hợp đồng ghi lãi suất trên dư nợ giảm dần, nên con số trong hợp đồng sẽ lớn hơn con số lãi phẳng dù cùng một số tiền phải trả. Khung lãi suất SFinance công bố cho vay tiền mặt là đến 70%/năm trên dư nợ giảm dần, nên lãi suất của bạn có thể cao hơn mức chúng tôi tính. Hãy hỏi số tiền trả mỗi tháng và tổng tiền phải trả trước khi ký.",
+          "en": "SFinance calls these \"reference\" rates: from 1.37% a month (16.44% a year) up to a maximum of 35.4% a year, all flat, meaning charged on the original loan amount. SFinance says 1.37% a month flat equals about 2.4% a month on the reducing balance. Your contract states a reducing-balance rate, so that number will be higher than the flat number even for the same repayments. SFinance's published range for cash loans goes up to 70% a year on the reducing balance, so your rate may be higher than we calculate. Ask for the monthly payment and the total repayable before signing."
         },
         {
           "vi": "Trả nợ trước hạn: phí 5% dư nợ gốc còn lại; chỉ tất toán toàn bộ (không trả trước một phần) và sau khi đã trả ít nhất 6 kỳ nếu vay từ 10 tháng trở lên.",
@@ -630,6 +631,14 @@
         {
           "vi": "Số tiền phải trả hàng tháng theo hợp đồng có thể gồm phí thu hộ 12.000 đồng cho mỗi lần trả nợ qua đơn vị thu hộ; máy tính trên trang chưa cộng khoản này vào số hiển thị.",
           "en": "The monthly amount under the contract can include a 12,000 đồng collection fee for each payment made through a collection unit; the page calculator does not add it to the figure it shows."
+        },
+        {
+          "vi": "SFinance là tên mới của SHBFinance từ tháng 8/2026. Theo tin của SFinance ngày 02/11/2026, công ty nay thuộc Krungsri, không còn là công ty con của ngân hàng SHB. Hãy kiểm tra đúng tên công ty trong hợp đồng.",
+          "en": "SFinance is the new name of SHBFinance, since August 2026. According to SFinance's news of 2 Nov 2026, it now belongs to Krungsri and is no longer an SHB bank subsidiary. Check the company name in your contract."
+        },
+        {
+          "vi": "Theo trang của SFinance, số tiền vay tối đa khoảng 7 lần thu nhập.",
+          "en": "According to SFinance's page, the maximum loan is about 7 times income."
         }
       ]
     },
@@ -701,7 +710,8 @@
             "sourceUrl": "https://www.sfinance.com.vn/vay-nhanh-tren-ung-dung",
             "note": "The example and footnote state \"%/năm\" (16,44%/năm; 35,4%). The headline \"1.37%/tháng\" is the same rate per month."
           },
-          "promotional": false
+          "promotional": false,
+          "maxIsReference": true
         },
         {
           "kind": "regulatory_ceiling",
@@ -861,11 +871,11 @@
             "note": "T&C art. 2.1 puts the collection fee inside the monthly amount payable; the page calculator's API returns monthly payment = annuity + 12,000 rounded up to 1,000 (10,000,000 / 36 months: 419,070 -> 432,000). Art. 2.2 note: if the borrower pays without a collection agent, SFinance holds the collection-fee part, pays no interest on it and deducts it from the next month's amount."
           },
           "mandatory": {
-            "value": null,
-            "sourceUrl": null,
-            "retrievedAt": null,
-            "confidence": null,
-            "note": "Unclear whether it is always charged: the T&C ties it to payments through intermediaries and credits it back otherwise, but the calculator and the page's worked example include it by default."
+            "value": true,
+            "sourceUrl": "https://static-files.sfinance.com.vn/uploads/B%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KHO%E1%BA%A2N%20%C4%90I%E1%BB%80U%20KI%E1%BB%86N%20TH%C3%81NG%2010.2026.pdf",
+            "retrievedAt": "2026-11-04",
+            "confidence": "low",
+            "note": "Costed as mandatory under the conservative rule: SFinance's own calculator includes it. It may depend on how you pay."
           },
           "base": "not_applicable",
           "rule": "fixed_only",
@@ -1063,9 +1073,9 @@
         "otherConditions": {
           "value": [
             "Công dân Việt Nam, đủ năng lực hành vi dân sự",
-            "Có nguồn thu nhập ổn định (ưu tiên người nhận lương qua tài khoản, có hợp đồng bảo hiểm nhân thọ hoặc là chủ hộ kinh doanh để được lãi suất tốt nhất)",
+            "Theo trang của SFinance: Có nguồn thu nhập ổn định (ưu tiên người nhận lương qua tài khoản, có hợp đồng bảo hiểm nhân thọ hoặc là chủ hộ kinh doanh để được lãi suất tốt nhất)",
             "Khoản vay tối đa 7 lần thu nhập (bảng thông tin của trang vay tiền mặt; tiêu đề trang ghi \"đến 10 lần thu nhập\")",
-            "Không cần thế chấp; đang có khoản vay hoặc dư nợ thẻ ở nơi khác vẫn có thể đăng ký",
+            "Theo trang của SFinance: Không cần thế chấp; đang có khoản vay hoặc dư nợ thẻ ở nơi khác vẫn có thể đăng ký",
             "Người có nợ xấu hoặc chưa có lịch sử tín dụng vẫn có thể đăng ký, kết quả tùy thẩm định",
             "Có lịch sử tín dụng tốt, không nợ xấu (điều kiện ghi trên trang vay nhanh trên ứng dụng)"
           ],
@@ -1180,8 +1190,8 @@
       "notes": "Researched 2026-11-04. The app page repeats the cash-loan page's floor (1.37%/month), reference maximum (35.4%/year flat), amounts and 6-36 month terms. The T&C and early-repayment fee are the same documents as for the cash loan. This is probably the same loan as vay-tien-mat applied for through the app, so listing both may show the same lender twice. The app page is the only one to say a 5 million minimum, ages 20-59 and \"lịch sử tín dụng tốt\".",
       "borrowerNotes": [
         {
-          "vi": "SFinance quảng cáo lãi \"phẳng\" từ 1,37%/tháng và ghi tương đương khoảng 2,4%/tháng trên dư nợ giảm dần. Mức lãi bạn nhận được ghi trong hợp đồng và có thể cao hơn.",
-          "en": "SFinance advertises a \"flat\" rate from 1.37% a month and says it equals about 2.4% a month on the declining balance. Your own rate is written in your contract and may be higher."
+          "vi": "SFinance gọi các mức này là lãi suất \"tham chiếu\": từ 1,37%/tháng (16,44%/năm) đến tối đa 35,4%/năm, đều là lãi phẳng, tức tính trên số tiền vay ban đầu. SFinance ghi 1,37%/tháng lãi phẳng tương đương khoảng 2,4%/tháng trên dư nợ giảm dần. Hợp đồng ghi lãi suất trên dư nợ giảm dần, nên con số trong hợp đồng sẽ lớn hơn con số lãi phẳng dù cùng một số tiền phải trả. Khung lãi suất SFinance công bố cho vay tiền mặt là đến 70%/năm trên dư nợ giảm dần, nên lãi suất của bạn có thể cao hơn mức chúng tôi tính. Hãy hỏi số tiền trả mỗi tháng và tổng tiền phải trả trước khi ký.",
+          "en": "SFinance calls these \"reference\" rates: from 1.37% a month (16.44% a year) up to a maximum of 35.4% a year, all flat, meaning charged on the original loan amount. SFinance says 1.37% a month flat equals about 2.4% a month on the reducing balance. Your contract states a reducing-balance rate, so that number will be higher than the flat number even for the same repayments. SFinance's published range for cash loans goes up to 70% a year on the reducing balance, so your rate may be higher than we calculate. Ask for the monthly payment and the total repayable before signing."
         },
         {
           "vi": "Trả nợ trước hạn: phí 5% dư nợ gốc còn lại; chỉ tất toán toàn bộ (không trả trước một phần) và sau khi đã trả ít nhất 6 kỳ nếu vay từ 10 tháng trở lên.",
@@ -1190,6 +1200,14 @@
         {
           "vi": "Số tiền phải trả hàng tháng theo hợp đồng có thể gồm phí thu hộ 12.000 đồng cho mỗi lần trả nợ qua đơn vị thu hộ; máy tính trên trang chưa cộng khoản này vào số hiển thị.",
           "en": "The monthly amount under the contract can include a 12,000 đồng collection fee for each payment made through a collection unit; the page calculator does not add it to the figure it shows."
+        },
+        {
+          "vi": "SFinance là tên mới của SHBFinance từ tháng 8/2026. Theo tin của SFinance ngày 02/11/2026, công ty nay thuộc Krungsri, không còn là công ty con của ngân hàng SHB. Hãy kiểm tra đúng tên công ty trong hợp đồng.",
+          "en": "SFinance is the new name of SHBFinance, since August 2026. According to SFinance's news of 2 Nov 2026, it now belongs to Krungsri and is no longer an SHB bank subsidiary. Check the company name in your contract."
+        },
+        {
+          "vi": "Theo trang của SFinance, số tiền vay tối đa khoảng 7 lần thu nhập.",
+          "en": "According to SFinance's page, the maximum loan is about 7 times income."
         }
       ],
       "excludeCode": "same_loan_other_channel",
@@ -1390,7 +1408,13 @@
       "confidence": "low",
       "excludeFromRanking": true,
       "excludeReason": "Chỉ công bố mức lãi 'từ 2,79%/tháng' (không rõ cách tính) và khung lãi suất toàn công ty; chưa có khoảng lãi suất thực tế cho kênh này.",
-      "notes": "Researched 2026-11-04. The partner page shows a MoMo wallet flow and a ZaloPay flow, each with a \"Hướng dẫn vay\" link. Only the floor 2.79%/month is published; the basis (flat or reducing) is not stated. Fees, early repayment and late penalties for this channel are not published separately. To unlock: a partner-channel rate range, or a contract/T&C that names this channel."
+      "notes": "Researched 2026-11-04. The partner page shows a MoMo wallet flow and a ZaloPay flow, each with a \"Hướng dẫn vay\" link. Only the floor 2.79%/month is published; the basis (flat or reducing) is not stated. Fees, early repayment and late penalties for this channel are not published separately. To unlock: a partner-channel rate range, or a contract/T&C that names this channel.",
+      "borrowerNotes": [
+        {
+          "vi": "Trên ứng dụng đối tác, khoản vay có thể do bên khác cho vay. Hãy kiểm tra đúng tên bên cho vay trong hợp đồng.",
+          "en": "On partner apps, another company may be the lender. Check the lender's name in the contract."
+        }
+      ]
     },
     {
       "id": "tra-gop-dien-thoai",

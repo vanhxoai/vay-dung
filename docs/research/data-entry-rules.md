@@ -80,3 +80,7 @@ When the source document shows its own date or effective date, set `sourceDocume
 - `latePenalty.textVi` is plain Vietnamese a borrower can understand. Set the multiplier and the overdue-interest rate as figures when the source states them, e.g. 150% → `1.5`.
 - Eligibility: record any condition the schema has a field for, such as existing customer, employer list, gross or net income, or age at loan end. Anything else goes in `otherConditions`, in Vietnamese.
 - `legalName` must match `data/licensed-institutions.json` exactly.
+
+## Ranges for a product or customer group (DECISIONS #61)
+
+A range that names a product or customer group, with a known basis, under 12 months old, may be stored as `offered_range`. If its minimum disagrees with the lender's adverts for that product, set `minUnconfirmed` and add a borrower note: costs then use the maximum. A whole-company range stays `regulatory_ceiling`. Sites that block automated requests aren't worked around; a person checks them by hand (DECISIONS #62).

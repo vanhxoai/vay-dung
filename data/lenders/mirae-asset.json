@@ -665,8 +665,8 @@
       "excludeReason": "MAFC publishes only a \"from 18%/year\" floor on the product page and a company-wide framework of 15-65%/year for salaried customers; it states no offered range for this product. Needs a stated range from the lender, or a decision on how to treat the framework.",
       "borrowerNotes": [
         {
-          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp của MAFC lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (MAFC may charge less). MAFC's FAQ page says there is no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp của Mirae Asset lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (Mirae Asset may charge less). Mirae Asset's FAQ page says there is no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng).",
@@ -674,10 +674,11 @@
         },
         {
           "vi": "Bảo hiểm khoản vay là tự nguyện. Nếu mua, phí được cộng vào khoản vay và tính lãi (từ 3%, trang bảo hiểm ghi khoảng 6,6% số tiền vay).",
-          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and earns interest (from 3%; MAFC's insurance page says about 6.6% of the loan)."
+          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and and you pay interest on it (from 3%; Mirae Asset's insurance page says about 6.6% of the loan)."
         }
       ],
-      "notes": "Researched 2026-11-04. Product page undated. Rate basis is the company-wide method (declining balance, 365-day year) from the framework and the loan terms, not a sentence on the product page. Fees known: early-repayment 5% of prepaid principal (cash contract template, from 2026-09-25), collection fee 12,000 VND per repayment, no application fee. Optional loan insurance is financed inside the loan."
+      "notes": "Researched 2026-11-04. Product page undated. Rate basis is the company-wide method (declining balance, 365-day year) from the framework and the loan terms, not a sentence on the product page. Fees known: early-repayment 5% of prepaid principal (cash contract template, from 2026-09-25), collection fee 12,000 VND per repayment, no application fee. Optional loan insurance is financed inside the loan.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "my-finance-quick-loan",
@@ -719,7 +720,7 @@
       },
       "rates": [
         {
-          "kind": "advertised_floor",
+          "kind": "benchmark",
           "segment": null,
           "minPercent": {
             "value": 1.583,
@@ -1137,8 +1138,8 @@
       "excludeReason": "Only a single ambiguous figure (1,583%/month in the App Store text) and a company-wide framework are published. The listing does not say flat or reducing and contradicts the framework's minimum.",
       "borrowerNotes": [
         {
-          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp của MAFC lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (MAFC may charge less). MAFC's FAQ page says there is no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp của Mirae Asset lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (Mirae Asset may charge less). Mirae Asset's FAQ page says there is no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng).",
@@ -1146,10 +1147,11 @@
         },
         {
           "vi": "Bảo hiểm khoản vay là tự nguyện. Nếu mua, phí được cộng vào khoản vay và tính lãi (từ 3%, trang bảo hiểm ghi khoảng 6,6% số tiền vay).",
-          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and earns interest (from 3%; MAFC's insurance page says about 6.6% of the loan)."
+          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and and you pay interest on it (from 3%; Mirae Asset's insurance page says about 6.6% of the loan)."
         }
       ],
-      "notes": "Researched 2026-11-04. The \"Touch - Vay nhanh Mirae Asset VN\" App Store listing (id1640236400) that secondary pages quote (5-15 million, flat 19-28%/year) no longer exists in the Vietnam App Store (lookup returned no result), so none of its figures were stored. A Google Play listing for My Finance could not be found from MAFC's site (the only app link is an AppsFlyer redirect for Touch); the guessed package id vn.mafc.mobileapp returned 404."
+      "notes": "Researched 2026-11-04. The \"Touch - Vay nhanh Mirae Asset VN\" App Store listing (id1640236400) that secondary pages quote (5-15 million, flat 19-28%/year) no longer exists in the Vietnam App Store (lookup returned no result), so none of its figures were stored. A Google Play listing for My Finance could not be found from MAFC's site (the only app link is an AppsFlyer redirect for Touch); the guessed package id vn.mafc.mobileapp returned 404.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "cash-loan-credit-card-statement",
@@ -1195,7 +1197,7 @@
           "kind": "advertised_floor",
           "segment": null,
           "minPercent": {
-            "value": 52,
+            "value": 42,
             "sourceUrl": "https://mafc.com.vn/vay-theo-sao-ke-the-tin-dung.html",
             "retrievedAt": "2026-11-04",
             "confidence": "low",
@@ -1718,8 +1720,12 @@
       "excludeReason": "Only a \"from X%/year\" floor is published on the product page; the company-wide framework is not an offered range. The rate a borrower would pay is not stated.",
       "borrowerNotes": [
         {
-          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp của MAFC lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (MAFC may charge less). MAFC's FAQ page says there is no penalty, so ask before you sign."
+          "vi": "Trang sản phẩm ghi từ 42%/năm, nhưng khung lãi suất của Mirae Asset cho nhóm này ghi 52–58%/năm. Hai tài liệu không khớp; hãy hỏi mức áp dụng cho bạn trước khi ký.",
+          "en": "The product page says from 42% a year, but Mirae Asset's rate framework for this group says 52–58%. The two don't match; ask which applies to you before signing."
+        },
+        {
+          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp của Mirae Asset lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (Mirae Asset may charge less). Mirae Asset's FAQ page says there is no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng).",
@@ -1727,10 +1733,11 @@
         },
         {
           "vi": "Bảo hiểm khoản vay là tự nguyện. Nếu mua, phí được cộng vào khoản vay và tính lãi (từ 3%, trang bảo hiểm ghi khoảng 6,6% số tiền vay).",
-          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and earns interest (from 3%; MAFC's insurance page says about 6.6% of the loan)."
+          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and and you pay interest on it (from 3%; Mirae Asset's insurance page says about 6.6% of the loan)."
         }
       ],
-      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact. Calculator default on the page: 10,000,000 VND, 6 months (output not recorded)."
+      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact. Calculator default on the page: 10,000,000 VND, 6 months (output not recorded).",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "cash-loan-existing-credit-contract",
@@ -2299,8 +2306,8 @@
       "excludeReason": "Only a \"from X%/year\" floor is published on the product page; the company-wide framework is not an offered range. The rate a borrower would pay is not stated.",
       "borrowerNotes": [
         {
-          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp của MAFC lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (MAFC may charge less). MAFC's FAQ page says there is no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp của Mirae Asset lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (Mirae Asset may charge less). Mirae Asset's FAQ page says there is no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng).",
@@ -2308,10 +2315,11 @@
         },
         {
           "vi": "Bảo hiểm khoản vay là tự nguyện. Nếu mua, phí được cộng vào khoản vay và tính lãi (từ 3%, trang bảo hiểm ghi khoảng 6,6% số tiền vay).",
-          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and earns interest (from 3%; MAFC's insurance page says about 6.6% of the loan)."
+          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and and you pay interest on it (from 3%; Mirae Asset's insurance page says about 6.6% of the loan)."
         }
       ],
-      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact."
+      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "cash-loan-electricity-bill",
@@ -2831,8 +2839,8 @@
       "excludeReason": "Only a \"from X%/year\" floor is published on the product page; the company-wide framework is not an offered range. The rate a borrower would pay is not stated.",
       "borrowerNotes": [
         {
-          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp của MAFC lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (MAFC may charge less). MAFC's FAQ page says there is no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp của Mirae Asset lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (Mirae Asset may charge less). Mirae Asset's FAQ page says there is no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng).",
@@ -2840,10 +2848,11 @@
         },
         {
           "vi": "Bảo hiểm khoản vay là tự nguyện. Nếu mua, phí được cộng vào khoản vay và tính lãi (từ 3%, trang bảo hiểm ghi khoảng 6,6% số tiền vay).",
-          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and earns interest (from 3%; MAFC's insurance page says about 6.6% of the loan)."
+          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and and you pay interest on it (from 3%; Mirae Asset's insurance page says about 6.6% of the loan)."
         }
       ],
-      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact."
+      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "cash-loan-women",
@@ -3395,8 +3404,8 @@
       "excludeReason": "Only a \"from X%/year\" floor is published on the product page; the company-wide framework is not an offered range. The rate a borrower would pay is not stated.",
       "borrowerNotes": [
         {
-          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp của MAFC lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (MAFC may charge less). MAFC's FAQ page says there is no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp của Mirae Asset lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (Mirae Asset may charge less). Mirae Asset's FAQ page says there is no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng).",
@@ -3404,10 +3413,11 @@
         },
         {
           "vi": "Bảo hiểm khoản vay là tự nguyện. Nếu mua, phí được cộng vào khoản vay và tính lãi (từ 3%, trang bảo hiểm ghi khoảng 6,6% số tiền vay).",
-          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and earns interest (from 3%; MAFC's insurance page says about 6.6% of the loan)."
+          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and and you pay interest on it (from 3%; Mirae Asset's insurance page says about 6.6% of the loan)."
         }
       ],
-      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact."
+      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "cash-loan-life-insurance-contract",
@@ -3928,8 +3938,8 @@
       "excludeReason": "Only a \"from X%/year\" floor is published on the product page; the company-wide framework is not an offered range. The rate a borrower would pay is not stated.",
       "borrowerNotes": [
         {
-          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp của MAFC lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (MAFC may charge less). MAFC's FAQ page says there is no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp của Mirae Asset lại ghi là không phạt, nên hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract states a fee of 5% of the principal repaid early (Mirae Asset may charge less). Mirae Asset's FAQ page says there is no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng).",
@@ -3937,10 +3947,11 @@
         },
         {
           "vi": "Bảo hiểm khoản vay là tự nguyện. Nếu mua, phí được cộng vào khoản vay và tính lãi (từ 3%, trang bảo hiểm ghi khoảng 6,6% số tiền vay).",
-          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and earns interest (from 3%; MAFC's insurance page says about 6.6% of the loan)."
+          "en": "Loan insurance is optional. If you buy it, the premium is added to the loan and and you pay interest on it (from 3%; Mirae Asset's insurance page says about 6.6% of the loan)."
         }
       ],
-      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact."
+      "notes": "Researched 2026-11-04. Same fee, late-payment and insurance terms as the other MAFC cash loans, taken from the generic cash-loan contract template (applicable from 2026-09-25); the template does not list this sub-product, so those terms are an assumption of coverage, not a stated fact.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "installment-motorbike",
@@ -4560,15 +4571,16 @@
           "en": "The 0% rate is a limited promotion on selected items, not the rate every borrower gets."
         },
         {
-          "vi": "Trả nợ trước hạn: hợp đồng mẫu ghi phí 5% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp lại ghi không phạt, hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract template states 5% of the principal repaid early (MAFC may charge less). The FAQ says no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng mẫu ghi phí 5% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp lại ghi không phạt, hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract template states 5% of the principal repaid early (Mirae Asset may charge less). The FAQ says no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng). Bảo hiểm khoản vay là tự nguyện; nếu mua, phí được cộng vào khoản vay.",
           "en": "Each repayment includes a 12,000 đồng collection fee. Loan insurance is optional; if bought, the premium is added to the loan."
         }
       ],
-      "notes": "Researched 2026-11-04. Product page undated. A 2024 association news item (vnba.org.vn, 2024-05-10) said \"từ 1,88%/tháng\" for MAFC motorbike loans; it is old secondary information and was not stored."
+      "notes": "Researched 2026-11-04. Product page undated. A 2024 association news item (vnba.org.vn, 2024-05-10) said \"từ 1,88%/tháng\" for MAFC motorbike loans; it is old secondary information and was not stored.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "installment-electronics",
@@ -5110,15 +5122,16 @@
           "en": "The 0% rate is a limited promotion on selected items, not the rate every borrower gets."
         },
         {
-          "vi": "Trả nợ trước hạn: hợp đồng mẫu ghi phí 8% số gốc trả trước (MAFC có thể áp dụng mức thấp hơn). Trang Hỏi đáp lại ghi không phạt, hãy hỏi lại trước khi ký.",
-          "en": "Early repayment: the contract template states 8% of the principal repaid early (MAFC may charge less). The FAQ says no penalty, so ask before you sign."
+          "vi": "Trả nợ trước hạn: hợp đồng mẫu ghi phí 8% số gốc trả trước (Mirae Asset có thể áp dụng mức thấp hơn). Trang Hỏi đáp lại ghi không phạt, hãy hỏi lại trước khi ký.",
+          "en": "Early repayment: the contract template states 8% of the principal repaid early (Mirae Asset may charge less). The FAQ says no penalty, so ask before you sign."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng). Bảo hiểm khoản vay là tự nguyện; nếu mua, phí được cộng vào khoản vay.",
           "en": "Each repayment includes a 12,000 đồng collection fee. Loan insurance is optional; if bought, the premium is added to the loan."
         }
       ],
-      "notes": "Researched 2026-11-04. Product page undated."
+      "notes": "Researched 2026-11-04. Product page undated.",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "installment-beauty",
@@ -5659,15 +5672,16 @@
           "en": "The 0% rate is a limited promotion on selected items, not the rate every borrower gets."
         },
         {
-          "vi": "Trả nợ trước hạn: tài liệu của MAFC ghi 5% hoặc 8% (hoặc 0%) số gốc trả trước; mức áp dụng cho sản phẩm này chưa rõ.",
-          "en": "Early repayment: MAFC documents say 5% or 8% (or 0%) of the principal repaid early; the rate for this product is not known."
+          "vi": "Trả nợ trước hạn: tài liệu của Mirae Asset ghi 5% hoặc 8% (hoặc 0%) số gốc trả trước; mức áp dụng cho sản phẩm này chưa rõ.",
+          "en": "Early repayment: Mirae Asset documents say 5% or 8% (or 0%) of the principal repaid early; the rate for this product is not known."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng). Bảo hiểm khoản vay là tự nguyện; nếu mua, phí được cộng vào khoản vay.",
           "en": "Each repayment includes a 12,000 đồng collection fee. Loan insurance is optional; if bought, the premium is added to the loan."
         }
       ],
-      "notes": "Researched 2026-11-04. Product page undated. The late-payment terms and collection fee are taken from the household-goods installment contract template, which may or may not be the template for this product group (not stated)."
+      "notes": "Researched 2026-11-04. Product page undated. The late-payment terms and collection fee are taken from the household-goods installment contract template, which may or may not be the template for this product group (not stated).",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "installment-education",
@@ -6208,15 +6222,16 @@
           "en": "The 0% rate is a limited promotion on selected items, not the rate every borrower gets."
         },
         {
-          "vi": "Trả nợ trước hạn: tài liệu của MAFC ghi 5% hoặc 8% (hoặc 0%) số gốc trả trước; mức áp dụng cho sản phẩm này chưa rõ.",
-          "en": "Early repayment: MAFC documents say 5% or 8% (or 0%) of the principal repaid early; the rate for this product is not known."
+          "vi": "Trả nợ trước hạn: tài liệu của Mirae Asset ghi 5% hoặc 8% (hoặc 0%) số gốc trả trước; mức áp dụng cho sản phẩm này chưa rõ.",
+          "en": "Early repayment: Mirae Asset documents say 5% or 8% (or 0%) of the principal repaid early; the rate for this product is not known."
         },
         {
           "vi": "Mỗi kỳ trả nợ có thêm phí thu hộ 12.000đ (đã nằm trong số tiền trả hàng tháng). Bảo hiểm khoản vay là tự nguyện; nếu mua, phí được cộng vào khoản vay.",
           "en": "Each repayment includes a 12,000 đồng collection fee. Loan insurance is optional; if bought, the premium is added to the loan."
         }
       ],
-      "notes": "Researched 2026-11-04. Product page undated. The late-payment terms and collection fee are taken from the household-goods installment contract template, which may or may not be the template for this product group (not stated)."
+      "notes": "Researched 2026-11-04. Product page undated. The late-payment terms and collection fee are taken from the household-goods installment contract template, which may or may not be the template for this product group (not stated).",
+      "excludeCode": "manual_check_pending"
     },
     {
       "id": "domestic-credit-card",

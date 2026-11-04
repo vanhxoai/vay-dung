@@ -903,10 +903,11 @@
       "subtype": "Công ty tài chính",
       "aliases": [
         "SFinance",
-        "SHB Finance"
+        "SHB Finance",
+        "SHBFinance"
       ],
       "licenseNumber": "Giấy phép số 43/GP-NHNN ngày 10/7/2026",
-      "website": "https://shbfinance.com.vn",
+      "website": "https://www.sfinance.com.vn",
       "sourceUrl": "https://sbv.gov.vn/vi/c%C3%B4ng-ty-t%C3%A0i-ch%C3%ADnh"
     },
     {
@@ -917,7 +918,10 @@
       "category": "finance_company",
       "subtype": "Công ty tài chính",
       "aliases": [
-        "VietCredit"
+        "VietCredit",
+        "Tin Vay",
+        "TinVay",
+        "Tín Việt"
       ],
       "licenseNumber": "Giấy phép số 48/GP-NHNN ngày 06/11/2023",
       "website": "https://vietcredit.com.vn",

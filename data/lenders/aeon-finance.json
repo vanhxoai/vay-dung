@@ -146,7 +146,7 @@
           "promotional": false
         },
         {
-          "kind": "advertised_floor",
+          "kind": "benchmark",
           "segment": "Thành viên AEON (có giao dịch tích điểm trên ứng dụng AEON Vietnam trong 2 tháng gần nhất), chương trình ưu đãi đăng ngày 13/01/2026",
           "minPercent": {
             "value": 1.51,
@@ -179,7 +179,7 @@
           "minIsPromotional": true
         },
         {
-          "kind": "advertised_floor",
+          "kind": "benchmark",
           "segment": "Bài giới thiệu \"Cần thêm tài chính? Vay đến 100 triệu\" (đăng 01/01/2026), không nêu đối tượng",
           "minPercent": {
             "value": 1.17,
@@ -232,7 +232,7 @@
             "value": false,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-tien-mat-ky-dien-tu.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Only incurred if the borrower chooses to settle early. Campaign: AEON's notice of 2026-10-13 (https://aeonfinance.vn/thanh-toan-khoan-vay-truoc-han-nhan-uu-dai-den-2-trieu-dong) waives 100% of the early-repayment fee for partial or full early repayment from 2026-10-01 to 2027-01-31, with a cash incentive of up to 2,000,000 VND, but names no products and says to call the hotline to check eligibility, so the standing fee is stored."
           },
@@ -242,7 +242,7 @@
             "value": 5,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-tien-mat-ky-dien-tu.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Contract template Phần II Điều 1 mục 11.1: \"Đối với phương thức cho vay từng lần: 5% trên dư nợ gốc trong hạn tại thời điểm tất toán trước hạn.\" The cash-loan FAQ says the same. No minimum for this method. Conditions (Phần III Điều 2): at least 4 instalments paid (or the product's own minimum), 5 working days' notice, AEON's approval. Extra money paid that does not settle the loan is held without interest and may be netted off later instalments at AEON's option."
           },
@@ -502,7 +502,7 @@
           "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; tiền lãi chậm trả bị tính lãi 10%/năm. Hợp đồng mẫu không ghi phí phạt cố định riêng. Nếu bạn vi phạm hợp đồng, bạn còn phải trả chi phí thu hồi nợ (luật sư, điều tra, thi hành án).",
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-tien-mat-ky-dien-tu.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Contract template for cash loans (e-signature version), Phần II Điều 1 mục 7, and general conditions Điều 4 mục 3 (overdue interest). \"Phạt Hợp đồng\" in Điều 2 mục 2.4 points to that clause, so no other fixed penalty appears in the template."
         },
@@ -511,7 +511,7 @@
           "value": 1.5,
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-tien-mat-ky-dien-tu.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Contract template, Phần II Điều 1: \"Lãi suất áp dụng đối với dư nợ gốc bị quá hạn: 150% của lãi suất cho vay trong hạn thông thường áp dụng tại thời điểm chuyển nợ quá hạn.\""
         },
@@ -519,7 +519,7 @@
           "value": 10,
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-tien-mat-ky-dien-tu.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Same section: \"Lãi suất áp dụng đối với lãi chậm trả: 10%/năm, tính trên số dư lãi chậm trả\"."
         }
@@ -596,8 +596,8 @@
       "notes": "Researched 2026-11-04. AEON Finance publishes NO product-specific offered rate range: the only rate figures are a company-wide framework (0 to 4.58%/month on the cash-loan page; 0% to 55% in the monthly rate table), a portfolio average, and promotional floors. The contract templates leave the rate blank (\"...%/năm\", with the equivalent rate on a 365-day year). Interest is charged daily on the actual outstanding principal (general conditions Điều 4), a reducing balance; the FAQ also says declining balance. No origination, appraisal or management fee appears in the template, and the FAQ says no fees apply beyond interest and the fees in the contract. Not found: standing minimum and maximum age, service cities, premium of the optional insurance, rate by customer group.",
       "borrowerNotes": [
         {
-          "vi": "AEON Finance không công bố lãi suất riêng cho khoản vay này. Mức công bố chung là từ 0 đến 4,58%/tháng (khoảng 55%/năm), nên lãi suất thật của bạn chỉ biết sau khi AEON thẩm định hồ sơ.",
-          "en": "AEON Finance does not publish a rate for this loan. Its general published range is 0 to 4.58% a month (about 55% a year), so your real rate is only known after AEON assesses your application."
+          "vi": "AEON Finance không công bố lãi suất riêng cho khoản vay này. Mức công bố chung cao nhất là 4,58%/tháng (khoảng 55%/năm). Lãi suất thật của bạn chỉ biết sau khi AEON thẩm định hồ sơ.",
+          "en": "AEON Finance does not publish a rate for this loan. Its general published maximum is 4.58% a month (about 55% a year). Your real rate is only known after AEON assesses your application."
         },
         {
           "vi": "Tất toán trước hạn: phí 5% trên dư nợ gốc còn lại, và phải đã trả đủ ít nhất 4 kỳ. AEON đang có chương trình miễn phí này đến 31/01/2027 (cần gọi hotline xác nhận).",
@@ -640,7 +640,7 @@
         "value": 36,
         "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
         "retrievedAt": "2026-11-04",
-        "confidence": "high",
+        "confidence": "low",
         "sourceDocumentDate": "2025-11-04",
         "note": "Credit-limit contract: \"Thời hạn hợp đồng cho vay hạn mức: 36 tháng\"; each drawdown must end by the contract end date. The limit can be drawn for at most 12 months at a time, renewed yearly."
       },
@@ -766,7 +766,7 @@
             "value": false,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Only if the borrower closes the contract early. Campaign: AEON's notice of 2026-10-13 (https://aeonfinance.vn/thanh-toan-khoan-vay-truoc-han-nhan-uu-dai-den-2-trieu-dong) waives 100% of the early-repayment fee for partial or full early repayment from 2026-10-01 to 2027-01-31, with a cash incentive of up to 2,000,000 VND, but names no products and says to call the hotline to check eligibility, so the standing fee is stored."
           },
@@ -776,7 +776,7 @@
             "value": 5,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Phần II Điều 1 mục 11.2: \"Trường hợp Khách hàng trả nợ và tất toán Hợp đồng trước hạn: 5% trên dư nợ gốc trong hạn tại thời điểm tất toán trước hạn nhưng tối thiểu 1,650,000 đồng\". The cash-loan FAQ states the same. Staff and staff-relatives schemes are exempt (Phần V), not the public."
           },
@@ -791,7 +791,7 @@
             "value": 1650000,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Same sentence: minimum 1,650,000 VND."
           },
@@ -824,7 +824,7 @@
             "value": false,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Optional."
           },
@@ -841,7 +841,7 @@
             "value": 0,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Phần II Điều 1 mục 11.2: \"Trường hợp Khách hàng trả nợ trước hạn nhưng không tất toán Hợp đồng: Miễn phí\"."
           },
@@ -1093,7 +1093,7 @@
           "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; tiền lãi chậm trả bị tính lãi 10%/năm. Hợp đồng mẫu không ghi phí phạt cố định riêng. Nếu bạn vi phạm hợp đồng, bạn còn phải trả chi phí thu hồi nợ (luật sư, điều tra, thi hành án).",
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Credit-limit contract template, Phần II Điều 1 mục 7 (same wording as the single-disbursement contract)."
         },
@@ -1102,7 +1102,7 @@
           "value": 1.5,
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Contract template, Phần II Điều 1: \"Lãi suất áp dụng đối với dư nợ gốc bị quá hạn: 150% của lãi suất cho vay trong hạn thông thường áp dụng tại thời điểm chuyển nợ quá hạn.\""
         },
@@ -1110,7 +1110,7 @@
           "value": 10,
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2025/11/bm03_-tm_20251106_system_customer-revolving-loan-contract_econtract.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Same section: \"Lãi suất áp dụng đối với lãi chậm trả: 10%/năm, tính trên số dư lãi chậm trả\"."
         }
@@ -1258,7 +1258,7 @@
           "promotional": false
         },
         {
-          "kind": "advertised_floor",
+          "kind": "benchmark",
           "segment": "Vay mua xe máy, xe điện và hàng hóa tại cửa hàng đối tác (câu hỏi thường gặp vay trả góp)",
           "minPercent": {
             "value": 1.6,
@@ -1310,7 +1310,7 @@
             "value": false,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-mua-hang-tra-gop-ky-dien-tu.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Only if the borrower settles early. Campaign: AEON's notice of 2026-10-13 (https://aeonfinance.vn/thanh-toan-khoan-vay-truoc-han-nhan-uu-dai-den-2-trieu-dong) waives 100% of the early-repayment fee for partial or full early repayment from 2026-10-01 to 2027-01-31, with a cash incentive of up to 2,000,000 VND, but names no products and says to call the hotline to check eligibility, so the standing fee is stored."
           },
@@ -1320,7 +1320,7 @@
             "value": 5,
             "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-mua-hang-tra-gop-ky-dien-tu.pdf",
             "retrievedAt": "2026-11-04",
-            "confidence": "high",
+            "confidence": "low",
             "sourceDocumentDate": "2025-11-04",
             "note": "Instalment contract template Phần II Điều 1 mục 9: \"Trường hợp Bên vay trả nợ và tất toán Hợp đồng trước hạn: 5% trên dư nợ gốc trong hạn tại thời điểm tất toán trước hạn.\" No minimum stated. Conditions: at least 4 instalments paid, 5 working days' notice, AEON's approval."
           },
@@ -1522,7 +1522,7 @@
           "value": "Nếu trả chậm, tiền gốc quá hạn bị tính lãi bằng 150% lãi suất trong hạn; tiền lãi chậm trả bị tính lãi 10%/năm. Hợp đồng mẫu không ghi phí phạt cố định riêng. Nếu bạn vi phạm hợp đồng, bạn còn phải trả chi phí thu hồi nợ (luật sư, điều tra, thi hành án).",
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-mua-hang-tra-gop-ky-dien-tu.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Instalment contract template, Phần II Điều 1 mục 4 (150% and 10%/year)."
         },
@@ -1531,7 +1531,7 @@
           "value": 1.5,
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-mua-hang-tra-gop-ky-dien-tu.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Contract template, Phần II Điều 1: \"Lãi suất áp dụng đối với dư nợ gốc bị quá hạn: 150% của lãi suất cho vay trong hạn thông thường áp dụng tại thời điểm chuyển nợ quá hạn.\""
         },
@@ -1539,7 +1539,7 @@
           "value": 10,
           "sourceUrl": "https://api-minio-live.aeonfinance.com.vn/aeonfinance-website/uploads/files/2026/10/mau-bieu-hop-dong-cho-vay-mua-hang-tra-gop-ky-dien-tu.pdf",
           "retrievedAt": "2026-11-04",
-          "confidence": "high",
+          "confidence": "low",
           "sourceDocumentDate": "2025-11-04",
           "note": "Same section: \"Lãi suất áp dụng đối với lãi chậm trả: 10%/năm, tính trên số dư lãi chậm trả\"."
         }
@@ -1594,7 +1594,13 @@
       "confidence": "medium",
       "excludeFromRanking": true,
       "excludeReason": "AEON Finance publishes no offered rate range for instalment loans: only a floor (\"chỉ từ 1.6%\", unit not stated) plus the company-wide framework and average. Unlock: a published range, with a unit, for each goods category.",
-      "notes": "Researched 2026-11-04. AEON Finance publishes NO product-specific offered rate range: the only rate figures are a company-wide framework (0 to 4.58%/month on the cash-loan page; 0% to 55% in the monthly rate table), a portfolio average, and promotional floors. Instalment loans are tied to goods at partner stores. The /vay-tra-gop page itself shows only cash-loan content (calculator 10M-50M, 6-36 months) and a 200K promotion banner, so instalment figures come from the instalment FAQ and the contract template. Not found: rate per goods category, down payment, insurance, age limits."
+      "notes": "Researched 2026-11-04. AEON Finance publishes NO product-specific offered rate range: the only rate figures are a company-wide framework (0 to 4.58%/month on the cash-loan page; 0% to 55% in the monthly rate table), a portfolio average, and promotional floors. Instalment loans are tied to goods at partner stores. The /vay-tra-gop page itself shows only cash-loan content (calculator 10M-50M, 6-36 months) and a 200K promotion banner, so instalment figures come from the instalment FAQ and the contract template. Not found: rate per goods category, down payment, insurance, age limits.",
+      "borrowerNotes": [
+        {
+          "vi": "Chương trình \"Trả góp 0% lãi suất - Rinh quà 200K\" (08/10–29/11/2026, tại một số cửa hàng AEON): thông báo của AEON chỉ nêu khoản giảm 200.000 đồng vào kỳ trả đầu tiên, không nêu mức lãi suất 0%. Hãy xem lãi suất ghi trong hợp đồng.",
+          "en": "The \"0% interest - 200K gift\" promotion (8 Oct to 29 Nov 2026, at selected AEON stores): AEON's notice only describes a 200,000 đồng reduction on the first instalment, not a 0% rate. Check the rate in your contract."
+        }
+      ]
     }
   ],
   "researchNotes": "Researched 2026-11-04 (AEON Finance, formerly PTF; the company renamed itself and moved to aeonfinance.vn, and some FAQ links still point to ptf.com.vn). Licence: matched id \"aeon-finance\" in data/licensed-institutions.json, legal name \"Công ty Tài chính tín dụng tiêu dùng TNHH MTV AEON\", licence 96/GP-NHNN dated 28/9/2018.\n\nKEY RESULT: AEON publishes no product-specific rate range. Three kinds of figures exist, none an offered range:\n1. Company-wide rate disclosure (\"BIỂU MẪU LÃI SUẤT THÁNG mm/2026\", one news post a month on aeonfinance.vn, each an image). Rows: portfolio-average consumer lending rate, consumer rate minimum for individuals (0%), maximum for individuals (55%). Read visually: June 2026 (published 2026-07-02, https://aeonfinance.vn/bieu-mau-lai-suat-thang-062026): average 32.5%, min 0%, max 55%. September 2026 (published 2026-10-02, https://aeonfinance.vn/bieu-mau-lai-suat-thang-092026): 33.97%, 0%, 55%. October 2026 (published 2026-11-03, https://aeonfinance.vn/bieu-mau-lai-suat-thang-102026): 35.04%, 0%, 55%. The text says only \"Biểu mẫu lãi suất áp dụng trong tháng ...\"; it names no product, prints no unit and does not say flat or reducing. Applies to the whole company, so stored as regulatory_ceiling (0 to 55, segment says company-wide) and benchmark (35.04). The 0% minimum is marked minIsPromotional. July and August 2026 and the April 2026 table (a link to bieu-mau-lai-suẤt-thang-042026-1036 exists) were not read: the 072026 and 082026 URLs return 404.\n2. Cash-loan page (https://aeonfinance.vn/vay-tien-mat, undated, copyright 2026), FAQ answer: \"mức lãi suất ưu đãi tối đa dao động trong khoảng 0 - 4.58%/ tháng hoặc thấp hơn\" depending on the application. 4.58 x 12 = 54.96, so this is the same company-wide framework per month (0 to about 55%/year), not a cash-loan range. Stored as regulatory_ceiling with that segment. TELL THE USER: this is the \"khung lãi suất\" case they will decide how to treat; both the page figure and the monthly table are stored this way on all three products.\n3. Promotional floors: \"chỉ từ 1,51%/tháng\" (AEON article dated 2026-01-13 for AEON members, up to 50M, 36 months, ages 22-65, needs a points transaction on the AEON Vietnam App in the last 2 months; repeated by VNBA on 2026-08-28), \"chỉ từ 1,17%/tháng\" (marketing article dated 2026-01-01, limit up to 100M), and \"chỉ từ 1.6%\" (instalment FAQ, no unit). Stored as advertised_floor, none used for cost.\n\nBASIS: Cash-loan FAQ says interest is on the declining balance (fetch-tool summary of the Vietnamese text). Contract templates charge interest per day on the actual outstanding principal on a 365-day year, with equal principal-plus-interest instalments (annuity). The page calculator (10,000,000 VND, 12 months) returns 984,735 VND a month; this is exactly the annuity payment at 32.00%/year reducing (984,735.35) and does not fit flat (flat would need 1.514017%/month). So the calculator uses 32%/year reducing; that rate is not printed, so it is recorded only as a low-confidence inferred example. The 1.51%/month floor has no stated basis; if it were flat it would be about 18%/year, if reducing about 18.1%/year nominal: unknown, so not converted.\n\nDOCUMENTS (AEON \"Tra cứu tài liệu\", https://aeonfinance.vn/documents, 26 documents, all PDFs on api-minio-live.aeonfinance.com.vn): cash-loan contract templates \"Mẫu biểu Hợp đồng cho vay tiền mặt - Ký điện tử\" and \"- Ký giấy\", the credit-limit templates \"Mẫu biểu hợp đồng cho vay tiền mặt hạn mức điện tử\" and \"... ký tay\", instalment templates \"Mẫu biểu Hợp đồng cho vay mua hàng trả góp - Ký điện tử / Ký giấy\" and \"Mẫu biểu hợp đồng cho vay Trả góp điện tử / ký tay\", and \"Phụ lục hợp đồng cho vay\". All show issue date 2025-11-04 on the documents page (the 2026/10 files were uploaded in October 2026; the appendix PDF was last modified 2026-10-21). That date is exactly 365 days before today, so these documents become \"old\" (over the 365-day limit) tomorrow, 2026-11-05; the early-repayment fee and the 150% / 10% late terms then drop to at most low confidence unless a newer document is found. I read in full text: the e-signature cash-loan template, the credit-limit template, the e-signature instalment template and the appendix. They apply to the whole product family (the cash template covers both single-disbursement and credit-limit methods), not company-wide. Their rate is blank. They contain: early-repayment fee 5% of in-term principal (credit-limit: minimum 1,650,000 VND; partial prepayment free); overdue principal at 150% of the in-term rate; overdue interest 10%/year; third-party payment fees; debt-recovery costs on breach; no origination fee; no insurance clause; staff schemes (floating rate not for the public; 45%/year if staff leave) which are not stored.\n\nNOT FOUND (searched, not published): (a) any fee schedule (\"biểu phí\") or product tariff: the documents page, FAQ pages and news list have none; the FAQ says no fees beyond interest and those in the contract; (b) product-specific rate range for any product; (c) insurance premium or whether insurance is mandatory: https://aeonfinance.vn/chuong-trinh-bao-hiem is a registration form promoting \"Bảo An Tài Chính Toàn Diện\" with MIC and shows a separate consent box, no premium; (d) minimum and maximum age, income and service cities for the standing product: only the January 2026 member article gives 22 to 65 and nothing says Hanoi or HCMC; (e) down payment for instalment loans; (f) a loan app: searches for a Google Play or App Store listing returned none (only a retail \"AEON Vietnam\" app, a loyalty app, and unrelated AEON companies in other countries); the site only has a loan lookup at my.aeonfinance.vn (not visited, needs a login); (g) credit cards: not an AEON Finance product (the site lists cash loans, instalments and insurance). Terms searched: \"AEON Finance lãi suất\", \"khung lãi suất\", \"biểu phí\", \"hợp đồng mẫu\", \"lãi suất vay tiền mặt\", app-store searches, site:aeonfinance.vn.\n\nACCESS: Direct HTTPS requests to aeonfinance.vn from this machine were reset after the TLS handshake (curl and the Playwright browser both failed; one burst of curl calls to robots.txt, /vay-tien-mat and /en briefly returned 200, then every call was reset). I did not try to get around it. All aeonfinance.vn pages were read through the WebFetch tool, which worked for most pages (a few returned ECONNRESET at first and succeeded later; one 404). Documents and images were read from the file host api-minio-live.aeonfinance.com.vn, which was reachable. Pages whose text I read only via a fetch-tool summary (FAQ pages, product page, member and early-repayment articles) are marked medium confidence; figures read directly from PDF text or from images are noted. The /vay-tra-gop page returned only cash-loan content, so it is not a source for instalment figures. Footer links for privacy and terms point to the FAQ page, so no separate general-terms page was found; the \"Điều kiện giao dịch chung\" is embedded inside each contract PDF.\n\nOTHER FINDINGS: (1) The \"TRẢ GÓP 0% LÃI SUẤT - RINH QUÀ 200K TẠI AEON\" promotion notice (2026-10-08 to 2026-11-29, AEON stores, up to 71 loans) describes only a 200,000 VND deduction from the first instalment, not a 0% rate. (2) Early-repayment campaign: 100% fee waiver plus a cash incentive of up to 2,000,000 VND for partial or full early repayment, 2026-10-01 to 2027-01-31, products not named; the standing 5% fee is stored. (3) The comparison site topi.vn gave 32.55% or 29.79% as the portfolio average and 55% as the maximum with no source; AEON's own tables give 32.5% (June), 33.97% (September), 35.04% (October) and 55% maximum, so the 55% is confirmed but the averages are unverified and look like a different month. (4) Company-wide maximum 55%/year is above the 20%/year Civil Code art. 468 ceiling that some outlets cite; consumer-credit companies fall under the credit-institutions law, and the lawyer should confirm how this is treated; I only report it. (5) Credit-limit repayment is 2.5% of the balance plus interest each month, which is not annuity. (6) The finance-company 100M cap (Circular 43/2016 art. 3(1)): maximum amounts stored (100M, 70M) are equal to or below it, so no cap conflict is recorded. (7) app code: src/lib/recommend/offers.ts GOODS_BY_PRODUCT has no entry for aeon-finance/installment-loan, which is tied to goods (motorbikes, electronics); it would be shown as general purpose unless someone adds it.",

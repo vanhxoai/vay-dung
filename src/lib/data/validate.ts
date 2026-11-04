@@ -156,6 +156,7 @@ function checkProduct(
   if (!p.excludeFromRanking && !p.rates.some((r) => r.kind === "offered_range"))
     warn(`${id}: no offered_range rate; it will show as "chưa đủ dữ liệu để so sánh"`);
   if (p.excludeFromRanking && !p.excludeReason) err(`${id}: excludeFromRanking needs an excludeReason`);
+  if (p.rates.some((r) => r.minUnconfirmed) && !p.borrowerNotes?.length) err(`${id}: minUnconfirmed needs a borrower note saying why`);
 
   // Fees
   p.fees.forEach((f, i) => {

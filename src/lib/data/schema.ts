@@ -137,6 +137,10 @@ export const Rate = z.strictObject({
   minIsPromotional: z.boolean().optional(),
   /** The minimum disagrees with what the lender advertises for this product, so costs use the maximum. */
   minUnconfirmed: z.boolean().optional(),
+  /** Lowest rate by term, highest threshold first, when the table limits the minimum to some terms. */
+  minByTerm: z.array(z.strictObject({ termMonthsMin: z.number().int().nonnegative(), percent: z.number().nonnegative() })).optional(),
+  /** The lender calls its maximum a reference rate, so a borrower's rate could be higher. */
+  maxIsReference: z.boolean().optional(),
 });
 export type Rate = z.infer<typeof Rate>;
 
@@ -356,8 +360,10 @@ export const Product = z.strictObject({
   excludeFromRanking: z.boolean(),
   excludeReason: z.string().optional(),
   /** Set when the general reasons in src/lib/recommend/offers.ts wouldn't be true of this product. */
-  excludeCode: z.enum(["conflicting_sources", "undated_document", "unverified", "range_basis_unknown", "same_loan_other_channel"]).optional(),
+  excludeCode: z.enum(["conflicting_sources", "undated_document", "unverified", "range_basis_unknown", "same_loan_other_channel", "manual_check_pending"]).optional(),
   /** Things a borrower should know about this product, shown on its card or list item. */
+  /** Outside the target user: kept in the data, never shown. */
+  hidden: z.boolean().optional(),
   borrowerNotes: z.array(z.strictObject({ vi: z.string(), en: z.string() })).optional(),
   notes: z.string().optional(),
 });

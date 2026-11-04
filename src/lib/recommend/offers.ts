@@ -39,6 +39,10 @@ export type OfferRate = {
   minIsPromotional?: boolean;
   /** The minimum disagrees with what the lender advertises: costs use the maximum. */
   minUnconfirmed?: boolean;
+  /** Lowest rate by term, highest threshold first. */
+  minByTerm?: { termMonthsMin: number; percent: number }[];
+  /** The lender calls its maximum a reference rate: a borrower's rate could be higher. */
+  maxIsReference?: boolean;
   segment: string | null;
   sourceUrl: string;
   retrievedAt: string;
@@ -92,6 +96,7 @@ export type ExcludeCode =
   | "conflicting_sources"
   | "range_basis_unknown"
   | "same_loan_other_channel"
+  | "manual_check_pending"
   | "floor_and_range"
   | "undated_document"
   | "ceiling_only"
@@ -259,6 +264,8 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
             basisInferred: rate.basis.provenance === "inferred",
             minIsPromotional: rate.minIsPromotional,
             minUnconfirmed: rate.minUnconfirmed,
+            minByTerm: rate.minByTerm,
+            maxIsReference: rate.maxIsReference,
             segment: rate.segment,
             sourceUrl: (rate.maxPercent.sourceUrl ?? rate.minPercent.sourceUrl ?? p.sourceUrl) as string,
             retrievedAt: (rate.maxPercent.retrievedAt ?? rate.minPercent.retrievedAt ?? p.retrievedAt) as string,
@@ -320,6 +327,6 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
 /** Consumer products to show; credit cards are out of the MVP's scope (CLAUDE.md target user). */
 export function toOffers(lenders: readonly LenderFile[]): Offer[] {
   return lenders.flatMap((l) =>
-    l.products.filter((p) => p.productType !== "credit_card" && p.status !== "expired").map((p) => toOffer(l, p)),
+    l.products.filter((p) => p.productType !== "credit_card" && p.status !== "expired" && !p.hidden).map((p) => toOffer(l, p)),
   );
 }

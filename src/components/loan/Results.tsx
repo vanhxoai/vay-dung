@@ -224,7 +224,7 @@ export function Results({
                 {offer.borrowerNotes?.map((n) => <p key={n.vi}>{locale === "en" ? n.en : n.vi}</p>)}
                 {offer.rateNotes.map((n, i) => {
                   // A bank-wide average or an uncosted rate would read as this product's price.
-                  const text = n.kind === "benchmark" || n.kind === "offered_range" ? null : rateNoteText(n, t, locale);
+                  const text = n.kind === "benchmark" || n.kind === "offered_range" || offer.excludeCode === "manual_check_pending" ? null : rateNoteText(n, t, locale);
                   return text ? (
                     <p key={i}>
                       {text}

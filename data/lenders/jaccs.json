@@ -77,7 +77,17 @@
             "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/11/Bang-Niem-Yet-Lai-Suat-Cho-Vay-Tieu-Dung-Ca-Nhan-Tai-DGTDV_VN.pdf",
             "note": "Column header \"Lãi suất áp dụng (%/ năm)\"."
           },
-          "promotional": false
+          "promotional": false,
+          "minByTerm": [
+            {
+              "termMonthsMin": 15,
+              "percent": 30
+            },
+            {
+              "termMonthsMin": 0,
+              "percent": 36.04
+            }
+          ]
         },
         {
           "kind": "benchmark",
@@ -803,7 +813,7 @@
       "notes": "The rate table 'Bảng niêm yết lãi suất cho vay tiêu dùng cá nhân tại điểm giới thiệu dịch vụ', updated 04/11/2026, applies to this cash-loan product only (not the whole company). It is a list of 26 discrete rates by customer group and term, all 'dư nợ giảm dần, 365 ngày', not a single range; the new-customer range 30-49.92%/year is our min-max of the new-customer rows, and the lender says the rate applied can differ for the same customer group. Application is through a consultation counter ('điểm giới thiệu dịch vụ'); the product page's quick-contact form is a lead form and was not used. No age, income or employer rule is published. Fees come from a tariff dated 01.08.2024 and are capped at low confidence.",
       "borrowerNotes": [
         {
-          "vi": "Theo bảng niêm yết JACCS cập nhật 04/11/2026, khách hàng mới có lãi suất từ 30% đến 49,92%/năm trên dư nợ giảm dần. Mức 30% chỉ áp dụng cho kỳ hạn từ 15 tháng; kỳ hạn dưới 15 tháng thấp nhất là 36,04%/năm. Mức thực tế do JACCS quyết định khi thẩm định.",
+          "vi": "Theo bảng niêm yết của JACCS cập nhật ngày 04/11/2026, khách hàng mới có lãi suất từ 30% đến 49,92%/năm trên dư nợ giảm dần. Mức 30% chỉ áp dụng cho kỳ hạn từ 15 tháng; kỳ hạn dưới 15 tháng thấp nhất là 36,04%/năm. Mức thực tế do JACCS quyết định khi thẩm định.",
           "en": "JACCS's rate table updated 4 Nov 2026 lists 30% to 49.92% a year on the reducing balance for new customers. 30% applies only to terms of 15 months or more; shorter terms start at 36.04%. JACCS decides your actual rate."
         },
         {
@@ -811,8 +821,8 @@
           "en": "To repay early you choose (1) pay the principal plus all interest for the remaining term, no fee, or (2) pay principal and interest to the settlement date plus a fee of 6% (5% after the first instalment) of the outstanding principal, at least 1.65 million đồng."
         },
         {
-          "vi": "Biểu phí ghi phí quản lý khoản vay 12.000 đồng, chưa rõ thu mỗi tháng hay một lần cho cả kỳ hạn. Phí bảo hiểm (nếu bạn mua) chưa được công bố.",
-          "en": "The tariff lists a 12,000 đồng loan management fee; it is unclear whether it is charged monthly or once for the whole term. The insurance premium (if you buy it) is not published."
+          "vi": "Biểu phí ghi phí quản lý khoản vay 12.000 đồng, chưa rõ thu mỗi tháng hay một lần cho cả kỳ hạn. Phí bảo hiểm (nếu bạn mua) chưa được công bố. Chúng tôi tính theo cách tốn hơn (mỗi tháng). Hợp đồng mẫu có in sẵn mục mua bảo hiểm; hãy kiểm tra và chỉ mua nếu bạn muốn.",
+          "en": "The tariff lists a 12,000 đồng loan management fee; it is unclear whether it is charged monthly or once for the whole term. The insurance premium (if you buy it) is not published. We calculate the costlier way (monthly). The contract template has a pre-printed insurance item; check it and only buy if you want to."
         }
       ]
     },
@@ -1493,8 +1503,8 @@
       "notes": "Rate table for 'Xe máy' (updated 01/08/2026). The website's electric-motorbike link serves an older table headed 'Xe máy' dated 06/01/2026, so no electric-motorbike table was recorded. Campaign posts (Honda Wave Alpha 0.39%/month on the INITIAL balance, i.e. flat; Honda 'từ 0.69%/tháng', basis not stated; Yamaha Nozza Grande 0%) all ended 31/10/2026 and were not stored as products. Flat check: 0.39%/month flat over 12-36 months is about 8.5-8.7%/year on a reducing balance (our IRR), and 0.69%/month flat is about 15%/year reducing; those values are close to rows 2 (8.64%) and 4 (15.1589%) of the table, which suggests campaign rates may be quoted flat monthly while the table restates them reducing yearly, but JACCS does not say so. A promoter's '0,39%/tháng' must not be compared directly with a '%/năm dư nợ giảm dần' figure. The calculator's 2.5043%/month x 12 = 30.0516% is row 10 of this table.",
       "borrowerNotes": [
         {
-          "vi": "Mức 0%/năm trong bảng niêm yết là ưu đãi cho một số hàng hóa/chương trình, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm trên dư nợ giảm dần. Hỏi nhân viên JACCS hoặc đại lý lãi suất của đúng khoản vay của bạn trước khi ký.",
-          "en": "The 0% a year in the rate table is a promotion on certain goods or programmes, not a rate you are sure to get. The highest rate in the table is 50.1266% a year on the reducing balance. Ask JACCS or the dealer for the rate on your own loan before you sign."
+          "vi": "Bảng niêm yết có dòng 0%/năm nhưng không nói ai được hưởng; chúng tôi coi đây là ưu đãi, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm, còn mô tả ứng dụng JACCS ghi cao nhất 36%/năm, và chưa rõ mức nào áp dụng.",
+          "en": "The rate table has a 0% a year row but doesn't say who gets it; we treat it as a promotion, not a rate you are sure to get. The table's highest rate is 50.1266% a year, while the JACCS app listing says 36%, and it isn't clear which applies."
         },
         {
           "vi": "Khi tất toán trước hạn, bạn chọn (1) trả hết gốc và toàn bộ lãi của thời gian còn lại, không phí; hoặc (2) trả gốc và lãi đến ngày tất toán cộng phí 6% (5% nếu đã qua kỳ đầu) trên dư nợ gốc, tối thiểu 1,65 triệu đồng.",
@@ -2181,8 +2191,8 @@
       "notes": "Rate table for 'Điện máy' dated 06/01/2026. The calculator uses 3.5080%/month = 42.096%/year, which is row 8 of the table (42.0966%) to rounding. The same 3,000,000 / 6-month output is shown on the furniture tab (same 3.5080%/month).",
       "borrowerNotes": [
         {
-          "vi": "Mức 0%/năm trong bảng niêm yết là ưu đãi cho một số hàng hóa/chương trình, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm trên dư nợ giảm dần. Hỏi nhân viên JACCS hoặc đại lý lãi suất của đúng khoản vay của bạn trước khi ký.",
-          "en": "The 0% a year in the rate table is a promotion on certain goods or programmes, not a rate you are sure to get. The highest rate in the table is 50.1266% a year on the reducing balance. Ask JACCS or the dealer for the rate on your own loan before you sign."
+          "vi": "Bảng niêm yết có dòng 0%/năm nhưng không nói ai được hưởng; chúng tôi coi đây là ưu đãi, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm, còn mô tả ứng dụng JACCS ghi cao nhất 36%/năm, và chưa rõ mức nào áp dụng.",
+          "en": "The rate table has a 0% a year row but doesn't say who gets it; we treat it as a promotion, not a rate you are sure to get. The table's highest rate is 50.1266% a year, while the JACCS app listing says 36%, and it isn't clear which applies."
         },
         {
           "vi": "Khi tất toán trước hạn, bạn chọn (1) trả hết gốc và toàn bộ lãi của thời gian còn lại, không phí; hoặc (2) trả gốc và lãi đến ngày tất toán cộng phí 6% (5% nếu đã qua kỳ đầu) trên dư nợ gốc, tối thiểu 0,85 triệu đồng.",
@@ -2865,8 +2875,8 @@
       "notes": "Rate table for 'Nội thất' dated 06/01/2026. The calculator uses 3.5080%/month = 42.096%/year, whereas the table row says 42.1000% (rounding difference). Nothing between 0% and 34.1%, so a borrower is either on the promotional 0% (up to 24 months) or at 34.1% or above.",
       "borrowerNotes": [
         {
-          "vi": "Mức 0%/năm trong bảng niêm yết là ưu đãi cho một số hàng hóa/chương trình, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm trên dư nợ giảm dần. Hỏi nhân viên JACCS hoặc đại lý lãi suất của đúng khoản vay của bạn trước khi ký.",
-          "en": "The 0% a year in the rate table is a promotion on certain goods or programmes, not a rate you are sure to get. The highest rate in the table is 50.1266% a year on the reducing balance. Ask JACCS or the dealer for the rate on your own loan before you sign."
+          "vi": "Bảng niêm yết có dòng 0%/năm nhưng không nói ai được hưởng; chúng tôi coi đây là ưu đãi, không phải mức bạn chắc chắn được hưởng. Mức cao nhất trong bảng là 50,1266%/năm, còn mô tả ứng dụng JACCS ghi cao nhất 36%/năm, và chưa rõ mức nào áp dụng.",
+          "en": "The rate table has a 0% a year row but doesn't say who gets it; we treat it as a promotion, not a rate you are sure to get. The table's highest rate is 50.1266% a year, while the JACCS app listing says 36%, and it isn't clear which applies."
         },
         {
           "vi": "Khi tất toán trước hạn, bạn chọn (1) trả hết gốc và toàn bộ lãi của thời gian còn lại, không phí; hoặc (2) trả gốc và lãi đến ngày tất toán cộng phí 6% (5% nếu đã qua kỳ đầu) trên dư nợ gốc, tối thiểu 0,85 triệu đồng.",

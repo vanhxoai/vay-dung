@@ -33,6 +33,8 @@ describe("a promotional 0% minimum", () => {
   });
 });
 
+const computeLow = (percent: number, n: number) => (20_000_000 * (percent / 1200)) / (1 - Math.pow(1 + percent / 1200, -n));
+
 describe("a published range for a customer group", () => {
   it("is costed at its top when the minimum disagrees with the lender's own adverts", () => {
     const lotte = recommend(need(), offers, today).ranked.find((r) => r.offer.key === "lotte-finance/lotte-salaried-cash-loan");
@@ -44,6 +46,17 @@ describe("a published range for a customer group", () => {
     const rec = recommend(need({ age: 70, purpose: "phone" }), offers, today);
     expect(rec.ranked.map((r) => r.offer.key)).toEqual(["jaccs/cash-loan"]);
     expect(rec.verdict).toBe("depends");
+  });
+
+  it("never costs JACCS's 30% on terms its table excludes", () => {
+    const at = (termMonths: number) => recommend(need({ termMonths }), offers, today).ranked.find((r) => r.offer.key === "jaccs/cash-loan");
+    expect(at(12)?.low.firstPaymentVnd).toBeGreaterThan(computeLow(36, 12));
+    expect(at(24)?.low.aprNominal).toBeLessThan(0.32);
+  });
+
+  it("can't give an OK verdict that rests on a reference maximum", () => {
+    const only = offers.filter((o) => o.key === "sfinance/vay-tien-mat");
+    expect(recommend(need(), only, today).verdict).toBe("depends");
   });
 
   it("keeps Mirae Asset unranked until its figures are confirmed by hand", () => {

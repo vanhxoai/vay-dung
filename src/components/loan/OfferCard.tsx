@@ -9,6 +9,8 @@ import { rateNoteText } from "./Results";
 const FIT_STYLE = {
   fits: "text-emerald-800 dark:text-emerald-300",
   fits_fees_unknown: "text-amber-800 dark:text-amber-300",
+  fits_reference: "text-amber-800 dark:text-amber-300",
+  too_much_at_max: "text-red-800 dark:text-red-300",
   fits_only_low: "text-amber-800 dark:text-amber-300",
   too_much: "text-red-800 dark:text-red-300",
 } as const;
@@ -49,7 +51,10 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
   const falling = high.firstPaymentVnd - high.lastPaymentVnd > need.termMonths * 10;
   const unknownLimits =
     offer.amountMinVnd === null || offer.amountMaxVnd === null || offer.termMinMonths === null || offer.termMaxMonths === null;
-  const fitLabel = fit === "fits" && ranked.feesAllUnknown ? "fits_fees_unknown" : fit;
+  // Costed at the top of a range: a statement about the published maximum, not about this borrower's rate.
+  const atMax = rate.minIsPromotional || rate.minUnconfirmed;
+  const fitLabel =
+    fit === "fits" && rate.maxIsReference ? "fits_reference" : fit === "too_much" && atMax ? "too_much_at_max" : fit === "fits" && ranked.feesAllUnknown ? "fits_fees_unknown" : fit;
   // Different amounts can round to the same "x triệu"; a real range must still look like one.
   const totalPaid =
     low.totalPaidVnd !== high.totalPaidVnd && m(low.totalPaidVnd) === m(high.totalPaidVnd)
@@ -101,7 +106,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       {unknownLimits ? <p className={notice}>{t("unknownLimits")}</p> : null}
       {offer.minAge === null && offer.maxAge === null ? <p className={notice}>{t("ageUnknown")}</p> : null}
 
-      <p>{t("sentence", { amount: formatLoanAmount(need.amountVnd, locale), total: totalPaid, term: need.termMonths })}</p>
+      <p>{t(atMax ? "sentenceAtMax" : "sentence", { amount: formatLoanAmount(need.amountVnd, locale), total: totalPaid, term: need.termMonths })}</p>
 
       <dl className="flex flex-col gap-2">
         <Row label={offer.goods ? t("receivedGoods") : t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
@@ -114,7 +119,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
         <Row
           label={t("realApr")}
           value={`${range(formatPercent(low.aprNominal, locale), formatPercent(high.aprNominal, locale))}${t("perYear")}`}
-          note={t("realAprNote")}
+          note={atMax ? t("realAprNoteAtMax") : t("realAprNote")}
         />
         <div className="flex flex-col">
           <dt className="text-sm opacity-75">{t("advertised")}</dt>
