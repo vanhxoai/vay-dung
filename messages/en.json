@@ -193,6 +193,7 @@
     "ageUnknown": "We haven't found published age limits for this product. Ask before applying.",
     "sentenceAtMax": "At the highest published rate, you borrow {amount} and repay about {total} in total over {term} months.",
     "realAprNoteAtMax": "at the highest published rate, not necessarily yours; includes mandatory fees with a known amount",
+    "upTo": "up to {rate}",
     "promoLow": "The 0% rate only applies to some promoted goods, so we calculate at the highest published rate. Only count on 0% if your contract states it.",
     "received": "Money in your hand",
     "monthly": "Monthly payment",

@@ -44,8 +44,10 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
   const en = locale === "en";
 
   const period = rate.period === "monthly" ? t("perMonth") : t("perYear");
-  const advertised =
-    rate.minPercent === rate.maxPercent
+  // A minimum we don't cost isn't shown as a price: the card says only "up to".
+  const advertised = rate.minUnconfirmed
+    ? t("upTo", { rate: `${formatRate(rate.maxPercent, locale)}%${period}` })
+    : rate.minPercent === rate.maxPercent
       ? `${formatRate(rate.minPercent, locale)}%${period}`
       : `${formatRate(rate.minPercent, locale)}–${formatRate(rate.maxPercent, locale)}%${period}`;
   const falling = high.firstPaymentVnd - high.lastPaymentVnd > need.termMonths * 10;
@@ -128,9 +130,11 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
             {rate.basisInferred ? <span className="block text-sm opacity-75">({t("assumption")})</span> : null}
             {rate.oldDocumentDate ? <span className="block text-sm opacity-75">{t("documentDate", { date: formatDate(rate.oldDocumentDate) })}</span> : null}
             {repaymentAssumed ? <span className="block text-sm opacity-75">{t("repaymentAssumption")}</span> : null}
-            <a href={rate.sourceUrl} target="_blank" rel="noopener noreferrer" className={`${linkClass} block text-sm`}>
-              {t("rateSource")}
-            </a>
+            <span className="block">
+              <a href={rate.sourceUrl} target="_blank" rel="noopener noreferrer" className={`${linkClass} text-sm`}>
+                {t("rateSource")}
+              </a>
+            </span>
           </dd>
         </div>
       </dl>

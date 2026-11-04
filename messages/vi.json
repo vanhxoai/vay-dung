@@ -193,6 +193,7 @@
     "ageUnknown": "Chúng tôi chưa thấy giới hạn tuổi được công bố cho sản phẩm này. Hãy hỏi trước khi đăng ký.",
     "sentenceAtMax": "Nếu tính ở lãi suất cao nhất được công bố, bạn vay {amount}, trả tổng cộng khoảng {total} trong {term} tháng.",
     "realAprNoteAtMax": "tính ở lãi suất cao nhất được công bố, không phải mức chắc chắn của bạn; đã gồm phí bắt buộc đã biết số tiền",
+    "upTo": "đến {rate}",
     "promoLow": "Mức 0% chỉ áp dụng cho một số sản phẩm có khuyến mãi, nên chúng tôi tính theo mức cao nhất được công bố. Chỉ tính theo 0% nếu hợp đồng ghi rõ.",
     "received": "Tiền về tay bạn",
     "monthly": "Trả mỗi tháng",
