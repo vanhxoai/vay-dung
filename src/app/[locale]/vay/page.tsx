@@ -3,18 +3,23 @@ import { LoanFlow } from "@/components/loan/LoanFlow";
 import licensedList from "../../../../data/licensed-institutions.json";
 import { oldestListDate } from "@/lib/data/lenders";
 import { LicensedList } from "@/lib/data/schema";
-import { getLoanData } from "@/lib/store";
+import { getLoanData, loadSnapshot, snapshotVersion } from "@/lib/store";
 
-/** Only matters when LOAN_RATES_CSV_URL is set: the live rate feed is re-read every 5 minutes. */
-async function cachedLoanData() {
+/**
+ * The live rate feed, re-read every 5 minutes. The arguments are the cache key: Next keeps this
+ * result across builds, so an Excel edit or a new feed address must not reuse the old one.
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- part of the cache key
+async function withLiveRates(feedUrl: string, _snapshot: string) {
   "use cache";
   cacheLife({ stale: 300, revalidate: 300, expire: 86_400 });
-  return getLoanData();
+  return getLoanData(feedUrl);
 }
 
 export default async function LoanPage() {
   // Runs on the server. The browser receives only slim offers; the user's answers never come back.
-  const { offers } = await cachedLoanData();
+  const feedUrl = process.env.LOAN_RATES_CSV_URL;
+  const { offers } = feedUrl ? await withLiveRates(feedUrl, snapshotVersion()) : loadSnapshot();
   const list = LicensedList.parse(licensedList);
   return (
     <LoanFlow

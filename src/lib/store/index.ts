@@ -5,12 +5,20 @@
  *   data/store/loan-data.xlsx  →  npm run data:import  →  data/store/snapshot.json  →  here
  *                                                 LOAN_RATES_CSV_URL (optional)  ↗
  */
+import { createHash } from "node:crypto";
 import type { Offer } from "@/lib/recommend/offers";
 import raw from "../../../data/store/snapshot.json";
 import { applyRateFeed } from "./feed";
 import { Snapshot } from "./schema";
 
+const FEED_TIMEOUT_MS = 10_000;
+
 export type LoanData = { offers: Offer[]; dataAsOf: string };
+
+/** Changes whenever the imported data does. */
+export function snapshotVersion(): string {
+  return createHash("sha256").update(JSON.stringify(raw)).digest("hex");
+}
 
 export function loadSnapshot(): LoanData {
   const s = Snapshot.parse(raw);
@@ -21,7 +29,8 @@ export async function getLoanData(feedUrl = process.env.LOAN_RATES_CSV_URL): Pro
   const data = loadSnapshot();
   if (!feedUrl) return data;
   try {
-    const res = await fetch(feedUrl);
+    // A feed that hangs must not hang the page, or the build.
+    const res = await fetch(feedUrl, { signal: AbortSignal.timeout(FEED_TIMEOUT_MS) });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const { offers, applied, skipped } = applyRateFeed(data.offers, await res.text());
     if (skipped.length > 0) console.warn(`Rate feed skipped ${skipped.length} row(s): ${skipped.slice(0, 5).join("; ")}`);

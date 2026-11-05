@@ -106,7 +106,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://aeonfinance.vn/vay-tien-mat",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -269,7 +269,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://aeonfinance.vn/vay-tien-mat",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -394,7 +394,7 @@
         "maxPercent": 55,
         "basis": "reducing",
         "period": "yearly",
-        "basisInferred": false,
+        "basisInferred": true,
         "minIsPromotional": true,
         "segment": null,
         "sourceType": "official",
@@ -402,7 +402,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://aeonfinance.vn/bieu-mau-lai-suat-thang-102026",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -867,7 +867,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://www.fecredit.com.vn/tin-tuc-khuyen-mai/tin-tuc/gioi-thieu-san-pham-tien-mat-chu-dong-han-muc-den-400-trieu/",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -954,7 +954,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://hdbank.com.vn/vi/news/detail/tin-tuc-khac/vay-tin-chap-la-gi",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": "2025-02-26"
       },
       "rateNotes": [
@@ -1090,7 +1090,7 @@
         "scope": "product",
         "quote": null,
         "sourceUrl": "https://cdn.hdbank.com.vn/hdbank-file/news/editor/GBsJgL54U6vfGdo6Igd020240402103044/THONGTINSP_1712028753952.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": "2024-04-02"
       },
       "rateNotes": [
@@ -1174,19 +1174,20 @@
       "termMinMonths": 9,
       "termMaxMonths": 60,
       "rate": {
-        "minPercent": 20.41,
-        "maxPercent": 34.78,
+        "minPercent": 2.94,
+        "maxPercent": 2.94,
         "basis": "flat",
-        "period": "yearly",
+        "period": "monthly",
         "basisInferred": false,
+        "minUnconfirmed": true,
         "segment": null,
         "sourceType": "official",
-        "sourceName": "HD SAISON (mô tả ứng dụng trên App Store)",
+        "sourceName": "HD SAISON",
         "scope": "lender_general",
-        "quote": "Lãi suất chỉ từ 20.41%/năm đến 34.78%/năm (theo dư nợ ban đầu)",
-        "sourceUrl": "https://apps.apple.com/vn/app/id1589425903",
-        "retrievedAt": "2026-11-05",
-        "oldDocumentDate": "2026-09-02"
+        "quote": null,
+        "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
+        "retrievedAt": "2026-11-02",
+        "oldDocumentDate": null
       },
       "rateNotes": [
         {
@@ -1282,14 +1283,19 @@
         "https://www.hdsaison.com.vn/vn/hoi-dap.html",
         "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
         "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
-        "https://www.hdsaison.com.vn/thu-tuc-vay.html",
-        "https://apps.apple.com/vn/app/id1589425903"
+        "https://www.hdsaison.com.vn/thu-tuc-vay.html"
       ],
       "retrievedAt": "2026-11-01",
       "oldestRetrievedAt": "2026-11-01",
       "confidence": "low",
       "excludeFromRanking": false,
-      "excludeCode": null
+      "excludeCode": null,
+      "borrowerNotes": [
+        {
+          "vi": "Ứng dụng của HD SAISON ghi 20,41–34,78%/năm cho kỳ hạn 6–12 tháng. Chúng tôi tính theo mức trần công bố, 2,94%/tháng, vì nó áp dụng cho mọi kỳ hạn.",
+          "en": "HD SAISON's app says 20.41–34.78% a year for 6–12 month terms. We use the published ceiling, 2.94% a month, as it covers every term."
+        }
+      ]
     },
     {
       "key": "hd-saison/motorbike-installment",
@@ -1318,7 +1324,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-02",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -1448,7 +1454,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-02",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -2141,20 +2147,20 @@
       "termMinMonths": 6,
       "termMaxMonths": 36,
       "rate": {
-        "minPercent": 11.3,
-        "maxPercent": 49.9,
+        "minPercent": 0,
+        "maxPercent": 50.1266,
         "basis": "reducing",
         "period": "yearly",
-        "basisInferred": true,
-        "minUnconfirmed": true,
+        "basisInferred": false,
+        "minIsPromotional": true,
         "segment": null,
-        "sourceType": "aggregator",
-        "sourceName": "Topi",
+        "sourceType": "official",
+        "sourceName": "JACCS",
         "scope": "lender_general",
-        "quote": "từ 11,3 - 49,9%/năm",
-        "sourceUrl": "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html",
-        "retrievedAt": "2026-11-05",
-        "oldDocumentDate": "2026-11-04"
+        "quote": null,
+        "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/07/MB_BANG-NIEM-YET-LAI-SUAT_01.08.2026-VN-stamped.pdf",
+        "retrievedAt": "2026-11-04",
+        "oldDocumentDate": null
       },
       "rateNotes": [
         {
@@ -2260,8 +2266,7 @@
         "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
         "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
         "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
-        "https://jaccs.com.vn/vi/hop-dong-tin-dung/",
-        "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html"
+        "https://jaccs.com.vn/vi/hop-dong-tin-dung/"
       ],
       "retrievedAt": "2026-11-04",
       "oldestRetrievedAt": "2026-11-04",
@@ -2298,20 +2303,20 @@
       "termMinMonths": 6,
       "termMaxMonths": 36,
       "rate": {
-        "minPercent": 11.3,
-        "maxPercent": 49.9,
+        "minPercent": 0,
+        "maxPercent": 50.1266,
         "basis": "reducing",
         "period": "yearly",
-        "basisInferred": true,
-        "minUnconfirmed": true,
+        "basisInferred": false,
+        "minIsPromotional": true,
         "segment": null,
-        "sourceType": "aggregator",
-        "sourceName": "Topi",
+        "sourceType": "official",
+        "sourceName": "JACCS",
         "scope": "lender_general",
-        "quote": "từ 11,3 - 49,9%/năm",
-        "sourceUrl": "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html",
-        "retrievedAt": "2026-11-05",
-        "oldDocumentDate": "2026-11-04"
+        "quote": null,
+        "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/CE_VN.pdf",
+        "retrievedAt": "2026-11-04",
+        "oldDocumentDate": null
       },
       "rateNotes": [
         {
@@ -2415,8 +2420,7 @@
         "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
         "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
         "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
-        "https://jaccs.com.vn/vi/hop-dong-tin-dung/",
-        "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html"
+        "https://jaccs.com.vn/vi/hop-dong-tin-dung/"
       ],
       "retrievedAt": "2026-11-04",
       "oldestRetrievedAt": "2026-11-04",
@@ -2449,20 +2453,20 @@
       "termMinMonths": 6,
       "termMaxMonths": 36,
       "rate": {
-        "minPercent": 11.3,
-        "maxPercent": 49.9,
+        "minPercent": 0,
+        "maxPercent": 50.1266,
         "basis": "reducing",
         "period": "yearly",
-        "basisInferred": true,
-        "minUnconfirmed": true,
+        "basisInferred": false,
+        "minIsPromotional": true,
         "segment": null,
-        "sourceType": "aggregator",
-        "sourceName": "Topi",
+        "sourceType": "official",
+        "sourceName": "JACCS",
         "scope": "lender_general",
-        "quote": "từ 11,3 - 49,9%/năm",
-        "sourceUrl": "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html",
-        "retrievedAt": "2026-11-05",
-        "oldDocumentDate": "2026-11-04"
+        "quote": null,
+        "sourceUrl": "https://jaccs.com.vn/wp-content/uploads/2026/01/FL_VN.pdf",
+        "retrievedAt": "2026-11-04",
+        "oldDocumentDate": null
       },
       "rateNotes": [
         {
@@ -2566,8 +2570,7 @@
         "https://jaccs.com.vn/vi/tin-tuc/v-v-cong-bo-khung-lai-suat-tha-noi-bao-gom-lai-suat-co-ban-va-bien-do-2/",
         "https://jaccs.com.vn/vi/tin-tuc/thong-bao-ve-viec-cong-bo-lai-suat-cho-vay-binh-quan-24/",
         "https://jaccs.com.vn/vi/dieu-kien-giao-dich-chung/",
-        "https://jaccs.com.vn/vi/hop-dong-tin-dung/",
-        "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html"
+        "https://jaccs.com.vn/vi/hop-dong-tin-dung/"
       ],
       "retrievedAt": "2026-11-04",
       "oldestRetrievedAt": "2026-11-04",
@@ -3178,7 +3181,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://www.mbbank.com.vn/tin-tuc/blog/vay-tin-chap-la-gi",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -3388,7 +3391,7 @@
         "maxPercent": 6.25,
         "basis": "flat",
         "period": "monthly",
-        "basisInferred": false,
+        "basisInferred": true,
         "minUnconfirmed": true,
         "segment": null,
         "sourceType": "official",
@@ -3396,7 +3399,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://play.google.com/store/apps/details?id=com.mcreditvn.superapp&hl=vi",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-02",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -3528,7 +3531,7 @@
         "maxPercent": 6.25,
         "basis": "flat",
         "period": "monthly",
-        "basisInferred": false,
+        "basisInferred": true,
         "minUnconfirmed": true,
         "segment": null,
         "sourceType": "official",
@@ -3536,7 +3539,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://play.google.com/store/apps/details?id=com.mcreditvn.superapp&hl=vi",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-02",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -3669,7 +3672,7 @@
         "maxPercent": 6.25,
         "basis": "flat",
         "period": "monthly",
-        "basisInferred": false,
+        "basisInferred": true,
         "minIsPromotional": true,
         "segment": null,
         "sourceType": "official",
@@ -3677,7 +3680,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://play.google.com/store/apps/details?id=com.mcreditvn.superapp&hl=vi",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-02",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -3796,7 +3799,7 @@
         "maxPercent": 6.25,
         "basis": "flat",
         "period": "monthly",
-        "basisInferred": false,
+        "basisInferred": true,
         "minUnconfirmed": true,
         "segment": null,
         "sourceType": "official",
@@ -3804,7 +3807,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://play.google.com/store/apps/details?id=com.mcreditvn.superapp&hl=vi",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-02",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -3938,7 +3941,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -4096,7 +4099,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -4242,7 +4245,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -4396,7 +4399,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -4550,7 +4553,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/vay-theo-hoa-don-dien-nuoc.html",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -4695,7 +4698,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/vay-tien-mat-danh-cho-nu/",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -4847,7 +4850,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/vay-theo-hop-dong-bao-hiem-nhan-tho.html",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -4993,7 +4996,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -5147,7 +5150,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -5304,7 +5307,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -5450,7 +5453,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://mafc.com.vn/wp-content/uploads/khung-lai-suat-phi-phuong-phap-tinh-lai.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -5859,19 +5862,18 @@
       "termMinMonths": 2,
       "termMaxMonths": 60,
       "rate": {
-        "minPercent": 1,
-        "maxPercent": 1,
+        "minPercent": 1.2,
+        "maxPercent": 1.5,
         "basis": "flat",
         "period": "monthly",
         "basisInferred": false,
-        "floorOnly": true,
-        "segment": null,
+        "segment": "Chủ thẻ tín dụng cá nhân Sacombank",
         "sourceType": "official",
         "sourceName": "Sacombank",
-        "scope": "lender_general",
+        "scope": "product",
         "quote": null,
-        "sourceUrl": "https://www.sacombank.com.vn/ca-nhan/the/dich-vu-the/vay-tieu-dung-tren-sacombank-pay.html",
-        "retrievedAt": "2026-11-05",
+        "sourceUrl": "https://www.sacombank.com.vn/content/dam/sacombank/files/ca-nhan/the/dv-the/Sacombank_CauHoiThuongGapVayTieuDung.pdf",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -6272,7 +6274,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -6365,7 +6367,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -6480,7 +6482,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://static-files.sfinance.com.vn/uploads/KHUNG%20L%C3%83I%20SU%E1%BA%A4T%20CHO%20VAY%20TI%C3%8AU%20D%C3%99NG.pdf",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -6803,7 +6805,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://shinhanfinance.com.vn/en/news/post/115394/shinhan-finance-ra-mat-tai-toc-giai-phap-vay-online-sieu-nhanh-hoan-toan-tu-dong",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -6889,8 +6891,8 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-        "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "retrievedAt": "2026-11-03",
+        "oldDocumentDate": "2025-03-03"
       },
       "rateNotes": [
         {
@@ -7102,8 +7104,8 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://shinhanfinance.com.vn/assets/site/Tariff-SF-V4.3-03.06.2025_2025-06-05-095234.pdf",
-        "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "retrievedAt": "2026-11-03",
+        "oldDocumentDate": "2025-03-03"
       },
       "rateNotes": [
         {
@@ -7882,7 +7884,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://tnex.com.vn/san-pham/vay-tieu-dung-ca-nhan-co-luong",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -8048,6 +8050,7 @@
         "basis": "reducing",
         "period": "monthly",
         "basisInferred": true,
+        "minUnconfirmed": true,
         "segment": null,
         "sourceType": "press",
         "sourceName": "Tạp chí Công Thương",
@@ -8424,19 +8427,19 @@
       "termMinMonths": 12,
       "termMaxMonths": 60,
       "rate": {
-        "minPercent": 1.29,
+        "minPercent": 1.9,
         "maxPercent": 1.9,
         "basis": "reducing",
         "period": "monthly",
         "basisInferred": true,
-        "maxIsReference": true,
+        "floorOnly": true,
         "segment": null,
         "sourceType": "official",
         "sourceName": "VIB",
         "scope": "lender_general",
-        "quote": "Từ 1,29%/tháng, đến 1,9%/tháng",
-        "sourceUrl": "https://www.vib.com.vn/vn/product-landing/vay-tieu-dung/Vay-tieu-dung-tin-chap",
-        "retrievedAt": "2026-11-05",
+        "quote": null,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -8529,8 +8532,7 @@
         "https://www.vib.com.vn/vn/vay-tieu-dung",
         "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=12&luong=0&theTd=1",
         "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=300000000&kyhan=60&nhanluong=12&luong=1&theTd=0",
-        "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib",
-        "https://www.vib.com.vn/vn/product-landing/vay-tieu-dung/Vay-tieu-dung-tin-chap"
+        "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien-luong-vib"
       ],
       "retrievedAt": "2026-11-03",
       "oldestRetrievedAt": "2026-11-03",
@@ -8563,7 +8565,7 @@
         "maxPercent": 2,
         "basis": "reducing",
         "period": "monthly",
-        "basisInferred": false,
+        "basisInferred": true,
         "floorOnly": true,
         "segment": null,
         "sourceType": "official",
@@ -8571,7 +8573,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -8898,7 +8900,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/viettel-money",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -9005,7 +9007,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/vnpt-money",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -9201,7 +9203,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://tinvay.com.vn/tin-tuc/thong-bao/tin-vay-tren-fiza-zalo-tung-uu-dai-nang-han-muc-den-100-trieu-yQL.html",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-04",
         "oldDocumentDate": null
       },
       "rateNotes": [
@@ -9272,20 +9274,20 @@
       "termMinMonths": 6,
       "termMaxMonths": 48,
       "rate": {
-        "minPercent": 1.91,
-        "maxPercent": 5.92,
-        "basis": "flat",
-        "period": "monthly",
-        "basisInferred": true,
+        "minPercent": 89,
+        "maxPercent": 89,
+        "basis": "reducing",
+        "period": "yearly",
+        "basisInferred": false,
         "minUnconfirmed": true,
         "segment": null,
-        "sourceType": "lender_partner",
-        "sourceName": "MoMo Vay Nhanh",
+        "sourceType": "official",
+        "sourceName": "VietCredit",
         "scope": "lender_general",
-        "quote": "Lãi suất vay từ 1,91%/tháng tùy đối tác tín dụng",
-        "sourceUrl": "https://www.momo.vn/vay-nhanh",
-        "retrievedAt": "2026-11-05",
-        "oldDocumentDate": "2026-10-19"
+        "quote": null,
+        "sourceUrl": "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf",
+        "retrievedAt": "2026-11-04",
+        "oldDocumentDate": null
       },
       "rateNotes": [],
       "amortization": null,
@@ -9324,7 +9326,7 @@
       "sourceUrl": "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
       "sourceUrls": [
         "https://tinvay.com.vn/dich-vu/vay-ca-nhan/momo",
-        "https://www.momo.vn/vay-nhanh"
+        "https://tinvay.com.vn/BIEUMAU/VAYTIEUDUNGCANHAN/VaytieudungCanhanBieumaulaisuat010220261.pdf"
       ],
       "retrievedAt": "2026-11-04",
       "oldestRetrievedAt": "2026-11-04",
@@ -9337,8 +9339,8 @@
           "en": "On MoMo, the loan may come from a different finance company. Check the lender's name and the rate in the contract before you agree."
         },
         {
-          "vi": "Con số này là của MoMo cho nhiều bên cho vay, không riêng VietCredit.",
-          "en": "This figure is MoMo's, across several lenders, not VietCredit's alone."
+          "vi": "Trang của MoMo ghi 1,91–5,92%/tháng, nhưng cho nhiều bên cho vay chứ không riêng VietCredit. Chúng tôi tính theo mức trần VietCredit công bố cho Tin Vay, 89%/năm. Lãi suất thật của bạn có thể thấp hơn nhiều.",
+          "en": "MoMo's page says 1.91–5.92% a month, but across several lenders, not VietCredit alone. We use the ceiling VietCredit publishes for Tin Vay, 89% a year. Your real rate may be much lower."
         }
       ]
     },
@@ -9690,7 +9692,7 @@
         "scope": "lender_general",
         "quote": null,
         "sourceUrl": "https://www.vpbank.com.vn/ca-nhan/vay/kh-hien-huu",
-        "retrievedAt": "2026-11-05",
+        "retrievedAt": "2026-11-03",
         "oldDocumentDate": null
       },
       "rateNotes": [

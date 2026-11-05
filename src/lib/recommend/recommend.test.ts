@@ -165,6 +165,43 @@ describe("the order of the ranking", () => {
   });
 });
 
+describe("mandatory insurance on a declining balance", () => {
+  const ins = (o: Partial<Offer["insurance"][number]> = {}): Offer["insurance"][number] => ({
+    nameVi: "BH",
+    nameEn: null,
+    mandatory: true,
+    collection: "deducted_from_payout",
+    method: "annual_rate_on_declining_balance",
+    ratePercentMin: 1,
+    ratePercentMax: 1,
+    insuredTiers: null,
+    fixedVnd: null,
+    ...o,
+  });
+  const rate = (o: Partial<NonNullable<Offer["rate"]>>) => ({ ...(offer().rate as NonNullable<Offer["rate"]>), ...o });
+
+  it("follows a flat loan's straight-line balance, not an annuity's", () => {
+    // Flat: 12,000,000 repaid at 1,000,000 a month, opening balances 12M, 11M … 1M, summing to 78M.
+    // 1%/year on each is 1/12% a month: 78,000,000 × 0.01 ÷ 12 = 65,000.
+    const o = offer({ rate: rate({ basis: "flat", period: "yearly", minPercent: 20, maxPercent: 20 }), insurance: [ins()] });
+    expect(premiumRange(o.insurance[0], o, 12_000_000, 12)).toEqual([65_000, 65_000]);
+  });
+
+  it("uses the term's own lowest rate for the low end", () => {
+    const withTerm = offer({ rate: rate({ minPercent: 10, maxPercent: 40, minByTerm: [{ termMonthsMin: 24, percent: 30 }, { termMonthsMin: 0, percent: 10 }] }), insurance: [ins()] });
+    const noTerm = offer({ rate: rate({ minPercent: 30, maxPercent: 40 }), insurance: [ins()] });
+    expect(premiumRange(withTerm.insurance[0], withTerm, 20_000_000, 24)).toEqual(premiumRange(noTerm.insurance[0], noTerm, 20_000_000, 24));
+  });
+
+  it("spreads a premium collected monthly over the term", () => {
+    const fixed = ins({ method: "fixed", fixedVnd: 2_400_000, ratePercentMin: null, ratePercentMax: null, collection: "monthly" });
+    const r = recommend(need(), [offer({ rate: rate({ minPercent: 0, maxPercent: 0 }), insurance: [fixed] })], today).ranked[0];
+    // 20,000,000 at 0%, plus 100,000 a month: the whole payout arrives at the start.
+    expect(r.high.amountReceivedVnd).toBe(20_000_000);
+    expect(r.high.totalPaidVnd).toBe(22_400_000);
+  });
+});
+
 describe("sorting by the borrower's choice", () => {
   const rate = (o: Partial<NonNullable<Offer["rate"]>>) => ({ ...(offer().rate as NonNullable<Offer["rate"]>), ...o });
   it("orders by the number they chose, and leaves the default alone", () => {

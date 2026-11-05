@@ -4,7 +4,7 @@
  * Ranking (DECISIONS #27, #65): fit first, then cost. See `rankOffers`, and the public
  * explanation at /cach-xep-hang, which must change whenever this order does.
  * It reads cost and fit only; no commercial field exists.
- * A product whose fees are entirely unknown can't take first place (compliance S6).
+ * A product whose fees are entirely unknown can't lead a known-fee loan in its group (compliance S6).
  *
  * Costs are computed at the low and high ends of the range: we can't know which
  * rate a lender would give this person.
@@ -144,6 +144,11 @@ function costAt(offer: Offer, percent: number, need: Need, extra: readonly Charg
   });
 }
 
+/** The lowest rate that could apply at this term. */
+function lowPercentAt(r: NonNullable<Offer["rate"]>, termMonths: number): number {
+  return r.minByTerm?.find((m) => termMonths >= m.termMonthsMin)?.percent ?? r.minPercent;
+}
+
 /** Premium range in VND, or null when the lender doesn't publish enough to compute it. */
 export function premiumRange(ins: OfferInsurance, offer: Offer, amountVnd: number, termMonths: number): [number, number] | null {
   const lo = ins.ratePercentMin;
@@ -157,9 +162,9 @@ export function premiumRange(ins: OfferInsurance, offer: Offer, amountVnd: numbe
     case "annual_rate_on_declining_balance": {
       if (lo === null || hi === null || offer.rate === null) return null;
       // Each end pairs its premium rate with the balances at the same end of the loan rate.
-      const opening = (percent: number) =>
-        buildSchedule(amountVnd, monthlyRate(quoted(offer, percent)), termMonths, offer.amortization ?? "annuity").map((r) => r.balance + r.principal);
-      return [premiumOnDecliningBalance(opening(offer.rate.minPercent), lo), premiumOnDecliningBalance(opening(offer.rate.maxPercent), hi)];
+      const method = offer.rate.basis === "flat" ? "flat" : (offer.amortization ?? "annuity");
+      const opening = (percent: number) => buildSchedule(amountVnd, monthlyRate(quoted(offer, percent)), termMonths, method).map((r) => r.balance + r.principal);
+      return [premiumOnDecliningBalance(opening(lowPercentAt(offer.rate, termMonths)), lo), premiumOnDecliningBalance(opening(offer.rate.maxPercent), hi)];
     }
     case "fixed":
       return ins.fixedVnd === null ? null : [ins.fixedVnd, ins.fixedVnd];
@@ -175,8 +180,8 @@ function mandatoryCharges(offer: Offer, need: Need): { low: Charge[]; high: Char
   for (const ins of offer.insurance) {
     const range = ins.mandatory === true ? premiumRange(ins, offer, need.amountVnd, need.termMonths) : null;
     if (!range) continue;
-    low.push({ label: ins.nameVi, amountVnd: range[0], timing: chargeTiming(ins) });
-    high.push({ label: ins.nameVi, amountVnd: range[1], timing: chargeTiming(ins) });
+    low.push(premiumCharge(ins, range[0], need.termMonths));
+    high.push(premiumCharge(ins, range[1], need.termMonths));
   }
   return { low, high };
 }
@@ -205,14 +210,14 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
         collectionKnown,
         minVnd: range[0],
         maxVnd: range[1],
-        costHigh: costAt(offer, r.maxPercent, need, [{ label: ins.nameVi, amountVnd: range[1], timing: chargeTiming(ins) }]),
+        costHigh: costAt(offer, r.maxPercent, need, [premiumCharge(ins, range[1], need.termMonths)]),
       });
     }
   }
 
   const charges = mandatoryCharges(offer, need);
   // A promotional or unconfirmed minimum isn't this borrower's rate, so it can't soften the cost or the verdict.
-  const lowPercent = r.minByTerm?.find((m) => need.termMonths >= m.termMonthsMin)?.percent ?? r.minPercent;
+  const lowPercent = lowPercentAt(r, need.termMonths);
   const low = r.minIsPromotional || r.minUnconfirmed ? costAt(offer, r.maxPercent, need, charges.high) : costAt(offer, lowPercent, need, charges.low);
   const high = costAt(offer, r.maxPercent, need, charges.high);
   const atLow = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, low.maxPaymentVnd);
@@ -236,9 +241,10 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
 }
 
 /** How a premium enters the cash flows. When unknown we assume deducted, and the UI says so. */
-function chargeTiming(ins: OfferInsurance): Charge["timing"] {
-  if (ins.collection === "added_to_loan" || ins.collection === "paid_upfront") return ins.collection;
-  return "deducted_from_payout";
+function premiumCharge(ins: OfferInsurance, totalVnd: number, termMonths: number): Charge {
+  if (ins.collection === "monthly") return { label: ins.nameVi, amountVnd: Math.ceil(totalVnd / termMonths), timing: "monthly" };
+  const timing = ins.collection === "added_to_loan" || ins.collection === "paid_upfront" ? ins.collection : "deducted_from_payout";
+  return { label: ins.nameVi, amountVnd: totalVnd, timing };
 }
 
 function isOpenToAnyone(r: RankedOffer): boolean {
