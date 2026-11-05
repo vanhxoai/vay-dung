@@ -1,5 +1,7 @@
 # Lender data coverage
 
+> This file describes the state before the Excel store (2026-11-05). Current counts are on the app's /du-lieu page and in docs/PROGRESS.md.
+
 As of 2026-11-03. This records what the deep research found, and where it looked for what is still missing, so "not published" rests on evidence. Details and URLs are in each `data/lenders/*.json` file (`rates`, `conflicts`, `notes`, `researchNotes`). The research brief is in [data-deep-dive-brief.md](data-deep-dive-brief.md).
 
 ## Summary

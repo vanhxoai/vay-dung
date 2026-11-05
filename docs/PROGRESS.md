@@ -168,7 +168,7 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 **Next:** your decision on publishing.
 
 ## Excel data store, ranking and disclosure (2026-11-05)
-**Status:** committed, not live. The live site still has the older data.
+**Status:** live at https://vay-dung.vercel.app since 2026-11-05, and checked on the live site. The project report is updated.
 
 - The app is now a student project, with a banner on every page. Rates may come from comparison sites, partners or the press when no official figure exists, named on each card (DECISIONS #63).
 - Data store: `data/store/loan-data.xlsx`, checked by `npm run data:import`. Optional live rate feed through `LOAN_RATES_CSV_URL`. How to use it: `docs/DATA_STORE.md`.
@@ -176,6 +176,6 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Ranking now puts fit first, then cost (DECISIONS #65). Published at `/cach-xep-hang`, including what each answer does. All the data is at `/du-lieu`, with a CSV download.
 - Results gain a summary table, a sort, a source filter and a first-place warning. Each card gains "why this position" and a month-by-month schedule.
 - Three weak figures stay, with notes on the card: TPBank's 2023 article, Sacombank's 9.6% and VPBank's teacher 17%. The compliance reviewer advised dropping them; you can do that in Excel.
-- Open: one-off mandatory fees aren't in the cost yet (the page says so), self-employed borrowers aren't treated as lacking income papers, English pages keep some Vietnamese from the sources, and the project report still shows the old data.
+- Open: one-off mandatory fees aren't in the cost yet (the page says so), self-employed borrowers aren't treated as lacking income papers, English pages keep some Vietnamese from the sources, and the feed's 5-minute refresh hasn't been observed. Compliance didn't reread the final text.
 
-**Next:** your decision on publishing.
+**Next:** your review. Figures start going stale in late January 2027.
