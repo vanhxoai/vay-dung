@@ -91,6 +91,10 @@ export type Recommendation = {
   someDontFit: boolean;
   /** Estimate of a loan that would fit, or null if none does. */
   suggestedAmountVnd: number | null;
+  /** The lender whose highest rate that estimate uses. */
+  suggestedLender: string | null;
+  /** Lowest payment among the offers that decided the verdict, so the verdict's text can't contradict itself. */
+  lowestPaymentVnd: number | null;
   ranked: RankedOffer[];
   ineligible: { offer: Offer; reasons: IneligibleReason[] }[];
   /** Licensed products we can't cost honestly, with the reason. */
@@ -237,11 +241,17 @@ function chargeTiming(ins: OfferInsurance): Charge["timing"] {
   return "deducted_from_payout";
 }
 
+function isOpenToAnyone(r: RankedOffer): boolean {
+  return r.offer.existingCustomerRequired !== true && r.offer.employerRestriction === null;
+}
+
 /** A verdict of "ok" can't rest on a product we can't fully cost or that many people can't get. */
 function isReliableForVerdict(r: RankedOffer): boolean {
   const ageKnown = r.offer.minAge !== null && r.offer.maxAge !== null;
   const rate = r.offer.rate;
-  return !r.feesAllUnknown && ageKnown && rate?.sourceType === "official" && !rate.maxIsReference && !rate.floorOnly && r.offer.existingCustomerRequired !== true && r.offer.employerRestriction === null;
+  // A company-wide figure says little about this product, unless it's the ceiling and the loan still fits.
+  const aboutThisLoan = rate?.scope === "product" || rate?.minUnconfirmed || rate?.minIsPromotional;
+  return !r.feesAllUnknown && ageKnown && rate?.sourceType === "official" && Boolean(aboutThisLoan) && !rate.maxIsReference && !rate.floorOnly && isOpenToAnyone(r);
 }
 
 const FIT_ORDER: Record<OfferFit, number> = { fits: 0, fits_only_low: 1, too_much: 2 };
@@ -277,9 +287,9 @@ export function rankOffers(ranked: RankedOffer[]): RankedOffer[] {
       official(a) - official(b) ||
       a.offer.key.localeCompare(b.offer.key),
   );
-  // Move the cheapest product with known fees to the front; everything else keeps its cost order.
+  // Move the cheapest product with known fees to the front, from the same affordability group only.
   if (sorted[0]?.feesAllUnknown) {
-    const i = sorted.findIndex((x) => !x.feesAllUnknown);
+    const i = sorted.findIndex((x) => !x.feesAllUnknown && x.fit === sorted[0].fit);
     if (i > 0) sorted.unshift(...sorted.splice(i, 1));
   }
   return sorted;
@@ -287,11 +297,15 @@ export function rankOffers(ranked: RankedOffer[]): RankedOffer[] {
 
 export type SortMode = "best_fit" | "monthly" | "total_cost";
 
-/** The borrower's own choice of order. Fit and conditions stay out of these two: they asked for the number. */
+/**
+ * The borrower's own choice of order. Fit and conditions stay out of these two: they asked for the number.
+ * "From X%" still comes last, because its number is only a minimum and would win for that reason alone.
+ */
 export function sortRanked(ranked: RankedOffer[], mode: SortMode): RankedOffer[] {
   if (mode === "best_fit") return ranked;
   const value = (r: RankedOffer) => (mode === "monthly" ? r.high.maxPaymentVnd : r.high.totalCostVnd);
-  return [...ranked].sort((a, b) => value(a) - value(b) || a.offer.key.localeCompare(b.offer.key));
+  const floorOnly = (r: RankedOffer) => (r.offer.rate?.floorOnly ? 1 : 0);
+  return [...ranked].sort((a, b) => floorOnly(a) - floorOnly(b) || value(a) - value(b) || a.offer.key.localeCompare(b.offer.key));
 }
 
 /** Largest loan at this offer's HIGH rate that fits the headroom, checked with the real cost. */
@@ -331,19 +345,23 @@ export function recommend(need: Need, offers: readonly Offer[], today: Date): Re
   const principalOnly = Math.ceil(need.amountVnd / need.termMonths);
   const principalCheck = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, principalOnly);
 
-  const official = ranked.filter((r) => r.offer.rate?.sourceType === "official");
+  // Only figures that could really be this borrower's can answer "too much": the lender's own, a known top, open to anyone.
+  const official = ranked.filter((r) => r.offer.rate?.sourceType === "official" && !r.offer.rate.floorOnly && isOpenToAnyone(r));
+  const credible = official.length > 0 ? official : ranked;
   let verdict: Verdict;
   if (baseline.verdict === "no_income") verdict = "no_income";
   else if (principalCheck.verdict === "too_much") verdict = "too_much";
   else if (ranked.length === 0) verdict = "no_data";
   // A low rate seen only on a comparison site can't talk the borrower out of a "too much".
-  else if ((official.length > 0 ? official : ranked).every((r) => r.fit === "too_much")) verdict = "too_much";
+  else if (credible.every((r) => r.fit === "too_much")) verdict = "too_much";
   else if (ranked.some((r) => r.fit === "fits" && isReliableForVerdict(r))) verdict = "ok";
   else verdict = "depends";
 
   const best = ranked[0];
+  // The suggestion names a lender's highest rate, so it can only rest on a lender's own known maximum.
+  const suggestFrom = ranked.find((r) => r.offer.rate?.sourceType === "official" && !r.offer.rate.floorOnly && !r.feesAllUnknown);
   const suggestedAmountVnd =
-    verdict !== "ok" && verdict !== "no_income" && best && headroomVnd > 0 ? suggestAmount(best, need, headroomVnd) : null;
+    verdict !== "ok" && verdict !== "no_income" && suggestFrom && headroomVnd > 0 ? suggestAmount(suggestFrom, need, headroomVnd) : null;
 
   return {
     verdict,
@@ -354,6 +372,8 @@ export function recommend(need: Need, offers: readonly Offer[], today: Date): Re
     principalOnlyVnd: principalOnly,
     someDontFit: ranked.some((r) => r.fit !== "fits"),
     suggestedAmountVnd: suggestedAmountVnd !== null && suggestedAmountVnd < need.amountVnd ? suggestedAmountVnd : null,
+    suggestedLender: suggestFrom?.offer.lenderName ?? null,
+    lowestPaymentVnd: credible.length > 0 ? Math.min(...credible.map((r) => r.low.maxPaymentVnd)) : null,
     ranked,
     ineligible,
     insufficientData,

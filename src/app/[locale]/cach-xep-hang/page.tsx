@@ -20,7 +20,7 @@ const INPUTS = ["purpose", "amount", "term", "urgency", "income", "debt", "age",
 const ORDER = ["fit", "proof", "floor", "cost", "tie"] as const;
 const SOURCES = ["official", "lender_partner", "aggregator", "press"] as const;
 const ASSUMPTIONS = ["basisBank", "basisFinance", "top", "promo", "general", "fees"] as const;
-const LIMITS = ["rate", "secondary", "fees", "personal", "stale"] as const;
+const LIMITS = ["rate", "secondary", "comparable", "fees", "personal", "stale"] as const;
 
 export default function RankingPage() {
   const t = useTranslations("Ranking");
@@ -69,6 +69,7 @@ export default function RankingPage() {
           ))}
         </ol>
         <p>{t("order.feesRule")}</p>
+        <p>{t("order.conditions")}</p>
         <p>{t("order.otherSorts")}</p>
       </Section>
 

@@ -12,7 +12,7 @@ export type ExplainLine =
   | { kind: "term"; known: boolean }
   | { kind: "age"; known: boolean }
   | { kind: "income"; known: boolean }
-  | { kind: "afford"; paymentVnd: number; debtVnd: number; ratio: number }
+  | { kind: "afford"; paymentVnd: number; debtVnd: number; ratio: number; isMinimum: boolean }
   | { kind: "proof_barrier" }
   | { kind: "condition_unasked" }
   | { kind: "floor_only" }
@@ -27,7 +27,7 @@ export function explainRank(r: RankedOffer, need: Need): ExplainLine[] {
     { kind: "term", known: o.termMinMonths !== null || o.termMaxMonths !== null },
     { kind: "age", known: o.minAge !== null || o.maxAge !== null },
     { kind: "income", known: o.minMonthlyIncomeVnd !== null },
-    { kind: "afford", paymentVnd: r.high.maxPaymentVnd, debtVnd: need.existingDebtVnd, ratio: check.debtToIncome ?? 0 },
+    { kind: "afford", paymentVnd: r.high.maxPaymentVnd, debtVnd: need.existingDebtVnd, ratio: check.debtToIncome ?? 0, isMinimum: Boolean(o.rate?.floorOnly) },
   ];
   if (hasBarrier(r)) lines.push({ kind: "proof_barrier" });
   if (o.existingCustomerRequired === true || o.employerRestriction !== null) lines.push({ kind: "condition_unasked" });

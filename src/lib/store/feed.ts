@@ -7,9 +7,11 @@ import { z } from "zod";
 import type { Offer } from "@/lib/recommend/offers";
 import { RATE_SCOPES, SOURCE_TYPES } from "./schema";
 
-export const FEED_COLUMNS = ["key", "rate_min", "rate_max", "rate_basis", "rate_period", "rate_source_type", "rate_source_name", "rate_source_url", "rate_retrieved_at", "rate_scope"] as const;
+export const FEED_COLUMNS = ["key", "rate_min", "rate_max", "rate_basis", "rate_period", "rate_source_type", "rate_source_name", "rate_source_url", "rate_retrieved_at", "rate_scope", "floor_only", "min_unconfirmed"] as const;
 
 const percent = z.preprocess((v) => (typeof v === "string" ? Number(v.trim().replace(",", ".")) : v), z.number().nonnegative().max(1000));
+
+const yes = z.preprocess((v) => typeof v === "string" && ["có", "yes", "true"].includes(v.trim().toLowerCase()), z.boolean());
 
 const FeedRow = z
   .object({
@@ -23,6 +25,8 @@ const FeedRow = z
     rate_source_url: z.url(),
     rate_retrieved_at: z.iso.date(),
     rate_scope: z.enum(RATE_SCOPES).default("product"),
+    floor_only: yes,
+    min_unconfirmed: yes,
   })
   .refine((r) => r.rate_min <= r.rate_max, { message: "rate_min is above rate_max", path: ["rate_min"] });
 
@@ -88,6 +92,8 @@ export function applyRateFeed(offers: readonly Offer[], csv: string): FeedResult
         basis: u.rate_basis,
         period: u.rate_period,
         basisInferred: false,
+        floorOnly: u.floor_only || undefined,
+        minUnconfirmed: u.min_unconfirmed || undefined,
         segment: o.rate?.segment ?? null,
         sourceType: u.rate_source_type,
         sourceName: u.rate_source_name,

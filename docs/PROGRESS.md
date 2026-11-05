@@ -166,3 +166,16 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Open: long cards, some goods loans listed under every purpose, the 1-đồng gap between the verdict and a card, and new lawyer questions, including naming a lender at a top-of-range rate.
 
 **Next:** your decision on publishing.
+
+## Excel data store, ranking and disclosure (2026-11-05)
+**Status:** committed, not live. The live site still has the older data.
+
+- The app is now a student project, with a banner on every page. Rates may come from comparison sites, partners or the press when no official figure exists, named on each card (DECISIONS #63).
+- Data store: `data/store/loan-data.xlsx`, checked by `npm run data:import`. Optional live rate feed through `LOAN_RATES_CSV_URL`. How to use it: `docs/DATA_STORE.md`.
+- 82 products shown, 67 ranked (was 14). 56 of the 67 use a figure from the lender's own pages, and 11 use another source. 15 aren't ranked: 12 overdrafts and pay-later, 1 duplicate, 2 with no rate anywhere.
+- Ranking now puts fit first, then cost (DECISIONS #65). Published at `/cach-xep-hang`, including what each answer does. All the data is at `/du-lieu`, with a CSV download.
+- Results gain a summary table, a sort, a source filter and a first-place warning. Each card gains "why this position" and a month-by-month schedule.
+- Three weak figures stay, with notes on the card: TPBank's 2023 article, Sacombank's 9.6% and VPBank's teacher 17%. The compliance reviewer advised dropping them; you can do that in Excel.
+- Open: one-off mandatory fees aren't in the cost yet (the page says so), self-employed borrowers aren't treated as lacking income papers, English pages keep some Vietnamese from the sources, and the project report still shows the old data.
+
+**Next:** your decision on publishing.

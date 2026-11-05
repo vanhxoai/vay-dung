@@ -3,14 +3,16 @@
  * for scripts/check/recommend_check.py (which derives everything itself from the JSON files).
  * Run: npx tsx scripts/check/recommend_dump.ts > out.json
  */
-import { loadSnapshot } from "../../src/lib/store";
+import { loadLenders } from "../../src/lib/data/lenders";
+import { toOffers } from "../../src/lib/recommend/offers";
 import { computeLoanCost, type LoanCost } from "../../src/lib/finance";
 import { formatMillions, formatPercent } from "../../src/lib/format";
 import type { Offer } from "../../src/lib/recommend/offers";
 import { recommend, type Need, type Purpose, type RankedOffer } from "../../src/lib/recommend/recommend";
 
 const today = new Date("2026-11-03T00:00:00Z");
-const offers = loadSnapshot().offers;
+// These checks compare the engine with the research archive, so they read the archive, not the store.
+const offers = toOffers(loadLenders());
 const need = (o: Partial<Need> = {}): Need => ({
   purpose: "other",
   amountVnd: 20_000_000,

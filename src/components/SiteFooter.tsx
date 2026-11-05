@@ -14,7 +14,7 @@ export function SiteFooter() {
         <Link href="/cach-xep-hang" className="inline-flex min-h-11 items-center underline underline-offset-2">
           {t("ranking")}
         </Link>
-        <Link href="/du-lieu" className="inline-flex min-h-11 items-center underline underline-offset-2">
+        <Link href="/du-lieu" className="inline-flex min-h-11 min-w-11 items-center underline underline-offset-2">
           {t("data")}
         </Link>
         <a href={`mailto:${CONTROLLER.contactEmail}`} className="inline-flex min-h-11 items-center underline underline-offset-2">

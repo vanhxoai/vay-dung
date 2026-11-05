@@ -156,7 +156,10 @@ describe("the order of the ranking", () => {
     const tight = need({ monthlyIncomeVnd: 10_000_000, existingDebtVnd: 3_100_000 });
     const ownDear = offer({ key: "own/dear", rate: rate({ minPercent: 40, maxPercent: 40 }) });
     const siteCheap = offer({ key: "site/cheap", rate: rate({ sourceType: "press", minPercent: 5, maxPercent: 40 }) });
-    expect(recommend(tight, [ownDear, siteCheap], today).verdict).toBe("too_much");
+    const both = recommend(tight, [ownDear, siteCheap], today);
+    expect(both.verdict).toBe("too_much");
+    // The verdict's own figure comes from the offers that decided it, so it's over the room left.
+    expect(both.lowestPaymentVnd).toBeGreaterThan(both.headroomVnd);
     // With no lender figure at all, the site's low end is all there is.
     expect(recommend(tight, [siteCheap], today).verdict).toBe("depends");
   });

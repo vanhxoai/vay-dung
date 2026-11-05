@@ -52,12 +52,16 @@ function officialUrl(key: string, percent: number): string {
 }
 
 type Fill = Pick<OfferRate, "minPercent" | "maxPercent" | "basis" | "period" | "basisInferred"> &
-  Partial<Pick<OfferRate, "minIsPromotional" | "minUnconfirmed" | "minByTerm" | "floorOnly" | "oldDocumentDate">> & {
+  Partial<Pick<OfferRate, "minIsPromotional" | "minUnconfirmed" | "maxIsReference" | "minByTerm" | "floorOnly" | "oldDocumentDate">> & {
     /** Name of the research row to take the source from. Without it, the figure is the lender's own. */
     from?: "research";
     officialFigure?: number;
     /** The figure speaks of the lender as a whole, not this product. Official sources default to this. */
     scope?: OfferRate["scope"];
+    /** The research row's own label is wrong for this product. */
+    sourceType?: OfferRate["sourceType"];
+    sourceName?: string;
+    sourceUrl?: string;
     note?: { vi: string; en: string };
   };
 
@@ -81,37 +85,56 @@ const floor = (x: number, basis: "flat" | "reducing", period: "monthly" | "yearl
   ...(from ? { from } : { officialFigure: x }),
 });
 
+const SACOMBANK_NOTE = {
+  vi: "Con số này có vẻ đã cũ: cùng câu chữ xuất hiện từ năm 2019, và nó thấp hơn lãi suất cơ sở của chính Sacombank. Lãi suất thật của bạn nhiều khả năng cao hơn.",
+  en: "This figure looks out of date: the same wording appeared in 2019, and it's below Sacombank's own base rate. Your real rate is likely higher.",
+};
+
 const FILLS: Record<string, Fill> = {
   // Banks. Source silent on the basis → reducing balance, the banks' usual way (DECISIONS #64).
-  "hdbank/hdbank-vay-tieu-dung-khong-tai-san-bao-dam": { ...range(13, 24, "reducing", "yearly"), officialFigure: 24, scope: "lender_general" },
+  // A bank article calling it a reference figure, so it can't support an "OK" verdict.
+  "hdbank/hdbank-vay-tieu-dung-khong-tai-san-bao-dam": { ...range(13, 24, "reducing", "yearly"), maxIsReference: true, officialFigure: 24, scope: "lender_general", oldDocumentDate: "2025-02-26" },
   "hdbank/hdbank-vay-tieu-dung-linh-hoat": { ...range(1.5, 1.7, "flat", "monthly", false), minByTerm: [{ termMonthsMin: 24, percent: 1.7 }, { termMonthsMin: 0, percent: 1.5 }], officialFigure: 1.7, scope: "product", oldDocumentDate: "2024-04-02" },
-  "mb-bank/mb-unsecured-consumer-app": { ...range(12.5, 20, "reducing", "yearly"), officialFigure: 20, scope: "lender_general" },
-  // Sacombank's 9.6% looks recycled from 2019 and sits below its own base rate: a floor at best.
-  "sacombank/sacombank-vay-tin-chap-tu-luong-online": floor(9.6, "reducing", "yearly", true, "research"),
-  "sacombank/sacombank-vay-tieu-dung-tu-luong": floor(9.6, "reducing", "yearly", true, "research"),
+  "mb-bank/mb-unsecured-consumer-app": { ...range(12.5, 20, "reducing", "yearly"), maxIsReference: true, officialFigure: 20, scope: "lender_general" },
+  // Sacombank's 9.6% looks recycled from 2019 and sits below its own base rate: a floor at best, and it says so.
+  "sacombank/sacombank-vay-tin-chap-tu-luong-online": { ...floor(9.6, "reducing", "yearly", true, "research"), note: SACOMBANK_NOTE },
+  "sacombank/sacombank-vay-tieu-dung-tu-luong": { ...floor(9.6, "reducing", "yearly", true, "research"), note: SACOMBANK_NOTE },
   "sacombank/sacombank-vay-tieu-dung-tu-the-tin-dung": floor(1, "flat", "monthly", false),
   // Viettel Money's range; the bank's own page states the basis.
   "techcombank/vay-tieu-dung-tin-chap-tra-gop": {
-    ...range(13.78, 16, "reducing", "yearly", false),
+    ...range(13.78, 16, "reducing", "yearly"),
     from: "research",
     note: { vi: "Trang của Techcombank ghi từ 12,9%/năm và chưa có mức tối đa. Khoảng 13,78–16% lấy từ Viettel Money.", en: "Techcombank's page says from 12.9% a year with no maximum. The 13.78–16% range comes from Viettel Money." },
   },
-  "tpbank/vay-tieu-dung-tin-chap-theo-luong": { ...range(0.6, 1.5, "reducing", "monthly"), from: "research", oldDocumentDate: "2023-09-09" },
-  "tpbank/cho-vay-tien-mat-tin-chap-tpfico": floor(1.6, "reducing", "monthly", true, "research"),
+  "tpbank/vay-tieu-dung-tin-chap-theo-luong": {
+    ...range(0.6, 1.5, "reducing", "monthly"),
+    from: "research",
+    scope: "lender_general",
+    sourceName: "Tạp chí Công Thương",
+    note: { vi: "Bài báo này từ năm 2023 và nói về vay tín chấp TPBank nói chung, không nhắc đến sản phẩm này. Mức 0,6%/tháng có thể là ưu đãi, nên con số có thể đã cũ hoặc thấp hơn thực tế nhiều.", en: "This 2023 article is about TPBank's unsecured loans in general and doesn't name this product. The 0.6% a month may be a promotion, so the figure may be out of date or well below reality." },
+  },
+  "tpbank/cho-vay-tien-mat-tin-chap-tpfico": { ...floor(1.6, "reducing", "monthly", true, "research"), sourceName: "Blog của VPBank, một ngân hàng khác" },
+  // VIB's page tops out at 1.9%, which its calculator exceeds: a reference, not a true maximum.
   "vib/vib-vay-tin-chap-nhan-luong-qua-vib": {
     ...range(1.29, 1.9, "reducing", "monthly"),
+    maxIsReference: true,
     from: "research",
+    sourceName: "VIB",
     note: { vi: "Máy tính trên trang VIB cho kết quả khoảng 23–24%/năm, cao hơn khoảng này một chút.", en: "VIB's calculator gives about 23–24% a year, slightly above this range." },
   },
+  // Its own published floor is 2%, above the landing page's 1.9% "maximum". The floor wins.
   "vib/vib-vay-tin-chap-luong-chuyen-khoan-the-tin-dung": {
-    ...range(1.29, 1.9, "reducing", "monthly"),
-    from: "research",
-    note: { vi: "Máy tính trên trang VIB cho kết quả khoảng 24–25%/năm, cao hơn khoảng này một chút.", en: "VIB's calculator gives about 24–25% a year, slightly above this range." },
+    ...floor(2, "reducing", "monthly", false),
+    note: { vi: "Máy tính trên trang VIB cho kết quả khoảng 24–25%/năm.", en: "VIB's calculator gives about 24–25% a year." },
   },
-  "vib/vib-super-cash": { ...range(1.63, 2.5, "reducing", "monthly"), from: "research" },
+  "vib/vib-super-cash": { ...range(1.63, 2.5, "reducing", "monthly"), from: "research", sourceName: "VIB" },
   "vpbank/vpbank-vay-tin-chap-khach-hang-hien-huu": floor(16, "reducing", "yearly"),
   // The source's row reads "teachers or VPBank staff", so 17% is a floor, not this borrower's rate.
-  "vpbank/vpbank-vay-tin-chap-giao-vien": floor(17, "reducing", "yearly", true, "research"),
+  "vpbank/vpbank-vay-tin-chap-giao-vien": {
+    ...floor(17, "reducing", "yearly", true, "research"),
+    sourceName: "Blog muaban.net",
+    note: { vi: "Bài viết từ năm 2024 ghi 17% cho \"giáo viên hoặc cán bộ VPBank\", nên chưa chắc đúng với giáo viên.", en: "A 2024 article gives 17% for \"teachers or VPBank staff\", so it may not be right for teachers." },
+  },
 
   // Finance companies. Source silent on the basis → flat, the costlier reading (DECISIONS #64),
   // unless the lender's other documents say otherwise.
@@ -119,14 +142,15 @@ const FILLS: Record<string, Fill> = {
   "aeon-finance/cash-loan-credit-limit": top(1.51, 4.58, "reducing", "monthly"),
   "aeon-finance/installment-loan": promoTop(55, "reducing", "yearly"),
   "fe-credit/tien-mat-chu-dong": floor(20, "flat", "yearly"),
-  "hd-saison/cash-loan": { ...range(20.41, 34.78, "flat", "yearly", false), from: "research" },
+  "hd-saison/cash-loan": { ...range(20.41, 34.78, "flat", "yearly", false), from: "research", sourceName: "HD SAISON (mô tả ứng dụng trên App Store)", sourceUrl: "https://apps.apple.com/vn/app/id1589425903" },
   "hd-saison/motorbike-installment": top(2.9, 2.9, "flat", "monthly"),
   "hd-saison/electronics-installment": top(2.82, 2.82, "flat", "monthly"),
-  "home-credit/installment-motorbike": { ...range(8.99, 33.94, "flat", "yearly", false), from: "research" },
+  // The app's text covers cash and goods together and reads as an advert, so the top is only a reference.
+  "home-credit/installment-motorbike": { ...range(8.99, 33.94, "flat", "yearly", false), maxIsReference: true, from: "research", sourceName: "Home Credit (mô tả ứng dụng trên App Store)", sourceUrl: "https://apps.apple.com/vn/app/id1553761073" },
   // Topi's 11.3% is JACCS staff only, so only the top is costed.
-  "jaccs/motorbike-installment": { ...range(11.3, 49.9, "reducing", "yearly"), minUnconfirmed: true, from: "research" },
-  "jaccs/electronics-installment": { ...range(11.3, 49.9, "reducing", "yearly"), minUnconfirmed: true, from: "research" },
-  "jaccs/furniture-installment": { ...range(11.3, 49.9, "reducing", "yearly"), minUnconfirmed: true, from: "research" },
+  "jaccs/motorbike-installment": { ...range(11.3, 49.9, "reducing", "yearly"), minUnconfirmed: true, from: "research", sourceName: "Topi" },
+  "jaccs/electronics-installment": { ...range(11.3, 49.9, "reducing", "yearly"), minUnconfirmed: true, from: "research", sourceName: "Topi" },
+  "jaccs/furniture-installment": { ...range(11.3, 49.9, "reducing", "yearly"), minUnconfirmed: true, from: "research", sourceName: "Topi" },
   // The floor is quoted reducing and the ceiling flat, so they can't share a range: costed at the ceiling.
   "mcredit/mcredit-vay-mon-tien-mat": top(6.25, 6.25, "flat", "monthly"),
   "mcredit/mcredit-vay-han-muc-tien-mat": top(6.25, 6.25, "flat", "monthly"),
@@ -161,13 +185,27 @@ const FILLS: Record<string, Fill> = {
     officialFigure: 0.1,
     note: { vi: "Nguồn ghi từ 0,1% mỗi ngày. Chúng tôi đổi thành 36,5%/năm (nhân 365 ngày).", en: "The source says from 0.1% a day. We converted it to 36.5% a year (× 365 days)." },
   },
-  "vietcredit/tin-vay-topi": { ...range(11.09, 51.12, "reducing", "yearly", false), from: "research" },
+  // A row in Topi's comparison table, and its minimum sits far below the 2.08% a month Topi quotes for this channel.
+  "vietcredit/tin-vay-topi": { ...range(11.09, 51.12, "reducing", "yearly", false), minUnconfirmed: true, from: "research", sourceType: "aggregator", sourceName: "Topi" },
   "vietcredit/tin-vay-fiza-zalo": floor(1.42, "reducing", "monthly"),
-  "vietcredit/tin-vay-momo": { ...range(1.91, 5.92, "flat", "monthly"), from: "research" },
+  "vietcredit/tin-vay-momo": {
+    ...range(1.91, 5.92, "flat", "monthly"),
+    minUnconfirmed: true,
+    from: "research",
+    sourceName: "MoMo Vay Nhanh",
+    note: { vi: "Con số này là của MoMo cho nhiều bên cho vay, không riêng VietCredit.", en: "This figure is MoMo's, across several lenders, not VietCredit's alone." },
+  },
 };
 
 /** TNEX: the rate is in the lender's notice; its other pages disagree, which the card says. */
 const UNEXCLUDE = new Set(["tnex-finance/vay-tieu-dung-tung-lan-app"]);
+
+/** The research labels are notes to ourselves; borrowers see a plain name. */
+function cleanName(name: string): string {
+  if (name.startsWith("Viettel Money")) return "Viettel Money";
+  if (name.startsWith("Topi")) return "Topi";
+  return name;
+}
 
 function apply(o: Offer): Offer {
   if (o.productType === "overdraft" || o.productType === "bnpl") {
@@ -181,7 +219,7 @@ function apply(o: Offer): Offer {
   if (fill.from && (!row?.sourceUrl || !row.sourceName)) throw new Error(`${o.key}: no research row to use`);
   const useRow = fill.from === "research" && row;
   const sourceUrl = useRow ? (row.sourceUrl as string) : officialUrl(o.key, fill.officialFigure as number);
-  const { note, scope, ...rest } = fill;
+  const { note, scope, sourceType, sourceName, sourceUrl: urlOverride, ...rest } = fill;
   const rate = { ...rest };
   delete rate.from;
   delete rate.officialFigure;
@@ -190,19 +228,19 @@ function apply(o: Offer): Offer {
     rate: {
       ...rate,
       segment: null,
-      sourceType: useRow ? row.sourceType : "official",
-      sourceName: useRow ? (row.sourceName as string) : o.lenderName,
-      scope: useRow ? row.scope : (scope ?? "lender_general"),
+      sourceType: sourceType ?? (useRow ? row.sourceType : "official"),
+      sourceName: sourceName ?? (useRow ? cleanName(row.sourceName as string) : o.lenderName),
+      scope: scope ?? (useRow ? row.scope : "lender_general"),
       quote: useRow ? row.quote : null,
-      sourceUrl,
+      sourceUrl: urlOverride ?? sourceUrl,
       retrievedAt: TODAY,
-      oldDocumentDate: fill.oldDocumentDate ?? null,
+      oldDocumentDate: fill.oldDocumentDate ?? (useRow ? row.sourceDate : null),
     },
     amountMinVnd: o.amountMinVnd ?? (useRow ? row.amountMinVnd : null),
     amountMaxVnd: o.amountMaxVnd ?? (useRow ? row.amountMaxVnd : null),
     termMinMonths: o.termMinMonths ?? (useRow ? row.termMinMonths : null),
     termMaxMonths: o.termMaxMonths ?? (useRow ? row.termMaxMonths : null),
-    sourceUrls: [...new Set([...o.sourceUrls, sourceUrl])],
+    sourceUrls: [...new Set([...o.sourceUrls, urlOverride ?? sourceUrl])],
     confidence: "low",
     excludeFromRanking: false,
     excludeCode: null,

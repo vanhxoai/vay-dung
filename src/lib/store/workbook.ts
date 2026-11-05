@@ -44,7 +44,7 @@ export const COLUMNS: Record<SheetName, readonly (readonly [string, string])[]> 
     ["rate_retrieved_at", "Ngày đọc nguồn, YYYY-MM-DD"],
     ["rate_scope", "product / lender_general: số của sản phẩm, hay của cả bên cho vay"],
     ["rate_quote", "Câu trích ngắn có con số"],
-    ["rate_old_doc_date", "Ngày tài liệu, nếu đã cũ"],
+    ["rate_old_doc_date", "Ngày đăng của nguồn, nếu biết"],
     ["segment", "Áp dụng cho nhóm khách nào"],
     ["min_is_promo", "có: mức thấp là khuyến mãi, chỉ tính mức cao"],
     ["min_unconfirmed", "có: mức thấp chưa xác nhận, chỉ tính mức cao"],
@@ -450,14 +450,14 @@ export function sheetsToOffers(sheets: Sheets): { offers: Offer[]; issues: Impor
 
 /** One flat line per product, for the download on the data page. */
 export function offersToCsv(offers: readonly Offer[]): string {
-  const header = ["key", "lender", "product", "ranked", "rate_min", "rate_max", "basis", "period", "basis_assumed", "source_type", "source_name", "source_url", "retrieved_at", "scope", "confidence"];
+  const header = ["key", "lender", "product", "ranked", "rate_min", "rate_max", "only_lowest_known", "lowest_unconfirmed", "basis", "period", "basis_assumed", "source_type", "source_name", "source_url", "source_date", "retrieved_at", "scope", "confidence"];
   const esc = (v: unknown) => {
     const s = v === null || v === undefined ? "" : String(v);
     return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
   const rows = offers.map((o) => {
     const r = o.rate;
-    return [o.key, o.lenderName, o.nameVi, !o.excludeFromRanking, r?.minPercent, r?.maxPercent, r?.basis, r?.period, r?.basisInferred, r?.sourceType, r?.sourceName, r?.sourceUrl, r?.retrievedAt, r?.scope, o.confidence].map(esc).join(",");
+    return [o.key, o.lenderName, o.nameVi, !o.excludeFromRanking, r?.minPercent, r?.maxPercent, r?.floorOnly ?? false, Boolean(r?.minUnconfirmed || r?.minIsPromotional), r?.basis, r?.period, r?.basisInferred, r?.sourceType, r?.sourceName, r?.sourceUrl, r?.oldDocumentDate, r?.retrievedAt, r?.scope, o.confidence].map(esc).join(",");
   });
   return [header.join(","), ...rows].join("\n") + "\n";
 }

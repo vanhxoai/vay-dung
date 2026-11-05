@@ -49,7 +49,7 @@ Chúng đều được xếp hạng theo cùng một cách, và thẻ sản ph�
 | Tình huống | Cách ghi | Kết quả |
 |---|---|---|
 | Có khoảng thấp–cao | `rate_min`, `rate_max` | Tính ở cả hai đầu, xếp theo đầu cao |
-| Chỉ có "từ X%" | Ghi X vào cả hai ô, `floor_only` = `có` | Xếp sau mọi khoản đã biết mức cao nhất |
+| Chỉ có "từ X%" | Ghi X vào cả hai ô, `floor_only` = `có` | Xếp sau các khoản đã biết mức cao nhất trong cùng nhóm vừa sức |
 | Mức thấp không khớp quảng cáo, hoặc chỉ có khung chung | `min_unconfirmed` = `có` | Chỉ tính ở mức cao |
 | Mức thấp là khuyến mãi 0% | `min_is_promo` = `có` | Chỉ tính ở mức cao |
 | Không có số nào | Để trống, `include_in_ranking` = `không`, chọn `exclude_code` | Liệt kê riêng, kèm lý do |
@@ -61,10 +61,12 @@ Chúng đều được xếp hạng theo cùng một cách, và thẻ sản ph�
 Khi sẵn sàng, đặt biến môi trường `LOAN_RATES_CSV_URL` là đường dẫn đến một file CSV có các cột:
 
 ```
-key,rate_min,rate_max,rate_basis,rate_period,rate_source_type,rate_source_name,rate_source_url,rate_retrieved_at,rate_scope
+key,rate_min,rate_max,rate_basis,rate_period,rate_source_type,rate_source_name,rate_source_url,rate_retrieved_at,rate_scope,floor_only,min_unconfirmed
 ```
 
-Trang `/vay` đọc lại nguồn này mỗi 5 phút, không cần triển khai lại. Nguồn này chỉ thay lãi suất, các thông tin khác vẫn lấy từ Excel. Dòng lỗi bị bỏ qua, và nếu nguồn hỏng thì app dùng lại bản đã nhập.
+Trang `/vay` đọc lại nguồn này mỗi 5 phút, không cần triển khai lại. Nguồn này thay toàn bộ phần lãi suất của dòng đó, kể cả các đánh dấu như mức khuyến mãi, và đưa sản phẩm vào xếp hạng nếu trước đó chưa có, trừ thấu chi và mua trước trả sau. Các thông tin khác vẫn lấy từ Excel. Dòng lỗi bị bỏ qua, và nếu nguồn hỏng thì app dùng lại bản đã nhập.
+
+Hai trang `/du-lieu` và `/cach-xep-hang` vẫn đọc bản đã nhập từ Excel, nên số liệu ở đó có thể chậm hơn trang `/vay`. Ngày kiểm tra cũ nhất của sản phẩm cũng không đổi theo nguồn này, nên sau 90 ngày vẫn cần cập nhật Excel.
 
 Hai cách đơn giản để có đường dẫn đó:
 

@@ -25,6 +25,12 @@ describe("applyRateFeed", () => {
     expect(o.excludeCode).toBeNull();
   });
 
+  it("carries the 'only the lowest is known' flag, so a floor can't pass as a known maximum", () => {
+    const row = `${line(unranked.key, "2", "2")},có,`;
+    const o = applyRateFeed(offers, `${header}\n${row}\n`).offers.find((x) => x.key === unranked.key)!;
+    expect(o.rate?.floorOnly).toBe(true);
+  });
+
   it("skips a row with no source and an unknown key, and still applies the rest", () => {
     const noSource = `${unranked.key},1,2,flat,monthly,aggregator,Trang A,,2026-11-05,product`;
     const { applied, skipped, offers: out } = applyRateFeed(offers, `${header}\n${noSource}\n${line("no/such")}\n`);

@@ -947,6 +947,7 @@
         "basis": "reducing",
         "period": "yearly",
         "basisInferred": true,
+        "maxIsReference": true,
         "segment": null,
         "sourceType": "official",
         "sourceName": "HDBank",
@@ -954,7 +955,7 @@
         "quote": null,
         "sourceUrl": "https://hdbank.com.vn/vi/news/detail/tin-tuc-khac/vay-tin-chap-la-gi",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2025-02-26"
       },
       "rateNotes": [
         {
@@ -1180,12 +1181,12 @@
         "basisInferred": false,
         "segment": null,
         "sourceType": "official",
-        "sourceName": "HD SAISON app listing on Apple App Store (Vietnam storefront), fetched via Apple iTunes lookup API",
+        "sourceName": "HD SAISON (mô tả ứng dụng trên App Store)",
         "scope": "lender_general",
         "quote": "Lãi suất chỉ từ 20.41%/năm đến 34.78%/năm (theo dư nợ ban đầu)",
-        "sourceUrl": "https://itunes.apple.com/lookup?id=1589425903&country=vn",
+        "sourceUrl": "https://apps.apple.com/vn/app/id1589425903",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2026-09-02"
       },
       "rateNotes": [
         {
@@ -1282,7 +1283,7 @@
         "https://www.hdsaison.com.vn/vn/khung-lai-suat-cho-vay-tieu-dung.html",
         "https://www.hdsaison.com.vn/vnt_upload/File/01_2025/1_241003_DIEU_KHOAN_VA_DIEU_KIEN_CHO_VAY.pdf",
         "https://www.hdsaison.com.vn/thu-tuc-vay.html",
-        "https://itunes.apple.com/lookup?id=1589425903&country=vn"
+        "https://apps.apple.com/vn/app/id1589425903"
       ],
       "retrievedAt": "2026-11-01",
       "oldestRetrievedAt": "2026-11-01",
@@ -1806,14 +1807,15 @@
         "basis": "flat",
         "period": "yearly",
         "basisInferred": false,
+        "maxIsReference": true,
         "segment": null,
         "sourceType": "official",
-        "sourceName": "Home Credit app listing on Apple App Store (Vietnam storefront), fetched via Apple iTunes lookup API",
+        "sourceName": "Home Credit (mô tả ứng dụng trên App Store)",
         "scope": "lender_general",
         "quote": "Flat interest rates from 8.99% - 33.94%/year",
-        "sourceUrl": "https://itunes.apple.com/lookup?id=1553761073&country=vn",
+        "sourceUrl": "https://apps.apple.com/vn/app/id1553761073",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2026-11-03"
       },
       "rateNotes": [
         {
@@ -1936,7 +1938,7 @@
         "https://www.homecredit.vn/upload/HOP_DONG_TIN_DUNG_SAN_PHAM_CHO_VAY_XE_MAY_5455561179.pdf",
         "https://play.google.com/store/apps/details?id=vn.homecredit.capp",
         "https://homecredit.vn/faq/bao-hiem",
-        "https://itunes.apple.com/lookup?id=1553761073&country=vn"
+        "https://apps.apple.com/vn/app/id1553761073"
       ],
       "retrievedAt": "2026-11-03",
       "oldestRetrievedAt": "2026-11-01",
@@ -2147,12 +2149,12 @@
         "minUnconfirmed": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "Topi.vn 'Cập nhật lãi suất vay trả góp 16 công ty tài chính'",
+        "sourceName": "Topi",
         "scope": "lender_general",
         "quote": "từ 11,3 - 49,9%/năm",
         "sourceUrl": "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2026-11-04"
       },
       "rateNotes": [
         {
@@ -2304,12 +2306,12 @@
         "minUnconfirmed": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "Topi.vn 'Cập nhật lãi suất vay trả góp 16 công ty tài chính'",
+        "sourceName": "Topi",
         "scope": "lender_general",
         "quote": "từ 11,3 - 49,9%/năm",
         "sourceUrl": "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2026-11-04"
       },
       "rateNotes": [
         {
@@ -2455,12 +2457,12 @@
         "minUnconfirmed": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "Topi.vn 'Cập nhật lãi suất vay trả góp 16 công ty tài chính'",
+        "sourceName": "Topi",
         "scope": "lender_general",
         "quote": "từ 11,3 - 49,9%/năm",
         "sourceUrl": "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2026-11-04"
       },
       "rateNotes": [
         {
@@ -3169,6 +3171,7 @@
         "basis": "reducing",
         "period": "yearly",
         "basisInferred": true,
+        "maxIsReference": true,
         "segment": null,
         "sourceType": "official",
         "sourceName": "MB Bank",
@@ -5589,7 +5592,7 @@
         "floorOnly": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "Viettel Money - So sánh lãi suất vay",
+        "sourceName": "Viettel Money",
         "scope": "lender_general",
         "quote": "Sacombank vay tín chấp: 9,6%/năm",
         "sourceUrl": "https://www.viettelmoney.vn/so-sanh-lai-suat-vay/",
@@ -5647,7 +5650,13 @@
       "oldestRetrievedAt": "2026-11-03",
       "confidence": "low",
       "excludeFromRanking": false,
-      "excludeCode": null
+      "excludeCode": null,
+      "borrowerNotes": [
+        {
+          "vi": "Con số này có vẻ đã cũ: cùng câu chữ xuất hiện từ năm 2019, và nó thấp hơn lãi suất cơ sở của chính Sacombank. Lãi suất thật của bạn nhiều khả năng cao hơn.",
+          "en": "This figure looks out of date: the same wording appeared in 2019, and it's below Sacombank's own base rate. Your real rate is likely higher."
+        }
+      ]
     },
     {
       "key": "sacombank/sacombank-vay-tieu-dung-tu-luong",
@@ -5672,7 +5681,7 @@
         "floorOnly": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "Viettel Money - So sánh lãi suất vay",
+        "sourceName": "Viettel Money",
         "scope": "lender_general",
         "quote": "Sacombank vay tín chấp: 9,6%/năm",
         "sourceUrl": "https://www.viettelmoney.vn/so-sanh-lai-suat-vay/",
@@ -5774,7 +5783,13 @@
       "oldestRetrievedAt": "2026-11-03",
       "confidence": "low",
       "excludeFromRanking": false,
-      "excludeCode": null
+      "excludeCode": null,
+      "borrowerNotes": [
+        {
+          "vi": "Con số này có vẻ đã cũ: cùng câu chữ xuất hiện từ năm 2019, và nó thấp hơn lãi suất cơ sở của chính Sacombank. Lãi suất thật của bạn nhiều khả năng cao hơn.",
+          "en": "This figure looks out of date: the same wording appeared in 2019, and it's below Sacombank's own base rate. Your real rate is likely higher."
+        }
+      ]
     },
     {
       "key": "sacombank/sacombank-thau-chi-tieu-dung",
@@ -7319,10 +7334,10 @@
         "maxPercent": 16,
         "basis": "reducing",
         "period": "yearly",
-        "basisInferred": false,
+        "basisInferred": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "Viettel Money - So sánh lãi suất vay",
+        "sourceName": "Viettel Money",
         "scope": "lender_general",
         "quote": "Techcombank vay tín chấp: 13,78% – 16,00%/năm",
         "sourceUrl": "https://www.viettelmoney.vn/so-sanh-lai-suat-vay/",
@@ -8035,8 +8050,8 @@
         "basisInferred": true,
         "segment": null,
         "sourceType": "press",
-        "sourceName": "Tạp chí Công Thương (TPBank vay tín chấp 900 triệu)",
-        "scope": "product",
+        "sourceName": "Tạp chí Công Thương",
+        "scope": "lender_general",
         "quote": "Lãi suất từ 0,6% đến 1,5%/tháng",
         "sourceUrl": "https://tapchicongthuong.vn/ngan-hang-tpbank-cho-vay-900-trieu--lai-suat-tu-0-6--thang--khong-phat-sinh-phu-phi-110407.htm",
         "retrievedAt": "2026-11-05",
@@ -8134,7 +8149,13 @@
       "oldestRetrievedAt": "2026-11-02",
       "confidence": "low",
       "excludeFromRanking": false,
-      "excludeCode": null
+      "excludeCode": null,
+      "borrowerNotes": [
+        {
+          "vi": "Bài báo này từ năm 2023 và nói về vay tín chấp TPBank nói chung, không nhắc đến sản phẩm này. Mức 0,6%/tháng có thể là ưu đãi, nên con số có thể đã cũ hoặc thấp hơn thực tế nhiều.",
+          "en": "This 2023 article is about TPBank's unsecured loans in general and doesn't name this product. The 0.6% a month may be a promotion, so the figure may be out of date or well below reality."
+        }
+      ]
     },
     {
       "key": "tpbank/cho-vay-tien-mat-tin-chap-tpfico",
@@ -8159,12 +8180,12 @@
         "floorOnly": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "VPBank blog 'Top 8 ngân hàng cho vay tín chấp' (competitor lender article)",
+        "sourceName": "Blog của VPBank, một ngân hàng khác",
         "scope": "lender_general",
         "quote": "Từ 1.6%/ tháng",
         "sourceUrl": "https://www.vpbank.com.vn/bi-kip-va-chia-se/retail-story-and-tips/loans-category/vay-tin-chap-ngan-hang-nao-de-nhat",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2025-08-19"
       },
       "rateNotes": [],
       "amortization": "annuity",
@@ -8408,9 +8429,10 @@
         "basis": "reducing",
         "period": "monthly",
         "basisInferred": true,
+        "maxIsReference": true,
         "segment": null,
         "sourceType": "official",
-        "sourceName": "VIB product landing page: Vay tiêu dùng tín chấp",
+        "sourceName": "VIB",
         "scope": "lender_general",
         "quote": "Từ 1,29%/tháng, đến 1,9%/tháng",
         "sourceUrl": "https://www.vib.com.vn/vn/product-landing/vay-tieu-dung/Vay-tieu-dung-tin-chap",
@@ -8537,17 +8559,18 @@
       "termMinMonths": 12,
       "termMaxMonths": 60,
       "rate": {
-        "minPercent": 1.29,
-        "maxPercent": 1.9,
+        "minPercent": 2,
+        "maxPercent": 2,
         "basis": "reducing",
         "period": "monthly",
-        "basisInferred": true,
+        "basisInferred": false,
+        "floorOnly": true,
         "segment": null,
         "sourceType": "official",
-        "sourceName": "VIB product landing page: Vay tiêu dùng tín chấp",
+        "sourceName": "VIB",
         "scope": "lender_general",
-        "quote": "Từ 1,29%/tháng, đến 1,9%/tháng",
-        "sourceUrl": "https://www.vib.com.vn/vn/product-landing/vay-tieu-dung/Vay-tieu-dung-tin-chap",
+        "quote": null,
+        "sourceUrl": "https://www.vib.com.vn/vn/vay-tieu-dung",
         "retrievedAt": "2026-11-05",
         "oldDocumentDate": null
       },
@@ -8640,8 +8663,7 @@
       "sourceUrls": [
         "https://www.vib.com.vn/vn/vay-tieu-dung",
         "https://www.vib.com.vn/vn/vay-tieu-dung/chi-tiet-khoan-vay?vay=30000000&kyhan=12&nhanluong=10&luong=0&theTd=0",
-        "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien",
-        "https://www.vib.com.vn/vn/product-landing/vay-tieu-dung/Vay-tieu-dung-tin-chap"
+        "https://www.vib.com.vn/vn/vay-tieu-dung/bieu-phi-va-dieu-kien"
       ],
       "retrievedAt": "2026-11-03",
       "oldestRetrievedAt": "2026-11-03",
@@ -8650,8 +8672,8 @@
       "excludeCode": null,
       "borrowerNotes": [
         {
-          "vi": "Máy tính trên trang VIB cho kết quả khoảng 24–25%/năm, cao hơn khoảng này một chút.",
-          "en": "VIB's calculator gives about 24–25% a year, slightly above this range."
+          "vi": "Máy tính trên trang VIB cho kết quả khoảng 24–25%/năm.",
+          "en": "VIB's calculator gives about 24–25% a year."
         }
       ]
     },
@@ -8677,7 +8699,7 @@
         "basisInferred": true,
         "segment": null,
         "sourceType": "official",
-        "sourceName": "VIB Super Cash: biểu phí, điều kiện",
+        "sourceName": "VIB",
         "scope": "product",
         "quote": "1.63%-2.5%/ tháng",
         "sourceUrl": "https://www.vib.com.vn/vn/super-cash/bieu-phi-dieu-kien-super-cash",
@@ -9071,14 +9093,15 @@
         "basis": "reducing",
         "period": "yearly",
         "basisInferred": false,
+        "minUnconfirmed": true,
         "segment": null,
-        "sourceType": "lender_partner",
-        "sourceName": "Topi.vn (16 finance companies comparison, T11/2026)",
+        "sourceType": "aggregator",
+        "sourceName": "Topi",
         "scope": "lender_general",
         "quote": "Từ 11,09% - 51,12%/năm (365 ngày)",
         "sourceUrl": "https://topi.vn/cap-nhat-lai-suat-vay-tra-gop-16-cong-ty-tai-chinh.html",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2026-11-04"
       },
       "rateNotes": [
         {
@@ -9254,14 +9277,15 @@
         "basis": "flat",
         "period": "monthly",
         "basisInferred": true,
+        "minUnconfirmed": true,
         "segment": null,
         "sourceType": "lender_partner",
-        "sourceName": "MoMo Vay Nhanh (multi-partner page)",
+        "sourceName": "MoMo Vay Nhanh",
         "scope": "lender_general",
         "quote": "Lãi suất vay từ 1,91%/tháng tùy đối tác tín dụng",
         "sourceUrl": "https://www.momo.vn/vay-nhanh",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2026-10-19"
       },
       "rateNotes": [],
       "amortization": null,
@@ -9311,6 +9335,10 @@
         {
           "vi": "Trên MoMo, khoản vay có thể do một công ty tài chính khác cho vay. Hãy kiểm tra tên bên cho vay và lãi suất trong hợp đồng trước khi đồng ý.",
           "en": "On MoMo, the loan may come from a different finance company. Check the lender's name and the rate in the contract before you agree."
+        },
+        {
+          "vi": "Con số này là của MoMo cho nhiều bên cho vay, không riêng VietCredit.",
+          "en": "This figure is MoMo's, across several lenders, not VietCredit's alone."
         }
       ]
     },
@@ -9813,12 +9841,12 @@
         "floorOnly": true,
         "segment": null,
         "sourceType": "aggregator",
-        "sourceName": "muaban.net blog: lãi suất vay ngân hàng VPBank",
+        "sourceName": "Blog muaban.net",
         "scope": "product",
         "quote": "Vay tín chấp dành cho giáo viên hoặc cán bộ VPBank: 17%",
         "sourceUrl": "https://muaban.net/blog/lai-suat-vay-ngan-hang-vpbank-520479/",
         "retrievedAt": "2026-11-05",
-        "oldDocumentDate": null
+        "oldDocumentDate": "2024-01-15"
       },
       "rateNotes": [],
       "amortization": null,
@@ -9858,7 +9886,13 @@
       "oldestRetrievedAt": "2026-11-03",
       "confidence": "low",
       "excludeFromRanking": false,
-      "excludeCode": null
+      "excludeCode": null,
+      "borrowerNotes": [
+        {
+          "vi": "Bài viết từ năm 2024 ghi 17% cho \"giáo viên hoặc cán bộ VPBank\", nên chưa chắc đúng với giáo viên.",
+          "en": "A 2024 article gives 17% for \"teachers or VPBank staff\", so it may not be right for teachers."
+        }
+      ]
     }
   ]
 }

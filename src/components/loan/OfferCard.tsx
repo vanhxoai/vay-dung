@@ -37,6 +37,8 @@ function range(a: string, b: string): string {
   return a === b ? a : `${a} – ${b}`;
 }
 
+const shownAsMinimum = (floor: boolean | undefined, value: string, from: string) => (floor ? `${from} ${value}` : value);
+
 export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffer; rank: number; need: Need; showRank: boolean }) {
   const t = useTranslations("Offer");
   const tRoot = useTranslations();
@@ -94,7 +96,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       case "income":
         return line.known ? t("why.income", { min: m(offer.minMonthlyIncomeVnd as number) }) : t("why.incomeUnknown");
       case "afford":
-        return t("why.afford", { payment: formatVnd(line.paymentVnd), debt: formatVnd(line.debtVnd), ratio: formatPercent(line.ratio, locale) });
+        return t(line.isMinimum ? "why.affordFloor" : "why.afford", { payment: formatVnd(line.paymentVnd), debt: formatVnd(line.debtVnd), ratio: formatPercent(line.ratio, locale) });
       case "cost_key":
         return t("why.costKey", { apr: formatPercent(line.apr, locale) });
       default:
@@ -137,13 +139,13 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
         <Row label={offer.goods ? t("receivedGoods") : t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
         <Row
           label={falling ? t("monthlyFalling") : t("monthly")}
-          value={range(formatVnd(low.firstPaymentVnd), formatVnd(high.firstPaymentVnd))}
+          value={shownAsMinimum(rate.floorOnly, range(formatVnd(low.firstPaymentVnd), formatVnd(high.firstPaymentVnd)), t("fromWord"))}
         />
         {falling ? <Row label={t("lastMonth")} value={range(formatVnd(low.lastPaymentVnd), formatVnd(high.lastPaymentVnd))} /> : null}
-        <Row label={t("cost")} value={range(formatVnd(low.totalCostVnd), formatVnd(high.totalCostVnd))} />
+        <Row label={t("cost")} value={shownAsMinimum(rate.floorOnly, range(formatVnd(low.totalCostVnd), formatVnd(high.totalCostVnd)), t("fromWord"))} />
         <Row
           label={t("realApr")}
-          value={`${range(formatPercent(low.aprNominal, locale), formatPercent(high.aprNominal, locale))}${t("perYear")}`}
+          value={shownAsMinimum(rate.floorOnly, `${range(formatPercent(low.aprNominal, locale), formatPercent(high.aprNominal, locale))}${t("perYear")}`, t("fromWord"))}
           note={rate.floorOnly ? t("realAprNoteFloor") : atMax ? t("realAprNoteAtMax") : t("realAprNote")}
         />
         <div className="flex flex-col">
@@ -153,6 +155,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
             {rate.basisInferred ? <span className="block text-sm opacity-75">({t(rate.sourceType === "official" ? "assumption" : "assumptionGeneral")})</span> : null}
             {rate.quote ? <span className="block text-sm opacity-75">{t("quote", { quote: rate.quote })}</span> : null}
             {rate.oldDocumentDate ? <span className="block text-sm opacity-75">{t("documentDate", { date: formatDate(rate.oldDocumentDate) })}</span> : null}
+            {rate.sourceType !== "official" && rate.oldDocumentDate === null ? <span className="block text-sm opacity-75">{t("sourceUndated")}</span> : null}
             {repaymentAssumed ? <span className="block text-sm opacity-75">{t("repaymentAssumption")}</span> : null}
             <span className="block">
               <a href={rate.sourceUrl} target="_blank" rel="noopener noreferrer" className={`${linkClass} text-sm`}>
@@ -203,7 +206,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
 
       <details data-testid="schedule">
         <summary className="flex min-h-11 cursor-pointer items-center font-medium underline underline-offset-2">{t("schedule.title")}</summary>
-        <p className="mt-1 text-sm">{t("schedule.note")}</p>
+        <p className="mt-1 text-sm">{t(rate.floorOnly ? "schedule.noteFloor" : "schedule.note")}</p>
         <table className="mt-1 w-full border-collapse text-right text-sm">
             <thead>
               <tr className="border-b border-current/40">
@@ -218,10 +221,10 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
               {high.schedule.map((row, i) => (
                 <tr key={i} className="border-b border-current/10">
                   <td className="py-1 text-left">{i + 1}</td>
-                  <td>{thousands(row.principal)}</td>
-                  <td>{thousands(row.interest)}</td>
-                  <td>{thousands(row.total)}</td>
-                  <td>{thousands(row.balance)}</td>
+                  <td className="pl-2">{thousands(row.principal)}</td>
+                  <td className="pl-2">{thousands(row.interest)}</td>
+                  <td className="pl-2">{thousands(row.total)}</td>
+                  <td className="pl-2">{thousands(row.balance)}</td>
                 </tr>
               ))}
             </tbody>

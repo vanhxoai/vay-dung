@@ -59,7 +59,7 @@ export function Results({
     headroom: formatVnd(rec.headroomVnd),
   };
   const principalOnly = formatVnd(rec.principalOnlyVnd);
-  const lowestPayment = rec.ranked.length > 0 ? Math.min(...rec.ranked.map((r) => r.low.maxPaymentVnd)) : null;
+  const lowestPayment = rec.lowestPaymentVnd;
 
   let verdictBody: string;
   if (rec.verdict === "no_income") verdictBody = t("Verdict.no_income.body");
@@ -74,7 +74,6 @@ export function Results({
   // Products with no published age limit can't be blocked by age, so they don't count here.
   const withAgeLimit = rec.ineligible.filter((i) => i.offer.minAge !== null);
   const allTooYoung = rec.verdict === "no_data" && withAgeLimit.length > 0 && withAgeLimit.every((i) => i.reasons.includes("too_young"));
-  const best = rec.ranked[0];
   const longestTerm = TERMS[TERMS.length - 1];
   // Only offer "repay longer" if it could actually bring the principal within reach.
   const longerCouldHelp = need.termMonths < longestTerm && Math.ceil(need.amountVnd / longestTerm) <= rec.headroomVnd;
@@ -88,6 +87,9 @@ export function Results({
     [rec.ranked, officialOnly, sort],
   );
   const hiddenBySource = rec.ranked.length - rec.ranked.filter((r) => r.offer.rate?.sourceType === "official").length;
+
+  const firstIsWeak = shown.length > 0 && shown[0].offer.rate?.sourceType !== "official";
+  const firstOfficial = shown.findIndex((r) => r.offer.rate?.sourceType === "official");
 
   const pickOffer = (key: string) => {
     setAllCards(true);
@@ -138,9 +140,9 @@ export function Results({
         <section>
           <h2 className="font-bold">{t("Alternatives.title")}</h2>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            {rec.suggestedAmountVnd !== null && best ? (
+            {rec.suggestedAmountVnd !== null && rec.suggestedLender ? (
               <li>
-                {t("Alternatives.smaller", { amount: m(rec.suggestedAmountVnd), term: need.termMonths, lender: best.offer.lenderName })}
+                {t("Alternatives.smaller", { amount: m(rec.suggestedAmountVnd), term: need.termMonths, lender: rec.suggestedLender })}
               </li>
             ) : null}
             {longerCouldHelp && !allTooYoung ? <li>{t("Alternatives.longer")}</li> : null}
@@ -171,7 +173,7 @@ export function Results({
       </div>
 
       <section id="offers" className="flex scroll-mt-4 flex-col gap-3">
-        <h2 className="font-bold">{verdictIsNegative ? t("Results.offersTitleTooMuch") : t("Results.offersTitle")}</h2>
+        <h2 className="font-bold">{verdictIsNegative ? t("Results.offersTitleTooMuch") : sort === "best_fit" ? t("Results.offersTitle") : t("Results.offersTitleSorted")}</h2>
         {rec.ranked.length === 0 ? <p>{t("Results.noOffers")}</p> : null}
         {rec.verdict === "no_income" && rec.ranked.length > 0 ? (
           <details>
@@ -209,7 +211,14 @@ export function Results({
                 {t("Results.howRanked")}
               </IntlLink>
             </div>
-            {shown.length === 0 ? <p>{t("Results.noOfficial")}</p> : <OfferSummary ranked={shown} onPick={pickOffer} />}
+            {firstIsWeak ? (
+              <p data-testid="first-is-weak" className="rounded bg-amber-100 px-2 py-1 text-sm text-amber-950 dark:bg-amber-900 dark:text-amber-50">
+                {firstOfficial >= 0
+                  ? t("Results.firstIsWeak", { lender: shown[firstOfficial].offer.lenderName, n: firstOfficial + 1 })
+                  : t("Results.noneOfficial")}
+              </p>
+            ) : null}
+            {shown.length === 0 ? <p>{t("Results.noOfficial")}</p> : <OfferSummary ranked={shown} onPick={pickOffer} showRank={!verdictIsNegative} />}
             {offerCards}
             {showMore}
           </>

@@ -61,12 +61,14 @@ export default function DataPage() {
                     <p>{t("noRate")}</p>
                   )}
                   <p>{o.rate ? tSummary(`source.${o.rate.sourceType}`) : null}{o.rate?.scope === "lender_general" ? ` · ${t("lenderGeneral")}` : ""}</p>
+                  {o.rate?.oldDocumentDate ? <p>{tOffer("documentDate", { date: formatDate(o.rate.oldDocumentDate) })}</p> : null}
+                  {o.rate && o.rate.sourceType !== "official" && !o.rate.oldDocumentDate ? <p>{tOffer("sourceUndated")}</p> : null}
                   <p>{isRanked(o) ? t("ranked") : o.excludeCode ? tResults(`exclude.${o.excludeCode}`) : t("notRanked")}</p>
                   <p>
                     <a href={o.rate?.sourceUrl ?? o.sourceUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
                       {o.rate ? o.rate.sourceName : tOffer("source")}
                     </a>{" "}
-                    · {tOffer("checkedOn", { date: formatDate(o.rate?.retrievedAt ?? o.oldestRetrievedAt) })}
+                    · {t("readOn", { date: formatDate(o.rate?.retrievedAt ?? o.oldestRetrievedAt) })}
                   </p>
                 </li>
               ))}

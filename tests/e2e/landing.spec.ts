@@ -37,7 +37,7 @@ test.describe("waitlist is off until a lawyer has answered", () => {
 
   test("the page has no email field and says so", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByTestId("waitlist")).toContainText("Hiện chúng tôi không thu thập email");
+    await expect(page.getByTestId("waitlist")).toHaveCount(0);
     await expect(page.locator('input[type="email"]')).toHaveCount(0);
   });
 
