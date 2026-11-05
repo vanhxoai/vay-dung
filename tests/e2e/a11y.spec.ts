@@ -12,7 +12,7 @@ for (const colorScheme of ["light", "dark"] as const) {
   test.describe(`${colorScheme} mode`, () => {
     test.use({ colorScheme });
 
-    for (const path of ["/", "/en", "/rieng-tu", "/vay", "/kiem-tra"]) {
+    for (const path of ["/", "/en", "/rieng-tu", "/vay", "/kiem-tra", "/cach-xep-hang", "/du-lieu"]) {
       test(`${path} has no violations`, async ({ page }) => {
         await page.goto(path);
         await page.waitForLoadState("networkidle");

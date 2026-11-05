@@ -1,15 +1,16 @@
 "use client";
 
-import { useMemo, type RefObject } from "react";
+import { useMemo, useState, type RefObject } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { AFFORDABILITY } from "@/config/affordability";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { formatDate, formatLoanAmount, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
 import type { Offer, OfferRateNote } from "@/lib/recommend/offers";
-import { recommend, type IneligibleReason, type Need } from "@/lib/recommend/recommend";
+import { recommend, sortRanked, type IneligibleReason, type Need, type SortMode } from "@/lib/recommend/recommend";
 import { ChoiceGroup, SecondaryButton } from "./fields";
 import { TERMS } from "./terms";
 import { OfferCard } from "./OfferCard";
+import { OfferSummary } from "./OfferSummary";
 
 const VERDICT_STYLE = {
   ok: "border-emerald-700 bg-emerald-50 text-emerald-950 dark:bg-emerald-950 dark:text-emerald-50",
@@ -20,6 +21,10 @@ const VERDICT_STYLE = {
 } as const;
 
 const linkClass = "inline-flex min-h-11 items-center underline underline-offset-2";
+
+const SORTS: SortMode[] = ["best_fit", "monthly", "total_cost"];
+/** Enough to compare; the rest are one tap away, in the summary or the button. */
+const CARDS_SHOWN = 5;
 
 export function Results({
   need,
@@ -75,9 +80,27 @@ export function Results({
   const longerCouldHelp = need.termMonths < longestTerm && Math.ceil(need.amountVnd / longestTerm) <= rec.headroomVnd;
   const verdictIsNegative = rec.verdict === "too_much" || rec.verdict === "no_income";
 
-  const offerCards = rec.ranked.map((r, i) => (
+  const [sort, setSort] = useState<SortMode>("best_fit");
+  const [officialOnly, setOfficialOnly] = useState(false);
+  const [allCards, setAllCards] = useState(false);
+  const shown = useMemo(
+    () => sortRanked(officialOnly ? rec.ranked.filter((r) => r.offer.rate?.sourceType === "official") : rec.ranked, sort),
+    [rec.ranked, officialOnly, sort],
+  );
+  const hiddenBySource = rec.ranked.length - rec.ranked.filter((r) => r.offer.rate?.sourceType === "official").length;
+
+  const pickOffer = (key: string) => {
+    setAllCards(true);
+    // The card may only exist after this render.
+    requestAnimationFrame(() => document.getElementById(`offer-${key}`)?.scrollIntoView());
+  };
+
+  const offerCards = shown.slice(0, allCards ? undefined : CARDS_SHOWN).map((r, i) => (
     <OfferCard key={r.offer.key} ranked={r} rank={i + 1} need={need} showRank={!verdictIsNegative} />
   ));
+  const showMore = !allCards && shown.length > CARDS_SHOWN ? (
+    <SecondaryButton onClick={() => setAllCards(true)}>{t("Results.showAllCards", { count: shown.length })}</SecondaryButton>
+  ) : null;
 
   return (
     <div className="flex flex-col gap-5">
@@ -153,11 +176,44 @@ export function Results({
         {rec.verdict === "no_income" && rec.ranked.length > 0 ? (
           <details>
             <summary className="flex min-h-11 cursor-pointer items-center font-medium underline underline-offset-2">{t("Results.showOffersNoIncome")}</summary>
-            <div className="mt-2 flex flex-col gap-3">{offerCards}</div>
+            <div className="mt-2 flex flex-col gap-3">
+              {offerCards}
+              {showMore}
+            </div>
           </details>
-        ) : (
-          offerCards
-        )}
+        ) : rec.ranked.length > 0 ? (
+          <>
+            <div className="flex flex-col gap-2">
+              <label className="flex flex-col gap-1">
+                <span className="font-medium">{t("Results.sortLabel")}</span>
+                <select
+                  data-testid="sort"
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value as SortMode)}
+                  className="min-h-11 rounded-lg border border-current/40 bg-transparent px-2"
+                >
+                  {SORTS.map((s) => (
+                    <option key={s} value={s}>
+                      {t(`Results.sort.${s}`)}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              {hiddenBySource > 0 ? (
+                <label className="flex min-h-11 items-center gap-2">
+                  <input data-testid="official-only" type="checkbox" checked={officialOnly} onChange={(e) => setOfficialOnly(e.target.checked)} className="h-5 w-5" />
+                  <span>{t("Results.officialOnly", { count: hiddenBySource })}</span>
+                </label>
+              ) : null}
+              <IntlLink href="/cach-xep-hang" className={linkClass}>
+                {t("Results.howRanked")}
+              </IntlLink>
+            </div>
+            {shown.length === 0 ? <p>{t("Results.noOfficial")}</p> : <OfferSummary ranked={shown} onPick={pickOffer} />}
+            {offerCards}
+            {showMore}
+          </>
+        ) : null}
       </section>
 
       <details className="rounded-lg border border-current/30 px-3 py-1">
@@ -166,6 +222,9 @@ export function Results({
           <p>{t("Results.why1")}</p>
           <p>{t("Results.why2")}</p>
           <p>{t("Results.why3")}</p>
+          <IntlLink href="/cach-xep-hang" className={linkClass}>
+            {t("Results.howRanked")}
+          </IntlLink>
           <p>{t("Results.why4", { date: formatDate(licensedAsOf) })}</p>
           <ul className="list-disc pl-5">
             {licensedSources.map((s) => (

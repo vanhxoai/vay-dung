@@ -1,12 +1,20 @@
+import { cacheLife } from "next/cache";
 import { LoanFlow } from "@/components/loan/LoanFlow";
 import licensedList from "../../../../data/licensed-institutions.json";
-import { loadLenders, oldestListDate } from "@/lib/data/lenders";
+import { oldestListDate } from "@/lib/data/lenders";
 import { LicensedList } from "@/lib/data/schema";
-import { toOffers } from "@/lib/recommend/offers";
+import { getLoanData } from "@/lib/store";
 
-export default function LoanPage() {
-  // Runs at build time. The browser receives only slim offers; the user's answers never come back.
-  const offers = toOffers(loadLenders());
+/** Only matters when LOAN_RATES_CSV_URL is set: the live rate feed is re-read every 5 minutes. */
+async function cachedLoanData() {
+  "use cache";
+  cacheLife({ stale: 300, revalidate: 300, expire: 86_400 });
+  return getLoanData();
+}
+
+export default async function LoanPage() {
+  // Runs on the server. The browser receives only slim offers; the user's answers never come back.
+  const { offers } = await cachedLoanData();
   const list = LicensedList.parse(licensedList);
   return (
     <LoanFlow

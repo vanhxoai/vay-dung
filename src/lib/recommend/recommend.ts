@@ -1,8 +1,9 @@
 /**
  * Turns the borrower's need into an honest recommendation. Runs in the browser only.
  *
- * Ranking (DECISIONS #27): by the real APR at the HIGH end of the published range,
- * then the low end. It reads cost and fit only; no commercial field exists.
+ * Ranking (DECISIONS #27, #65): fit first, then cost. See `rankOffers`, and the public
+ * explanation at /cach-xep-hang, which must change whenever this order does.
+ * It reads cost and fit only; no commercial field exists.
  * A product whose fees are entirely unknown can't take first place (compliance S6).
  *
  * Costs are computed at the low and high ends of the range: we can't know which
@@ -26,7 +27,7 @@ import {
 } from "@/lib/finance";
 import type { Goods, Offer, OfferInsurance } from "./offers";
 
-export type Purpose = "phone" | "motorbike" | "education" | "medical" | "debt" | "living" | "other";
+export type Purpose = "phone" | "motorbike" | "goods" | "education" | "medical" | "debt" | "living" | "other";
 export type Urgency = "now" | "soon" | "flexible";
 export type IncomeProof = "bank_salary" | "cash_salary" | "self_employed" | "none";
 
@@ -99,7 +100,10 @@ export type Recommendation = {
 const STALE_AFTER_DAYS = 90;
 
 function fitsPurpose(goods: Goods | null, purpose: Purpose): boolean {
-  return goods === null || goods === purpose;
+  if (goods === null) return true;
+  if (goods === "other_goods") return purpose === "goods";
+  if (goods === "any_goods") return purpose === "goods" || purpose === "phone" || purpose === "motorbike";
+  return goods === purpose;
 }
 
 /** A product that needs a specific employer list or existing relationship is shown with its condition, not filtered. */
@@ -209,7 +213,9 @@ function rankOffer(offer: Offer, need: Need): RankedOffer {
   const high = costAt(offer, r.maxPercent, need, charges.high);
   const atLow = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, low.maxPaymentVnd);
   const atHigh = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, high.maxPaymentVnd);
-  const fit: OfferFit = atHigh.verdict === "ok" ? "fits" : atLow.verdict === "ok" ? "fits_only_low" : "too_much";
+  // With only "from X%" known, even a pass at X can't promise the loan fits.
+  const fitsAtHigh = atHigh.verdict === "ok" && !r.floorOnly;
+  const fit: OfferFit = fitsAtHigh ? "fits" : atLow.verdict === "ok" ? "fits_only_low" : "too_much";
 
   const docsMentionIncome = offer.documents?.some((d) => /thu nhập|lương/i.test(d)) ?? false;
   return {
@@ -234,15 +240,41 @@ function chargeTiming(ins: OfferInsurance): Charge["timing"] {
 /** A verdict of "ok" can't rest on a product we can't fully cost or that many people can't get. */
 function isReliableForVerdict(r: RankedOffer): boolean {
   const ageKnown = r.offer.minAge !== null && r.offer.maxAge !== null;
-  return !r.feesAllUnknown && ageKnown && !r.offer.rate?.maxIsReference && r.offer.existingCustomerRequired !== true && r.offer.employerRestriction === null;
+  const rate = r.offer.rate;
+  return !r.feesAllUnknown && ageKnown && rate?.sourceType === "official" && !rate.maxIsReference && !rate.floorOnly && r.offer.existingCustomerRequired !== true && r.offer.employerRestriction === null;
 }
 
-/** Real cost order, high end first; a product with entirely unknown fees can't be first. */
+const FIT_ORDER: Record<OfferFit, number> = { fits: 0, fits_only_low: 1, too_much: 2 };
+
+/**
+ * A condition this borrower told us they can't meet: the loan asks for income papers they don't have.
+ * Conditions we don't ask about (existing customer, employer list) don't move a loan: pushing a 16% loan
+ * below a 110% one for a condition the borrower may well meet would be worse. The card shows them.
+ */
+export function hasBarrier(r: RankedOffer): boolean {
+  return r.needsIncomeProofNote;
+}
+
+/**
+ * The default order. Each step only breaks ties in the one before:
+ * 1. Fit: fits at the highest rate, then only at a low rate, then too much.
+ * 2. No condition this borrower told us they can't meet, ahead of one they can't.
+ * 3. A known maximum, ahead of "from X%", which would otherwise win on a number that's only a minimum.
+ * 4. Real APR at the high end of the range, then the low end.
+ * 5. The lender's own figure ahead of someone else's, then the key, so the order is stable.
+ * A product with entirely unknown fees can't be first.
+ */
 export function rankOffers(ranked: RankedOffer[]): RankedOffer[] {
+  const official = (r: RankedOffer) => (r.offer.rate?.sourceType === "official" ? 0 : 1);
+  const floorOnly = (r: RankedOffer) => (r.offer.rate?.floorOnly ? 1 : 0);
   const sorted = [...ranked].sort(
     (a, b) =>
+      FIT_ORDER[a.fit] - FIT_ORDER[b.fit] ||
+      Number(hasBarrier(a)) - Number(hasBarrier(b)) ||
+      floorOnly(a) - floorOnly(b) ||
       a.high.aprNominal - b.high.aprNominal ||
       a.low.aprNominal - b.low.aprNominal ||
+      official(a) - official(b) ||
       a.offer.key.localeCompare(b.offer.key),
   );
   // Move the cheapest product with known fees to the front; everything else keeps its cost order.
@@ -251,6 +283,15 @@ export function rankOffers(ranked: RankedOffer[]): RankedOffer[] {
     if (i > 0) sorted.unshift(...sorted.splice(i, 1));
   }
   return sorted;
+}
+
+export type SortMode = "best_fit" | "monthly" | "total_cost";
+
+/** The borrower's own choice of order. Fit and conditions stay out of these two: they asked for the number. */
+export function sortRanked(ranked: RankedOffer[], mode: SortMode): RankedOffer[] {
+  if (mode === "best_fit") return ranked;
+  const value = (r: RankedOffer) => (mode === "monthly" ? r.high.maxPaymentVnd : r.high.totalCostVnd);
+  return [...ranked].sort((a, b) => value(a) - value(b) || a.offer.key.localeCompare(b.offer.key));
 }
 
 /** Largest loan at this offer's HIGH rate that fits the headroom, checked with the real cost. */
@@ -290,11 +331,13 @@ export function recommend(need: Need, offers: readonly Offer[], today: Date): Re
   const principalOnly = Math.ceil(need.amountVnd / need.termMonths);
   const principalCheck = checkAffordability(need.monthlyIncomeVnd, need.existingDebtVnd, principalOnly);
 
+  const official = ranked.filter((r) => r.offer.rate?.sourceType === "official");
   let verdict: Verdict;
   if (baseline.verdict === "no_income") verdict = "no_income";
   else if (principalCheck.verdict === "too_much") verdict = "too_much";
   else if (ranked.length === 0) verdict = "no_data";
-  else if (ranked.every((r) => r.fit === "too_much")) verdict = "too_much";
+  // A low rate seen only on a comparison site can't talk the borrower out of a "too much".
+  else if ((official.length > 0 ? official : ranked).every((r) => r.fit === "too_much")) verdict = "too_much";
   else if (ranked.some((r) => r.fit === "fits" && isReliableForVerdict(r))) verdict = "ok";
   else verdict = "depends";
 

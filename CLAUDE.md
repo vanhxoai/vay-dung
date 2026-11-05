@@ -7,6 +7,8 @@ Vietnamese borrowers see a flood of loan apps, ads and product names, but they c
 3. **They can't tell safe lenders from scams.** Illegal "tín dụng đen" (black credit) apps and advance-fee scams are common.
 4. **Nobody tells them when they shouldn't borrow**, or that another type of credit fits their need better.
 
+**Status:** this is a student project, not offered to real borrowers (see `docs/DECISIONS.md` #63). A banner on every page says so.
+
 We are NOT building another table of advertised rates. We are building a tool that **understands the borrower's need, shows the real total cost in plain Vietnamese, only lists licensed lenders, and is willing to say "this is too much for you."**
 
 ## Target user for the MVP
@@ -14,7 +16,7 @@ Young salaried workers (22–35) in Hanoi and Ho Chi Minh City considering their
 
 ## Product principles (do not break these)
 - **The borrower's interest comes first.** Rank by real cost and fit, never by who pays us. The MVP has no paid placements and no lead selling.
-- **Honest numbers only.** Every lender figure in the app must have a source URL and a retrieval date. If a number is unknown, show "chưa rõ" (unknown) — never guess or fill in a placeholder.
+- **Honest numbers only.** Every lender figure in the app must have a source URL and a retrieval date. A figure from anywhere but the lender (comparison site, partner, press) is allowed but must say so where it's shown. If a number is unknown, show "chưa rõ" (unknown) — never guess or fill in a placeholder.
 - **Plain Vietnamese first.** Vietnamese is the main language (English second). Write for someone with no finance background: "Bạn vay 20 triệu, trả tổng cộng 27,4 triệu trong 24 tháng."
 - **Say "don't borrow" when it's true.** If the payment would put the user over the affordability threshold, say so clearly and suggest alternatives.
 - **Privacy by default.** In the MVP, all calculations run in the browser. Do not send or store users' income, debts or identity on a server. No login.
@@ -31,7 +33,8 @@ Put this in `src/lib/finance/`, keep it pure TypeScript with no UI code, and tes
 - Every formula needs unit tests, including hand-checked examples written in the test file.
 
 ## Lender data
-- Stored in `data/lenders/*.json` and validated with a Zod schema (`src/lib/data/schema.ts`).
+- **The store is `data/store/loan-data.xlsx`.** Edit it, then run `npm run data:import`, which validates it (`src/lib/store/`) and writes `data/store/snapshot.json` for the app. See `docs/DATA_STORE.md`.
+- `data/lenders/*.json` (validated by `src/lib/data/schema.ts`) is the official research archive. Editing it doesn't change the app.
 - Each product: lender name, license type (bank / finance company), product type (cash loan, installment, credit card, BNPL…), amount range, term range, rate and its **quote basis** (flat / reducing, monthly / yearly), fees, insurance, eligibility (age, income, documents), late-payment penalty, `sourceUrl`, `retrievedAt`, `confidence` (high / medium / low).
 - **Licensing:** a lender can only be listed if it appears on the SBV's published lists of licensed credit institutions / finance companies. Keep the list and its source in `data/licensed-institutions.json`.
 - Never scrape behind logins and never bypass a website's protections. Prefer official product pages and published fee schedules.
@@ -59,4 +62,5 @@ Put this in `src/lib/finance/`, keep it pure TypeScript with no UI code, and tes
 - `npm test` runs the unit tests
 - `npm run test:e2e` runs the Playwright tests
 - `npm run lint` and `npm run typecheck`
-- `npm run validate-data` checks every lender file against the schema and the licensed list
+- `npm run data:import` checks the workbook and writes what the app reads
+- `npm run validate-data` checks the research archive against the schema and the licensed list

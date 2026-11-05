@@ -3,14 +3,14 @@
  * for scripts/check/recommend_check.py (which derives everything itself from the JSON files).
  * Run: npx tsx scripts/check/recommend_dump.ts > out.json
  */
-import { loadLenders } from "../../src/lib/data/lenders";
+import { loadSnapshot } from "../../src/lib/store";
 import { computeLoanCost, type LoanCost } from "../../src/lib/finance";
 import { formatMillions, formatPercent } from "../../src/lib/format";
-import { toOffers, type Offer } from "../../src/lib/recommend/offers";
+import type { Offer } from "../../src/lib/recommend/offers";
 import { recommend, type Need, type Purpose, type RankedOffer } from "../../src/lib/recommend/recommend";
 
 const today = new Date("2026-11-03T00:00:00Z");
-const offers = toOffers(loadLenders());
+const offers = loadSnapshot().offers;
 const need = (o: Partial<Need> = {}): Need => ({
   purpose: "other",
   amountVnd: 20_000_000,

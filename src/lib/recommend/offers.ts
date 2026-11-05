@@ -9,9 +9,9 @@ import type { LenderFile, Product } from "@/lib/data/schema";
 import { OLD_DOCUMENT_DAYS } from "@/lib/data/validate";
 import { ageInDaysFrom } from "./dates";
 
-export type Goods = "phone" | "motorbike";
+export type Goods = "phone" | "motorbike" | "education" | "other_goods" | "any_goods";
 
-/** Installment products tied to specific goods. Everything else is general purpose. */
+/** Installment products tied to specific goods. "any_goods": a store purchase of most kinds. */
 const GOODS_BY_PRODUCT: Record<string, Goods> = {
   "fe-credit/vay-mua-xe-may": "motorbike",
   "fe-credit/vay-mua-dien-thoai-dien-may": "phone",
@@ -26,6 +26,13 @@ const GOODS_BY_PRODUCT: Record<string, Goods> = {
   "sfinance/tra-gop-dien-thoai": "phone",
   "sfinance/tra-gop-dien-may": "phone",
   "shinhan-finance/motorbike-installment-loan": "motorbike",
+  "mirae-asset/installment-education": "education",
+  "mirae-asset/installment-beauty": "other_goods",
+  "jaccs/furniture-installment": "other_goods",
+  "aeon-finance/installment-loan": "any_goods",
+  "mcredit/mcredit-vay-tra-gop": "any_goods",
+  "shinhan-finance/consumer-installment-loan": "any_goods",
+  "tpbank/vay-mua-hang-tra-gop-fpt-telecom": "any_goods",
 };
 
 export type OfferRate = {
@@ -39,11 +46,19 @@ export type OfferRate = {
   minIsPromotional?: boolean;
   /** The minimum disagrees with what the lender advertises: costs use the maximum. */
   minUnconfirmed?: boolean;
+  /** Only "from X%" is known: the cost is a minimum, and the product ranks after those with a known maximum. */
+  floorOnly?: boolean;
   /** Lowest rate by term, highest threshold first. */
   minByTerm?: { termMonthsMin: number; percent: number }[];
   /** The lender calls its maximum a reference rate: a borrower's rate could be higher. */
   maxIsReference?: boolean;
   segment: string | null;
+  /** Who published this rate. Anything but "official" is labelled on the card. */
+  sourceType: "official" | "lender_partner" | "aggregator" | "press";
+  sourceName: string;
+  /** "lender_general": the source speaks of the lender as a whole, not this product. */
+  scope: "product" | "lender_general";
+  quote: string | null;
   sourceUrl: string;
   retrievedAt: string;
   /** Set when the document behind this rate is old, however recently we read it. */
@@ -101,10 +116,12 @@ export type ExcludeCode =
   | "undated_document"
   | "ceiling_only"
   | "floor_only"
-  | "no_rate";
+  | "no_rate"
+  | "revolving";
 
 export type Offer = {
   key: string;
+  licensedInstitutionId: string;
   lenderName: string;
   legalName: string;
   category: "bank" | "finance_company";
@@ -242,6 +259,7 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
 
   return {
     key: `${lender.slug}/${p.id}`,
+    licensedInstitutionId: lender.licensedInstitutionId,
     lenderName: lender.name,
     legalName: lender.legalName,
     category: lender.licenseCategory,
@@ -267,6 +285,10 @@ export function toOffer(lender: LenderFile, p: Product): Offer {
             minByTerm: rate.minByTerm,
             maxIsReference: rate.maxIsReference,
             segment: rate.segment,
+            sourceType: "official",
+            sourceName: lender.name,
+            scope: "product",
+            quote: null,
             sourceUrl: (rate.maxPercent.sourceUrl ?? rate.minPercent.sourceUrl ?? p.sourceUrl) as string,
             retrievedAt: (rate.maxPercent.retrievedAt ?? rate.minPercent.retrievedAt ?? p.retrievedAt) as string,
             oldDocumentDate: oldDocumentDate(rate),

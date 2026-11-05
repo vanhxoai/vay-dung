@@ -3,7 +3,9 @@
 import { useLocale, useTranslations } from "next-intl";
 import { formatDate, formatLoanAmount, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
 import type { OfferFee } from "@/lib/recommend/offers";
+import { explainRank, type ExplainLine } from "@/lib/recommend/explain";
 import type { Need, RankedOffer } from "@/lib/recommend/recommend";
+import { advertisedRate } from "./rateText";
 import { rateNoteText } from "./Results";
 
 const FIT_STYLE = {
@@ -12,6 +14,7 @@ const FIT_STYLE = {
   fits_reference: "text-amber-800 dark:text-amber-300",
   too_much_at_max: "text-red-800 dark:text-red-300",
   fits_only_low: "text-amber-800 dark:text-amber-300",
+  fits_floor: "text-amber-800 dark:text-amber-300",
   too_much: "text-red-800 dark:text-red-300",
 } as const;
 
@@ -42,21 +45,17 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
   const rate = offer.rate as NonNullable<typeof offer.rate>;
   const m = (n: number) => formatMillions(n, locale);
   const en = locale === "en";
+  // Five columns on a phone: whole đồng wouldn't fit.
+  const thousands = (n: number) => Math.round(n / 1000).toLocaleString(en ? "en-US" : "vi-VN");
 
-  const period = rate.period === "monthly" ? t("perMonth") : t("perYear");
-  // A minimum we don't cost isn't shown as a price: the card says only "up to".
-  const advertised = rate.minUnconfirmed
-    ? t("upTo", { rate: `${formatRate(rate.maxPercent, locale)}%${period}` })
-    : rate.minPercent === rate.maxPercent
-      ? `${formatRate(rate.minPercent, locale)}%${period}`
-      : `${formatRate(rate.minPercent, locale)}–${formatRate(rate.maxPercent, locale)}%${period}`;
+  const advertised = advertisedRate(rate, t, locale);
   const falling = high.firstPaymentVnd - high.lastPaymentVnd > need.termMonths * 10;
   const unknownLimits =
     offer.amountMinVnd === null || offer.amountMaxVnd === null || offer.termMinMonths === null || offer.termMaxMonths === null;
   // Costed at the top of a range: a statement about the published maximum, not about this borrower's rate.
   const atMax = rate.minIsPromotional || rate.minUnconfirmed;
   const fitLabel =
-    fit === "fits" && rate.maxIsReference ? "fits_reference" : fit === "too_much" && atMax ? "too_much_at_max" : fit === "fits" && ranked.feesAllUnknown ? "fits_fees_unknown" : fit;
+    rate.floorOnly && fit === "fits_only_low" ? "fits_floor" : fit === "fits" && rate.maxIsReference ? "fits_reference" : fit === "too_much" && atMax ? "too_much_at_max" : fit === "fits" && ranked.feesAllUnknown ? "fits_fees_unknown" : fit;
   // Different amounts can round to the same "x triệu"; a real range must still look like one.
   const totalPaid =
     low.totalPaidVnd !== high.totalPaidVnd && m(low.totalPaidVnd) === m(high.totalPaidVnd)
@@ -84,11 +83,30 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
     return `${en && f.nameEn ? f.nameEn : f.nameVi}: ${parts.join(", ")}`;
   };
 
+  const explain = (line: ExplainLine): string => {
+    switch (line.kind) {
+      case "amount":
+        return line.known ? t("why.amount", { amount: formatLoanAmount(need.amountVnd, locale), min: offer.amountMinVnd === null ? t("why.noLimit") : m(offer.amountMinVnd), max: offer.amountMaxVnd === null ? t("why.noLimit") : m(offer.amountMaxVnd) }) : t("why.amountUnknown");
+      case "term":
+        return line.known ? t("why.term", { term: need.termMonths, min: offer.termMinMonths ?? t("why.noLimit"), max: offer.termMaxMonths ?? t("why.noLimit") }) : t("why.termUnknown");
+      case "age":
+        return line.known ? t("why.age", { age: need.age }) : t("why.ageUnknown");
+      case "income":
+        return line.known ? t("why.income", { min: m(offer.minMonthlyIncomeVnd as number) }) : t("why.incomeUnknown");
+      case "afford":
+        return t("why.afford", { payment: formatVnd(line.paymentVnd), debt: formatVnd(line.debtVnd), ratio: formatPercent(line.ratio, locale) });
+      case "cost_key":
+        return t("why.costKey", { apr: formatPercent(line.apr, locale) });
+      default:
+        return t(`why.${line.kind}`);
+    }
+  };
+
   // The rate's own source first, then every other source behind the card's figures.
   const sources = [rate.sourceUrl, ...offer.sourceUrls.filter((u) => u !== rate.sourceUrl)];
 
   return (
-    <article data-testid="offer" data-offer={offer.key} className="flex flex-col gap-3 rounded-lg border border-current/30 p-4">
+    <article id={`offer-${offer.key}`} data-testid="offer" data-offer={offer.key} className="flex scroll-mt-4 flex-col gap-3 rounded-lg border border-current/30 p-4">
       <header>
         {showRank ? <p className="text-sm opacity-75">{t("rank", { n: rank })}</p> : null}
         <h3 className="text-lg font-bold">{offer.lenderName}</h3>
@@ -97,7 +115,12 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
         <p className={`mt-1 font-medium ${FIT_STYLE[fitLabel]}`}>{t(`fit.${fitLabel}`)}</p>
       </header>
 
+      <p data-testid="rate-source" className={rate.sourceType === "official" ? "text-sm" : notice}>
+        {t(`sourceType.${rate.sourceType}`, { name: rate.sourceName })}
+        {rate.scope === "lender_general" ? ` ${t("scopeGeneral")}` : ""}
+      </p>
       {offer.confidence === "low" ? <p className={notice}>{t("lowConfidence")}</p> : null}
+      {rate.floorOnly ? <p className={notice}>{t("floorOnly")}</p> : null}
       {rate.minIsPromotional ? <p className={notice}>{t("promoLow")}</p> : null}
       {offer.borrowerNotes?.map((n) => <p key={n.vi} className={notice}>{en ? n.en : n.vi}</p>)}
       {ranked.feesAllUnknown ? <p className={notice}>{t("feesUnknown")}</p> : null}
@@ -108,7 +131,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
       {unknownLimits ? <p className={notice}>{t("unknownLimits")}</p> : null}
       {offer.minAge === null && offer.maxAge === null ? <p className={notice}>{t("ageUnknown")}</p> : null}
 
-      <p>{t(atMax ? "sentenceAtMax" : "sentence", { amount: formatLoanAmount(need.amountVnd, locale), total: totalPaid, term: need.termMonths })}</p>
+      <p>{t(rate.floorOnly ? "sentenceFloor" : atMax ? "sentenceAtMax" : "sentence", { amount: formatLoanAmount(need.amountVnd, locale), total: totalPaid, term: need.termMonths })}</p>
 
       <dl className="flex flex-col gap-2">
         <Row label={offer.goods ? t("receivedGoods") : t("received")} value={range(formatVnd(low.amountReceivedVnd), formatVnd(high.amountReceivedVnd))} />
@@ -121,13 +144,14 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
         <Row
           label={t("realApr")}
           value={`${range(formatPercent(low.aprNominal, locale), formatPercent(high.aprNominal, locale))}${t("perYear")}`}
-          note={atMax ? t("realAprNoteAtMax") : t("realAprNote")}
+          note={rate.floorOnly ? t("realAprNoteFloor") : atMax ? t("realAprNoteAtMax") : t("realAprNote")}
         />
         <div className="flex flex-col">
           <dt className="text-sm opacity-75">{t("advertised")}</dt>
           <dd>
             {advertised}, {rate.basis === "flat" ? t("basisFlat") : t("basisReducing")}
-            {rate.basisInferred ? <span className="block text-sm opacity-75">({t("assumption")})</span> : null}
+            {rate.basisInferred ? <span className="block text-sm opacity-75">({t(rate.sourceType === "official" ? "assumption" : "assumptionGeneral")})</span> : null}
+            {rate.quote ? <span className="block text-sm opacity-75">{t("quote", { quote: rate.quote })}</span> : null}
             {rate.oldDocumentDate ? <span className="block text-sm opacity-75">{t("documentDate", { date: formatDate(rate.oldDocumentDate) })}</span> : null}
             {repaymentAssumed ? <span className="block text-sm opacity-75">{t("repaymentAssumption")}</span> : null}
             <span className="block">
@@ -167,6 +191,42 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
         <h4 className="font-semibold">{t("lateTitle")}</h4>
         <p>{(en ? offer.lateTextEn : null) ?? offer.lateTextVi ?? t("lateUnknown")}</p>
       </div>
+
+      <details data-testid="why-rank">
+        <summary className="flex min-h-11 cursor-pointer items-center font-medium underline underline-offset-2">{t("why.title")}</summary>
+        <ul className="mt-1 list-disc space-y-1 pl-5 text-sm">
+          {explainRank(ranked, need).map((line) => (
+            <li key={line.kind}>{explain(line)}</li>
+          ))}
+        </ul>
+      </details>
+
+      <details data-testid="schedule">
+        <summary className="flex min-h-11 cursor-pointer items-center font-medium underline underline-offset-2">{t("schedule.title")}</summary>
+        <p className="mt-1 text-sm">{t("schedule.note")}</p>
+        <table className="mt-1 w-full border-collapse text-right text-sm">
+            <thead>
+              <tr className="border-b border-current/40">
+                <th scope="col" className="py-1 text-left font-semibold">{t("schedule.month")}</th>
+                <th scope="col" className="py-1 font-semibold">{t("schedule.principal")}</th>
+                <th scope="col" className="py-1 font-semibold">{t("schedule.interest")}</th>
+                <th scope="col" className="py-1 font-semibold">{t("schedule.total")}</th>
+                <th scope="col" className="py-1 font-semibold">{t("schedule.balance")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {high.schedule.map((row, i) => (
+                <tr key={i} className="border-b border-current/10">
+                  <td className="py-1 text-left">{i + 1}</td>
+                  <td>{thousands(row.principal)}</td>
+                  <td>{thousands(row.interest)}</td>
+                  <td>{thousands(row.total)}</td>
+                  <td>{thousands(row.balance)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+      </details>
 
       <details>
         <summary className="flex min-h-11 cursor-pointer items-center font-medium underline underline-offset-2">{t("detailsTitle")}</summary>

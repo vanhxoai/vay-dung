@@ -4,14 +4,14 @@
  * Run from the repo root: npx tsx scripts/check/lender_update_dump.ts > out.json
  */
 import { readFileSync } from "node:fs";
-import { loadLenders } from "../../src/lib/data/lenders";
+import { loadSnapshot } from "../../src/lib/store";
 import { computeLoanCost, type Charge, type LoanCost } from "../../src/lib/finance";
 import { formatMillions, formatPercent } from "../../src/lib/format";
-import { toOffers, type Offer } from "../../src/lib/recommend/offers";
+import type { Offer } from "../../src/lib/recommend/offers";
 import { recommend, type Need, type Purpose, type RankedOffer } from "../../src/lib/recommend/recommend";
 
 const today = new Date("2026-11-03T00:00:00Z");
-const offers = toOffers(loadLenders());
+const offers = loadSnapshot().offers;
 const rankable = offers.filter((o) => !o.excludeFromRanking && o.rate !== null);
 const need = (o: Partial<Need> = {}): Need => ({
   purpose: "other",
@@ -24,7 +24,7 @@ const need = (o: Partial<Need> = {}): Need => ({
   incomeProof: "bank_salary",
   ...o,
 });
-const purposeOf = (o: Offer): Purpose => o.goods ?? "other";
+const purposeOf = (o: Offer): Purpose => (o.goods === "other_goods" || o.goods === "any_goods" ? "goods" : (o.goods ?? "other"));
 const c = (l: LoanCost) => ({
   received: l.amountReceivedVnd,
   first: l.firstPaymentVnd,

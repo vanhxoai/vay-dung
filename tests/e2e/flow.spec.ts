@@ -115,7 +115,7 @@ test.describe("results page", () => {
   test("lists products without enough data separately, not in the ranking", async ({ page }) => {
     await complete(page, CAN_AFFORD);
     await expect(page.getByText(/Chưa đủ dữ liệu để so sánh \(\d+\)/)).toBeVisible();
-    await expect(page.locator('[data-testid="offer"][data-offer^="mb-bank"]')).toHaveCount(0);
+    await expect(page.locator('[data-summary="vietcredit/tin-vay-plus"]')).toHaveCount(0);
   });
 });
 

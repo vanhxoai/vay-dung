@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { loadLenders } from "@/lib/data/lenders";
-import { toOffers, type Offer } from "./offers";
-import { eligibilityProblems, premiumRange, rankOffers, recommend, type Need } from "./recommend";
+import { loadSnapshot } from "@/lib/store";
+import type { Offer } from "./offers";
+import { explainRank } from "./explain";
+import { eligibilityProblems, premiumRange, rankOffers, recommend, sortRanked, type Need } from "./recommend";
 
 const today = new Date("2026-11-02T12:00:00Z");
-const offers = toOffers(loadLenders());
+const offers = loadSnapshot().offers;
 
 const need = (o: Partial<Need> = {}): Need => ({
   purpose: "other",
@@ -43,8 +44,8 @@ describe("a published range for a customer group", () => {
   });
 
   it("can't give an OK verdict for a product with no published age limits", () => {
-    const rec = recommend(need({ age: 70, purpose: "phone" }), offers, today);
-    expect(rec.ranked.map((r) => r.offer.key)).toEqual(["jaccs/cash-loan"]);
+    const rec = recommend(need({ age: 70 }), [offer({ minAge: null, maxAge: null, feesCompleteness: "complete" })], today);
+    expect(rec.ranked).toHaveLength(1);
     expect(rec.verdict).toBe("depends");
   });
 
@@ -59,8 +60,10 @@ describe("a published range for a customer group", () => {
     expect(recommend(need(), only, today).verdict).toBe("depends");
   });
 
-  it("keeps Mirae Asset unranked until its figures are confirmed by hand", () => {
-    expect(recommend(need(), offers, today).ranked.some((r) => r.offer.key.startsWith("mirae-asset"))).toBe(false);
+  it("costs Mirae Asset's group ranges at their top only", () => {
+    const m = recommend(need(), offers, today).ranked.find((r) => r.offer.key === "mirae-asset/salary-cash-loan");
+    expect(m?.low.totalCostVnd).toBe(m?.high.totalCostVnd);
+    expect(m?.high.aprNominal).toBeGreaterThan(0.64);
   });
 });
 
@@ -80,20 +83,126 @@ describe("banks that publish no comparable rate", () => {
     expect(acb.rateNotes.find((n) => n.kind === "advertised_floor")?.period).toBe("daily");
   });
 
-  it("gives the real reason when documents conflict or are undated", () => {
-    expect(find("sacombank-vay-tieu-dung-tu-the-tin-dung").excludeCode).toBe("conflicting_sources");
-    expect(find("hdbank-vay-tieu-dung-linh-hoat").excludeCode).toBe("undated_document");
+  it("keeps overdrafts and pay-later out of the ranking, with the reason", () => {
+    expect(find("acb-thau-chi-tieu-dung-online").excludeCode).toBe("revolving");
+    expect(find("lotte-paylater").excludeCode).toBe("revolving");
+    const ranked = recommend(need(), offers, today).ranked.map((r) => r.offer.productType);
+    expect(ranked).not.toContain("overdraft");
+    expect(ranked).not.toContain("bnpl");
+  });
+});
+
+describe("the data store", () => {
+  it("names a source and date on every ranked rate", () => {
+    for (const o of offers.filter((x) => x.rate !== null)) {
+      expect(o.rate?.sourceUrl, o.key).toMatch(/^https?:/);
+      expect(o.rate?.sourceName, o.key).toBeTruthy();
+      expect(o.rate?.retrievedAt, o.key).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
   });
 
-  it("keeps ACB, Sacombank, VIB and HDBank out of the ranking", () => {
-    const ranked = recommend(need(), offers, today).ranked.map((r) => r.offer.lenderName);
-    for (const name of ["ACB", "Sacombank", "VIB", "HDBank"]) expect(ranked).not.toContain(name);
+  it("rates a figure from anywhere but the lender as low confidence", () => {
+    for (const o of offers.filter((x) => x.rate && x.rate.sourceType !== "official")) expect(o.confidence, o.key).toBe("low");
+  });
+});
+
+describe("the order of the ranking", () => {
+  const rate = (o: Partial<NonNullable<Offer["rate"]>>) => ({ ...(offer().rate as NonNullable<Offer["rate"]>), ...o });
+  const keys = (n: Need, list: Offer[]) => recommend(n, list, today).ranked.map((r) => r.offer.key);
+
+  it("puts a loan that fits ahead of a cheaper-looking one that doesn't", () => {
+    // B's rate is lower, but its monthly fee takes it over the guideline.
+    const a = offer({ key: "a/a", rate: rate({ minPercent: 40, maxPercent: 40 }) });
+    const b = offer({ key: "b/b", rate: rate({ minPercent: 10, maxPercent: 10 }), monthlyFees: [{ nameVi: "Phí", nameEn: null, amountVnd: 6_000_000 }] });
+    expect(keys(need(), [b, a])).toEqual(["a/a", "b/b"]);
+  });
+
+  it("puts a known maximum ahead of a lower 'from X%'", () => {
+    const known = offer({ key: "known/x", rate: rate({ minPercent: 30, maxPercent: 40 }) });
+    const floor = offer({ key: "floor/x", rate: rate({ minPercent: 9, maxPercent: 9, floorOnly: true }) });
+    expect(keys(need(), [floor, known])).toEqual(["known/x", "floor/x"]);
+  });
+
+  it("says a floor can't promise the loan fits", () => {
+    const floor = offer({ rate: rate({ minPercent: 9, maxPercent: 9, floorOnly: true }) });
+    const r = recommend(need(), [floor], today);
+    expect(r.ranked[0].fit).toBe("fits_only_low");
+    expect(r.verdict).toBe("depends");
+  });
+
+  it("puts a loan needing income papers after one that doesn't, only for someone without them", () => {
+    const papers = offer({ key: "a/papers", documents: ["Sao kê lương"], rate: rate({ maxPercent: 20, minPercent: 20 }) });
+    const none = offer({ key: "b/none", documents: ["CCCD"], rate: rate({ maxPercent: 30, minPercent: 30 }) });
+    expect(keys(need({ incomeProof: "none" }), [papers, none])).toEqual(["b/none", "a/papers"]);
+    expect(keys(need({ incomeProof: "bank_salary" }), [papers, none])).toEqual(["a/papers", "b/none"]);
+  });
+
+  it("doesn't move a loan for a condition we never asked about", () => {
+    const cheap = offer({ key: "a/cheap", existingCustomerRequired: true, rate: rate({ minPercent: 15, maxPercent: 15 }) });
+    const dear = offer({ key: "b/dear", rate: rate({ minPercent: 60, maxPercent: 60 }) });
+    expect(keys(need(), [dear, cheap])).toEqual(["a/cheap", "b/dear"]);
+  });
+
+  it("breaks an exact tie in favour of the lender's own figure", () => {
+    const site = offer({ key: "a/site", rate: rate({ sourceType: "aggregator" }) });
+    const own = offer({ key: "b/own" });
+    expect(keys(need(), [site, own])).toEqual(["b/own", "a/site"]);
+  });
+
+  it("can't call a loan OK, or soften a 'too much', on a figure from a comparison site", () => {
+    const site = offer({ rate: rate({ sourceType: "aggregator", minPercent: 10, maxPercent: 12 }), feesCompleteness: "complete", minAge: 18, maxAge: 60 });
+    expect(recommend(need(), [site], today).verdict).toBe("depends");
+
+    const tight = need({ monthlyIncomeVnd: 10_000_000, existingDebtVnd: 3_100_000 });
+    const ownDear = offer({ key: "own/dear", rate: rate({ minPercent: 40, maxPercent: 40 }) });
+    const siteCheap = offer({ key: "site/cheap", rate: rate({ sourceType: "press", minPercent: 5, maxPercent: 40 }) });
+    expect(recommend(tight, [ownDear, siteCheap], today).verdict).toBe("too_much");
+    // With no lender figure at all, the site's low end is all there is.
+    expect(recommend(tight, [siteCheap], today).verdict).toBe("depends");
+  });
+});
+
+describe("sorting by the borrower's choice", () => {
+  const rate = (o: Partial<NonNullable<Offer["rate"]>>) => ({ ...(offer().rate as NonNullable<Offer["rate"]>), ...o });
+  it("orders by the number they chose, and leaves the default alone", () => {
+    const ranked = recommend(need(), [offer({ key: "a/dear", rate: rate({ minPercent: 40, maxPercent: 40 }) }), offer({ key: "b/cheap", rate: rate({ minPercent: 10, maxPercent: 10 }), monthlyFees: [{ nameVi: "Phí", nameEn: null, amountVnd: 1000 }] })], today).ranked;
+    expect(sortRanked(ranked, "best_fit")).toBe(ranked);
+    expect(sortRanked(ranked, "monthly").map((r) => r.offer.key)).toEqual(["b/cheap", "a/dear"]);
+    expect(sortRanked(ranked, "total_cost").map((r) => r.offer.key)).toEqual(["b/cheap", "a/dear"]);
+  });
+});
+
+describe("loans tied to a purchase", () => {
+  const shown = (purpose: Need["purpose"]) => recommend(need({ purpose }), offers, today).ranked.map((r) => r.offer.key);
+  it("only appear for that purchase", () => {
+    expect(shown("other")).not.toContain("mirae-asset/installment-beauty");
+    expect(shown("other")).not.toContain("aeon-finance/installment-loan");
+    expect(shown("goods")).toContain("mirae-asset/installment-beauty");
+    expect(shown("goods")).toContain("aeon-finance/installment-loan");
+    expect(shown("phone")).toContain("aeon-finance/installment-loan");
+    expect(shown("phone")).not.toContain("mirae-asset/installment-beauty");
+    expect(shown("education")).toContain("mirae-asset/installment-education");
+  });
+});
+
+describe("explaining a position", () => {
+  it("states what's unchecked, the condition, the floor and the cost, from the borrower's own answers", () => {
+    const o = offer({ amountMinVnd: null, amountMaxVnd: null, minAge: null, maxAge: null, existingCustomerRequired: true, rate: { ...(offer().rate as NonNullable<Offer["rate"]>), floorOnly: true, minPercent: 20, maxPercent: 20 } });
+    const r = recommend(need({ existingDebtVnd: 1_000_000 }), [o], today).ranked[0];
+    const lines = explainRank(r, need({ existingDebtVnd: 1_000_000 }));
+    expect(lines).toContainEqual({ kind: "amount", known: false });
+    expect(lines).toContainEqual({ kind: "age", known: false });
+    expect(lines.map((l) => l.kind)).toEqual(expect.arrayContaining(["condition_unasked", "floor_only", "cost_key"]));
+    const afford = lines.find((l) => l.kind === "afford");
+    // (payment + 1,000,000) ÷ 15,000,000
+    expect(afford).toMatchObject({ debtVnd: 1_000_000, ratio: (r.high.maxPaymentVnd + 1_000_000) / 15_000_000 });
   });
 });
 
 function offer(o: Partial<Offer> = {}): Offer {
   return {
     key: "acme/loan",
+    licensedInstitutionId: "acme",
     lenderName: "Acme",
     legalName: "Acme",
     category: "bank",
@@ -112,6 +221,10 @@ function offer(o: Partial<Offer> = {}): Offer {
       period: "yearly",
       basisInferred: false,
       segment: null,
+      sourceType: "official",
+      sourceName: "Bên A",
+      scope: "product",
+      quote: null,
       sourceUrl: "https://example.com",
       retrievedAt: "2026-11-01",
       oldDocumentDate: null,
@@ -414,8 +527,8 @@ describe("what's shown where", () => {
   it("products without an offered rate go to 'not enough data', never into the ranking", () => {
     const r = recommend(need(), offers, today);
     const ranked = r.ranked.map((x) => x.offer.key);
-    expect(ranked).not.toContain("mb-bank/mb-unsecured-consumer-app");
-    expect(r.insufficientData.map((x) => x.offer.key)).toContain("mb-bank/mb-unsecured-consumer-app");
+    expect(ranked).not.toContain("vietcredit/tin-vay-plus");
+    expect(r.insufficientData.map((x) => x.offer.key)).toContain("vietcredit/tin-vay-plus");
   });
 
   it("data older than 90 days stops being ranked, even on a static site", () => {

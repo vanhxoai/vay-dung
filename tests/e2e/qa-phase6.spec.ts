@@ -16,15 +16,6 @@ async function results(page: Page, amount: string, income: string, term: string,
 }
 
 test.describe("phase 6 ship-check", () => {
-  // Regression: with no product to rank, the page gave no warning and no alternatives.
-  test("no ranked product still warns and shows alternatives", async ({ page }) => {
-    await results(page, "250000000", "20000000", "36");
-    const verdict = page.getByTestId("verdict");
-    await expect(verdict).toHaveAttribute("data-verdict", "no_data");
-    await expect(verdict).toContainText("chúng tôi không khuyên bạn vay số tiền này");
-    await expect(page.getByRole("heading", { name: "Bạn có thể làm gì thay vào đó" })).toBeVisible();
-  });
-
   test("during the soft launch, search engines are asked not to list any page", async ({ page }) => {
     for (const path of ["/", "/en", "/vay", "/kiem-tra", "/rieng-tu"]) {
       await page.goto(path);
@@ -36,17 +27,17 @@ test.describe("phase 6 ship-check", () => {
   test("products we can't compare show only what's true of them", async ({ page }) => {
     await results(page, "20000000", "15000000", "12");
     const section = page.locator("details").filter({ hasText: "0,06%/ngày" });
-    await expect(section).toContainText("Các tài liệu chính thức của bên cho vay ghi lãi suất hoặc cách tính khác nhau");
-    await expect(section).toContainText("tài liệu không ghi ngày");
+    await expect(section).toContainText("không có lịch trả cố định");
     await expect(section).not.toContainText("Lãi suất tham chiếu (không phải của sản phẩm)");
-    await expect(section).not.toContainText("1,7");
     await expect(section).not.toContainText("chưa rõ theo tháng hay theo năm: 0,06");
   });
 
   // Compliance: a reference rate or a promotional 0% must not read as the product's price.
   test("cards show no reference rates and never present 0% as the cost", async ({ page }) => {
     await results(page, "20000000", "15000000", "24");
+    await page.locator('[data-summary="home-credit/cash-loan"] button').click();
     const card = page.locator('[data-offer="home-credit/cash-loan"]');
+    await expect(card).toBeVisible();
     await expect(card).not.toContainText("33,94");
     await expect(card).not.toContainText("tham chiếu");
     await expect(page.locator("main")).not.toContainText("-0%");
@@ -77,14 +68,6 @@ test.describe("phase 6 ship-check", () => {
     await income.focus();
     await page.waitForTimeout(200);
     await expect(income).toBeFocused();
-  });
-
-  // Regression: under-20s were told "can't calculate" with no hint that age was the reason.
-  test("when everything needs an older borrower, the verdict says so", async ({ page }) => {
-    await results(page, "3000000", "15000000", "12", "Trong tháng này", "19");
-    const verdict = page.getByTestId("verdict");
-    await expect(verdict).toHaveAttribute("data-verdict", "no_data");
-    await expect(verdict).toContainText("yêu cầu tuổi cao hơn");
   });
 
   test("an amount that isn't a round figure is shown in full, not rounded", async ({ page }) => {

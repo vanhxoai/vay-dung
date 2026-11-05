@@ -4,13 +4,13 @@
  * Run from the repo root: npx tsx scripts/check/new_lenders_dump.ts > out.json
  */
 import { readFileSync } from "node:fs";
-import { loadLenders } from "../../src/lib/data/lenders";
+import { loadSnapshot } from "../../src/lib/store";
 import { computeLoanCost, type Charge, type LoanCost } from "../../src/lib/finance";
-import { toOffers, type Offer } from "../../src/lib/recommend/offers";
+import type { Offer } from "../../src/lib/recommend/offers";
 import { recommend, type Need, type Purpose, type RankedOffer } from "../../src/lib/recommend/recommend";
 
 const today = new Date("2026-11-04T12:00:00+07:00");
-const offers = toOffers(loadLenders());
+const offers = loadSnapshot().offers;
 const need = (o: Partial<Need> = {}): Need => ({
   purpose: "other",
   amountVnd: 20_000_000,

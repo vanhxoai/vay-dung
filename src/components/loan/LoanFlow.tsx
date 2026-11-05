@@ -13,7 +13,7 @@ import { ChoiceGroup, MoneyField, NumberField, PrimaryButton, SecondaryButton } 
 import { Results } from "./Results";
 import { TERMS } from "./terms";
 
-const PURPOSES: Purpose[] = ["phone", "motorbike", "education", "medical", "debt", "living", "other"];
+const PURPOSES: Purpose[] = ["phone", "motorbike", "goods", "education", "medical", "debt", "living", "other"];
 const URGENCIES: Urgency[] = ["now", "soon", "flexible"];
 const PROOFS: IncomeProof[] = ["bank_salary", "cash_salary", "self_employed", "none"];
 

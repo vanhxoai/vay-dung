@@ -24,7 +24,8 @@
     "waitlistTitle": "Nhận tin khi Vay Đúng ra mắt chính thức",
     "waitlistBody": "Để lại email, chúng tôi sẽ báo khi Vay Đúng ra mắt chính thức.",
     "waitlistClosed": "Hiện chúng tôi không thu thập email.",
-    "waitlistClosedTitle": "Danh sách nhận tin (chưa mở)"
+    "waitlistClosedTitle": "Danh sách nhận tin (chưa mở)",
+    "howRanked": "Chúng tôi xếp hạng khoản vay như thế nào?"
   },
   "Flow": {
     "stepOf": "Bước {step}/{total}",
@@ -73,7 +74,8 @@
     "medical": "Chữa bệnh, việc khẩn cấp",
     "debt": "Trả một khoản nợ khác",
     "living": "Chi tiêu sinh hoạt",
-    "other": "Việc khác"
+    "other": "Việc khác",
+    "goods": "Mua đồ khác (nội thất, làm đẹp…)"
   },
   "Urgency": {
     "now": "Trong vài ngày tới",
@@ -134,7 +136,8 @@
     "debt": "Vay để trả nợ: hãy cẩn thận, vì khoản nợ có thể lớn dần. Trước tiên, hãy liên hệ bên đang cho bạn vay để hỏi về việc kéo dài thời gian trả hoặc đổi lịch trả. Chỉ nên vay mới nếu chi phí thật thấp hơn rõ ràng so với khoản cũ.",
     "living": "Vay để chi tiêu hằng ngày: khoản vay sẽ làm tiền trả mỗi tháng tăng lên, trong khi thu nhập không đổi. Hãy xem có thể giảm chi tiêu hoặc ứng lương trước không.",
     "other": "Vay tiền mặt linh hoạt nhưng có thể đắt. Nếu vẫn vay, chỉ vay đúng số tiền cần, và so sánh tổng số tiền phải trả trước khi chọn.",
-    "urgent": "Đang gấp: người đang cần tiền gấp dễ bị lừa. Hãy cảnh giác nếu ai đó bắt bạn chuyển tiền trước, nhất là vào tài khoản cá nhân, thì mới duyệt hoặc giải ngân. Đừng chỉ dựa vào hợp đồng được gửi qua tin nhắn, vì hợp đồng cũng có thể bị làm giả. Hãy gọi tổng đài chính thức của bên cho vay để kiểm tra trước khi chuyển bất kỳ khoản nào."
+    "urgent": "Đang gấp: người đang cần tiền gấp dễ bị lừa. Hãy cảnh giác nếu ai đó bắt bạn chuyển tiền trước, nhất là vào tài khoản cá nhân, thì mới duyệt hoặc giải ngân. Đừng chỉ dựa vào hợp đồng được gửi qua tin nhắn, vì hợp đồng cũng có thể bị làm giả. Hãy gọi tổng đài chính thức của bên cho vay để kiểm tra trước khi chuyển bất kỳ khoản nào.",
+    "goods": "Mua đồ trả góp: hãy hỏi cửa hàng giá trả thẳng và giá trả góp để so sánh, vì tiền vay thường được trả thẳng cho cửa hàng chứ không vào tay bạn. Nếu không gấp, để dành rồi mua thường rẻ hơn."
   },
   "Results": {
     "title": "Kết quả của bạn",
@@ -148,13 +151,13 @@
     "insufficientIntro": "Các sản phẩm này chưa được đưa vào so sánh vì chúng tôi chưa có đủ thông tin đáng tin cậy để tính chi phí cho bạn. Lý do và điều cần lưu ý, nếu có, được ghi ở từng mục.",
     "staleReason": "Dữ liệu đã quá 90 ngày, cần kiểm tra lại.",
     "whyTitle": "Vì sao có thứ tự này?",
-    "why1": "Chúng tôi xếp theo lãi suất thật do Vay Đúng ước tính, tính ở mức cao nhất mà bên cho vay công bố, vì chưa ai biết bạn sẽ được mức nào. Con số này gồm các phí bắt buộc đã biết số tiền, chưa gồm bảo hiểm không bắt buộc hoặc chưa rõ có bắt buộc không. Thứ tự này không phải lời khuyên chọn bên nào.",
+    "why1": "Chúng tôi xếp trước những khoản vay vừa sức với bạn, rồi đến những khoản có lãi suất thật thấp hơn, tính ở mức cao nhất đã biết, vì chưa ai biết bạn sẽ được mức nào. Con số này gồm các phí bắt buộc đã biết số tiền, chưa gồm bảo hiểm không bắt buộc hoặc chưa rõ có bắt buộc không. Thứ tự này không phải lời khuyên chọn bên nào.",
     "why2": "Sản phẩm mà toàn bộ phí đều chưa rõ không được xếp đầu, vì chi phí thật của nó có thể cao hơn con số tính được.",
     "why3": "Không bên nào trả tiền để được xếp trên. Hiện Vay Đúng không nhận tiền từ bên cho vay, kể cả hoa hồng, và không bán thông tin của bạn.",
     "why4": "Chỉ liệt kê bên cho vay có trong danh sách của Ngân hàng Nhà nước (tính đến {date}):",
     "whyLink": "Xem danh sách",
     "disclaimerTitle": "Lưu ý",
-    "disclaimer": "Đây là thông tin và phép tính để bạn tham khảo, không phải lời khuyên tài chính, tư vấn tín dụng hay môi giới. Vay Đúng không cho vay và không bảo đảm bạn sẽ được duyệt. Các con số là ước tính của chúng tôi, dựa trên trang công khai của bên cho vay vào ngày ghi trên từng mục, và có thể đã thay đổi. Lãi suất và phí chính thức là những gì ghi trong hợp đồng của bạn. Hãy đọc kỹ trước khi ký.",
+    "disclaimer": "Đây là thông tin và phép tính để bạn tham khảo, không phải lời khuyên tài chính, tư vấn tín dụng hay môi giới. Vay Đúng không cho vay và không bảo đảm bạn sẽ được duyệt. Các con số là ước tính của chúng tôi, dựa trên trang công khai của bên cho vay hoặc nguồn khác ghi trên từng mục, vào ngày ghi trên mục đó, và có thể đã thay đổi. Lãi suất và phí chính thức là những gì ghi trong hợp đồng của bạn. Hãy đọc kỹ trước khi ký.",
     "reasons": {
       "amount_too_low": "Số tiền thấp hơn mức tối thiểu ({value}).",
       "amount_too_high": "Số tiền cao hơn mức tối đa ({value}).",
@@ -182,9 +185,20 @@
       "floor_and_range": "Chúng tôi chỉ tìm thấy mức quảng cáo (\"từ...\") và khung lãi suất chung do công ty công bố. Lãi suất thực tế tùy kết quả thẩm định hồ sơ.",
       "ceiling_only": "Chúng tôi chỉ tìm thấy khung lãi suất chung, chưa thấy lãi suất thực tế.",
       "floor_only": "Chúng tôi chỉ tìm thấy mức lãi suất khởi điểm (\"từ...\"), chưa thấy khoảng lãi suất thực tế.",
-      "no_rate": "Chúng tôi chưa tìm thấy lãi suất được công bố cho sản phẩm này."
+      "no_rate": "Chúng tôi chưa tìm thấy lãi suất được công bố cho sản phẩm này.",
+      "revolving": "Thấu chi và mua trước trả sau không có lịch trả cố định mỗi tháng, nên không so được với khoản vay trả góp bằng cùng một phép tính."
     },
-    "checkLender": "Kiểm tra một bên cho vay hoặc ứng dụng"
+    "checkLender": "Kiểm tra một bên cho vay hoặc ứng dụng",
+    "sortLabel": "Sắp xếp theo",
+    "sort": {
+      "best_fit": "Phù hợp nhất với bạn",
+      "monthly": "Trả mỗi tháng thấp nhất",
+      "total_cost": "Tổng chi phí thấp nhất"
+    },
+    "officialOnly": "Chỉ xem số liệu của chính bên cho vay (ẩn {count} sản phẩm dùng nguồn khác)",
+    "noOfficial": "Không có sản phẩm nào dùng số liệu của chính bên cho vay. Hãy bỏ chọn ô trên để xem các nguồn khác.",
+    "howRanked": "Xem đầy đủ cách xếp hạng",
+    "showAllCards": "Xem chi tiết cả {count} lựa chọn"
   },
   "Offer": {
     "rank": "#{n}",
@@ -216,7 +230,8 @@
       "too_much_at_max": "Vượt mức hướng dẫn của Vay Đúng nếu tính ở lãi suất cao nhất được công bố",
       "fits_fees_unknown": "Vừa sức theo hướng dẫn của Vay Đúng ở lãi suất cao nhất được công bố, nhưng chưa tính phí vì chưa rõ",
       "fits_only_low": "Chỉ vừa sức nếu được lãi suất thấp",
-      "too_much": "Vượt mức hướng dẫn của Vay Đúng"
+      "too_much": "Vượt mức hướng dẫn của Vay Đúng",
+      "fits_floor": "Vừa sức ở mức thấp nhất đã biết; chưa biết ở mức cao nhất"
     },
     "lowConfidence": "Độ tin cậy thấp: số liệu của sản phẩm này đến từ nguồn chưa rõ ràng, đã cũ hoặc chưa khớp nhau. Hãy kiểm tra lại với bên cho vay.",
     "feesUnknown": "Chưa rõ phí: chi phí thật có thể cao hơn",
@@ -270,7 +285,47 @@
     "rateSource": "Nguồn lãi suất",
     "periodUnknown": "chưa rõ theo tháng hay theo năm",
     "basisUnknown": "chưa rõ cách tính lãi",
-    "viSourceNote": ""
+    "viSourceNote": "",
+    "fromRate": "từ {rate}",
+    "floorOnly": "Chúng tôi chỉ biết mức thấp nhất, chưa biết mức cao nhất. Mọi con số trên thẻ này là mức ít nhất, chi phí thật của bạn có thể cao hơn nhiều.",
+    "sentenceFloor": "Bạn vay {amount}, trả ít nhất khoảng {total} trong {term} tháng.",
+    "realAprNoteFloor": "mức ít nhất, tính từ lãi suất thấp nhất đã biết; đã gồm phí bắt buộc đã biết số tiền",
+    "scopeGeneral": "Số này nói về bên cho vay nói chung, chưa chắc đúng với riêng sản phẩm này.",
+    "assumptionGeneral": "giả định: nguồn không nói cách tính lãi. Xem quy ước ở trang Cách xếp hạng",
+    "quote": "Nguồn ghi: “{quote}”",
+    "sourceType": {
+      "official": "Lãi suất lấy từ tài liệu của {name}.",
+      "lender_partner": "Lãi suất lấy từ đối tác phân phối, {name}, không phải tài liệu của bên cho vay.",
+      "aggregator": "Lãi suất lấy từ trang so sánh, {name}, không phải tài liệu của bên cho vay. Có thể cũ hoặc sai.",
+      "press": "Lãi suất lấy từ báo chí, {name}, không phải tài liệu của bên cho vay. Có thể cũ hoặc sai."
+    },
+    "why": {
+      "title": "Vì sao có khoản này, ở vị trí này?",
+      "purpose_any": "Mục đích: khoản vay tiền mặt dùng được cho mọi mục đích.",
+      "purpose_match": "Mục đích: khoản vay này dành cho đúng nhu cầu bạn chọn.",
+      "amount": "Số tiền: {amount} nằm trong giới hạn của sản phẩm (từ {min} đến {max}).",
+      "amountUnknown": "Số tiền: bên cho vay chưa công bố giới hạn, nên chúng tôi chưa kiểm tra được.",
+      "term": "Thời hạn: {term} tháng nằm trong giới hạn của sản phẩm (từ {min} đến {max} tháng).",
+      "termUnknown": "Thời hạn: bên cho vay chưa công bố giới hạn, nên chúng tôi chưa kiểm tra được.",
+      "age": "Tuổi: {age} tuổi nằm trong giới hạn của sản phẩm.",
+      "ageUnknown": "Tuổi: bên cho vay chưa công bố giới hạn, nên chúng tôi chưa kiểm tra được.",
+      "income": "Thu nhập: đạt mức tối thiểu {min} mỗi tháng.",
+      "incomeUnknown": "Thu nhập: bên cho vay chưa công bố mức tối thiểu, nên chúng tôi chưa kiểm tra được.",
+      "afford": "Khả năng trả: khoản này tối đa {payment} mỗi tháng, cộng với {debt} nợ hiện có, bằng {ratio} thu nhập của bạn.",
+      "proof_barrier": "Giấy tờ: sản phẩm này yêu cầu chứng minh thu nhập, còn bạn cho biết khó có giấy tờ đó, nên nó xếp sau các khoản cùng nhóm.",
+      "condition_unasked": "Điều kiện riêng: sản phẩm chỉ dành cho một số người. Chúng tôi không hỏi bạn điều này nên thứ hạng không đổi. Hãy kiểm tra trước.",
+      "floor_only": "Chỉ biết mức thấp nhất, nên khoản này xếp sau các khoản đã biết mức cao nhất.",
+      "costKey": "Chi phí: lãi suất thật cao nhất đã biết là {apr}/năm. Trong cùng nhóm, số này càng thấp thì xếp càng trên."
+    },
+    "schedule": {
+      "title": "Xem lịch trả từng tháng",
+      "note": "Tính ở lãi suất cao nhất đã biết. Đơn vị: nghìn đồng.",
+      "month": "Tháng",
+      "principal": "Gốc",
+      "interest": "Lãi",
+      "total": "Phải trả",
+      "balance": "Còn nợ"
+    }
   },
   "Error": {
     "title": "Đã có lỗi khi tính toán",
@@ -374,7 +429,9 @@
   "Footer": {
     "notAdvice": "Vay Đúng cung cấp thông tin và phép tính để tham khảo, không phải lời khuyên tài chính, tư vấn tín dụng hay môi giới. Vay Đúng không cho vay.",
     "privacy": "Quyền riêng tư",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "ranking": "Cách xếp hạng",
+    "data": "Dữ liệu"
   },
   "Waitlist": {
     "emailLabel": "Email của bạn",
@@ -427,5 +484,148 @@
       "body": "Nếu bạn gửi email cho chúng tôi, thư của bạn được lưu tại Gmail của Google (dịch vụ của Hoa Kỳ) để trả lời bạn."
     },
     "backHome": "← Về trang chủ"
+  },
+  "Banner": {
+    "text": "Dự án học tập, chưa dành cho người vay thật. Một số lãi suất lấy từ trang so sánh hoặc báo chí, có thể cũ hoặc sai. Đừng dùng trang này để quyết định vay."
+  },
+  "Summary": {
+    "caption": "Tất cả lựa chọn. Số tiền và lãi suất tính ở mức cao nhất đã biết. Bấm tên để xem chi tiết.",
+    "rank": "#",
+    "loan": "Khoản vay",
+    "monthly": "Trả mỗi tháng",
+    "apr": "Lãi thật/năm",
+    "from": "từ {value}",
+    "floorDivider": "Chỉ biết mức thấp nhất: chưa so được trực tiếp với các dòng trên, nên xếp sau.",
+    "source": {
+      "official": "Nguồn: bên cho vay",
+      "lender_partner": "Nguồn: đối tác phân phối",
+      "aggregator": "Nguồn: trang so sánh",
+      "press": "Nguồn: báo chí"
+    }
+  },
+  "Ranking": {
+    "title": "Chúng tôi xếp hạng khoản vay như thế nào",
+    "intro": "Trang này nói rõ từng bước: lọc gì, tính gì, xếp theo thứ tự nào, và mỗi thông tin bạn nhập được dùng ra sao. Không có phần nào được giấu đi.",
+    "tryIt": "Thử với thông tin của bạn",
+    "steps": {
+      "title": "Bốn bước",
+      "filter": "Lọc: bỏ những khoản không dành cho mục đích của bạn, và những khoản mà số tiền, thời hạn, tuổi hoặc thu nhập của bạn nằm ngoài giới hạn đã công bố. Các khoản bị bỏ vẫn được liệt kê kèm lý do.",
+      "cost": "Tính: với mỗi khoản còn lại, tính số tiền trả mỗi tháng, tổng tiền phải trả và lãi suất thật, ở mức thấp nhất và cao nhất đã biết.",
+      "order": "Xếp: theo thứ tự ưu tiên ở mục dưới.",
+      "verdict": "Kết luận: cho biết số tiền này có vừa sức bạn không, kể cả khi câu trả lời là không nên vay. Kết luận \"vừa sức\" chỉ dựa trên số liệu của chính bên cho vay. Một mức lãi thấp chỉ thấy trên trang so sánh hoặc báo chí không làm thay đổi kết luận \"quá sức\"."
+    },
+    "order": {
+      "title": "Thứ tự ưu tiên",
+      "intro": "Mỗi tiêu chí chỉ có tác dụng khi các khoản vay bằng nhau ở tiêu chí trước đó.",
+      "fit": "Vừa sức: khoản vừa sức ngay cả ở lãi suất cao nhất xếp trước, rồi đến khoản chỉ vừa sức ở lãi suất thấp, cuối cùng là khoản vượt mức hướng dẫn.",
+      "proof": "Giấy tờ: khoản không đòi giấy tờ mà bạn cho biết khó có được xếp trước.",
+      "floor": "Độ đầy đủ của số liệu: khoản đã biết mức lãi cao nhất xếp trước khoản chỉ biết mức thấp nhất. Nếu không, một con số \"từ X%\" sẽ thắng chỉ vì nó chưa cho biết phần còn lại.",
+      "cost": "Chi phí thật: lãi suất thật thấp hơn xếp trước, so ở mức cao nhất, rồi ở mức thấp nhất. Dùng mức cao nhất vì chưa ai biết bạn sẽ được mức nào, và đó là rủi ro bạn phải chịu.",
+      "tie": "Nguồn: khi bằng nhau hoàn toàn, số liệu của chính bên cho vay xếp trước.",
+      "feesRule": "Một quy tắc nữa: sản phẩm mà toàn bộ phí đều chưa rõ không được xếp đầu, vì chi phí thật có thể cao hơn con số tính được.",
+      "otherSorts": "Bạn có thể tự đổi cách xếp trên trang kết quả: trả mỗi tháng thấp nhất, hoặc tổng chi phí thấp nhất, đều tính ở mức cao nhất đã biết. Khi đó chỉ con số bạn chọn quyết định thứ tự. Bạn cũng có thể ẩn các sản phẩm dùng nguồn không phải của bên cho vay."
+    },
+    "inputs": {
+      "title": "Thông tin bạn nhập được dùng thế nào",
+      "intro": "Chúng tôi chỉ hỏi những gì dùng được. Đây là việc của từng câu trả lời.",
+      "colInput": "Bạn nhập",
+      "colUse": "Dùng để",
+      "colOrder": "Có đổi thứ hạng?",
+      "privacy": "Những thông tin này chỉ được tính ngay trên máy của bạn. Chúng không được gửi đi hay lưu lại trên máy chủ, và bên cho vay không nhận được gì.",
+      "purpose": {
+        "name": "Mục đích",
+        "use": "Bỏ khoản trả góp gắn với món hàng khác. Khoản tiền mặt dùng được cho mọi mục đích. Đồng thời chọn lời khuyên phù hợp.",
+        "order": "Có: đổi danh sách"
+      },
+      "amount": {
+        "name": "Số tiền",
+        "use": "So với giới hạn của sản phẩm, và là cơ sở tính chi phí. Phí cố định chiếm tỷ lệ lớn hơn khi vay ít.",
+        "order": "Có"
+      },
+      "term": {
+        "name": "Thời hạn",
+        "use": "So với giới hạn của sản phẩm, và là cơ sở tính chi phí. Một số bên có lãi suất riêng theo thời hạn.",
+        "order": "Có"
+      },
+      "urgency": {
+        "name": "Khi nào cần tiền",
+        "use": "Chỉ để hiện cảnh báo lừa đảo khi bạn đang gấp, vì người đang gấp dễ bị lừa.",
+        "order": "Không"
+      },
+      "income": {
+        "name": "Thu nhập",
+        "use": "So với thu nhập tối thiểu của sản phẩm, và để tính tỷ lệ trả nợ so với mức hướng dẫn {limit}.",
+        "order": "Có: nhóm vừa sức"
+      },
+      "debt": {
+        "name": "Nợ đang trả",
+        "use": "Cộng với khoản trả mới để tính tỷ lệ trả nợ.",
+        "order": "Có: nhóm vừa sức"
+      },
+      "age": {
+        "name": "Tuổi",
+        "use": "So với giới hạn tuổi của sản phẩm. Có bên tính tuổi lúc hết hợp đồng.",
+        "order": "Có: đổi danh sách"
+      },
+      "proof": {
+        "name": "Cách chứng minh thu nhập",
+        "use": "Nếu bạn khó có giấy tờ, khoản yêu cầu chứng minh thu nhập xếp sau và có ghi chú.",
+        "order": "Có"
+      }
+    },
+    "formula": {
+      "title": "Công thức tính lãi suất thật",
+      "body": "Mọi khoản vay được đổi về cùng một thước đo, dựa trên dòng tiền thật của bạn:",
+      "received": "Tiền bạn nhận lúc đầu = số tiền vay − phí và bảo hiểm trừ vào tiền giải ngân − khoản phải trả ngay.",
+      "payments": "Tiền trả mỗi tháng = tiền gốc và lãi theo lịch + phí thu hằng tháng. Phí cộng vào khoản vay làm tăng tiền gốc phải trả.",
+      "irr": "IRR tháng (r) là mức lãi làm cho tiền nhận lúc đầu bằng tổng giá trị hiện tại của các khoản trả sau đó.",
+      "apr": "Lãi suất thật mỗi năm = r × 12. Đây là số dùng để xếp hạng, so được trực tiếp với lãi suất dư nợ giảm dần mà bên cho vay công bố.",
+      "effective": "Lãi suất hiệu dụng = (1 + r)^12 − 1, có ghi trong phần chi tiết của từng khoản.",
+      "total": "Tổng chi phí = tổng tiền bạn trả − tiền bạn thực nhận. Phạt trả chậm không tính vào đây, mà ghi riêng thành cảnh báo.",
+      "example": "Ví dụ minh họa, không phải sản phẩm của bên nào: vay {amount} trong 24 tháng, lãi phẳng 1,5%/tháng, phí {fee} trừ vào tiền giải ngân. Bạn nhận {received}, trả tổng cộng {total}, chi phí {cost}, lãi suất thật {apr}/năm."
+    },
+    "sources": {
+      "title": "Số liệu lấy từ đâu",
+      "intro": "Hiện có {ranked} trên {total} sản phẩm được xếp hạng. Số liệu mới nhất được kiểm tra ngày {date}. Mỗi lãi suất đều ghi nguồn và ngày đọc:",
+      "official": "Tài liệu của chính bên cho vay: {count} sản phẩm. Gồm cả khung lãi suất chung của công ty, được tính ở mức cao nhất.",
+      "lender_partner": "Đối tác phân phối của bên cho vay: {count} sản phẩm.",
+      "aggregator": "Trang so sánh lãi suất: {count} sản phẩm. Có thể cũ hoặc sai, và thường không nói rõ cách tính.",
+      "press": "Báo chí: {count} sản phẩm. Có thể đã cũ.",
+      "licensed": "Dù số liệu lấy từ đâu, chỉ những bên có trong danh sách của Ngân hàng Nhà nước mới được liệt kê.",
+      "seeData": "Xem toàn bộ dữ liệu"
+    },
+    "assumptions": {
+      "title": "Những giả định của chúng tôi",
+      "basisBank": "Nguồn không nói cách tính lãi, và bên cho vay là ngân hàng: chúng tôi tính theo dư nợ giảm dần, cách ngân hàng thường dùng.",
+      "basisFinance": "Nguồn không nói cách tính lãi, và bên cho vay là công ty tài chính: chúng tôi tính theo lãi phẳng, cách đắt hơn, trừ khi tài liệu khác của bên đó cho biết ngược lại.",
+      "top": "Chỉ có khung lãi suất chung, hoặc mức thấp nhất không khớp với quảng cáo của chính bên đó: chúng tôi chỉ tính ở mức cao nhất.",
+      "promo": "Mức 0% thường chỉ áp dụng cho một số món hàng: chúng tôi không dùng nó để tính chi phí của bạn.",
+      "general": "Một số con số nói về bên cho vay nói chung, không riêng sản phẩm đó. Thẻ sản phẩm có ghi rõ.",
+      "fees": "Phí chưa biết số tiền được tính là 0 khi xếp hạng, nên chi phí thật có thể cao hơn. Thẻ sản phẩm có ghi rõ."
+    },
+    "notUsed": {
+      "title": "Những gì không ảnh hưởng đến thứ hạng",
+      "money": "Tiền. Không bên nào trả tiền để được xếp trên. Vay Đúng không nhận hoa hồng và không bán thông tin của bạn. Dữ liệu của chúng tôi không có trường nào về việc này.",
+      "approval": "Khả năng được duyệt. Chúng tôi không biết bên cho vay sẽ quyết định thế nào. Xếp trên không có nghĩa là dễ được duyệt hơn."
+    },
+    "limits": {
+      "title": "Giới hạn",
+      "rate": "Lãi suất thật của bạn do bên cho vay quyết định. Một số khoảng lãi suất rất rộng, nên số tính được chỉ là khoảng ước tính.",
+      "secondary": "Số liệu từ trang so sánh và báo chí có thể cũ hoặc sai. Khi đối chiếu, chúng tôi đã thấy những con số không có trong tài liệu của chính bên cho vay. Một sản phẩm rẻ nhờ số liệu loại này có thể không rẻ thật.",
+      "fees": "Nhiều bên không công bố đủ phí và bảo hiểm.",
+      "personal": "Chúng tôi không xem lịch sử tín dụng của bạn, nên không biết bạn đủ điều kiện hay không.",
+      "stale": "Số liệu quá 90 ngày sẽ tự động ngừng được xếp hạng cho đến khi được kiểm tra lại."
+    }
+  },
+  "Data": {
+    "title": "Dữ liệu dùng để xếp hạng",
+    "intro": "{total} sản phẩm của {lenders} bên cho vay, trong đó {ranked} được xếp hạng và {secondary} dùng lãi suất không lấy từ tài liệu của bên cho vay. Kiểm tra mới nhất: {date}.",
+    "download": "Tải toàn bộ về máy (CSV)",
+    "howRanked": "Cách xếp hạng",
+    "basisAssumed": "cách tính là giả định",
+    "noRate": "Lãi suất: chưa rõ",
+    "lenderGeneral": "nói về bên cho vay nói chung",
+    "ranked": "Được xếp hạng",
+    "notRanked": "Chưa được xếp hạng"
   }
 }

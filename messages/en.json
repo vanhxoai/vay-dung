@@ -24,7 +24,8 @@
     "waitlistTitle": "Hear when Vay Đúng officially launches",
     "waitlistBody": "Leave your email and we'll tell you when Vay Đúng officially launches.",
     "waitlistClosed": "We aren't collecting emails right now.",
-    "waitlistClosedTitle": "News list (not open yet)"
+    "waitlistClosedTitle": "News list (not open yet)",
+    "howRanked": "How do we rank loans?"
   },
   "Flow": {
     "stepOf": "Step {step} of {total}",
@@ -73,7 +74,8 @@
     "medical": "Medical care, an emergency",
     "debt": "Paying off another debt",
     "living": "Everyday expenses",
-    "other": "Something else"
+    "other": "Something else",
+    "goods": "Buying something else (furniture, beauty…)"
   },
   "Urgency": {
     "now": "Within a few days",
@@ -134,7 +136,8 @@
     "debt": "Borrowing to pay debt: be careful, debts can snowball. First ask your current lender about more time or a new repayment schedule. Only take a new loan if its real cost is clearly lower than the old one.",
     "living": "Borrowing for everyday spending: the loan raises your monthly payments while your income stays the same. See whether you can cut spending or get a salary advance first.",
     "other": "A cash loan is flexible but can be expensive. If you still borrow, borrow only what you need, and compare the total you'd pay before you choose.",
-    "urgent": "In a hurry: people who need money fast are easier to scam. Be wary if anyone makes you transfer money first, especially to a personal account, before approving or paying out a loan. Don't rely on a contract sent by message, because contracts can be forged too. Call the lender's official hotline before transferring anything."
+    "urgent": "In a hurry: people who need money fast are easier to scam. Be wary if anyone makes you transfer money first, especially to a personal account, before approving or paying out a loan. Don't rely on a contract sent by message, because contracts can be forged too. Call the lender's official hotline before transferring anything.",
+    "goods": "Buying on instalments: ask the shop for the cash price and the instalment price and compare them, as the loan usually goes straight to the shop, not to you. If it isn't urgent, saving up first is usually cheaper."
   },
   "Results": {
     "title": "Your results",
@@ -148,13 +151,13 @@
     "insufficientIntro": "These products aren't compared yet because we don't have enough reliable information to work out your cost. Each item gives the reason and anything to watch for.",
     "staleReason": "The data is over 90 days old and needs re-checking.",
     "whyTitle": "Why this order?",
-    "why1": "We order by Vay Đúng's estimated real rate, at the highest level the lender publishes, because nobody knows yet which rate you'd get. It includes mandatory fees with a known amount, but not insurance that is optional or may not be required. This order isn't advice on which lender to choose.",
+    "why1": "We put loans you can afford first, then those with a lower real rate, calculated at the highest known rate, because nobody knows yet which rate you'd get. The figure includes mandatory fees with a known amount, but not insurance that's optional or may not be mandatory. This order isn't advice to choose any lender.",
     "why2": "A product whose fees are all unknown can't be first, because its real cost may be higher than we can calculate.",
     "why3": "No lender pays to be ranked higher. Vay Đúng currently takes no money from lenders, including commission, and doesn't sell your information.",
     "why4": "We only list lenders on the State Bank of Vietnam's lists (as of {date}):",
     "whyLink": "See the list",
     "disclaimerTitle": "Please note",
-    "disclaimer": "This is information and calculation for your reference, not financial advice, credit advice or brokerage. Vay Đúng doesn't lend and doesn't guarantee approval. The figures are our estimates, based on lenders' public pages on the date shown, and may have changed. The official rate and fees are those in your contract. Read it carefully before signing.",
+    "disclaimer": "This is information and calculation for reference, not financial advice, credit advice or brokering. Vay Đúng doesn't lend and doesn't guarantee approval. The figures are our estimates, based on the lender's public pages or the other source named on each item, on the date shown there, and may have changed. The official rate and fees are those in your contract. Read it carefully before signing.",
     "reasons": {
       "amount_too_low": "The amount is below the minimum ({value}).",
       "amount_too_high": "The amount is above the maximum ({value}).",
@@ -182,9 +185,20 @@
       "floor_and_range": "We only found an advertised rate (\"from...\") and a general range published by the company. Your actual rate depends on their assessment.",
       "ceiling_only": "We only found a general rate range, not the actual rate.",
       "floor_only": "We only found a starting rate (\"from...\"), not the actual range.",
-      "no_rate": "We haven't found a published rate for this product."
+      "no_rate": "We haven't found a published rate for this product.",
+      "revolving": "Overdrafts and buy-now-pay-later have no fixed monthly schedule, so the same calculation can't compare them with instalment loans."
     },
-    "checkLender": "Check a lender or app"
+    "checkLender": "Check a lender or app",
+    "sortLabel": "Sort by",
+    "sort": {
+      "best_fit": "Best fit for you",
+      "monthly": "Lowest monthly payment",
+      "total_cost": "Lowest total cost"
+    },
+    "officialOnly": "Only show the lender's own figures (hides {count} products using other sources)",
+    "noOfficial": "No product uses the lender's own figures. Untick the box above to see other sources.",
+    "howRanked": "See exactly how ranking works",
+    "showAllCards": "See details of all {count} options"
   },
   "Offer": {
     "rank": "#{n}",
@@ -216,7 +230,8 @@
       "too_much_at_max": "Over Vay Đúng's guideline at the highest published rate",
       "fits_fees_unknown": "Within the Vay Đúng guideline at the highest published rate, but fees aren't counted because they're unknown",
       "fits_only_low": "Only within the guideline at a low rate",
-      "too_much": "Above the Vay Đúng guideline"
+      "too_much": "Above the Vay Đúng guideline",
+      "fits_floor": "Affordable at the lowest known rate; unknown at the highest"
     },
     "lowConfidence": "Low confidence: this product's figures come from sources that are unclear, old or don't match. Check with the lender.",
     "feesUnknown": "Fees unknown: the real cost may be higher",
@@ -270,7 +285,47 @@
     "rateSource": "Rate source",
     "periodUnknown": "unknown whether monthly or yearly",
     "basisUnknown": "interest method unknown",
-    "viSourceNote": "Some details below are in Vietnamese, as published by the lender."
+    "viSourceNote": "Some details below are in Vietnamese, as published by the lender.",
+    "fromRate": "from {rate}",
+    "floorOnly": "We only know the lowest rate, not the highest. Every figure on this card is a minimum, and your real cost could be much higher.",
+    "sentenceFloor": "You borrow {amount} and repay at least about {total} over {term} months.",
+    "realAprNoteFloor": "a minimum, from the lowest known rate; includes mandatory fees with a known amount",
+    "scopeGeneral": "This figure is about the lender in general and may not be right for this product.",
+    "assumptionGeneral": "assumption: the source doesn't say how interest is calculated. See the rules on the How ranking works page",
+    "quote": "The source says: “{quote}”",
+    "sourceType": {
+      "official": "Rate from {name}'s own documents.",
+      "lender_partner": "Rate from a distribution partner, {name}, not the lender's own documents.",
+      "aggregator": "Rate from a comparison site, {name}, not the lender's own documents. It may be old or wrong.",
+      "press": "Rate from the press, {name}, not the lender's own documents. It may be old or wrong."
+    },
+    "why": {
+      "title": "Why is this here, in this position?",
+      "purpose_any": "Purpose: a cash loan can be used for anything.",
+      "purpose_match": "Purpose: this loan is for the need you chose.",
+      "amount": "Amount: {amount} is within the product's limits ({min} to {max}).",
+      "amountUnknown": "Amount: the lender publishes no limits, so we couldn't check.",
+      "term": "Term: {term} months is within the product's limits ({min} to {max} months).",
+      "termUnknown": "Term: the lender publishes no limits, so we couldn't check.",
+      "age": "Age: {age} is within the product's limits.",
+      "ageUnknown": "Age: the lender publishes no limits, so we couldn't check.",
+      "income": "Income: meets the minimum of {min} a month.",
+      "incomeUnknown": "Income: the lender publishes no minimum, so we couldn't check.",
+      "afford": "Affordability: this loan is at most {payment} a month, which with {debt} of existing debt is {ratio} of your income.",
+      "proof_barrier": "Documents: this product asks for proof of income, which you said is hard for you, so it comes after others in its group.",
+      "condition_unasked": "Special condition: this product is only for some people. We don't ask you about this, so its position doesn't change. Check first.",
+      "floor_only": "Only the lowest rate is known, so this comes after loans with a known highest rate.",
+      "costKey": "Cost: the highest known real rate is {apr} a year. Within a group, lower ranks higher."
+    },
+    "schedule": {
+      "title": "See the month-by-month schedule",
+      "note": "Calculated at the highest known rate. In thousands of đồng.",
+      "month": "Month",
+      "principal": "Principal",
+      "interest": "Interest",
+      "total": "To pay",
+      "balance": "Balance"
+    }
   },
   "Error": {
     "title": "Something went wrong with the calculation",
@@ -374,7 +429,9 @@
   "Footer": {
     "notAdvice": "Vay Đúng provides information and calculations for reference, not financial advice, credit advice or brokerage. Vay Đúng doesn't lend.",
     "privacy": "Privacy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "ranking": "How ranking works",
+    "data": "Data"
   },
   "Waitlist": {
     "emailLabel": "Your email",
@@ -427,5 +484,148 @@
       "body": "If you email us, your message is stored at Google's Gmail (a US service) so we can reply."
     },
     "backHome": "← Back to home"
+  },
+  "Banner": {
+    "text": "A student project, not yet meant for real borrowers. Some rates come from comparison sites or the press and may be old or wrong. Don't use this page to decide on a loan."
+  },
+  "Summary": {
+    "caption": "All options. Amounts and rates are at the highest known level. Tap a name for details.",
+    "rank": "#",
+    "loan": "Loan",
+    "monthly": "Per month",
+    "apr": "Real rate/yr",
+    "from": "from {value}",
+    "floorDivider": "Only the lowest rate is known: these can't be compared directly with the rows above, so they come after.",
+    "source": {
+      "official": "Source: the lender",
+      "lender_partner": "Source: distribution partner",
+      "aggregator": "Source: comparison site",
+      "press": "Source: press"
+    }
+  },
+  "Ranking": {
+    "title": "How we rank loans",
+    "intro": "This page sets out each step: what we filter, what we calculate, the order we use, and how each thing you enter is used. Nothing is hidden.",
+    "tryIt": "Try it with your own details",
+    "steps": {
+      "title": "Four steps",
+      "filter": "Filter: remove loans not meant for your purpose, and those where your amount, term, age or income is outside the published limits. Removed loans are still listed with the reason.",
+      "cost": "Calculate: for each remaining loan, work out the monthly payment, total repaid and real rate, at the lowest and highest known rate.",
+      "order": "Order: by the priorities below.",
+      "verdict": "Conclude: say whether this amount is affordable for you, even when the answer is not to borrow. An \"affordable\" conclusion rests only on the lender's own figures. A low rate seen only on a comparison site or in the press can't change a \"too much\" conclusion."
+    },
+    "order": {
+      "title": "The order of priorities",
+      "intro": "Each criterion only matters when loans tie on the one before it.",
+      "fit": "Affordability: loans you can afford even at the highest rate come first, then those affordable only at a low rate, then those over the guideline.",
+      "proof": "Documents: loans that don't ask for papers you said are hard to get come first.",
+      "floor": "Completeness of the data: loans with a known highest rate come before those where only the lowest is known. Otherwise a \"from X%\" figure would win just by not telling you the rest.",
+      "cost": "Real cost: a lower real rate comes first, compared at the highest rate, then the lowest. We use the highest because nobody knows yet which rate you'd get, and that's the risk you carry.",
+      "tie": "Source: on an exact tie, the lender's own figure comes first.",
+      "feesRule": "One more rule: a product whose fees are all unknown can't be first, since its real cost could be above the calculated figure.",
+      "otherSorts": "You can change the order on the results page: lowest monthly payment, or lowest total cost, both at the highest known rate. Then only that number decides. You can also hide products that use sources other than the lender."
+    },
+    "inputs": {
+      "title": "How what you enter is used",
+      "intro": "We only ask for what we can use. Here's what each answer does.",
+      "colInput": "You enter",
+      "colUse": "Used to",
+      "colOrder": "Changes the ranking?",
+      "privacy": "All of this is calculated on your own device. None of it is sent or stored on a server, and lenders receive nothing.",
+      "purpose": {
+        "name": "Purpose",
+        "use": "Remove instalment loans tied to other goods. Cash loans work for any purpose. Also picks the guidance you see.",
+        "order": "Yes: changes the list"
+      },
+      "amount": {
+        "name": "Amount",
+        "use": "Compare with the product's limits, and calculate the cost. Fixed fees weigh more on small loans.",
+        "order": "Yes"
+      },
+      "term": {
+        "name": "Term",
+        "use": "Compare with the product's limits, and calculate the cost. Some lenders set rates by term.",
+        "order": "Yes"
+      },
+      "urgency": {
+        "name": "When you need it",
+        "use": "Only to show a scam warning if you're in a hurry, as people in a hurry are easier to deceive.",
+        "order": "No"
+      },
+      "income": {
+        "name": "Income",
+        "use": "Compare with the product's minimum income, and work out your debt payments against the {limit} guideline.",
+        "order": "Yes: affordability group"
+      },
+      "debt": {
+        "name": "Debt payments",
+        "use": "Added to the new payment to work out your debt payment ratio.",
+        "order": "Yes: affordability group"
+      },
+      "age": {
+        "name": "Age",
+        "use": "Compare with the product's age limits. Some lenders check your age when the contract ends.",
+        "order": "Yes: changes the list"
+      },
+      "proof": {
+        "name": "Proof of income",
+        "use": "If papers are hard for you, loans asking for proof of income come later, with a note.",
+        "order": "Yes"
+      }
+    },
+    "formula": {
+      "title": "How the real rate is calculated",
+      "body": "Every loan is turned into the same measure, based on your real cash flows:",
+      "received": "Money received at the start = amount borrowed − fees and insurance deducted from the payout − amounts paid upfront.",
+      "payments": "Monthly payment = scheduled principal and interest + monthly fees. Fees added to the loan raise the principal you repay.",
+      "irr": "The monthly IRR (r) is the rate that makes the money received equal the present value of all later payments.",
+      "apr": "Real yearly rate = r × 12. This is the number used for ranking, directly comparable with reducing-balance rates lenders publish.",
+      "effective": "Effective rate = (1 + r)^12 − 1, shown in each loan's details.",
+      "total": "Total cost = everything you pay − money you actually receive. Late-payment penalties aren't included; they're shown as a separate warning.",
+      "example": "An illustration, not any lender's product: borrow {amount} over 24 months at a flat 1.5% a month, with a {fee} fee deducted from the payout. You receive {received}, repay {total} in total, cost {cost}, real rate {apr} a year."
+    },
+    "sources": {
+      "title": "Where the figures come from",
+      "intro": "{ranked} of {total} products are ranked. The newest figures were checked on {date}. Each rate names its source and date:",
+      "official": "The lender's own documents: {count} products. This includes company-wide rate frameworks, costed at their top.",
+      "lender_partner": "The lender's distribution partners: {count} products.",
+      "aggregator": "Rate comparison sites: {count} products. They may be old or wrong, and often don't say how interest is calculated.",
+      "press": "The press: {count} products. They may be old.",
+      "licensed": "Wherever a figure comes from, only lenders on the State Bank of Vietnam's lists are listed.",
+      "seeData": "See all the data"
+    },
+    "assumptions": {
+      "title": "Our assumptions",
+      "basisBank": "When the source doesn't say how interest is calculated and the lender is a bank, we use reducing balance, which banks usually use.",
+      "basisFinance": "When the source doesn't say and the lender is a finance company, we use flat rate, the costlier reading, unless the lender's other documents say otherwise.",
+      "top": "With only a company-wide range, or a minimum that doesn't match the lender's own adverts, we only calculate at the top.",
+      "promo": "A 0% rate usually applies only to certain goods, so we don't use it for your cost.",
+      "general": "Some figures are about the lender in general, not that product. The card says so.",
+      "fees": "Fees with an unknown amount count as zero when ranking, so the real cost could be higher. The card says so."
+    },
+    "notUsed": {
+      "title": "What doesn't affect the ranking",
+      "money": "Money. No lender pays to rank higher. Vay Đúng takes no commission and doesn't sell your information. Our data has no field for it.",
+      "approval": "Your chance of approval. We don't know what a lender will decide. Ranking higher doesn't mean easier approval."
+    },
+    "limits": {
+      "title": "Limits",
+      "rate": "Your actual rate is the lender's decision. Some ranges are very wide, so calculated figures are only estimates.",
+      "secondary": "Figures from comparison sites and the press may be old or wrong. When checking, we found figures that aren't in the lender's own documents. A product that looks cheap on such a figure may not really be cheap.",
+      "fees": "Many lenders don't publish all their fees and insurance.",
+      "personal": "We don't see your credit history, so we don't know whether you qualify.",
+      "stale": "Figures over 90 days old automatically stop being ranked until they're checked again."
+    }
+  },
+  "Data": {
+    "title": "The data used for ranking",
+    "intro": "{total} products from {lenders} lenders. {ranked} are ranked, and {secondary} use a rate that isn't from the lender's documents. Newest check: {date}.",
+    "download": "Download everything (CSV)",
+    "howRanked": "How ranking works",
+    "basisAssumed": "basis assumed",
+    "noRate": "Rate: unknown",
+    "lenderGeneral": "about the lender in general",
+    "ranked": "Ranked",
+    "notRanked": "Not ranked yet"
   }
 }

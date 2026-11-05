@@ -36,6 +36,9 @@ export default function HomePage() {
         <Link href="/kiem-tra" className="inline-flex min-h-11 items-center justify-center underline underline-offset-4">
           {t("checkLender")}
         </Link>
+        <Link href="/cach-xep-hang" className="inline-flex min-h-11 items-center justify-center underline underline-offset-4">
+          {t("howRanked")}
+        </Link>
         <p className="text-sm">{t("privacy")}</p>
       </section>
 

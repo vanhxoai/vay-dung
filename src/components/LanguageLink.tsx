@@ -13,7 +13,7 @@ export function LanguageLink({
   className,
   children,
 }: {
-  href: "/" | "/vay" | "/kiem-tra" | "/rieng-tu";
+  href: "/" | "/vay" | "/kiem-tra" | "/rieng-tu" | "/cach-xep-hang" | "/du-lieu";
   onClick?: (e: React.MouseEvent) => void;
   className?: string;
   children: React.ReactNode;

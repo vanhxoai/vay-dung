@@ -11,6 +11,12 @@ export function SiteFooter() {
         <Link href="/rieng-tu" className="inline-flex min-h-11 items-center underline underline-offset-2">
           {t("privacy")}
         </Link>
+        <Link href="/cach-xep-hang" className="inline-flex min-h-11 items-center underline underline-offset-2">
+          {t("ranking")}
+        </Link>
+        <Link href="/du-lieu" className="inline-flex min-h-11 items-center underline underline-offset-2">
+          {t("data")}
+        </Link>
         <a href={`mailto:${CONTROLLER.contactEmail}`} className="inline-flex min-h-11 items-center underline underline-offset-2">
           {t("contact")}
         </a>

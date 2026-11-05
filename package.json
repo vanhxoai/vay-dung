@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run validate-data",
+    "prebuild": "npm run data:import && npm run validate-data",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -13,7 +13,8 @@
     "test:e2e": "node scripts/e2e.mjs",
     "typecheck": "tsc --noEmit",
     "validate-data": "tsx scripts/validate-data.ts",
-    "test:e2e:waitlist": "node scripts/e2e.mjs --waitlist-on"
+    "test:e2e:waitlist": "node scripts/e2e.mjs --waitlist-on",
+    "data:import": "tsx scripts/store/import.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -32,6 +33,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
+    "exceljs": "^4.4.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5",

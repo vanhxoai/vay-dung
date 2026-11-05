@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { DraftCleanup } from "@/components/loan/DraftCleanup";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
 import { ANALYTICS_ENABLED, SEARCH_INDEXING_ENABLED } from "@/config/site";
+import { SiteBanner } from "@/components/SiteBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
@@ -35,6 +36,7 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
           <DraftCleanup />
+          <SiteBanner />
           {children}
           <SiteFooter />
         </NextIntlClientProvider>
