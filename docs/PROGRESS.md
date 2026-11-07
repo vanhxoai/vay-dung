@@ -204,7 +204,8 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Floor-only rates ("from X%", 15 products) are left out of the ceiling comparisons. Figures include monthly fees but not one-off fees or insurance, so they are lower bounds.
 - No app code or user-facing text changed.
 
-## Walkthrough sound (2026-11-07)
-- Both walkthrough videos now have quiet background music and sound effects matched to what happens on screen. The music drops while the voice speaks. `scripts/portfolio/soundtrack.py` generates all the audio (no third-party audio files) and copies the video unchanged. How it works and the list of effects: `docs/portfolio/narration.md`.
-- Loudness is about −17 LUFS with peaks around −3 dBFS. The music sits about 15 dB below the voice while it speaks and about 10 dB below it in the pauses.
-- No app code or user-facing text in the app changed.
+## Walkthrough video edit (2026-11-07)
+- The walkthrough videos are now edited vertical videos (1080 × 1920, about 1 min 40 s) made by `scripts/portfolio/promo.py`. They have cuts, zoom-ins, spotlight highlights, pop-up stickers, scene titles, captions, a title card and an end card. The music is upbeat (120 BPM) and the sound effects are louder; the music sits about 12–15 dB under the voice, and the final mix is −14 LUFS. All audio is synthesized in `scripts/portfolio/soundtrack.py`. How it works: `docs/portfolio/narration.md`.
+- Compliance review of the on-screen text: all five must-fix items applied. The 40% sticker now says it's a Vay Đúng guideline. The IRR sticker says the rate could be higher because one-off fees aren't included. The lender-check sticker says "not on our SBV list · not a verdict", and the demo lender name ("Vay Nhanh 24h", which may be a real business) is pixelated. The Vietnamese "no one pays to rank higher" wording is clearer. The end card now says the figures are estimates as of November 2026 and that approval isn't guaranteed.
+- Still open: the scene 5 voiceover says the rate includes "fees and insurance", but one-off fees aren't included. Fixing it needs a new voice clip (edge-tts) and a re-record. Suggested line: "…including mandatory insurance and known monthly fees" / "…gồm bảo hiểm bắt buộc và phí hằng tháng đã biết". Recording with an obviously made-up lender name (e.g. "Vay Demo ABC") would also make the blur unnecessary.
+- No app code or text in the app changed.

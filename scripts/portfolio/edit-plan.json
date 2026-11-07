@@ -1,0 +1,122 @@
+{
+  "_note": "Edit plan for promo.py. Times are in seconds of the voice-only source video; boxes are [x0, y0, x1, y1] in source pixels (412 x 860). scenes: [speech start, speech end, title]. highlights: [start, end, box, colour]. stickers: [start, end, text, colour]. Colours: brand, green, red, amber. blur: [start, end, box] pixelated in the recording (the lender name typed in the demo, which may be a real business).",
+  "vi": {
+    "pill": "Dự án học tập",
+    "intro": ["Vay Đúng", "Hiểu chi phí thật, trước khi vay."],
+    "outro": ["Vay Đúng", "Hiểu chi phí thật, trước khi vay.", "vay-dung.vercel.app", "Dự án học tập · Số liệu ước tính, 11/2026\nKhông phải tư vấn tài chính, không bảo đảm được duyệt"],
+    "numbers": [
+      ["hai mươi triệu đồng", "20 triệu đồng"],
+      ["hai mươi bốn tháng", "24 tháng"],
+      ["bốn mươi phần trăm", "40%"],
+      ["tám mươi hai sản phẩm", "82 sản phẩm"],
+      ["hai mươi bên", "20 bên"]
+    ],
+    "scenes": [
+      [2.37, 7.8, "Vay Đúng là gì?"],
+      [11.73, 16.73, "Nhu cầu của bạn"],
+      [18.55, 28.31, "Tài chính của bạn"],
+      [30.12, 37.35, "Kết luận trước tiên"],
+      [39.15, 50.97, "Lãi suất thực"],
+      [52.77, 58.0, "Nguồn và lý do"],
+      [59.82, 62.2, "Lịch trả nợ"],
+      [68.98, 78.55, "Khi khoản vay quá sức"],
+      [80.34, 85.92, "Cách xếp hạng"],
+      [87.73, 94.06, "Dữ liệu tải về được"],
+      [95.88, 101.42, "Kiểm tra bên cho vay"],
+      [103.21, 106.57, "Vay Đúng"]
+    ],
+    "highlights": [
+      [2.6, 5.0, [10, 195, 404, 308], "brand"],
+      [12.4, 14.4, [10, 257, 412, 304], "brand"],
+      [14.6, 16.7, [15, 408, 141, 452], "brand"],
+      [19.0, 23.3, [10, 389, 408, 440], "brand"],
+      [24.3, 28.3, [8, 236, 404, 322], "brand"],
+      [30.3, 37.3, [16, 302, 398, 676], "green"],
+      [39.4, 43.9, [342, 50, 409, 854], "brand"],
+      [54.3, 57.9, [6, 421, 412, 816], "brand"],
+      [60.0, 62.2, [23, 132, 404, 860], "brand"],
+      [69.0, 74.3, [18, 301, 404, 624], "red"],
+      [75.7, 78.5, [6, 389, 412, 703], "brand"],
+      [80.4, 82.2, [10, 176, 404, 247], "brand"],
+      [87.8, 90.1, [6, 226, 412, 329], "brand"],
+      [97.1, 101.3, [19, 38, 404, 417], "amber"]
+    ],
+    "stickers": [
+      [5.4, 7.8, "So sánh theo chi phí thật", "brand"],
+      [12.4, 16.7, "20 triệu · 24 tháng", "brand"],
+      [24.4, 28.3, "Thông tin của bạn chỉ ở trong trình duyệt", "brand"],
+      [32.4, 37.3, "Hướng dẫn của Vay Đúng: ≤ 40% thu nhập", "green"],
+      [39.6, 43.9, "Lãi suất thực tính bằng IRR\ncó thể còn cao hơn: chưa gồm phí một lần", "brand"],
+      [47.6, 51.0, "Vừa sức trước, rồi mới đến chi phí", "brand"],
+      [52.6, 54.6, "Có nguồn và ngày lấy số liệu\nghi rõ nếu không từ bên cho vay", "brand"],
+      [60.0, 62.2, "Từng tháng", "brand"],
+      [69.5, 74.3, "Không khuyên vay số tiền này", "red"],
+      [75.8, 78.5, "Vay ít hơn · trả lâu hơn\ntrả lâu thì tổng lãi cao hơn", "brand"],
+      [83.3, 85.9, "Không ai trả tiền để được xếp cao", "brand"],
+      [88.2, 94.0, "82 sản phẩm · 20 bên cho vay", "brand"],
+      [97.4, 101.3, "Chưa thấy trong danh sách NHNN\nchưa phải kết luận", "amber"]
+    ],
+    "blur": [
+      [95.3, 97.0, [18, 458, 394, 500]]
+    ]
+  },
+  "en": {
+    "pill": "Student project",
+    "intro": ["Vay Đúng", "Know the real cost, before you borrow."],
+    "outro": ["Vay Đúng", "Know the real cost, before you borrow.", "vay-dung.vercel.app", "Student project · Estimates as of Nov 2026\nNot financial advice or a guarantee of approval"],
+    "numbers": [
+      ["twenty million", "20 million"],
+      ["twenty-four months", "24 months"],
+      ["forty percent", "40%"],
+      ["eighty-two products from twenty", "82 products from 20"]
+    ],
+    "scenes": [
+      [1.96, 7.68, "What is Vay Đúng?"],
+      [9.84, 15.54, "Your need"],
+      [16.75, 25.98, "Your finances"],
+      [27.21, 34.62, "The verdict comes first"],
+      [35.79, 50.21, "The real rate"],
+      [51.42, 57.44, "Sources and reasons"],
+      [58.64, 61.97, "Repayment schedule"],
+      [67.75, 76.56, "When it's too much"],
+      [77.75, 82.4, "How we rank"],
+      [83.59, 89.78, "Downloadable data"],
+      [91.06, 97.21, "Check a lender"],
+      [98.44, 101.73, "Vay Đúng"]
+    ],
+    "highlights": [
+      [2.2, 4.6, [10, 211, 404, 329], "brand"],
+      [10.3, 12.6, [13, 257, 412, 304], "brand"],
+      [12.8, 15.3, [15, 408, 141, 452], "brand"],
+      [17.0, 21.8, [10, 433, 379, 480], "brand"],
+      [22.4, 25.9, [10, 257, 404, 339], "brand"],
+      [27.4, 34.4, [16, 322, 398, 672], "green"],
+      [36.0, 41.4, [342, 88, 409, 860], "brand"],
+      [53.4, 57.3, [6, 421, 412, 804], "brand"],
+      [58.9, 61.9, [23, 132, 404, 860], "brand"],
+      [67.8, 72.3, [18, 324, 404, 628], "red"],
+      [73.9, 76.5, [6, 402, 412, 703], "brand"],
+      [77.9, 79.2, [10, 195, 412, 245], "brand"],
+      [83.8, 86.2, [6, 245, 412, 324], "brand"],
+      [92.6, 97.1, [19, 48, 404, 387], "amber"]
+    ],
+    "stickers": [
+      [4.9, 7.6, "Compare by real cost", "brand"],
+      [10.3, 15.3, "20 million · 24 months", "brand"],
+      [22.6, 25.9, "Stays in your browser", "brand"],
+      [29.6, 34.4, "Our guideline: ≤ 40% of income", "green"],
+      [36.4, 41.3, "Real rate via IRR\ncould be higher: one-off fees not included", "brand"],
+      [46.5, 50.1, "Affordable first, then cost", "brand"],
+      [51.6, 53.3, "Source + date on every card\nsecondary sources labelled", "brand"],
+      [59.0, 61.9, "Month by month", "brand"],
+      [68.6, 72.3, "Not recommended: too much", "red"],
+      [74.2, 76.5, "Borrow less · repay longer\nlonger = more interest in total", "brand"],
+      [80.6, 82.4, "No one pays to rank higher", "brand"],
+      [84.2, 89.6, "82 products · 20 lenders", "brand"],
+      [93.0, 97.1, "Not on our SBV list\nnot a verdict", "amber"]
+    ],
+    "blur": [
+      [90.8, 92.4, [18, 474, 394, 516]]
+    ]
+  }
+}

@@ -11,24 +11,36 @@ node scripts/portfolio/record.mjs vi <workDir>        # records the live site, p
 node scripts/portfolio/record.mjs en <workDir>
 node scripts/portfolio/mux.mjs vi voice-vi.mp4 <path to ffmpeg>   # run from <workDir>; voice only
 node scripts/portfolio/mux.mjs en voice-en.mp4 <path to ffmpeg>
-python scripts/portfolio/soundtrack.py vi <workDir>/voice-vi.mp4 docs/portfolio/vay-dung-walkthrough-vi.mp4
-python scripts/portfolio/soundtrack.py en <workDir>/voice-en.mp4 docs/portfolio/vay-dung-walkthrough-en.mp4
+python scripts/portfolio/promo.py vi <workDir>/voice-vi.mp4 docs/portfolio/vay-dung-walkthrough-vi.mp4
+python scripts/portfolio/promo.py en <workDir>/voice-en.mp4 docs/portfolio/vay-dung-walkthrough-en.mp4
 ```
 
-`soundtrack.py` adds the background music and sound effects (needs numpy and ffmpeg). Everything is synthesized in the script, so there are no third-party audio files or licences. The music is a calm loop (84 BPM, Fmaj7–Am7–Dm7–B♭maj7) that drops by 9 dB while the voice is speaking and comes back up in the pauses. Each effect matches something on screen:
+## The edit (`promo.py`)
 
-| Effect | When |
+`promo.py` turns the plain voice-only recording into a vertical video (1080 × 1920, 30 fps), ready for TikTok, Reels or Shorts. It needs numpy, Pillow, ffmpeg and the Inter font. Both languages render in about 4 minutes on 4 cores.
+
+- **Cuts:** still moments between scenes are cut out, and long waits (the form being filled in again) play at 3× with a "3× »" badge.
+- **Camera:** the app sits in a phone frame on an animated green background. The camera zooms in on each highlighted element and punches in when the page changes.
+- **Motion graphics:** a title card, a progress bar and a numbered title for each scene, a spotlight that dims everything except the element being discussed, pop-up stickers for the key numbers, captions with the numbers in yellow (so it works on mute), and an end card with the site address and "Student project · Not financial advice". During the "too much" scene the background turns red.
+- **Sound** (`soundtrack.py`, all synthesized with numpy, so there are no third-party audio files or licences): an upbeat 120 BPM house-pop loop (F–C–Dm–B♭) with a breakdown during the "too much" scene. The music drops 7 dB while the voice speaks, sitting about 12–15 dB below it. The final mix is −14 LUFS, the usual level for social video.
+
+What appears and when is in `scripts/portfolio/edit-plan.json`: scene times and titles, highlight boxes (in pixels of the 412 × 860 recording), and the sticker text. Sound effects for things that happen in the app are in `scripts/portfolio/sound-cues.json`. Both use times in the source recording and were read from it, so re-check them after recording again. To preview single frames without rendering the whole video, run `PREVIEW=3,12.5 python scripts/portfolio/promo.py en <voice video> /tmp/frame` (times in seconds of the output).
+
+| Sound effect | When |
 |---|---|
-| Soft tap | A choice or input is tapped |
-| Swish | Scrolling |
-| Whoosh | A new page or form step |
+| Tap | A choice or input is tapped |
+| Swish / whoosh | Scrolling / a new page or form step (with a camera punch) |
 | Pop | "Why is this here" or the schedule opens |
-| Two rising bells | The verdict says the payment is within the guideline |
-| Two soft falling notes | The verdict says "we don't recommend" (calm, not an alarm) |
+| Bubble pop | A sticker appears |
+| Glassy ping | A highlight appears |
+| Riser + impact | The title card and the phone landing; the end card |
+| Fast-forward swish | A 3× section starts |
+| Three rising bells | The verdict says the payment is within the guideline |
+| Two falling notes | The verdict says "we don't recommend" |
 | Two low knocks | The lender check doesn't find the name |
-| Rising arpeggio | The closing screen |
+| Rising arpeggio | The end card |
 
-The cue times are in `scripts/portfolio/sound-cues.json`. They were read from frame changes in the recorded video, so re-check them after recording again. Always give `soundtrack.py` the voice-only video. If you give it a video that already has music, the music gets added twice.
+Always give `promo.py` the voice-only video. Given a video that already has music, the music gets added twice. `soundtrack.py` on its own adds the same music and effects to the plain recording without editing it.
 
 edge-tts uses Edge's read-aloud service unofficially: it often drops requests (the script retries) and could stop working. To record your own voice instead, read these lines and save one file per scene in place of the generated clips.
 
