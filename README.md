@@ -57,6 +57,17 @@ loan-data.xlsx ──npm run data:import──▶ snapshot.json ──▶ server
 
 **A research finding:** lenders' own rate documents were often far above the figures on comparison sites. So the app ranks on the lender's published top rate and labels every figure that comes from anywhere else.
 
+## Analysis: what the loans really cost
+
+[analysis/loan_cost_analysis.ipynb](analysis/loan_cost_analysis.ipynb) is a Python notebook built on the same data and the independent Python cost check. Every rate is costed for 20 million đồng over 24 months, with its monthly fees.
+
+- **Flat quotes understate the cost.** For the 14 flat-quoted products with a published ceiling, the real APR is 1.4–1.75× the headline.
+- **Lender type is the biggest divide.** The median real APR at the published ceiling is 59% a year for finance companies and 27% for banks (only 8 bank products publish a ceiling).
+- **The choice is worth millions.** For the same loan, the extra paid on top of the 20 million ranges from about 3.5 million to 30 million đồng.
+- **Disclosure is incomplete.** None of the 82 products publishes all its fees, so every figure is a lower bound.
+
+![Flat-quoted products: headline vs real yearly rate](analysis/figures/02-flat-products.png)
+
 ## Archive mode
 
 Figures older than 90 days would normally drop out of the ranking. With `ARCHIVE_MODE` on ([src/config/site.ts](src/config/site.ts)), they stay ranked under a dated "old data" notice. Each affected card is flagged, and an old figure can never produce a green "you can afford this" verdict. This keeps the demo usable after the data stops being maintained.

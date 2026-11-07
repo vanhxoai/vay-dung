@@ -197,3 +197,9 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - README rewritten for employers and reviewers: problem, method, a worked IRR example, data, quality and limitations.
 - Tests: 254 unit and 140 browser tests pass, including the new archive-mode tests run with the clock set a year ahead.
 - Code published at https://github.com/vanhxoai/vay-dung (public, branch `main`) on 2026-11-07.
+
+## Cost analysis notebook (2026-11-07)
+- `analysis/loan_cost_analysis.ipynb`: a Python notebook on the snapshot data. It reuses `scripts/check/finance_check.py` and asserts the FE Credit example (29.89%) first. Rebuild it with `analysis/build_notebook.py`. Charts are in `analysis/figures/`.
+- Findings: flat quotes understate the real rate 1.4–1.75×; the median real APR at the ceiling is 59% for finance companies and 27% for banks; the extra cost of 20 million over 24 months ranges from 3.5 to 30 million đồng; no product publishes all its fees.
+- Floor-only rates ("from X%", 15 products) are left out of the ceiling comparisons. Figures include monthly fees but not one-off fees or insurance, so they are lower bounds.
+- No app code or user-facing text changed.
