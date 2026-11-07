@@ -206,5 +206,5 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 
 ## Walkthrough sound (2026-11-07)
 - Both walkthrough videos now have quiet background music and sound effects matched to what happens on screen. The music drops while the voice speaks. `scripts/portfolio/soundtrack.py` generates all the audio (no third-party audio files) and copies the video unchanged. How it works and the list of effects: `docs/portfolio/narration.md`.
-- Loudness is about −17 LUFS with peaks around −3 dBFS. Without the voice, the music is about 15 dB below it while it speaks and about 10 dB below it in the pauses.
+- Loudness is about −17 LUFS with peaks around −3 dBFS. The music sits about 15 dB below the voice while it speaks and about 10 dB below it in the pauses.
 - No app code or user-facing text in the app changed.
