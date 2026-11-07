@@ -3,6 +3,7 @@
 import { useMemo, useState, type RefObject } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { AFFORDABILITY } from "@/config/affordability";
+import { ARCHIVE_MODE } from "@/config/site";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { formatDate, formatLoanAmount, formatMillions, formatPercent, formatRate, formatVnd, type AppLocale } from "@/lib/format";
 import type { Offer, OfferRateNote } from "@/lib/recommend/offers";
@@ -47,7 +48,7 @@ export function Results({
 }) {
   const t = useTranslations();
   const locale = useLocale() as AppLocale;
-  const rec = useMemo(() => recommend(need, offers, today), [need, offers, today]);
+  const rec = useMemo(() => recommend(need, offers, today, { rankStale: ARCHIVE_MODE }), [need, offers, today]);
   const m = (n: number) => formatMillions(n, locale);
 
   const limit = formatPercent(AFFORDABILITY.maxDebtToIncome, locale);
@@ -122,6 +123,12 @@ export function Results({
           ) : null}
         </div>
       </div>
+
+      {rec.archivedSince ? (
+        <p data-testid="archive-notice" role="note" className="rounded-lg border-2 border-amber-500 bg-amber-50 p-3 font-medium text-amber-950 dark:bg-amber-950 dark:text-amber-50">
+          {t("Results.archiveNotice", { date: formatDate(rec.archivedSince) })}
+        </p>
+      ) : null}
 
       {/* The verdict always comes first and can't be dismissed. */}
       <section role="status" data-testid="verdict" data-verdict={rec.verdict} className={`rounded-lg border-2 p-4 ${VERDICT_STYLE[rec.verdict]}`}>

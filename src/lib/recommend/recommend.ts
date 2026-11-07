@@ -56,6 +56,8 @@ export type OfferFit = "fits" | "fits_only_low" | "too_much";
 
 export type RankedOffer = {
   offer: Offer;
+  /** Archive mode only: ranked although its figures are over 90 days old. */
+  stale?: boolean;
   low: LoanCost;
   high: LoanCost;
   fit: OfferFit;
@@ -99,6 +101,8 @@ export type Recommendation = {
   ineligible: { offer: Offer; reasons: IneligibleReason[] }[];
   /** Licensed products we can't cost honestly, with the reason. */
   insufficientData: { offer: Offer; stale: boolean }[];
+  /** In archive mode: the oldest collection date among ranked figures over 90 days old, or null if none are. */
+  archivedSince: string | null;
 };
 
 const STALE_AFTER_DAYS = 90;
@@ -257,7 +261,8 @@ function isReliableForVerdict(r: RankedOffer): boolean {
   const rate = r.offer.rate;
   // A company-wide figure says little about this product, unless it's the ceiling and the loan still fits.
   const aboutThisLoan = rate?.scope === "product" || rate?.minUnconfirmed || rate?.minIsPromotional;
-  return !r.feesAllUnknown && ageKnown && rate?.sourceType === "official" && Boolean(aboutThisLoan) && !rate.maxIsReference && !rate.floorOnly && isOpenToAnyone(r);
+  // An old figure can't say "you can afford this": the real rate today may be higher.
+  return !r.stale && !r.feesAllUnknown && ageKnown && rate?.sourceType === "official" && Boolean(aboutThisLoan) && !rate.maxIsReference && !rate.floorOnly && isOpenToAnyone(r);
 }
 
 const FIT_ORDER: Record<OfferFit, number> = { fits: 0, fits_only_low: 1, too_much: 2 };
@@ -326,7 +331,7 @@ function suggestAmount(best: RankedOffer, need: Need, headroomVnd: number): numb
   return null;
 }
 
-export function recommend(need: Need, offers: readonly Offer[], today: Date): Recommendation {
+export function recommend(need: Need, offers: readonly Offer[], today: Date, { rankStale = false } = {}): Recommendation {
   const insufficientData: Recommendation["insufficientData"] = [];
   const ineligible: Recommendation["ineligible"] = [];
   const candidates: RankedOffer[] = [];
@@ -334,13 +339,13 @@ export function recommend(need: Need, offers: readonly Offer[], today: Date): Re
   for (const offer of offers) {
     if (!fitsPurpose(offer.goods, need.purpose)) continue;
     const stale = ageInDaysFrom(offer.oldestRetrievedAt, today) > STALE_AFTER_DAYS;
-    if (offer.excludeFromRanking || offer.rate === null || stale) {
+    if (offer.excludeFromRanking || offer.rate === null || (stale && !rankStale)) {
       insufficientData.push({ offer, stale });
       continue;
     }
     const reasons = eligibilityProblems(offer, need);
     if (reasons.length > 0) ineligible.push({ offer, reasons });
-    else candidates.push(rankOffer(offer, need));
+    else candidates.push(stale ? { ...rankOffer(offer, need), stale } : rankOffer(offer, need));
   }
 
   const ranked = rankOffers(candidates);
@@ -383,5 +388,10 @@ export function recommend(need: Need, offers: readonly Offer[], today: Date): Re
     ranked,
     ineligible,
     insufficientData,
+    archivedSince:
+      ranked
+        .filter((r) => r.stale)
+        .map((r) => r.offer.oldestRetrievedAt)
+        .sort()[0] ?? null,
   };
 }

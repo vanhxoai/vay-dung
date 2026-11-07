@@ -16,6 +16,13 @@ export const CONSENT_VERSION = "2026-11-02";
  */
 export const ANALYTICS_ENABLED: boolean = false;
 
+/**
+ * Archive mode (DECISIONS #69): figures older than 90 days are still ranked, under a notice
+ * giving the date they were collected, so the demo keeps working after the data stops being
+ * updated. Turn it off if the data is maintained again: old figures then drop out of the ranking.
+ */
+export const ARCHIVE_MODE: boolean = true;
+
 /** Soft launch: reachable by direct link only, so search engines are asked not to list it (DECISIONS #50). */
 export const SEARCH_INDEXING_ENABLED: boolean = false;
 

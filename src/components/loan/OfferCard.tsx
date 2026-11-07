@@ -285,6 +285,7 @@ export function OfferCard({ ranked, rank, need, showRank }: { ranked: RankedOffe
           </a>
         ))}
         <span>{t("checkedOn", { date: formatDate(offer.oldestRetrievedAt) })}</span>
+        {ranked.stale ? <span data-testid="stale-flag" className="rounded bg-amber-100 px-1 font-medium text-amber-950 dark:bg-amber-900 dark:text-amber-50">{t("staleFlag")}</span> : null}
       </p>
     </article>
   );

@@ -577,6 +577,17 @@ describe("what's shown where", () => {
     expect(r.insufficientData[0].stale).toBe(true);
   });
 
+  it("in archive mode old data is still ranked, and the result says since when", () => {
+    const old = offer({ oldestRetrievedAt: "2026-07-01" });
+    const r = recommend(need(), [old], today, { rankStale: true });
+    expect(r.ranked.map((x) => x.offer.key)).toEqual([old.key]);
+    expect(r.archivedSince).toBe("2026-07-01");
+    expect(recommend(need(), [offer()], today, { rankStale: true }).archivedSince).toBeNull();
+    // Old figures can't give a green "you can afford this".
+    expect(recommend(need(), [offer()], today).verdict).toBe("ok");
+    expect(r.verdict).toBe("depends");
+  });
+
   it("uses the new-customer range when a lender publishes several (Home Credit: 45–55%)", () => {
     const hc = offers.find((o) => o.key === "home-credit/cash-loan")!;
     expect(hc.rate).toMatchObject({ minPercent: 45, maxPercent: 55, segment: "Khách hàng mới" });

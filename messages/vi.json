@@ -201,7 +201,8 @@
     "showAllCards": "Xem chi tiết cả {count} lựa chọn",
     "firstIsWeak": "Khoản đứng đầu không dùng số liệu của bên cho vay, nên có thể không rẻ như vậy. Khoản đầu tiên dùng số liệu của bên cho vay là {lender}, ở vị trí {n}.",
     "noneOfficial": "Không khoản nào ở đây dùng số liệu của chính bên cho vay, nên các con số có thể cũ hoặc sai.",
-    "offersTitleSorted": "Các lựa chọn, theo cách sắp xếp bạn chọn"
+    "offersTitleSorted": "Các lựa chọn, theo cách sắp xếp bạn chọn",
+    "archiveNotice": "Số liệu cũ: một số lãi suất và phí dưới đây được thu thập hơn 90 ngày trước (cũ nhất từ ngày {date}) và sẽ không được cập nhật. Con số thật hôm nay, và cả kết luận bên dưới, có thể đã khác."
   },
   "Offer": {
     "rank": "#{n}",
@@ -333,7 +334,8 @@
       "noteFloor": "Tính ở lãi suất thấp nhất đã biết, nên đây là mức ít nhất. Đơn vị: nghìn đồng."
     },
     "fromWord": "từ",
-    "sourceUndated": "Nguồn không ghi ngày đăng, nên chưa biết con số này có từ khi nào."
+    "sourceUndated": "Nguồn không ghi ngày đăng, nên chưa biết con số này có từ khi nào.",
+    "staleFlag": "Đã quá 90 ngày, có thể đã khác"
   },
   "Error": {
     "title": "Đã có lỗi khi tính toán",
@@ -624,7 +626,7 @@
       "secondary": "Số liệu từ trang so sánh và báo chí có thể cũ hoặc sai. Khi đối chiếu, chúng tôi đã thấy những con số không có trong tài liệu của chính bên cho vay. Một sản phẩm rẻ nhờ số liệu loại này có thể không rẻ thật.",
       "fees": "Nhiều bên không công bố đủ phí và bảo hiểm.",
       "personal": "Chúng tôi không xem lịch sử tín dụng của bạn, nên không biết bạn đủ điều kiện hay không.",
-      "stale": "Chúng tôi ngừng xếp hạng một khoản nếu đã hơn 90 ngày chưa kiểm tra lại. Đây là ngày chúng tôi đọc nguồn, không phải ngày nguồn đăng, nên một con số cũ vẫn có thể được xếp hạng. Hãy xem ngày ghi trên thẻ.",
+      "stale": "Trang web này được giữ lại làm bản lưu trữ, nên khoản nào đã hơn 90 ngày chưa kiểm tra lại vẫn được xếp hạng, nhưng trang kết quả sẽ hiện thông báo kèm ngày thu thập cũ nhất. Đây là ngày chúng tôi đọc nguồn, không phải ngày nguồn đăng, nên hãy xem ngày trên từng thẻ.",
       "comparable": "Khung chung thường là mức trần của cả công ty, cao hơn mức nhiều người thực trả, còn trang so sánh có thể chỉ ghi mức thường gặp. Vì vậy, khoản xếp thấp chưa chắc đắt hơn, và khoản xếp cao chưa chắc rẻ hơn."
     }
   },

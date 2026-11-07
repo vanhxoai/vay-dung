@@ -201,7 +201,8 @@
     "showAllCards": "See details of all {count} options",
     "firstIsWeak": "The first loan doesn't use the lender's own figure, so it may not be this cheap. The first loan using a lender's own figure is {lender}, at position {n}.",
     "noneOfficial": "None of these use the lender's own figures, so the numbers may be old or wrong.",
-    "offersTitleSorted": "Your options, in the order you chose"
+    "offersTitleSorted": "Your options, in the order you chose",
+    "archiveNotice": "Old data: some rates and fees below were collected over 90 days ago (the oldest on {date}) and won't be updated. Today's real figures, and the verdict below, may be different."
   },
   "Offer": {
     "rank": "#{n}",
@@ -333,7 +334,8 @@
       "noteFloor": "Calculated at the lowest known rate, so this is a minimum. In thousands of đồng."
     },
     "fromWord": "from",
-    "sourceUndated": "The source gives no date, so we don't know how old this figure is."
+    "sourceUndated": "The source gives no date, so we don't know how old this figure is.",
+    "staleFlag": "Over 90 days old, may have changed"
   },
   "Error": {
     "title": "Something went wrong with the calculation",
@@ -624,7 +626,7 @@
       "secondary": "Figures from comparison sites and the press may be old or wrong. When checking, we found figures that aren't in the lender's own documents. A product that looks cheap on such a figure may not really be cheap.",
       "fees": "Many lenders don't publish all their fees and insurance.",
       "personal": "We don't see your credit history, so we don't know whether you qualify.",
-      "stale": "We stop ranking a loan if it hasn't been re-checked for over 90 days. That's the date we read the source, not the date it was published, so an old figure can still be ranked. Check the date on the card.",
+      "stale": "This site is kept as an archive, so loans not re-checked for over 90 days are still ranked, but the results page then shows a notice with the oldest collection date. That is the date we read the source, not the date it was published, so check the date on each card.",
       "comparable": "A company-wide range is often a ceiling, above what many people actually pay, while comparison sites may list only typical rates. So a lower-ranked loan isn't necessarily dearer, and a higher-ranked one isn't necessarily cheaper."
     }
   },

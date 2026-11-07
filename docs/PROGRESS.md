@@ -188,3 +188,12 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Checked on the live site after the deploy: ranking, sorting and filters work, no typed values leave the browser, and there are no page errors.
 - Refresh observed on the live site: a test edit (AEON lump-sum minimum 1.51 → 2.01) reached the published CSV in under 30 seconds and `/vay` about 2.5 minutes later, with no redeploy. The test value was set back to 1.51, and the live page showed 1.51 again at 02:22 UTC.
 - Open: `/du-lieu` and `/cach-xep-hang` still show the Excel data.
+
+## Portfolio kit and archive mode (2026-11-07)
+**Status:** live at https://vay-dung.vercel.app since 2026-11-07.
+
+- Archive mode (DECISIONS #69): after 90 days, loans stay ranked under an "old data" notice instead of disappearing, so the demo keeps working. Old figures can't give a green verdict. Compliance reviewed it, and both must-fix items are applied.
+- `docs/portfolio/`: a 66-second phone-size walkthrough video of the live site and 13 screenshots.
+- README rewritten for employers and reviewers: problem, method, a worked IRR example, data, quality and limitations.
+- Tests: 254 unit and 140 browser tests pass, including the new archive-mode tests run with the clock set a year ahead.
+- Open: no GitHub repository yet. You create it, then the code can be pushed.
