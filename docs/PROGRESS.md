@@ -190,7 +190,7 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Open: `/du-lieu` and `/cach-xep-hang` still show the Excel data.
 
 ## Portfolio kit and archive mode (2026-11-07)
-**Status:** live at https://vay-dung.vercel.app since 2026-11-07.
+**Status:** committed, not deployed yet (the production deploy needs your go-ahead). The video and screenshots show the live site as it was on 2026-11-07.
 
 - Archive mode (DECISIONS #69): after 90 days, loans stay ranked under an "old data" notice instead of disappearing, so the demo keeps working. Old figures can't give a green verdict. Compliance reviewed it, and both must-fix items are applied.
 - `docs/portfolio/`: a 66-second phone-size walkthrough video of the live site and 13 screenshots.
