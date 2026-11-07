@@ -186,4 +186,5 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Feed: the Google Sheet "Vay Đúng - nguồn lãi suất trực tiếp" in your Drive, published as CSV and set as `LOAN_RATES_CSV_URL` on Vercel (DECISIONS #68).
 - It holds 25 products with the same figures as Excel. All 25 rows were accepted, and no result changed when the feed went on.
 - Checked on the live site after the deploy: ranking, sorting and filters work, no typed values leave the browser, and there are no page errors.
-- Open: a sheet edit reaching the live page hasn't been observed yet. `/du-lieu` and `/cach-xep-hang` still show the Excel data.
+- Refresh observed on the live site: a test edit (AEON lump-sum minimum 1.51 → 2.01) reached the published CSV in under 30 seconds and `/vay` about 2.5 minutes later, with no redeploy. The test value was then to be set back to 1.51.
+- Open: `/du-lieu` and `/cach-xep-hang` still show the Excel data.
