@@ -6,7 +6,7 @@
 
 - **Code:** https://github.com/vanhxoai/vay-dung
 - **Live demo:** https://vay-dung.vercel.app (Vietnamese by default, English at `/en`). The rates were collected in November 2026. After 90 days the site keeps working, but it labels those figures as old (see [Archive mode](#archive-mode)).
-- **Walkthrough video (66 s):** [docs/portfolio/vay-dung-walkthrough.mp4](docs/portfolio/vay-dung-walkthrough.mp4)
+- **Walkthrough video with voiceover (about 1 min 45 s):** [English](docs/portfolio/vay-dung-walkthrough-en.mp4) · [Tiếng Việt](docs/portfolio/vay-dung-walkthrough-vi.mp4). Script: [narration.md](docs/portfolio/narration.md)
 - **Screenshots:** [docs/portfolio/screenshots/](docs/portfolio/screenshots/)
 
 | Results and verdict | "Don't borrow" | Ranking table |
