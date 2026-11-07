@@ -1,6 +1,19 @@
 # Walkthrough narration
 
-The script read by the voiceover in `vay-dung-walkthrough-vi.mp4` and `vay-dung-walkthrough-en.mp4`, one line per scene. The voices are Windows' built-in offline voices (Microsoft An for Vietnamese, Microsoft Mark for English). To record your own voice, read these lines over the silent scenes.
+The script read by the voiceover in `vay-dung-walkthrough-vi.mp4` and `vay-dung-walkthrough-en.mp4`, one line per scene. The voices are Microsoft's neural voices through edge-tts: HoaiMy for Vietnamese and Ava (Multilingual) for English.
+
+To change a line or the voice, edit `scripts/portfolio/narration.json`, then:
+
+```bash
+pip install edge-tts
+python scripts/portfolio/tts_edge.py <workDir>        # one clip per scene; VI_VOICE / EN_VOICE / RATE change the voice
+node scripts/portfolio/record.mjs vi <workDir>        # records the live site, paced to the clips
+node scripts/portfolio/record.mjs en <workDir>
+node scripts/portfolio/mux.mjs vi docs/portfolio/vay-dung-walkthrough-vi.mp4 <path to ffmpeg>   # run from <workDir>
+node scripts/portfolio/mux.mjs en docs/portfolio/vay-dung-walkthrough-en.mp4 <path to ffmpeg>
+```
+
+edge-tts uses Edge's read-aloud service unofficially: it often drops requests (the script retries) and could stop working. To record your own voice instead, read these lines and save one file per scene in place of the generated clips.
 
 | # | Screen | Tiếng Việt | English |
 |---|---|---|---|

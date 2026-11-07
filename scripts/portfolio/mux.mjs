@@ -1,0 +1,11 @@
+import { readFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+const [lang, out, ff] = process.argv.slice(2);
+const { video, timings } = JSON.parse(readFileSync(`timings-${lang}.json`, "utf8"));
+const args = ["-y", "-loglevel", "error", "-i", video];
+for (const t of timings) args.push("-i", `${lang}-${t.id}.wav`);
+const parts = timings.map((t, i) => `[${i + 1}:a]aresample=44100,adelay=${Math.round(t.at * 1000 + 250)}:all=1[a${i}]`);
+const filter = parts.join(";") + ";" + timings.map((_, i) => `[a${i}]`).join("") + `amix=inputs=${timings.length}:normalize=0,apad[aout]`;
+args.push("-filter_complex", filter, "-map", "0:v", "-map", "[aout]", "-shortest", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "26", "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out);
+const r = spawnSync(ff, args, { stdio: "inherit" });
+process.exit(r.status ?? 1);
