@@ -179,3 +179,11 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Open: one-off mandatory fees aren't in the cost yet (the page says so), self-employed borrowers aren't treated as lacking income papers, English pages keep some Vietnamese from the sources, and the feed's 5-minute refresh hasn't been observed. Compliance didn't reread the final text.
 
 **Next:** your review. Figures start going stale in late January 2027.
+
+## Live rate feed switched on (2026-11-07)
+**Status:** live at https://vay-dung.vercel.app since 2026-11-07.
+
+- Feed: the Google Sheet "Vay Đúng - nguồn lãi suất trực tiếp" in your Drive, published as CSV and set as `LOAN_RATES_CSV_URL` on Vercel (DECISIONS #68).
+- It holds 25 products with the same figures as Excel. All 25 rows were accepted, and no result changed when the feed went on.
+- Checked on the live site after the deploy: ranking, sorting and filters work, no typed values leave the browser, and there are no page errors.
+- Open: a sheet edit reaching the live page hasn't been observed yet. `/du-lieu` and `/cach-xep-hang` still show the Excel data.

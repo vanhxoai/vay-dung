@@ -58,7 +58,15 @@ Chúng đều được xếp hạng theo cùng một cách, và thẻ sản ph�
 
 ## Cập nhật theo thời gian thực
 
-Khi sẵn sàng, đặt biến môi trường `LOAN_RATES_CSV_URL` là đường dẫn đến một file CSV có các cột:
+**Đang bật từ 2026-11-07.** Nguồn là Google Sheet "Vay Đúng - nguồn lãi suất trực tiếp" trong Google Drive của bạn, đã xuất bản ra web dạng CSV. Biến `LOAN_RATES_CSV_URL` trên Vercel (Production) trỏ tới đường dẫn CSV đó.
+
+- Sheet có sẵn 25 sản phẩm, đúng bằng số liệu trong Excel lúc bật, nên bật nguồn không làm đổi kết quả nào.
+- Sửa một ô trong sheet: Google cập nhật bản CSV sau vài phút, rồi trang `/vay` đọc lại sau tối đa khoảng 5 phút nữa. Không cần triển khai lại.
+- Chỉ thêm dòng cho sản phẩm **không** có các đánh dấu sau trong Excel: `basis_inferred`, `min_is_promo`, mức cao chỉ để tham khảo, tài liệu cũ, mức theo kỳ hạn, hoặc câu trích dẫn. Nguồn này xóa các đánh dấu đó, nên dòng mới sẽ làm mất thông tin.
+- Ai có đường dẫn đều đọc được sheet. Chỉ để số liệu công khai trong đó.
+- Muốn tắt: xóa biến trên Vercel rồi triển khai lại. Trang quay về số liệu đã nhập từ Excel.
+
+Cách đặt từ đầu: đặt biến môi trường `LOAN_RATES_CSV_URL` là đường dẫn đến một file CSV có các cột:
 
 ```
 key,rate_min,rate_max,rate_basis,rate_period,rate_source_type,rate_source_name,rate_source_url,rate_retrieved_at,rate_scope,floor_only,min_unconfirmed
