@@ -1,0 +1,23 @@
+{
+  "_note": "Sound-effect cue times (seconds) for each walkthrough video, read from frame changes in the recorded video. Used by soundtrack.py. Types: tap, swish (scroll), whoosh (page change), pop (section opens), good (verdict within guideline), caution (we don't recommend), alert (lender not found), outro (closing).",
+  "vi": [
+    ["swish", 5.16], ["whoosh", 10.40],
+    ["tap", 11.16], ["tap", 11.48], ["tap", 12.00], ["tap", 12.16], ["tap", 12.40],
+    ["whoosh", 17.88], ["tap", 18.44], ["tap", 18.88], ["tap", 19.08], ["tap", 19.36],
+    ["good", 29.60], ["swish", 38.48], ["swish", 44.04], ["swish", 52.08], ["pop", 53.64], ["pop", 59.12],
+    ["whoosh", 63.72], ["tap", 64.32], ["tap", 64.68], ["tap", 65.12], ["tap", 65.32], ["tap", 65.56],
+    ["whoosh", 65.88], ["tap", 66.44], ["tap", 66.88], ["tap", 67.04], ["tap", 67.52], ["tap", 67.80],
+    ["caution", 68.24], ["swish", 74.40], ["whoosh", 79.84], ["swish", 82.24], ["whoosh", 87.24], ["swish", 90.20],
+    ["whoosh", 95.36], ["tap", 95.92], ["alert", 96.92], ["outro", 103.20]
+  ],
+  "en": [
+    ["swish", 4.72], ["whoosh", 8.60],
+    ["tap", 9.28], ["tap", 9.64], ["tap", 10.08], ["tap", 10.28], ["tap", 10.52],
+    ["whoosh", 16.24], ["tap", 16.76], ["tap", 17.20], ["tap", 17.36], ["tap", 17.64],
+    ["good", 26.76], ["swish", 35.24], ["swish", 41.64], ["swish", 50.92], ["pop", 52.44], ["pop", 58.48],
+    ["whoosh", 62.80], ["tap", 63.36], ["tap", 63.72], ["tap", 64.16], ["tap", 64.36], ["tap", 64.60],
+    ["whoosh", 64.92], ["tap", 65.44], ["tap", 65.88], ["tap", 66.04], ["tap", 66.52], ["tap", 66.80],
+    ["caution", 67.20], ["swish", 72.52], ["whoosh", 77.32], ["swish", 79.32], ["whoosh", 83.76], ["swish", 86.32],
+    ["whoosh", 90.84], ["tap", 91.40], ["alert", 92.36], ["outro", 98.04]
+  ]
+}

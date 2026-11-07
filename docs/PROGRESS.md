@@ -203,3 +203,8 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - Findings: flat quotes understate the real rate 1.4–1.75×; the median real APR at the ceiling is 59% for finance companies and 27% for banks; the extra cost of 20 million over 24 months ranges from 3.5 to 30 million đồng; no product publishes all its fees.
 - Floor-only rates ("from X%", 15 products) are left out of the ceiling comparisons. Figures include monthly fees but not one-off fees or insurance, so they are lower bounds.
 - No app code or user-facing text changed.
+
+## Walkthrough sound (2026-11-07)
+- Both walkthrough videos now have quiet background music and sound effects matched to what happens on screen. The music drops while the voice speaks. `scripts/portfolio/soundtrack.py` generates all the audio (no third-party audio files) and copies the video unchanged. How it works and the list of effects: `docs/portfolio/narration.md`.
+- Loudness is about −17 LUFS with peaks around −3 dBFS. Without the voice, the music is about 15 dB below it while it speaks and about 10 dB below it in the pauses.
+- No app code or user-facing text in the app changed.

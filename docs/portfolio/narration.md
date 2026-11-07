@@ -9,9 +9,26 @@ pip install edge-tts
 python scripts/portfolio/tts_edge.py <workDir>        # one clip per scene; VI_VOICE / EN_VOICE / RATE change the voice
 node scripts/portfolio/record.mjs vi <workDir>        # records the live site, paced to the clips
 node scripts/portfolio/record.mjs en <workDir>
-node scripts/portfolio/mux.mjs vi docs/portfolio/vay-dung-walkthrough-vi.mp4 <path to ffmpeg>   # run from <workDir>
-node scripts/portfolio/mux.mjs en docs/portfolio/vay-dung-walkthrough-en.mp4 <path to ffmpeg>
+node scripts/portfolio/mux.mjs vi voice-vi.mp4 <path to ffmpeg>   # run from <workDir>; voice only
+node scripts/portfolio/mux.mjs en voice-en.mp4 <path to ffmpeg>
+python scripts/portfolio/soundtrack.py vi <workDir>/voice-vi.mp4 docs/portfolio/vay-dung-walkthrough-vi.mp4
+python scripts/portfolio/soundtrack.py en <workDir>/voice-en.mp4 docs/portfolio/vay-dung-walkthrough-en.mp4
 ```
+
+`soundtrack.py` adds the background music and sound effects (needs numpy and ffmpeg). Everything is synthesized in the script, so there are no third-party audio files or licences. The music is a calm loop (84 BPM, Fmaj7–Am7–Dm7–B♭maj7) that drops by 9 dB while the voice is speaking and comes back up in the pauses. Each effect matches something on screen:
+
+| Effect | When |
+|---|---|
+| Soft tap | A choice or input is tapped |
+| Swish | Scrolling |
+| Whoosh | A new page or form step |
+| Pop | "Why is this here" or the schedule opens |
+| Two rising bells | The verdict says the payment is within the guideline |
+| Two soft falling notes | The verdict says "we don't recommend" (calm, not an alarm) |
+| Two low knocks | The lender check doesn't find the name |
+| Rising arpeggio | The closing screen |
+
+The cue times are in `scripts/portfolio/sound-cues.json`. They were read from frame changes in the recorded video, so re-check them after recording again. Always give `soundtrack.py` the voice-only video. If you give it a video that already has music, the music gets added twice.
 
 edge-tts uses Edge's read-aloud service unofficially: it often drops requests (the script retries) and could stop working. To record your own voice instead, read these lines and save one file per scene in place of the generated clips.
 
