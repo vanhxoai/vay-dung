@@ -196,4 +196,4 @@ Checked on the live site: nothing typed appears in requests, no cookies, the 0% 
 - `docs/portfolio/`: a 66-second phone-size walkthrough video of the live site and 13 screenshots.
 - README rewritten for employers and reviewers: problem, method, a worked IRR example, data, quality and limitations.
 - Tests: 254 unit and 140 browser tests pass, including the new archive-mode tests run with the clock set a year ahead.
-- Open: no GitHub repository yet. You create it, then the code can be pushed.
+- Code published at https://github.com/vanhxoai/vay-dung (public, branch `main`) on 2026-11-07.

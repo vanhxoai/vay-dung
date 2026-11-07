@@ -4,6 +4,7 @@
 
 **Student project, not a service for real borrowers.** Built by Nguyễn Vân Anh, November 2026.
 
+- **Code:** https://github.com/vanhxoai/vay-dung
 - **Live demo:** https://vay-dung.vercel.app (Vietnamese by default, English at `/en`). The rates were collected in November 2026. After 90 days the site keeps working, but it labels those figures as old (see [Archive mode](#archive-mode)).
 - **Walkthrough video (66 s):** [docs/portfolio/vay-dung-walkthrough.mp4](docs/portfolio/vay-dung-walkthrough.mp4)
 - **Screenshots:** [docs/portfolio/screenshots/](docs/portfolio/screenshots/)
